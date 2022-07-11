@@ -9,7 +9,7 @@ ex) FEAT/기능
 ## Issue 생성 규칙
 * 기본적으로는 이슈 템플릿을 사용하여 작성
 
-## Commit Msg 규칙
+## Commit Message 규칙
 ### 제목
 * 50자 이내
 * 단어 형태로 종결
