@@ -3,8 +3,8 @@ MC3-Team2 repository
 
 # Git convention
 ## Branch 생성 규칙
-* [작업태그]/이슈번호   
-ex) [FEAT]/#12 
+* [작업태그]/기능
+ex) [FEAT]/메인화면 구현
 
 ## Issue 생성 규칙
 * 기본적으로는 이슈 템플릿을 사용하여 작성
