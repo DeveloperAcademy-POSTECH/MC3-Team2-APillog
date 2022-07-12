@@ -1,5 +1,4 @@
 # MC3-Team2-VarCode
-MC3-Team2 repository
 
 ![Logo](https://dummyimage.com/1000x300/000/fff.png)
 
