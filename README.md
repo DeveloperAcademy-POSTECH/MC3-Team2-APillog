@@ -3,7 +3,7 @@ MC3-Team2 repository
 
 # Git convention
 ## Branch 생성 규칙
-* [작업태그]/기능
+* [작업태그]/기능  
 ex) [FEAT]/메인화면 구현
 
 ## Issue 생성 규칙
