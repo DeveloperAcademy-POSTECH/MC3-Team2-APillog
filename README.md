@@ -1,24 +1,20 @@
-# MC3-Team2-VarCode
-<img width="431" alt="image" src="https://user-images.githubusercontent.com/72395020/178421540-3a5f6b8b-e6a6-4205-a8cb-cfdae7c0a9bb.png">
+# :iphone: APillLog
 
-
-
-# :iphone: Project Title
-
-A brief description of what this project does and who it's for
+### 주의력 결핍, 과잉행동 증세를 겪는 사람들을 위한 기록 앱입니다.
 
 
 ## :pushpin: Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+- 간편한 약 복용 기록
+- 약 효능, 부작용 기록 및 트래킹
+- 실수 노트를 통한 자기 인지 행동 치료 보조
+- 진료 때 자료로 사용할 수 있는 기록 모아보기
 
 
-## :people_hugging: Authors
+## :people_hugging: Team VarCode Members
+<img width="431" alt="image" src="https://user-images.githubusercontent.com/72395020/178421540-3a5f6b8b-e6a6-4205-a8cb-cfdae7c0a9bb.png">
 
-- [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+[@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
 
 
 ## :framed_picture: Demo
