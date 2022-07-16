@@ -13,7 +13,6 @@
 
 ## :people_hugging: Team VarCode Members
 <img width="431" alt="image" src="https://user-images.githubusercontent.com/72395020/178421540-3a5f6b8b-e6a6-4205-a8cb-cfdae7c0a9bb.png">
-
 [@commitcomplete](https://github.com/commitcomplete/) | [@2yongjun](https://github.com/2youngjun/) | [@yeniful](https://github.com/2youngjun/) | [@jiwon1923](https://github.com/JIWON1923/) | [@sm-amoled](https://github.com/sm-amoled/) | [@mycookie1](https://github.com/mycookie1/)
 
 
