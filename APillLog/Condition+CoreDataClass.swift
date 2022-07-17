@@ -1,5 +1,5 @@
 //
-//  [String]+CoreDataClass.swift
+//  Condition+CoreDataClass.swift
 //  APillLog
 //
 //  Created by 종건 on 2022/07/17.
