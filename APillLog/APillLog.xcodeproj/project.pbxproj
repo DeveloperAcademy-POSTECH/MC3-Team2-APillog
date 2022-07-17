@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
-		876ED1A42882A33B00179767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A32882A33B00179767 /* ViewController.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
 		876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
@@ -29,13 +28,18 @@
 		A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B3288477390008EB48 /* AppleSDGothicNeoH.ttf */; };
 		A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B4288477390008EB48 /* AppleSDGothicNeoB.ttf */; };
 		A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */; };
+		A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C328847A010008EB48 /* MedicationView.storyboard */; };
+		A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */; };
+		A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C828847A270008EB48 /* HistoryView.storyboard */; };
+		A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */; };
+		A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */; };
+		A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		876ED1A32882A33B00179767 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		876ED1A62882A33B00179767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		876ED1A92882A33B00179767 /* APillLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APillLog.xcdatamodel; sourceTree = "<group>"; };
 		876ED1AB2882A33C00179767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +60,12 @@
 		A8F4F2B3288477390008EB48 /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoH.ttf; sourceTree = "<group>"; };
 		A8F4F2B4288477390008EB48 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
+		A8F4F2C328847A010008EB48 /* MedicationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicationView.storyboard; sourceTree = "<group>"; };
+		A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryView.storyboard; sourceTree = "<group>"; };
+		A8F4F2C828847A270008EB48 /* HistoryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryView.storyboard; sourceTree = "<group>"; };
+		A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
+		A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +141,11 @@
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A8F4F2C2288478010008EB48 /* New Group1 */,
-				A8F4F2C1288477FB0008EB48 /* Diary */,
-				A8F4F2C0288477C40008EB48 /* History */,
-				876ED1A32882A33B00179767 /* ViewController.swift */,
 				876ED1A52882A33B00179767 /* Main.storyboard */,
 				876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */,
+				A8F4F2C2288478010008EB48 /* MedicationTab */,
+				A8F4F2C1288477FB0008EB48 /* DiaryTab */,
+				A8F4F2C0288477C40008EB48 /* HistoryTab */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,25 +183,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		A8F4F2C0288477C40008EB48 /* History */ = {
+		A8F4F2C0288477C40008EB48 /* HistoryTab */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4F2C828847A270008EB48 /* HistoryView.storyboard */,
+				A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */,
 			);
-			path = History;
+			path = HistoryTab;
 			sourceTree = "<group>";
 		};
-		A8F4F2C1288477FB0008EB48 /* Diary */ = {
+		A8F4F2C1288477FB0008EB48 /* DiaryTab */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */,
+				A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */,
 			);
-			path = Diary;
+			path = DiaryTab;
 			sourceTree = "<group>";
 		};
-		A8F4F2C2288478010008EB48 /* New Group1 */ = {
+		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4F2C328847A010008EB48 /* MedicationView.storyboard */,
+				A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */,
 			);
-			path = "New Group1";
+			path = MedicationTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
+				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
+				A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */,
+				A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */,
 				A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
@@ -277,12 +295,14 @@
 			files = (
 				9A7485092883D7B400E2E402 /* History+CoreDataProperties.swift in Sources */,
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
-				876ED1A42882A33B00179767 /* ViewController.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
+				A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */,
+				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
+				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
 			);

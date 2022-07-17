@@ -1,39 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BCn-ad-AhM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="40l-E8-9PQ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJf-89-adY">
-                                <rect key="frame" x="192" y="382" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgy-EL-fwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="BCn-ad-AhM" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nlc-vO-Um5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Dhf-Tm-d6G" kind="relationship" relationship="viewControllers" id="lrl-8E-fwa"/>
+                        <segue destination="7jI-iI-5fz" kind="relationship" relationship="viewControllers" id="LE0-3c-cRU"/>
+                        <segue destination="WoF-8C-tyc" kind="relationship" relationship="viewControllers" id="37R-k2-5VH"/>
+                    </connections>
+                </tabBarController>
             </objects>
-            <point key="canvasLocation" x="20" y="79"/>
+            <point key="canvasLocation" x="-136" y="95"/>
+        </scene>
+        <!--MedicationViewController-->
+        <scene sceneID="i3p-xV-K4f">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GH8-Pv-1hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MedicationView" referencedIdentifier="MedicationViewController" id="Dhf-Tm-d6G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cM7-yL-Li5">
+                        <imageReference key="image" image="pills.fill" catalog="system" symbolScale="default"/>
+                        <imageReference key="selectedImage" image="pills" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="667" y="-10"/>
+        </scene>
+        <!--DiaryViewController-->
+        <scene sceneID="1BN-O6-TqG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryView" referencedIdentifier="DiaryViewController" id="7jI-iI-5fz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="DgR-q8-WsA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOS-xV-qs3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666" y="118"/>
+        </scene>
+        <!--HistoryViewController-->
+        <scene sceneID="g2n-ty-1G5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HistoryView" storyboardName="HistoryView" referencedIdentifier="HistoryViewController" id="WoF-8C-tyc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XS4-Fe-z21"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwU-A1-bRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="236"/>
         </scene>
     </scenes>
     <resources>
+        <image name="pills" catalog="system" width="128" height="106"/>
+        <image name="pills.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
