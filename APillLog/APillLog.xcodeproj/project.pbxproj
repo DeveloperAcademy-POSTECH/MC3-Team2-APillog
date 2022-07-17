@@ -18,6 +18,8 @@
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */; };
 		9A7485092883D7B400E2E402 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7485072883D7B400E2E402 /* History+CoreDataProperties.swift */; };
+		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
+		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A7485072883D7B400E2E402 /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
+		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 		A8F4F2A5288469AB0008EB48 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */,
+				A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -194,7 +200,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7485092883D7B400E2E402 /* History+CoreDataProperties.swift in Sources */,
+				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
 				876ED1A42882A33B00179767 /* ViewController.swift in Sources */,
+				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
