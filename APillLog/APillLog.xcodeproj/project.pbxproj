@@ -13,6 +13,8 @@
 		876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
 		876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */; };
+		87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
+		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */; };
@@ -45,6 +47,8 @@
 		876ED1AB2882A33C00179767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876ED1AE2882A33C00179767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		876ED1B02882A33C00179767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 			children = (
 				A8F4F2C828847A270008EB48 /* HistoryView.storyboard */,
 				A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */,
+				87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */,
+				87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */,
 			);
 			path = HistoryTab;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
+				87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */,
 				876ED1A72882A33B00179767 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +302,7 @@
 			files = (
 				9A7485092883D7B400E2E402 /* History+CoreDataProperties.swift in Sources */,
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
+				87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
