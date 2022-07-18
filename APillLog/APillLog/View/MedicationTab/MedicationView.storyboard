@@ -28,7 +28,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="서브약 추가하기"/>
                                 <connections>
-                                    <segue destination="Y7F-Vm-JMY" kind="presentation" id="mj8-zQ-7JE"/>
+                                    <segue destination="42q-1c-hZ5" kind="presentation" id="LUo-MQ-Brd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,12 +53,12 @@
             <point key="canvasLocation" x="118.84057971014494" y="91.741071428571431"/>
         </scene>
         <!--AddSecondPillStoryboard-->
-        <scene sceneID="mvT-Rz-aVm">
+        <scene sceneID="qbY-UZ-bg0">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddSecondaryPillView" referencedIdentifier="AddSecondPillStoryboard" id="Y7F-Vm-JMY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ltf-YT-dqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AddSecondaryPillView" referencedIdentifier="AddSecondPillStoryboard" id="42q-1c-hZ5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bT2-DY-t52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="92"/>
+            <point key="canvasLocation" x="909" y="92"/>
         </scene>
     </scenes>
     <resources>
