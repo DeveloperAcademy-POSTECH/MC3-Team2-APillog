@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v62-c9-Gww">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Secondary Pill View Controller-->
+        <scene sceneID="5Ly-37-buI">
+            <objects>
+                <viewController storyboardIdentifier="AddSecondPillStoryboard" id="v62-c9-Gww" customClass="AddSecondaryPillViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMH-hQ-7SN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가로 먹은 약을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX1-lp-6X6">
+                                <rect key="frame" x="25" y="75" width="364" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="약 이름을 검색하세요" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-BM-5jE">
+                                <rect key="frame" x="25" y="115" width="364" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-0b-GqK">
+                                <rect key="frame" x="25" y="166" width="364" height="705"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondaryPillCell" rowHeight="60" id="mXK-JT-OpP">
+                                        <rect key="frame" x="0.0" y="44.5" width="364" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mXK-JT-OpP" id="9F1-gx-IM0">
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-uH-cYW">
+                                                    <rect key="frame" x="20" y="11" width="324" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sZc-uH-cYW" firstAttribute="leading" secondItem="9F1-gx-IM0" secondAttribute="leadingMargin" id="6Dt-mu-QVU"/>
+                                                <constraint firstItem="sZc-uH-cYW" firstAttribute="top" secondItem="9F1-gx-IM0" secondAttribute="topMargin" id="E8g-KQ-8pG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sZc-uH-cYW" secondAttribute="bottom" id="cId-Mn-Bs2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sZc-uH-cYW" secondAttribute="trailing" id="xgI-ka-h4Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjD-Xr-wH6">
+                                <rect key="frame" x="25" y="25" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="TmT-2G-lrn"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZdG-yb-knB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="MX1-lp-6X6" secondAttribute="leading" id="1hp-Ub-RKM"/>
+                            <constraint firstItem="LCc-0b-GqK" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="5P7-kb-bbj"/>
+                            <constraint firstItem="MX1-lp-6X6" firstAttribute="top" secondItem="CjD-Xr-wH6" secondAttribute="bottom" constant="16" id="7vw-Yd-vuy"/>
+                            <constraint firstAttribute="bottom" secondItem="LCc-0b-GqK" secondAttribute="bottom" constant="25" id="8Aw-xI-6IX"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="QZb-aO-q7h"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="MX1-lp-6X6" secondAttribute="trailing" constant="25" id="Qj7-9E-inf"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="LCc-0b-GqK" secondAttribute="leading" id="RAg-KJ-jJQ"/>
+                            <constraint firstItem="CjD-Xr-wH6" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="Xsb-JS-D9D"/>
+                            <constraint firstItem="LCc-0b-GqK" firstAttribute="top" secondItem="cS4-BM-5jE" secondAttribute="bottom" id="dil-4T-pRA"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" constant="25" id="doZ-Yu-5gu"/>
+                            <constraint firstItem="MX1-lp-6X6" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="ehm-NY-YTS"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" id="jgf-QQ-eO0"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="cS4-BM-5jE" secondAttribute="trailing" constant="25" id="jrW-GH-f1U"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="top" secondItem="MX1-lp-6X6" secondAttribute="bottom" constant="16" id="xAn-8z-RSE"/>
+                            <constraint firstItem="CjD-Xr-wH6" firstAttribute="top" secondItem="BMH-hQ-7SN" secondAttribute="top" constant="25" id="zr0-rN-sOX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkS-B0-004" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
