@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="en2-nt-aBt">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,26 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="MedicationViewController" id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaL-pe-2VR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDP-jb-QlZ">
-                                <rect key="frame" x="132" y="411.66666666666669" width="126" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EM6-9f-GMI">
-                                <rect key="frame" x="138.66666666666666" y="530" width="113" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="서브약 추가하기"/>
-                                <connections>
-                                    <action selector="tapAddSecondaryPillButton" destination="en2-nt-aBt" eventType="touchUpInside" id="1X1-Ms-S2A"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-e4-sFB">
-                                <rect key="frame" x="102" y="501" width="187" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="124.5" y="323" width="126" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,9 +28,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xDP-jb-QlZ" firstAttribute="centerY" secondItem="NaL-pe-2VR" secondAttribute="centerY" id="M2f-N4-PHg"/>
-                            <constraint firstItem="MND-81-mzl" firstAttribute="bottom" secondItem="EM6-9f-GMI" secondAttribute="bottom" constant="200" id="NiX-WB-wqJ"/>
                             <constraint firstItem="xDP-jb-QlZ" firstAttribute="centerX" secondItem="NaL-pe-2VR" secondAttribute="centerX" id="OeL-u0-H5k"/>
-                            <constraint firstItem="EM6-9f-GMI" firstAttribute="centerX" secondItem="NaL-pe-2VR" secondAttribute="centerX" id="rbc-tI-rXt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
@@ -54,13 +37,10 @@
                         <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="addedSecondaryPillName" destination="kXC-e4-sFB" id="yPt-cs-vBG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeD-UO-cz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118.46153846153845" y="91.706161137440759"/>
+            <point key="canvasLocation" x="117.59999999999999" y="91.304347826086968"/>
         </scene>
     </scenes>
     <resources>

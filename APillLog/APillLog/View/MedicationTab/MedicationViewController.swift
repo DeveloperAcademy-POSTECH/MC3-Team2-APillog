@@ -17,7 +17,6 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet var addedSecondaryPillName: UILabel!
     
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
@@ -28,8 +27,10 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
         self.present(nextViewController, animated: true)
     }
     
+    
     // MARK: AddSecondaryPillViewControllerDelegate
     func modalDidFinished(selectedPill: String) {
-        addedSecondaryPillName.text = selectedPill
+        // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
+        
     }
 }
