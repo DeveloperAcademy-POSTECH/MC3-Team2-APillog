@@ -29,15 +29,15 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     // MARK: @IBAction
-    @IBAction func tabCancelButton(_ sender: UIButton) {
+    @IBAction func tapCancelButton(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
     }
     
-    @IBAction func tabSaveButton(_ sender: UIButton) {
+    @IBAction func tapSaveButton(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
     }
     
-    @IBAction func primaryPillMorning(_ sender: UIButton) {
+    @IBAction func togglePrimaryPillMorning(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected {
             self.primaryPillDosingCycle += 1
@@ -47,7 +47,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         changePrimaryPillDosingButtonState(sender)
     }
     
-    @IBAction func primaryPillAfternoon(_ sender: UIButton) {
+    @IBAction func togglePrimaryPillAfternoon(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected {
             self.primaryPillDosingCycle += 2
@@ -57,7 +57,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         changePrimaryPillDosingButtonState(sender)
     }
     
-    @IBAction func primaryPillEvening(_ sender: UIButton) {
+    @IBAction func togglePrimaryPillEvening(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected {
             self.primaryPillDosingCycle += 4
