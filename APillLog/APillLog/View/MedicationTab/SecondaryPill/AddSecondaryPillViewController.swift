@@ -8,15 +8,15 @@
 import UIKit
 
 protocol AddSecondaryPillViewControllerDelegate {
-    func modalDidFinished(selectedPill: String)
+    func didFinishModal(selectedPill: String)
 }
 
 class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     // MARK: @IBOutlet
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var searchTableView: UITableView!
-    @IBOutlet var searchKeyword: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var searchKeyword: UILabel!
     
     // MARK: Properties
     let cellIdentifier = "SecondaryPillTableViewCell"
@@ -54,12 +54,12 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        55
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate.modalDidFinished(selectedPill: filteredData[indexPath.row])
         dismiss(animated: true)
+        self.delegate.didFinishModal(selectedPill: filteredData[indexPath.row])
     }
     
     // MARK: UISearchBarDelegate
@@ -80,15 +80,14 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
         self.searchTableView.reloadData()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     
     // MARK: Function
     func setSearchKeywordText(text: String) {
-        
-        if text.isEmpty {
-            searchKeyword.text = "없는 약 추가하기"
-        } else {
-            searchKeyword.text = "'\(text)'"
-        }
+        searchKeyword.text = text.isEmpty ? "없는 약 추가하기" : "'\(text)'"
     }
     
     // MARK: @IBAction
@@ -97,7 +96,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func tapAddPillButton() {
-        self.delegate.modalDidFinished(selectedPill: self.searchBar.text ?? "")
+        self.delegate.didFinishModal(selectedPill: self.searchBar.text ?? "")
         
         dismiss(animated: true)
     }

@@ -29,7 +29,7 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     
     
     // MARK: AddSecondaryPillViewControllerDelegate
-    func modalDidFinished(selectedPill: String) {
+    func didFinishModal(selectedPill: String) {
         // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
         
     }
