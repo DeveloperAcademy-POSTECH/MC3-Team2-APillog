@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 import CoreData
 class CoreDataManager{
+    //사용법
+    //var coredataManager: CoreDataManager = CoreDataManager()
+    //coredataManager.함수
+    
 // MARK: - Core Data Saving support
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "APillLog")
@@ -67,24 +71,25 @@ class CoreDataManager{
         saveToContext()
     }
     
-    func addShowSecondaryPill(name: String, dosage: String, selecDate: String){
+    func addShowSecondaryPill(name: String, dosage: String?, selectDate: Date){
         let showSecondaryPill = ShowSecondaryPill(context: persistentContainer.viewContext)
+        let selectedDate: String = changeSelectedDateToString(selectDate)
         showSecondaryPill.id = UUID()
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
         showSecondaryPill.isTaking = false
         showSecondaryPill.takeTime = Date()
-        showSecondaryPill.selectDate = selecDate
+        showSecondaryPill.selectDate = selectedDate
         saveToContext()
     }
     
-    func addCondition(name: [String]?, dosage: [String]?, sideEffect: [String]?, medicinalEffact: [String]?, detailContext: String?){
+    func addCondition(name: [String]?, dosage: [String]?, sideEffect: [String]?, medicinalEffect: [String]?, detailContext: String?){
         let condition = Condition(context: persistentContainer.viewContext )
         condition.id = UUID()
         condition.name = name
         condition.dosage = dosage
         condition.sideEffect = sideEffect
-        condition.medicinalEffect = medicinalEffact
+        condition.medicinalEffect = medicinalEffect
         condition.detailContext = detailContext
         condition.createTime = Date()
         
@@ -159,7 +164,7 @@ class CoreDataManager{
     }
     
     //오늘의 서브복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
-    func recordHistoryAndChangeAllSecondaryIsTaking(selectDate: Date, dosingCycle: Int16){
+    func recordHistoryAndChangeAllSecondaryIsTaking(selectDate: Date){
 
         let selectedDate: String = changeSelectedDateToString(selectDate)
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
@@ -181,7 +186,7 @@ class CoreDataManager{
     
     //증상입력에서 condition을 저장하고 history에 등록하는 함수
     func recordHistoryAndRecordCondition(name: [String]?, dosage: [String]?, sideEffect: [String]?, medicinalEffect: [String]?, detailContext: String?){
-       addCondition(name: name, dosage: dosage, sideEffect: sideEffect, medicinalEffact: medicinalEffect, detailContext: detailContext)
+        addCondition(name: name, dosage: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
@@ -230,37 +235,39 @@ class CoreDataManager{
         }
         
     }
+    // MARK: - Core Data READ
     
     //메인약 추가 페이지에 사용할 primaryPill read함수
-    func fetchPrimaryPill() -> [PrimaryPill]? {
+    func fetchPrimaryPill() -> [PrimaryPill] {
+        var pillArray: [PrimaryPill] = []
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         do {
-           let pillArray = try context.fetch(request)
+            pillArray = try context.fetch(request)
             return pillArray
         } catch{
             print("-----fetchPrimaryPill error -------")
         }
-        return nil
+        return pillArray
     }
     
     //showPrimaryPill read함수
-    func fetchShowPrimaryPill(selectedDate: Date) -> [ShowPrimaryPill]? {
+    func fetchShowPrimaryPill(selectedDate: Date) -> [ShowPrimaryPill] {
         let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
-        var pillArrayResult: [ShowPrimaryPill]?
+        var pillArrayResult: [ShowPrimaryPill] = []
         let selectDate: String = changeSelectedDateToString(Date())
         do {
            let pillArray = try context.fetch(request)
             for pill in pillArray{
                 if pill.selectDate == selectDate
                 {
-                    pillArrayResult?.append(pill)
+                    pillArrayResult.append(pill)
                 }
             }
             return pillArray
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-        return nil
+        return pillArrayResult
     }
     
     //오늘의 메인약 아침
@@ -315,35 +322,36 @@ class CoreDataManager{
     
     
     //최근검색에 추가할 SecondartPill read 함수
-    func fetchSecondaryPill() -> [SecondaryPill]? {
+    func fetchSecondaryPill() -> [SecondaryPill] {
+        var pillArray:[SecondaryPill] = []
         let request : NSFetchRequest<SecondaryPill> = SecondaryPill.fetchRequest()
         do {
-           let pillArray = try context.fetch(request)
+            pillArray = try context.fetch(request)
             return pillArray
         } catch{
             print("-----fetchSecondaryPill error-------")
         }
-        return nil
+        return pillArray
     }
     //ShowSecondaryPill read함수
-    func fetchShowSecondaryPill(selectedDate: Date) -> [ShowSecondaryPill]? {
+    func fetchShowSecondaryPill(selectedDate: Date) -> [ShowSecondaryPill] {
         
         let selectDate: String = changeSelectedDateToString(selectedDate)
-        var pillArrayResult: [ShowSecondaryPill]?
+        var pillArrayResult: [ShowSecondaryPill] = []
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
         
         do {
            let pillArray = try context.fetch(request)
             for pill in pillArray{
                 if pill.selectDate == selectDate{
-                    pillArrayResult?.append(pill)
+                    pillArrayResult.append(pill)
                 }
             }
             return pillArrayResult
         } catch{
             print("-----fetchShowSecondaryPill error-------")
         }
-        return nil
+        return pillArrayResult
         
     }
     //history read함수
@@ -389,21 +397,4 @@ class CoreDataManager{
         return selectedDate
     }
     
-}
-
-struct ConditionStruct: Identifiable{
-    init(id: UUID, name: [String]?, dosage: [String]?, sideEffect: [String]?, medicinalEffect: [String]?, detailContext: String?) {
-        self.id = id
-        self.name = name
-        self.dosage = dosage
-        self.sideEffect = sideEffect
-        self.medicinalEffect = medicinalEffect
-        self.detailContext = detailContext
-       }
-    let id: UUID
-    let name: [String]?
-    let dosage: [String]?
-    let sideEffect: [String]?
-    let medicinalEffect: [String]?
-    let detailContext: String?
 }
