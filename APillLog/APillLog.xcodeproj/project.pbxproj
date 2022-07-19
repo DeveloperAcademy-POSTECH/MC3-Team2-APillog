@@ -15,6 +15,9 @@
 		876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
 		876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */; };
+		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
+		8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */; };
+		8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */; };
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */; };
@@ -49,6 +52,9 @@
 		876ED1AB2882A33C00179767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876ED1AE2882A33C00179767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		876ED1B02882A33C00179767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrimaryPillViewController.swift; sourceTree = "<group>"; };
+		8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPrimaryPill.storyboard; sourceTree = "<group>"; };
+		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A7485062883D7B400E2E402 /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -120,6 +126,16 @@
 				A8209F0C28846552006F35DF /* CoreData */,
 			);
 			path = APillLog;
+			sourceTree = "<group>";
+		};
+		8B942AFD28854E2300507AC5 /* AddPrimaryPillView */ = {
+			isa = PBXGroup;
+			children = (
+				8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */,
+				8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */,
+				8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */,
+			);
+			path = AddPrimaryPillView;
 			sourceTree = "<group>";
 		};
 		A8209F0B28846546006F35DF /* Application */ = {
@@ -220,6 +236,7 @@
 				34982C5E2885415E003BBBD4 /* SecondaryPill */,
 				A8F4F2C328847A010008EB48 /* MedicationView.storyboard */,
 				A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */,
+				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
 			);
 			path = MedicationTab;
 			sourceTree = "<group>";
@@ -297,6 +314,7 @@
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
+				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
 				876ED1A72882A33B00179767 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +330,7 @@
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */,
+				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A7485082883D7B400E2E402 /* History+CoreDataClass.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
@@ -319,6 +338,7 @@
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
+				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
 			);
