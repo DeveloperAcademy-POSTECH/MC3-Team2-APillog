@@ -39,6 +39,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="저장"/>
+                                        <connections>
+                                            <action selector="tabSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nbp-8g-xZD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,6 +112,7 @@
                                                         <state key="selected" title="아침"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="primaryPillMorning:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Um-H7-ts4"/>
@@ -128,6 +132,7 @@
                                                         <state key="selected" title="점심"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="primaryPillAfternoon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mlB-JU-IjV"/>
@@ -147,6 +152,7 @@
                                                         <state key="selected" title="저녁"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="primaryPillEvening:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MfO-KA-vxR"/>

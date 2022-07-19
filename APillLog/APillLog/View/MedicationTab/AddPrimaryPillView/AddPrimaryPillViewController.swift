@@ -9,26 +9,31 @@ import UIKit
 
 class AddPrimaryPillViewController: UIViewController, UISheetPresentationControllerDelegate {
 
+    // MARK: @IBOutlet
     @IBOutlet weak var primaryPillMorningButton: UIButton!
     @IBOutlet weak var primaryPillAfternoonButton: UIButton!
     @IBOutlet weak var primaryPillEveningButton: UIButton!
     
+    
+    // MARK: Property
     var primaryPillDosingCycle: Int = 0
     
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
     }
     
+    // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
         sheetPresentationController.detents = [.medium()]
-        
-        self.initPillTermButton(self.primaryPillMorningButton, "아침")
-        self.initPillTermButton(self.primaryPillAfternoonButton, "점심")
-        self.initPillTermButton(self.primaryPillEveningButton, "저녁")
     }
     
+    // MARK: @IBAction
     @IBAction func tabCancelButton(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
+    @IBAction func tabSaveButton(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
     }
     
@@ -39,7 +44,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         } else {
             self.primaryPillDosingCycle -= 1
         }
-        changePrimaryPillDosingButtonState(sender, "아침")
+        changePrimaryPillDosingButtonState(sender)
     }
     
     @IBAction func primaryPillAfternoon(_ sender: UIButton) {
@@ -49,7 +54,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         } else {
             self.primaryPillDosingCycle -= 2
         }
-        changePrimaryPillDosingButtonState(sender, "점심")
+        changePrimaryPillDosingButtonState(sender)
     }
     
     @IBAction func primaryPillEvening(_ sender: UIButton) {
@@ -59,30 +64,22 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         } else {
             self.primaryPillDosingCycle -= 4
         }
-        changePrimaryPillDosingButtonState(sender, "저녁")
+        changePrimaryPillDosingButtonState(sender)
     }
     
-    func changePrimaryPillDosingButtonState(_ button: UIButton, _ dosingCycle: String) {
+    
+    // MARK: Function
+    func changePrimaryPillDosingButtonState(_ button: UIButton) {
         if button.isSelected {
             button.backgroundColor = UIColor(red: 108/255, green: 199/255, blue: 90/255, alpha: 1)
-            button.setTitle(dosingCycle, for: .selected)
             button.setTitleColor(.white, for: .selected)
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.white.cgColor
         } else {
             button.backgroundColor = .white
-            button.setTitle(dosingCycle, for: .selected)
             button.setTitleColor(UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1), for: .normal)
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1).cgColor
         }
     }
-    
-    func initPillTermButton(_ button: UIButton, _ dosingCycle: String){
-        button.setTitle(dosingCycle, for: .normal)
-        button.setTitleColor(UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1), for: .normal)
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1).cgColor
-    }
-
 }
