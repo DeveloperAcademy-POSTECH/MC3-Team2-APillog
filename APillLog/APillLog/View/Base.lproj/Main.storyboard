@@ -11,7 +11,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="40l-E8-9PQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgy-EL-fwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="BCn-ad-AhM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nlc-vO-Um5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -25,19 +24,20 @@
                         <segue destination="WoF-8C-tyc" kind="relationship" relationship="viewControllers" id="37R-k2-5VH"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgy-EL-fwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-136" y="95"/>
         </scene>
         <!--MedicationViewController-->
         <scene sceneID="i3p-xV-K4f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GH8-Pv-1hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MedicationView" referencedIdentifier="MedicationViewController" id="Dhf-Tm-d6G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="cM7-yL-Li5">
                         <imageReference key="image" image="pills.fill" catalog="system" symbolScale="default"/>
                         <imageReference key="selectedImage" image="pills" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GH8-Pv-1hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="667" y="-10"/>
         </scene>
