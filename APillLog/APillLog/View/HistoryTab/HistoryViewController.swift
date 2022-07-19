@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     let dummyData = getDummyData()
     let category = ["약 복용", "불편 사항", "개선 사항", "추가 기록"]
