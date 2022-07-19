@@ -89,13 +89,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34982C5E2885415E003BBBD4 /* SecondaryPill */ = {
+		34982C5E2885415E003BBBD4 /* AddSecondaryPillView */ = {
 			isa = PBXGroup;
 			children = (
 				34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */,
 				34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */,
 			);
-			path = SecondaryPill;
+			path = AddSecondaryPillView;
 			sourceTree = "<group>";
 		};
 		876ED1932882A33B00179767 = {
@@ -233,7 +233,7 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
-				34982C5E2885415E003BBBD4 /* SecondaryPill */,
+				34982C5E2885415E003BBBD4 /* AddSecondaryPillView */,
 				A8F4F2C328847A010008EB48 /* MedicationView.storyboard */,
 				A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
