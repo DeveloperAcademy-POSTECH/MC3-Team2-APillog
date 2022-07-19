@@ -4,7 +4,7 @@
         <attribute name="cbtContext" optional="YES" attributeType="String"/>
         <attribute name="cbtId" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="selectDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="selectDate" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Condition" representedClassName="Condition" syncable="YES">
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -16,11 +16,16 @@
         <attribute name="sideEffect" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
     </entity>
     <entity name="History" representedClassName="History" syncable="YES">
-        <attribute name="condition" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Condition"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="detailContext" optional="YES" attributeType="String"/>
+        <attribute name="dosage" optional="YES" attributeType="String"/>
+        <attribute name="dosages" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isMainPill" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="medicinalEffect" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="names" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="pillName" optional="YES" attributeType="String"/>
+        <attribute name="sideEffect" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
     </entity>
     <entity name="PrimaryPill" representedClassName="PrimaryPill" syncable="YES" codeGenerationType="class">
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -42,7 +47,7 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isTaking" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="selectDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="selectDate" optional="YES" attributeType="String"/>
         <attribute name="takeTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="ShowSecondaryPill" representedClassName="ShowSecondaryPill" syncable="YES" codeGenerationType="class">
@@ -50,13 +55,13 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isTaking" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="selectDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="selectDate" optional="YES" attributeType="String"/>
         <attribute name="takeTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="CBT" positionX="0" positionY="45" width="128" height="89"/>
         <element name="Condition" positionX="-36" positionY="9" width="128" height="134"/>
-        <element name="History" positionX="-18" positionY="27" width="128" height="104"/>
+        <element name="History" positionX="-18" positionY="27" width="128" height="179"/>
         <element name="PrimaryPill" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="SecondaryPill" positionX="-54" positionY="-9" width="128" height="89"/>
         <element name="ShowPrimaryPill" positionX="18" positionY="63" width="128" height="134"/>
