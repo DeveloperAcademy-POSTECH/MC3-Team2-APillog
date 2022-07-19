@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="en2-nt-aBt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZc-H1-lr9">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--복용기록-->
+        <!--Medication View Controller-->
         <scene sceneID="rJR-69-AZ3">
             <objects>
-                <viewController storyboardIdentifier="MedicationViewController" id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaL-pe-2VR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,13 +23,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkG-43-45H">
-                                <rect key="frame" x="168" y="554" width="80" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0V-wt-eaS">
+                                <rect key="frame" x="144" y="475" width="102" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="sheet on"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Manage"/>
                                 <connections>
-                                    <segue destination="eii-aa-qKd" kind="presentation" id="IBy-L6-8aP"/>
+                                    <segue destination="Dt6-4l-NDv" kind="push" id="Xwr-8D-b22"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -40,24 +40,45 @@
                             <constraint firstItem="xDP-jb-QlZ" firstAttribute="centerX" secondItem="NaL-pe-2VR" secondAttribute="centerX" id="OeL-u0-H5k"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6vl-aN-qJj"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeD-UO-cz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.1538461538462" y="90.995260663507111"/>
+        </scene>
+        <!--ManageDosingView-->
+        <scene sceneID="IsJ-cI-LhC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="Dt6-4l-NDv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xCa-ak-R1Y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-lk-55E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="91"/>
+        </scene>
+        <!--복용기록-->
+        <scene sceneID="bJU-sc-kPv">
+            <objects>
+                <navigationController storyboardIdentifier="MedicationViewController" automaticallyAdjustsScrollViewInsets="NO" id="iZc-H1-lr9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
                         <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
                         <color key="badgeColor" name="AccentColor"/>
                         <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
                     </tabBarItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HeD-UO-cz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SD1-ZF-SfR">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="en2-nt-aBt" kind="relationship" relationship="rootViewController" id="1t3-OT-h1O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ic1-2v-Fzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="91.304347826086968"/>
-        </scene>
-        <!--AddPrimaryPill-->
-        <scene sceneID="fSs-jd-QEJ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddPrimaryPill" id="eii-aa-qKd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yMp-OZ-Qih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="746" y="92"/>
+            <point key="canvasLocation" x="116.92307692307692" y="90.995260663507111"/>
         </scene>
     </scenes>
     <resources>
