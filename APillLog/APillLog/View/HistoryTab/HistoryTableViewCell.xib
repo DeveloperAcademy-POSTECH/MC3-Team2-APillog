@@ -115,7 +115,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="createTime" destination="XFd-rc-lwZ" id="eHi-NX-9EV"/>
+                <outlet property="createdTime" destination="XFd-rc-lwZ" id="eHi-NX-9EV"/>
                 <outlet property="detailContext" destination="SqS-vB-UzE" id="Ffs-RL-lEY"/>
                 <outlet property="medicinalEffect" destination="k0c-Vb-PWV" id="gIQ-Iw-60b"/>
                 <outlet property="pillName" destination="4km-14-vql" id="Q3i-zI-gRs"/>

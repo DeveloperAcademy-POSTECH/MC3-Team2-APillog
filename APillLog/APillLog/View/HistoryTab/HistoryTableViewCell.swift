@@ -10,7 +10,7 @@ import UIKit
 class HistoryTableViewCell: UITableViewCell {
     
     // 사용자의 정보가 담길 변수
-    @IBOutlet weak var createTime: UILabel!
+    @IBOutlet weak var createdTime: UILabel!
     @IBOutlet weak var pillName: UILabel!
     @IBOutlet weak var sideEffect: UILabel!
     @IBOutlet weak var medicinalEffect: UILabel!
