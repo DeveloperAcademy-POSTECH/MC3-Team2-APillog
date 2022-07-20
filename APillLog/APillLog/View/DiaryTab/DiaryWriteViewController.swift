@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class DiaryWriteViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 

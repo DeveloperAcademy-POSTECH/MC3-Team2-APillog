@@ -7,20 +7,28 @@
 
 import UIKit
 
-class DiaryViewController: UIViewController {
+class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+    @IBOutlet weak var mistakeTableView: UITableView!
+    
+    let cellIdentifier = "NoteCell"
+    var myData = ["사과","당근","카카오","샐러드"]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+               cell.textLabel?.text = myData[indexPath.row]
+               return cell
+    }
+    
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
-//               NotificationCenter.default.addObserver(self, selector: #selector(DiaryViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//
-//               // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
-//               NotificationCenter.default.addObserver(self, selector: #selector(DiaryViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-//
-//
-//        // Do any additional setup after loading the view.
+        mistakeTableView.delegate = self
+        mistakeTableView.dataSource = self
     }
     
 
