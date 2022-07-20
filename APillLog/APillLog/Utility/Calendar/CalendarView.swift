@@ -18,8 +18,8 @@ class CalendarView: UIView {
         datePicker.locale = .current
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
-        datePicker.backgroundColor = .systemBackground
-        datePicker.tintColor = .systemGreen
+        datePicker.backgroundColor = UIColor.AColor.white
+        datePicker.tintColor = UIColor.AColor.accent
         datePicker.layer.cornerRadius = 10
         datePicker.layer.masksToBounds = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +41,7 @@ class CalendarView: UIView {
     func commonInit() {
         let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
+        view.backgroundColor = UIColor.AColor.background
         self.addSubview(view)
         naxtDayButton.isEnabled = false
     }
@@ -76,7 +77,7 @@ class CalendarView: UIView {
         self.datePicker.isHidden = false
         setDatePickerConstraints()
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
-        datePicker.center = superview!.center
+        datePicker.center = superview?.center ?? CGPoint(x: 0, y: 0)
     }
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
