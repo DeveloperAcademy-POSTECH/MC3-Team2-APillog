@@ -48,7 +48,23 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         pillSideEffectDummyData = PillData.pillData[0].pillDisadvantage
         pillMedicinalEffectDummyData = PillData.pillData[0].pillAdvantage
         
-        self.conditionSaveButtonStateStyle(self.conditionSaveButton)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        for (key, value) in pillSideEffectDummyData {
+            if value == true {
+                self.pillSideEffect += "\(key) "
+            }
+        }
+        
+        for (key, value) in pillMedicinalEffectDummyData {
+            if value == true {
+                self.pillMedicinalEffect += "\(key) "
+            }
+        }
+        
+        print(pillSideEffect)
+        print(pillMedicinalEffect)
     }
     
     
@@ -58,6 +74,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         setDetailContextStyle()
         setConditionBackgroundViewStyle()
         setConditionViewNavigationBarStyle()
+        setConditionSaveButtonStyle()
     }
     
     private func setDetailContextStyle() {
@@ -74,6 +91,10 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         self.navigationController?.navigationBar.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         self.conditionViewNavigationBar.topItem?.title = "증상 입력"
+    }
+    
+    private func setConditionSaveButtonStyle() {
+        self.conditionSaveButtonStateStyle(self.conditionSaveButton)
     }
     
     // MARK: @IBAction
@@ -170,6 +191,25 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
             button.layer.cornerRadius = 10
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.AColor.disable.cgColor
+        }
+    }
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if detailContext.text.count > 150  {
+            detailContext.deleteBackward()
+        }
+        
+        if detailContext.text.count > 0 {
+            self.pillDetailContextIsOn = true
+        } else {
+            self.pillDetailContextIsOn = false
+        }
+        
+        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
+            self.saveButtonState = true
+        } else {
+            self.saveButtonState = false
         }
     }
     
