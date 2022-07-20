@@ -9,9 +9,15 @@ import UIKit
 import CoreData
 
 class DiaryWriteViewController: UIViewController {
-
+    var coredataManager: CoreDataManager = CoreDataManager()
     @IBOutlet weak var textView: UITextView!
-   
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var diaryWriteDatePicker: UIDatePicker!
+    
+    @IBAction func didTapSaveButton(_ sender: Any) {
+        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
+        print("Save Success!")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

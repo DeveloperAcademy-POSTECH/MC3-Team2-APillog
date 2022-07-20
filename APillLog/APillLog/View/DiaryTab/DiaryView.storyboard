@@ -57,6 +57,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITK-dr-asg" id="Ehx-1n-c1g">
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igA-H9-N6m">
+                                                    <rect key="frame" x="20" y="0.0" width="344" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </stackView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSC-TJ-qbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707" y="346"/>
+            <point key="canvasLocation" x="704.34782608695662" y="345.53571428571428"/>
         </scene>
         <!--실수노트 적기-->
         <scene sceneID="M8M-O1-h6x">
@@ -128,6 +134,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapSaveButton:" destination="Y9L-J0-gzX" eventType="touchUpInside" id="u0c-cO-bem"/>
+                                        </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-sk-ToI">
                                         <rect key="frame" x="131" y="3" width="113" height="31"/>
@@ -168,6 +177,8 @@
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
+                        <outlet property="diaryWriteDatePicker" destination="8r3-sk-ToI" id="eaf-yj-g5l"/>
+                        <outlet property="saveButton" destination="5QB-yd-PrN" id="8V7-YW-0Zr"/>
                         <outlet property="textView" destination="PeY-wI-H0U" id="rTv-y6-UYc"/>
                     </connections>
                 </viewController>
