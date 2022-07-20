@@ -43,12 +43,12 @@
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-1j-NSr">
-                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
+                                <rect key="frame" x="0.0" y="129" width="390" height="632"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn5-yS-6pI">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="805"/>
                                         <subviews>
-                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-bi-Ud2">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-bi-Ud2">
                                                 <rect key="frame" x="25" y="0.0" width="340" height="805"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v9O-Gs-4Cx" userLabel="ButtonView Stack View">
@@ -83,7 +83,6 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-navigation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Vv-PBW">
                                                                         <rect key="frame" x="315" y="35" width="10" height="10"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="10" id="gJh-59-un5"/>
                                                                             <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
                                                                         </constraints>
                                                                     </imageView>
@@ -122,8 +121,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-4e-HMT" userLabel="PrimaryPillView">
                                                         <rect key="frame" x="0.0" y="105" width="340" height="400"/>
                                                         <subviews>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-wB-lPe">
-                                                                <rect key="frame" x="20" y="76" width="300" height="32"/>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-wB-lPe">
+                                                                <rect key="frame" x="20" y="54.333333333333314" width="300" height="32"/>
                                                                 <segments>
                                                                     <segment title="아침"/>
                                                                     <segment title="점심"/>
@@ -131,13 +130,13 @@
                                                                 </segments>
                                                             </segmentedControl>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 복용할 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR7-9z-koG">
-                                                                <rect key="frame" x="20" y="20" width="132.33333333333334" height="41"/>
+                                                                <rect key="frame" x="20" y="20" width="132.33333333333334" height="19.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-kx-B9D">
-                                                                <rect key="frame" x="294" y="25" width="31" height="31"/>
+                                                                <rect key="frame" x="304" y="14.333333333333343" width="31" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="d1n-kx-B9D" secondAttribute="height" id="TDj-Ck-WB7"/>
                                                                 </constraints>
@@ -145,7 +144,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain" image="sign-navigation" title=""/>
                                                             </button>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi">
-                                                                <rect key="frame" x="20" y="130" width="300" height="216.66666666666663"/>
+                                                                <rect key="frame" x="20" y="109.99999999999999" width="300" height="236.66666666666663"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-q8-b8f">
@@ -159,9 +158,8 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="d1n-kx-B9D" secondAttribute="trailing" constant="15" id="3G1-6g-WL8"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d1n-kx-B9D" secondAttribute="trailing" constant="5" id="3G1-6g-WL8"/>
                                                             <constraint firstItem="qR7-9z-koG" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="5OD-66-caD"/>
-                                                            <constraint firstItem="d1n-kx-B9D" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="25" id="7T6-qc-luP"/>
                                                             <constraint firstItem="N6s-gf-qSi" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="AKg-fR-M8P"/>
                                                             <constraint firstItem="GjX-q8-b8f" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="DMX-Eb-YOS"/>
                                                             <constraint firstAttribute="trailing" secondItem="N6s-gf-qSi" secondAttribute="trailing" constant="20" id="QEU-Vc-LYn"/>
@@ -169,7 +167,7 @@
                                                             <constraint firstAttribute="height" constant="400" id="Tqh-Kb-KkS"/>
                                                             <constraint firstItem="d1n-kx-B9D" firstAttribute="centerY" secondItem="qR7-9z-koG" secondAttribute="centerY" id="ZzM-Nu-XbE"/>
                                                             <constraint firstItem="qR7-9z-koG" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="20" id="a6X-XI-5Dw"/>
-                                                            <constraint firstItem="N6s-gf-qSi" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="130" id="d9T-TL-KXN"/>
+                                                            <constraint firstItem="N6s-gf-qSi" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="110" id="d9T-TL-KXN"/>
                                                             <constraint firstItem="8wI-wB-lPe" firstAttribute="top" secondItem="qR7-9z-koG" secondAttribute="bottom" constant="15" id="iit-qV-RCc"/>
                                                             <constraint firstAttribute="bottom" secondItem="GjX-q8-b8f" secondAttribute="bottom" constant="15" id="lB2-2l-XXv"/>
                                                             <constraint firstItem="8wI-wB-lPe" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="qxs-3h-6ng"/>
@@ -181,7 +179,7 @@
                                                         <rect key="frame" x="0.0" y="530" width="340" height="250"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 약 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Di-8k1">
-                                                                <rect key="frame" x="20" y="20" width="77" height="43"/>
+                                                                <rect key="frame" x="20" y="20" width="77" height="19.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -191,14 +189,14 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="168-Nr-JJL">
-                                                                <rect key="frame" x="292" y="25" width="33" height="33"/>
+                                                                <rect key="frame" x="302" y="13.333333333333371" width="33" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="168-Nr-JJL" secondAttribute="height" id="HXl-o8-iyl"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="plus"/>
                                                                 <connections>
-                                                                    <action selector="tapAddSecondaryPillButton" destination="en2-nt-aBt" eventType="touchUpInside" id="zhB-G8-Wif"/>
+                                                                    <action selector="tapAddSecondaryPillButton" destination="en2-nt-aBt" eventType="touchUpInside" id="DwS-nD-glQ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -211,9 +209,8 @@
                                                             <constraint firstItem="RId-yl-pLj" firstAttribute="leading" secondItem="PMK-9x-uNM" secondAttribute="leading" constant="20" id="Ut8-je-E2y"/>
                                                             <constraint firstAttribute="trailing" secondItem="RId-yl-pLj" secondAttribute="trailing" constant="20" id="VbE-9a-zLp"/>
                                                             <constraint firstAttribute="bottom" secondItem="RId-yl-pLj" secondAttribute="bottom" constant="10" id="ZcY-BP-9PC"/>
-                                                            <constraint firstItem="168-Nr-JJL" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="25" id="oaW-Gw-JOU"/>
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="xs4-A4-ziI"/>
-                                                            <constraint firstAttribute="trailing" secondItem="168-Nr-JJL" secondAttribute="trailing" constant="15" id="yQ4-0r-9dq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="168-Nr-JJL" secondAttribute="trailing" constant="5" id="yQ4-0r-9dq"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-qL-qSH">
@@ -224,10 +221,8 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="LPc-bi-Ud2" secondAttribute="bottom" id="W6N-4U-zrf"/>
                                             <constraint firstItem="LPc-bi-Ud2" firstAttribute="top" secondItem="Bn5-yS-6pI" secondAttribute="top" id="eWX-al-ssp"/>
@@ -249,7 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="MND-81-mzl"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="Kfv-BC-60a" secondAttribute="bottom" constant="35" id="QfL-Xh-mFR"/>
+                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="Kfv-BC-60a" secondAttribute="bottom" constant="20" id="QfL-Xh-mFR"/>
                             <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="3Ih-1j-NSr" secondAttribute="trailing" id="TwP-bk-hag"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="bUx-j6-KmK"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="bottom" secondItem="MND-81-mzl" secondAttribute="bottom" id="jT6-eJ-cRB"/>
@@ -276,6 +271,7 @@
                         <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="eYI-ey-bY5"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
+                        <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="5wK-aH-n4H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeD-UO-cz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

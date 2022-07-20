@@ -20,6 +20,7 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var symptomButtonBackgroundView: UIView!
     
     // Primary Pill Field
+    @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
@@ -63,10 +64,14 @@ class MedicationViewController: UIViewController {
         let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
         secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+        
+        // TableView Style
+        primaryPillTableView.isScrollEnabled = false
+        secondaryPillTableView.isScrollEnabled = false
     }
     
     private func setStyle(){
-        self.view.backgroundColor = .systemGray6
+        self.view.backgroundColor = UIColor.AColor.background
         setDatePickerStyle()
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
