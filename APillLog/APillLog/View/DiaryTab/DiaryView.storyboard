@@ -236,7 +236,7 @@
         <!--실수 노트-->
         <scene sceneID="2fH-LQ-Ti6">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="zN5-q0-wR9" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryReadView" hidesBottomBarWhenPushed="YES" id="zN5-q0-wR9" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Twz-N9-IzR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +272,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RtF-wZ-EW4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ABackground"/>
                         <constraints>
                             <constraint firstItem="I3k-Sf-VKA" firstAttribute="top" secondItem="RtF-wZ-EW4" secondAttribute="top" constant="10" id="E8j-Y8-q1f"/>
                             <constraint firstItem="RtF-wZ-EW4" firstAttribute="trailing" secondItem="I3k-Sf-VKA" secondAttribute="trailing" constant="25" id="cL4-x1-4dx"/>
