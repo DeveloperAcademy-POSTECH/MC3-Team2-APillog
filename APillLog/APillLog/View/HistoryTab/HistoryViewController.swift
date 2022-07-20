@@ -11,14 +11,22 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let dummyData = fetchDummyData()
+    let coredataManager: CoreDataManager = CoreDataManager()
+    var historyData = [History]()
     
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        historyData = coredataManager.fetchHistory(selectedDate: Date())
         registerNib()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        historyData = coredataManager.fetchHistory(selectedDate: Date())
+        tableView.reloadData()
     }
 }
 
@@ -28,19 +36,21 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: TableView Funcs
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dummyData.count
+        historyData.count
     }
     
-    // TODO: CoreData 값으로 변경
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "HH:mm"
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
         
-        cell.createdTime.text = dummyData[indexPath.row].createdTime
-        cell.pillName.text = dummyData[indexPath.row].pillName?.joined(separator: "\n")
-        cell.sideEffect.text = dummyData[indexPath.row].conditionContext?[0]
-        cell.medicinalEffect.text = dummyData[indexPath.row].conditionContext?[1]
-        cell.detailContext.text = dummyData[indexPath.row].conditionContext?[2]
-        
+        cell.createdTime.text = dateformatter.string(from:historyData[indexPath.row].createTime ?? Date())
+        cell.pillName.text = fetchPillNameText(index: indexPath.row)
+        cell.sideEffect.text = historyData[indexPath.row].sideEffect?.joined(separator: ", ")
+        cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: ", ")
+        cell.detailContext.text = historyData[indexPath.row].detailContext
+
         if cell.pillName.text == nil { cell.stackViewPillName.isHidden = true }
         if cell.sideEffect.text == nil { cell.stackViewSideEffect.isHidden = true }
         if cell.medicinalEffect.text == nil { cell.stackViewMedicinalEffect.isHidden = true }
@@ -53,22 +63,25 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
     }
-}
-
-
-// MARK: Test를 위한 코드
-struct history {
-    var pillName: [String]?
-    var isMainPill: String?
-    var conditionContext: [String?]?
-    var createdTime: String
-}
-
-private func fetchDummyData() -> [history] {
-    [
-        history(pillName: nil, isMainPill: nil, conditionContext: ["두통", nil, nil], createdTime: "07:00"),
-        history(pillName: ["콘서타 18mg"], isMainPill: "main", conditionContext: nil, createdTime: "08:00"),
-        history(pillName: ["콘서타 18mg","인데놀 1정", "콘서타 18mg","인데놀 1정"], isMainPill: "main", conditionContext: nil, createdTime: "11:00"),
-        history(pillName: nil, isMainPill: nil, conditionContext: ["두근거림", "눈물촉촉", "아침에 일어났을 때 두통이 심했어요"], createdTime: "15:00")
-    ]
+    
+    private func fetchPillNameText(index: Int) -> String? {
+        if let pillName = historyData[index].pillName {
+            return pillName + historyData[index].dosage!
+        }
+        
+        if let pillName = historyData[index].names {
+            let zipped = zip(pillName, historyData[index].dosages!).map{ "\($0) \($1)"  }
+            return zipped.joined(separator: "\n")
+        }
+        
+        return nil
+    }
+    
+    // MARK: TestCode
+    @IBAction func clicked() {
+        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통"], medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillName: "콘서타", dosage: "18", isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: ["콘서타", "인데놀"], dosages: ["18mg", "1정"], sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통", "어지러움", "눈알 건조"], medicinalEffect: ["상쾌함", "기분 좋음", "눈물 촉촉"], detailContext: "아침에 일어났을 때 두통이 심해졌고 그리고 어쩌고 저쩌고 되었네요 그래서 너무 속상하구요 약 바꾸고 싶어요.")
+    }
 }

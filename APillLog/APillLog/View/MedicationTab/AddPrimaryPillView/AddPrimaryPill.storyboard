@@ -26,7 +26,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="취소"/>
                                         <connections>
-                                            <action selector="tabCancelButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GtR-ug-5jU"/>
+                                            <action selector="tapCancelButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qen-M5-gZP"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 방식 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpQ-1Y-DKx">
@@ -41,7 +41,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="저장"/>
                                         <connections>
-                                            <action selector="tabSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nbp-8g-xZD"/>
+                                            <action selector="tapSaveButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Je0-sX-c2r"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -62,6 +62,9 @@
                                                 <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xaR-mB-zu9"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -116,7 +119,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="primaryPillMorning:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Um-H7-ts4"/>
+                                                            <action selector="togglePrimaryPillMorning:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lYI-28-U6M"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-Gm-JRC" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
@@ -136,7 +139,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="primaryPillAfternoon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mlB-JU-IjV"/>
+                                                            <action selector="togglePrimaryPillAfternoon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZDp-X4-KtS"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dt-Ow-oRz" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
@@ -156,7 +159,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="primaryPillEvening:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MfO-KA-vxR"/>
+                                                            <action selector="togglePrimaryPillEvening:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kzg-Pc-9G9"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -174,7 +177,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="mLf-ep-50A"/>
+                        <viewLayoutGuide key="safeArea" id="lHY-w2-hk0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
@@ -187,9 +190,12 @@
                     </view>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="PrimaryPillDosage" destination="B7E-LO-4P8" id="BfU-Cx-1Fa"/>
+                        <outlet property="PrimaryPillName" destination="K92-cZ-HD5" id="LBs-Yg-VOs"/>
                         <outlet property="primaryPillAfternoonButton" destination="S4S-Gm-JRC" id="Y2L-w7-RYR"/>
                         <outlet property="primaryPillEveningButton" destination="2Dt-Ow-oRz" id="8wY-3e-k1B"/>
                         <outlet property="primaryPillMorningButton" destination="G0B-xU-NoB" id="PZR-vh-3kg"/>
+                        <outlet property="savePrimaryPillButton" destination="K6j-Ph-Ykm" id="VPX-NT-isU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
