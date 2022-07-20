@@ -15,12 +15,13 @@ class ManageDosingViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    
     // MARK: Property
     var coreDataManager: CoreDataManager = CoreDataManager()
     
     let cellIdentifier = "ManageDosingCell"
-    
     var primaryPillList: [PrimaryPill] = []
+    
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ManageDosingViewController: UIViewController {
         
         primaryPillList = coreDataManager.fetchPrimaryPill()
     }
+    
     
     // MARK: Function
     private func dosingCycleToString(dosingCycle: Int16) -> String {
@@ -54,11 +56,20 @@ class ManageDosingViewController: UIViewController {
         
         return str
     }
+    
+    // MARK: @IBAction
+    // delegate 등록을 위해 함수로 뷰 호출
+    @IBAction func tapAddButton(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "AddPrimaryPill", bundle:nil)
+        guard let nextViewController: AddPrimaryPillViewController = storyBoard.instantiateViewController(withIdentifier: "AddPrimaryPillView") as? AddPrimaryPillViewController else { return }
+        nextViewController.delegate = self
+        
+        self.present(nextViewController, animated:true, completion:nil)
+    }
 }
 
 extension ManageDosingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.dummies.count
         return self.primaryPillList.count
     }
     
@@ -102,6 +113,13 @@ extension ManageDosingViewController: UITableViewDelegate {
     }
 }
 
+// 약 추가 이후 뷰 업데이트를 위해 델리게이트 패턴 사용
+extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
+    func didAddPrimaryPill() {
+        primaryPillList = coreDataManager.fetchPrimaryPill()
+        tableView.reloadData()
+    }
+}
 
 // ManageDosingTableViewCell
 class ManageDosingTableViewCell: UITableViewCell {
@@ -111,10 +129,12 @@ class ManageDosingTableViewCell: UITableViewCell {
     @IBOutlet weak var nameAndDosageLabel: UILabel!
     @IBOutlet weak var isShowingSwitch: UISwitch!
     
+    
     // MARK: Property
     var primaryPill: PrimaryPill? = nil
     var coreDataManager = CoreDataManager()
 
+    
     // MARK: @IBAction
     @IBAction func toggleIsShowing(_ sender: UISwitch) {
         coreDataManager.togglePrimaryPillIsShowing(pill: primaryPill!)

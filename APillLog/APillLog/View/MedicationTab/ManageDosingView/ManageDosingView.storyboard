@@ -96,7 +96,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="추가"/>
                                         <connections>
-                                            <segue destination="hpe-77-QQ9" kind="presentation" id="6Tp-Ki-rXS"/>
+                                            <action selector="tapAddButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QEh-Yy-gk8"/>
                                         </connections>
                                     </button>
                                 </subviews>
