@@ -29,20 +29,20 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     
+    // MARK: - Properties
+    var cellIdentifier = "medicationPillCell"
+
     // MARK: - DummyData
     var dummyPrimaryPills = [
-        PrimaryPillDummy(name: "콘서타A", time: "8:00", status: true),
-        PrimaryPillDummy(name: "콘서타B", time: "", status: false),
-        PrimaryPillDummy(name: "콘서타C", time: "", status: false)
+        PillDummy(name: "콘서타A", time: "8:00", status: true),
+        PillDummy(name: "콘서타B", time: "", status: false),
+        PillDummy(name: "콘서타C", time: "", status: false)
     ]
     
     var dummySecondaryPills = [
-        SecondaryPillDummy(name: "타이레놀", time: "8:00", status: true),
-        SecondaryPillDummy(name: "인데졸", time: "", status: false)
+        PillDummy(name: "타이레놀", time: "8:00", status: true),
+        PillDummy(name: "인데졸", time: "", status: false)
     ]
-    
-    
-    var cellIdentifier = "medicationPillCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,7 @@ class MedicationViewController: UIViewController {
         secondaryPillTableView.delegate = self
         secondaryPillTableView.dataSource = self
         
+        // Cell register
         let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
         secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
@@ -114,17 +115,43 @@ extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
     }
 }
 
+// MARK: - Extensions
 extension MedicationViewController: UITableViewDataSource {
     
+    // 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableView == primaryPillTableView ?
         dummyPrimaryPills.count :
         dummySecondaryPills.count
     }
 
+    // 셀 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MedicationPillCell
         
+        // Image
+        cell.pillImageView.image = UIImage(named:
+                                            tableView == primaryPillTableView ?
+                                           "primaryPill" :
+                                            "secondaryPill")
+        // Name
+        cell.pillNameLabel.text = tableView == primaryPillTableView ?
+        dummyPrimaryPills[indexPath.row].pillName :
+            dummySecondaryPills[indexPath.row].pillName
+        cell.pillTimeLabel.font = UIFont.AFont.cardViewPillName
+
+        // Time
+        if tableView == primaryPillTableView {
+            cell.pillTimeLabel.text = dummyPrimaryPills[indexPath.row].status ?
+            dummyPrimaryPills[indexPath.row].time :
+            "아직 복약 전이에요"
+        } else {
+            cell.pillTimeLabel.text = dummySecondaryPills[indexPath.row].status ?
+            dummyPrimaryPills[indexPath.row].time :
+            "아직 복약 전이에요"
+        }
+        cell.pillTimeLabel.font = UIFont.AFont.caption
+
         return cell
 
     }
@@ -134,20 +161,8 @@ extension MedicationViewController: UITableViewDelegate {
 
 }
 
-
-struct PrimaryPillDummy {
-    var pillName: String
-    var time: String
-    var status: Bool
-    
-    init (name: String, time: String, status: Bool) {
-        self.pillName = name
-        self.time = time + "에 복약했어요."
-        self.status = status
-    }
-}
-
-struct SecondaryPillDummy {
+// MARK: - Dummy Data
+struct PillDummy {
     var pillName: String
     var time: String
     var status: Bool
