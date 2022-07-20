@@ -10,7 +10,6 @@ import UIKit
 class CalendarView: UIView {
     
     @IBOutlet weak var selectedDate: UILabel!
-    @IBOutlet weak var naxtDayButton: UIButton!
     
     let datePicker: UIDatePicker = {
         
@@ -30,23 +29,14 @@ class CalendarView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
         customInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
-    func commonInit() {
-        let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
-        view.backgroundColor = UIColor.AColor.background
-        self.addSubview(view)
-        naxtDayButton.isEnabled = false
-    }
-    
-    func customInit() {
+
+    private func customInit() {
         
         guard let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? UIView else { return }
             view.frame = self.bounds
@@ -72,7 +62,6 @@ class CalendarView: UIView {
     
     @objc private func labelClicked(_ tapRecognizer: UITapGestureRecognizer) {
         
-        print("Hello \(datePicker.date)")
         superview!.addSubview(datePicker)
         self.datePicker.isHidden = false
         setDatePickerConstraints()
@@ -86,13 +75,13 @@ class CalendarView: UIView {
     }
     
     // MARK: IBAction
-    @IBAction func tappedPrevButton() {
+    @IBAction func didTapPrevButton() {
         self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
         selectedDate.text = fetchSelectedDate(date: datePicker.date)
     }
     
-    @IBAction func tappedNextButton() {
+    @IBAction func didTapNextButton() {
         self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
         selectedDate.text = fetchSelectedDate(date: datePicker.date)
