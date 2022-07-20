@@ -9,10 +9,57 @@ import UIKit
 
 class MedicationViewController: UIViewController, AddSecondaryPillViewControllerDelegate {
 
+    // MARK: - IBOutlets
+    // DatePicker
+    @IBOutlet weak var lastDayButton: UIButton!
+    @IBOutlet weak var nextDayButton: UIButton!
+    @IBOutlet weak var dayLabel: UILabel!
+
+    // Symptom Button
+    @IBOutlet weak var symptomButton: UIButton!
+    @IBOutlet weak var symptomButtonBackgroundView: UIView!
+    
+    // Primary Pill
+    @IBOutlet weak var primaryPillField: UIView!
+    @IBOutlet weak var primaryPillViewLinkButton: UIButton!
+    
+    // Secondary Pill
+    @IBOutlet weak var secondaryPillField: UIView!
+    @IBOutlet weak var secondaryPillModalButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
     }
     
+    private func setStyle(){
+        self.view.backgroundColor = .systemGray6
+        setDatePickerStyle()
+        setSymptomButtonStyle()
+        setPrimaryPillViewStyle()
+        setSecondaryPillViewStyle()
+    }
+    
+    private func setDatePickerStyle() {
+        // image
+        lastDayButton.setImage(UIImage(named: "left-black"), for: .normal)
+        nextDayButton.setImage(UIImage(named: "right-gray"), for: .normal)
+        // color
+        lastDayButton.tintColor = .darkGray
+        nextDayButton.tintColor = .darkGray
+    }
+    
+    private func setSymptomButtonStyle() {
+        symptomButtonBackgroundView.layer.cornerRadius = 10
+    }
+    
+    private func setPrimaryPillViewStyle() {
+        primaryPillField.layer.cornerRadius = 10
+    }
+    
+    private func setSecondaryPillViewStyle() {
+        secondaryPillField.layer.cornerRadius = 10
+    }
     
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
