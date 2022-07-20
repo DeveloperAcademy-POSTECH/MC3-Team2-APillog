@@ -161,7 +161,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0b-6w-gBg">
                                 <rect key="frame" x="25" y="159" width="364" height="699"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" text="Lorem" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-wI-H0U">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" text="오늘은..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-wI-H0U">
                                         <rect key="frame" x="14" y="45" width="336" height="286"/>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <color key="textColor" systemColor="labelColor"/>

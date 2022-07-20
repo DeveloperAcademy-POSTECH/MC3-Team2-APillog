@@ -38,15 +38,17 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.dataSource = self
         mistakeTableView.sectionHeaderHeight = 50
         mistakeTableView.sectionHeaderTopPadding = 0
-        myCBT = coredataManager.fetchCBT()
-        
         mistakeTableView.register(MyCustomHeader.self,
                                   forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
     }
     override func viewWillAppear(_ animated: Bool) {
         myCBT = coredataManager.fetchCBT()
+        myCBT = myCBT.sorted(by: {
+            $0.selectDate!>$1.selectDate!
+        })
         mistakeTableView.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView,

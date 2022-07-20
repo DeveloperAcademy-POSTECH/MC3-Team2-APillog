@@ -20,48 +20,48 @@ class DiaryWriteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-               hideKeyboard()
-           }
+        hideKeyboard()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         self.textView.becomeFirstResponder()
     }
     
-//    MARK: - For the Sprint2  (In case of moving textview)
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//
-//            guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-//               // if keyboard size is not available for some reason, dont do anything
-//               return
-//            }
-//
-//          // move the root view up by the distance of keyboard height
-//          self.view.frame.origin.y = 0 - keyboardSize.height
-//        }
-//
-//        @objc func keyboardWillHide(notification: NSNotification) {
-//          // move back the root view origin to zero
-//          self.view.frame.origin.y = 0
-//        }
-
+    //    MARK: - For the Sprint2  (In case of moving textview)
+    //    @objc func keyboardWillShow(notification: NSNotification) {
+    //
+    //            guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+    //               // if keyboard size is not available for some reason, dont do anything
+    //               return
+    //            }
+    //
+    //          // move the root view up by the distance of keyboard height
+    //          self.view.frame.origin.y = 0 - keyboardSize.height
+    //        }
+    //
+    //        @objc func keyboardWillHide(notification: NSNotification) {
+    //          // move back the root view origin to zero
+    //          self.view.frame.origin.y = 0
+    //        }
+    
     func hideKeyboard() {
-
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
