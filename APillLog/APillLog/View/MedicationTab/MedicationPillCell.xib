@@ -71,9 +71,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellTitleLabel" destination="FaO-E6-99C" id="S1I-7K-qCT"/>
                 <outlet property="editPillTimeButton" destination="mlE-6L-u1i" id="S1r-pT-xEf"/>
                 <outlet property="pillImageView" destination="cfU-Vh-3kU" id="FNq-J0-HtZ"/>
-                <outlet property="pillNameLabel" destination="FaO-E6-99C" id="S1I-7K-qCT"/>
                 <outlet property="pillTimeLabel" destination="dOD-t4-NA0" id="LU1-iA-0Ee"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

@@ -27,6 +27,7 @@
 		9ACDEAF02886994F006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAEE2886994F006204AB /* History+CoreDataProperties.swift */; };
 		A831BEB62888815200E8CEFE /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831BEB42888815200E8CEFE /* MedicationPillCell.swift */; };
 		A831BEB72888815200E8CEFE /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A831BEB52888815200E8CEFE /* MedicationPillCell.xib */; };
+		A831BEB92888AACB00E8CEFE /* MedicationViewPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -69,6 +70,7 @@
 		9ACDEAEE2886994F006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A831BEB42888815200E8CEFE /* MedicationPillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
 		A831BEB52888815200E8CEFE /* MedicationPillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
+		A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewPillModel.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */,
 				A831BEB52888815200E8CEFE /* MedicationPillCell.xib */,
 				A831BEB42888815200E8CEFE /* MedicationPillCell.swift */,
+				A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
 				34982C5E2885415E003BBBD4 /* SecondaryPill */,
 			);
@@ -360,6 +363,7 @@
 				9ACDEAF02886994F006204AB /* History+CoreDataProperties.swift in Sources */,
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
+				A831BEB92888AACB00E8CEFE /* MedicationViewPillModel.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

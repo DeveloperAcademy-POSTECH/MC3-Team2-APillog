@@ -34,16 +34,8 @@ class MedicationViewController: UIViewController {
     var cellIdentifier = "medicationPillCell"
 
     // MARK: - DummyData
-    var dummyPrimaryPills = [
-        PillDummy(name: "콘서타A", time: "8:00", status: true),
-        PillDummy(name: "콘서타B", time: "", status: false),
-        PillDummy(name: "콘서타C", time: "", status: false)
-    ]
-    
-    var dummySecondaryPills = [
-        PillDummy(name: "타이레놀", time: "8:00", status: true),
-        PillDummy(name: "인데졸", time: "", status: false)
-    ]
+    var primaryPillsDummyData = fetchPrimaryPillsDummyData()
+    var secondaryPillsDummyData = fetchSecondaryPillsDummyData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,8 +76,8 @@ class MedicationViewController: UIViewController {
         nextDayButton.setImage(UIImage(named: "right-gray"), for: .normal)
         
         // color
-        lastDayButton.tintColor = .darkGray
-        nextDayButton.tintColor = .darkGray
+        lastDayButton.tintColor = UIColor.AColor.black
+        nextDayButton.tintColor = UIColor.AColor.disable
     }
     
     private func setSymptomButtonStyle() {
@@ -126,8 +118,8 @@ extension MedicationViewController: UITableViewDataSource {
     // 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableView == primaryPillTableView ?
-        dummyPrimaryPills.count :
-        dummySecondaryPills.count
+        primaryPillsDummyData.count :
+        secondaryPillsDummyData.count
     }
 
     // 셀 데이터
@@ -135,30 +127,27 @@ extension MedicationViewController: UITableViewDataSource {
        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MedicationPillCell
         
         // Image
-        cell.pillImageView.image = UIImage(named:
-                                            tableView == primaryPillTableView ?
-                                           "primaryPill" :
-                                            "secondaryPill")
-        // Name
-        cell.pillNameLabel.text = tableView == primaryPillTableView ?
-        dummyPrimaryPills[indexPath.row].pillName :
-            dummySecondaryPills[indexPath.row].pillName
+        cell.pillImageView.image = UIImage(named: tableView == primaryPillTableView ?
+                                           "primaryPill" : "secondaryPill")
+        // Title
+        cell.cellTitleLabel.text = tableView == primaryPillTableView ?
+        primaryPillsDummyData[indexPath.row].name + " \(primaryPillsDummyData[indexPath.row].dosage)" :
+            secondaryPillsDummyData[indexPath.row].name
         cell.pillTimeLabel.font = UIFont.AFont.cardViewPillName
 
         // Time
         if tableView == primaryPillTableView {
-            cell.pillTimeLabel.text = dummyPrimaryPills[indexPath.row].status ?
-            dummyPrimaryPills[indexPath.row].time :
+            cell.pillTimeLabel.text = primaryPillsDummyData[indexPath.row].takeTime != "" ?
+            primaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." :
             "아직 복약 전이에요"
         } else {
-            cell.pillTimeLabel.text = dummySecondaryPills[indexPath.row].status ?
-            dummyPrimaryPills[indexPath.row].time :
+            cell.pillTimeLabel.text = secondaryPillsDummyData[indexPath.row].takeTime != "" ?
+            secondaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." :
             "아직 복약 전이에요"
         }
         cell.pillTimeLabel.font = UIFont.AFont.caption
 
         return cell
-
     }
 }
 
@@ -166,15 +155,67 @@ extension MedicationViewController: UITableViewDelegate {
 
 }
 
-// MARK: - Dummy Data
-struct PillDummy {
-    var pillName: String
-    var time: String
-    var status: Bool
-    
-    init (name: String, time: String, status: Bool) {
-        self.pillName = name
-        self.time = time + "에 복약했어요."
-        self.status = status
-    }
+// MARK: - Test
+/*
+ cycle 예시
+ 아침 == 100 => 4
+ 점심 == 010 => 2
+ 저녁 == 001 => 1
+ 아침, 점심 = 110 => 6
+ 점심, 저녁 = 011 => 3
+ 아침, 저녁 = 101 => 5
+ 아침, 점심, 저녁 => 111 => 7
+*/
+
+private func fetchPrimaryPillsDummyData() -> [PrimaryPillModel] {
+    [
+        PrimaryPillModel(
+            name: "콘서타A",
+            dosage: "18mg",
+            cycle: 6,
+            isTaking: true,
+            takeTime: "08:00",
+//            id: UUID,
+            selectDate: "2022-07-21"
+        ),
+        PrimaryPillModel(
+            name: "콘서타B",
+            dosage: "18mg",
+            cycle: 4,
+            isTaking: true,
+            takeTime: "",
+//            id: UUID,
+            selectDate: "2022-07-21"
+        ),
+        PrimaryPillModel(
+            name: "콘서타C",
+            dosage: "18mg",
+            cycle: 4,
+            isTaking: true,
+            takeTime: "",
+//            id: UUID,
+            selectDate: "2022-07-21"
+        )
+    ]
+}
+
+private func fetchSecondaryPillsDummyData() -> [SecondaryPillModel] {
+    [
+        SecondaryPillModel(
+            name: "타이레놀",
+            dosage: "1정",
+            isTaking: true,
+            takeTime: "08:00",
+//            id: UUID,
+            selectDate: "2022-07-21"
+        ),
+        SecondaryPillModel(
+            name: "인데놀정",
+            dosage: "10mg",
+            isTaking: true,
+            takeTime: "",
+//            id: UUID,
+            selectDate: "2022-07-21"
+        )
+    ]
 }
