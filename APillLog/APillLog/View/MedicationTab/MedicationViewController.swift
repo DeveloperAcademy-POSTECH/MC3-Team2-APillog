@@ -20,10 +20,12 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     @IBOutlet weak var symptomButtonBackgroundView: UIView!
     
     // Primary Pill
-    @IBOutlet weak var primaryPillView: UIView!
+    @IBOutlet weak var primaryPillField: UIView!
+    @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     
     // Secondary Pill
-    @IBOutlet weak var secondaryPillView: UIView!
+    @IBOutlet weak var secondaryPillField: UIView!
+    @IBOutlet weak var secondaryPillModalButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,9 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     private func setStyle(){
         self.view.backgroundColor = .systemGray6
         setDatePickerStyle()
-//        setSymptomButtonStyle()
-//        setPrimaryPillViewStyle()
-//        setSecondaryPillViewStyle()
+        setSymptomButtonStyle()
+        setPrimaryPillViewStyle()
+        setSecondaryPillViewStyle()
     }
     
     private func setDatePickerStyle() {
@@ -52,11 +54,11 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     }
     
     private func setPrimaryPillViewStyle() {
-        primaryPillView.layer.cornerRadius = 10
+        primaryPillField.layer.cornerRadius = 10
     }
     
     private func setSecondaryPillViewStyle() {
-        secondaryPillView.layer.cornerRadius = 10
+        secondaryPillField.layer.cornerRadius = 10
     }
     
     @IBAction func tapAddSecondaryPillButton() {
