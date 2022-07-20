@@ -76,4 +76,12 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
         // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
         
     }
+    
+    
+    @IBAction func tapAddConditionButton(_ sender: UIButton) {
+        guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
+        
+        self.navigationController?.pushViewController(checkConditionViewController, animated: true)
+        
+    }
 }
