@@ -8,19 +8,48 @@
 import UIKit
 
 class CheckConditionViewController: UIViewController, UITextViewDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.detailContext.delegate = self
-        setStyle()
+    
+    // MARK: 변수
+    var pillSideEffect: String = ""
+    var pillMedicinalEffect: String = ""
+    var pillDetailContext: String = ""
+    
+    var pillSideEffectIsOn: Bool = false
+    var pillMedicinalEffectIsOn: Bool = false
+    var pillDetailContextIsOn: Bool = false
+    var saveButtonState: Bool = false {
+        didSet {
+            if saveButtonState {
+                self.conditionSaveButton.isEnabled = true
+                conditionSaveButtonStateStyle(self.conditionSaveButton)
+            } else {
+                self.conditionSaveButton.isEnabled = false
+                conditionSaveButtonStateStyle(self.conditionSaveButton)
+            }
+        }
     }
+    
+    var pillSideEffectDummyData: [String : Bool]!
+    var pillMedicinalEffectDummyData: [String: Bool]!
     
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!
-    
     @IBOutlet weak var conditionBackgroundView: UIView!
-    
     @IBOutlet weak var conditionViewNavigationBar: UINavigationBar!
+    @IBOutlet weak var conditionSaveButton: UIButton!
+    
+    // MARK: View LifeCycle Function
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.detailContext.delegate = self
+        
+        setStyle()
+        
+        pillSideEffectDummyData = PillData.pillData[0].pillDisadvantage
+        pillMedicinalEffectDummyData = PillData.pillData[0].pillAdvantage
+        
+        self.conditionSaveButtonStateStyle(self.conditionSaveButton)
+    }
     
     
     // MARK: Style Function
@@ -50,11 +79,55 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     // MARK: @IBAction
     @IBAction func toggleSideEffectButtonState(_ sender: UIButton) {
         sender.isSelected.toggle()
+        if sender.isSelected {
+            self.pillSideEffectDummyData["\(sender.titleLabel?.text ?? "")"] = true
+        } else {
+            self.pillSideEffectDummyData["\(sender.titleLabel?.text ?? "")"] = false
+        }
+        
+        for (_, value) in pillSideEffectDummyData {
+            if value == true {
+                self.pillSideEffectIsOn = true
+                break
+            } else {
+                self.pillSideEffectIsOn = false
+            }
+        }
+        
+        // saveButtonState 값 체크
+        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
+            self.saveButtonState = true
+        } else {
+            self.saveButtonState = false
+        }
+        
         self.changeButtonState(sender)
     }
     
     @IBAction func toggleMedicinalEffectButtonState(_ sender: UIButton) {
         sender.isSelected.toggle()
+        if sender.isSelected {
+            self.pillMedicinalEffectDummyData["\(sender.titleLabel?.text ?? "")"] = true
+        } else {
+            self.pillMedicinalEffectDummyData["\(sender.titleLabel?.text ?? "")"] = false
+        }
+        
+        for (_, value) in pillMedicinalEffectDummyData {
+            if value == true {
+                self.pillMedicinalEffectIsOn = true
+                break
+            } else {
+                self.pillMedicinalEffectIsOn = false
+            }
+        }
+        
+        // saveButtonState 값 체크
+        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
+            self.saveButtonState = true
+        } else {
+            self.saveButtonState = false
+        }
+        
         self.changeButtonState(sender)
     }
     
@@ -62,14 +135,13 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    // MARK: Init & Toggle ButtonState
-    func initConditionButton(_ button: UIButton){
-        button.setTitleColor(UIColor.AColor.gray, for: .normal)
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.AColor.disable.cgColor
-        button.layer.cornerRadius = button.frame.height / 2
+    @IBAction func tapConditionSaveButton(_ sender: Any) {
+        // TODO: 버튼 눌렀을 때 값이 코어데이터로 저장되도록
+        self.navigationController?.popViewController(animated: true)
     }
     
+    // MARK: Init & Toggle ButtonState
+    // ChipUI 의 State 변경 시 Style 변경 함수
     func changeButtonState(_ button: UIButton) {
         if button.isSelected {
             button.backgroundColor = UIColor.AColor.accent
@@ -83,6 +155,24 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
             button.layer.borderColor = UIColor.AColor.disable.cgColor
         }
     }
+    
+    // conditionSaveButton 의 State 에 따른 Style 변경 함수
+    func conditionSaveButtonStateStyle(_ button: UIButton) {
+        if button.isEnabled {
+            button.backgroundColor = UIColor.AColor.accent
+            button.setTitleColor(UIColor.AColor.white, for: .normal)
+            button.layer.cornerRadius = 10
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.AColor.white.cgColor
+        } else {
+            button.backgroundColor = UIColor.AColor.disable
+            button.setTitleColor(UIColor.AColor.white, for: .normal)
+            button.layer.cornerRadius = 10
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.AColor.disable.cgColor
+        }
+    }
+    
 }
 
 // MARK: TextView 선택 시 올라가는 conditionBackgroundView
