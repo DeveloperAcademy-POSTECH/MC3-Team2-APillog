@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MedicationViewController: UIViewController, AddSecondaryPillViewControllerDelegate {
+class MedicationViewController: UIViewController {
 
     // MARK: - IBOutlets
     // DatePicker
@@ -20,16 +20,28 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     @IBOutlet weak var symptomButtonBackgroundView: UIView!
     
     // Primary Pill
+    @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     
     // Secondary Pill
+    @IBOutlet weak var secondaryPillTableView: UITableView!
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        setMedicationTableViews()
         setStyle()
+    }
+    
+    private func setMedicationTableViews() {
+        // Primary Pill TableView
+//        primaryPillTableView.delegate = self
+//        primaryPillTableView.dataSource = self
+        // Secondary Pill TableView
+//        secondaryPillTableView.delegate = self
+//        secondaryPillTableView.dataSource = self
     }
     
     private func setStyle(){
@@ -60,7 +72,17 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
     private func setSecondaryPillViewStyle() {
         secondaryPillField.layer.cornerRadius = 10
     }
+
+}
+
+extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
+
+    // MARK: AddSecondaryPillViewControllerDelegate
+    func didFinishModal(selectedPill: String) {
+        // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
     
+    }
+
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
@@ -69,11 +91,18 @@ class MedicationViewController: UIViewController, AddSecondaryPillViewController
         
         self.present(nextViewController, animated: true)
     }
-    
-    
-    // MARK: AddSecondaryPillViewControllerDelegate
-    func didFinishModal(selectedPill: String) {
-        // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
-        
-    }
 }
+
+//extension MedicationViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+////        return data.counr
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        let cell = tableView.
+//    }
+//}
+//
+//extension MedicationViewController: UITableViewDelegate {
+//
+//}

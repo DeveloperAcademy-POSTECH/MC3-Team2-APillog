@@ -54,13 +54,6 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v9O-Gs-4Cx" userLabel="ButtonView Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-C6-653">
-                                                                <rect key="frame" x="0.0" y="0.0" width="340" height="0.0"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="tinted" title="버튼데스">
-                                                                    <color key="baseForegroundColor" red="0.59999999999999998" green="0.0" blue="0.095829447240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </buttonConfiguration>
-                                                            </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-1n-zaM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
                                                                 <subviews>
@@ -94,12 +87,23 @@
                                                                             <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
                                                                         </constraints>
                                                                     </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-C6-653">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="버튼데스">
+                                                                            <color key="baseForegroundColor" red="0.59999999999999998" green="0.0" blue="0.095829447240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </buttonConfiguration>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="tZT-C6-653" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" id="023-kJ-nvM"/>
                                                                     <constraint firstItem="EAi-Vv-PBW" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="1Ub-lW-eSK"/>
                                                                     <constraint firstAttribute="trailing" secondItem="EAi-Vv-PBW" secondAttribute="trailing" constant="15" id="86m-bP-hoj"/>
                                                                     <constraint firstItem="jqJ-i1-zzl" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="9It-kZ-ipT"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="tZT-C6-653" secondAttribute="trailing" id="Psw-bN-ngD"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="tZT-C6-653" secondAttribute="bottom" id="TqI-Og-KgR"/>
+                                                                    <constraint firstItem="tZT-C6-653" firstAttribute="top" secondItem="8Zb-1n-zaM" secondAttribute="top" id="YgW-cL-fh1"/>
                                                                     <constraint firstItem="iIq-v8-tji" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="90" id="aJq-Zc-1fM"/>
                                                                     <constraint firstAttribute="trailing" secondItem="iIq-v8-tji" secondAttribute="trailing" constant="55" id="fTm-vi-FuJ"/>
                                                                     <constraint firstItem="jqJ-i1-zzl" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="20" id="hXl-mT-0Wp"/>
@@ -283,9 +287,11 @@
                         <outlet property="lastDayButton" destination="DS1-dA-4z0" id="Bib-Dv-MfQ"/>
                         <outlet property="nextDayButton" destination="Dgz-Qt-Ij0" id="r2V-87-1Jl"/>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
+                        <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="NpZ-h0-Q1T"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
-                        <outlet property="secondaryPillField" destination="168-Nr-JJL" id="Cv5-p5-xrN"/>
+                        <outlet property="secondaryPillField" destination="PMK-9x-uNM" id="M9h-QG-x6F"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>
+                        <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="eYI-ey-bY5"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
                     </connections>
