@@ -10,17 +10,24 @@ import UIKit
 class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
     @IBOutlet weak var mistakeTableView: UITableView!
     
+    
+    
     var coredataManager: CoreDataManager = CoreDataManager()
-    let cellIdentifier = "NoteCell"
+    let cellIdentifier = "customCell"
     var myCBT : [CBT] = [CBT()]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCBT.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-               cell.textLabel?.text = myCBT[indexPath.row].cbtContext ?? "text"
-               return cell
+        let cell: CustomCellTableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell
+        cell.cellTitle.text = myCBT[indexPath.row].cbtContext ?? "text"
+        cell.cellTitle.font = UIFont.AFont.tableViewTitle
+        cell.cellTitle.textColor = UIColor.AColor.black
+        cell.cellDate.text = myCBT[indexPath.row].selectDate
+        cell.cellDate.font = UIFont.AFont.tableViewBody
+        cell.cellDate.textColor = UIColor.AColor.gray
+        return cell
     }
     
     
@@ -29,10 +36,12 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         super.viewDidLoad()
         mistakeTableView.delegate = self
         mistakeTableView.dataSource = self
+        mistakeTableView.sectionHeaderHeight = 50
+        mistakeTableView.sectionHeaderTopPadding = 0
         myCBT = coredataManager.fetchCBT()
-
+        
         mistakeTableView.register(MyCustomHeader.self,
-               forHeaderFooterViewReuseIdentifier: "sectionHeader")
+                                  forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,30 +49,29 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.reloadData()
     }
     
-     func tableView(_ tableView: UITableView,
-            viewForHeaderInSection section: Int) -> UIView? {
-       let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-                   "sectionHeader") as! MyCustomHeader
-       view.title.text = "실수노트"
-         view.title.font = UIFont.AFont.tableViewTitle
-
-       return view
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+                                                                "sectionHeader") as! MyCustomHeader
+        
+        view.title.text = "작성했던 실수 노트들"
+        view.title.font = UIFont.AFont.tableViewTitle
+        
+        return view
     }
-
+    
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     
 }
 
-class customCell :UITableViewCell {
-    
-}
+

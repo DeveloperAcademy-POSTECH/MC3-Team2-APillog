@@ -32,7 +32,7 @@ class DiaryWriteViewController: UIViewController {
         self.textView.becomeFirstResponder()
     }
     
-//    MARK: - For the Sprint2  (in case of moving textview)
+//    MARK: - For the Sprint2  (In case of moving textview)
 //    @objc func keyboardWillShow(notification: NSNotification) {
 //
 //            guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
