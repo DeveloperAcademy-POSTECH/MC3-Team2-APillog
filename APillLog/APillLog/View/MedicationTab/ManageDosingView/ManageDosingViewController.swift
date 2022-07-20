@@ -54,13 +54,6 @@ class ManageDosingViewController: UIViewController {
         
         return str
     }
-    
-    // MARK: @IBAction
-    @IBAction func addPillData(_ sender: Any) {
-        coreDataManager.addPrimaryPill(name: "콘서타", dosage: "18mg", dosingCycle: 3)
-        primaryPillList = coreDataManager.fetchPrimaryPill()
-        tableView.reloadData()
-    }
 }
 
 extension ManageDosingViewController: UITableViewDataSource {
