@@ -51,18 +51,20 @@ class CalendarView: UIView {
             view.frame = self.bounds
             self.addSubview(view)
         
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM월 dd일 E요일"
-        selectedDate.text = formatter.string(from: date)
-        
+        selectedDate.text = fetchSelectedDate(date: Date())
         let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
         selectedDate.addGestureRecognizer(gestureRecognize)
         selectedDate.isUserInteractionEnabled = true
     }
     
     // MARK: DatePicker func
-    func setDatePickerConstraints() {
+    private func fetchSelectedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM월 dd일 E요일"
+        return formatter.string(from: date)
+    }
+    
+    private func setDatePickerConstraints() {
         self.datePicker.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
         self.datePicker.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
@@ -78,32 +80,23 @@ class CalendarView: UIView {
     }
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateFormat =  "MM월 dd일 E요일"
-        selectedDate.text = formatter.string(from: sender.date)
+        selectedDate.text = fetchSelectedDate(date: sender.date)
         self.datePicker.isHidden = true
     }
-//
-//    @objc private func selectedDateChaged(sender: UILabel) {
-//
-//    }
     
     // MARK: IBAction
     @IBAction func tappedPrevButton() {
         self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
-        let formatter = DateFormatter()
-        formatter.dateFormat =  "MM월 dd일 E요일"
-        selectedDate.text = formatter.string(from: datePicker.date)
+        selectedDate.text = fetchSelectedDate(date: datePicker.date)
     }
     
     @IBAction func tappedNextButton() {
         self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
-        let formatter = DateFormatter()
-        formatter.dateFormat =  "MM월 dd일 E요일"
-        selectedDate.text = formatter.string(from: datePicker.date)
+        selectedDate.text = fetchSelectedDate(date: datePicker.date)
     }
+    
 }
 
 
