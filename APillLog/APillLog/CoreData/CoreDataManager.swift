@@ -35,6 +35,25 @@ class CoreDataManager{
             print(error.localizedDescription)
         }
     }
+    
+    func togglePrimaryPillIsShowing(pill: PrimaryPill){
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+
+        do {
+           let pillArray = try context.fetch(request)
+            for data in pillArray{
+                if data.id == pill.id
+                {
+                    data.isShowing.toggle()
+                }
+            }
+       
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+        
+    }
 // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)

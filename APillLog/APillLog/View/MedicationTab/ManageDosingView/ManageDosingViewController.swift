@@ -16,24 +16,31 @@ class ManageDosingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Property
-    let cellIdentifier = "ManageDosingCell"
-    let dummies: [dummy] = [
-        dummy(name: "콘서타", dosage: "18mg", dosingCycle: 3, isShowing: true, createTime: Date()),
-        dummy(name: "메디피진", dosage: "10mg", dosingCycle: 1, isShowing: true, createTime: Date()),
-        dummy(name: "인데졸정", dosage: "", dosingCycle: 6, isShowing: true, createTime: Date()),
-        dummy(name: "콘서타", dosage: "18mg", dosingCycle: 4, isShowing: true, createTime: Date())
+    var coreDataManager: CoreDataManager = CoreDataManager()
     
-    ]
+    let cellIdentifier = "ManageDosingCell"
+    
+    var primaryPillList: [PrimaryPill] = []
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         viewTitle.font = UIFont.AFont.navigationTitle
+        
+        primaryPillList = coreDataManager.fetchPrimaryPill()
+    }
+    
+    // MARK: @IBAction
+    @IBAction func addPillData(_ sender: Any) {
+        coreDataManager.addPrimaryPill(name: "콘서타", dosage: "18mg", dosingCycle: 3)
+        primaryPillList = coreDataManager.fetchPrimaryPill()
+        tableView.reloadData()
     }
 }
 
 extension ManageDosingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dummies.count
+//        return self.dummies.count
+        return self.primaryPillList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,8 +54,11 @@ extension ManageDosingViewController: UITableViewDataSource {
         cell.dosingCycleLabel.textColor = UIColor.AColor.gray
         cell.nameAndDosageLabel.textColor = UIColor.AColor.black
         
-        cell.nameAndDosageLabel.text = dummies[indexPath.row].nameAndDosage()
-        cell.dosingCycleLabel.text = dummies[indexPath.row].dosingCycleToString()
+        
+        cell.primaryPill = primaryPillList[indexPath.row]
+        cell.nameAndDosageLabel.text = (primaryPillList[indexPath.row].name ?? "NONAME") + " " + (primaryPillList[indexPath.row].dosage ?? "NODOSAGE")
+        cell.dosingCycleLabel.text = dosingCycleToString(dosingCycle: primaryPillList[indexPath.row].dosingCycle)
+        cell.isShowingSwitch.isOn = primaryPillList[indexPath.row].isShowing
         
         return cell
     }
@@ -60,45 +70,47 @@ extension ManageDosingViewController: UITableViewDelegate {
     }
 }
 
-// ManageDosingTableViewCell
-class ManageDosingTableViewCell: UITableViewCell {
-    // MARK: @IBOutlet
-    @IBOutlet weak var dosingCycleLabel: UILabel!
-    @IBOutlet weak var nameAndDosageLabel: UILabel!
-    @IBOutlet weak var isShowingSwitch: UISwitch!
-}
-
-struct dummy {
-    let name: String
-    let dosage: String
-    let dosingCycle: Int
-    let isShowing: Bool
-    let createTime: Date
-    
-    func nameAndDosage() -> String {
-        return name + " " + dosage
-    }
-    
-    func dosingCycleToString() -> String {
+extension ManageDosingViewController {
+    private func dosingCycleToString(dosingCycle: Int16) -> String {
         var str = ""
-        var cycle = dosingCycle
         
-        if dosingCycle % 2 == 1 {
+        if dosingCycle & 1 == 1 {
             str.append("아침")
         }
         
-        cycle = cycle / 2
-        if dosingCycle % 2 == 1 {
-            if !(str.isEmpty) { str.append(", ") }
+        if dosingCycle & 2 == 2 {
+            if str.isEmpty == false {
+                str.append(", ")
+            }
+            
             str.append("점심")
         }
         
-        cycle = cycle / 2
-        if dosingCycle % 2 == 1 {
-            if !(str.isEmpty) { str.append(", ")}
+        if dosingCycle & 4 == 4 {
+            if str.isEmpty == false {
+                str.append(", ")
+            }
             str.append("저녁")
         }
         
         return str
+    }
+}
+
+// ManageDosingTableViewCell
+class ManageDosingTableViewCell: UITableViewCell {
+    
+    // MARK: @IBOutlet
+    @IBOutlet weak var dosingCycleLabel: UILabel!
+    @IBOutlet weak var nameAndDosageLabel: UILabel!
+    @IBOutlet weak var isShowingSwitch: UISwitch!
+    
+    // MARK: Property
+    var primaryPill: PrimaryPill? = nil
+    var coreDataManager = CoreDataManager()
+
+    // MARK: @IBAction
+    @IBAction func toggleIsShowing(_ sender: UISwitch) {
+        coreDataManager.togglePrimaryPillIsShowing(pill: primaryPill!)
     }
 }
