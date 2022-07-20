@@ -79,7 +79,7 @@
         <!--실수노트 적기-->
         <scene sceneID="M8M-O1-h6x">
             <objects>
-                <viewController storyboardIdentifier="DiaryWriteViewController" modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="Y9L-J0-gzX" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryWriteViewController" modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="Y9L-J0-gzX" customClass="DiaryWriteViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xFO-KE-IyU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,17 +93,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0b-6w-gBg">
-                                <rect key="frame" x="25" y="159" width="364" height="665"/>
+                                <rect key="frame" x="25" y="159" width="364" height="699"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" text="Lorem" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-wI-H0U">
-                                        <rect key="frame" x="14" y="45" width="336" height="523"/>
+                                        <rect key="frame" x="14" y="45" width="336" height="286"/>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QB-yd-PrN">
-                                        <rect key="frame" x="39" y="596" width="286" height="43"/>
+                                        <rect key="frame" x="39" y="346" width="286" height="43"/>
                                         <color key="backgroundColor" name="AAccent"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -116,17 +116,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-sk-ToI">
+                                        <rect key="frame" x="131" y="3" width="113" height="31"/>
+                                        <locale key="locale" localeIdentifier="ko_KR"/>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" name="AWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5QB-yd-PrN" secondAttribute="bottom" constant="26" id="0Dx-Jn-tpr"/>
+                                    <constraint firstAttribute="bottom" secondItem="5QB-yd-PrN" secondAttribute="bottom" constant="310" id="0Dx-Jn-tpr"/>
                                     <constraint firstAttribute="trailing" secondItem="PeY-wI-H0U" secondAttribute="trailing" constant="14" id="525-IQ-pgq"/>
                                     <constraint firstItem="PeY-wI-H0U" firstAttribute="leading" secondItem="d0b-6w-gBg" secondAttribute="leading" constant="14" id="BYd-WI-E0G"/>
-                                    <constraint firstAttribute="bottom" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="97" id="I38-M4-t8K"/>
+                                    <constraint firstItem="8r3-sk-ToI" firstAttribute="centerX" secondItem="d0b-6w-gBg" secondAttribute="centerX" id="Frz-qm-XVM"/>
+                                    <constraint firstAttribute="bottom" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="368" id="I38-M4-t8K"/>
                                     <constraint firstItem="5QB-yd-PrN" firstAttribute="leading" secondItem="d0b-6w-gBg" secondAttribute="leading" constant="39" id="L30-mS-5h0"/>
                                     <constraint firstAttribute="trailing" secondItem="5QB-yd-PrN" secondAttribute="trailing" constant="39" id="VVj-Db-uC1"/>
+                                    <constraint firstItem="8r3-sk-ToI" firstAttribute="top" secondItem="d0b-6w-gBg" secondAttribute="top" constant="3" id="eTg-RB-NmX"/>
                                     <constraint firstItem="PeY-wI-H0U" firstAttribute="top" secondItem="d0b-6w-gBg" secondAttribute="top" constant="45" id="fif-d0-bPx"/>
-                                    <constraint firstItem="5QB-yd-PrN" firstAttribute="top" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="28" id="wCa-bH-78S"/>
+                                    <constraint firstItem="5QB-yd-PrN" firstAttribute="top" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="15" id="wCa-bH-78S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -137,7 +143,7 @@
                             <constraint firstItem="zZ2-sP-S4d" firstAttribute="leading" secondItem="rC7-F7-XtQ" secondAttribute="leading" constant="25" id="HRV-8v-5Pk"/>
                             <constraint firstItem="d0b-6w-gBg" firstAttribute="leading" secondItem="rC7-F7-XtQ" secondAttribute="leading" constant="25" id="WyR-y2-nq9"/>
                             <constraint firstItem="zZ2-sP-S4d" firstAttribute="top" secondItem="rC7-F7-XtQ" secondAttribute="top" constant="23" id="tjw-x9-5zn"/>
-                            <constraint firstItem="rC7-F7-XtQ" firstAttribute="bottom" secondItem="d0b-6w-gBg" secondAttribute="bottom" constant="38" id="xEH-As-xke"/>
+                            <constraint firstItem="rC7-F7-XtQ" firstAttribute="bottom" secondItem="d0b-6w-gBg" secondAttribute="bottom" constant="4" id="xEH-As-xke"/>
                             <constraint firstItem="d0b-6w-gBg" firstAttribute="top" secondItem="zZ2-sP-S4d" secondAttribute="bottom" constant="7" id="yQW-FA-V8c"/>
                         </constraints>
                     </view>
@@ -149,7 +155,7 @@
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
-                        <outlet property="textView" destination="PeY-wI-H0U" id="T5s-No-Vcy"/>
+                        <outlet property="textView" destination="PeY-wI-H0U" id="rTv-y6-UYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHf-6G-jK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
