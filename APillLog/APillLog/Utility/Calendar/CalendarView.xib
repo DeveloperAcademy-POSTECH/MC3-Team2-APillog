@@ -22,14 +22,38 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41g-cQ-38l">
+                    <rect key="frame" x="25" y="28" width="37" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                    <connections>
+                        <action selector="tappedPrevButton" destination="-1" eventType="touchUpInside" id="mya-B2-ekW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spN-ch-wd0">
+                    <rect key="frame" x="352" y="28" width="37" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                    <connections>
+                        <action selector="tappedNextButton" destination="-1" eventType="touchUpInside" id="iTg-Bg-zhy"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="spN-ch-wd0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0xG-Ci-YeW"/>
                 <constraint firstItem="rUE-H1-fg8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="77l-D4-O1v"/>
                 <constraint firstItem="rUE-H1-fg8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="78z-Y5-FTJ"/>
+                <constraint firstItem="41g-cQ-38l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bk0-w2-Peo"/>
+                <constraint firstItem="41g-cQ-38l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="vA2-uV-Aiq"/>
+                <constraint firstAttribute="trailing" secondItem="spN-ch-wd0" secondAttribute="trailing" constant="25" id="xnc-Ru-Dkm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="133.33333333333334" y="-151.67410714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+    </resources>
 </document>

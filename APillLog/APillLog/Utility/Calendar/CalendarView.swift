@@ -80,5 +80,22 @@ class CalendarView: UIView {
         selectedDate.text = formatter.string(from: sender.date)
         self.datePicker.isHidden = true
     }
+    
+    // MARK: IBAction
+    @IBAction func tappedPrevButton() {
+        self.datePicker.date = datePicker.date
+        self.datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
+        let formatter = DateFormatter()
+        formatter.dateFormat =  "MM월 dd일 E요일"
+        selectedDate.text = formatter.string(from: datePicker.date)
+    }
+    
+    @IBAction func tappedNextButton() {
+        self.datePicker.date = datePicker.date
+        self.datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
+        let formatter = DateFormatter()
+        formatter.dateFormat =  "MM월 dd일 E요일"
+        selectedDate.text = formatter.string(from: datePicker.date)
+    }
 }
 
