@@ -10,6 +10,7 @@ import UIKit
 class CalendarView: UIView {
     
     @IBOutlet weak var selectedDate: UILabel!
+    @IBOutlet weak var naxtDayButton: UIButton!
     
     let datePicker: UIDatePicker = {
         
@@ -22,6 +23,7 @@ class CalendarView: UIView {
         datePicker.layer.cornerRadius = 10
         datePicker.layer.masksToBounds = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.maximumDate = Date()
         
         return datePicker
     }()
@@ -40,6 +42,7 @@ class CalendarView: UIView {
         let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
+        naxtDayButton.isEnabled = false
     }
     
     func customInit() {
@@ -80,6 +83,10 @@ class CalendarView: UIView {
         selectedDate.text = formatter.string(from: sender.date)
         self.datePicker.isHidden = true
     }
+//
+//    @objc private func selectedDateChaged(sender: UILabel) {
+//
+//    }
     
     // MARK: IBAction
     @IBAction func tappedPrevButton() {
@@ -98,4 +105,5 @@ class CalendarView: UIView {
         selectedDate.text = formatter.string(from: datePicker.date)
     }
 }
+
 
