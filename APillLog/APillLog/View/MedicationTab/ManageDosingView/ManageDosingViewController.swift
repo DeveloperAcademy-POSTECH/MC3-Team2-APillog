@@ -29,6 +29,32 @@ class ManageDosingViewController: UIViewController {
         primaryPillList = coreDataManager.fetchPrimaryPill()
     }
     
+    // MARK: Function
+    private func dosingCycleToString(dosingCycle: Int16) -> String {
+        var str = ""
+        
+        if dosingCycle & 1 == 1 {
+            str.append("아침")
+        }
+        
+        if dosingCycle & 2 == 2 {
+            if str.isEmpty == false {
+                str.append(", ")
+            }
+            
+            str.append("점심")
+        }
+        
+        if dosingCycle & 4 == 4 {
+            if str.isEmpty == false {
+                str.append(", ")
+            }
+            str.append("저녁")
+        }
+        
+        return str
+    }
+    
     // MARK: @IBAction
     @IBAction func addPillData(_ sender: Any) {
         coreDataManager.addPrimaryPill(name: "콘서타", dosage: "18mg", dosingCycle: 3)
@@ -62,6 +88,19 @@ extension ManageDosingViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
+            
+            primaryPillList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        } else {
+            return
+        }
+    }
 }
 
 extension ManageDosingViewController: UITableViewDelegate {
@@ -70,32 +109,6 @@ extension ManageDosingViewController: UITableViewDelegate {
     }
 }
 
-extension ManageDosingViewController {
-    private func dosingCycleToString(dosingCycle: Int16) -> String {
-        var str = ""
-        
-        if dosingCycle & 1 == 1 {
-            str.append("아침")
-        }
-        
-        if dosingCycle & 2 == 2 {
-            if str.isEmpty == false {
-                str.append(", ")
-            }
-            
-            str.append("점심")
-        }
-        
-        if dosingCycle & 4 == 4 {
-            if str.isEmpty == false {
-                str.append(", ")
-            }
-            str.append("저녁")
-        }
-        
-        return str
-    }
-}
 
 // ManageDosingTableViewCell
 class ManageDosingTableViewCell: UITableViewCell {
