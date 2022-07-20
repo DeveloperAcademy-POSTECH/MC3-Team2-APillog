@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MedicationViewController: UIViewController {
 
@@ -32,6 +33,13 @@ class MedicationViewController: UIViewController {
     
     // MARK: - Properties
     var cellIdentifier = "medicationPillCell"
+    var coredataManager: CoreDataManager = CoreDataManager()
+    // primary pills
+//    var primaryPillMorning = coredataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: <#T##[ShowPrimaryPill]?#>)
+//    var primaryPillLunch = coredataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: <#T##[ShowPrimaryPill]?#>)
+//    var primaryPillDinner = coreDataManager.fetchShowPrimaryPillDinner(<#T##self: CoreDataManager##CoreDataManager#>)
+    // secondary pills
+//    var secondaryPill = coredataManager.fetchShowSecondaryPill(selectedDate: <#T##Date#>)
 
     // MARK: - DummyData
     var primaryPillsDummyData = fetchPrimaryPillsDummyData()
@@ -91,6 +99,21 @@ class MedicationViewController: UIViewController {
     private func setSecondaryPillViewStyle() {
         secondaryPillField.layer.cornerRadius = 10
     }
+    
+    @IBAction func timeSegmentedControlSelected(_ sender: Any) {
+        switch(timeSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            primaryPillTableView.reloadData()
+            break
+        case 1:
+            primaryPillTableView.reloadData()
+        case 2:
+            primaryPillTableView.reloadData()
+        default:
+            break
+        }
+    }
+    
 
 }
 
@@ -117,9 +140,39 @@ extension MedicationViewController: UITableViewDataSource {
     
     // 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableView == primaryPillTableView ?
-        primaryPillsDummyData.count :
-        secondaryPillsDummyData.count
+        
+        if tableView == primaryPillTableView {
+            switch timeSegmentedControl.selectedSegmentIndex {
+                case 0:
+                    var count = 0
+                    for pill in primaryPillsDummyData {
+                        if pill.cycle == 4 || pill.cycle == 5 || pill.cycle == 6 || pill.cycle == 7 {
+                            count += 1
+                        }
+                    }
+                    return count
+                case 1:
+                    var count = 0
+                    for pill in primaryPillsDummyData {
+                        if pill.cycle == 2 || pill.cycle == 3 || pill.cycle == 6 || pill.cycle == 7 {
+                            count += 1
+                        }
+                    }
+                    return count
+                case 2:
+                    var count = 0
+                    for pill in primaryPillsDummyData {
+                        if pill.cycle == 1 || pill.cycle == 3 || pill.cycle == 5 || pill.cycle == 7 {
+                            count += 1
+                        }
+                    }
+                    return count
+                default: break
+            }
+            return 0
+        } else {
+            return secondaryPillsDummyData.count
+        }
     }
 
     // 셀 데이터
@@ -165,6 +218,11 @@ extension MedicationViewController: UITableViewDelegate {
  점심, 저녁 = 011 => 3
  아침, 저녁 = 101 => 5
  아침, 점심, 저녁 => 111 => 7
+ 
+ 아침 : 4, 5, 6, 7
+ 점심 : 2, 3, 6, 7
+ 저녁 : 1, 3, 5, 7
+ 
 */
 
 private func fetchPrimaryPillsDummyData() -> [PrimaryPillModel] {

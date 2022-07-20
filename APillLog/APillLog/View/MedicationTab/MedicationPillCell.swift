@@ -12,10 +12,18 @@ class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var pillTimeLabel: UILabel!
     @IBOutlet weak var editPillTimeButton: UIButton!
+    @IBOutlet weak var takingPillButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setButtonStyle()
         // Initialization code
+    }
+    
+    func setButtonStyle(){
+        takingPillButton.tintColor = UIColor.AColor.accent
+        takingPillButton.titleLabel?.font = UIFont.AFont.chipText
+//        takingPillButton.layer.cornerRadius = 0.5 *  takingPillButton.bounds.size.hei
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

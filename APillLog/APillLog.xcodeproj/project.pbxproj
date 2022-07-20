@@ -28,6 +28,7 @@
 		A831BEB62888815200E8CEFE /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831BEB42888815200E8CEFE /* MedicationPillCell.swift */; };
 		A831BEB72888815200E8CEFE /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A831BEB52888815200E8CEFE /* MedicationPillCell.xib */; };
 		A831BEB92888AACB00E8CEFE /* MedicationViewPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */; };
+		A831BEBD2888BAA600E8CEFE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831BEBC2888BAA600E8CEFE /* CustomTableView.swift */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -71,6 +72,7 @@
 		A831BEB42888815200E8CEFE /* MedicationPillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
 		A831BEB52888815200E8CEFE /* MedicationPillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
 		A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewPillModel.swift; sourceTree = "<group>"; };
+		A831BEBC2888BAA600E8CEFE /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
 				34982C5E2885415E003BBBD4 /* SecondaryPill */,
+				A831BEBC2888BAA600E8CEFE /* CustomTableView.swift */,
 			);
 			path = MedicationTab;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9ACDEAEF2886994F006204AB /* History+CoreDataClass.swift in Sources */,
+				A831BEBD2888BAA600E8CEFE /* CustomTableView.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,

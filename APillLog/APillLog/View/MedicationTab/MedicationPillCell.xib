@@ -17,31 +17,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Vh-3kU">
-                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="cfU-Vh-3kU" secondAttribute="height" id="JJJ-Wc-Cv6"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="8YI-YD-Rca">
-                        <rect key="frame" x="80" y="12" width="56.5" height="36"/>
+                        <rect key="frame" x="80" y="14" width="59.5" height="39"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-E6-99C">
-                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y26-5q-7sA">
-                                <rect key="frame" x="0.0" y="10.5" width="56.5" height="25.5"/>
+                                <rect key="frame" x="0.0" y="10.5" width="59.5" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOD-t4-NA0">
-                                        <rect key="frame" x="0.0" y="0.0" width="31" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="28.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlE-6L-u1i">
-                                        <rect key="frame" x="31" y="0.0" width="25.5" height="25.5"/>
+                                        <rect key="frame" x="31" y="0.0" width="28.5" height="28.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mlE-6L-u1i" secondAttribute="height" id="8f6-W7-2hY"/>
                                         </constraints>
@@ -52,19 +52,31 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2j-7H-qGr">
-                        <rect key="frame" x="253" y="14.5" width="67" height="31"/>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2j-7H-qGr">
+                        <rect key="frame" x="257.5" y="20" width="62.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="hUt-7L-PKP"/>
+                            <constraint firstAttribute="width" secondItem="L2j-7H-qGr" secondAttribute="height" multiplier="2.5:1" id="wjA-6i-PsI"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="복용"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="L2j-7H-qGr" secondAttribute="bottom" constant="20" id="1NS-dL-MLQ"/>
                     <constraint firstAttribute="trailing" secondItem="L2j-7H-qGr" secondAttribute="trailing" id="DAb-RR-smM"/>
                     <constraint firstItem="cfU-Vh-3kU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hdh-aw-Xch"/>
                     <constraint firstAttribute="bottom" secondItem="8YI-YD-Rca" secondAttribute="bottom" constant="12" id="QkB-en-w6T"/>
                     <constraint firstItem="cfU-Vh-3kU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R9Z-N6-AtN"/>
-                    <constraint firstItem="8YI-YD-Rca" firstAttribute="leading" secondItem="cfU-Vh-3kU" secondAttribute="trailing" constant="20" id="WDe-mo-etF"/>
-                    <constraint firstItem="8YI-YD-Rca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Wgu-gr-jbl"/>
+                    <constraint firstItem="8YI-YD-Rca" firstAttribute="leading" secondItem="cfU-Vh-3kU" secondAttribute="trailing" constant="15" id="WDe-mo-etF"/>
+                    <constraint firstItem="8YI-YD-Rca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="Wgu-gr-jbl"/>
+                    <constraint firstItem="L2j-7H-qGr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Yfh-Qq-LkY"/>
                     <constraint firstItem="L2j-7H-qGr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pdd-U6-062"/>
                     <constraint firstAttribute="bottom" secondItem="cfU-Vh-3kU" secondAttribute="bottom" id="uAX-xj-aNc"/>
                 </constraints>
@@ -75,6 +87,7 @@
                 <outlet property="editPillTimeButton" destination="mlE-6L-u1i" id="S1r-pT-xEf"/>
                 <outlet property="pillImageView" destination="cfU-Vh-3kU" id="FNq-J0-HtZ"/>
                 <outlet property="pillTimeLabel" destination="dOD-t4-NA0" id="LU1-iA-0Ee"/>
+                <outlet property="takingPillButton" destination="L2j-7H-qGr" id="m2g-aM-aIk"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </tableViewCell>
