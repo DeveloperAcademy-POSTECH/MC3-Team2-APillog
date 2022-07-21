@@ -388,7 +388,7 @@ class CoreDataManager{
         
     }
     // UUID값을 받아서 디테일뷰에 보여주는 함수
-    func fetchOneCBT(cbtUUID : UUID) -> CBT{
+    func fetchOneCBT(cbtUUID: UUID) -> CBT{
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
            let cbtArray = try context.fetch(request)
@@ -403,6 +403,25 @@ class CoreDataManager{
         }
         
         return CBT()
+    }
+    
+    func updateOneCBT(cbtUUID: UUID, cbtUpdateContext: String) {
+        let request : NSFetchRequest<CBT> = CBT.fetchRequest()
+        do {
+           let cbtArray = try context.fetch(request)
+            for data in cbtArray{
+                if data.cbtId == cbtUUID{
+                    data.cbtContext = cbtUpdateContext
+                    saveToContext()
+                    break
+                }
+            }
+         
+        } catch{
+            print("-----CBT error-------")
+        }
+        
+      
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {

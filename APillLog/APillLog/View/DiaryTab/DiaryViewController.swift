@@ -21,6 +21,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCellTableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell
+        cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
         cell.cellTitle.text = myCBT[indexPath.row].cbtContext ?? "text"
         cell.cellTitle.font = UIFont.AFont.tableViewTitle
         cell.cellTitle.textColor = UIColor.AColor.black
