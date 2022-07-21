@@ -103,6 +103,9 @@
                                                                     <segment title="점심"/>
                                                                     <segment title="저녁"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="selectTimeSegmentedControl:" destination="en2-nt-aBt" eventType="valueChanged" id="Ve9-SU-XUm"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 복용할 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR7-9z-koG">
                                                                 <rect key="frame" x="20" y="20" width="132.33333333333334" height="41"/>
@@ -127,6 +130,9 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="agQ-qx-kS1"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="en2-nt-aBt" id="z9l-DV-jQJ"/>
+                                                                </connections>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-q8-b8f">
                                                                 <rect key="frame" x="20" y="206.66666666666669" width="300" height="28.333333333333343"/>
@@ -234,11 +240,14 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
+                        <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
                         <outlet property="secondaryPillField" destination="168-Nr-JJL" id="Cv5-p5-xrN"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>
+                        <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="AJA-kj-32D"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
+                        <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="7Hs-Tb-Hfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeD-UO-cz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
