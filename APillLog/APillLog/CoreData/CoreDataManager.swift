@@ -229,11 +229,63 @@ class CoreDataManager{
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
     
+    func deleteShowPrimaryPill(primaryPill: PrimaryPill){
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do{
+            let pillArray = try context.fetch(request)
+            for pill in pillArray{
+                if(pill.name == primaryPill.name && pill.dosage == primaryPill.dosage && pill.cycle == primaryPill.dosingCycle){
+                    context.delete(pill)
+                    break;
+                }
+            }
+            
+        }
+        catch{
+            print("--- error ----")
+        }
+    }
+    // ShowPrimaryPill과 PrimaryPill의 개수 비교
+    func CountShowPrimaryPillAndPrimaryPill(SelectedData: String) -> Bool{
+        var primaryPillCount: Int = 0
+        var showPrimaryPillCount: Int = 0
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray
+            {
+                if(pill.isShowing){
+                    primaryPillCount += 1
+                }
+            }
+            
+        }
+        catch{
+            print("count error")
+        }
+        
+        let requestShowPrimaryPill : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do { let pillArray = try context.fetch(requestShowPrimaryPill)
+            for pill in pillArray
+            {
+                if(pill.selectDate == SelectedData){
+                    showPrimaryPillCount += 1
+                }
+            }
+            
+        }
+        catch{}
+        if showPrimaryPillCount == primaryPillCount {return true}
+        else {return false}
+    }
     
     //primaryPill에서 ShowPrimaryPill로 추가하는 함수
     func sendPrimarypillToShowPrimaryPill(){
+        
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         let selectedDate: String = changeSelectedDateToString(Date())
+        if(CountShowPrimaryPillAndPrimaryPill(SelectedData: selectedDate)){}
+        else{
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
@@ -270,6 +322,7 @@ class CoreDataManager{
             
         } catch{
             print("--- send ShowPrimary error ----")
+        }
         }
         
     }
