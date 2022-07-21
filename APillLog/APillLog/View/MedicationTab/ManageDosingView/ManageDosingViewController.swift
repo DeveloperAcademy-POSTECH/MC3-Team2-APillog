@@ -77,7 +77,7 @@ extension ManageDosingViewController: UITableViewDataSource {
         guard let cell: ManageDosingTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ManageDosingTableViewCell else {
             return UITableViewCell()
         }
-        
+                
         cell.dosingCycleLabel.font = UIFont.AFont.caption
         cell.nameAndDosageLabel.font = UIFont.AFont.tableViewBody
         
@@ -121,6 +121,7 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     }
 }
 
+
 // ManageDosingTableViewCell
 class ManageDosingTableViewCell: UITableViewCell {
     
@@ -133,7 +134,6 @@ class ManageDosingTableViewCell: UITableViewCell {
     // MARK: Property
     var primaryPill: PrimaryPill? = nil
     var coreDataManager = CoreDataManager()
-
     
     // MARK: @IBAction
     @IBAction func toggleIsShowing(_ sender: UISwitch) {
