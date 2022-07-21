@@ -260,51 +260,36 @@ class CoreDataManager{
     }
     
  
-    // ShowPrimaryPill과 PrimaryPill의 개수 비교
-    func CountShowPrimaryPillAndPrimaryPill(SelectedData: String) -> Bool{
-        var primaryPillCount: Int = 0
-        var showPrimaryPillCount: Int = 0
-        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+    func checkPrimaryPillIsSameShowPrimaryPill(pill:PrimaryPill) -> Bool{
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        let selectedDate: String = changeSelectedDateToString(Date())
         do {
             let pillArray = try context.fetch(request)
-            for pill in pillArray
-            {
-                if(pill.isShowing){
-                    primaryPillCount += 1
-                }
+            for item in pillArray{
+                if (item.selectDate == selectedDate && item.name == pill.name
+                    && item.dosage == pill.dosage && item.cycle == pill.dosingCycle)
+                {return true}
             }
-            
         }
         catch{
-            print("count error")
+            print("check error")
         }
-        
-        let requestShowPrimaryPill : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
-        do { let pillArray = try context.fetch(requestShowPrimaryPill)
-            for pill in pillArray
-            {
-                if(pill.selectDate == SelectedData){
-                    showPrimaryPillCount += 1
-                }
-            }
-            
-        }
-        catch{}
-        if showPrimaryPillCount == primaryPillCount {return true}
-        else {return false}
+        return false
     }
+
+  
+    //
+    
     
     //primaryPill에서 ShowPrimaryPill로 추가하는 함수
     func sendPrimarypillToShowPrimaryPill(){
         
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         let selectedDate: String = changeSelectedDateToString(Date())
-        if(CountShowPrimaryPillAndPrimaryPill(SelectedData: selectedDate)){}
-        else{
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-                if pill.isShowing {
+                if pill.isShowing && checkPrimaryPillIsSameShowPrimaryPill(pill: pill){
                     switch pill.dosingCycle{
                     case Int16(1):
                         do { self.addShowPrimaryPill(name: pill.name ?? "" , dosage: pill.dosage ?? "", cycle: Int16(1), selectDate: selectedDate) }
@@ -340,7 +325,7 @@ class CoreDataManager{
         }
         }
         
-    }
+    
     // MARK: - Core Data READ
     
     //메인약 추가 페이지에 사용할 primaryPill read함수
