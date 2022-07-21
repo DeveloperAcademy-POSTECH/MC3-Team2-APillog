@@ -42,12 +42,14 @@ class CoreDataManager{
         do {
             let pillArray = try context.fetch(request)
             for data in pillArray {
+                // 토글 변경
                 if data.id == pill.id
                 {
                     data.isShowing.toggle()
-                    if(!data.isShowing){
-                        deleteShowPrimaryPill(pill: data)
-                    }
+                }
+                //토글 값이 false면 ShowPrimaryPill 삭제
+                if(!data.isShowing && data.id == pill.id){
+                    deleteShowPrimaryPill(pill: data)
                 }
             }
         } catch{
