@@ -59,7 +59,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
-        self.delegate.didFinishModal(selectedPill: filteredData[indexPath.row])
+//        self.delegate.didFinishModal(selectedPill: filteredData[indexPath.row])
     }
     
     // MARK: UISearchBarDelegate
