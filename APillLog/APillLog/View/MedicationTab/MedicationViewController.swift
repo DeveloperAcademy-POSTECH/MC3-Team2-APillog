@@ -22,7 +22,7 @@ class MedicationViewController: UIViewController {
     var secondaryPillList: [ShowSecondaryPill] = []
     
     let dateFormatter: DateFormatter = {
-       let dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm"
         return dateFormatter
     }()
@@ -147,9 +147,9 @@ class MedicationViewController: UIViewController {
 extension MedicationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == primaryPillTableView {
-            return self.primaryPillListDataSource.count
+            return self.primaryPillListDataSource.count == 0 ? 1 : self.primaryPillListDataSource.count
         } else {
-            return self.secondaryPillList.count
+            return self.secondaryPillList.count  == 0 ? 1 : self.secondaryPillList.count
         }
     }
     
@@ -159,49 +159,70 @@ extension MedicationViewController: UITableViewDataSource {
         cell.delegate = self
         
         if tableView == primaryPillTableView {
-            // Image
-            cell.pillImageView.image = UIImage(named: "primaryPill")
-            // Title
-            cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
-            // Time
-            cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
-            // Taking Button
-            cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
-            cell.changeTakingPillButtonState(cell.takingPillButton)
-            // Data for delegate
-            cell.rowNumber = indexPath.row
-            cell.isPrimary = true
-            // Style
-            cell.cellTitleLabel.font = UIFont.AFont.chipText
-            cell.pillTimeLabel.font = UIFont.AFont.caption
+            
+            if primaryPillListDataSource.count == 0 {
+                
+                guard let emptyCell: EmptyPrimaryPillCell = tableView.dequeueReusableCell(withIdentifier: "EmptyPrimaryPillCell") as? EmptyPrimaryPillCell else { return UITableViewCell() }
+                emptyCell.captionLabel.text = "먹어야할 약이 없어요"
+                emptyCell.captionLabel.textColor = UIColor.AColor.gray
+                emptyCell.captionLabel.font = UIFont.AFont.explainText
+                        
+                return emptyCell
+                
+            } else {
+                // Image
+                cell.pillImageView.image = UIImage(named: "primaryPill")
+                // Title
+                cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
+                // Time
+                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+                // Taking Button
+                cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
+                cell.changeTakingPillButtonState(cell.takingPillButton)
+                // Data for delegate
+                cell.rowNumber = indexPath.row
+                cell.isPrimary = true
+                // Style
+                cell.cellTitleLabel.font = UIFont.AFont.chipText
+                cell.pillTimeLabel.font = UIFont.AFont.caption
+            }
             
         } else {
-            // Image
-            cell.pillImageView.image = UIImage(named: "secondaryPill")
-            // Title
-            cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
-            // Time
-            cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
-            // Taking Button
-            cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
-            cell.changeTakingPillButtonState(cell.takingPillButton)
-            // Data for delegate
-            cell.rowNumber = indexPath.row
-            cell.isPrimary = false
-            // Style
-            cell.cellTitleLabel.font = UIFont.AFont.chipText
-            cell.pillTimeLabel.font = UIFont.AFont.caption
+            
+            if secondaryPillList.count == 0 {
+
+                guard let emptyCell: EmptySecondaryPillCell = tableView.dequeueReusableCell(withIdentifier: "EmptySecondaryPillCell") as? EmptySecondaryPillCell else { return UITableViewCell() }
+                emptyCell.captionLabel.text = "추가로 복용한 약이 있다면 추가해주세요"
+                emptyCell.captionLabel.textColor = UIColor.AColor.gray
+                emptyCell.captionLabel.font = UIFont.AFont.explainText
+
+                return emptyCell
+                
+            } else {
+                // Image
+                cell.pillImageView.image = UIImage(named: "secondaryPill")
+                // Title
+                cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
+                // Time
+                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+                // Taking Button
+                cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
+                cell.changeTakingPillButtonState(cell.takingPillButton)
+                // Data for delegate
+                cell.rowNumber = indexPath.row
+                cell.isPrimary = false
+                // Style
+                cell.cellTitleLabel.font = UIFont.AFont.chipText
+                cell.pillTimeLabel.font = UIFont.AFont.caption
+            }
         }
-        
         return cell
     }
-    
-    
 }
 
 extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
     func didFinishModal() {
-    // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
+        // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
         reloadSecondaryPillTableView()
     }
 }
@@ -216,4 +237,13 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
     }
+}
+
+// 비어있는 테이블에 대해서
+class EmptyPrimaryPillCell: UITableViewCell {
+    @IBOutlet weak var captionLabel: UILabel!
+}
+
+class EmptySecondaryPillCell: UITableViewCell {
+    @IBOutlet weak var captionLabel: UILabel!
 }
