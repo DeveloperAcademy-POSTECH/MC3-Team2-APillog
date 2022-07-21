@@ -52,6 +52,28 @@ class CoreDataManager{
         }
         saveToContext()
     }
+    func deleteShowPrimaryPill(pill: PrimaryPill){
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        //현재의 날짜를 선택
+        let todayDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for item in pillArray {
+                if (item.selectDate == todayDate && item.name == pill.name &&
+                    item.dosage == pill.dosage && item.cycle == pill.dosingCycle)
+                {
+                    
+                    self.context.delete(item)
+                    break
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+    }
     
     func deletePrimaryPill(pill: PrimaryPill) {
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
@@ -62,6 +84,7 @@ class CoreDataManager{
             for index in pillArray.indices {
                 if pillArray[index].id == pill.id
                 {
+                    deleteShowPrimaryPill(pill: pill)
                     self.context.delete(pill)
                     break
                 }
@@ -236,22 +259,7 @@ class CoreDataManager{
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
     
-    func deleteShowPrimaryPill(primaryPill: PrimaryPill){
-        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
-        do{
-            let pillArray = try context.fetch(request)
-            for pill in pillArray{
-                if(pill.name == primaryPill.name && pill.dosage == primaryPill.dosage && pill.cycle == primaryPill.dosingCycle){
-                    context.delete(pill)
-                    break;
-                }
-            }
-            
-        }
-        catch{
-            print("--- error ----")
-        }
-    }
+ 
     // ShowPrimaryPill과 PrimaryPill의 개수 비교
     func CountShowPrimaryPillAndPrimaryPill(SelectedData: String) -> Bool{
         var primaryPillCount: Int = 0

@@ -99,6 +99,7 @@ extension ManageDosingViewController: UITableViewDataSource {
             coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
             
             primaryPillList.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else {
