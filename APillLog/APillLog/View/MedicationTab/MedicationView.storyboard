@@ -43,7 +43,7 @@
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-1j-NSr">
-                                <rect key="frame" x="0.0" y="129" width="390" height="632"/>
+                                <rect key="frame" x="0.0" y="213" width="390" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn5-yS-6pI">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="805"/>
@@ -139,14 +139,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-kx-B9D">
-                                                                <rect key="frame" x="304" y="14.333333333333343" width="31" height="31"/>
+                                                                <rect key="frame" x="304" y="14.333333333333314" width="31" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="d1n-kx-B9D" secondAttribute="height" id="TDj-Ck-WB7"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="sign-navigation" title=""/>
                                                                 <connections>
-                                                                    <segue destination="eii-aa-qKd" kind="presentation" id="KnN-6b-7er"/>
+                                                                    <segue destination="99O-g9-za1" kind="show" id="ebL-xb-j7y"/>
                                                                 </connections>
                                                             </button>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi" customClass="CustomTableView" customModule="APillLog" customModuleProvider="target">
@@ -329,8 +329,8 @@
         <!--AddSecondaryPillView-->
         <scene sceneID="HSO-5K-UtG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zk3-CJ-YIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="AddSecondaryPillView" id="hIM-Tv-zZw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zk3-CJ-YIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762" y="266"/>
         </scene>

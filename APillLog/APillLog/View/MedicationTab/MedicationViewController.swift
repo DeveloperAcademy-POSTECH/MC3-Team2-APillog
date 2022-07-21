@@ -77,21 +77,21 @@ class MedicationViewController: UIViewController {
     
     private func setStyle(){
         self.view.backgroundColor = UIColor.AColor.background
-        setDatePickerStyle()
+//        setDatePickerStyle()
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
         setSecondaryPillViewStyle()
     }
     
-    private func setDatePickerStyle() {
-        // image
-        lastDayButton.setImage(UIImage(named: "left-black"), for: .normal)
-        nextDayButton.setImage(UIImage(named: "right-gray"), for: .normal)
-        
-        // color
-        lastDayButton.tintColor = UIColor.AColor.black
-        nextDayButton.tintColor = UIColor.AColor.disable
-    }
+//    private func setDatePickerStyle() {
+//        // image
+//        lastDayButton.setImage(UIImage(named: "left-black"), for: .normal)
+//        nextDayButton.setImage(UIImage(named: "right-gray"), for: .normal)
+//
+//        // color
+//        lastDayButton.tintColor = UIColor.AColor.black
+//        nextDayButton.tintColor = UIColor.AColor.disable
+//    }
     
     private func setSymptomButtonStyle() {
         symptomButtonBackgroundView.layer.cornerRadius = 10
