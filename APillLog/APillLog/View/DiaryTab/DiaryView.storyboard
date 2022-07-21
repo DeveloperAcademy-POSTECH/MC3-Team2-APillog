@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="345.53571428571428"/>
         </scene>
-        <!--실수 노트-->
+        <!--DiaryReadViewcontroller-->
         <scene sceneID="2fH-LQ-Ti6">
             <objects>
-                <viewController storyboardIdentifier="DiaryReadView" hidesBottomBarWhenPushed="YES" id="zN5-q0-wR9" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryReadView" title="DiaryReadViewcontroller" hidesBottomBarWhenPushed="YES" id="zN5-q0-wR9" customClass="DiaryReadViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Twz-N9-IzR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,30 +244,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3k-Sf-VKA">
                                 <rect key="frame" x="25" y="54" width="364" height="799"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLS-en-MMO">
-                                        <rect key="frame" x="136" y="18" width="108" height="20"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H2B-8J-1oY">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, s" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H2B-8J-1oY">
                                         <rect key="frame" x="37" y="56" width="290" height="693"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLS-en-MMO">
+                                        <rect key="frame" x="144.5" y="9" width="75" height="20"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <color key="backgroundColor" name="AWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="zLS-en-MMO" secondAttribute="trailing" constant="120" id="6mE-Hs-TNc"/>
                                     <constraint firstItem="H2B-8J-1oY" firstAttribute="leading" secondItem="I3k-Sf-VKA" secondAttribute="leading" constant="37" id="9Kv-cW-9OX"/>
-                                    <constraint firstItem="zLS-en-MMO" firstAttribute="top" secondItem="I3k-Sf-VKA" secondAttribute="top" constant="18" id="KIn-dA-TDn"/>
                                     <constraint firstAttribute="trailing" secondItem="H2B-8J-1oY" secondAttribute="trailing" constant="37" id="OBI-Vh-gqJ"/>
+                                    <constraint firstItem="H2B-8J-1oY" firstAttribute="top" secondItem="zLS-en-MMO" secondAttribute="bottom" constant="27" id="OqQ-jV-XWq"/>
                                     <constraint firstAttribute="bottom" secondItem="H2B-8J-1oY" secondAttribute="bottom" constant="50" id="S7E-8h-aw2"/>
-                                    <constraint firstItem="H2B-8J-1oY" firstAttribute="top" secondItem="zLS-en-MMO" secondAttribute="bottom" constant="18" id="g40-48-67b"/>
-                                    <constraint firstItem="zLS-en-MMO" firstAttribute="leading" secondItem="I3k-Sf-VKA" secondAttribute="leading" constant="136" id="kfE-6N-5vW"/>
+                                    <constraint firstItem="zLS-en-MMO" firstAttribute="top" secondItem="I3k-Sf-VKA" secondAttribute="top" constant="9" id="r5l-RA-9cW"/>
+                                    <constraint firstItem="zLS-en-MMO" firstAttribute="centerX" secondItem="I3k-Sf-VKA" secondAttribute="centerX" id="y6W-pK-0gS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -280,11 +278,16 @@
                             <constraint firstItem="RtF-wZ-EW4" firstAttribute="bottom" secondItem="I3k-Sf-VKA" secondAttribute="bottom" constant="9" id="tsc-36-cx3"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="실수 노트" id="Lg9-jG-EXQ"/>
+                    <connections>
+                        <outlet property="DiaryReadViewBody" destination="H2B-8J-1oY" id="Bxd-0D-S3f"/>
+                        <outlet property="DiaryReadViewDate" destination="zLS-en-MMO" id="HKW-yS-TTu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1K-qD-lLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="1036"/>
+            <point key="canvasLocation" x="1376.8115942028987" y="1035.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XjA-lf-gES">
@@ -321,9 +324,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

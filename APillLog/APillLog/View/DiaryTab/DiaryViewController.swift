@@ -15,6 +15,8 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     var coredataManager: CoreDataManager = CoreDataManager()
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = [CBT()]
+    var selectedBody = ""
+    var selectedDate = ""
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCBT.count
     }
@@ -62,6 +64,20 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         return view
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBody = myCBT[indexPath.row].cbtContext!
+        selectedDate = myCBT[indexPath.row].selectDate!
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
+        vc.body = myCBT[indexPath.row].cbtContext!
+        vc.date = myCBT[indexPath.row].selectDate!
+        vc.id = myCBT[indexPath.row].cbtId!
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
     
     
     /*
