@@ -17,6 +17,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchKeyword: UILabel!
+    @IBOutlet weak var addUnknownPillButton: UIButton!
     
     // MARK: Properties
     let cellIdentifier = "SecondaryPillTableViewCell"
@@ -67,6 +68,9 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        addUnknownPillButton.isEnabled = searchText.isEmpty ? false : true
+        
         setSearchKeywordText(text: searchText)
         
         filteredData = []
@@ -100,6 +104,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBAction func tapAddPillButton() {
         coreDataManager.addShowSecondaryPill(name: self.searchBar.text ?? "", dosage: "", selectDate: Date())
+        delegate.didFinishModal()
         dismiss(animated: true)
     }
 }

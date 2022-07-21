@@ -184,6 +184,7 @@ extension MedicationViewController: UITableViewDataSource {
             cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
             // Taking Button
             cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
+            cell.changeTakingPillButtonState(cell.takingPillButton)
             // Data for delegate
             cell.rowNumber = indexPath.row
             cell.isPrimary = false

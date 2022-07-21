@@ -23,7 +23,7 @@ class CoreDataManager{
         })
         return container
     }()
- 
+    
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
@@ -200,7 +200,7 @@ class CoreDataManager{
     }
     
     func changePrimaryIsTakingAndCancelHistory(primaryPill: ShowPrimaryPill){
-       
+        
         primaryPill.isTaking = false
         
         
@@ -278,7 +278,7 @@ class CoreDataManager{
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
     
- 
+    
     func checkPrimaryPillIsSameShowPrimaryPill(pill:PrimaryPill) -> Bool{
         let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
         let selectedDate: String = changeSelectedDateToString(Date())
@@ -295,8 +295,8 @@ class CoreDataManager{
         }
         return false
     }
-
-  
+    
+    
     //
     
     
@@ -342,8 +342,8 @@ class CoreDataManager{
         } catch{
             print("--- send ShowPrimary error ----")
         }
-        }
-        
+    }
+    
     
     // MARK: - Core Data READ
     
@@ -489,7 +489,7 @@ class CoreDataManager{
         
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
-           let cbtArray = try context.fetch(request)
+            let cbtArray = try context.fetch(request)
             return cbtArray
         } catch{
             print("-----CBT error-------")
@@ -501,7 +501,7 @@ class CoreDataManager{
     func fetchOneCBT(cbtUUID: UUID) -> CBT{
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
-           let cbtArray = try context.fetch(request)
+            let cbtArray = try context.fetch(request)
             for data in cbtArray{
                 if data.cbtId == cbtUUID{
                     return data
@@ -518,7 +518,7 @@ class CoreDataManager{
     func updateOneCBT(cbtUUID: UUID, cbtUpdateContext: String) {
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
-           let cbtArray = try context.fetch(request)
+            let cbtArray = try context.fetch(request)
             for data in cbtArray{
                 if data.cbtId == cbtUUID{
                     data.cbtContext = cbtUpdateContext
@@ -526,12 +526,12 @@ class CoreDataManager{
                     break
                 }
             }
-         
+            
         } catch{
             print("-----CBT error-------")
         }
         
-      
+        
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {
