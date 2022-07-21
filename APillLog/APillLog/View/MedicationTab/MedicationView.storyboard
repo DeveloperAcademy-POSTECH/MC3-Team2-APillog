@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="en2-nt-aBt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZc-H1-lr9">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -10,40 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--복용기록-->
+        <!--Medication View Controller-->
         <scene sceneID="rJR-69-AZ3">
             <objects>
-                <viewController storyboardIdentifier="MedicationViewController" id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaL-pe-2VR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgG-E4-2Ee" customClass="CalendarView" customModule="APillLog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="390" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Arz-mj-HVy"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-1j-NSr">
-                                <rect key="frame" x="0.0" y="114" width="390" height="647"/>
+                                <rect key="frame" x="0.0" y="79" width="390" height="682"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn5-yS-6pI">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1175"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="880"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-bi-Ud2">
-                                                <rect key="frame" x="25" y="0.0" width="340" height="1175"/>
+                                                <rect key="frame" x="25" y="0.0" width="340" height="880"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v9O-Gs-4Cx" userLabel="ButtonView Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-C6-653">
-                                                                <rect key="frame" x="0.0" y="0.0" width="340" height="0.0"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="tinted" title="버튼데스">
-                                                                    <color key="baseForegroundColor" red="0.59999999999999998" green="0.0" blue="0.095829447240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </buttonConfiguration>
-                                                            </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-1n-zaM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
                                                                 <subviews>
@@ -63,7 +49,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편함, 부작용, 약효 등을 적어주세요. 정확한 진료를 위한 좋은 자료가 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-oT-tTS">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333343" width="195" height="28.666666666666671"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333329" width="195" height="28.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -77,25 +63,34 @@
                                                                             <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
                                                                         </constraints>
                                                                     </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-C6-653">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                                        <connections>
+                                                                            <action selector="tapAddConditionButton:" destination="en2-nt-aBt" eventType="touchUpInside" id="pom-HH-kFt"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="EAi-Vv-PBW" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="1Ub-lW-eSK"/>
+                                                                    <constraint firstItem="tZT-C6-653" firstAttribute="top" secondItem="8Zb-1n-zaM" secondAttribute="top" id="6ne-Tc-VwH"/>
                                                                     <constraint firstAttribute="trailing" secondItem="EAi-Vv-PBW" secondAttribute="trailing" constant="15" id="86m-bP-hoj"/>
                                                                     <constraint firstItem="jqJ-i1-zzl" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="9It-kZ-ipT"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="tZT-C6-653" secondAttribute="trailing" id="Eki-ER-bMg"/>
+                                                                    <constraint firstItem="tZT-C6-653" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" id="N1q-xD-kEJ"/>
                                                                     <constraint firstItem="iIq-v8-tji" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="90" id="aJq-Zc-1fM"/>
                                                                     <constraint firstAttribute="trailing" secondItem="iIq-v8-tji" secondAttribute="trailing" constant="55" id="fTm-vi-FuJ"/>
                                                                     <constraint firstItem="jqJ-i1-zzl" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="20" id="hXl-mT-0Wp"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="tZT-C6-653" secondAttribute="bottom" id="j7c-Rq-tvg"/>
                                                                     <constraint firstItem="iIq-v8-tji" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="jwq-Vt-Qbk"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="8Zb-1n-zaM" firstAttribute="top" secondItem="v9O-Gs-4Cx" secondAttribute="top" id="Bcq-gp-R6a"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="MJE-BF-Yhd"/>
                                                             <constraint firstAttribute="height" constant="80" id="S00-xm-8wR"/>
-                                                            <constraint firstItem="8Zb-1n-zaM" firstAttribute="leading" secondItem="v9O-Gs-4Cx" secondAttribute="leading" id="b6p-CC-GKa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="8Zb-1n-zaM" secondAttribute="trailing" id="lCD-tq-0oc"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-4e-HMT" userLabel="PrimaryPillView">
@@ -122,6 +117,9 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="sign-navigation" title=""/>
+                                                                <connections>
+                                                                    <segue destination="99O-g9-za1" kind="show" id="GIe-ra-ife"/>
+                                                                </connections>
                                                             </button>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi">
                                                                 <rect key="frame" x="20" y="130" width="300" height="50"/>
@@ -159,7 +157,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMK-9x-uNM" userLabel="SecondaryPillView">
-                                                        <rect key="frame" x="0.0" y="380" width="340" height="120"/>
+                                                        <rect key="frame" x="0.0" y="380" width="340" height="500"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 약 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Di-8k1">
                                                                 <rect key="frame" x="20" y="20" width="77" height="43"/>
@@ -188,7 +186,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="5Pw-3g-7Bh"/>
+                                                            <constraint firstAttribute="height" constant="500" id="5Pw-3g-7Bh"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="leading" secondItem="PMK-9x-uNM" secondAttribute="leading" constant="20" id="CEF-mT-BSg"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="20" id="CkC-fb-GKm"/>
                                                             <constraint firstItem="RId-yl-pLj" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="60" id="Oe9-VO-uNU"/>
@@ -197,27 +195,6 @@
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="25" id="oaW-Gw-JOU"/>
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="xs4-A4-ziI"/>
                                                             <constraint firstAttribute="trailing" secondItem="168-Nr-JJL" secondAttribute="trailing" constant="15" id="yQ4-0r-9dq"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUW-mR-rcH">
-                                                        <rect key="frame" x="0.0" y="525" width="340" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemMintColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="AkF-xR-Xc9"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WH-fH-RUG">
-                                                        <rect key="frame" x="0.0" y="750" width="340" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="8lg-d0-K6p"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99C-9v-zTr">
-                                                        <rect key="frame" x="0.0" y="975" width="340" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="c1j-1a-avR"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -246,20 +223,14 @@
                         <viewLayoutGuide key="safeArea" id="MND-81-mzl"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="cgG-E4-2Ee" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="3iY-bh-yGL"/>
-                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="cgG-E4-2Ee" secondAttribute="bottom" id="5TP-Fg-p5D"/>
-                            <constraint firstItem="cgG-E4-2Ee" firstAttribute="top" secondItem="NaL-pe-2VR" secondAttribute="topMargin" id="Hmh-tE-OLa"/>
+                            <constraint firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="3iY-bh-yGL"/>
+                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="35" id="ADt-ci-5f6"/>
                             <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="3Ih-1j-NSr" secondAttribute="trailing" id="TwP-bk-hag"/>
-                            <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="cgG-E4-2Ee" secondAttribute="trailing" id="ZcM-8d-XRb"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="bUx-j6-KmK"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="bottom" secondItem="MND-81-mzl" secondAttribute="bottom" id="jT6-eJ-cRB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
-                        <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
-                        <color key="badgeColor" name="AccentColor"/>
-                        <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="6vl-aN-qJj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
@@ -274,13 +245,58 @@
             </objects>
             <point key="canvasLocation" x="116.92307692307692" y="90.995260663507111"/>
         </scene>
-        <!--AddPrimaryPill-->
+        <!--ManageDosingView-->
         <scene sceneID="fSs-jd-QEJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddPrimaryPill" id="eii-aa-qKd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yMp-OZ-Qih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="99O-g9-za1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7w6-Ma-pB3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTo-Wf-qxP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="92"/>
+            <point key="canvasLocation" x="768" y="23"/>
+        </scene>
+        <!--ManageDosingView-->
+        <scene sceneID="IsJ-cI-LhC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="Dt6-4l-NDv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xCa-ak-R1Y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-lk-55E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="91"/>
+        </scene>
+        <!--복용기록-->
+        <scene sceneID="bJU-sc-kPv">
+            <objects>
+                <navigationController storyboardIdentifier="MedicationViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iZc-H1-lr9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
+                        <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
+                        <color key="badgeColor" name="AccentColor"/>
+                        <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SD1-ZF-SfR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="en2-nt-aBt" kind="relationship" relationship="rootViewController" id="1t3-OT-h1O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ic1-2v-Fzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046" y="91"/>
+        </scene>
+        <!--CheckConditionView-->
+        <scene sceneID="VY5-CP-5zc">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CheckConditionViewController" storyboardName="CheckConditionView" id="cMO-F9-0AG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="syW-dm-xsk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sa3-9j-OWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="-74"/>
         </scene>
     </scenes>
     <resources>
@@ -294,20 +310,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
