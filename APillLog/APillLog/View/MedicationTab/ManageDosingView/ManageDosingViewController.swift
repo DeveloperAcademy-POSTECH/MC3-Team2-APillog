@@ -66,6 +66,10 @@ class ManageDosingViewController: UIViewController {
         
         self.present(nextViewController, animated:true, completion:nil)
     }
+    @IBAction func tapBackButton(_ sender: Any) {
+//        coreDataManager.sendPrimarypillToShowPrimaryPill()
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension ManageDosingViewController: UITableViewDataSource {

@@ -3,6 +3,8 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Eq-fJ0">
-                                <rect key="frame" x="5" y="135" width="380" height="655"/>
+                                <rect key="frame" x="5" y="139" width="380" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageDosingCell" rowHeight="72" id="u1W-0X-cXD" customClass="ManageDosingTableViewCell" customModule="APillLog" customModuleProvider="target">
@@ -79,8 +81,26 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="40i-6M-0uf"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-Au-a2s">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <items>
+                                    <navigationItem title="복용 관리" id="Pqf-Ji-uCo">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="LrG-tK-h9T">
+                                            <imageReference key="image" image="left-black" symbolScale="large"/>
+                                            <color key="tintColor" name="AAccent"/>
+                                            <connections>
+                                                <action selector="tapBackButton:" destination="Y6W-OH-hqX" id="cLc-hs-Fzu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <navigationBarAppearance key="standardAppearance">
+                                    <color key="backgroundColor" name="AWhite"/>
+                                    <color key="shadowColor" name="AWhite"/>
+                                </navigationBarAppearance>
+                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-j5-bFK">
-                                <rect key="frame" x="25" y="79" width="340" height="31"/>
+                                <rect key="frame" x="25" y="98" width="340" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="복용할 약 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-Fz-Twc">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="31"/>
@@ -111,11 +131,14 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MfP-j5-bFK" secondAttribute="trailing" constant="25" id="5bY-zu-2YV"/>
                             <constraint firstItem="Gni-Eq-fJ0" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-5" id="7xS-om-ujS"/>
-                            <constraint firstItem="Gni-Eq-fJ0" firstAttribute="top" secondItem="MfP-j5-bFK" secondAttribute="bottom" constant="25" id="JWw-Gb-MoI"/>
+                            <constraint firstItem="MfP-j5-bFK" firstAttribute="top" secondItem="hAf-Au-a2s" secondAttribute="bottom" constant="10" id="FvS-Nd-Vf2"/>
+                            <constraint firstItem="Gni-Eq-fJ0" firstAttribute="top" secondItem="MfP-j5-bFK" secondAttribute="bottom" constant="10" id="JWw-Gb-MoI"/>
                             <constraint firstItem="Gni-Eq-fJ0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="LeA-Wl-6CR"/>
+                            <constraint firstItem="hAf-Au-a2s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bKa-Tt-qVs"/>
                             <constraint firstItem="MfP-j5-bFK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="eDs-7q-AuX"/>
-                            <constraint firstItem="MfP-j5-bFK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="35" id="jQY-G0-w4Q"/>
+                            <constraint firstItem="hAf-Au-a2s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pFA-uK-dYk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Gni-Eq-fJ0" secondAttribute="bottom" constant="20" id="xxT-Jt-9ar"/>
+                            <constraint firstItem="hAf-Au-a2s" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yg1-DQ-sXx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -138,6 +161,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="left-black" width="10" height="18"/>
+        <namedColor name="AAccent">
+            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
