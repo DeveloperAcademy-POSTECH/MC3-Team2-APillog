@@ -21,12 +21,9 @@ class DiaryReadViewController: UIViewController {
         DiaryReadViewBody.text = body
         DiaryReadViewDate.text = date
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("fdssfssf")
-        print(DiaryReadViewBody.text!)
         coredataManager.updateOneCBT(cbtUUID: id, cbtUpdateContext: DiaryReadViewBody.text)
     }
     
