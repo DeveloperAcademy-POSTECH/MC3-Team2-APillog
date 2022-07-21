@@ -289,7 +289,7 @@ class CoreDataManager{
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-                if pill.isShowing && checkPrimaryPillIsSameShowPrimaryPill(pill: pill){
+                if pill.isShowing && !checkPrimaryPillIsSameShowPrimaryPill(pill: pill){
                     switch pill.dosingCycle{
                     case Int16(1):
                         do { self.addShowPrimaryPill(name: pill.name ?? "" , dosage: pill.dosage ?? "", cycle: Int16(1), selectDate: selectedDate) }
