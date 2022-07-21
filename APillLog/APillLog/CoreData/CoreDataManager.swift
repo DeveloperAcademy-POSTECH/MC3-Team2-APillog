@@ -104,7 +104,7 @@ class CoreDataManager{
         showPrimaryPill.selectDate = selectDate
         showPrimaryPill.isTaking = false
         showPrimaryPill.cycle = cycle
-        showPrimaryPill.takeTime = Date()
+        showPrimaryPill.takeTime = nil
         
         saveToContext()
     }
@@ -116,7 +116,7 @@ class CoreDataManager{
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
         showSecondaryPill.isTaking = false
-        showSecondaryPill.takeTime = Date()
+        showSecondaryPill.takeTime = nil
         showSecondaryPill.selectDate = selectedDate
         saveToContext()
     }
@@ -167,10 +167,10 @@ class CoreDataManager{
     }
     // MARK: - page별 기능 추가
     //오늘의 복용약에서 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
-    func recordHistoryAndChangePrimaryIsTaking(primaryPill: ShowPrimaryPill) {
-        primaryPill.isTaking = true
+    func recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.isTaking = true
         saveToContext()
-        addHistory(pillName: primaryPill.name, dosage: primaryPill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        addHistory(pillName: showPrimaryPill.name, dosage: showPrimaryPill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
     }
     
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
@@ -195,10 +195,26 @@ class CoreDataManager{
     }
     
     //오늘의 복용약에서 서브 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
-    func recordHistoryAndChangeSecondaryIsTaking(secondaryPill: ShowSecondaryPill) {
-        secondaryPill.isTaking = true
+    func recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: ShowSecondaryPill) {
+        showSecondaryPill.isTaking = true
+        let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
+        
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.id == showSecondaryPill.id {
+                    pill.isTaking = true
+                }
+            }
+            
+            addHistory(pillName: showSecondaryPill.name, dosage: showSecondaryPill.dosage, isMainPill: false, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+            
+        } catch{
+            print("-----isTaking error-------")
+        }
+        
         saveToContext()
-        addHistory(pillName: secondaryPill.name, dosage: secondaryPill.dosage, isMainPill: false, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        
     }
     
     //오늘의 서브복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수

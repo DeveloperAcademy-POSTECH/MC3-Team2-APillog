@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddSecondaryPillViewControllerDelegate {
-    func didFinishModal(selectedPill: String)
+    func didFinishModal()
 }
 
 class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -21,6 +21,8 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: Properties
     let cellIdentifier = "SecondaryPillTableViewCell"
     var delegate: AddSecondaryPillViewControllerDelegate! = nil
+    var coreDataManager = CoreDataManager()
+    
     
     var dummy: [String] = ["타이레놀정 500mg", "타이레놀정 160mg", "타이레놀정 80mg", "타이레놀현탁액 100ml", "부루펜시럽 80ml", "베아제정", "닥터베아제정", "훼스탈골드정", "훼스탈플러스정", "판콜에이내복액 30ml", "판피린티정", "제일쿨파스", "신신파스아렉스", "베아제정2", "닥터베아제정2", "훼스탈골드정2", "훼스탈플러스정2", "판콜에이내복액 30ml2", "판피린티정2", "제일쿨파스2", "신신파스아렉스2"]
     var filteredData: [String]!
@@ -59,7 +61,8 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
-        self.delegate.didFinishModal(selectedPill: filteredData[indexPath.row])
+        coreDataManager.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
+        self.delegate.didFinishModal()
     }
     
     // MARK: UISearchBarDelegate
@@ -96,8 +99,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func tapAddPillButton() {
-        self.delegate.didFinishModal(selectedPill: self.searchBar.text ?? "")
-        
+        coreDataManager.addShowSecondaryPill(name: self.searchBar.text ?? "", dosage: "", selectDate: Date())
         dismiss(animated: true)
     }
 }

@@ -124,7 +124,7 @@
                                                                     <segue destination="99O-g9-za1" kind="show" id="GIe-ra-ife"/>
                                                                 </connections>
                                                             </button>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi">
+                                                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi">
                                                                 <rect key="frame" x="20" y="130" width="300" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
@@ -177,6 +177,9 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="lPD-QO-HsM"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="en2-nt-aBt" id="yRR-gc-86L"/>
+                                                                </connections>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="168-Nr-JJL">
                                                                 <rect key="frame" x="292" y="25" width="33" height="33"/>

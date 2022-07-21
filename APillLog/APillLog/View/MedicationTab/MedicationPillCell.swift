@@ -7,12 +7,20 @@
 
 import UIKit
 
+protocol TakeMedicationDelegate {
+    func setPillTake(rowNumber: Int, isPrimary: Bool)
+}
+
 class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var pillImageView: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var pillTimeLabel: UILabel!
     @IBOutlet weak var editPillTimeButton: UIButton!
     @IBOutlet weak var takingPillButton: UIButton!
+    
+    var rowNumber: Int = 0
+    var isPrimary: Bool = false
+    var delegate: TakeMedicationDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,5 +58,14 @@ class MedicationPillCell: UITableViewCell {
     @IBAction func tapTakingPillButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         changeTakingPillButtonState(sender)
+        
+        if sender.isSelected {
+            delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
+        } else {
+            // TODO : 히스토리에 넣은 약을 제거하는 기능 필요
+        }
     }
 }
+
+
+
