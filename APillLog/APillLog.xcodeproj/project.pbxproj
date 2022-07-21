@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
+		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
+		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
@@ -105,13 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34982C5E2885415E003BBBD4 /* SecondaryPill */ = {
+		34440E5F28870ACD00AA3996 /* ManageDosingView */ = {
+			isa = PBXGroup;
+			children = (
+				34440E6028870AE700AA3996 /* ManageDosingView.storyboard */,
+				34440E6228870B1200AA3996 /* ManageDosingViewController.swift */,
+			);
+			path = ManageDosingView;
+			sourceTree = "<group>";
+		};
+		34982C5E2885415E003BBBD4 /* AddSecondaryPillView */ = {
 			isa = PBXGroup;
 			children = (
 				34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */,
 				34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */,
 			);
-			path = SecondaryPill;
+			path = AddSecondaryPillView;
 			sourceTree = "<group>";
 		};
 		876ED1932882A33B00179767 = {
@@ -265,10 +278,11 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
-				34982C5E2885415E003BBBD4 /* SecondaryPill */,
+				34440E5F28870ACD00AA3996 /* ManageDosingView */,
+				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
+				34982C5E2885415E003BBBD4 /* AddSecondaryPillView */,
 				A8F4F2C328847A010008EB48 /* MedicationView.storyboard */,
 				A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */,
-				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
 			);
 			path = MedicationTab;
 			sourceTree = "<group>";
@@ -333,6 +347,7 @@
 			files = (
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
+				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
 				34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */,
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
@@ -379,6 +394,7 @@
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
+				34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */,
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
 			);
@@ -527,7 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -556,7 +572,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

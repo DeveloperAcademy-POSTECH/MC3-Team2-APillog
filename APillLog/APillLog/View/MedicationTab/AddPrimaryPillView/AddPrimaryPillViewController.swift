@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddPrimaryPillViewControllerDelegate {
+    func didAddPrimaryPill()
+}
+
 class AddPrimaryPillViewController: UIViewController, UISheetPresentationControllerDelegate {
     
     // MARK: @IBOutlet
@@ -20,9 +24,12 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var savePrimaryPillButton: UIButton!
     @IBOutlet weak var cancleButton: UIButton!
     
-    var coredataManager:CoreDataManager = CoreDataManager()
+    
     // MARK: Property
+    var coredataManager:CoreDataManager = CoreDataManager()
     var primaryPillDosingCycle: Int = 0
+    
+    var delegate: AddPrimaryPillViewControllerDelegate?
     
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
@@ -31,6 +38,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
     }
@@ -47,21 +55,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
         
         self.presentingViewController?.dismiss(animated: true)
-        
-    }
-    func detectEnableSaveButton(){
-        let pillName = PrimaryPillName.text ?? ""
-        let pillDosage = PrimaryPillDosage.text ?? ""
-        
-        if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
-        {
-            savePrimaryPillButton.isEnabled = true
-        }
-        else{
-            savePrimaryPillButton.isEnabled = false
-        }
-        
-        
+        delegate?.didAddPrimaryPill()
     }
     
     @IBAction func detectNameTextField(){
@@ -119,5 +113,20 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1).cgColor
         }
+    }
+    
+    func detectEnableSaveButton(){
+        let pillName = PrimaryPillName.text ?? ""
+        let pillDosage = PrimaryPillDosage.text ?? ""
+        
+        if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
+        {
+            savePrimaryPillButton.isEnabled = true
+        }
+        else{
+            savePrimaryPillButton.isEnabled = false
+        }
+        
+        
     }
 }
