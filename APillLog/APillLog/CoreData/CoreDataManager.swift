@@ -23,7 +23,7 @@ class CoreDataManager{
         })
         return container
     }()
-    //  let appDelegate = UIApplication.shared.delegate as! AppDelegate
+ 
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
@@ -433,13 +433,49 @@ class CoreDataManager{
         
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
-            let pillArray = try context.fetch(request)
-            return pillArray
+           let cbtArray = try context.fetch(request)
+            return cbtArray
         } catch{
             print("-----CBT error-------")
         }
         return [CBT()]
         
+    }
+    // UUID값을 받아서 디테일뷰에 보여주는 함수
+    func fetchOneCBT(cbtUUID: UUID) -> CBT{
+        let request : NSFetchRequest<CBT> = CBT.fetchRequest()
+        do {
+           let cbtArray = try context.fetch(request)
+            for data in cbtArray{
+                if data.cbtId == cbtUUID{
+                    return data
+                }
+            }
+            return CBT()
+        } catch{
+            print("-----CBT error-------")
+        }
+        
+        return CBT()
+    }
+    
+    func updateOneCBT(cbtUUID: UUID, cbtUpdateContext: String) {
+        let request : NSFetchRequest<CBT> = CBT.fetchRequest()
+        do {
+           let cbtArray = try context.fetch(request)
+            for data in cbtArray{
+                if data.cbtId == cbtUUID{
+                    data.cbtContext = cbtUpdateContext
+                    saveToContext()
+                    break
+                }
+            }
+         
+        } catch{
+            print("-----CBT error-------")
+        }
+        
+      
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {

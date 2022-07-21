@@ -24,6 +24,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var savePrimaryPillButton: UIButton!
     @IBOutlet weak var cancleButton: UIButton!
     
+
     
     // MARK: Property
     var coredataManager:CoreDataManager = CoreDataManager()
@@ -58,12 +59,25 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         delegate?.didAddPrimaryPill()
     }
     
+    
     @IBAction func detectNameTextField(){
         detectEnableSaveButton()
-        
     }
+    
     @IBAction func detectDosageTextField(){
         detectEnableSaveButton()
+    }
+    
+    @IBAction func clickTextFieldChangeBorder(_ sender: UITextField) {
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.AColor.disable.cgColor
+        sender.layer.cornerRadius = 6.5
+    }
+    
+    @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.AColor.accent.cgColor
+        sender.layer.cornerRadius = 6.5
     }
     
     @IBAction func togglePrimaryPillMorning(_ sender: UIButton) {
