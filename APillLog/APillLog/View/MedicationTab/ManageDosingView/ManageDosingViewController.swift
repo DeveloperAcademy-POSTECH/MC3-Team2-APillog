@@ -33,28 +33,28 @@ class ManageDosingViewController: UIViewController {
     
     // MARK: Function
     private func dosingCycleToString(dosingCycle: Int16) -> String {
-        var str = ""
+        var result = ""
         
         if dosingCycle & 1 == 1 {
-            str.append("아침")
+            result.append("아침")
         }
         
         if dosingCycle & 2 == 2 {
-            if str.isEmpty == false {
-                str.append(", ")
+            if result.isEmpty == false {
+                result.append(", ")
             }
             
-            str.append("점심")
+            result.append("점심")
         }
         
         if dosingCycle & 4 == 4 {
-            if str.isEmpty == false {
-                str.append(", ")
+            if result.isEmpty == false {
+                result.append(", ")
             }
-            str.append("저녁")
+            result.append("저녁")
         }
         
-        return str
+        return result
     }
     
     // MARK: @IBAction

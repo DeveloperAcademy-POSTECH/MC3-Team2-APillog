@@ -175,7 +175,7 @@ class CoreDataManager{
     }
     
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
-    func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16){
+    func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16) {
         
         let selectedDate: String = changeSelectedDateToString(selectDate)
         let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
