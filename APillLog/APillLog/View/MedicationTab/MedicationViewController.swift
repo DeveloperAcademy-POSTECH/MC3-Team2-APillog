@@ -201,6 +201,14 @@ extension MedicationViewController: UITableViewDataSource {
         }
     return cell
     }
+    
+    
+    @IBAction func tapAddConditionButton(_ sender: UIButton) {
+        guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
+        
+        self.navigationController?.pushViewController(checkConditionViewController, animated: true)
+        
+    }
 }
         
         // MARK: - CoreData 적용부

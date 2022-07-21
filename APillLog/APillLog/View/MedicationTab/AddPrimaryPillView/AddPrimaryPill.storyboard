@@ -177,7 +177,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="lHY-w2-hk0"/>
+                        <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
