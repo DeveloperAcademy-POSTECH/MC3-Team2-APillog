@@ -45,6 +45,9 @@ class CoreDataManager{
                 if data.id == pill.id
                 {
                     data.isShowing.toggle()
+                    if(!data.isShowing){
+                        deleteShowPrimaryPill(pill: data)
+                    }
                 }
             }
         } catch{
