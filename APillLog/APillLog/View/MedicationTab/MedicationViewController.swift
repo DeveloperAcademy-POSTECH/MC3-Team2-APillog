@@ -11,10 +11,6 @@ import CoreData
 class MedicationViewController: UIViewController {
 
     // MARK: - IBOutlets
-    // DatePicker
-    @IBOutlet weak var lastDayButton: UIButton!
-    @IBOutlet weak var nextDayButton: UIButton!
-    @IBOutlet weak var dayLabel: UILabel!
 
     // Symptom Button
     @IBOutlet weak var symptomButton: UIButton!

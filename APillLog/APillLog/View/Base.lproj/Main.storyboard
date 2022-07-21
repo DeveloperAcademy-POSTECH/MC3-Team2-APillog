@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="667" y="-10"/>
         </scene>
-        <!--DiaryViewController-->
+        <!--DiaryNavigationController-->
         <scene sceneID="1BN-O6-TqG">
             <objects>
-                <viewControllerPlaceholder storyboardName="DiaryView" referencedIdentifier="DiaryViewController" id="7jI-iI-5fz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="DiaryView" referencedIdentifier="DiaryNavigationController" id="7jI-iI-5fz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="DgR-q8-WsA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOS-xV-qs3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
