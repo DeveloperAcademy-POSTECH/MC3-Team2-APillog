@@ -62,16 +62,22 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     @IBAction func detectNameTextField(){
         detectEnableSaveButton()
-//        if let primePillName = PrimaryPillName.text {
-//            self.PrimaryPillName.layer.borderWidth = 1
-//            self.PrimaryPillName.layer.borderColor = UIColor.AColor.accent.cgColor
-//        }
     }
-    
-    
     
     @IBAction func detectDosageTextField(){
         detectEnableSaveButton()
+    }
+    
+    @IBAction func clickTextFieldChangeBorder(_ sender: UITextField) {
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.AColor.disable.cgColor
+        sender.layer.cornerRadius = 6.5
+    }
+    
+    @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.AColor.accent.cgColor
+        sender.layer.cornerRadius = 6.5
     }
     
     @IBAction func togglePrimaryPillMorning(_ sender: UIButton) {

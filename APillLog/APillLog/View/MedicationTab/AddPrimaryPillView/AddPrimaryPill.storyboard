@@ -63,6 +63,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="heT-tK-zmc"/>
+                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="RNV-tW-76K"/>
                                                     <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="PDt-1e-neB"/>
                                                 </connections>
                                             </textField>
@@ -85,6 +87,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
+                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
                                                     <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
                                                 </connections>
                                             </textField>
