@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hm4-Pj-jT6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZc-H1-lr9">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -275,12 +275,7 @@
                             <constraint firstItem="Kfv-BC-60a" firstAttribute="centerX" secondItem="NaL-pe-2VR" secondAttribute="centerX" id="tgH-Ys-12Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
-                        <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
-                        <color key="badgeColor" name="AccentColor"/>
-                        <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="QFu-wC-GLp"/>
+                    <navigationItem key="navigationItem" id="6vl-aN-qJj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
@@ -333,7 +328,7 @@
         <!--복용기록-->
         <scene sceneID="bJU-sc-kPv">
             <objects>
-                <navigationController storyboardIdentifier="MedicationViewController" automaticallyAdjustsScrollViewInsets="NO" id="iZc-H1-lr9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="" automaticallyAdjustsScrollViewInsets="NO" id="iZc-H1-lr9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
                         <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
                         <color key="badgeColor" name="AccentColor"/>
