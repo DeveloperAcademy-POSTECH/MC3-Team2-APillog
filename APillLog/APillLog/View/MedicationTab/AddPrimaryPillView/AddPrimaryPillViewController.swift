@@ -24,6 +24,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var savePrimaryPillButton: UIButton!
     @IBOutlet weak var cancleButton: UIButton!
     
+
     
     // MARK: Property
     var coredataManager:CoreDataManager = CoreDataManager()
@@ -58,10 +59,17 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         delegate?.didAddPrimaryPill()
     }
     
+    
     @IBAction func detectNameTextField(){
         detectEnableSaveButton()
-        
+//        if let primePillName = PrimaryPillName.text {
+//            self.PrimaryPillName.layer.borderWidth = 1
+//            self.PrimaryPillName.layer.borderColor = UIColor.AColor.accent.cgColor
+//        }
     }
+    
+    
+    
     @IBAction func detectDosageTextField(){
         detectEnableSaveButton()
     }
