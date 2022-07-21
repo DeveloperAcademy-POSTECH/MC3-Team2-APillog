@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,36 +16,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월 18일 월요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib6-nq-aD6">
-                                <rect key="frame" x="151.5" y="69" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-eL-WjG">
-                                <rect key="frame" x="0.0" y="115" width="414" height="698"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjF-Ad-PO0">
-                                <rect key="frame" x="316" y="76" width="67" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="clicked" destination="Y6W-OH-hqX" eventType="touchDown" id="Oa4-zW-SrQ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n4o-CG-VuW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIn-LN-qwr" customClass="CalendarView" customModule="APillLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="a7o-2C-9fh"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-eL-WjG">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="699"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KIn-LN-qwr" firstAttribute="top" secondItem="n4o-CG-VuW" secondAttribute="top" id="DAo-k0-RZz"/>
+                                    <constraint firstAttribute="trailing" secondItem="KIn-LN-qwr" secondAttribute="trailing" id="Lvj-rp-s4a"/>
+                                    <constraint firstAttribute="bottom" secondItem="gm3-eL-WjG" secondAttribute="bottom" id="Urt-20-Pzp"/>
+                                    <constraint firstItem="gm3-eL-WjG" firstAttribute="top" secondItem="KIn-LN-qwr" secondAttribute="bottom" id="WCj-A2-14p"/>
+                                    <constraint firstItem="gm3-eL-WjG" firstAttribute="leading" secondItem="n4o-CG-VuW" secondAttribute="leading" id="Zax-cx-Jwj"/>
+                                    <constraint firstItem="gm3-eL-WjG" firstAttribute="top" secondItem="KIn-LN-qwr" secondAttribute="bottom" id="frC-Jj-5eS"/>
+                                    <constraint firstItem="KIn-LN-qwr" firstAttribute="leading" secondItem="n4o-CG-VuW" secondAttribute="leading" id="sNM-qE-KrQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gm3-eL-WjG" secondAttribute="trailing" id="xMd-cP-VQ4"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gm3-eL-WjG" firstAttribute="top" secondItem="ib6-nq-aD6" secondAttribute="bottom" constant="25" id="15F-hZ-47T"/>
-                            <constraint firstItem="gjF-Ad-PO0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="AFY-62-Qkq"/>
-                            <constraint firstItem="ib6-nq-aD6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="B8C-UT-txm"/>
-                            <constraint firstItem="gm3-eL-WjG" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="G8o-0r-ORn"/>
-                            <constraint firstItem="gm3-eL-WjG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZXL-Kd-Knq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gjF-Ad-PO0" secondAttribute="trailing" constant="31" id="evc-jQ-pOh"/>
-                            <constraint firstItem="gm3-eL-WjG" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="hFh-ao-4nj"/>
-                            <constraint firstItem="ib6-nq-aD6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="zhw-Fh-mq0"/>
+                            <constraint firstItem="n4o-CG-VuW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="klM-3j-Hxm"/>
+                            <constraint firstItem="n4o-CG-VuW" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="u0u-2S-h10"/>
+                            <constraint firstItem="n4o-CG-VuW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yGe-Vf-mcx"/>
+                            <constraint firstItem="n4o-CG-VuW" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="zgp-gg-buG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="A2V-tg-VUy"/>
@@ -61,5 +66,8 @@
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
