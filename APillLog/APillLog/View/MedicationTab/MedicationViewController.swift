@@ -51,14 +51,8 @@ class MedicationViewController: UIViewController {
         super.viewDidLoad()
         setStyle()
         
-        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
-        primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
-        primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
-        primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
-        
-        primaryPillListDataSource = primaryPillListMorning
-        
-        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
+        reloadPrimaryPillTableView()
+        reloadSecondaryPillTableView()
         
         let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
@@ -68,10 +62,8 @@ class MedicationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        coreDataManager.sendPrimarypillToShowPrimaryPill()
-        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
-        print(primaryPillList.count)
-        primaryPillTableView.reloadData()
+        reloadPrimaryPillTableView()
+        reloadSecondaryPillTableView()
     }
     
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
@@ -105,6 +97,34 @@ class MedicationViewController: UIViewController {
     
     private func setSecondaryPillViewStyle() {
         secondaryPillField.layer.cornerRadius = 10
+    }
+    
+    private func reloadPrimaryPillTableView() {
+        coreDataManager.sendPrimarypillToShowPrimaryPill()
+        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+        
+        primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
+        
+        switch(timeSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            primaryPillListDataSource = primaryPillListMorning
+        case 1:
+            primaryPillListDataSource = primaryPillListLunch
+        case 2:
+            primaryPillListDataSource = primaryPillListDinner
+        default:
+            primaryPillListDataSource = []
+        }
+        
+        primaryPillTableView.reloadData()
+    }
+    
+    private func reloadSecondaryPillTableView() {
+        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
+        
+        secondaryPillTableView.reloadData()
     }
     
     @IBAction func tapAddSecondaryPillButton() {
@@ -181,8 +201,7 @@ extension MedicationViewController: UITableViewDataSource {
 extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
     func didFinishModal() {
     // TODO : 아래에 추가약 복용 추가하기 모달이 내려간 이후 수행할 함수 작성
-        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
-        secondaryPillTableView.reloadData()
+        reloadSecondaryPillTableView()
     }
 }
 
