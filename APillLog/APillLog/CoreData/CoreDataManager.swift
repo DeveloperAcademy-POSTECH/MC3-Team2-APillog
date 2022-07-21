@@ -41,13 +41,12 @@ class CoreDataManager{
         
         do {
             let pillArray = try context.fetch(request)
-            for data in pillArray{
+            for data in pillArray {
                 if data.id == pill.id
                 {
                     data.isShowing.toggle()
                 }
             }
-            
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }

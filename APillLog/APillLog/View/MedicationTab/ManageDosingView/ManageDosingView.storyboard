@@ -55,7 +55,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-CT-SZ7">
                                                     <rect key="frame" x="311" y="20.666666666666671" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="toggleIsShowing:" destination="u1W-0X-cXD" eventType="valueChanged" id="T6O-my-rgp"/>
+                                                        <action selector="toggleIsShowing:" destination="u1W-0X-cXD" eventType="valueChanged" id="REW-Ai-dAJ"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
