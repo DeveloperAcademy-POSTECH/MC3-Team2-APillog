@@ -11,6 +11,7 @@ class CustomCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellDate: UILabel!
     @IBOutlet weak var cellTitle: UILabel!
+    var cellUUID: UUID = UUID()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
