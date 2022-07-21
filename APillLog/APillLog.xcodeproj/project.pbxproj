@@ -255,9 +255,9 @@
 				A831BEB52888815200E8CEFE /* MedicationPillCell.xib */,
 				A831BEB42888815200E8CEFE /* MedicationPillCell.swift */,
 				A831BEB82888AACB00E8CEFE /* MedicationViewPillModel.swift */,
+				A831BEBC2888BAA600E8CEFE /* CustomTableView.swift */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
 				34982C5E2885415E003BBBD4 /* SecondaryPill */,
-				A831BEBC2888BAA600E8CEFE /* CustomTableView.swift */,
 			);
 			path = MedicationTab;
 			sourceTree = "<group>";

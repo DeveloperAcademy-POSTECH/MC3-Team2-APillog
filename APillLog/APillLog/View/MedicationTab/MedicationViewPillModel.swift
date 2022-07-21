@@ -15,7 +15,7 @@ struct PrimaryPillModel {
     var isTaking: Bool
     var takeTime: String
     var selectDate: String
-//    var id: UUID
+    var id: UUID
     
     init (
         name: String,
@@ -23,8 +23,8 @@ struct PrimaryPillModel {
         cycle: Int16,
         isTaking: Bool,
         takeTime: String,
-        selectDate: String
-//        id: UUID
+        selectDate: String,
+        id: UUID
     ) {
         self.name = name
         self.dosage = dosage
@@ -32,7 +32,7 @@ struct PrimaryPillModel {
         self.isTaking = isTaking
         self.takeTime = takeTime
         self.selectDate = selectDate
-//        self.id = id
+        self.id = id
     }
 }
 
@@ -42,22 +42,22 @@ struct SecondaryPillModel {
     var isTaking: Bool
     var takeTime: String
     var selectDate: String
-//    var id: UUID
+    var id: UUID
     
     init (
         name: String,
         dosage: String,
         isTaking: Bool,
         takeTime: String,
-        selectDate: String
-//        id: UUID
+        selectDate: String,
+        id: UUID
     ) {
         self.name = name
         self.dosage = dosage
         self.isTaking = isTaking
         self.takeTime = takeTime
         self.selectDate = selectDate
-//        self.id = id
+        self.id = id
     }
 }
 

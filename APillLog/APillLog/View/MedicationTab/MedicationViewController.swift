@@ -25,6 +25,7 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
+    @IBOutlet weak var takeAllPrimaryPillButton: UIButton!
     
     // Secondary Pill Field
     @IBOutlet weak var secondaryPillTableView: UITableView!
@@ -44,6 +45,10 @@ class MedicationViewController: UIViewController {
     // MARK: - DummyData
     var primaryPillsDummyData = fetchPrimaryPillsDummyData()
     var secondaryPillsDummyData = fetchSecondaryPillsDummyData()
+    
+    var filteredPrimaryPillMorning: [PrimaryPillModel] = []
+    var filteredPrimaryPillLunch: [PrimaryPillModel] = []
+    var filteredPrimaryPillDinner: [PrimaryPillModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +119,9 @@ class MedicationViewController: UIViewController {
         }
     }
     
-
+    @IBAction func tapTakeAllPrimaryPillButton(_ sender: UIButton) {
+        // TODO: - 모두 복용
+    }
 }
 
 extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
@@ -146,7 +153,10 @@ extension MedicationViewController: UITableViewDataSource {
                 case 0:
                     var count = 0
                     for pill in primaryPillsDummyData {
-                        if pill.cycle == 4 || pill.cycle == 5 || pill.cycle == 6 || pill.cycle == 7 {
+                        if pill.cycle == 4 ||
+                            pill.cycle == 5 ||
+                            pill.cycle == 6 ||
+                            pill.cycle == 7 {
                             count += 1
                         }
                     }
@@ -154,7 +164,10 @@ extension MedicationViewController: UITableViewDataSource {
                 case 1:
                     var count = 0
                     for pill in primaryPillsDummyData {
-                        if pill.cycle == 2 || pill.cycle == 3 || pill.cycle == 6 || pill.cycle == 7 {
+                        if pill.cycle == 2 ||
+                            pill.cycle == 3 ||
+                            pill.cycle == 6 ||
+                            pill.cycle == 7 {
                             count += 1
                         }
                     }
@@ -162,7 +175,10 @@ extension MedicationViewController: UITableViewDataSource {
                 case 2:
                     var count = 0
                     for pill in primaryPillsDummyData {
-                        if pill.cycle == 1 || pill.cycle == 3 || pill.cycle == 5 || pill.cycle == 7 {
+                        if pill.cycle == 1 ||
+                            pill.cycle == 3 ||
+                            pill.cycle == 5 ||
+                            pill.cycle == 7 {
                             count += 1
                         }
                     }
@@ -175,7 +191,7 @@ extension MedicationViewController: UITableViewDataSource {
         }
     }
 
-    // 셀 데이터
+    // 셀 데이터 임시로 아침, 점심, 저녁 구분 없이 모든 약들이 나오게 처리했어요
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MedicationPillCell
         
@@ -222,7 +238,6 @@ extension MedicationViewController: UITableViewDelegate {
  아침 : 4, 5, 6, 7
  점심 : 2, 3, 6, 7
  저녁 : 1, 3, 5, 7
- 
 */
 
 private func fetchPrimaryPillsDummyData() -> [PrimaryPillModel] {
@@ -231,28 +246,28 @@ private func fetchPrimaryPillsDummyData() -> [PrimaryPillModel] {
             name: "콘서타A",
             dosage: "18mg",
             cycle: 6,
-            isTaking: true,
+            isTaking: false,
             takeTime: "08:00",
-//            id: UUID,
-            selectDate: "2022-07-21"
+            selectDate: "2022-07-21",
+            id: UUID()
         ),
         PrimaryPillModel(
             name: "콘서타B",
             dosage: "18mg",
             cycle: 4,
-            isTaking: true,
+            isTaking: false,
             takeTime: "",
-//            id: UUID,
-            selectDate: "2022-07-21"
+            selectDate: "2022-07-21",
+            id: UUID()
         ),
         PrimaryPillModel(
             name: "콘서타C",
             dosage: "18mg",
             cycle: 4,
-            isTaking: true,
+            isTaking: false,
             takeTime: "",
-//            id: UUID,
-            selectDate: "2022-07-21"
+            selectDate: "2022-07-21",
+            id: UUID()
         )
     ]
 }
@@ -262,18 +277,18 @@ private func fetchSecondaryPillsDummyData() -> [SecondaryPillModel] {
         SecondaryPillModel(
             name: "타이레놀",
             dosage: "1정",
-            isTaking: true,
+            isTaking: false,
             takeTime: "08:00",
-//            id: UUID,
-            selectDate: "2022-07-21"
+            selectDate: "2022-07-21",
+            id: UUID()
         ),
         SecondaryPillModel(
             name: "인데놀정",
             dosage: "10mg",
-            isTaking: true,
+            isTaking: false,
             takeTime: "",
-//            id: UUID,
-            selectDate: "2022-07-21"
+            selectDate: "2022-07-21",
+            id: UUID()
         )
     ]
 }

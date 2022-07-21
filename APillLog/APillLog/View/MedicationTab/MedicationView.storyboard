@@ -145,18 +145,27 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="sign-navigation" title=""/>
+                                                                <connections>
+                                                                    <segue destination="eii-aa-qKd" kind="presentation" id="KnN-6b-7er"/>
+                                                                </connections>
                                                             </button>
-                                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi" customClass="CustomTableView" customModule="APillLog" customModuleProvider="target">
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi" customClass="CustomTableView" customModule="APillLog" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="109.99999999999999" width="300" height="236.66666666666663"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-q8-b8f">
                                                                 <rect key="frame" x="20" y="356.66666666666663" width="300" height="28.333333333333314"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="300" id="OBc-v5-X6K"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="전체 복용">
                                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                                                     <color key="baseBackgroundColor" red="0.42352938649999999" green="0.78039217000000005" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="tapTakeAllPrimaryPillButton:" destination="en2-nt-aBt" eventType="touchUpInside" id="tJf-gD-oEl"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -178,7 +187,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="GjX-q8-b8f" secondAttribute="trailing" constant="20" id="v0r-hS-UHV"/>
                                                         </constraints>
                                                     </view>
-                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMK-9x-uNM" userLabel="SecondaryPillView">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMK-9x-uNM" userLabel="SecondaryPillView">
                                                         <rect key="frame" x="0.0" y="530" width="340" height="250"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 약 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Di-8k1">
@@ -187,7 +196,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RId-yl-pLj">
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RId-yl-pLj" customClass="CustomTableView" customModule="APillLog" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="60" width="300" height="180"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </tableView>
@@ -199,7 +208,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="plus"/>
                                                                 <connections>
-                                                                    <action selector="tapAddSecondaryPillButton" destination="en2-nt-aBt" eventType="touchUpInside" id="DwS-nD-glQ"/>
+                                                                    <segue destination="hIM-Tv-zZw" kind="presentation" id="wx5-zI-bIV"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -274,6 +283,7 @@
                         <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="eYI-ey-bY5"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
+                        <outlet property="takeAllPrimaryPillButton" destination="GjX-q8-b8f" id="ggl-1h-LrF"/>
                         <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="5wK-aH-n4H"/>
                     </connections>
                 </viewController>
@@ -288,6 +298,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMp-OZ-Qih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="746" y="92"/>
+        </scene>
+        <!--AddSecondaryPillView-->
+        <scene sceneID="HSO-5K-UtG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zk3-CJ-YIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AddSecondaryPillView" id="hIM-Tv-zZw" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="266"/>
         </scene>
     </scenes>
     <resources>
