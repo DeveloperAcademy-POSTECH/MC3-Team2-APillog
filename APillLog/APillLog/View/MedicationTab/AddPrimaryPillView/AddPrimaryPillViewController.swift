@@ -103,15 +103,15 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     // MARK: Function
     func changePrimaryPillDosingButtonState(_ button: UIButton) {
         if button.isSelected {
-            button.backgroundColor = UIColor(red: 108/255, green: 199/255, blue: 90/255, alpha: 1)
-            button.setTitleColor(.white, for: .selected)
+            button.backgroundColor = UIColor.AColor.accent
+            button.setTitleColor(UIColor.AColor.white, for: .selected)
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.white.cgColor
         } else {
             button.backgroundColor = .white
-            button.setTitleColor(UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1), for: .normal)
+            button.setTitleColor(UIColor.AColor.gray, for: .normal)
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1).cgColor
+            button.layer.borderColor = UIColor.AColor.disable.cgColor
         }
     }
     
@@ -130,3 +130,4 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
     }
 }
+
