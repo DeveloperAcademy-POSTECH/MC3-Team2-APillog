@@ -13,7 +13,7 @@ class CoreDataManager{
     //var coredataManager: CoreDataManager = CoreDataManager()
     //coredataManager.함수
     
-// MARK: - Core Data Saving support
+    // MARK: - Core Data Saving support
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "APillLog")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -23,11 +23,11 @@ class CoreDataManager{
         })
         return container
     }()
-  //  let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //  let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-
+    
     func saveToContext() {
         do {
             try context.save()
@@ -35,7 +35,45 @@ class CoreDataManager{
             print(error.localizedDescription)
         }
     }
-// MARK: - Core Data Create
+    
+    func togglePrimaryPillIsShowing(pill: PrimaryPill){
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        
+        do {
+            let pillArray = try context.fetch(request)
+            for data in pillArray {
+                if data.id == pill.id
+                {
+                    data.isShowing.toggle()
+                }
+            }
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+    }
+    
+    func deletePrimaryPill(pill: PrimaryPill) {
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for index in pillArray.indices {
+                if pillArray[index].id == pill.id
+                {
+                    self.context.delete(pill)
+                    break
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+    }
+    
+    // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
         primaryPill.id = UUID()
@@ -106,8 +144,8 @@ class CoreDataManager{
         
         saveToContext()
     }
-   
-
+    
+    
     
     func addHistory(pillName: String?, dosage: String?, isMainPill: Bool?, pillNames: [String]?, dosages: [String]?, sideEffect: [String]?, medicinalEffect: [String]?, detailContext: String?){
         let history = History(context: persistentContainer.viewContext)
@@ -136,12 +174,12 @@ class CoreDataManager{
     }
     
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
-    func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16){
-
+    func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16) {
+        
         let selectedDate: String = changeSelectedDateToString(selectDate)
         let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             for pill in pillArray {
                 if(pill.selectDate == selectedDate && pill.cycle == dosingCycle && pill.isTaking == false){
                     pill.isTaking = true
@@ -165,11 +203,11 @@ class CoreDataManager{
     
     //오늘의 서브복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllSecondaryIsTaking(selectDate: Date){
-
+        
         let selectedDate: String = changeSelectedDateToString(selectDate)
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             for pill in pillArray {
                 if(pill.selectDate == selectedDate && pill.isTaking == false){
                     pill.isTaking = true
@@ -187,17 +225,17 @@ class CoreDataManager{
     //증상입력에서 condition을 저장하고 history에 등록하는 함수
     func recordHistoryAndRecordCondition(name: [String]?, dosage: [String]?, sideEffect: [String]?, medicinalEffect: [String]?, detailContext: String?){
         addCondition(name: name, dosage: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
-    
+        
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
     
-
+    
     //primaryPill에서 ShowPrimaryPill로 추가하는 함수
     func sendPrimarypillToShowPrimaryPill(){
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         let selectedDate: String = changeSelectedDateToString(Date())
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             for pill in pillArray{
                 if pill.isShowing {
                     switch pill.dosingCycle{
@@ -256,7 +294,7 @@ class CoreDataManager{
         var pillArrayResult: [ShowPrimaryPill] = []
         let selectDate: String = changeSelectedDateToString(Date())
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             for pill in pillArray{
                 if pill.selectDate == selectDate
                 {
@@ -275,7 +313,7 @@ class CoreDataManager{
         var pillArrayResult: [ShowPrimaryPill] = []
         
         if let pillArray = TodayTotalPrimaryPill{
-           
+            
             for pill in pillArray{
                 if pill.cycle == 1 || pill.cycle == 3 || pill.cycle == 5 || pill.cycle == 7
                 {
@@ -291,7 +329,7 @@ class CoreDataManager{
     func fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: [ShowPrimaryPill]?) -> [ShowPrimaryPill] {
         var pillArrayResult: [ShowPrimaryPill] = []
         if let pillArray = TodayTotalPrimaryPill{
-           
+            
             for pill in pillArray{
                 if pill.cycle == 2 || pill.cycle == 3 || pill.cycle == 6 || pill.cycle == 7
                 {
@@ -308,7 +346,7 @@ class CoreDataManager{
         var pillArrayResult: [ShowPrimaryPill] = []
         
         if let pillArray = TodayTotalPrimaryPill{
-           
+            
             for pill in pillArray{
                 if pill.cycle == 4 || pill.cycle == 5 || pill.cycle == 6 || pill.cycle == 7
                 {
@@ -341,7 +379,7 @@ class CoreDataManager{
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
         
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             for pill in pillArray{
                 if pill.selectDate == selectDate{
                     pillArrayResult.append(pill)
@@ -360,7 +398,7 @@ class CoreDataManager{
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
         do {
-           let histroyArray = try context.fetch(request)
+            let histroyArray = try context.fetch(request)
             for history in histroyArray{
                 let historyRecordDate = changeSelectedDateToString(history.createTime ?? Date())
                 if historyRecordDate == selectDate{
@@ -379,7 +417,7 @@ class CoreDataManager{
         
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
-           let pillArray = try context.fetch(request)
+            let pillArray = try context.fetch(request)
             return pillArray
         } catch{
             print("-----CBT error-------")
@@ -389,10 +427,10 @@ class CoreDataManager{
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {
-       
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
-      
+        
         let selectedDate: String = dateFormatter.string(from: date)
         return selectedDate
     }

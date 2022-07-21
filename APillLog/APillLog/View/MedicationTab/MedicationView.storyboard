@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--복용기록-->
+        <!--Medication View Controller-->
         <scene sceneID="rJR-69-AZ3">
             <objects>
                 <viewController id="en2-nt-aBt" customClass="MedicationViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kfv-BC-60a">
-                                <rect key="frame" x="25" y="79" width="340" height="30"/>
+                                <rect key="frame" x="116.33333333333333" y="123" width="157.66666666666669" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS1-dA-4z0">
-                                        <rect key="frame" x="0.0" y="8" width="24" height="14"/>
+                                        <rect key="frame" x="0.0" y="28" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월 18일 월요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afJ-Vq-dBR">
-                                        <rect key="frame" x="115.33333333333334" y="5" width="109.66666666666666" height="20.333333333333332"/>
+                                        <rect key="frame" x="24.000000000000007" y="25" width="109.66666666666669" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -78,17 +78,17 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-Qt-Ij0">
-                                        <rect key="frame" x="316" y="8" width="24" height="14"/>
+                                        <rect key="frame" x="133.66666666666669" y="28" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Q38-Ek-Fbp"/>
+                                    <constraint firstAttribute="height" constant="70" id="Arz-mj-HVy"/>
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-1j-NSr">
-                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
+                                <rect key="frame" x="0.0" y="188" width="390" height="573"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn5-yS-6pI">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1175"/>
@@ -139,6 +139,9 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="sign-navigation" title=""/>
+                                                                <connections>
+                                                                    <segue destination="99O-g9-za1" kind="show" id="GIe-ra-ife"/>
+                                                                </connections>
                                                             </button>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N6s-gf-qSi">
                                                                 <rect key="frame" x="20" y="130" width="300" height="50"/>
@@ -263,13 +266,13 @@
                         <viewLayoutGuide key="safeArea" id="MND-81-mzl"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="Kfv-BC-60a" secondAttribute="bottom" constant="35" id="QfL-Xh-mFR"/>
+                            <constraint firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="3iY-bh-yGL"/>
+                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="100" id="ADt-ci-5f6"/>
                             <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="3Ih-1j-NSr" secondAttribute="trailing" id="TwP-bk-hag"/>
+                            <constraint firstItem="Kfv-BC-60a" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="35" id="bSq-a7-6el"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="bUx-j6-KmK"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="bottom" secondItem="MND-81-mzl" secondAttribute="bottom" id="jT6-eJ-cRB"/>
-                            <constraint firstItem="Kfv-BC-60a" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="35" id="k5J-ir-tHm"/>
-                            <constraint firstItem="Kfv-BC-60a" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" constant="25" id="ptF-ZH-9pZ"/>
-                            <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="Kfv-BC-60a" secondAttribute="trailing" constant="25" id="rQb-Or-i4p"/>
+                            <constraint firstItem="Kfv-BC-60a" firstAttribute="centerX" secondItem="NaL-pe-2VR" secondAttribute="centerX" id="tgH-Ys-12Z"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
@@ -280,9 +283,6 @@
                     <navigationItem key="navigationItem" id="QFu-wC-GLp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="dayLabel" destination="afJ-Vq-dBR" id="Yco-AI-UGW"/>
-                        <outlet property="lastDayButton" destination="DS1-dA-4z0" id="Bib-Dv-MfQ"/>
-                        <outlet property="nextDayButton" destination="Dgz-Qt-Ij0" id="r2V-87-1Jl"/>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
                         <outlet property="secondaryPillField" destination="168-Nr-JJL" id="Cv5-p5-xrN"/>
@@ -313,10 +313,45 @@
         <!--AddPrimaryPill-->
         <scene sceneID="fSs-jd-QEJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddPrimaryPill" id="eii-aa-qKd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yMp-OZ-Qih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="99O-g9-za1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7w6-Ma-pB3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTo-Wf-qxP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="92"/>
+            <point key="canvasLocation" x="768" y="23"/>
+        </scene>
+        <!--ManageDosingView-->
+        <scene sceneID="IsJ-cI-LhC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="Dt6-4l-NDv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xCa-ak-R1Y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-lk-55E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="91"/>
+        </scene>
+        <!--복용기록-->
+        <scene sceneID="bJU-sc-kPv">
+            <objects>
+                <navigationController storyboardIdentifier="MedicationViewController" automaticallyAdjustsScrollViewInsets="NO" id="iZc-H1-lr9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
+                        <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
+                        <color key="badgeColor" name="AccentColor"/>
+                        <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SD1-ZF-SfR">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="en2-nt-aBt" kind="relationship" relationship="rootViewController" id="1t3-OT-h1O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ic1-2v-Fzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-840" y="91"/>
         </scene>
         <!--CheckConditionView-->
         <scene sceneID="VY5-CP-5zc">
