@@ -103,6 +103,7 @@ extension ManageDosingViewController: UITableViewDataSource {
             coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
             
             primaryPillList.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else {
@@ -121,9 +122,11 @@ extension ManageDosingViewController: UITableViewDelegate {
 extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
         primaryPillList = coreDataManager.fetchPrimaryPill()
-        tableView.reloadData()
+        tableView.setNeedsDisplay()
+            //   tableView.reloadData()
     }
 }
+
 
 
 // ManageDosingTableViewCell

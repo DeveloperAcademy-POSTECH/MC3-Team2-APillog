@@ -52,6 +52,28 @@ class CoreDataManager{
         }
         saveToContext()
     }
+    func deleteShowPrimaryPill(pill: PrimaryPill){
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        //현재의 날짜를 선택
+        let todayDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for item in pillArray {
+                if (item.selectDate == todayDate && item.name == pill.name &&
+                    item.dosage == pill.dosage && item.cycle == pill.dosingCycle)
+                {
+                    
+                    self.context.delete(item)
+                    break
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+    }
     
     func deletePrimaryPill(pill: PrimaryPill) {
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
@@ -62,6 +84,7 @@ class CoreDataManager{
             for index in pillArray.indices {
                 if pillArray[index].id == pill.id
                 {
+                    deleteShowPrimaryPill(pill: pill)
                     self.context.delete(pill)
                     break
                 }
@@ -173,6 +196,13 @@ class CoreDataManager{
         addHistory(pillName: showPrimaryPill.name, dosage: showPrimaryPill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
     }
     
+    func changePrimaryIsTakingAndCancelHistory(primaryPill: ShowPrimaryPill){
+       
+        primaryPill.isTaking = false
+        
+        
+    }
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16) {
         
@@ -245,15 +275,37 @@ class CoreDataManager{
         addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: name, dosages: dosage, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
     }
     
+ 
+    func checkPrimaryPillIsSameShowPrimaryPill(pill:PrimaryPill) -> Bool{
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        let selectedDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            for item in pillArray{
+                if (item.selectDate == selectedDate && item.name == pill.name
+                    && item.dosage == pill.dosage && item.cycle == pill.dosingCycle)
+                {return true}
+            }
+        }
+        catch{
+            print("check error")
+        }
+        return false
+    }
+
+  
+    //
+    
     
     //primaryPill에서 ShowPrimaryPill로 추가하는 함수
     func sendPrimarypillToShowPrimaryPill(){
+        
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         let selectedDate: String = changeSelectedDateToString(Date())
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-                if pill.isShowing {
+                if pill.isShowing && !checkPrimaryPillIsSameShowPrimaryPill(pill: pill){
                     switch pill.dosingCycle{
                     case Int16(1):
                         do { self.addShowPrimaryPill(name: pill.name ?? "" , dosage: pill.dosage ?? "", cycle: Int16(1), selectDate: selectedDate) }
@@ -287,8 +339,9 @@ class CoreDataManager{
         } catch{
             print("--- send ShowPrimary error ----")
         }
+        }
         
-    }
+    
     // MARK: - Core Data READ
     
     //메인약 추가 페이지에 사용할 primaryPill read함수
