@@ -32,6 +32,51 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-1n-zaM">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✏️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqJ-i1-zzl">
+                                                <rect key="frame" x="20" y="10" width="54" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iIq-v8-tji">
+                                                <rect key="frame" x="90" y="16" width="195" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 상태가 어떠신가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-he-3Ga">
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="19.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편함, 부작용, 약효 등을 적어주세요. 정확한 진료를 위한 좋은 자료가 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-oT-tTS">
+                                                        <rect key="frame" x="0.0" y="19.333333333333343" width="195" height="28.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-navigation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Vv-PBW">
+                                                <rect key="frame" x="315" y="35" width="10" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="gJh-59-un5"/>
+                                                    <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="EAi-Vv-PBW" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="1Ub-lW-eSK"/>
+                                            <constraint firstAttribute="trailing" secondItem="EAi-Vv-PBW" secondAttribute="trailing" constant="15" id="86m-bP-hoj"/>
+                                            <constraint firstItem="jqJ-i1-zzl" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="9It-kZ-ipT"/>
+                                            <constraint firstItem="iIq-v8-tji" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="90" id="aJq-Zc-1fM"/>
+                                            <constraint firstAttribute="trailing" secondItem="iIq-v8-tji" secondAttribute="trailing" constant="55" id="fTm-vi-FuJ"/>
+                                            <constraint firstItem="jqJ-i1-zzl" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="20" id="hXl-mT-0Wp"/>
+                                            <constraint firstItem="iIq-v8-tji" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="jwq-Vt-Qbk"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-Qt-Ij0">
                                         <rect key="frame" x="316" y="8" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
@@ -64,58 +109,10 @@
                                                                     <action selector="tapAddConditionButton:" destination="en2-nt-aBt" eventType="touchUpInside" id="pom-HH-kFt"/>
                                                                 </connections>
                                                             </button>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-1n-zaM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✏️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqJ-i1-zzl">
-                                                                        <rect key="frame" x="20" y="10" width="54" height="60"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iIq-v8-tji">
-                                                                        <rect key="frame" x="90" y="16" width="195" height="48"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 상태가 어떠신가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-he-3Ga">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="195" height="19.333333333333332"/>
-                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편함, 부작용, 약효 등을 적어주세요. 정확한 진료를 위한 좋은 자료가 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-oT-tTS">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333343" width="195" height="28.666666666666671"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" systemColor="systemGrayColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-navigation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Vv-PBW">
-                                                                        <rect key="frame" x="315" y="35" width="10" height="10"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="10" id="gJh-59-un5"/>
-                                                                            <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="EAi-Vv-PBW" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="1Ub-lW-eSK"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="EAi-Vv-PBW" secondAttribute="trailing" constant="15" id="86m-bP-hoj"/>
-                                                                    <constraint firstItem="jqJ-i1-zzl" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="9It-kZ-ipT"/>
-                                                                    <constraint firstItem="iIq-v8-tji" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="90" id="aJq-Zc-1fM"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="iIq-v8-tji" secondAttribute="trailing" constant="55" id="fTm-vi-FuJ"/>
-                                                                    <constraint firstItem="jqJ-i1-zzl" firstAttribute="leading" secondItem="8Zb-1n-zaM" secondAttribute="leading" constant="20" id="hXl-mT-0Wp"/>
-                                                                    <constraint firstItem="iIq-v8-tji" firstAttribute="centerY" secondItem="8Zb-1n-zaM" secondAttribute="centerY" id="jwq-Vt-Qbk"/>
-                                                                </constraints>
-                                                            </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="8Zb-1n-zaM" firstAttribute="top" secondItem="v9O-Gs-4Cx" secondAttribute="top" id="Bcq-gp-R6a"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="MJE-BF-Yhd"/>
                                                             <constraint firstAttribute="height" constant="80" id="S00-xm-8wR"/>
-                                                            <constraint firstItem="8Zb-1n-zaM" firstAttribute="leading" secondItem="v9O-Gs-4Cx" secondAttribute="leading" id="b6p-CC-GKa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="8Zb-1n-zaM" secondAttribute="trailing" id="lCD-tq-0oc"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-4e-HMT" userLabel="PrimaryPillView">

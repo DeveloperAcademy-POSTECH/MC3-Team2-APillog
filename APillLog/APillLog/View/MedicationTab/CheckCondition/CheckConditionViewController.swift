@@ -10,13 +10,17 @@ import UIKit
 class CheckConditionViewController: UIViewController, UITextViewDelegate {
     
     // MARK: 변수
+    // 증상 반환
     var pillSideEffect: String = ""
     var pillMedicinalEffect: String = ""
     var pillDetailContext: String = ""
     
+    // 증상 저장 버튼 활성화를 위한 변수
     var pillSideEffectIsOn: Bool = false
     var pillMedicinalEffectIsOn: Bool = false
     var pillDetailContextIsOn: Bool = false
+    
+    // 증상 저장 버튼 상태
     var saveButtonState: Bool = false {
         didSet {
             if saveButtonState {
@@ -31,6 +35,8 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     
     var pillSideEffectDummyData: [String : Bool]!
     var pillMedicinalEffectDummyData: [String: Bool]!
+    
+    var coreDataManager: CoreDataManager = CoreDataManager()
     
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!
@@ -47,24 +53,6 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         
         pillSideEffectDummyData = PillData.pillData[0].pillDisadvantage
         pillMedicinalEffectDummyData = PillData.pillData[0].pillAdvantage
-        
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        for (key, value) in pillSideEffectDummyData {
-            if value == true {
-                self.pillSideEffect += "\(key) "
-            }
-        }
-        
-        for (key, value) in pillMedicinalEffectDummyData {
-            if value == true {
-                self.pillMedicinalEffect += "\(key) "
-            }
-        }
-        
-        print(pillSideEffect)
-        print(pillMedicinalEffect)
     }
     
     
@@ -102,6 +90,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         sender.isSelected.toggle()
         if sender.isSelected {
             self.pillSideEffectDummyData["\(sender.titleLabel?.text ?? "")"] = true
+            
         } else {
             self.pillSideEffectDummyData["\(sender.titleLabel?.text ?? "")"] = false
         }
@@ -121,6 +110,8 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         } else {
             self.saveButtonState = false
         }
+        
+        self.checkSaveButtonState()
         
         self.changeButtonState(sender)
     }
@@ -142,12 +133,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
             }
         }
         
-        // saveButtonState 값 체크
-        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
-            self.saveButtonState = true
-        } else {
-            self.saveButtonState = false
-        }
+        self.checkSaveButtonState()
         
         self.changeButtonState(sender)
     }
@@ -157,12 +143,28 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func tapConditionSaveButton(_ sender: Any) {
-        // TODO: 버튼 눌렀을 때 값이 코어데이터로 저장되도록
+        // 부작용 저장
+        for (key, value) in pillSideEffectDummyData {
+            if value == true {
+                self.pillSideEffect += "\(key) "
+            }
+        }
+        // 약 효능 저장
+        for (key, value) in pillMedicinalEffectDummyData {
+            if value == true {
+                self.pillMedicinalEffect += "\(key) "
+            }
+        }
+        // 상세 설명 저장
+        self.pillDetailContext = self.detailContext.text
+        
+        coreDataManager.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: [self.pillSideEffect], medicinalEffect: [self.pillMedicinalEffect], detailContext: self.pillDetailContext)
+        
         self.navigationController?.popViewController(animated: true)
     }
     
-    // MARK: Init & Toggle ButtonState
-    // ChipUI 의 State 변경 시 Style 변경 함수
+    // MARK: function
+    // ChipUI 의 State 에 따른 Style 변경 함수
     func changeButtonState(_ button: UIButton) {
         if button.isSelected {
             button.backgroundColor = UIColor.AColor.accent
@@ -194,18 +196,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    
-    func textViewDidChange(_ textView: UITextView) {
-        if detailContext.text.count > 150  {
-            detailContext.deleteBackward()
-        }
-        
-        if detailContext.text.count > 0 {
-            self.pillDetailContextIsOn = true
-        } else {
-            self.pillDetailContextIsOn = false
-        }
-        
+    func checkSaveButtonState() {
         if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
             self.saveButtonState = true
         } else {
@@ -213,6 +204,15 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    // TextView Function
+    func textViewDidChange(_ textView: UITextView) {
+        if detailContext.text.count > 0 {
+            self.pillDetailContextIsOn = true
+        } else {
+            self.pillDetailContextIsOn = false
+        }
+        self.checkSaveButtonState()
+    }
 }
 
 // MARK: TextView 선택 시 올라가는 conditionBackgroundView
@@ -241,6 +241,7 @@ extension CheckConditionViewController {
         self.conditionBackgroundView.transform = .identity
     }
     
+    // keyboard 이외 View 터치시 Editing End
     @IBAction func tabBackgroundView(_ sender: Any) {
         view.endEditing(true)
     }

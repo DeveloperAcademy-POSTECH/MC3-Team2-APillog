@@ -13,7 +13,6 @@
         <!--Check Condition View Controller-->
         <scene sceneID="q68-Su-LbC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kdX-yn-kQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CheckConditionViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jTN-oo-mAg" customClass="CheckConditionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hgj-AG-UVu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -454,8 +453,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="증상 입력" id="ahk-r0-V1L">
-                                        <barButtonItem key="leftBarButtonItem" title="뒤로" style="plain" id="Pga-xO-Dze">
-                                            <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="Pga-xO-Dze">
+                                            <imageReference key="image" image="left-black" symbolScale="large"/>
                                             <color key="tintColor" name="AAccent"/>
                                             <connections>
                                                 <action selector="tapBackButton:" destination="jTN-oo-mAg" id="5jg-vu-wKE"/>
@@ -485,6 +484,7 @@
                         <outlet property="detailContext" destination="jap-vz-MbA" id="K63-C9-Pgo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdX-yn-kQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="e6x-HI-QH9">
                     <connections>
                         <action selector="tabBackgroundView:" destination="jTN-oo-mAg" id="rEz-pe-u9W"/>
@@ -545,7 +545,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="left-black" width="10" height="18"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
