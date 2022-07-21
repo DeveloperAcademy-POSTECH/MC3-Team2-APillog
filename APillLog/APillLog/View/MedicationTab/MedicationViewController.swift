@@ -36,22 +36,26 @@ class MedicationViewController: UIViewController {
     var cellIdentifier = "medicationPillCell"
     var coredataManager: CoreDataManager = CoreDataManager()
     // primary pills
-//    var primaryPillMorning = coredataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: <#T##[ShowPrimaryPill]?#>)
-//    var primaryPillLunch = coredataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: <#T##[ShowPrimaryPill]?#>)
-//    var primaryPillDinner = coreDataManager.fetchShowPrimaryPillDinner(<#T##self: CoreDataManager##CoreDataManager#>)
     // secondary pills
-//    var secondaryPill = coredataManager.fetchShowSecondaryPill(selectedDate: <#T##Date#>)
-
+    var primaryPillDataMorning: [ShowPrimaryPill]? = []
+    var primaryPillDataLunch: [ShowPrimaryPill]? = []
+    var primaryPillDataDinner: [ShowPrimaryPill]? = []
+    var secondaryPillData: [ShowSecondaryPill]? = []
+    
     // MARK: - DummyData
     var primaryPillsDummyData = fetchPrimaryPillsDummyData()
     var secondaryPillsDummyData = fetchSecondaryPillsDummyData()
-    
-    var filteredPrimaryPillMorning: [PrimaryPillModel] = []
-    var filteredPrimaryPillLunch: [PrimaryPillModel] = []
-    var filteredPrimaryPillDinner: [PrimaryPillModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var primaryPillData: [ShowPrimaryPill]? = coredataManager.fetchShowPrimaryPill(selectedDate: Date())
+        primaryPillDataMorning = coredataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillData)
+        primaryPillDataLunch = coredataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillData)
+        primaryPillDataDinner = coredataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillData)
+        var secondaryPillData = coredataManager.fetchShowSecondaryPill(selectedDate: Date())
+        
+        
         setMedicationTableViews()
         setStyle()
     }
@@ -151,74 +155,105 @@ extension MedicationViewController: UITableViewDataSource {
         if tableView == primaryPillTableView {
             switch timeSegmentedControl.selectedSegmentIndex {
                 case 0:
-                    var count = 0
-                    for pill in primaryPillsDummyData {
-                        if pill.cycle == 4 ||
-                            pill.cycle == 5 ||
-                            pill.cycle == 6 ||
-                            pill.cycle == 7 {
-                            count += 1
-                        }
-                    }
-                    return count
+                // test용
+                return 3
+//                return primaryPillDataMorning!.count
                 case 1:
-                    var count = 0
-                    for pill in primaryPillsDummyData {
-                        if pill.cycle == 2 ||
-                            pill.cycle == 3 ||
-                            pill.cycle == 6 ||
-                            pill.cycle == 7 {
-                            count += 1
-                        }
-                    }
-                    return count
+//                    return primaryPillDataLunch!.count
+                // test용
+                return 3
                 case 2:
-                    var count = 0
-                    for pill in primaryPillsDummyData {
-                        if pill.cycle == 1 ||
-                            pill.cycle == 3 ||
-                            pill.cycle == 5 ||
-                            pill.cycle == 7 {
-                            count += 1
-                        }
-                    }
-                    return count
+//                    return primaryPillDataDinner!.count
+                // test용
+                return 3
                 default: break
             }
             return 0
         } else {
-            return secondaryPillsDummyData.count
+            return secondaryPillData!.count
         }
     }
 
-    // 셀 데이터 임시로 아침, 점심, 저녁 구분 없이 모든 약들이 나오게 처리했어요
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MedicationPillCell
-        
-        // Image
-        cell.pillImageView.image = UIImage(named: tableView == primaryPillTableView ?
-                                           "primaryPill" : "secondaryPill")
-        // Title
-        cell.cellTitleLabel.text = tableView == primaryPillTableView ?
-        primaryPillsDummyData[indexPath.row].name + " \(primaryPillsDummyData[indexPath.row].dosage)" :
-            secondaryPillsDummyData[indexPath.row].name
-        cell.pillTimeLabel.font = UIFont.AFont.cardViewPillName
 
-        // Time
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MedicationPillCell
+
+        // test용
         if tableView == primaryPillTableView {
+            // Image
+            cell.pillImageView.image = UIImage(named: "primaryPill")
+            // Title
+            cell.cellTitleLabel.text = primaryPillsDummyData[indexPath.row].name + " \(primaryPillsDummyData[indexPath.row].dosage)"
+            // Time
             cell.pillTimeLabel.text = primaryPillsDummyData[indexPath.row].takeTime != "" ?
-            primaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." :
-            "아직 복약 전이에요"
+            primaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." : "아직 복약 전이에요"
+            // Style
+            cell.cellTitleLabel.font = UIFont.AFont.chipText
+            cell.pillTimeLabel.font = UIFont.AFont.caption
         } else {
+            // Image
+            cell.pillImageView.image = UIImage(named: "secondaryPill")
+            // Title
+            cell.cellTitleLabel.text = secondaryPillsDummyData[indexPath.row].name + " \(secondaryPillsDummyData[indexPath.row].dosage)"
+            // Time
             cell.pillTimeLabel.text = secondaryPillsDummyData[indexPath.row].takeTime != "" ?
             secondaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." :
             "아직 복약 전이에요"
+            // Style
+            cell.cellTitleLabel.font = UIFont.AFont.chipText
+            cell.pillTimeLabel.font = UIFont.AFont.caption
         }
-        cell.pillTimeLabel.font = UIFont.AFont.caption
-
-        return cell
+    return cell
     }
 }
+        
+        // MARK: - CoreData 적용부
+        // TODO: - Add 뷰들 연결 후 확인하면서 수정 필요
+//        if tableView == primaryPillTableView {
+//            // Image
+//            cell.pillImageView.image = UIImage(named: "primaryPill")
+//
+//            // Style
+//            cell.cellTitleLabel.font = UIFont.AFont.chipText
+//            cell.pillTimeLabel.font = UIFont.AFont.caption
+//
+//            switch timeSegmentedControl.selectedSegmentIndex {
+//            // 아침
+//                case 0:
+//                // Title
+//                cell.cellTitleLabel.text = primaryPillDataMorning[indexPath.row].name + " \(primaryPillDataMorning[indexPath.row].dosage)"
+//                // Time
+//                cell.pillTimeLabel.text = primaryPillDataMorning[indexPath.row].takeTime != "" ?
+//                primaryPillsDummyData[indexPath.row].takeTime + "에 먹었어요." : "아직 복약 전이에요"
+//                return cell
+//
+//            // 점심
+//                case 1:
+//                cell.cellTitleLabel.text = primaryPillDataLunch[indexPath.row].name + " \(primaryPillDataLunch[indexPath.row].dosage)"
+//                // Time
+//                cell.pillTimeLabel.text = primaryPillDataLunch[indexPath.row].takeTime != "" ?
+//                primaryPillDataLunch[indexPath.row].takeTime + "에 먹었어요." : "아직 복약 전이에요"
+//                return cell
+//
+//            // 저녁
+//                case 2:
+//                cell.cellTitleLabel.text = primaryPillDataDinner[indexPath.row].name + " \(primaryPillDataDinner[indexPath.row].dosage)"
+//                // Time
+//                cell.pillTimeLabel.text = primaryPillDataDinner[indexPath.row].takeTime != "" ?
+//                primaryPillDataDinner[indexPath.row].takeTime + "에 먹었어요." : "아직 복약 전이에요"
+//                return cell
+//
+//                default: break
+//                return cell
+//            } else {
+//                cell.cellTitleLabel.text = primaryPillDataLunch[indexPath.row].name + " \(primaryPillDataLunch[indexPath.row].dosage)"
+//                // Time
+//                cell.pillTimeLabel.text = primaryPillDataLunch[indexPath.row].takeTime != "" ?
+//                primaryPillDataLunch[indexPath.row].takeTime + "에 먹었어요." : "아직 복약 전이에요"
+//                return cell
+//            }
+//        }
+        
 
 extension MedicationViewController: UITableViewDelegate {
 
