@@ -173,6 +173,13 @@ class CoreDataManager{
         addHistory(pillName: primaryPill.name, dosage: primaryPill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
     }
     
+    func changePrimaryIsTakingAndCancelHistory(primaryPill: ShowPrimaryPill){
+       
+        primaryPill.isTaking = false
+        
+        
+    }
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16) {
         
