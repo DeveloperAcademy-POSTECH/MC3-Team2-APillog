@@ -96,7 +96,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
         
         for (_, value) in pillSideEffectDummyData {
-            if value == true {
+            if value {
                 self.pillSideEffectIsOn = true
                 break
             } else {
@@ -125,7 +125,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
         
         for (_, value) in pillMedicinalEffectDummyData {
-            if value == true {
+            if value {
                 self.pillMedicinalEffectIsOn = true
                 break
             } else {
@@ -145,14 +145,14 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     @IBAction func tapConditionSaveButton(_ sender: Any) {
         // 부작용 저장
         for (key, value) in pillSideEffectDummyData {
-            if value == true {
+            if value {
                 self.pillSideEffect.append("\(key)")
             }
         }
         
         // 약 효능 저장
         for (key, value) in pillMedicinalEffectDummyData {
-            if value == true {
+            if value {
                 self.pillMedicinalEffect.append("\(key)")
             }
         }
