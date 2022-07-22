@@ -66,6 +66,7 @@ class ManageDosingViewController: UIViewController {
         
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
     @IBAction func tapBackButton(_ sender: Any) {
 //        coreDataManager.sendPrimarypillToShowPrimaryPill()
         self.navigationController?.popViewController(animated: true)
@@ -103,6 +104,7 @@ extension ManageDosingViewController: UITableViewDataSource {
             coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
             
             primaryPillList.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else {
@@ -124,6 +126,7 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
         tableView.reloadData()
     }
 }
+
 
 
 // ManageDosingTableViewCell
