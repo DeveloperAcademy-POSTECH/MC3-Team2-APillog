@@ -36,8 +36,8 @@
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
-		9ACDEAEF2886994F006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAED2886994F006204AB /* History+CoreDataClass.swift */; };
-		9ACDEAF02886994F006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAEE2886994F006204AB /* History+CoreDataProperties.swift */; };
+		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
+		9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -89,8 +89,8 @@
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		9ACDEAED2886994F006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9ACDEAEE2886994F006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 				9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */,
 				9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */,
 				9A273C2B2885390F0006427B /* CoreDataManager.swift */,
-				9ACDEAED2886994F006204AB /* History+CoreDataClass.swift */,
-				9ACDEAEE2886994F006204AB /* History+CoreDataProperties.swift */,
+				9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */,
+				9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -418,19 +418,19 @@
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
-				9ACDEAEF2886994F006204AB /* History+CoreDataClass.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
+				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */,
+				9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */,
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
 				34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
-				9ACDEAF02886994F006204AB /* History+CoreDataProperties.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,

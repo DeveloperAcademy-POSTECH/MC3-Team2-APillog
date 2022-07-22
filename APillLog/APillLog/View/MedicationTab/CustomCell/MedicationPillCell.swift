@@ -9,6 +9,7 @@ import UIKit
 
 protocol TakeMedicationDelegate {
     func setPillTake(rowNumber: Int, isPrimary: Bool)
+    func setPillNotTake(rowNumber: Int, isPrimary: Bool)
 }
 
 class MedicationPillCell: UITableViewCell {
@@ -63,6 +64,7 @@ class MedicationPillCell: UITableViewCell {
             delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
         } else {
             // TODO : 히스토리에 넣은 약을 제거하는 기능 필요
+            delegate?.setPillNotTake(rowNumber: rowNumber, isPrimary: isPrimary)
         }
     }
 }

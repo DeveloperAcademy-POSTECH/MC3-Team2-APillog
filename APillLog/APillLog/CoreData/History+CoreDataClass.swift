@@ -2,7 +2,7 @@
 //  History+CoreDataClass.swift
 //  APillLog
 //
-//  Created by 종건 on 2022/07/19.
+//  Created by 종건 on 2022/07/22.
 //
 //
 

@@ -79,9 +79,9 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: TestCode
     @IBAction func clicked() {
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통"], medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: "콘서타", dosage: "18", isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: ["콘서타", "인데놀"], dosages: ["18mg", "1정"], sideEffect: nil, medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통", "어지러움", "눈알 건조"], medicinalEffect: ["상쾌함", "기분 좋음", "눈물 촉촉"], detailContext: "아침에 일어났을 때 두통이 심해졌고 그리고 어쩌고 저쩌고 되었네요 그래서 너무 속상하구요 약 바꾸고 싶어요.")
+        coredataManager.addHistory(pillId: nil, pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통"], medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillId: nil, pillName: "콘서타", dosage: "18", isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillId: nil, pillName: nil, dosage: nil, isMainPill: true, pillNames: ["콘서타", "인데놀"], dosages: ["18mg", "1정"], sideEffect: nil, medicinalEffect: nil, detailContext: nil)
+        coredataManager.addHistory(pillId: nil, pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통", "어지러움", "눈알 건조"], medicinalEffect: ["상쾌함", "기분 좋음", "눈물 촉촉"], detailContext: "아침에 일어났을 때 두통이 심해졌고 그리고 어쩌고 저쩌고 되었네요 그래서 너무 속상하구요 약 바꾸고 싶어요.")
     }
 }

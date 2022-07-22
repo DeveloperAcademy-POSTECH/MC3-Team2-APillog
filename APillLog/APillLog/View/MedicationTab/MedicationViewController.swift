@@ -61,7 +61,7 @@ class MedicationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print(" error ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
     }
@@ -103,6 +103,7 @@ class MedicationViewController: UIViewController {
         coreDataManager.sendPrimarypillToShowPrimaryPill()
         primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
         
+        print(primaryPillList.count,"  ---------count ---------")
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
@@ -237,6 +238,20 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
     }
+    func setPillNotTake(rowNumber: Int, isPrimary: Bool) {
+        if isPrimary {
+            coreDataManager.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
+            primaryPillTableView.reloadData()
+        }
+        else {
+            
+            secondaryPillTableView.reloadData()
+        }
+        
+}
+
+    
+    
 }
 
 // 비어있는 테이블에 대해서
