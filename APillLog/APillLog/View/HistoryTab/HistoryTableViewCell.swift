@@ -26,5 +26,8 @@ class HistoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    
+//    func HistoryTableViewCellStyle() {
+//        self.createdTime.font = UIFont.AFont.historyCategyry
+//    }
+//    
 }

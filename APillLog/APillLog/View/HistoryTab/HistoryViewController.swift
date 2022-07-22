@@ -11,7 +11,6 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     var selectedDate = Date()
     
     func fetchDate(date: Date) {
-        print("HELLO")
         historyData = coredataManager.fetchHistory(selectedDate: date)
         tableView.reloadData()
     }
@@ -25,7 +24,8 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.AColor.background
+        self.tableView.backgroundColor = UIColor.AColor.background
         calendarView.delegate = self
         historyData = coredataManager.fetchHistory(selectedDate: Date())
         
@@ -33,12 +33,6 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        historyData = coredataManager.fetchHistory(selectedDate: Date())
-//        tableView.reloadData()
-//    }
 }
 
 
@@ -64,8 +58,8 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
 
         if cell.pillName.text == nil { cell.stackViewPillName.isHidden = true }
         if cell.sideEffect.text == nil { cell.stackViewSideEffect.isHidden = true }
-        if cell.medicinalEffect.text == nil { cell.stackViewMedicinalEffect.isHidden = true }
-        if cell.detailContext.text == nil { cell.stackViewDetailContext.isHidden = true }
+        if cell.medicinalEffect.text == "" { cell.stackViewMedicinalEffect.isHidden = true }
+        if cell.detailContext.text == "" { cell.stackViewDetailContext.isHidden = true }
         
         return cell
     }

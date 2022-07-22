@@ -14,6 +14,8 @@ protocol CalendarViewDelegate: AnyObject {
 class CalendarView: UIView {
     
     @IBOutlet weak var selectedDate: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
     weak var delegate: CalendarViewDelegate?
     
@@ -33,16 +35,26 @@ class CalendarView: UIView {
         return datePicker
     }()
     
+    var nextButtonState: Bool = false {
+        didSet {
+            if nextButtonState {
+                nextButton.isEnabled = true
+                nextButton.tintColor = UIColor.AColor.black
+            } else {
+                nextButton.isEnabled = false
+                nextButton.tintColor = UIColor.AColor.disable
+            }
+        }
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         customInit()
+        self.selectedDate.font = UIFont.AFont.navigationTitle
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        guard let xibView = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? CalendarView else { return }
-               xibView.frame = self.bounds
-               self.addSubview(xibView)
     }
 
     private func customInit() {
@@ -54,6 +66,9 @@ class CalendarView: UIView {
         let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
         selectedDate.addGestureRecognizer(gestureRecognize)
         selectedDate.isUserInteractionEnabled = true
+        
+        nextButtonState = false
+        prevButton.tintColor = UIColor.AColor.black
     }
     
     // MARK: DatePicker func
@@ -79,24 +94,26 @@ class CalendarView: UIView {
     }
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
-        selectedDate.text = fetchSelectedDate(date: sender.date)
-        self.delegate?.fetchDate(date: datePicker.date)
+        setDateTitle(date: datePicker.date)
         self.datePicker.isHidden = true
     }
     
     // MARK: IBAction
     @IBAction func didTapPrevButton() {
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
-        self.delegate?.fetchDate(date: datePicker.date)
-        selectedDate.text = fetchSelectedDate(date: datePicker.date)
+        setDateTitle(date: datePicker.date)
     }
     
     @IBAction func didTapNextButton() {
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
-        self.delegate?.fetchDate(date: datePicker.date)
-        selectedDate.text = fetchSelectedDate(date: datePicker.date)
+        setDateTitle(date: datePicker.date)
     }
     
+    func setDateTitle(date: Date) {
+        self.delegate?.fetchDate(date: date)
+        selectedDate.text = fetchSelectedDate(date: date)
+        nextButtonState = !Calendar.current.isDateInToday(date)
+    }
 }
 
 
