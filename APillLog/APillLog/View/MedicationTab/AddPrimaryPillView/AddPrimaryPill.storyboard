@@ -12,7 +12,7 @@
         <!--Add Primary Pill View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AddPrimaryPillViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPrimaryPillView" id="Y6W-OH-hqX" customClass="AddPrimaryPillViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xaR-mB-zu9"/>
+                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="heT-tK-zmc"/>
+                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="RNV-tW-76K"/>
+                                                    <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="PDt-1e-neB"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -84,6 +86,11 @@
                                                 <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
+                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
+                                                    <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -177,7 +184,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="lHY-w2-hk0"/>
+                        <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>

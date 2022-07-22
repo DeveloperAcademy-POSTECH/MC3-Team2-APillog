@@ -166,6 +166,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addUnknownPillButton" destination="fhx-PY-MvB" id="ImR-Bo-oJ9"/>
                         <outlet property="searchBar" destination="cS4-BM-5jE" id="fbu-59-fz8"/>
                         <outlet property="searchKeyword" destination="XKP-ZM-ucC" id="fr2-BO-TkB"/>
                         <outlet property="searchTableView" destination="LCc-0b-GqK" id="QPY-af-Cpr"/>
