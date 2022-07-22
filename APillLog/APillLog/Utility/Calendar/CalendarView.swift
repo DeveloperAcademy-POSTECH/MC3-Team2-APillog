@@ -31,19 +31,14 @@ class CalendarView: UIView {
         datePicker.layer.masksToBounds = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.maximumDate = Date()
-        
+        datePicker.isHidden = true
         return datePicker
     }()
     
     var nextButtonState: Bool = false {
         didSet {
-            if nextButtonState {
-                nextButton.isEnabled = true
-                nextButton.tintColor = UIColor.AColor.black
-            } else {
-                nextButton.isEnabled = false
-                nextButton.tintColor = UIColor.AColor.disable
-            }
+            nextButton.isEnabled = nextButtonState
+            nextButton.tintColor = nextButtonState ? UIColor.AColor.black : UIColor.AColor.disable
         }
     }
     
@@ -87,9 +82,10 @@ class CalendarView: UIView {
     @objc private func labelClicked(_ tapRecognizer: UITapGestureRecognizer) {
         
         superview!.addSubview(datePicker)
-        self.datePicker.isHidden = false
+        datePicker.isHidden.toggle()
         setDatePickerConstraints()
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.touchDown)
         datePicker.center = superview?.center ?? CGPoint(x: 0, y: 0)
     }
     
@@ -113,6 +109,7 @@ class CalendarView: UIView {
         self.delegate?.fetchDate(date: date)
         selectedDate.text = fetchSelectedDate(date: date)
         nextButtonState = !Calendar.current.isDateInToday(date)
+        datePicker.isHidden = true
     }
 }
 
