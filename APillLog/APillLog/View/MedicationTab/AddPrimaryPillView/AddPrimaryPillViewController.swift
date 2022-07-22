@@ -23,12 +23,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     @IBOutlet weak var savePrimaryPillButton: UIButton!
     @IBOutlet weak var cancleButton: UIButton!
+    @IBOutlet weak var duplicateWarningLabel: UILabel!
     
-
     
     // MARK: Property
     var coredataManager:CoreDataManager = CoreDataManager()
     var primaryPillDosingCycle: Int = 0
+    var primaryPillList: [PrimaryPill] = []
     
     var delegate: AddPrimaryPillViewControllerDelegate?
     
@@ -42,6 +43,9 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
+        primaryPillList = coredataManager.fetchPrimaryPill()
+        
+        duplicateWarningLabel.font = UIFont.AFont.articleBody
     }
     
     // MARK: @IBAction
@@ -72,6 +76,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         sender.layer.borderWidth = 1
         sender.layer.borderColor = UIColor.AColor.disable.cgColor
         sender.layer.cornerRadius = 6.5
+        
+        checkDuplication()
     }
     
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
@@ -141,7 +147,21 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
             savePrimaryPillButton.isEnabled = false
         }
         
-        
+        checkDuplication()
+    }
+    
+    func checkDuplication() {
+        for pill in primaryPillList {
+            if PrimaryPillName.text == pill.name {
+                if PrimaryPillDosage.text == pill.dosage {
+                    savePrimaryPillButton.isEnabled = false
+                    duplicateWarningLabel.isHidden = false
+                    return
+                }
+            }
+        }
+        savePrimaryPillButton.isEnabled = true
+        duplicateWarningLabel.isHidden = true
     }
 }
 

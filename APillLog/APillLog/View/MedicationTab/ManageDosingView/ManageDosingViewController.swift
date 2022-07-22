@@ -122,8 +122,18 @@ extension ManageDosingViewController: UITableViewDelegate {
 // 약 추가 이후 뷰 업데이트를 위해 델리게이트 패턴 사용
 extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
+        
         primaryPillList = coreDataManager.fetchPrimaryPill()
+        
+        // ERASE IT
+        print("")
+        print("DEBUG")
+        for data in primaryPillList {
+            print(data.name! + " " + (data.isShowing ? "yes" : "no"))
+        }
+        
         tableView.reloadData()
+//        tableView.setNeedsDisplay()
     }
 }
 
@@ -145,5 +155,14 @@ class ManageDosingTableViewCell: UITableViewCell {
     // MARK: @IBAction
     @IBAction func toggleIsShowing(_ sender: UISwitch) {
         coreDataManager.togglePrimaryPillIsShowing(pill: primaryPill!)
+        
+        let primaryPillList = coreDataManager.fetchPrimaryPill()
+        
+        // ERASE IT
+        print("")
+        print("DEBUG")
+        for data in primaryPillList {
+            print(data.name! + " " + (data.isShowing ? "yes" : "no"))
+        }
     }
 }
