@@ -61,7 +61,7 @@ class MedicationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(" error ")
+        print("----viewWillAppear----- ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
     }
@@ -103,7 +103,7 @@ class MedicationViewController: UIViewController {
         coreDataManager.sendPrimarypillToShowPrimaryPill()
         primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
         
-        print(primaryPillList.count,"  ---------count ---------")
+        print(" reloadPrimaryPillTableView ---------count ---------",primaryPillList.count)
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
