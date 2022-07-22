@@ -152,12 +152,10 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     func checkDuplication() {
         for pill in primaryPillList {
-            if PrimaryPillName.text == pill.name {
-                if PrimaryPillDosage.text == pill.dosage {
-                    savePrimaryPillButton.isEnabled = false
-                    duplicateWarningLabel.isHidden = false
-                    return
-                }
+            if PrimaryPillName.text == pill.name && PrimaryPillDosage.text == pill.dosage {
+                savePrimaryPillButton.isEnabled = false
+                duplicateWarningLabel.isHidden = false
+                return
             }
         }
         savePrimaryPillButton.isEnabled = true
