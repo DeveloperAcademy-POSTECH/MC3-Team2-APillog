@@ -125,12 +125,7 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
         
         primaryPillList = coreDataManager.fetchPrimaryPill()
         
-        // ERASE IT
-        print("")
-        print("DEBUG")
-        for data in primaryPillList {
-            print(data.name! + " " + (data.isShowing ? "yes" : "no"))
-        }
+
         
         tableView.reloadData()
 //        tableView.setNeedsDisplay()
@@ -158,11 +153,5 @@ class ManageDosingTableViewCell: UITableViewCell {
         
         let primaryPillList = coreDataManager.fetchPrimaryPill()
         
-        // ERASE IT
-        print("")
-        print("DEBUG")
-        for data in primaryPillList {
-            print(data.name! + " " + (data.isShowing ? "yes" : "no"))
-        }
     }
 }
