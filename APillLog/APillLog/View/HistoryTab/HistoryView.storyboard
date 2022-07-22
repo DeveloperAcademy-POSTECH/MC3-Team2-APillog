@@ -55,6 +55,7 @@
                     <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="A2V-tg-VUy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="calendarView" destination="KIn-LN-qwr" id="eEE-0y-j7P"/>
                         <outlet property="tableView" destination="gm3-eL-WjG" id="E3C-ZI-OgD"/>
                     </connections>
                 </viewController>

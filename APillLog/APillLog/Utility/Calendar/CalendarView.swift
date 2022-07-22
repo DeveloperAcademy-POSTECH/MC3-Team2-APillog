@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol CalendarViewDelegate: AnyObject {
+    func fetchDate(date: Date)
+}
+
 class CalendarView: UIView {
     
     @IBOutlet weak var selectedDate: UILabel!
+    
+    weak var delegate: CalendarViewDelegate?
     
     let datePicker: UIDatePicker = {
         
@@ -34,10 +40,12 @@ class CalendarView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        guard let xibView = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? CalendarView else { return }
+               xibView.frame = self.bounds
+               self.addSubview(xibView)
     }
 
     private func customInit() {
-        
         guard let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? UIView else { return }
             view.frame = self.bounds
             self.addSubview(view)
@@ -52,6 +60,7 @@ class CalendarView: UIView {
     private func fetchSelectedDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM월 dd일 E요일"
+        self.delegate?.fetchDate(date: date)
         return formatter.string(from: date)
     }
     
@@ -71,19 +80,20 @@ class CalendarView: UIView {
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
         selectedDate.text = fetchSelectedDate(date: sender.date)
+        self.delegate?.fetchDate(date: datePicker.date)
         self.datePicker.isHidden = true
     }
     
     // MARK: IBAction
     @IBAction func didTapPrevButton() {
-        self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
+        self.delegate?.fetchDate(date: datePicker.date)
         selectedDate.text = fetchSelectedDate(date: datePicker.date)
     }
     
     @IBAction func didTapNextButton() {
-        self.datePicker.date = datePicker.date
         self.datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
+        self.delegate?.fetchDate(date: datePicker.date)
         selectedDate.text = fetchSelectedDate(date: datePicker.date)
     }
     

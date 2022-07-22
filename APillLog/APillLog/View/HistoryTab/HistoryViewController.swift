@@ -7,8 +7,16 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, CalendarViewDelegate {
+    var selectedDate = Date()
     
+    func fetchDate(date: Date) {
+        print("HELLO")
+        historyData = coredataManager.fetchHistory(selectedDate: date)
+        tableView.reloadData()
+    }
+    
+    @IBOutlet weak var calendarView: CalendarView!
     @IBOutlet weak var tableView: UITableView!
     
     let coredataManager: CoreDataManager = CoreDataManager()
@@ -17,17 +25,20 @@ class HistoryViewController: UIViewController {
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        calendarView.delegate = self
         historyData = coredataManager.fetchHistory(selectedDate: Date())
+        
         registerNib()
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        historyData = coredataManager.fetchHistory(selectedDate: Date())
-        tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        historyData = coredataManager.fetchHistory(selectedDate: Date())
+//        tableView.reloadData()
+//    }
 }
 
 
@@ -77,11 +88,4 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         return nil
     }
     
-    // MARK: TestCode
-    @IBAction func clicked() {
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통"], medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: "콘서타", dosage: "18", isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: true, pillNames: ["콘서타", "인데놀"], dosages: ["18mg", "1정"], sideEffect: nil, medicinalEffect: nil, detailContext: nil)
-        coredataManager.addHistory(pillName: nil, dosage: nil, isMainPill: nil, pillNames: nil, dosages: nil, sideEffect: ["두통", "어지러움", "눈알 건조"], medicinalEffect: ["상쾌함", "기분 좋음", "눈물 촉촉"], detailContext: "아침에 일어났을 때 두통이 심해졌고 그리고 어쩌고 저쩌고 되었네요 그래서 너무 속상하구요 약 바꾸고 싶어요.")
-    }
 }
