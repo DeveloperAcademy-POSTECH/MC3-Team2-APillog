@@ -548,6 +548,7 @@ class CoreDataManager{
         
         return CBT()
     }
+
     
     func fetchRecentAddedSecondaryPill() -> [RecentAddedSecondaryPill] {
         let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
@@ -561,13 +562,17 @@ class CoreDataManager{
         return [RecentAddedSecondaryPill()]
     }
     
-    func updateOneCBT(cbtUUID: UUID, cbtUpdateContext: String) {
+
+
+    //CBT를 업데이트 하는 함수
+    func updateOneCBT(receivedCBT : CBT) {
+
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
             let cbtArray = try context.fetch(request)
             for data in cbtArray{
-                if data.cbtId == cbtUUID{
-                    data.cbtContext = cbtUpdateContext
+                if data.cbtId == receivedCBT.cbtId{
+                    data.cbtContext = receivedCBT.cbtContext
                     saveToContext()
                     break
                 }
@@ -578,6 +583,11 @@ class CoreDataManager{
         }
         
         
+    }
+    //선택한 CBT를 삭제하는 함수
+    func deleteCBT(CBT : CBT){
+        self.context.delete(CBT)
+        saveToContext()
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {
@@ -590,3 +600,4 @@ class CoreDataManager{
     }
     
 }
+
