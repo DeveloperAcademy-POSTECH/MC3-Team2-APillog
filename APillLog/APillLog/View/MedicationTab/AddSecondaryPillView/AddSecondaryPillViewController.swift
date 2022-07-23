@@ -26,14 +26,16 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     
     var dummy: [String] = ["타이레놀정 500mg", "타이레놀정 160mg", "타이레놀정 80mg", "타이레놀현탁액 100ml", "부루펜시럽 80ml", "베아제정", "닥터베아제정", "훼스탈골드정", "훼스탈플러스정", "판콜에이내복액 30ml", "판피린티정", "제일쿨파스", "신신파스아렉스", "베아제정2", "닥터베아제정2", "훼스탈골드정2", "훼스탈플러스정2", "판콜에이내복액 30ml2", "판피린티정2", "제일쿨파스2", "신신파스아렉스2"]
-    var filteredData: [String]!
+    var filteredData: [String] = []
     
     
     // MARK: LifeCycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filteredData = dummy
+        let recentAddedPillNameList = fetchRecentAddedPillNameList()
+        filteredData.append(contentsOf: recentAddedPillNameList)
+        filteredData.append(contentsOf: dummy)
     }
     
     
@@ -63,6 +65,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
         coreDataManager.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
+        coreDataManager.addRecentAddedSecondaryPill(name: filteredData[indexPath.row])
         self.delegate.didFinishModal()
     }
     
@@ -97,13 +100,25 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
         searchKeyword.text = text.isEmpty ? "없는 약 추가하기" : "'\(text)'"
     }
     
+    func fetchRecentAddedPillNameList() -> [String] {
+        let recentAddedPillList = coreDataManager.fetchRecentAddedSecondaryPill()
+        var recentAddedPillNameList: [String] = []
+        
+        for pill in recentAddedPillList {
+            recentAddedPillNameList.insert(pill.name!, at: 0)
+        }
+        
+        return recentAddedPillNameList
+    }
+    
     // MARK: @IBAction
     @IBAction func tapCancleButton() {
         dismiss(animated: true)
     }
     
     @IBAction func tapAddPillButton() {
-        coreDataManager.addShowSecondaryPill(name: self.searchBar.text ?? "", dosage: "", selectDate: Date())
+        coreDataManager.addShowSecondaryPill(name: self.searchBar.text!, dosage: "", selectDate: Date())
+        coreDataManager.addRecentAddedSecondaryPill(name: self.searchBar.text!)
         delegate.didFinishModal()
         dismiss(animated: true)
     }
