@@ -163,7 +163,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         }
         
         primaryPillTableViewHeight.constant = 75.0 * CGFloat(primaryPillListDataSource.count)
-        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
+        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 110
         
         primaryPillTableView.reloadData()
     }
