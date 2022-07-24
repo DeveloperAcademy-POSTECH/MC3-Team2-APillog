@@ -23,15 +23,21 @@ class CalendarView: UIView {
         
         let datePicker = UIDatePicker()
         datePicker.locale = .current
+        datePicker.maximumDate = Date()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
+        
         datePicker.backgroundColor = UIColor.AColor.white
         datePicker.tintColor = UIColor.AColor.accent
+        
+        datePicker.layer.borderWidth = 0.2
+        datePicker.layer.borderColor = UIColor.AColor.black.cgColor
         datePicker.layer.cornerRadius = 10
         datePicker.layer.masksToBounds = true
+        
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        datePicker.maximumDate = Date()
         datePicker.isHidden = true
+        
         return datePicker
     }()
     
@@ -56,9 +62,9 @@ class CalendarView: UIView {
         guard let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? UIView else { return }
             view.frame = self.bounds
             self.addSubview(view)
+        let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
         
         selectedDate.text = fetchSelectedDate(date: Date())
-        let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
         selectedDate.addGestureRecognizer(gestureRecognize)
         selectedDate.isUserInteractionEnabled = true
         
@@ -75,22 +81,28 @@ class CalendarView: UIView {
     }
     
     private func setDatePickerConstraints() {
-        self.datePicker.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
-        self.datePicker.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
+        datePicker.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        datePicker.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - 30).isActive = true
     }
     
+    
     @objc private func labelClicked(_ tapRecognizer: UITapGestureRecognizer) {
+        superview?.addSubview(datePicker)
         
-        superview!.addSubview(datePicker)
+        datePicker.layer.shadowColor = UIColor.black.cgColor
+        datePicker.layer.shadowOffset = .zero
+        datePicker.layer.shadowRadius = 10
+        datePicker.layer.shadowOpacity = 0.9
         datePicker.isHidden.toggle()
         setDatePickerConstraints()
+        
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.touchDown)
-        datePicker.center = superview?.center ?? CGPoint(x: 0, y: 0)
     }
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
-        setDateTitle(date: datePicker.date)
+        setDateTitle(te: datePicker.date)
         self.datePicker.isHidden = true
     }
     
@@ -112,5 +124,3 @@ class CalendarView: UIView {
         datePicker.isHidden = true
     }
 }
-
-
