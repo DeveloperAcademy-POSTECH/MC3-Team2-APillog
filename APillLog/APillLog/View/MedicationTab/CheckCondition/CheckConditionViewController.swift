@@ -11,8 +11,8 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     
     // MARK: 변수
     // 증상 반환
-    var pillSideEffect: String = ""
-    var pillMedicinalEffect: String = ""
+    var pillSideEffect: [String] = []
+    var pillMedicinalEffect: [String] = []
     var pillDetailContext: String = ""
     
     // 증상 저장 버튼 활성화를 위한 변수
@@ -96,7 +96,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
         
         for (_, value) in pillSideEffectDummyData {
-            if value == true {
+            if value {
                 self.pillSideEffectIsOn = true
                 break
             } else {
@@ -125,7 +125,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
         
         for (_, value) in pillMedicinalEffectDummyData {
-            if value == true {
+            if value {
                 self.pillMedicinalEffectIsOn = true
                 break
             } else {
@@ -145,20 +145,21 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     @IBAction func tapConditionSaveButton(_ sender: Any) {
         // 부작용 저장
         for (key, value) in pillSideEffectDummyData {
-            if value == true {
-                self.pillSideEffect += "\(key) "
+            if value {
+                self.pillSideEffect.append("\(key)")
             }
         }
+        
         // 약 효능 저장
         for (key, value) in pillMedicinalEffectDummyData {
-            if value == true {
-                self.pillMedicinalEffect += "\(key) "
+            if value {
+                self.pillMedicinalEffect.append("\(key)")
             }
         }
         // 상세 설명 저장
         self.pillDetailContext = self.detailContext.text
         
-        coreDataManager.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: [self.pillSideEffect], medicinalEffect: [self.pillMedicinalEffect], detailContext: self.pillDetailContext)
+        coreDataManager.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: self.pillSideEffect, medicinalEffect: self.pillMedicinalEffect, detailContext: self.pillDetailContext)
         
         self.navigationController?.popViewController(animated: true)
     }

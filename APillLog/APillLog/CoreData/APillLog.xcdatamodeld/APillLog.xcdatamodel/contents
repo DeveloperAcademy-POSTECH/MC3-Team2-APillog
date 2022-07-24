@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CBT" representedClassName="CBT" syncable="YES" codeGenerationType="class">
         <attribute name="cbtContext" optional="YES" attributeType="String"/>
         <attribute name="cbtId" attributeType="UUID" usesScalarValueType="NO"/>
@@ -24,6 +24,7 @@
         <attribute name="isMainPill" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="medicinalEffect" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="names" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="pillId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="pillName" optional="YES" attributeType="String"/>
         <attribute name="sideEffect" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
     </entity>
@@ -33,6 +34,10 @@
         <attribute name="dosingCycle" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isShowing" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="RecentAddedSecondaryPill" representedClassName="RecentAddedSecondaryPill" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SecondaryPill" representedClassName="SecondaryPill" syncable="YES" codeGenerationType="class">
@@ -61,10 +66,11 @@
     <elements>
         <element name="CBT" positionX="0" positionY="45" width="128" height="89"/>
         <element name="Condition" positionX="-36" positionY="9" width="128" height="134"/>
-        <element name="History" positionX="-18" positionY="27" width="128" height="179"/>
+        <element name="History" positionX="-18" positionY="27" width="128" height="194"/>
         <element name="PrimaryPill" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="SecondaryPill" positionX="-54" positionY="-9" width="128" height="89"/>
         <element name="ShowPrimaryPill" positionX="18" positionY="63" width="128" height="134"/>
         <element name="ShowSecondaryPill" positionX="36" positionY="81" width="128" height="119"/>
+        <element name="RecentAddedSecondaryPill" positionX="-9" positionY="81" width="128" height="59"/>
     </elements>
 </model>

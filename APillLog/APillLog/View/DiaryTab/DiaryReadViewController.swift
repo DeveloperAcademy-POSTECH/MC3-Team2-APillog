@@ -13,6 +13,7 @@ class DiaryReadViewController: UIViewController {
     var date = ""
     var body = ""
     var id  = UUID()
+    var receivedCBT : CBT = CBT()
     var coredataManager: CoreDataManager = CoreDataManager()
     @IBOutlet weak var DiaryReadViewDate: UILabel!
     @IBOutlet weak var DiaryReadViewBody: UITextView!
@@ -24,7 +25,9 @@ class DiaryReadViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        coredataManager.updateOneCBT(cbtUUID: id, cbtUpdateContext: DiaryReadViewBody.text)
+        receivedCBT.cbtContext = DiaryReadViewBody.text
+        receivedCBT.selectDate = DiaryReadViewDate.text
+        coredataManager.updateOneCBT(receivedCBT: receivedCBT)
     }
     
     

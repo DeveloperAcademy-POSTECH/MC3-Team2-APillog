@@ -183,11 +183,19 @@
                                     <constraint firstItem="ojo-Gi-Tzc" firstAttribute="leading" secondItem="8yo-pj-STi" secondAttribute="leading" id="sWV-R1-PRP"/>
                                 </constraints>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동일한 이름과 용량의 약이 이미 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Ae-FQO">
+                                <rect key="frame" x="71" y="373.5" width="272" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="8yo-pj-STi" secondAttribute="bottom" constant="25" id="4UE-Jl-DEa"/>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
+                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vm8-u7-W64"/>
                             <constraint firstAttribute="trailing" secondItem="8yo-pj-STi" secondAttribute="trailing" constant="20" id="aI7-Wk-eJf"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="25" id="eG4-Df-GjH"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="i9b-Iy-In6"/>
@@ -199,6 +207,7 @@
                     <connections>
                         <outlet property="PrimaryPillDosage" destination="B7E-LO-4P8" id="BfU-Cx-1Fa"/>
                         <outlet property="PrimaryPillName" destination="K92-cZ-HD5" id="LBs-Yg-VOs"/>
+                        <outlet property="duplicateWarningLabel" destination="bwJ-Ae-FQO" id="wdq-rM-Ocz"/>
                         <outlet property="primaryPillAfternoonButton" destination="S4S-Gm-JRC" id="Y2L-w7-RYR"/>
                         <outlet property="primaryPillEveningButton" destination="2Dt-Ow-oRz" id="8wY-3e-k1B"/>
                         <outlet property="primaryPillMorningButton" destination="G0B-xU-NoB" id="PZR-vh-3kg"/>
@@ -224,6 +233,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

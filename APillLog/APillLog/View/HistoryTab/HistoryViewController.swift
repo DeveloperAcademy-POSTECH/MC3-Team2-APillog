@@ -86,5 +86,4 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         
         return nil
     }
-    
 }

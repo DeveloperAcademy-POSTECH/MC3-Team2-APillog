@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MedicationViewController: UIViewController {
+class MedicationViewController: UIViewController, UITableViewDelegate {
     
     let cellIdentifier = "medicationPillCell"
     
@@ -35,21 +35,23 @@ class MedicationViewController: UIViewController {
     
     // Primary Pill
     @IBOutlet weak var primaryPillField: UIView!
+    @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
-    
+    @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
+
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
-    
-    @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
-    
-    
+    @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var secondaryPillFieldHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        setPillTableViews()
         
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
@@ -61,10 +63,40 @@ class MedicationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("----viewWillAppear----- ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
+        
+        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            if keyPath == "primaryPillTableViewContentSize"
+            {
+                if object is UITableView
+                {
+                    if let newValue = change?[.newKey]{
+                        let newSize = newValue as! CGSize
+                        self.primaryPillTableViewHeight.constant = newSize.height
+                    }
+                }
+            }
+    
+            if keyPath == "secondaryPillTableViewContentSize"
+            {
+                if object is UITableView
+                {
+                    if let newValue = change?[.newKey]{
+                        let newSize = newValue as! CGSize
+                        self.secondaryPillTableViewHeight.constant = newSize.height
+                    }
+                }
+            }
+        }
     
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
@@ -77,6 +109,8 @@ class MedicationViewController: UIViewController {
         default:
             primaryPillListDataSource = []
         }
+        // 특정 시간대 눌려있는 상태로 메인 약 추가 되었다가 돌아와서 다른 시간대 눌렀을 때 이전 시간대의 약 데이터가 남아있던 문제를 해결하기 위해 reloadPrimaryPillTableView 추가
+        reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
     }
     
@@ -85,6 +119,16 @@ class MedicationViewController: UIViewController {
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
         setSecondaryPillViewStyle()
+    }
+    
+    private func setPillTableViews() {
+        let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
+        primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+        secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+        primaryPillTableView.delegate = self
+        primaryPillTableView.dataSource = self
+        secondaryPillTableView.delegate = self
+        secondaryPillTableView.dataSource = self
     }
     
     private func setSymptomButtonStyle() {
@@ -103,6 +147,7 @@ class MedicationViewController: UIViewController {
         coreDataManager.sendPrimarypillToShowPrimaryPill()
         primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
         
+        print(" reloadPrimaryPillTableView ---------count ---------",primaryPillList.count)
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
@@ -118,11 +163,17 @@ class MedicationViewController: UIViewController {
             primaryPillListDataSource = []
         }
         
+        primaryPillTableViewHeight.constant = 75.0 * CGFloat(primaryPillListDataSource.count)
+        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
+        
         primaryPillTableView.reloadData()
     }
     
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
+        
+        secondaryPillTableViewHeight.constant = 70.0 * CGFloat(secondaryPillList.count)
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 110
         
         secondaryPillTableView.reloadData()
     }
@@ -237,6 +288,20 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
     }
+    func setPillNotTake(rowNumber: Int, isPrimary: Bool) {
+        if isPrimary {
+            coreDataManager.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
+            primaryPillTableView.reloadData()
+        }
+        else {
+            
+            secondaryPillTableView.reloadData()
+        }
+        
+}
+
+    
+    
 }
 
 // 비어있는 테이블에 대해서
