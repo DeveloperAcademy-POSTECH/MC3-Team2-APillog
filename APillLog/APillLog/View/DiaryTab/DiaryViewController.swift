@@ -73,8 +73,23 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         vc.body = myCBT[indexPath.row].cbtContext!
         vc.date = myCBT[indexPath.row].selectDate!
         vc.id = myCBT[indexPath.row].cbtId!
+        vc.receivedCBT = myCBT[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func tableView(
+            _ tableView: UITableView,
+            commit editingStyle: UITableViewCell.EditingStyle,
+            forRowAt indexPath: IndexPath
+    ) {
+        if editingStyle == .delete {
+            let CBT = myCBT[indexPath.row]
+            coredataManager.deleteCBT(CBT: CBT)
+            myCBT.remove(at: indexPath.row)
+            self.mistakeTableView.reloadData()
+            
+        }
     }
     
     

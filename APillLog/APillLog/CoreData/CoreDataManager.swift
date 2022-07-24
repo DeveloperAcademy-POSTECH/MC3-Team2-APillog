@@ -195,6 +195,38 @@ class CoreDataManager{
         saveToContext()
         
     }
+    
+    func addRecentAddedSecondaryPill(name: String) {
+        let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
+        
+        do {
+            let recentArray = try context.fetch(request)
+            
+            // 이전에 복용했던 기록이 있는 약이라면 지우고 상단으로 올리기
+            for pill in recentArray {
+                if pill.name == name {
+                    context.delete(pill)
+                }
+            }
+            
+            // 10개가 넘으면 한 개 빼기
+            if recentArray.count >= 10 {
+                self.context.delete(recentArray[0])
+            }
+            
+            // 약 최상단에 추가하기
+            let recentAddedSecondaryPill = RecentAddedSecondaryPill(context: persistentContainer.viewContext)
+            
+            recentAddedSecondaryPill.id = UUID()
+            recentAddedSecondaryPill.name = name
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+        
+        saveToContext()
+    }
+    
     // MARK: - page별 기능 추가
     //오늘의 복용약에서 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: ShowPrimaryPill) {
@@ -540,14 +572,31 @@ class CoreDataManager{
         
         return CBT()
     }
+
     
-    func updateOneCBT(cbtUUID: UUID, cbtUpdateContext: String) {
+    func fetchRecentAddedSecondaryPill() -> [RecentAddedSecondaryPill] {
+        let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
+        
+        do {
+            let recentArray = try context.fetch(request)
+            return recentArray
+        } catch{
+            print("-----CBT error-------")
+        }
+        return [RecentAddedSecondaryPill()]
+    }
+    
+
+
+    //CBT를 업데이트 하는 함수
+    func updateOneCBT(receivedCBT : CBT) {
+
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
             let cbtArray = try context.fetch(request)
             for data in cbtArray{
-                if data.cbtId == cbtUUID{
-                    data.cbtContext = cbtUpdateContext
+                if data.cbtId == receivedCBT.cbtId{
+                    data.cbtContext = receivedCBT.cbtContext
                     saveToContext()
                     break
                 }
@@ -558,6 +607,11 @@ class CoreDataManager{
         }
         
         
+    }
+    //선택한 CBT를 삭제하는 함수
+    func deleteCBT(CBT : CBT){
+        self.context.delete(CBT)
+        saveToContext()
     }
     //선택한 데이터를 2022-07-16 의 형태의 String으로 바꿔주는 함수
     func changeSelectedDateToString(_ date: Date) -> String {
@@ -570,3 +624,4 @@ class CoreDataManager{
     }
     
 }
+
