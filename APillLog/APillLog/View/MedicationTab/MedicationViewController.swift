@@ -37,7 +37,8 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
-    
+    @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!

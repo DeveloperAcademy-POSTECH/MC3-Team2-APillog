@@ -290,7 +290,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
+                        <outlet property="primaryPillFieldHeight" destination="Tqh-Kb-KkS" id="e3k-BL-hM3"/>
                         <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>
+                        <outlet property="primaryPillTableViewHeight" destination="agQ-qx-kS1" id="B5T-5C-SIM"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
                         <outlet property="secondaryPillField" destination="168-Nr-JJL" id="Cv5-p5-xrN"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>
