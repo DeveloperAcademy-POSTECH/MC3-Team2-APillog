@@ -310,7 +310,7 @@ class CoreDataManager{
             for item in pillArray{
                 if (item.selectDate == selectedDate && item.name == pill.name
                     && item.dosage == pill.dosage) {
-                    if (item.cycle & pill.dosingCycle == 1) {
+                    if (item.cycle & pill.dosingCycle >= 1) {
                         return false
                     }
                 }
