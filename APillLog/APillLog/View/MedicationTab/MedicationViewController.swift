@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MedicationViewController: UIViewController {
+class MedicationViewController: UIViewController, UITableViewDelegate {
     
     let cellIdentifier = "medicationPillCell"
     
@@ -35,21 +35,21 @@ class MedicationViewController: UIViewController {
     
     // Primary Pill
     @IBOutlet weak var primaryPillField: UIView!
+    @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
-    
+    @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
+
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
-    
-    @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        setPillTableViews()
         
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
@@ -64,7 +64,40 @@ class MedicationViewController: UIViewController {
         print("----viewWillAppear----- ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
+        
+        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
+        
+//        self.primaryPillField.addObserver(self, forKeyPath: "primaryPillFieldContentsize", options: .new, context: nil)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            if keyPath == "primaryPillTableViewContentSize"
+            {
+                if object is UITableView
+                {
+                    if let newValue = change?[.newKey]{
+                        let newSize = newValue as! CGSize
+                        self.primaryPillTableViewHeight.constant = newSize.height
+                        print("뉴 사이즈: ", newSize.height)
+                    }
+                }
+            }
+    
+//            if keyPath == "secondaryPillTableViewContentSize"
+//            {
+//                if object is UITableView
+//                {
+//                    if let newValue = change?[.newKey]{
+//                        let newSize = newValue as! CGSize
+//                        self.secondaryPillTableViewHeight.constant = newSize.height
+//                    }
+//                }
+//            }
+        }
     
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
@@ -85,6 +118,16 @@ class MedicationViewController: UIViewController {
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
         setSecondaryPillViewStyle()
+    }
+    
+    private func setPillTableViews() {
+        let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
+        primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+        secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+        primaryPillTableView.delegate = self
+        primaryPillTableView.dataSource = self
+        secondaryPillTableView.delegate = self
+        secondaryPillTableView.dataSource = self
     }
     
     private func setSymptomButtonStyle() {
@@ -118,6 +161,9 @@ class MedicationViewController: UIViewController {
         default:
             primaryPillListDataSource = []
         }
+        
+        primaryPillTableViewHeight.constant = 75.0 * CGFloat(primaryPillListDataSource.count)
+        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
         
         primaryPillTableView.reloadData()
     }
