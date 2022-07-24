@@ -102,7 +102,7 @@ class CalendarView: UIView {
     }
     
     @objc private func datePickerValueChanged(sender: UIDatePicker) {
-        setDateTitle(te: datePicker.date)
+        setDateTitle(date: datePicker.date)
         self.datePicker.isHidden = true
     }
     

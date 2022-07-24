@@ -57,8 +57,8 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.createdTime.text = dateformatter.string(from:historyData[indexPath.row].createTime ?? Date())
         cell.pillName.text = fetchPillNameText(index: indexPath.row)
-        cell.sideEffect.text = historyData[indexPath.row].sideEffect?.joined(separator: " /")
-        cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: " /")
+        cell.sideEffect.text = historyData[indexPath.row].sideEffect?.joined(separator: " / ")
+        cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: " / ")
         cell.detailContext.text = historyData[indexPath.row].detailContext
 
         if cell.pillName.text == "" { cell.stackViewPillName.isHidden = true }
