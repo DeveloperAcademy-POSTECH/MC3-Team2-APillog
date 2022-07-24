@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="880"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-bi-Ud2">
-                                                <rect key="frame" x="25" y="0.0" width="340" height="905"/>
+                                                <rect key="frame" x="25" y="0.0" width="340" height="630"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v9O-Gs-4Cx" userLabel="ButtonView Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
@@ -195,7 +195,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMK-9x-uNM" userLabel="SecondaryPillView">
-                                                        <rect key="frame" x="0.0" y="405" width="340" height="500"/>
+                                                        <rect key="frame" x="0.0" y="405" width="340" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 약 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Di-8k1">
                                                                 <rect key="frame" x="20" y="20" width="77" height="43"/>
@@ -249,7 +249,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="500" id="5Pw-3g-7Bh"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="5Pw-3g-7Bh"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="leading" secondItem="PMK-9x-uNM" secondAttribute="leading" constant="20" id="CEF-mT-BSg"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="20" id="CkC-fb-GKm"/>
                                                             <constraint firstItem="RId-yl-pLj" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="60" id="Oe9-VO-uNU"/>
@@ -258,6 +258,13 @@
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="25" id="oaW-Gw-JOU"/>
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="xs4-A4-ziI"/>
                                                             <constraint firstAttribute="trailing" secondItem="168-Nr-JJL" secondAttribute="trailing" constant="15" id="yQ4-0r-9dq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeg-Ie-b6S">
+                                                        <rect key="frame" x="0.0" y="630" width="340" height="0.0"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" id="oQS-cz-zLD"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -302,8 +309,10 @@
                         <outlet property="primaryPillTableViewHeight" destination="agQ-qx-kS1" id="ceM-Nr-wCW"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
                         <outlet property="secondaryPillField" destination="PMK-9x-uNM" id="7Mt-zM-m1u"/>
+                        <outlet property="secondaryPillFieldHeight" destination="5Pw-3g-7Bh" id="NQ8-mM-Fzq"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>
                         <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="AJA-kj-32D"/>
+                        <outlet property="secondaryPillTableViewHeight" destination="lPD-QO-HsM" id="7Ld-bK-jKD"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
                         <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="7Hs-Tb-Hfu"/>

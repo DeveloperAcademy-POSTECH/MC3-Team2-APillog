@@ -45,7 +45,9 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
-
+    @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var secondaryPillFieldHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -82,21 +84,20 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
                     if let newValue = change?[.newKey]{
                         let newSize = newValue as! CGSize
                         self.primaryPillTableViewHeight.constant = newSize.height
-                        print("뉴 사이즈: ", newSize.height)
                     }
                 }
             }
     
-//            if keyPath == "secondaryPillTableViewContentSize"
-//            {
-//                if object is UITableView
-//                {
-//                    if let newValue = change?[.newKey]{
-//                        let newSize = newValue as! CGSize
-//                        self.secondaryPillTableViewHeight.constant = newSize.height
-//                    }
-//                }
-//            }
+            if keyPath == "secondaryPillTableViewContentSize"
+            {
+                if object is UITableView
+                {
+                    if let newValue = change?[.newKey]{
+                        let newSize = newValue as! CGSize
+                        self.secondaryPillTableViewHeight.constant = newSize.height
+                    }
+                }
+            }
         }
     
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
@@ -172,6 +173,9 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
+        
+        secondaryPillTableViewHeight.constant = 75.0 * CGFloat(secondaryPillList.count)
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
         
         secondaryPillTableView.reloadData()
     }
