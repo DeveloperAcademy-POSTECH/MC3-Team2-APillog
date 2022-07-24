@@ -110,6 +110,8 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         default:
             primaryPillListDataSource = []
         }
+        // 특정 시간대 눌려있는 상태로 메인 약 추가 되었다가 돌아와서 다른 시간대 눌렀을 때 이전 시간대의 약 데이터가 남아있던 문제를 해결하기 위해 reloadPrimaryPillTableView 추가
+        reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
     }
     
