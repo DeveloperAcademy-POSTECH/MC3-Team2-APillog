@@ -62,7 +62,7 @@ class CalendarView: UIView {
         guard let view = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? UIView else { return }
             view.frame = self.bounds
             self.addSubview(view)
-        let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
+        let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(clickLabel))
         
         selectedDate.text = fetchSelectedDate(date: Date())
         selectedDate.addGestureRecognizer(gestureRecognize)
@@ -88,7 +88,7 @@ class CalendarView: UIView {
     }
     
     
-    @objc private func labelClicked(_ tapRecognizer: UITapGestureRecognizer) {
+    @objc private func clickLabel(_ tapRecognizer: UITapGestureRecognizer) {
         superview?.addSubview(datePicker)
         
         datePicker.layer.shadowColor = UIColor.black.cgColor

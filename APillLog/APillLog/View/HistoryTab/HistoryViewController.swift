@@ -56,15 +56,15 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
         
         cell.createdTime.text = dateformatter.string(from:historyData[indexPath.row].createTime ?? Date())
-        cell.pillName.text = fetchPillNameText(index: indexPath.row)
+        cell.pillName.text = historyData[indexPath.row].pillName
         cell.sideEffect.text = historyData[indexPath.row].sideEffect?.joined(separator: " / ")
         cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: " / ")
         cell.detailContext.text = historyData[indexPath.row].detailContext
 
-        if cell.pillName.text == "" { cell.stackViewPillName.isHidden = true }
+        if cell.pillName.text == nil { cell.stackViewPillName.isHidden = true }
         if cell.sideEffect.text == "" { cell.stackViewSideEffect.isHidden = true }
         if cell.medicinalEffect.text == "" { cell.stackViewMedicinalEffect.isHidden = true }
-        if cell.detailContext.text == "" { cell.stackViewDetailContext.isHidden = true }
+        if  cell.detailContext.text == "" { cell.stackViewDetailContext.isHidden = true }
         
         return cell
     }

@@ -73,6 +73,6 @@ extension UIFont {
         static var segmentedControl: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         static var caption: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         
-        static var historyCategyry: UIFont { UIFont.APillLogFont(forTextStyle: .body)}
+        static var historyCategory: UIFont { UIFont.APillLogFont(forTextStyle: .body)}
     }
 }
