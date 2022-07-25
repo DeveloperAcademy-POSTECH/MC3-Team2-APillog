@@ -169,7 +169,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QB-yd-PrN">
-                                        <rect key="frame" x="39" y="346" width="286" height="43"/>
+                                        <rect key="frame" x="14" y="346" width="336" height="43"/>
                                         <color key="backgroundColor" name="AAccent"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -197,8 +197,8 @@
                                     <constraint firstItem="PeY-wI-H0U" firstAttribute="leading" secondItem="d0b-6w-gBg" secondAttribute="leading" constant="14" id="BYd-WI-E0G"/>
                                     <constraint firstItem="8r3-sk-ToI" firstAttribute="centerX" secondItem="d0b-6w-gBg" secondAttribute="centerX" id="Frz-qm-XVM"/>
                                     <constraint firstAttribute="bottom" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="368" id="I38-M4-t8K"/>
-                                    <constraint firstItem="5QB-yd-PrN" firstAttribute="leading" secondItem="d0b-6w-gBg" secondAttribute="leading" constant="39" id="L30-mS-5h0"/>
-                                    <constraint firstAttribute="trailing" secondItem="5QB-yd-PrN" secondAttribute="trailing" constant="39" id="VVj-Db-uC1"/>
+                                    <constraint firstItem="5QB-yd-PrN" firstAttribute="leading" secondItem="d0b-6w-gBg" secondAttribute="leading" constant="14" id="L30-mS-5h0"/>
+                                    <constraint firstAttribute="trailing" secondItem="5QB-yd-PrN" secondAttribute="trailing" constant="14" id="VVj-Db-uC1"/>
                                     <constraint firstItem="8r3-sk-ToI" firstAttribute="top" secondItem="d0b-6w-gBg" secondAttribute="top" constant="3" id="eTg-RB-NmX"/>
                                     <constraint firstItem="PeY-wI-H0U" firstAttribute="top" secondItem="d0b-6w-gBg" secondAttribute="top" constant="45" id="fif-d0-bPx"/>
                                     <constraint firstItem="5QB-yd-PrN" firstAttribute="top" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="15" id="wCa-bH-78S"/>
