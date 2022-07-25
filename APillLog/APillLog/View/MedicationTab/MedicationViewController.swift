@@ -41,7 +41,8 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var TakingAllPrimaryPillsButton: UIButton!
+    
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButtonLabel: UILabel!
@@ -140,6 +141,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     private func setPrimaryPillViewStyle() {
         primaryPillField.layer.cornerRadius = 10
         primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
+        TakingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonText
     }
     
     private func setSecondaryPillViewStyle() {
