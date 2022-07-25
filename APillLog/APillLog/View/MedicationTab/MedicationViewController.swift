@@ -41,7 +41,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
-    @IBOutlet weak var TakingAllPrimaryPillsButton: UIButton!
+    @IBOutlet weak var takingAllPrimaryPillsButton: UIButton!
     
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
@@ -69,37 +69,37 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         print("----viewWillAppear----- ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
-        
-        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-            if keyPath == "primaryPillTableViewContentSize"
-            {
-                if object is UITableView
-                {
-                    if let newValue = change?[.newKey]{
-                        let newSize = newValue as! CGSize
-                        self.primaryPillTableViewHeight.constant = newSize.height
-                    }
-                }
-            }
 
-            if keyPath == "secondaryPillTableViewContentSize"
-            {
-                if object is UITableView
-                {
-                    if let newValue = change?[.newKey]{
-                        let newSize = newValue as! CGSize
-                        self.secondaryPillTableViewHeight.constant = newSize.height
-                    }
-                }
-            }
-        }
+//        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
+//    }
+    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//            if keyPath == "primaryPillTableViewContentSize"
+//            {
+//                if object is UITableView
+//                {
+//                    if let newValue = change?[.newKey]{
+//                        let newSize = newValue as! CGSize
+//                        self.primaryPillTableViewHeight.constant = newSize.height
+//                    }
+//                }
+//            }
+//
+//            if keyPath == "secondaryPillTableViewContentSize"
+//            {
+//                if object is UITableView
+//                {
+//                    if let newValue = change?[.newKey]{
+//                        let newSize = newValue as! CGSize
+//                        self.secondaryPillTableViewHeight.constant = newSize.height
+//                    }
+//                }
+//            }
+//        }
 
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
@@ -141,7 +141,8 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     private func setPrimaryPillViewStyle() {
         primaryPillField.layer.cornerRadius = 10
         primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
-        TakingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonText
+        // Button Text가 너무 작아서 ButtonTitle이라는 새로운 값 추가
+        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
     }
     
     private func setSecondaryPillViewStyle() {
@@ -235,6 +236,7 @@ extension MedicationViewController: UITableViewDataSource {
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 // Title
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
+                // TODO: - 타임 스탬프
                 // Time
 //                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
                 // Taking Button

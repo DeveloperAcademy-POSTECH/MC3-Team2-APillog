@@ -68,6 +68,9 @@ extension UIFont {
         
         static var placeholder: UIFont { UIFont.APillLogFont(forTextStyle: .caption1) }
         
+        static var buttonTitle: UIFont {
+            UIFont.APillLogFont(forTextStyle: .title3)
+        }
         static var buttonText: UIFont { UIFont.APillLogFont(forTextStyle: .footnote) }
         
         static var explainText: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }

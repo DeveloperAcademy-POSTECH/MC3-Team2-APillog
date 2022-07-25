@@ -331,7 +331,6 @@
                     <navigationItem key="navigationItem" id="6vl-aN-qJj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="TakingAllPrimaryPillsButton" destination="GjX-q8-b8f" id="55N-kF-i8u"/>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
                         <outlet property="primaryPillFieldHeight" destination="Tqh-Kb-KkS" id="qEd-nf-QLd"/>
                         <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>
@@ -346,6 +345,7 @@
                         <outlet property="secondaryPillTableViewHeight" destination="lPD-QO-HsM" id="7Ld-bK-jKD"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
+                        <outlet property="takingAllPrimaryPillsButton" destination="GjX-q8-b8f" id="55N-kF-i8u"/>
                         <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="7Hs-Tb-Hfu"/>
                     </connections>
                 </viewController>

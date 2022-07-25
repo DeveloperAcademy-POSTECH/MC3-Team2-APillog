@@ -29,7 +29,7 @@ class MedicationPillCell: UITableViewCell {
 
     func setButtonStyle(){
         takingPillButton.setTitle("복용", for: .normal)
-        takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
+//        takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
         takingPillButton.setTitleColor(UIColor.AColor.white, for: .normal)
         takingPillButton.layer.borderWidth = 1
         takingPillButton.layer.borderColor = UIColor.AColor.accent.cgColor
