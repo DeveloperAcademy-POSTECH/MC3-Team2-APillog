@@ -117,7 +117,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     }
     
     private func setStyle(){
-        self.view.backgroundColor = .systemGray6
+        self.view.backgroundColor = UIColor.AColor.background
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
         setSecondaryPillViewStyle()

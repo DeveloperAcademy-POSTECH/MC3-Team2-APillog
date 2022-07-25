@@ -298,10 +298,8 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="LPc-bi-Ud2" secondAttribute="bottom" id="W6N-4U-zrf"/>
                                             <constraint firstItem="LPc-bi-Ud2" firstAttribute="top" secondItem="Bn5-yS-6pI" secondAttribute="top" id="eWX-al-ssp"/>
@@ -321,7 +319,6 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MND-81-mzl"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="3iY-bh-yGL"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="35" id="ADt-ci-5f6"/>
@@ -418,9 +415,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
