@@ -292,7 +292,7 @@ extension MedicationViewController: TakeMedicationDelegate {
             primaryPillTableView.reloadData()
         }
         else {
-            // TODO : - Secondary Pill Not Take 함수 필요
+            coreDataManager.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
             secondaryPillTableView.reloadData()
         }
         
