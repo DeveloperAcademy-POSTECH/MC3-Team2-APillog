@@ -52,15 +52,16 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBAction func tapCancelButton() {
         self.presentingViewController?.dismiss(animated: true)
     }
-    
+ 
     @IBAction func tapSaveButton() {
         let pillName = PrimaryPillName.text ?? ""
         let pillDosage = PrimaryPillDosage.text ?? ""
         
         coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
-        
-        self.presentingViewController?.dismiss(animated: true)
         delegate?.didAddPrimaryPill()
+        self.presentingViewController?.dismiss(animated: true)
+       
+        
     }
     
     
@@ -141,13 +142,14 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
         {
-            savePrimaryPillButton.isEnabled = true
+          //  savePrimaryPillButton.isEnabled = true
+            checkDuplication()
         }
         else{
             savePrimaryPillButton.isEnabled = false
         }
         
-        checkDuplication()
+        
     }
     
     func checkDuplication() {
