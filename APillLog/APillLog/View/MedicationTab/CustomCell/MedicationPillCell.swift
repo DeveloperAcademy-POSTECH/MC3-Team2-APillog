@@ -58,7 +58,6 @@ class MedicationPillCell: UITableViewCell {
         if sender.isSelected {
             delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
         } else {
-            // TODO : 히스토리에 넣은 약을 제거하는 기능 필요
             delegate?.setPillNotTake(rowNumber: rowNumber, isPrimary: isPrimary)
         }
     }

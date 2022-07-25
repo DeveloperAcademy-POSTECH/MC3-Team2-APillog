@@ -77,7 +77,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         sender.layer.borderColor = UIColor.AColor.disable.cgColor
         sender.layer.cornerRadius = 6.5
         
-        checkDuplication()
+//        checkDuplication()
     }
     
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
@@ -141,7 +141,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
         {
-            savePrimaryPillButton.isEnabled = true
+//            savePrimaryPillButton.isEnabled = true
         }
         else{
             savePrimaryPillButton.isEnabled = false
