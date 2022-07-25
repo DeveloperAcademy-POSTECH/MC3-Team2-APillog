@@ -108,6 +108,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 실수노트가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
+                                <rect key="frame" x="72" y="425" width="414" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" name="ADisable"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lsx-aD-u3n"/>
                         <color key="backgroundColor" name="ABackground"/>
@@ -124,6 +131,7 @@
                             <constraint firstItem="LvB-Gu-C5F" firstAttribute="leading" secondItem="Dd3-dH-PYh" secondAttribute="trailing" constant="42" id="WmW-vp-5AR"/>
                             <constraint firstItem="pkA-a8-yLu" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="ZUP-UI-dKD"/>
                             <constraint firstItem="vIK-K8-xhd" firstAttribute="top" secondItem="pkA-a8-yLu" secondAttribute="bottom" constant="27" id="deY-Sg-DKy"/>
+                            <constraint firstItem="1lm-OZ-M6b" firstAttribute="top" secondItem="lsx-aD-u3n" secondAttribute="top" constant="337" id="ejN-FN-PxP"/>
                             <constraint firstItem="lsx-aD-u3n" firstAttribute="trailing" secondItem="pkA-a8-yLu" secondAttribute="trailing" constant="25" id="kDx-VD-Wzx"/>
                             <constraint firstItem="G2i-NX-mcY" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="mg8-QE-vFZ"/>
                             <constraint firstItem="vIK-K8-xhd" firstAttribute="top" secondItem="Rtf-De-T8L" secondAttribute="bottom" constant="57.399999999999999" id="teQ-vo-dmH"/>
@@ -135,6 +143,7 @@
                     <navigationItem key="navigationItem" id="huT-8A-fqg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="diaryViewGuideLabel" destination="1lm-OZ-M6b" id="zIS-KD-J4l"/>
                         <outlet property="mistakeTableView" destination="vIK-K8-xhd" id="CNw-ff-ndJ"/>
                     </connections>
                 </viewController>
@@ -315,6 +324,9 @@
         </namedColor>
         <namedColor name="ABackground">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ADisable">
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
