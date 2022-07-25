@@ -146,8 +146,6 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     private func reloadPrimaryPillTableView() {
         coreDataManager.sendPrimarypillToShowPrimaryPill()
         primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
-        
-        print(" reloadPrimaryPillTableView ---------count ---------",primaryPillList.count)
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)

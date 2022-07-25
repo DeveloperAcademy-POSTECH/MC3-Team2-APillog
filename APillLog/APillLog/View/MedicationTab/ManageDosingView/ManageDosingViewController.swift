@@ -15,22 +15,20 @@ class ManageDosingViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    
     // MARK: Property
     var coreDataManager: CoreDataManager = CoreDataManager()
     
     let cellIdentifier = "ManageDosingCell"
     var primaryPillList: [PrimaryPill] = []
     
-    
     // MARK: LifeCycle Function
     override func viewDidLoad() {
-        viewTitle.font = UIFont.AFont.navigationTitle
-        
-        primaryPillList = coreDataManager.fetchPrimaryPill()
+            self.viewTitle.font = UIFont.AFont.navigationTitle
+            self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
+            self.tableView.delegate = self
     }
-    
-    
+ 
+  
     // MARK: Function
     private func dosingCycleToString(dosingCycle: Int16) -> String {
         var result = ""
@@ -60,6 +58,7 @@ class ManageDosingViewController: UIViewController {
     // MARK: @IBAction
     // delegate 등록을 위해 함수로 뷰 호출
     @IBAction func tapAddButton(_ sender: Any) {
+        primaryPillList = []
         let storyBoard : UIStoryboard = UIStoryboard(name: "AddPrimaryPill", bundle:nil)
         guard let nextViewController: AddPrimaryPillViewController = storyBoard.instantiateViewController(withIdentifier: "AddPrimaryPillView") as? AddPrimaryPillViewController else { return }
         nextViewController.delegate = self
@@ -68,7 +67,6 @@ class ManageDosingViewController: UIViewController {
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
-//        coreDataManager.sendPrimarypillToShowPrimaryPill()
         self.navigationController?.popViewController(animated: true)
     }
 }
@@ -122,13 +120,14 @@ extension ManageDosingViewController: UITableViewDelegate {
 // 약 추가 이후 뷰 업데이트를 위해 델리게이트 패턴 사용
 extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
+     
+        self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
+        let indexPath = IndexPath(row: primaryPillList.count-1, section: 0)
         
-        primaryPillList = coreDataManager.fetchPrimaryPill()
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath] , with: .automatic)
+        tableView.endUpdates()
         
-
-        
-        tableView.reloadData()
-//        tableView.setNeedsDisplay()
     }
 }
 
@@ -150,8 +149,8 @@ class ManageDosingTableViewCell: UITableViewCell {
     // MARK: @IBAction
     @IBAction func toggleIsShowing(_ sender: UISwitch) {
         coreDataManager.togglePrimaryPillIsShowing(pill: primaryPill!)
-        
-        let primaryPillList = coreDataManager.fetchPrimaryPill()
-        
+       // let primaryPillList = coreDataManager.fetchPrimaryPill()
+    
+     
     }
 }
