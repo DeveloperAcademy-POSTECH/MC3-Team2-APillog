@@ -29,7 +29,7 @@ class MedicationPillCell: UITableViewCell {
 
     func setButtonStyle(){
         takingPillButton.setTitle("복용", for: .normal)
-        takingPillButton.titleLabel?.font = UIFont.AFont.chipText
+        takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
         takingPillButton.setTitleColor(UIColor.AColor.white, for: .normal)
         takingPillButton.layer.borderWidth = 1
         takingPillButton.layer.borderColor = UIColor.AColor.accent.cgColor
@@ -39,14 +39,12 @@ class MedicationPillCell: UITableViewCell {
     func changeTakingPillButtonState(_ button: UIButton) {
         if button.isSelected {
             button.setTitle("✓", for: .selected)
-            button.titleLabel?.font = UIFont.AFont.buttonText
             button.setTitleColor(UIColor.AColor.gray, for: .selected)
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.AColor.gray.cgColor
             button.tintColor = UIColor.AColor.white
         } else {
             button.setTitle("복용", for: .normal)
-            button.titleLabel?.font = UIFont.AFont.buttonText
             button.setTitleColor(UIColor.AColor.white, for: .normal)
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.AColor.accent.cgColor
@@ -57,7 +55,6 @@ class MedicationPillCell: UITableViewCell {
     @IBAction func tapTakingPillButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         changeTakingPillButtonState(sender)
-        
         if sender.isSelected {
             delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
         } else {

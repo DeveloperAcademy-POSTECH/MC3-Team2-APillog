@@ -237,9 +237,6 @@ extension MedicationViewController: UITableViewDataSource {
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = true
-                // Style
-                cell.cellTitleLabel.font = UIFont.AFont.cardViewTitle
-//                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
             
         } else {
@@ -266,9 +263,6 @@ extension MedicationViewController: UITableViewDataSource {
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = false
-                // Style
-                cell.cellTitleLabel.font = UIFont.AFont.cardViewTitle
-//                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
         }
         return cell
@@ -298,7 +292,7 @@ extension MedicationViewController: TakeMedicationDelegate {
             primaryPillTableView.reloadData()
         }
         else {
-            
+            // TODO : - Secondary Pill Not Take 함수 필요
             secondaryPillTableView.reloadData()
         }
         
