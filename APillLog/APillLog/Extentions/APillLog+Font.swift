@@ -55,7 +55,7 @@ extension UIFont {
         static var navigationTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var datePickerText: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var tableViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
-        static var navigationButtonDescriptionLabel: UIFont { UIFont.APillLogFont(forTextStyle: .caption1) }
+        static var navigationButtonDescriptionLabel: UIFont { UIFont.APillLogFont(forTextStyle: .footnote) }
 
         static var cardViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title3) }
         static var cardViewPillName: UIFont { UIFont.APillLogFont(forTextStyle: .title3) }

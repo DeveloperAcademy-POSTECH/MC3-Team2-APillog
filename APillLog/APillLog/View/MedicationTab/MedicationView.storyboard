@@ -176,7 +176,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-q8-b8f">
                                                                 <rect key="frame" x="20" y="205" width="300" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="gVp-k5-24v"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="gVp-k5-24v"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="전체 복용">
