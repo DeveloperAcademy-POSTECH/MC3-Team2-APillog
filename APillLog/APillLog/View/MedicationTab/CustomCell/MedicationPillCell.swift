@@ -15,8 +15,6 @@ protocol TakeMedicationDelegate {
 class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var pillImageView: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
-    @IBOutlet weak var pillTimeLabel: UILabel!
-    @IBOutlet weak var editPillTimeButton: UIButton!
     @IBOutlet weak var takingPillButton: UIButton!
     
     var rowNumber: Int = 0

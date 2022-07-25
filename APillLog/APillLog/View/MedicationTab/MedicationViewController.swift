@@ -226,7 +226,7 @@ extension MedicationViewController: UITableViewDataSource {
                 // Title
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
                 // Time
-                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+//                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
                 // Taking Button
                 cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
@@ -235,7 +235,7 @@ extension MedicationViewController: UITableViewDataSource {
                 cell.isPrimary = true
                 // Style
                 cell.cellTitleLabel.font = UIFont.AFont.chipText
-                cell.pillTimeLabel.font = UIFont.AFont.caption
+//                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
             
         } else {
@@ -255,7 +255,7 @@ extension MedicationViewController: UITableViewDataSource {
                 // Title
                 cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
                 // Time
-                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+//                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
                 // Taking Button
                 cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
@@ -263,8 +263,8 @@ extension MedicationViewController: UITableViewDataSource {
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = false
                 // Style
-                cell.cellTitleLabel.font = UIFont.AFont.chipText
-                cell.pillTimeLabel.font = UIFont.AFont.caption
+                cell.cellTitleLabel.font = UIFont.AFont.cardViewTitle
+//                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
         }
         return cell
