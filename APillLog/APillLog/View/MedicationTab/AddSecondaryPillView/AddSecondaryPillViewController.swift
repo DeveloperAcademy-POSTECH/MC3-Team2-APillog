@@ -99,7 +99,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: Function
     func setSearchKeywordText(text: String) {
-        searchKeyword.text = text.isEmpty ? "없는 약 추가하기" : "'\(text)'"
+        searchKeyword.text = text.isEmpty ? "없는 약 추가하기" : text
     }
 
     func fetchRecentAddedPillNameList() -> [String] {
