@@ -21,7 +21,7 @@ class DiaryWriteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        diaryWriteDatePicker.tintColor = UIColor.AColor.accent
         // Do any additional setup after loading the view.
     }
     
