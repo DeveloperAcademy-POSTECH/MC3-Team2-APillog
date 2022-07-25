@@ -25,10 +25,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="729"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jap-vz-MbA">
-                                                <rect key="frame" x="24" y="472" width="292" height="100"/>
+                                                <rect key="frame" x="24" y="472" width="292" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="XJ5-gQ-mfq"/>
+                                                    <constraint firstAttribute="height" constant="80" id="XJ5-gQ-mfq"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -401,7 +401,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-fg-fkq">
-                                                <rect key="frame" x="24" y="592" width="292" height="33"/>
+                                                <rect key="frame" x="24" y="585.33333333333337" width="292" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <color key="tintColor" name="ADisable"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -415,23 +415,31 @@
                                                     <action selector="tapConditionSaveButton:" destination="jTN-oo-mAg" eventType="touchUpInside" id="fgS-oa-pVc"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0/30)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-tx-qCf">
+                                                <rect key="frame" x="280.33333333333331" y="556" width="35.666666666666686" height="14.333333333333371"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <color key="textColor" name="AGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vWb-tx-qCf" secondAttribute="trailing" constant="24" id="3yj-gq-iXB"/>
                                             <constraint firstItem="jap-vz-MbA" firstAttribute="top" secondItem="5Nb-8Z-L5W" secondAttribute="bottom" constant="14" id="4H1-f6-6ec"/>
                                             <constraint firstItem="nuR-ao-pSy" firstAttribute="top" secondItem="9zU-my-jKz" secondAttribute="bottom" constant="30" id="C7N-n7-ot5"/>
                                             <constraint firstItem="5Nb-8Z-L5W" firstAttribute="top" secondItem="nuR-ao-pSy" secondAttribute="bottom" constant="30" id="DzT-72-5g0"/>
+                                            <constraint firstItem="vWb-tx-qCf" firstAttribute="top" secondItem="jap-vz-MbA" secondAttribute="bottom" constant="4" id="GYp-Ws-GtG"/>
                                             <constraint firstAttribute="trailing" secondItem="jap-vz-MbA" secondAttribute="trailing" constant="24" id="MJ1-Yb-3wL"/>
                                             <constraint firstItem="nuR-ao-pSy" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="O3Z-JV-sdk"/>
                                             <constraint firstItem="jap-vz-MbA" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="Qzb-aR-sgP"/>
+                                            <constraint firstItem="Zsv-fg-fkq" firstAttribute="top" secondItem="vWb-tx-qCf" secondAttribute="bottom" constant="15" id="VCF-ii-2ZU"/>
                                             <constraint firstItem="9zU-my-jKz" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="bya-Ys-2Ax"/>
                                             <constraint firstItem="Zsv-fg-fkq" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="cn9-ba-IBd"/>
                                             <constraint firstItem="9zU-my-jKz" firstAttribute="top" secondItem="K4x-Sk-9fP" secondAttribute="top" constant="32" id="dzy-m7-rza"/>
                                             <constraint firstItem="5Nb-8Z-L5W" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="ef3-BG-TSk"/>
                                             <constraint firstAttribute="height" priority="750" constant="729" id="fF7-50-wnd"/>
                                             <constraint firstAttribute="trailing" secondItem="Zsv-fg-fkq" secondAttribute="trailing" constant="24" id="gvF-3t-QW8"/>
-                                            <constraint firstItem="Zsv-fg-fkq" firstAttribute="top" secondItem="jap-vz-MbA" secondAttribute="bottom" constant="20" id="oHC-on-lsS"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="e6x-HI-QH9" appends="YES" id="9gs-vz-LTK"/>
@@ -481,6 +489,7 @@
                         <outlet property="conditionBackgroundView" destination="K4x-Sk-9fP" id="nIr-8Y-Dgx"/>
                         <outlet property="conditionSaveButton" destination="Zsv-fg-fkq" id="V6D-h9-gQu"/>
                         <outlet property="conditionViewNavigationBar" destination="3fT-gi-xQ6" id="2xz-Nh-N9W"/>
+                        <outlet property="countDetailContext" destination="vWb-tx-qCf" id="eiq-10-RSF"/>
                         <outlet property="detailContext" destination="jap-vz-MbA" id="K63-C9-Pgo"/>
                     </connections>
                 </viewController>

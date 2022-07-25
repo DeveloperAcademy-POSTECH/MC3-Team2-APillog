@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckConditionViewController: UIViewController, UITextViewDelegate {
+class CheckConditionViewController: UIViewController {
     
     // MARK: 변수
     // 증상 반환
@@ -43,6 +43,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var conditionBackgroundView: UIView!
     @IBOutlet weak var conditionViewNavigationBar: UINavigationBar!
     @IBOutlet weak var conditionSaveButton: UIButton!
+    @IBOutlet weak var countDetailContext: UILabel!
     
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
@@ -192,6 +193,7 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    // conditionSaveButton 의 State 를 확인하는 함수
     func checkSaveButtonState() {
         if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
             self.saveButtonState = true
@@ -200,7 +202,10 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    // TextView Function
+}
+
+// MARK: TextView Function
+extension CheckConditionViewController : UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if detailContext.text.count > 0 {
             self.pillDetailContextIsOn = true
@@ -208,6 +213,19 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
             self.pillDetailContextIsOn = false
         }
         self.checkSaveButtonState()
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentDetailContext = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentDetailContext) else { return false }
+        
+        let changedText = currentDetailContext.replacingCharacters(in: stringRange, with: text)
+        
+        countDetailContext.text = "(\(changedText.count)/30)"
+        
+        countDetailContext.textColor = changedText.count == 30 ? UIColor.red : UIColor.AColor.gray
+        
+        return changedText.count <= 29
     }
 }
 
