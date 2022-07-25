@@ -170,7 +170,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         }
 
         primaryPillTableViewHeight.constant =
-        primaryPillListDataSource.count == 0 ? 65.0 :
+        primaryPillListDataSource.count == 0 ? 35.0 :
         65.0 * CGFloat(primaryPillListDataSource.count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
         
@@ -181,7 +181,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
 
         secondaryPillTableViewHeight.constant =
-        secondaryPillList.count == 0 ? 65.0 :
+        secondaryPillList.count == 0 ? 35.0 :
         65.0 * CGFloat(secondaryPillList.count)
         secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
 
