@@ -36,6 +36,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     // Primary Pill
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var primaryPillViewLinkLabel: UILabel!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
@@ -43,6 +44,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
 
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
+    @IBOutlet weak var secondaryPillModalButtonLabel: UILabel!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
     @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
@@ -85,7 +87,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
                     }
                 }
             }
-    
+
             if keyPath == "secondaryPillTableViewContentSize"
             {
                 if object is UITableView
@@ -97,7 +99,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
                 }
             }
         }
-    
+
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
@@ -137,10 +139,12 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     
     private func setPrimaryPillViewStyle() {
         primaryPillField.layer.cornerRadius = 10
+        primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
     }
     
     private func setSecondaryPillViewStyle() {
         secondaryPillField.layer.cornerRadius = 10
+        secondaryPillModalButtonLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
     }
     
     private func reloadPrimaryPillTableView() {
@@ -151,7 +155,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
-        
+
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
             primaryPillListDataSource = primaryPillListMorning
@@ -162,22 +166,22 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         default:
             primaryPillListDataSource = []
         }
-        
-        primaryPillTableViewHeight.constant = 75.0 * CGFloat(primaryPillListDataSource.count)
+
+        primaryPillTableViewHeight.constant = 65.0 * CGFloat(primaryPillListDataSource.count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
         
         primaryPillTableView.reloadData()
     }
-    
+
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
-        
+
         secondaryPillTableViewHeight.constant = 70.0 * CGFloat(secondaryPillList.count)
-        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 110
-        
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 100
+
         secondaryPillTableView.reloadData()
     }
-    
+
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
@@ -298,10 +302,7 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
         
-}
-
-    
-    
+    }
 }
 
 // 비어있는 테이블에 대해서

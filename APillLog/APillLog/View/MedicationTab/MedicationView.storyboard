@@ -97,9 +97,9 @@
                                                         <rect key="frame" x="0.0" y="105" width="340" height="275"/>
                                                         <subviews>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-wB-lPe">
-                                                                <rect key="frame" x="20" y="76" width="300" height="26"/>
+                                                                <rect key="frame" x="20" y="64.333333333333343" width="300" height="31"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="lqx-CV-KDu"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="lqx-CV-KDu"/>
                                                                 </constraints>
                                                                 <segments>
                                                                     <segment title="아침"/>
@@ -111,13 +111,13 @@
                                                                 </connections>
                                                             </segmentedControl>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 복용할 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR7-9z-koG">
-                                                                <rect key="frame" x="20" y="20" width="132.33333333333334" height="41"/>
+                                                                <rect key="frame" x="20" y="20" width="132.33333333333334" height="19.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-kx-B9D">
-                                                                <rect key="frame" x="294" y="25" width="31" height="31"/>
+                                                                <rect key="frame" x="294" y="14.333333333333343" width="31" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="d1n-kx-B9D" secondAttribute="height" id="TDj-Ck-WB7"/>
                                                                 </constraints>
@@ -165,7 +165,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-q8-b8f">
                                                                 <rect key="frame" x="20" y="205" width="300" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="gVp-k5-24v"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="gVp-k5-24v"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="전체 복용">
@@ -173,21 +173,28 @@
                                                                     <color key="baseBackgroundColor" red="0.42352938649999999" green="0.78039217000000005" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
                                                             </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 관리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-VI-Kla">
+                                                                <rect key="frame" x="230.66666666666666" y="19.666666666666657" width="63.333333333333343" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="d1n-kx-B9D" secondAttribute="trailing" constant="15" id="3G1-6g-WL8"/>
+                                                            <constraint firstItem="d1n-kx-B9D" firstAttribute="leading" secondItem="cVz-VI-Kla" secondAttribute="trailing" id="4h2-oG-iwd"/>
                                                             <constraint firstItem="qR7-9z-koG" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="5OD-66-caD"/>
-                                                            <constraint firstItem="d1n-kx-B9D" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="25" id="7T6-qc-luP"/>
                                                             <constraint firstItem="N6s-gf-qSi" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="AKg-fR-M8P"/>
+                                                            <constraint firstItem="N6s-gf-qSi" firstAttribute="top" secondItem="8wI-wB-lPe" secondAttribute="bottom" constant="15" id="B29-bS-i5A"/>
                                                             <constraint firstItem="GjX-q8-b8f" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="DMX-Eb-YOS"/>
                                                             <constraint firstAttribute="trailing" secondItem="N6s-gf-qSi" secondAttribute="trailing" constant="20" id="QEU-Vc-LYn"/>
                                                             <constraint firstAttribute="trailing" secondItem="8wI-wB-lPe" secondAttribute="trailing" constant="20" id="See-NY-FOI"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Tqh-Kb-KkS"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Tqh-Kb-KkS"/>
                                                             <constraint firstItem="d1n-kx-B9D" firstAttribute="centerY" secondItem="qR7-9z-koG" secondAttribute="centerY" id="ZzM-Nu-XbE"/>
                                                             <constraint firstItem="qR7-9z-koG" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="20" id="a6X-XI-5Dw"/>
-                                                            <constraint firstItem="N6s-gf-qSi" firstAttribute="top" secondItem="8T9-4e-HMT" secondAttribute="top" constant="130" id="d9T-TL-KXN"/>
-                                                            <constraint firstItem="8wI-wB-lPe" firstAttribute="top" secondItem="qR7-9z-koG" secondAttribute="bottom" constant="15" id="iit-qV-RCc"/>
+                                                            <constraint firstItem="cVz-VI-Kla" firstAttribute="centerY" secondItem="qR7-9z-koG" secondAttribute="centerY" id="iUH-Qi-oPo"/>
+                                                            <constraint firstItem="8wI-wB-lPe" firstAttribute="top" secondItem="qR7-9z-koG" secondAttribute="bottom" constant="25" id="iit-qV-RCc"/>
                                                             <constraint firstAttribute="bottom" secondItem="GjX-q8-b8f" secondAttribute="bottom" constant="15" id="lB2-2l-XXv"/>
                                                             <constraint firstItem="8wI-wB-lPe" firstAttribute="leading" secondItem="8T9-4e-HMT" secondAttribute="leading" constant="20" id="qxs-3h-6ng"/>
                                                             <constraint firstAttribute="trailing" secondItem="GjX-q8-b8f" secondAttribute="trailing" constant="20" id="v0r-hS-UHV"/>
@@ -198,13 +205,13 @@
                                                         <rect key="frame" x="0.0" y="405" width="340" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 약 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Di-8k1">
-                                                                <rect key="frame" x="20" y="20" width="77" height="43"/>
+                                                                <rect key="frame" x="20" y="20" width="77" height="19.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RId-yl-pLj">
-                                                                <rect key="frame" x="20" y="60" width="300" height="50"/>
+                                                                <rect key="frame" x="20" y="59.333333333333371" width="300" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="lPD-QO-HsM"/>
@@ -236,7 +243,7 @@
                                                                 </connections>
                                                             </tableView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="168-Nr-JJL">
-                                                                <rect key="frame" x="292" y="25" width="33" height="33"/>
+                                                                <rect key="frame" x="292" y="13.333333333333314" width="33" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="168-Nr-JJL" secondAttribute="height" id="HXl-o8-iyl"/>
                                                                 </constraints>
@@ -246,16 +253,24 @@
                                                                     <action selector="tapAddSecondaryPillButton" destination="en2-nt-aBt" eventType="touchUpInside" id="zhB-G8-Wif"/>
                                                                 </connections>
                                                             </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWz-GB-xdO">
+                                                                <rect key="frame" x="233" y="19.666666666666686" width="59" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="5Pw-3g-7Bh"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="leading" secondItem="PMK-9x-uNM" secondAttribute="leading" constant="20" id="CEF-mT-BSg"/>
                                                             <constraint firstItem="JAG-Di-8k1" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="20" id="CkC-fb-GKm"/>
-                                                            <constraint firstItem="RId-yl-pLj" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="60" id="Oe9-VO-uNU"/>
+                                                            <constraint firstItem="RId-yl-pLj" firstAttribute="top" secondItem="JAG-Di-8k1" secondAttribute="bottom" constant="20" id="RuD-ut-gA7"/>
                                                             <constraint firstItem="RId-yl-pLj" firstAttribute="leading" secondItem="PMK-9x-uNM" secondAttribute="leading" constant="20" id="Ut8-je-E2y"/>
                                                             <constraint firstAttribute="trailing" secondItem="RId-yl-pLj" secondAttribute="trailing" constant="20" id="VbE-9a-zLp"/>
-                                                            <constraint firstItem="168-Nr-JJL" firstAttribute="top" secondItem="PMK-9x-uNM" secondAttribute="top" constant="25" id="oaW-Gw-JOU"/>
+                                                            <constraint firstItem="168-Nr-JJL" firstAttribute="leading" secondItem="zWz-GB-xdO" secondAttribute="trailing" id="gDx-xy-jbn"/>
+                                                            <constraint firstItem="zWz-GB-xdO" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="mbG-fv-B30"/>
+                                                            <constraint firstItem="168-Nr-JJL" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="wLs-fm-hYD"/>
                                                             <constraint firstItem="168-Nr-JJL" firstAttribute="centerY" secondItem="JAG-Di-8k1" secondAttribute="centerY" id="xs4-A4-ziI"/>
                                                             <constraint firstAttribute="trailing" secondItem="168-Nr-JJL" secondAttribute="trailing" constant="15" id="yQ4-0r-9dq"/>
                                                         </constraints>
@@ -308,9 +323,11 @@
                         <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>
                         <outlet property="primaryPillTableViewHeight" destination="agQ-qx-kS1" id="ceM-Nr-wCW"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
+                        <outlet property="primaryPillViewLinkLabel" destination="cVz-VI-Kla" id="Rlw-Mr-822"/>
                         <outlet property="secondaryPillField" destination="PMK-9x-uNM" id="7Mt-zM-m1u"/>
                         <outlet property="secondaryPillFieldHeight" destination="5Pw-3g-7Bh" id="NQ8-mM-Fzq"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>
+                        <outlet property="secondaryPillModalButtonLabel" destination="zWz-GB-xdO" id="bBj-ca-qCX"/>
                         <outlet property="secondaryPillTableView" destination="RId-yl-pLj" id="AJA-kj-32D"/>
                         <outlet property="secondaryPillTableViewHeight" destination="lPD-QO-HsM" id="7Ld-bK-jKD"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
