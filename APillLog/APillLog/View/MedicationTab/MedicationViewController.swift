@@ -169,7 +169,9 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
             primaryPillListDataSource = []
         }
 
-        primaryPillTableViewHeight.constant = 65.0 * CGFloat(primaryPillListDataSource.count)
+        primaryPillTableViewHeight.constant =
+        primaryPillListDataSource.count == 0 ? 65.0 :
+        65.0 * CGFloat(primaryPillListDataSource.count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
         
         primaryPillTableView.reloadData()
@@ -178,8 +180,10 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
 
-        secondaryPillTableViewHeight.constant = 70.0 * CGFloat(secondaryPillList.count)
-        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 100
+        secondaryPillTableViewHeight.constant =
+        secondaryPillList.count == 0 ? 65.0 :
+        65.0 * CGFloat(secondaryPillList.count)
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
 
         secondaryPillTableView.reloadData()
     }
