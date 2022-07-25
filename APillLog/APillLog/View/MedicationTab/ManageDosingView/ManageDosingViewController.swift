@@ -58,7 +58,6 @@ class ManageDosingViewController: UIViewController {
     // MARK: @IBAction
     // delegate 등록을 위해 함수로 뷰 호출
     @IBAction func tapAddButton(_ sender: Any) {
-        primaryPillList = []
         let storyBoard : UIStoryboard = UIStoryboard(name: "AddPrimaryPill", bundle:nil)
         guard let nextViewController: AddPrimaryPillViewController = storyBoard.instantiateViewController(withIdentifier: "AddPrimaryPillView") as? AddPrimaryPillViewController else { return }
         nextViewController.delegate = self

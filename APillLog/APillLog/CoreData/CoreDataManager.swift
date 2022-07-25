@@ -46,7 +46,6 @@ class CoreDataManager{
                 if data.id == pill.id
                 {
                     data.isShowing.toggle()
-                    saveToContext()
                 }
                 //토글 값이 false면 ShowPrimaryPill 삭제
                 if(!data.isShowing && data.id == pill.id){
