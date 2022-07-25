@@ -180,7 +180,7 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="전체 복용">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="baseBackgroundColor" red="0.42352938649999999" green="0.78039217000000005" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
                                                             </button>

@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MedicationViewController: UIViewController, UITableViewDelegate {
+class MedicationViewController: UIViewController
+{
     
     let cellIdentifier = "medicationPillCell"
     
@@ -62,6 +63,8 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
         secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,7 +177,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         primaryPillListDataSource.count == 0 ? 35.0 :
         65.0 * CGFloat(primaryPillListDataSource.count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
-        
+
         primaryPillTableView.reloadData()
     }
 
@@ -206,7 +209,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-extension MedicationViewController: UITableViewDataSource {
+extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == primaryPillTableView {
             return self.primaryPillListDataSource.count == 0 ? 1 : self.primaryPillListDataSource.count
@@ -271,6 +274,9 @@ extension MedicationViewController: UITableViewDataSource {
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = false
+                
+                // Style
+                cell.takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
             }
         }
         return cell
