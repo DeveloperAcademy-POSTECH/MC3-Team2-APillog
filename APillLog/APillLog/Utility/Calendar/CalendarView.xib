@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarView" customModule="APillLog" customModuleProvider="target">
             <connections>
+                <outlet property="nextButton" destination="spN-ch-wd0" id="ZAV-cB-oBA"/>
+                <outlet property="prevButton" destination="41g-cQ-38l" id="VLS-4e-jUK"/>
                 <outlet property="selectedDate" destination="rUE-H1-fg8" id="KJh-jQ-4ka"/>
             </connections>
         </placeholder>
