@@ -104,13 +104,6 @@ class CheckConditionViewController: UIViewController, UITextViewDelegate {
             }
         }
         
-        // saveButtonState 값 체크
-        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
-            self.saveButtonState = true
-        } else {
-            self.saveButtonState = false
-        }
-        
         self.checkSaveButtonState()
         
         self.changeButtonState(sender)
