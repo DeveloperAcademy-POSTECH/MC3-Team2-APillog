@@ -238,7 +238,7 @@ extension MedicationViewController: UITableViewDataSource {
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = true
                 // Style
-                cell.cellTitleLabel.font = UIFont.AFont.chipText
+                cell.cellTitleLabel.font = UIFont.AFont.cardViewTitle
 //                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
             
