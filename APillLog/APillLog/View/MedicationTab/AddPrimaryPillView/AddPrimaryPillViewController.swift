@@ -142,12 +142,11 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
         {
 //            savePrimaryPillButton.isEnabled = true
+            checkDuplication()
         }
         else{
             savePrimaryPillButton.isEnabled = false
         }
-        
-        checkDuplication()
     }
     
     func checkDuplication() {
