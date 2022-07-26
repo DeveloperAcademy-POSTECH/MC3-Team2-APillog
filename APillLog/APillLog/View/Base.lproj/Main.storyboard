@@ -18,7 +18,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemBackgroundColor"/>
-                        <color key="barTintColor" name="AAccent"/>
                         <color key="selectedImageTintColor" name="AAccent"/>
                     </tabBar>
                     <connections>
