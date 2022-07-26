@@ -1,4 +1,4 @@
-# :iphone: APillLog
+# :iphone: APillog
 
 ### 주의력 결핍, 과잉행동 증세를 겪는 사람들을 위한 기록 앱입니다.
 
