@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-Od-9QN" customClass="CalendarView" customModule="APillLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="390" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="8nP-ys-3KZ"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-1j-NSr">
                                 <rect key="frame" x="0.0" y="79" width="390" height="682"/>
                                 <subviews>
@@ -49,7 +56,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편함, 부작용, 약효 등을 적어주세요. 정확한 진료를 위한 좋은 자료가 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-oT-tTS">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333329" width="195" height="28.666666666666671"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333343" width="195" height="28.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -97,7 +104,7 @@
                                                         <rect key="frame" x="0.0" y="105" width="340" height="275"/>
                                                         <subviews>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-wB-lPe">
-                                                                <rect key="frame" x="20" y="64.333333333333343" width="300" height="31"/>
+                                                                <rect key="frame" x="20" y="64.333333333333314" width="300" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="lqx-CV-KDu"/>
                                                                 </constraints>
@@ -307,15 +314,20 @@
                         <viewLayoutGuide key="safeArea" id="MND-81-mzl"/>
                         <constraints>
                             <constraint firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="3iY-bh-yGL"/>
-                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" constant="35" id="ADt-ci-5f6"/>
+                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="bottom" secondItem="MND-81-mzl" secondAttribute="bottom" id="6Bg-Bc-sL1"/>
+                            <constraint firstItem="3Ih-1j-NSr" firstAttribute="top" secondItem="VQk-Od-9QN" secondAttribute="bottom" id="ADt-ci-5f6"/>
                             <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="3Ih-1j-NSr" secondAttribute="trailing" id="TwP-bk-hag"/>
+                            <constraint firstItem="VQk-Od-9QN" firstAttribute="top" secondItem="MND-81-mzl" secondAttribute="top" id="UZc-XQ-4t8"/>
+                            <constraint firstItem="MND-81-mzl" firstAttribute="trailing" secondItem="VQk-Od-9QN" secondAttribute="trailing" id="X43-lQ-zZ9"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="bUx-j6-KmK"/>
+                            <constraint firstItem="VQk-Od-9QN" firstAttribute="leading" secondItem="MND-81-mzl" secondAttribute="leading" id="fik-wK-4DI"/>
                             <constraint firstItem="3Ih-1j-NSr" firstAttribute="bottom" secondItem="MND-81-mzl" secondAttribute="bottom" id="jT6-eJ-cRB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6vl-aN-qJj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="calendarView" destination="VQk-Od-9QN" id="yME-tl-gxd"/>
                         <outlet property="primaryPillField" destination="8T9-4e-HMT" id="nrV-DK-X6m"/>
                         <outlet property="primaryPillFieldHeight" destination="Tqh-Kb-KkS" id="qEd-nf-QLd"/>
                         <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>

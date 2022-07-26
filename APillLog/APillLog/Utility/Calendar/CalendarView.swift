@@ -41,7 +41,7 @@ class CalendarView: UIView {
         return datePicker
     }()
     
-    var nextButtonState: Bool = false {
+    var nextButtonState: Bool = true {
         didSet {
             nextButton.isEnabled = nextButtonState
             nextButton.tintColor = nextButtonState ? UIColor.AColor.black : UIColor.AColor.disable
@@ -75,7 +75,8 @@ class CalendarView: UIView {
     // MARK: DatePicker func
     private func fetchSelectedDate(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM월 dd일 E요일"
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "MM월 dd일 eeee"
         self.delegate?.fetchDate(date: date)
         return formatter.string(from: date)
     }
