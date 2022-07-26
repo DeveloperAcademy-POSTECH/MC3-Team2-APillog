@@ -39,6 +39,7 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         historyData = coredataManager.fetchHistory(selectedDate: selectedDate)
+        
         tableView.reloadData()
         if historyData.count == 0 { guideLabelHidden = false }
         else { guideLabelHidden = true }
@@ -80,10 +81,26 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: " / ")
         cell.detailContext.text = historyData[indexPath.row].detailContext
 
-        if cell.pillName.text == nil { cell.stackViewPillName.isHidden = true }
-        if cell.sideEffect.text == "" { cell.stackViewSideEffect.isHidden = true }
-        if cell.medicinalEffect.text == "" { cell.stackViewMedicinalEffect.isHidden = true }
-        if  cell.detailContext.text == "" { cell.stackViewDetailContext.isHidden = true }
+        if cell.pillName.text == nil || cell.pillName.text == "" {
+            cell.stackViewPillName.isHidden = true
+        } else {
+            cell.stackViewPillName.isHidden = false
+        }
+        if cell.sideEffect.text == nil || cell.sideEffect.text == "" {
+            cell.stackViewSideEffect.isHidden = true
+        } else {
+            cell.stackViewSideEffect.isHidden = false
+        }
+        if cell.medicinalEffect.text == nil || cell.medicinalEffect.text == "" {
+            cell.stackViewMedicinalEffect.isHidden = true
+        } else {
+            cell.stackViewMedicinalEffect.isHidden = false
+        }
+        if cell.detailContext.text == nil || cell.detailContext.text == "" {
+            cell.stackViewDetailContext.isHidden = true
+        } else {
+            cell.stackViewDetailContext.isHidden = false
+        }
         
         return cell
     }

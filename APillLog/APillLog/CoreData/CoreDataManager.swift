@@ -430,7 +430,7 @@ class CoreDataManager{
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-                print("pill selectedData",pill.selectDate)
+//                print("pill selectedData",pill.selectDate)
                 if pill.selectDate == selectDate
                 {
                     pillArrayResult.append(pill)
@@ -528,7 +528,7 @@ class CoreDataManager{
         
     }
     //history read함수
-    func fetchHistory(selectedDate: Date) -> [History]{
+    func fetchHistory(selectedDate: Date) -> [History] {
         let request : NSFetchRequest<History> = History.fetchRequest()
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
