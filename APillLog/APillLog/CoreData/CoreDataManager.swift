@@ -362,6 +362,7 @@ class CoreDataManager{
     
     
     //primaryPill에서 ShowPrimaryPill로 추가하는 함수
+    // TODO: 오늘날짜부터 불러와야돼
     func sendPrimarypillToShowPrimaryPill(){
         
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
@@ -425,16 +426,17 @@ class CoreDataManager{
     func fetchShowPrimaryPill(selectedDate: Date) -> [ShowPrimaryPill] {
         let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
         var pillArrayResult: [ShowPrimaryPill] = []
-        let selectDate: String = changeSelectedDateToString(Date())
+        let selectDate: String = changeSelectedDateToString(selectedDate)
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
+                print("pill selectedData",pill.selectDate)
                 if pill.selectDate == selectDate
                 {
                     pillArrayResult.append(pill)
                 }
             }
-            return pillArray
+            return pillArrayResult
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }

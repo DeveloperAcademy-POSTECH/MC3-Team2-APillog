@@ -22,6 +22,8 @@ class MedicationViewController: UIViewController
     
     var secondaryPillList: [ShowSecondaryPill] = []
     
+    private var date = Date()
+    
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm"
@@ -52,6 +54,10 @@ class MedicationViewController: UIViewController
     @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var secondaryPillFieldHeight: NSLayoutConstraint!
     
+    
+    //CalendarView
+    @IBOutlet weak var calendarView: CalendarView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -64,7 +70,7 @@ class MedicationViewController: UIViewController
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
         secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
     
-        
+        setCalendarView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -155,7 +161,8 @@ class MedicationViewController: UIViewController
     
     private func reloadPrimaryPillTableView() {
         coreDataManager.sendPrimarypillToShowPrimaryPill()
-        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+            
+        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: date)
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
@@ -180,7 +187,7 @@ class MedicationViewController: UIViewController
     }
 
     private func reloadSecondaryPillTableView() {
-        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
+        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: date)
 
         secondaryPillTableViewHeight.constant =
         secondaryPillList.count == 0 ? 35.0 :
@@ -308,6 +315,18 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
         
+    }
+}
+
+extension MedicationViewController: CalendarViewDelegate {
+    func fetchDate(date: Date) {
+        self.date = date
+        reloadPrimaryPillTableView()
+        reloadSecondaryPillTableView()
+    }
+    
+    func setCalendarView() {
+        calendarView.delegate = self
     }
 }
 

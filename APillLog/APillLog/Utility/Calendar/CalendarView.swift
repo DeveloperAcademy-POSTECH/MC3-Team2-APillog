@@ -23,7 +23,7 @@ class CalendarView: UIView {
         
         let datePicker = UIDatePicker()
         datePicker.locale = .current
-        datePicker.maximumDate = Date()
+        //datePicker.maximumDate = Date()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
         
@@ -41,7 +41,7 @@ class CalendarView: UIView {
         return datePicker
     }()
     
-    var nextButtonState: Bool = false {
+    var nextButtonState: Bool = true {
         didSet {
             nextButton.isEnabled = nextButtonState
             nextButton.tintColor = nextButtonState ? UIColor.AColor.black : UIColor.AColor.disable
