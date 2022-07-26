@@ -12,6 +12,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     
+    @IBOutlet weak var diaryViewGuideLabel: UILabel!
     var coredataManager: CoreDataManager = CoreDataManager()
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = [CBT()]
@@ -51,7 +52,12 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             $0.selectDate!>$1.selectDate!
         })
         mistakeTableView.reloadData()
-        
+        if myCBT.count == 0 {
+            diaryViewGuideLabel.isHidden = false
+        }
+        else{
+            diaryViewGuideLabel.isHidden = true
+        }
     }
     
     func tableView(_ tableView: UITableView,
@@ -88,7 +94,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             coredataManager.deleteCBT(CBT: CBT)
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
-            
+            diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
         }
     }
     

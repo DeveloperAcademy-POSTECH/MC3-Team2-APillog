@@ -17,11 +17,10 @@ class DiaryWriteViewController: UIViewController {
     @IBAction func didTapSaveButton(_ sender: Any) {
         coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
         _ = navigationController?.popViewController(animated: true)
-        print("Save Success!")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        diaryWriteDatePicker.tintColor = UIColor.AColor.accent
         // Do any additional setup after loading the view.
     }
     
