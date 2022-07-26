@@ -39,6 +39,13 @@
                                     <constraint firstItem="gm3-eL-WjG" firstAttribute="leading" secondItem="qow-mr-XbH" secondAttribute="leading" id="z2E-of-KAR"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남겨진 히스토리가 없어요 :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mdZ-R9-nru">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h6C-pw-iL9"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,6 +60,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="KIn-LN-qwr" id="eEE-0y-j7P"/>
+                        <outlet property="historyViewGuideLabel" destination="mdZ-R9-nru" id="p52-aL-JGI"/>
                         <outlet property="tableView" destination="gm3-eL-WjG" id="E3C-ZI-OgD"/>
                     </connections>
                 </viewController>

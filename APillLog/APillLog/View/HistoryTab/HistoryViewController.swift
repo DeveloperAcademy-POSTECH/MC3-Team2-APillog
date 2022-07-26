@@ -13,30 +13,49 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     func fetchDate(date: Date) {
         historyData = coredataManager.fetchHistory(selectedDate: date)
         tableView.reloadData()
+        if historyData.count == 0 { guideLabelHidden = false }
+        else { guideLabelHidden = true }
     }
     
     @IBOutlet weak var calendarView: CalendarView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var historyViewGuideLabel: UILabel!
     
     let coredataManager: CoreDataManager = CoreDataManager()
     var historyData = [History]()
+    var guideLabelHidden = true {
+        didSet {
+            historyViewGuideLabel.isHidden = guideLabelHidden
+        }
+    }
     
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.AColor.background
-        self.tableView.backgroundColor = UIColor.AColor.background
-        calendarView.delegate = self
-        historyData = coredataManager.fetchHistory(selectedDate: Date())
-        
+        setStyle()
         registerNib()
-        tableView.delegate = self
-        tableView.dataSource = self
+        setDelegate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         historyData = coredataManager.fetchHistory(selectedDate: selectedDate)
         tableView.reloadData()
+        if historyData.count == 0 { guideLabelHidden = false }
+        else { guideLabelHidden = true }
+    }
+    
+    private func setDelegate() {
+        calendarView.delegate = self
+        historyData = coredataManager.fetchHistory(selectedDate: Date())
+        tableView.delegate = self
+        tableView.dataSource = self
+        historyViewGuideLabel.textColor = UIColor.AColor.gray
+    }
+    
+    private func setStyle() {
+        view.backgroundColor = UIColor.AColor.background
+        tableView.backgroundColor = UIColor.AColor.background
+        
     }
 }
 
