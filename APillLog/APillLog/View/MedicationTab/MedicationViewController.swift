@@ -145,7 +145,7 @@ class MedicationViewController: UIViewController
         primaryPillField.layer.cornerRadius = 10
         primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
         // Button Text가 너무 작아서 ButtonTitle이라는 새로운 값 추가
-        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
+//        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
     }
     
     private func setSecondaryPillViewStyle() {
