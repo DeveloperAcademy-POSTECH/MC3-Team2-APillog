@@ -23,7 +23,7 @@ class CalendarView: UIView {
         
         let datePicker = UIDatePicker()
         datePicker.locale = .current
-        //datePicker.maximumDate = Date()
+        datePicker.maximumDate = Date()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
         
@@ -75,7 +75,8 @@ class CalendarView: UIView {
     // MARK: DatePicker func
     private func fetchSelectedDate(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM월 dd일 E요일"
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "MM월 dd일 eeee"
         self.delegate?.fetchDate(date: date)
         return formatter.string(from: date)
     }
