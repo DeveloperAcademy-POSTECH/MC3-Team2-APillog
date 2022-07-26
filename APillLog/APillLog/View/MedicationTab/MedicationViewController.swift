@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MedicationViewController: UIViewController, UITableViewDelegate {
+class MedicationViewController: UIViewController
+{
     
     let cellIdentifier = "medicationPillCell"
     
@@ -36,13 +37,16 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     // Primary Pill
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var primaryPillViewLinkLabel: UILabel!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var primaryPillFieldHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var takingAllPrimaryPillsButton: UIButton!
+    
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
+    @IBOutlet weak var secondaryPillModalButtonLabel: UILabel!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
     @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
@@ -59,6 +63,8 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         let nibName = UINib(nibName: "MedicationPillCell", bundle: nil)
         primaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
         secondaryPillTableView.register(nibName, forCellReuseIdentifier: cellIdentifier)
+    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,38 +72,38 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         print("----viewWillAppear----- ")
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
-        
-        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
+
+//        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
+//    }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-            if keyPath == "primaryPillTableViewContentSize"
-            {
-                if object is UITableView
-                {
-                    if let newValue = change?[.newKey]{
-                        let newSize = newValue as! CGSize
-                        self.primaryPillTableViewHeight.constant = newSize.height
-                    }
-                }
-            }
-    
-            if keyPath == "secondaryPillTableViewContentSize"
-            {
-                if object is UITableView
-                {
-                    if let newValue = change?[.newKey]{
-                        let newSize = newValue as! CGSize
-                        self.secondaryPillTableViewHeight.constant = newSize.height
-                    }
-                }
-            }
-        }
-    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//            if keyPath == "primaryPillTableViewContentSize"
+//            {
+//                if object is UITableView
+//                {
+//                    if let newValue = change?[.newKey]{
+//                        let newSize = newValue as! CGSize
+//                        self.primaryPillTableViewHeight.constant = newSize.height
+//                    }
+//                }
+//            }
+//
+//            if keyPath == "secondaryPillTableViewContentSize"
+//            {
+//                if object is UITableView
+//                {
+//                    if let newValue = change?[.newKey]{
+//                        let newSize = newValue as! CGSize
+//                        self.secondaryPillTableViewHeight.constant = newSize.height
+//                    }
+//                }
+//            }
+//        }
+
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
@@ -115,7 +121,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     }
     
     private func setStyle(){
-        self.view.backgroundColor = .systemGray6
+        self.view.backgroundColor = UIColor.AColor.background
         setSymptomButtonStyle()
         setPrimaryPillViewStyle()
         setSecondaryPillViewStyle()
@@ -137,10 +143,14 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     
     private func setPrimaryPillViewStyle() {
         primaryPillField.layer.cornerRadius = 10
+        primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
+        // Button Text가 너무 작아서 ButtonTitle이라는 새로운 값 추가
+        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
     }
     
     private func setSecondaryPillViewStyle() {
         secondaryPillField.layer.cornerRadius = 10
+        secondaryPillModalButtonLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
     }
     
     private func reloadPrimaryPillTableView() {
@@ -149,7 +159,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
-        
+
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
             primaryPillListDataSource = primaryPillListMorning
@@ -160,22 +170,26 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
         default:
             primaryPillListDataSource = []
         }
-        
-        primaryPillTableViewHeight.constant = 75.0 * CGFloat(primaryPillListDataSource.count)
+
+        primaryPillTableViewHeight.constant =
+        primaryPillListDataSource.count == 0 ? 35.0 :
+        65.0 * CGFloat(primaryPillListDataSource.count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
-        
+
         primaryPillTableView.reloadData()
     }
-    
+
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: Date())
-        
-        secondaryPillTableViewHeight.constant = 70.0 * CGFloat(secondaryPillList.count)
-        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 110
-        
+
+        secondaryPillTableViewHeight.constant =
+        secondaryPillList.count == 0 ? 35.0 :
+        65.0 * CGFloat(secondaryPillList.count)
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
+
         secondaryPillTableView.reloadData()
     }
-    
+
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
@@ -193,7 +207,7 @@ class MedicationViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-extension MedicationViewController: UITableViewDataSource {
+extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == primaryPillTableView {
             return self.primaryPillListDataSource.count == 0 ? 1 : self.primaryPillListDataSource.count
@@ -223,17 +237,15 @@ extension MedicationViewController: UITableViewDataSource {
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 // Title
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
+                // TODO: - 타임 스탬프
                 // Time
-                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+//                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
                 // Taking Button
                 cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = true
-                // Style
-                cell.cellTitleLabel.font = UIFont.AFont.chipText
-                cell.pillTimeLabel.font = UIFont.AFont.caption
             }
             
         } else {
@@ -253,16 +265,16 @@ extension MedicationViewController: UITableViewDataSource {
                 // Title
                 cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
                 // Time
-                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+//                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
                 // Taking Button
                 cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = false
+                
                 // Style
-                cell.cellTitleLabel.font = UIFont.AFont.chipText
-                cell.pillTimeLabel.font = UIFont.AFont.caption
+                cell.takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
             }
         }
         return cell
@@ -292,14 +304,11 @@ extension MedicationViewController: TakeMedicationDelegate {
             primaryPillTableView.reloadData()
         }
         else {
-            
+            coreDataManager.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
             secondaryPillTableView.reloadData()
         }
         
-}
-
-    
-    
+    }
 }
 
 // 비어있는 테이블에 대해서

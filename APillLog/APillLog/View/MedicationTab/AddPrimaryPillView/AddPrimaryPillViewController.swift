@@ -78,7 +78,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         sender.layer.borderColor = UIColor.AColor.disable.cgColor
         sender.layer.cornerRadius = 6.5
         
-        checkDuplication()
+//        checkDuplication()
     }
     
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
@@ -148,8 +148,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         else{
             savePrimaryPillButton.isEnabled = false
         }
-        
-        
     }
     
     func checkDuplication() {
