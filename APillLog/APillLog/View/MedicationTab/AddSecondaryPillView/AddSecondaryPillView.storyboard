@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v62-c9-Gww">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Secondary Pill View Controller-->
+        <scene sceneID="5Ly-37-buI">
+            <objects>
+                <viewController storyboardIdentifier="AddSecondPillStoryboard" id="v62-c9-Gww" customClass="AddSecondaryPillViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMH-hQ-7SN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가로 먹은 약을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX1-lp-6X6">
+                                <rect key="frame" x="25" y="75" width="340" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="약 이름을 검색하세요" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-BM-5jE">
+                                <rect key="frame" x="25" y="115" width="340" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="v62-c9-Gww" id="epM-cL-34X"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-0b-GqK">
+                                <rect key="frame" x="25" y="209.33333333333331" width="340" height="609.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondaryPillTableViewCell" rowHeight="60" id="mXK-JT-OpP" customClass="SecondaryPillTableViewCell" customModule="APillLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="340" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mXK-JT-OpP" id="9F1-gx-IM0">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-uH-cYW" customClass="S">
+                                                    <rect key="frame" x="10" y="11" width="320" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sZc-uH-cYW" firstAttribute="leading" secondItem="9F1-gx-IM0" secondAttribute="leadingMargin" constant="-10" id="6Dt-mu-QVU"/>
+                                                <constraint firstItem="sZc-uH-cYW" firstAttribute="top" secondItem="9F1-gx-IM0" secondAttribute="topMargin" id="E8g-KQ-8pG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sZc-uH-cYW" secondAttribute="bottom" id="cId-Mn-Bs2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sZc-uH-cYW" secondAttribute="trailing" constant="-10" id="xgI-ka-h4Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pillNameView" destination="sZc-uH-cYW" id="Q8z-c0-kfL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="v62-c9-Gww" id="p8y-UK-TVH"/>
+                                    <outlet property="delegate" destination="v62-c9-Gww" id="Uyh-bP-dcl"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjD-Xr-wH6">
+                                <rect key="frame" x="25" y="25" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="TmT-2G-lrn"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCancleButton" destination="v62-c9-Gww" eventType="touchUpInside" id="J44-Zc-iBP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-PY-MvB">
+                                <rect key="frame" x="250" y="166" width="110" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="R6t-LD-bjL"/>
+                                    <constraint firstAttribute="height" constant="40" id="owf-hS-bJd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="약 추가하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapAddPillButton" destination="v62-c9-Gww" eventType="touchUpInside" id="e6g-7F-OVQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="없는 약 추가하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-ZM-ucC">
+                                <rect key="frame" x="34.999999999999993" y="176.33333333333334" width="105.33333333333331" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-ts-bDs" userLabel="seperator">
+                                <rect key="frame" x="41" y="209" width="324" height="0.33333333333334281"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="900" constant="0.5" id="e6r-4a-CGb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZdG-yb-knB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LCc-0b-GqK" firstAttribute="top" secondItem="cS4-BM-5jE" secondAttribute="bottom" constant="43.333333333333371" id="0Ef-M2-eJG"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="MX1-lp-6X6" secondAttribute="leading" id="1hp-Ub-RKM"/>
+                            <constraint firstItem="LCc-0b-GqK" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="5P7-kb-bbj"/>
+                            <constraint firstItem="MX1-lp-6X6" firstAttribute="top" secondItem="CjD-Xr-wH6" secondAttribute="bottom" constant="16" id="7vw-Yd-vuy"/>
+                            <constraint firstAttribute="bottom" secondItem="LCc-0b-GqK" secondAttribute="bottom" constant="25" id="8Aw-xI-6IX"/>
+                            <constraint firstItem="V1x-ts-bDs" firstAttribute="leading" secondItem="BMH-hQ-7SN" secondAttribute="leadingMargin" constant="25" id="Ea8-cj-Nwo"/>
+                            <constraint firstItem="V1x-ts-bDs" firstAttribute="top" secondItem="fhx-PY-MvB" secondAttribute="bottom" constant="3" id="Efo-e5-glA"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="QZb-aO-q7h"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="MX1-lp-6X6" secondAttribute="trailing" constant="25" id="Qj7-9E-inf"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="leading" secondItem="LCc-0b-GqK" secondAttribute="leading" id="RAg-KJ-jJQ"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" constant="25" id="US6-Az-gzK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V1x-ts-bDs" secondAttribute="trailingMargin" priority="999" constant="25" id="Ull-cj-n5C"/>
+                            <constraint firstItem="V1x-ts-bDs" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" id="WYW-8U-5dv"/>
+                            <constraint firstItem="CjD-Xr-wH6" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="Xsb-JS-D9D"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" constant="25" id="doZ-Yu-5gu"/>
+                            <constraint firstItem="MX1-lp-6X6" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="25" id="ehm-NY-YTS"/>
+                            <constraint firstItem="fhx-PY-MvB" firstAttribute="top" secondItem="cS4-BM-5jE" secondAttribute="bottom" id="iSk-1d-I9i"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="trailing" secondItem="LCc-0b-GqK" secondAttribute="trailing" id="jgf-QQ-eO0"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="cS4-BM-5jE" secondAttribute="trailing" constant="25" id="jrW-GH-f1U"/>
+                            <constraint firstItem="XKP-ZM-ucC" firstAttribute="leading" secondItem="ZdG-yb-knB" secondAttribute="leading" constant="35" id="mNT-Za-r4Q"/>
+                            <constraint firstItem="LCc-0b-GqK" firstAttribute="top" secondItem="V1x-ts-bDs" secondAttribute="bottom" id="rlP-Vr-q1p"/>
+                            <constraint firstItem="ZdG-yb-knB" firstAttribute="trailing" secondItem="fhx-PY-MvB" secondAttribute="trailing" constant="30" id="wKR-UV-g5a"/>
+                            <constraint firstItem="cS4-BM-5jE" firstAttribute="top" secondItem="MX1-lp-6X6" secondAttribute="bottom" constant="16" id="xAn-8z-RSE"/>
+                            <constraint firstItem="XKP-ZM-ucC" firstAttribute="centerY" secondItem="fhx-PY-MvB" secondAttribute="centerY" id="yqs-So-BDL"/>
+                            <constraint firstItem="CjD-Xr-wH6" firstAttribute="top" secondItem="BMH-hQ-7SN" secondAttribute="top" constant="25" id="zr0-rN-sOX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addUnknownPillButton" destination="fhx-PY-MvB" id="ImR-Bo-oJ9"/>
+                        <outlet property="searchBar" destination="cS4-BM-5jE" id="fbu-59-fz8"/>
+                        <outlet property="searchKeyword" destination="XKP-ZM-ucC" id="fr2-BO-TkB"/>
+                        <outlet property="searchTableView" destination="LCc-0b-GqK" id="QPY-af-Cpr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkS-B0-004" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="96.682464454976298"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
