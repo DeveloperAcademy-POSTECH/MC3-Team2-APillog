@@ -109,9 +109,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 실수노트가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
-                                <rect key="frame" x="72" y="425" width="414" height="46"/>
+                                <rect key="frame" x="110" y="425" width="414" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <color key="textColor" name="ADisable"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -195,7 +195,7 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-sk-ToI">
-                                        <rect key="frame" x="131" y="3" width="113" height="31"/>
+                                        <rect key="frame" x="131" y="3" width="113.5" height="31"/>
                                         <locale key="locale" localeIdentifier="ko_KR"/>
                                     </datePicker>
                                 </subviews>
