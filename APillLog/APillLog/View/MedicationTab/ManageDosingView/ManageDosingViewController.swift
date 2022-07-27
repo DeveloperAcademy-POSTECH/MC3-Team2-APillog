@@ -139,7 +139,7 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
             if indexPath.row == 0 {
                 tableView.deleteRows(at: [indexPath], with: .none)
             }
-        tableView.insertRows(at: [indexPath] , with: .top)
+            tableView.insertRows(at: [indexPath] , with: .top)
             tableView.endUpdates()
     }
 }
