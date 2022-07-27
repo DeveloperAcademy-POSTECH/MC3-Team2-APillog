@@ -77,37 +77,7 @@ class MedicationViewController: UIViewController
         super.viewWillAppear(animated)
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
-
-//        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.primaryPillTableView.removeObserver(self, forKeyPath: "primaryPillTableViewContentSize")
-//    }
-    
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//            if keyPath == "primaryPillTableViewContentSize"
-//            {
-//                if object is UITableView
-//                {
-//                    if let newValue = change?[.newKey]{
-//                        let newSize = newValue as! CGSize
-//                        self.primaryPillTableViewHeight.constant = newSize.height
-//                    }
-//                }
-//            }
-//
-//            if keyPath == "secondaryPillTableViewContentSize"
-//            {
-//                if object is UITableView
-//                {
-//                    if let newValue = change?[.newKey]{
-//                        let newSize = newValue as! CGSize
-//                        self.secondaryPillTableViewHeight.constant = newSize.height
-//                    }
-//                }
-//            }
-//        }
 
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
@@ -216,9 +186,9 @@ class MedicationViewController: UIViewController
 extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == primaryPillTableView {
-            return self.primaryPillListDataSource.count == 0 ? 1 : self.primaryPillListDataSource.count
+            return self.primaryPillListDataSource.count  == 0 ? 1 : self.primaryPillListDataSource.count
         } else {
-            return self.secondaryPillList.count  == 0 ? 1 : self.secondaryPillList.count
+            return self.secondaryPillList.count == 0 ? 1 : self.secondaryPillList.count
         }
     }
     
@@ -287,21 +257,13 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            if tableView == secondaryPillTableView {
-                // TODO: - SecondaryPill delete 함수
+            if editingStyle == .delete && tableView == secondaryPillTableView {
                 coreDataManager.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
-                
                 secondaryPillList.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                
+                reloadSecondaryPillTableView()
             } else {
-                return
-            }
             return
         }
-            
     }
 }
 
