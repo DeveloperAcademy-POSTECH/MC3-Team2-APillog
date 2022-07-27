@@ -13,7 +13,7 @@
         <!--Check Condition View Controller-->
         <scene sceneID="q68-Su-LbC">
             <objects>
-                <viewController storyboardIdentifier="CheckConditionViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jTN-oo-mAg" customClass="CheckConditionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CheckConditionViewController" storyboardIdentifier="CheckConditionViewController" hidesBottomBarWhenPushed="YES" id="jTN-oo-mAg" customClass="CheckConditionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hgj-AG-UVu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

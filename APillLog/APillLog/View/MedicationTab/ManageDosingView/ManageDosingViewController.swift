@@ -13,6 +13,7 @@ class ManageDosingViewController: UIViewController {
     // MARK: @IBOutlet
     @IBOutlet weak var viewTitle: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var emptyDescription: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Property
@@ -23,9 +24,11 @@ class ManageDosingViewController: UIViewController {
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
-            self.viewTitle.font = UIFont.AFont.navigationTitle
-            self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
-            self.tableView.delegate = self
+        self.viewTitle.font = UIFont.AFont.navigationTitle
+        self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
+        self.tableView.delegate = self
+        let nibName = UINib(nibName: "EmptyDosingTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "emptyDosingCell")
     }
  
   
@@ -72,27 +75,42 @@ class ManageDosingViewController: UIViewController {
 
 extension ManageDosingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.primaryPillList.count
+        return self.primaryPillList.count == 0 ? 1 : self.primaryPillList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: ManageDosingTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ManageDosingTableViewCell else {
-            return UITableViewCell()
+        
+        if self.primaryPillList.count == 0 {
+            guard let emptyCell: EmptyDosingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "emptyDosingCell", for: indexPath) as? EmptyDosingTableViewCell else {
+                return UITableViewCell()
+            }
+
+            emptyCell.emptyDescription?.text = "복욕할 약 목록이 비어있어요!"
+            emptyCell.emptyDescription?.textColor = UIColor.AColor.gray
+            emptyCell.emptyDescription?.font = UIFont.AFont.explainText
+
+
+            return emptyCell
+
+        } else {
+            guard let cell: ManageDosingTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ManageDosingTableViewCell else {
+                return UITableViewCell()
+            }
+                    
+            cell.dosingCycleLabel.font = UIFont.AFont.caption
+            cell.nameAndDosageLabel.font = UIFont.AFont.tableViewBody
+            
+            cell.dosingCycleLabel.textColor = UIColor.AColor.gray
+            cell.nameAndDosageLabel.textColor = UIColor.AColor.black
+            
+            
+            cell.primaryPill = primaryPillList[indexPath.row]
+            cell.nameAndDosageLabel.text = (primaryPillList[indexPath.row].name ?? "NONAME") + " " + (primaryPillList[indexPath.row].dosage ?? "NODOSAGE")
+            cell.dosingCycleLabel.text = dosingCycleToString(dosingCycle: primaryPillList[indexPath.row].dosingCycle)
+            cell.isShowingSwitch.isOn = primaryPillList[indexPath.row].isShowing
+            
+            return cell
         }
-                
-        cell.dosingCycleLabel.font = UIFont.AFont.caption
-        cell.nameAndDosageLabel.font = UIFont.AFont.tableViewBody
-        
-        cell.dosingCycleLabel.textColor = UIColor.AColor.gray
-        cell.nameAndDosageLabel.textColor = UIColor.AColor.black
-        
-        
-        cell.primaryPill = primaryPillList[indexPath.row]
-        cell.nameAndDosageLabel.text = (primaryPillList[indexPath.row].name ?? "NONAME") + " " + (primaryPillList[indexPath.row].dosage ?? "NODOSAGE")
-        cell.dosingCycleLabel.text = dosingCycleToString(dosingCycle: primaryPillList[indexPath.row].dosingCycle)
-        cell.isShowingSwitch.isOn = primaryPillList[indexPath.row].isShowing
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -153,3 +171,4 @@ class ManageDosingTableViewCell: UITableViewCell {
      
     }
 }
+
