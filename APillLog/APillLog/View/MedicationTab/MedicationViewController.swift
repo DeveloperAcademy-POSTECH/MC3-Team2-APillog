@@ -289,14 +289,19 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            // TODO: - SecondaryPill delete 함수
-//            coreDataManager.deleteSecondaryPill(pill: SecondaryPill)(pill: secondaryPillList[indexPath.row])
-//            secondaryPillList.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        } else {
+            if tableView == secondaryPillTableView {
+                // TODO: - SecondaryPill delete 함수
+                coreDataManager.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
+                
+                secondaryPillList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+            } else {
+                return
+            }
             return
         }
+            
     }
 }
 

@@ -80,15 +80,8 @@ class CoreDataManager{
         }
        
     }
-//    
-//    showSecondaryPill.id = UUID()
-//    showSecondaryPill.name = name
-//    showSecondaryPill.dosage = dosage
-//    showSecondaryPill.isTaking = true
-//    showSecondaryPill.takeTime = nil
-//    showSecondaryPill.selectDate = selectedDate
     
-    func deleteShowSecondaryPill(pill: SecondaryPill){
+    func deleteShowSecondaryPill(pill: ShowSecondaryPill){
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
         //현재의 날짜를 선택
         let todayDate: String = changeSelectedDateToString(Date())
@@ -96,11 +89,11 @@ class CoreDataManager{
             let pillArray = try context.fetch(request)
             
             for item in pillArray {
-                if (item.selectDate == todayDate && item.name == pill.name)
+                if (item.selectDate == todayDate && item.name == pill.name &&
+                    item.dosage == pill.dosage)
                 {
                     self.context.delete(item)
                     saveToContext()
-                    
                 }
             }
             
@@ -130,27 +123,7 @@ class CoreDataManager{
         }
         saveToContext()
     }
-    
-    func deleteSecondaryPill(pill: SecondaryPill) {
-        let request : NSFetchRequest<SecondaryPill> = SecondaryPill.fetchRequest()
-        
-        do {
-            let pillArray = try context.fetch(request)
-            
-            for index in pillArray.indices {
-                if pillArray[index].id == pill.id
-                {
-                    deleteShowSecondaryPill(pill: pill)
-                    self.context.delete(pill)
-                    break
-                }
-            }
-        } catch{
-            print("-----fetchShowSecondaryPill error-------")
-        }
-        saveToContext()
-    }
-    
+
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
