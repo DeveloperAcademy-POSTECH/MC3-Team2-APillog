@@ -13,6 +13,11 @@
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
+		781EABC82891B37100F1A2F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC72891B37100F1A2F4 /* WidgetKit.framework */; };
+		781EABCA2891B37100F1A2F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC92891B37100F1A2F4 /* SwiftUI.framework */; };
+		781EABCD2891B37100F1A2F4 /* ApilogWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */; };
+		781EABCF2891B37200F1A2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781EABCE2891B37200F1A2F4 /* Assets.xcassets */; };
+		781EABD32891B37200F1A2F4 /* ApilogWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
@@ -57,6 +62,30 @@
 		A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		781EABD12891B37200F1A2F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 781EABC42891B37100F1A2F4;
+			remoteInfo = ApilogWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		781EABD42891B37200F1A2F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				781EABD32891B37200F1A2F4 /* ApilogWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +93,14 @@
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
 		34CE29112889308200644E4E /* MedicationPillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
+		781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ApilogWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		781EABC72891B37100F1A2F4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		781EABC92891B37100F1A2F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApilogWidget.swift; sourceTree = "<group>"; };
+		781EABCE2891B37200F1A2F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		781EABD02891B37200F1A2F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		781EABD82891B80B00F1A2F4 /* APillLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APillLog.entitlements; sourceTree = "<group>"; };
+		781EABD92891BB6400F1A2F4 /* ApilogWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApilogWidgetExtension.entitlements; sourceTree = "<group>"; };
 		78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +148,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		781EABC22891B37100F1A2F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCA2891B37100F1A2F4 /* SwiftUI.framework in Frameworks */,
+				781EABC82891B37100F1A2F4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		876ED1992882A33B00179767 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,10 +194,32 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		781EABC62891B37100F1A2F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781EABC72891B37100F1A2F4 /* WidgetKit.framework */,
+				781EABC92891B37100F1A2F4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		781EABCB2891B37100F1A2F4 /* ApilogWidget */ = {
+			isa = PBXGroup;
+			children = (
+				781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */,
+				781EABCE2891B37200F1A2F4 /* Assets.xcassets */,
+				781EABD02891B37200F1A2F4 /* Info.plist */,
+			);
+			path = ApilogWidget;
+			sourceTree = "<group>";
+		};
 		876ED1932882A33B00179767 = {
 			isa = PBXGroup;
 			children = (
+				781EABD92891BB6400F1A2F4 /* ApilogWidgetExtension.entitlements */,
 				876ED19E2882A33B00179767 /* APillLog */,
+				781EABCB2891B37100F1A2F4 /* ApilogWidget */,
+				781EABC62891B37100F1A2F4 /* Frameworks */,
 				876ED19D2882A33B00179767 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				876ED19C2882A33B00179767 /* APillLog.app */,
+				781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +236,7 @@
 		876ED19E2882A33B00179767 /* APillLog */ = {
 			isa = PBXGroup;
 			children = (
+				781EABD82891B80B00F1A2F4 /* APillLog.entitlements */,
 				876ED1B02882A33C00179767 /* Info.plist */,
 				A8209F0B28846546006F35DF /* Application */,
 				A8F4F2AA288475240008EB48 /* Utility */,
@@ -324,6 +394,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 781EABD72891B37200F1A2F4 /* Build configuration list for PBXNativeTarget "ApilogWidgetExtension" */;
+			buildPhases = (
+				781EABC12891B37100F1A2F4 /* Sources */,
+				781EABC22891B37100F1A2F4 /* Frameworks */,
+				781EABC32891B37100F1A2F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApilogWidgetExtension;
+			productName = ApilogWidgetExtension;
+			productReference = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		876ED19B2882A33B00179767 /* APillLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 876ED1B32882A33C00179767 /* Build configuration list for PBXNativeTarget "APillLog" */;
@@ -331,10 +418,12 @@
 				876ED1982882A33B00179767 /* Sources */,
 				876ED1992882A33B00179767 /* Frameworks */,
 				876ED19A2882A33B00179767 /* Resources */,
+				781EABD42891B37200F1A2F4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				781EABD22891B37200F1A2F4 /* PBXTargetDependency */,
 			);
 			name = APillLog;
 			productName = APillLog;
@@ -348,9 +437,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					781EABC42891B37100F1A2F4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					876ED19B2882A33B00179767 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -370,11 +462,20 @@
 			projectRoot = "";
 			targets = (
 				876ED19B2882A33B00179767 /* APillLog */,
+				781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		781EABC32891B37100F1A2F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCF2891B37200F1A2F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		876ED19A2882A33B00179767 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +508,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		781EABC12891B37100F1A2F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCD2891B37100F1A2F4 /* ApilogWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		876ED1982882A33B00179767 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +551,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		781EABD22891B37200F1A2F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */;
+			targetProxy = 781EABD12891B37200F1A2F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		876ED1A52882A33B00179767 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -462,6 +579,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		781EABD52891B37200F1A2F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ApilogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		781EABD62891B37200F1A2F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ApilogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		876ED1B12882A33C00179767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -579,11 +754,13 @@
 		876ED1B42882A33C00179767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = APillLog/APillLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -592,6 +769,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,11 +787,13 @@
 		876ED1B52882A33C00179767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = APillLog/APillLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -622,6 +802,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -639,6 +820,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		781EABD72891B37200F1A2F4 /* Build configuration list for PBXNativeTarget "ApilogWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				781EABD52891B37200F1A2F4 /* Debug */,
+				781EABD62891B37200F1A2F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		876ED1972882A33B00179767 /* Build configuration list for PBXProject "APillLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -50,6 +50,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
+    
 
 }
 
+extension SceneDelegate {
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            print(url.absoluteString)
+                if url.absoluteString.starts(with: "Apillog://DiaryView") {
+                    (self.window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+                }
+
+        
+    }
+}
+}

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import WidgetKit
 
 class DiaryWriteViewController: UIViewController {
     var coredataManager: CoreDataManager = CoreDataManager()
@@ -15,8 +16,18 @@ class DiaryWriteViewController: UIViewController {
     @IBOutlet weak var diaryWriteDatePicker: UIDatePicker!
     
     @IBAction func didTapSaveButton(_ sender: Any) {
-        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
-        _ = navigationController?.popViewController(animated: true)
+        if !textView.text.trimmingCharacters(in: .whitespaces).isEmpty{
+            coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
+            _ = navigationController?.popViewController(animated: true)
+            
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(textView.text, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        else{
+            _ = navigationController?.popViewController(animated: true)
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

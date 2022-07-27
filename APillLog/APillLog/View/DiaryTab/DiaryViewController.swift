@@ -44,8 +44,10 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.sectionHeaderTopPadding = 0
         mistakeTableView.register(MyCustomHeader.self,
                                   forHeaderFooterViewReuseIdentifier: "sectionHeader")
+    
         
     }
+  
     override func viewWillAppear(_ animated: Bool) {
         myCBT = coredataManager.fetchCBT()
         myCBT = myCBT.sorted(by: {
