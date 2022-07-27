@@ -368,11 +368,11 @@
             </objects>
             <point key="canvasLocation" x="1775" y="91"/>
         </scene>
-        <!--복용기록-->
+        <!--오늘기록-->
         <scene sceneID="bJU-sc-kPv">
             <objects>
                 <navigationController storyboardIdentifier="MedicationViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iZc-H1-lr9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="복용기록" id="rpt-Ea-0JZ">
+                    <tabBarItem key="tabBarItem" title="오늘기록" id="rpt-Ea-0JZ">
                         <imageReference key="image" image="pills" catalog="system" symbolScale="default"/>
                         <color key="badgeColor" name="AccentColor"/>
                         <imageReference key="selectedImage" image="pills.fill" catalog="system" symbolScale="default"/>
