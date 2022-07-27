@@ -529,7 +529,9 @@ class CoreDataManager{
     }
     //history read함수
     func fetchHistory(selectedDate: Date) -> [History] {
+        //let sortDescriptor = NSSortDescriptor(key: "selectDate", ascending: true)
         let request : NSFetchRequest<History> = History.fetchRequest()
+      //  request.sortDescriptors = [sortDescriptor]
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
         do {
