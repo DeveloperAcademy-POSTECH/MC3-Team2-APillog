@@ -274,7 +274,6 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == secondaryPillTableView {
             if editingStyle == .delete {
-                print (indexPath.row)
                 coreDataManager.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
                 secondaryPillList.remove(at: indexPath.row)
                 if (secondaryPillList.count != 0) {

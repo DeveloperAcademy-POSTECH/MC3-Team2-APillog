@@ -13,7 +13,6 @@ class ManageDosingViewController: UIViewController {
     // MARK: @IBOutlet
     @IBOutlet weak var viewTitle: UILabel!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var emptyDescription: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Property
@@ -115,15 +114,13 @@ extension ManageDosingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
-            
             primaryPillList.remove(at: indexPath.row)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        } else {
-            return
+            if primaryPillList.count != 0 {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } else {
+                tableView.reloadData()
+            }
         }
     }
 }
@@ -139,12 +136,14 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
      
         self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
-        let indexPath = IndexPath(row: primaryPillList.count-1, section: 0)
-        
-        tableView.beginUpdates()
-        tableView.insertRows(at: [indexPath] , with: .automatic)
-        tableView.endUpdates()
-        
+        let indexPath = IndexPath(row: primaryPillList.count - 1, section: 0)
+
+            tableView.beginUpdates()
+            if indexPath.row == 0 {
+                tableView.deleteRows(at: [indexPath], with: .none)
+            }
+        tableView.insertRows(at: [indexPath] , with: .top)
+            tableView.endUpdates()
     }
 }
 
