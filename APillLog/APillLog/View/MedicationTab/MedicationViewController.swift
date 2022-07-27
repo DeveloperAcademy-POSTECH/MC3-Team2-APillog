@@ -263,6 +263,14 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if tableView == primaryPillTableView || secondaryPillList.count == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == secondaryPillTableView {
             if editingStyle == .delete {
@@ -272,12 +280,13 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 if (secondaryPillList.count != 0) {
                     secondaryPillTableView.deleteRows(at: [indexPath], with: .fade)
                 } else {
+                    // 셀이 하나남았을 때 오류 생기는 문제 해결
                     tableView.reloadData()
                 }
                 resizingSecondaryPillTableViewHeight()
             }
         } else {
-            return
+            
         }
     }
 }
