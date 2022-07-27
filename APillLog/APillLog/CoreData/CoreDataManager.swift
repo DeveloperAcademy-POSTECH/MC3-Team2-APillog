@@ -80,6 +80,35 @@ class CoreDataManager{
         }
        
     }
+//    
+//    showSecondaryPill.id = UUID()
+//    showSecondaryPill.name = name
+//    showSecondaryPill.dosage = dosage
+//    showSecondaryPill.isTaking = true
+//    showSecondaryPill.takeTime = nil
+//    showSecondaryPill.selectDate = selectedDate
+    
+    func deleteShowSecondaryPill(pill: SecondaryPill){
+        let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
+        //현재의 날짜를 선택
+        let todayDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for item in pillArray {
+                if (item.selectDate == todayDate && item.name == pill.name)
+                {
+                    self.context.delete(item)
+                    saveToContext()
+                    
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+       
+    }
     
     func deletePrimaryPill(pill: PrimaryPill) {
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
@@ -98,6 +127,26 @@ class CoreDataManager{
             
         } catch{
             print("-----fetchShowPrimaryPill error-------")
+        }
+        saveToContext()
+    }
+    
+    func deleteSecondaryPill(pill: SecondaryPill) {
+        let request : NSFetchRequest<SecondaryPill> = SecondaryPill.fetchRequest()
+        
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for index in pillArray.indices {
+                if pillArray[index].id == pill.id
+                {
+                    deleteShowSecondaryPill(pill: pill)
+                    self.context.delete(pill)
+                    break
+                }
+            }
+        } catch{
+            print("-----fetchShowSecondaryPill error-------")
         }
         saveToContext()
     }
