@@ -144,7 +144,7 @@ class CoreDataManager{
         showSecondaryPill.id = UUID()
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
-        showSecondaryPill.isTaking = false
+        showSecondaryPill.isTaking = true
         showSecondaryPill.takeTime = nil
         showSecondaryPill.selectDate = selectedDate
         saveToContext()
