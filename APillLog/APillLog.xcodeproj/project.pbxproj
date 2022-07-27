@@ -27,6 +27,21 @@
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
 		87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
+		8B8D85BA2891408B001F0121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D85B92891408B001F0121 /* Assets.xcassets */; };
+		8B8D85C02891408B001F0121 /* APilLogWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8B8D85BF2891408B001F0121 /* APilLogWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B8D85C72891408B001F0121 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D85C62891408B001F0121 /* ContentView.swift */; };
+		8B8D85C92891408B001F0121 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D85C82891408B001F0121 /* NotificationController.swift */; };
+		8B8D85CB2891408B001F0121 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D85CA2891408B001F0121 /* NotificationView.swift */; };
+		8B8D85CD2891408B001F0121 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D85CC2891408B001F0121 /* ComplicationController.swift */; };
+		8B8D85CF2891408C001F0121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D85CE2891408C001F0121 /* Assets.xcassets */; };
+		8B8D85D22891408C001F0121 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D85D12891408C001F0121 /* Preview Assets.xcassets */; };
+		8B8D85D72891408C001F0121 /* APilLogWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8B8D85B728914089001F0121 /* APilLogWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B8D85E0289140F6001F0121 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
+		8B8D85E1289140F6001F0121 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
+		8B8D85E2289140F6001F0121 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
+		8B8D85E3289140F6001F0121 /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
+		8B8D85E4289140F6001F0121 /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
+		8B8D85E5289140FA001F0121 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
 		8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */; };
 		8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */; };
@@ -57,6 +72,48 @@
 		A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8B8D85C12891408B001F0121 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8D85BE2891408B001F0121;
+			remoteInfo = "APilLogWatch WatchKit Extension";
+		};
+		8B8D85D52891408C001F0121 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8D85B628914089001F0121;
+			remoteInfo = APilLogWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B8D85D82891408C001F0121 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8B8D85D72891408C001F0121 /* APilLogWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8D85DB2891408C001F0121 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8B8D85C02891408B001F0121 /* APilLogWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +137,17 @@
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8B8D85B728914089001F0121 /* APilLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APilLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8D85B92891408B001F0121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B8D85BF2891408B001F0121 /* APilLogWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "APilLogWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8D85C62891408B001F0121 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B8D85C82891408B001F0121 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8B8D85CA2891408B001F0121 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		8B8D85CC2891408B001F0121 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8B8D85CE2891408C001F0121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B8D85D12891408C001F0121 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B8D85D32891408C001F0121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B8D85D42891408C001F0121 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrimaryPillViewController.swift; sourceTree = "<group>"; };
 		8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPrimaryPill.storyboard; sourceTree = "<group>"; };
 		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
@@ -112,6 +180,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		876ED1992882A33B00179767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8D85BC2891408B001F0121 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -152,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				876ED19E2882A33B00179767 /* APillLog */,
+				8B8D85B828914089001F0121 /* APilLogWatch */,
+				8B8D85C32891408B001F0121 /* APilLogWatch WatchKit Extension */,
 				876ED19D2882A33B00179767 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				876ED19C2882A33B00179767 /* APillLog.app */,
+				8B8D85B728914089001F0121 /* APilLogWatch.app */,
+				8B8D85BF2891408B001F0121 /* APilLogWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +264,37 @@
 				87D759332887F180007FCDF0 /* CalendarView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		8B8D85B828914089001F0121 /* APilLogWatch */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D85B92891408B001F0121 /* Assets.xcassets */,
+			);
+			path = APilLogWatch;
+			sourceTree = "<group>";
+		};
+		8B8D85C32891408B001F0121 /* APilLogWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D85C62891408B001F0121 /* ContentView.swift */,
+				8B8D85C82891408B001F0121 /* NotificationController.swift */,
+				8B8D85CA2891408B001F0121 /* NotificationView.swift */,
+				8B8D85CC2891408B001F0121 /* ComplicationController.swift */,
+				8B8D85CE2891408C001F0121 /* Assets.xcassets */,
+				8B8D85D32891408C001F0121 /* Info.plist */,
+				8B8D85D42891408C001F0121 /* PushNotificationPayload.apns */,
+				8B8D85D02891408C001F0121 /* Preview Content */,
+			);
+			path = "APilLogWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8B8D85D02891408C001F0121 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D85D12891408C001F0121 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		8B942AFD28854E2300507AC5 /* AddPrimaryPillView */ = {
@@ -331,15 +441,51 @@
 				876ED1982882A33B00179767 /* Sources */,
 				876ED1992882A33B00179767 /* Frameworks */,
 				876ED19A2882A33B00179767 /* Resources */,
+				8B8D85D82891408C001F0121 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8B8D85D62891408C001F0121 /* PBXTargetDependency */,
 			);
 			name = APillLog;
 			productName = APillLog;
 			productReference = 876ED19C2882A33B00179767 /* APillLog.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8B8D85B628914089001F0121 /* APilLogWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B8D85DF2891408C001F0121 /* Build configuration list for PBXNativeTarget "APilLogWatch" */;
+			buildPhases = (
+				8B8D85B528914089001F0121 /* Resources */,
+				8B8D85DB2891408C001F0121 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B8D85C22891408B001F0121 /* PBXTargetDependency */,
+			);
+			name = APilLogWatch;
+			productName = APilLogWatch;
+			productReference = 8B8D85B728914089001F0121 /* APilLogWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8B8D85BE2891408B001F0121 /* APilLogWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B8D85DE2891408C001F0121 /* Build configuration list for PBXNativeTarget "APilLogWatch WatchKit Extension" */;
+			buildPhases = (
+				8B8D85BB2891408B001F0121 /* Sources */,
+				8B8D85BC2891408B001F0121 /* Frameworks */,
+				8B8D85BD2891408B001F0121 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APilLogWatch WatchKit Extension";
+			productName = "APilLogWatch WatchKit Extension";
+			productReference = 8B8D85BF2891408B001F0121 /* APilLogWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -348,11 +494,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					876ED19B2882A33B00179767 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					8B8D85B628914089001F0121 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					8B8D85BE2891408B001F0121 = {
+						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
@@ -370,6 +522,8 @@
 			projectRoot = "";
 			targets = (
 				876ED19B2882A33B00179767 /* APillLog */,
+				8B8D85B628914089001F0121 /* APilLogWatch */,
+				8B8D85BE2891408B001F0121 /* APilLogWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +555,23 @@
 				87D759322887F172007FCDF0 /* CalendarView.xib in Resources */,
 				876ED1A72882A33B00179767 /* Main.storyboard in Resources */,
 				8BFE752628880311008748B9 /* CheckConditionView.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8D85B528914089001F0121 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8D85BA2891408B001F0121 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8D85BD2891408B001F0121 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8D85D22891408C001F0121 /* Preview Assets.xcassets in Resources */,
+				8B8D85CF2891408C001F0121 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +611,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B8D85BB2891408B001F0121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8D85E1289140F6001F0121 /* History+CoreDataProperties.swift in Sources */,
+				8B8D85E3289140F6001F0121 /* Condition+CoreDataClass.swift in Sources */,
+				8B8D85C92891408B001F0121 /* NotificationController.swift in Sources */,
+				8B8D85C72891408B001F0121 /* ContentView.swift in Sources */,
+				8B8D85CD2891408B001F0121 /* ComplicationController.swift in Sources */,
+				8B8D85E5289140FA001F0121 /* APillLog.xcdatamodeld in Sources */,
+				8B8D85E0289140F6001F0121 /* History+CoreDataClass.swift in Sources */,
+				8B8D85E4289140F6001F0121 /* Condition+CoreDataProperties.swift in Sources */,
+				8B8D85E2289140F6001F0121 /* CoreDataManager.swift in Sources */,
+				8B8D85CB2891408B001F0121 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B8D85C22891408B001F0121 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8D85BE2891408B001F0121 /* APilLogWatch WatchKit Extension */;
+			targetProxy = 8B8D85C12891408B001F0121 /* PBXContainerItemProxy */;
+		};
+		8B8D85D62891408C001F0121 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8D85B628914089001F0121 /* APilLogWatch */;
+			targetProxy = 8B8D85D52891408C001F0121 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		876ED1A52882A33B00179767 /* Main.storyboard */ = {
@@ -636,6 +837,120 @@
 			};
 			name = Release;
 		};
+		8B8D85D92891408C001F0121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JPPWR5997;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = APilLogWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = APilLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		8B8D85DA2891408C001F0121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JPPWR5997;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = APilLogWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = APilLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		8B8D85DC2891408C001F0121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"APilLogWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V8U96P27D9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "APilLogWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "APilLogWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		8B8D85DD2891408C001F0121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"APilLogWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V8U96P27D9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "APilLogWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "APilLogWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -653,6 +968,24 @@
 			buildConfigurations = (
 				876ED1B42882A33C00179767 /* Debug */,
 				876ED1B52882A33C00179767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B8D85DE2891408C001F0121 /* Build configuration list for PBXNativeTarget "APilLogWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8D85DC2891408C001F0121 /* Debug */,
+				8B8D85DD2891408C001F0121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B8D85DF2891408C001F0121 /* Build configuration list for PBXNativeTarget "APilLogWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8D85D92891408C001F0121 /* Debug */,
+				8B8D85DA2891408C001F0121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
