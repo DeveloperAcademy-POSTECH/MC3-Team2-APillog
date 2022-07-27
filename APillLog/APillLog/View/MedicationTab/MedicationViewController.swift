@@ -147,23 +147,30 @@ class MedicationViewController: UIViewController
             primaryPillListDataSource = []
         }
 
-        primaryPillTableViewHeight.constant =
-        primaryPillListDataSource.count == 0 ? 35.0 :
-        65.0 * CGFloat(primaryPillListDataSource.count)
-        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
-
+        resizingPrimaryPillTableViewHeight(dataCount: primaryPillListDataSource.count)
         primaryPillTableView.reloadData()
     }
 
     private func reloadSecondaryPillTableView() {
         secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: date)
-
-        secondaryPillTableViewHeight.constant =
-        secondaryPillList.count == 0 ? 35.0 :
-        65.0 * CGFloat(secondaryPillList.count)
-        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
-
+        resizingSecondaryPillTableViewHeight()
         secondaryPillTableView.reloadData()
+    }
+    
+    
+    private func resizingPrimaryPillTableViewHeight(dataCount count: Int) {
+        primaryPillTableViewHeight.constant =
+        count == 0 ? 40.0 :
+        66.0 * CGFloat(count)
+        primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
+    }
+    
+    
+    private func resizingSecondaryPillTableViewHeight() {
+        secondaryPillTableViewHeight.constant =
+        secondaryPillList.count == 0 ? 40.0 :
+        66.0 * CGFloat(secondaryPillList.count)
+        secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
     }
 
     @IBAction func tapAddSecondaryPillButton() {
@@ -257,11 +264,19 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete && tableView == secondaryPillTableView {
+        if tableView == secondaryPillTableView {
+            if editingStyle == .delete {
+                print (indexPath.row)
                 coreDataManager.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
                 secondaryPillList.remove(at: indexPath.row)
-                reloadSecondaryPillTableView()
-            } else {
+                if (secondaryPillList.count != 0) {
+                    secondaryPillTableView.deleteRows(at: [indexPath], with: .fade)
+                } else {
+                    tableView.reloadData()
+                }
+                resizingSecondaryPillTableViewHeight()
+            }
+        } else {
             return
         }
     }

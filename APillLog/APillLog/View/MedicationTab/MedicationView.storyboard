@@ -358,16 +358,6 @@
             </objects>
             <point key="canvasLocation" x="768" y="23"/>
         </scene>
-        <!--ManageDosingView-->
-        <scene sceneID="IsJ-cI-LhC">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ManageDosingView" referencedIdentifier="ManageDosingView" id="Dt6-4l-NDv" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="xCa-ak-R1Y"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-lk-55E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1775" y="91"/>
-        </scene>
         <!--오늘기록-->
         <scene sceneID="bJU-sc-kPv">
             <objects>
