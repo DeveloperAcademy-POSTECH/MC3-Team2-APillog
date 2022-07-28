@@ -82,15 +82,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="건의사항이나 오류를 발견하셨다면," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bd-tx-cIl">
-                                <rect key="frame" x="61" y="194" width="234" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="건의사항이나 오류를 발견하셨다면,메일을 통해 저희에게 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bd-tx-cIl">
+                                <rect key="frame" x="61" y="194" width="251" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메일을 통해 저희에게 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chx-S4-GnA">
-                                <rect key="frame" x="61" y="223" width="219" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chx-S4-GnA">
+                                <rect key="frame" x="61" y="223" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -117,11 +117,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="context1" destination="JSm-FI-STB" id="hkG-Cg-PLd"/>
-                        <outlet property="context2" destination="8Bd-tx-cIl" id="qSC-NV-Vsp"/>
-                        <outlet property="context3" destination="chx-S4-GnA" id="OhB-VG-wdN"/>
                         <outlet property="questiontitle" destination="cv6-YB-CSL" id="UEc-3i-Ui6"/>
+                        <outlet property="requestText" destination="8Bd-tx-cIl" id="f2x-al-ewm"/>
                         <outlet property="sendButton" destination="UeN-sB-eug" id="zhK-oh-f1J"/>
+                        <outlet property="welcomeText" destination="JSm-FI-STB" id="JIg-tQ-b0M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qim-N0-Ko5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
