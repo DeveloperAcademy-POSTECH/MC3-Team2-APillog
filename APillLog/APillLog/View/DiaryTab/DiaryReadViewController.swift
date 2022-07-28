@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 class DiaryReadViewController: UIViewController {
-
     var date = ""
     var body = ""
     var id  = UUID()

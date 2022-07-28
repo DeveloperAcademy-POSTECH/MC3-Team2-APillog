@@ -10,6 +10,8 @@ import WatchConnectivity
 
 class ConnectionModelWatch: NSObject,  WCSessionDelegate, ObservableObject{
     
+    static let shared: ConnectionModelWatch = ConnectionModelWatch()
+    
     var session: WCSession
     @Published var messageText = ""
 

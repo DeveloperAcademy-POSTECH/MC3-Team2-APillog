@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var connectionModel = ConnectionModelWatch()
-    
     @State var messageText = "test중"
     
     var body: some View {
@@ -36,8 +34,8 @@ struct ContentView: View {
                     let medicinalEffect: [String] = []
                     let detailContext: String = "살려주세요"
                     
-                    
-                    self.connectionModel.session.sendMessage(["message" : ["아파요"],
+//                    self.connectionModel.session.send
+                    ConnectionModelWatch.shared.session.sendMessage(["message" : ["아파요"],
                                                               "pillName": pillName,
                                                               "dosage": dosage,
                                                               "isMainPill": isMainPill,

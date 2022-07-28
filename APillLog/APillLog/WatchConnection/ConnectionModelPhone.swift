@@ -10,6 +10,7 @@ import Foundation
 import WatchConnectivity
 
 class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
+    static let shared: ConnectionModelPhone = ConnectionModelPhone()
     
     var coreDataManager: CoreDataManager = CoreDataManager()
     
@@ -32,6 +33,9 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
         DispatchQueue.main.async {
         
             // 메세지에서 데이터 받아오기
+            let isAddingHistory = message["isAddingHistory"] as? Bool
+            
+            
             let pillName =  message["pillName"] as? String ?? "ERROR"
             let dosage =  message["dosage"] as? String ?? nil
             let isMainPill = message["isMainPill"] as! Bool ?? false
