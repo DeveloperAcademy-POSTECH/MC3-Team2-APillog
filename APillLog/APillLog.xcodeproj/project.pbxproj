@@ -38,8 +38,6 @@
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
 		9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
-		A81DDD692891CE3A007F529D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DDD672891CE3A007F529D /* EmptyDosingTableViewCell.swift */; };
-		A81DDD6A2891CE3A007F529D /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81DDD682891CE3A007F529D /* EmptyDosingTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -93,8 +91,6 @@
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A81DDD672891CE3A007F529D /* EmptyDosingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDosingTableViewCell.swift; sourceTree = "<group>"; };
-		A81DDD682891CE3A007F529D /* EmptyDosingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDosingTableViewCell.xib; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -130,7 +126,6 @@
 			children = (
 				34440E6028870AE700AA3996 /* ManageDosingView.storyboard */,
 				34440E6228870B1200AA3996 /* ManageDosingViewController.swift */,
-				A81DDD6B2891CF3E007F529D /* ManageDosingViewCustomCell */,
 			);
 			path = ManageDosingView;
 			sourceTree = "<group>";
@@ -210,15 +205,6 @@
 				8BFE752928884E2A008748B9 /* PillDummyData.swift */,
 			);
 			path = CheckCondition;
-			sourceTree = "<group>";
-		};
-		A81DDD6B2891CF3E007F529D /* ManageDosingViewCustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				A81DDD672891CE3A007F529D /* EmptyDosingTableViewCell.swift */,
-				A81DDD682891CE3A007F529D /* EmptyDosingTableViewCell.xib */,
-			);
-			path = ManageDosingViewCustomCell;
 			sourceTree = "<group>";
 		};
 		A8209F0B28846546006F35DF /* Application */ = {
@@ -397,7 +383,6 @@
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
-				A81DDD6A2891CE3A007F529D /* EmptyDosingTableViewCell.xib in Resources */,
 				34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */,
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
 				A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */,
@@ -436,7 +421,6 @@
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
-				A81DDD692891CE3A007F529D /* EmptyDosingTableViewCell.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */,
