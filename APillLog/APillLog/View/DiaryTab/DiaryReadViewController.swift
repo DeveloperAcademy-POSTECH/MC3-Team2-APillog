@@ -25,7 +25,7 @@ class DiaryReadViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        receivedCBT.cbtContext = DiaryReadViewBody.text
+        receivedCBT.mistakeContext = DiaryReadViewBody.text
         receivedCBT.selectDate = DiaryReadViewDate.text
         coredataManager.updateOneCBT(receivedCBT: receivedCBT)
     }

@@ -25,7 +25,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCellTableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell
         cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
-        cell.cellTitle.text = myCBT[indexPath.row].cbtContext ?? "text"
+        cell.cellTitle.text = myCBT[indexPath.row].mistakeContext ?? "text"
         cell.cellTitle.font = UIFont.AFont.tableViewTitle
         cell.cellTitle.textColor = UIColor.AColor.black
         cell.cellDate.text = myCBT[indexPath.row].selectDate
@@ -72,11 +72,11 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBody = myCBT[indexPath.row].cbtContext!
+        selectedBody = myCBT[indexPath.row].mistakeContext!
         selectedDate = myCBT[indexPath.row].selectDate!
         let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
         let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
-        vc.body = myCBT[indexPath.row].cbtContext!
+        vc.body = myCBT[indexPath.row].mistakeContext!
         vc.date = myCBT[indexPath.row].selectDate!
         vc.id = myCBT[indexPath.row].cbtId!
         vc.receivedCBT = myCBT[indexPath.row]
