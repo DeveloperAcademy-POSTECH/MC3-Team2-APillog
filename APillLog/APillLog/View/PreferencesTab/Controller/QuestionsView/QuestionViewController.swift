@@ -14,9 +14,13 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var welcomeText: UILabel!
     @IBOutlet weak var requestText: UILabel!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var backButton: UINavigationItem!
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.tintColor = .green
+        self.navigationItem.hidesBackButton = true
         }
         
         func showSendMailErrorAlert() {
@@ -28,7 +32,9 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
             sendMailErrorAlert.addAction(confirmAction)
             self.present(sendMailErrorAlert, animated: true, completion: nil)
         }
+        @IBAction func backToPreferences(){
         
+        }
         @IBAction func sendEmailTapped(_ sender: UIButton) {
             
             if MFMailComposeViewController.canSendMail() {

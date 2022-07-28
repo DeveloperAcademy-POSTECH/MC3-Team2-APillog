@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ApillLog를 이용해주셔서 감사합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvy-Mx-85p">
-                                <rect key="frame" x="61" y="165" width="251" height="21"/>
+                                <rect key="frame" x="61" y="140" width="251" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -47,10 +47,12 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asd-uQ-4zW">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="37" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="문의사항" id="GIL-Xy-mHz"/>
+                                    <navigationItem title="문의사항" id="GIL-Xy-mHz">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="left-black" id="nyT-ct-ca4"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -58,6 +60,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="GIL-Xy-mHz" id="Ugm-Lp-nDs"/>
                         <outlet property="questiontitle" destination="asd-uQ-4zW" id="Vf9-vO-fPP"/>
                         <outlet property="requestText" destination="agy-nb-bX6" id="uqJ-EK-NVZ"/>
                         <outlet property="sendButton" destination="tId-tp-5cO" id="dvO-fN-EmA"/>
@@ -70,6 +73,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="left-black" width="10" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
