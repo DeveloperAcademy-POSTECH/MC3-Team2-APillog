@@ -25,11 +25,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var cancleButton: UIButton!
     @IBOutlet weak var duplicateWarningLabel: UILabel!
     
+    @IBOutlet weak var primaryPillDosageSegmentedControl: UISegmentedControl!
     
     // MARK: Property
     var coredataManager:CoreDataManager = CoreDataManager()
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
+    var primaryPillDosageSegmentedTitle = "mg"
     
     var delegate: AddPrimaryPillViewControllerDelegate?
     
@@ -55,15 +57,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
  
     @IBAction func tapSaveButton() {
         let pillName = PrimaryPillName.text ?? ""
-        let pillDosage = PrimaryPillDosage.text ?? ""
+        let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
         
         coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        print(pillDosage)
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
-       
-        
     }
-    
     
     @IBAction func detectNameTextField(){
         detectEnableSaveButton()
@@ -120,6 +120,16 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         detectEnableSaveButton()
     }
     
+    @IBAction func selectPrimaryPillDosage(_ sender: UISegmentedControl) {
+        switch(primaryPillDosageSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            primaryPillDosageSegmentedTitle = "mg"
+        case 1:
+            primaryPillDosageSegmentedTitle = "정"
+        default:
+            return
+        }
+    }
     
     // MARK: Function
     func changePrimaryPillDosingButtonState(_ button: UIButton) {
