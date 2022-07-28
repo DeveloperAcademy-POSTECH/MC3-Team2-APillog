@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
     @IBOutlet weak var mistakeTableView: UITableView!
@@ -56,12 +57,31 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.reloadData()
         if myCBT.count == 0 {
             diaryViewGuideLabel.isHidden = false
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set("실수노트를 추가해주세요", forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
         }
         else{
             diaryViewGuideLabel.isHidden = true
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].cbtContext, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if myCBT.count != 0{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].cbtContext, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        else{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set("실수노트를 추가해주세요", forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        
+    }
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
@@ -97,6 +117,9 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].cbtContext, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
