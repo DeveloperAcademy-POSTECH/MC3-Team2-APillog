@@ -124,8 +124,10 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         switch(primaryPillDosageSegmentedControl.selectedSegmentIndex) {
         case 0:
             primaryPillDosageSegmentedTitle = "mg"
+            detectEnableSaveButton()
         case 1:
             primaryPillDosageSegmentedTitle = "정"
+            detectEnableSaveButton()
         default:
             return
         }
@@ -162,7 +164,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     func checkDuplication() {
         for pill in primaryPillList {
-            if PrimaryPillName.text == pill.name && PrimaryPillDosage.text == pill.dosage {
+            if PrimaryPillName.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
                 savePrimaryPillButton.isEnabled = false
                 duplicateWarningLabel.isHidden = false
                 return
