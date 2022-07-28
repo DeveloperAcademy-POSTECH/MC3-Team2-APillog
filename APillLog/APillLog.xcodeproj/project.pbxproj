@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
-		347E4F8E28929C7F0043136A /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E4F8C28929C7F0043136A /* EmptyDosingTableViewCell.swift */; };
-		347E4F8F28929C7F0043136A /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347E4F8D28929C7F0043136A /* EmptyDosingTableViewCell.xib */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
+		34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */; };
+		34F397C82892E8B20074A03D /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
@@ -77,12 +77,12 @@
 /* Begin PBXFileReference section */
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
-		347E4F8C28929C7F0043136A /* EmptyDosingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDosingTableViewCell.swift; sourceTree = "<group>"; };
-		347E4F8D28929C7F0043136A /* EmptyDosingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDosingTableViewCell.xib; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
 		34CE29112889308200644E4E /* MedicationPillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
+		34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDosingTableViewCell.swift; sourceTree = "<group>"; };
+		34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDosingTableViewCell.xib; sourceTree = "<group>"; };
 		78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,21 +158,20 @@
 		34440E5F28870ACD00AA3996 /* ManageDosingView */ = {
 			isa = PBXGroup;
 			children = (
+				347E4F902892E7150043136A /* ManageDosingViewCustomCell */,
 				34440E6028870AE700AA3996 /* ManageDosingView.storyboard */,
 				34440E6228870B1200AA3996 /* ManageDosingViewController.swift */,
-				347E4F8B28929C7F0043136A /* ManageDosingViewCustomCell */,
 			);
 			path = ManageDosingView;
 			sourceTree = "<group>";
 		};
-		347E4F8B28929C7F0043136A /* ManageDosingViewCustomCell */ = {
+		347E4F902892E7150043136A /* ManageDosingViewCustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				347E4F8C28929C7F0043136A /* EmptyDosingTableViewCell.swift */,
-				347E4F8D28929C7F0043136A /* EmptyDosingTableViewCell.xib */,
+				34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */,
+				34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */,
 			);
-			name = ManageDosingViewCustomCell;
-			path = "../../../../../../../../Desktop/무제 폴더/ManageDosingViewCustomCell";
+			path = ManageDosingViewCustomCell;
 			sourceTree = "<group>";
 		};
 		34982C5E2885415E003BBBD4 /* AddSecondaryPillView */ = {
@@ -530,7 +529,7 @@
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
-				347E4F8F28929C7F0043136A /* EmptyDosingTableViewCell.xib in Resources */,
+				34F397C82892E8B20074A03D /* EmptyDosingTableViewCell.xib in Resources */,
 				9A890AED28916CCD00BD312C /* PreferencesCell.xib in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
@@ -571,7 +570,7 @@
 				9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */,
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
 				34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */,
-				347E4F8E28929C7F0043136A /* EmptyDosingTableViewCell.swift in Sources */,
+				34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
