@@ -130,7 +130,7 @@
 			children = (
 				34440E6028870AE700AA3996 /* ManageDosingView.storyboard */,
 				34440E6228870B1200AA3996 /* ManageDosingViewController.swift */,
-				A81DDD6B2891CF3E007F529D /* CustomCell */,
+				A81DDD6B2891CF3E007F529D /* ManageDosingViewCustomCell */,
 			);
 			path = ManageDosingView;
 			sourceTree = "<group>";
@@ -144,13 +144,13 @@
 			path = AddSecondaryPillView;
 			sourceTree = "<group>";
 		};
-		34CE29172889BA8300644E4E /* CustomCell */ = {
+		34CE29172889BA8300644E4E /* MedicationTabCustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				34CE290F2889307500644E4E /* MedicationPillCell.xib */,
 				34CE29112889308200644E4E /* MedicationPillCell.swift */,
 			);
-			path = CustomCell;
+			path = MedicationTabCustomCell;
 			sourceTree = "<group>";
 		};
 		876ED1932882A33B00179767 = {
@@ -212,13 +212,13 @@
 			path = CheckCondition;
 			sourceTree = "<group>";
 		};
-		A81DDD6B2891CF3E007F529D /* CustomCell */ = {
+		A81DDD6B2891CF3E007F529D /* ManageDosingViewCustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				A81DDD672891CE3A007F529D /* EmptyDosingTableViewCell.swift */,
 				A81DDD682891CE3A007F529D /* EmptyDosingTableViewCell.xib */,
 			);
-			path = CustomCell;
+			path = ManageDosingViewCustomCell;
 			sourceTree = "<group>";
 		};
 		A8209F0B28846546006F35DF /* Application */ = {
@@ -324,7 +324,7 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
-				34CE29172889BA8300644E4E /* CustomCell */,
+				34CE29172889BA8300644E4E /* MedicationTabCustomCell */,
 				8BFE7524288802AC008748B9 /* CheckCondition */,
 				34440E5F28870ACD00AA3996 /* ManageDosingView */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
