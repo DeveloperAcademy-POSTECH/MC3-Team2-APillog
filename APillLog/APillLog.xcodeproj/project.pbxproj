@@ -45,6 +45,10 @@
 		9A890AF52891979D00BD312C /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF42891979D00BD312C /* VersionController.swift */; };
 		9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF6289198C500BD312C /* ThanksToController.swift */; };
 		9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */; };
+		9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0228927AAD00BD312C /* ThanksToView.storyboard */; };
+		9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0428927ACA00BD312C /* VersionView.storyboard */; };
+		9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0628927AE600BD312C /* QuestionsView.storyboard */; };
+		9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0828927AF900BD312C /* LicenseView.storyboard */; };
 		9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */; };
 		9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
@@ -109,6 +113,10 @@
 		9A890AF42891979D00BD312C /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
 		9A890AF6289198C500BD312C /* ThanksToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksToController.swift; sourceTree = "<group>"; };
 		9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCheck.swift; sourceTree = "<group>"; };
+		9A890B0228927AAD00BD312C /* ThanksToView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThanksToView.storyboard; sourceTree = "<group>"; };
+		9A890B0428927ACA00BD312C /* VersionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VersionView.storyboard; sourceTree = "<group>"; };
+		9A890B0628927AE600BD312C /* QuestionsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionsView.storyboard; sourceTree = "<group>"; };
+		9A890B0828927AF900BD312C /* LicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseView.storyboard; sourceTree = "<group>"; };
 		9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesView.storyboard; sourceTree = "<group>"; };
 		9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -250,10 +258,10 @@
 		9A890AF12891977200BD312C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9A890AEF289194A200BD312C /* QuestionViewController.swift */,
-				9A890AF22891979000BD312C /* LicenseController.swift */,
-				9A890AF42891979D00BD312C /* VersionController.swift */,
-				9A890AF6289198C500BD312C /* ThanksToController.swift */,
+				9A890AFF28927A5000BD312C /* ThanksToView */,
+				9A890AFE28927A3300BD312C /* VersionView */,
+				9A890AFD28927A1D00BD312C /* LicenseView */,
+				9A890AFC28927A0D00BD312C /* QuestionsView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +272,42 @@
 				9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */,
 			);
 			path = AppVersionCheck;
+			sourceTree = "<group>";
+		};
+		9A890AFC28927A0D00BD312C /* QuestionsView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AEF289194A200BD312C /* QuestionViewController.swift */,
+				9A890B0628927AE600BD312C /* QuestionsView.storyboard */,
+			);
+			path = QuestionsView;
+			sourceTree = "<group>";
+		};
+		9A890AFD28927A1D00BD312C /* LicenseView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF22891979000BD312C /* LicenseController.swift */,
+				9A890B0828927AF900BD312C /* LicenseView.storyboard */,
+			);
+			path = LicenseView;
+			sourceTree = "<group>";
+		};
+		9A890AFE28927A3300BD312C /* VersionView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF42891979D00BD312C /* VersionController.swift */,
+				9A890B0428927ACA00BD312C /* VersionView.storyboard */,
+			);
+			path = VersionView;
+			sourceTree = "<group>";
+		};
+		9A890AFF28927A5000BD312C /* ThanksToView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF6289198C500BD312C /* ThanksToController.swift */,
+				9A890B0228927AAD00BD312C /* ThanksToView.storyboard */,
+			);
+			path = ThanksToView;
 			sourceTree = "<group>";
 		};
 		9A91D6032890EDCA0026F3B6 /* PreferencesTab */ = {
@@ -452,6 +496,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
+				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
@@ -460,7 +506,9 @@
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
 				A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */,
 				A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */,
+				9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */,
 				A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */,
+				9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,

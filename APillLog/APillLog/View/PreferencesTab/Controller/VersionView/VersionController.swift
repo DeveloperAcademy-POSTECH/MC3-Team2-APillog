@@ -13,6 +13,7 @@ enum AppstoreOpenError: Error {
 }
 class VersionViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var versionTitle: UINavigationBar!
     @IBOutlet weak var context: UILabel!
     @IBOutlet weak var version: UILabel!
     @IBOutlet weak var button: UIButton!
