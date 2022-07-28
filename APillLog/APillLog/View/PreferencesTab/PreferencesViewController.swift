@@ -12,8 +12,9 @@ class PreferencesViewController: UIViewController {
     @IBOutlet weak var featuresTable: UITableView!
     @IBOutlet weak var informationTable: UITableView!
     
-    var information:[String] = ["라이센스","문의사항","버전정보","고마운 사람들"]
     var features:[String] = ["알림 설정"]
+    var information:[String] = ["라이센스","문의사항","버전정보","고마운 사람들"]
+
    
     
     override func viewDidLoad() {
@@ -25,11 +26,12 @@ class PreferencesViewController: UIViewController {
         featuresTable.register(nibName, forCellReuseIdentifier:  "PreferencesCell")
         informationTable.register(nibName, forCellReuseIdentifier:  "PreferencesCell")
        
+        featuresTable.dataSource = self
+        featuresTable.delegate = self
+        
         informationTable.delegate = self
         informationTable.dataSource = self
 
-        featuresTable.delegate = self
-        featuresTable.delegate = self
       
         
     }
@@ -43,9 +45,9 @@ class PreferencesViewController: UIViewController {
 extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == featuresTable{
+        if tableView == featuresTable {
             print("count-----",features.count)
-            return self.features.count
+            return /*self.features.count*/ 1
             
         }
         else{
@@ -57,7 +59,7 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //   if tableView == informationTable{
-        if tableView == featuresTable{
+        if tableView == featuresTable {
             let cell: PreferencesCell = tableView.dequeueReusableCell(withIdentifier: "PreferencesCell", for: indexPath) as! PreferencesCell
             
                 cell.name.text = features[indexPath.row]

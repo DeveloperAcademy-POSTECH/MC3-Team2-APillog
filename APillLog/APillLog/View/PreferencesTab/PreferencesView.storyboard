@@ -59,7 +59,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vgc-FC-XlT"/>
                     <connections>
-                        <outlet property="featuresTable" destination="jIw-xP-SEI" id="2yE-Xo-UF5"/>
+                        <outlet property="featuresTable" destination="jIw-xP-SEI" id="pjd-oe-gcH"/>
                         <outlet property="informationTable" destination="3cH-Sv-xEe" id="aBb-wd-Iw0"/>
                     </connections>
                 </viewController>
@@ -75,13 +75,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문의사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsI-xs-8AL">
-                                <rect key="frame" x="170" y="74" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ApillLog를 이용해주셔서 감사합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSm-FI-STB">
                                 <rect key="frame" x="61" y="165" width="251" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +105,13 @@
                                     <action selector="sendEmailTapped:" destination="Tbd-UX-RCK" eventType="touchUpInside" id="lC6-U7-p98"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cv6-YB-CSL">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="문의사항" id="oVa-mL-khy"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J7A-4m-Rbw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,8 +120,8 @@
                         <outlet property="context1" destination="JSm-FI-STB" id="hkG-Cg-PLd"/>
                         <outlet property="context2" destination="8Bd-tx-cIl" id="qSC-NV-Vsp"/>
                         <outlet property="context3" destination="chx-S4-GnA" id="OhB-VG-wdN"/>
+                        <outlet property="questiontitle" destination="cv6-YB-CSL" id="UEc-3i-Ui6"/>
                         <outlet property="sendButton" destination="UeN-sB-eug" id="zhK-oh-f1J"/>
-                        <outlet property="superTitle" destination="DsI-xs-8AL" id="rNI-hC-9C8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qim-N0-Ko5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,6 +156,13 @@
                                 <rect key="frame" x="92" y="94" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-Xs-DB7">
+                                <rect key="frame" x="5" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="버전정보" id="n4Q-o4-jfy"/>
+                                </items>
+                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재 버전 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-CO-yyP">
                                 <rect key="frame" x="51" y="291" width="322" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -172,6 +179,7 @@
                         <outlet property="context" destination="v4q-ud-U7q" id="mYQ-50-pRe"/>
                         <outlet property="logo" destination="oth-jN-HQZ" id="hxv-L0-5F4"/>
                         <outlet property="version" destination="QTc-CO-yyP" id="XCV-06-rax"/>
+                        <outlet property="versionTitle" destination="Hxq-Xs-DB7" id="5Id-Pe-byl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDd-li-AVH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

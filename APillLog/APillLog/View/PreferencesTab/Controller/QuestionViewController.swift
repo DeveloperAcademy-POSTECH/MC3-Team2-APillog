@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 class QuestionsViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    @IBOutlet weak var superTitle: UILabel!
+    @IBOutlet weak var questiontitle: UINavigationBar!
     @IBOutlet weak var context1: UILabel!
     @IBOutlet weak var context2: UILabel!
     @IBOutlet weak var context3: UILabel!
