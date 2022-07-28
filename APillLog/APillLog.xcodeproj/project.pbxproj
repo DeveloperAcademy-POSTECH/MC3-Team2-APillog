@@ -23,6 +23,8 @@
 		876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
 		876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */; };
+		8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8773A31D289253700096A42B /* PushNotificationView.storyboard */; };
+		8773A320289253820096A42B /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A31F289253820096A42B /* PushNotificationController.swift */; };
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
 		87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
@@ -85,6 +87,8 @@
 		876ED1AB2882A33C00179767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876ED1AE2882A33C00179767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		876ED1B02882A33C00179767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8773A31D289253700096A42B /* PushNotificationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushNotificationView.storyboard; sourceTree = "<group>"; };
+		8773A31F289253820096A42B /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		87D759312887F172007FCDF0 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -196,6 +200,15 @@
 			path = APillLog;
 			sourceTree = "<group>";
 		};
+		8773A31C289253200096A42B /* PushNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				8773A31D289253700096A42B /* PushNotificationView.storyboard */,
+				8773A31F289253820096A42B /* PushNotificationController.swift */,
+			);
+			path = PushNotificationView;
+			sourceTree = "<group>";
+		};
 		87D759302887F14D007FCDF0 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +269,7 @@
 		9A91D6032890EDCA0026F3B6 /* PreferencesTab */ = {
 			isa = PBXGroup;
 			children = (
+				8773A31C289253200096A42B /* PushNotificationView */,
 				9A890AF82891B2BB00BD312C /* AppVersionCheck */,
 				9A890AF12891977200BD312C /* Controller */,
 				9A890AEE28916D2900BD312C /* PreferencesCustomCell */,
@@ -451,6 +465,7 @@
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
+				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				9A890AED28916CCD00BD312C /* PreferencesCell.xib in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
@@ -496,6 +511,7 @@
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
+				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
 				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
 				9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */,
