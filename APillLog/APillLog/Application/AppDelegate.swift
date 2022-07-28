@@ -7,12 +7,13 @@
 
 import UIKit
 import CoreData
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    @ObservedObject var connectionModel = ConnectionModelPhone()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
