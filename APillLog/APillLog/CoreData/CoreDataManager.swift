@@ -81,6 +81,28 @@ class CoreDataManager{
        
     }
     
+    func deleteShowSecondaryPill(pill: ShowSecondaryPill){
+        let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
+        //현재의 날짜를 선택
+        let todayDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for item in pillArray {
+                if (item.selectDate == todayDate && item.name == pill.name &&
+                    item.dosage == pill.dosage)
+                {
+                    self.context.delete(item)
+                    saveToContext()
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+       
+    }
+    
     func deletePrimaryPill(pill: PrimaryPill) {
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         
@@ -101,7 +123,7 @@ class CoreDataManager{
         }
         saveToContext()
     }
-    
+
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
@@ -144,7 +166,7 @@ class CoreDataManager{
         showSecondaryPill.id = UUID()
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
-        showSecondaryPill.isTaking = false
+        showSecondaryPill.isTaking = true
         showSecondaryPill.takeTime = nil
         showSecondaryPill.selectDate = selectedDate
         saveToContext()
