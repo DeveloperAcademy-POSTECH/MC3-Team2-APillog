@@ -215,11 +215,13 @@
             </objects>
             <point key="canvasLocation" x="2294" y="-417"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--설정-->
         <scene sceneID="Ib3-VE-ITs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="an0-zI-7vI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape" id="9pl-Gm-hwB"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBA-kL-xpb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,6 +237,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
