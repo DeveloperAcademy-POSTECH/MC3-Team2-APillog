@@ -13,7 +13,6 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
-    var coredataManager: CoreDataManager = CoreDataManager()
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = [CBT()]
     var selectedBody = ""
@@ -47,7 +46,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        myCBT = coredataManager.fetchCBT()
+        myCBT = CoreDataManager.shared.fetchCBT()
         myCBT = myCBT.sorted(by: {
             $0.selectDate!>$1.selectDate!
         })
@@ -91,7 +90,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     ) {
         if editingStyle == .delete {
             let CBT = myCBT[indexPath.row]
-            coredataManager.deleteCBT(CBT: CBT)
+            CoreDataManager.shared.deleteCBT(CBT: CBT)
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
