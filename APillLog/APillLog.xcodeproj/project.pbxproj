@@ -19,6 +19,7 @@
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
 		78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */; };
+		8711C3DF28929FDF00F7625F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C3DE28929FDF00F7625F /* UIView.swift */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
+		8711C3DE28929FDF00F7625F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			children = (
 				A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */,
 				A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */,
+				8711C3DE28929FDF00F7625F /* UIView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
+				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -732,7 +736,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BP6V55LTAQ;
+				DEVELOPMENT_TEAM = 7JPPWR5997;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
