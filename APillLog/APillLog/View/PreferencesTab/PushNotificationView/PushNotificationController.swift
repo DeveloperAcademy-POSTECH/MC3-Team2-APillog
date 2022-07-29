@@ -26,6 +26,9 @@ class PushNotificationController: UIViewController{
         super.viewDidLoad()
         fetchNotificationInfo()
         setChangeListener()
+        
+        self.navigationController?.navigationBar.tintColor = .AColor.accent
+        self.navigationItem.title = "알림 설정"
     }
     
     
