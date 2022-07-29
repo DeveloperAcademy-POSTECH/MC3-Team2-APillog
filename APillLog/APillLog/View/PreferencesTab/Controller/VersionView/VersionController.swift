@@ -32,7 +32,6 @@ class VersionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 앱 버전 체크 실행
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         self.navigationItem.title = "버전정보"
         version.text = comparingVersion!

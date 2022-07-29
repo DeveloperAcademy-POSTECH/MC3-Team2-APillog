@@ -10,4 +10,9 @@ import UIKit
 
 class LicenseViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+    }
 }

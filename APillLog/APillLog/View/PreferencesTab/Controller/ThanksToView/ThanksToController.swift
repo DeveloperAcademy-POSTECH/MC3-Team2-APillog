@@ -9,5 +9,12 @@ import Foundation
 import UIKit
 
 class ThanksToViewController: UIViewController {
-    // self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+  
+    @IBOutlet weak var subView: UIView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.subView.backgroundColor = UIColor.AColor.background
+        self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+    }
 }

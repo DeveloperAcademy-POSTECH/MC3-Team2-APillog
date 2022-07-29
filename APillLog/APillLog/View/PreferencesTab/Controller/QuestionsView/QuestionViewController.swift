@@ -20,6 +20,7 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
 //    ]
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         super.viewDidLoad()
         self.navigationItem.title = "문의사항"
         self.welcomeText.font = UIFont.AFont.cardViewTitle
