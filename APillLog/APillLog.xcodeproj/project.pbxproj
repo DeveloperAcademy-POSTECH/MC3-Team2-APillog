@@ -37,6 +37,9 @@
 		34743E0D2894483B00F3A2DC /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
 		34743E0E2894483B00F3A2DC /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B0288477390008EB48 /* AppleSDGothicNeoR.ttf */; };
 		34743E0F2894483B00F3A2DC /* AppleSDGothicNeoUL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AE288477380008EB48 /* AppleSDGothicNeoUL.ttf */; };
+		34743E11289448AF00F3A2DC /* ConnectionModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */; };
+		34743E13289448D000F3A2DC /* RecordPrimaryPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */; };
+		34743E15289448E000F3A2DC /* CheckConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E14289448E000F3A2DC /* CheckConditionView.swift */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
@@ -160,6 +163,9 @@
 		34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34743DF1289441FC00F3A2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelWatch.swift; sourceTree = "<group>"; };
+		34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPrimaryPillView.swift; sourceTree = "<group>"; };
+		34743E14289448E000F3A2DC /* CheckConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConditionView.swift; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 			children = (
 				34743DE2289441FB00F3A2DC /* APillLogApp.swift */,
 				34743DE4289441FB00F3A2DC /* ContentView.swift */,
+				34743E14289448E000F3A2DC /* CheckConditionView.swift */,
 				34743DE6289441FB00F3A2DC /* NotificationController.swift */,
 				34743DE8289441FB00F3A2DC /* NotificationView.swift */,
 				34743DEA289441FB00F3A2DC /* ComplicationController.swift */,
@@ -276,6 +283,8 @@
 				34743DF1289441FC00F3A2DC /* Info.plist */,
 				34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */,
 				34743DEE289441FC00F3A2DC /* Preview Content */,
+				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
+				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
 			);
 			path = "ApillLogWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -752,7 +761,9 @@
 				34743DFF2894482200F3A2DC /* History+CoreDataProperties.swift in Sources */,
 				34743E012894482200F3A2DC /* Condition+CoreDataClass.swift in Sources */,
 				34743DE7289441FB00F3A2DC /* NotificationController.swift in Sources */,
+				34743E15289448E000F3A2DC /* CheckConditionView.swift in Sources */,
 				34743DE5289441FB00F3A2DC /* ContentView.swift in Sources */,
+				34743E13289448D000F3A2DC /* RecordPrimaryPillView.swift in Sources */,
 				34743E002894482200F3A2DC /* Condition+CoreDataProperties.swift in Sources */,
 				34743E052894483200F3A2DC /* APillLog+Color.swift in Sources */,
 				34743DEB289441FB00F3A2DC /* ComplicationController.swift in Sources */,
@@ -760,6 +771,7 @@
 				34743DE3289441FB00F3A2DC /* APillLogApp.swift in Sources */,
 				34743DFE2894482200F3A2DC /* History+CoreDataClass.swift in Sources */,
 				34743E022894482200F3A2DC /* CoreDataManager.swift in Sources */,
+				34743E11289448AF00F3A2DC /* ConnectionModelWatch.swift in Sources */,
 				34743E062894483200F3A2DC /* APillLog+Font.swift in Sources */,
 				34743DE9289441FB00F3A2DC /* NotificationView.swift in Sources */,
 			);
@@ -852,7 +864,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
@@ -879,7 +891,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BP6V55LTAQ;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
@@ -1081,7 +1093,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1113,7 +1125,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BP6V55LTAQ;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
