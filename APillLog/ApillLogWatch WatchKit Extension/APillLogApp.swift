@@ -13,6 +13,9 @@ struct APillLogApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .onAppear {
+                        ConnectionModelWatch.shared.session.sendMessage(["message":"active"], replyHandler: nil)
+                    }
             }
         }
 

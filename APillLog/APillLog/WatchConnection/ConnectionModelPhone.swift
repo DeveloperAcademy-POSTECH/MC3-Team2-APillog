@@ -10,13 +10,12 @@ import Foundation
 import WatchConnectivity
 
 protocol ConnectionModelPhoneDelegate {
-    func reloadTableView(_ coreDataManager: CoreDataManager)
+    func reloadTableView()
 }
 
 class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     static let shared: ConnectionModelPhone = ConnectionModelPhone()
     
-    var coreDataManager: CoreDataManager = CoreDataManager()
     var delegate: ConnectionModelPhoneDelegate?
     
     @Published var messageText = ""
@@ -39,21 +38,19 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
             switch message["message"] as! String {
             case "TakePill":
                 let id = UUID(uuidString: message["id"] as! String)
-                let pill = self.coreDataManager.findShowPrimaryPillWithID(id: id!)
+                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id!)
                 
-                self.coreDataManager.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill ?? ShowPrimaryPill())
-                let testcode = self.coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+                CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill ?? ShowPrimaryPill())
 
-                self.delegate?.reloadTableView(self.coreDataManager)
+                self.delegate?.reloadTableView()
                 
             case "UndoTakePill":
                 let id = UUID(uuidString: message["id"] as! String)
-                let pill = self.coreDataManager.findShowPrimaryPillWithID(id: id!)
+                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id!)
                 
-                self.coreDataManager.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill ?? ShowPrimaryPill())
-                let testcode = self.coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+                CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill ?? ShowPrimaryPill())
                 
-                self.delegate?.reloadTableView(self.coreDataManager)
+                self.delegate?.reloadTableView()
                 
             case "Condition":
                 let pillName =  message["pillName"] as? String ?? nil
@@ -65,7 +62,7 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                 let medicinalEffect: [String]? = message["medicinalEffect"] as? [String] ?? nil
                 let detailContext: String? = message["detailContext"] as? String ?? nil
                 
-                self.coreDataManager.addHistory(pillId: UUID(), pillName: pillName, dosage: dosage, isMainPill: isMainPill, pillNames: pillNames, dosages: dosages, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
+                CoreDataManager.shared.addHistory(pillId: UUID(), pillName: pillName, dosage: dosage, isMainPill: isMainPill, pillNames: pillNames, dosages: dosages, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
             
             default :
                 print("알 수 없는 통신 - Watch to Phone")

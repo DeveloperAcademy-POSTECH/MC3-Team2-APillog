@@ -9,12 +9,12 @@ import SwiftUI
 
 struct RecordPrimaryPillView: View {
     
-    var coreDataManager = CoreDataManager()
     @State var morningPillList: [ShowPrimaryPill] = []
     @State var afternoonPillList: [ShowPrimaryPill] = []
     @State var eveningPillList: [ShowPrimaryPill] = []
     
     @State var drawViewToggle = false
+    
     
     var body: some View {
         List {
@@ -64,56 +64,98 @@ struct RecordPrimaryPillView: View {
             }
             if afternoonPillList.count != 0 {
                 Section(header: Text("점심")) {
-                    ForEach(afternoonPillList, id: \.self) { pill in
+                    ForEach(afternoonPillList.indices) { index in
                         Button {
-                            if pill.isTaking {
+                            if afternoonPillList[index].isTaking {
                                 // 약을 이미 먹은 경우
+                                afternoonPillList[index].isTaking.toggle()
+                                drawViewToggle.toggle()
+                                ConnectionModelWatch.shared.session.sendMessage(["message" : "UndoTakePill", "id": afternoonPillList[index].id?.uuidString ?? UUID().uuidString], replyHandler: nil)
                                 
                             } else {
                                 // 약을 아직 먹지 않은 경우
-                                
+                                afternoonPillList[index].isTaking.toggle()
+                                drawViewToggle.toggle()
+                                ConnectionModelWatch.shared.session.sendMessage(["message" : "TakePill", "id": afternoonPillList[index].id?.uuidString ?? UUID().uuidString], replyHandler: nil)
                             }
+                            
                         } label: {
                             HStack {
-                                Text(pill.name! + " " + pill.dosage!)
+                                Text(afternoonPillList[index].name! + " " + afternoonPillList[index].dosage!)
+                                    .lineLimit(1)
+                                
+                                Spacer()
+                                
+                                if afternoonPillList[index].isTaking {
+                                    // 약을 이미 먹은 경우
+                                    Text("✓")
+                                        .frame(width: 40, height: 25, alignment: .center)
+                                        .foregroundColor(Color(uiColor: UIColor.AColor.white))
+                                        .background(RoundedRectangle(cornerRadius: 15).fill(Color(uiColor: UIColor.AColor.gray)))
+                                } else {
+                                    // 약을 아직 먹지 않은 경우
+                                    Text("복약")
+                                        .frame(width: 40, height: 25, alignment: .center)
+                                        .foregroundColor(Color(uiColor: UIColor.AColor.white))
+                                        .background(RoundedRectangle(cornerRadius: 15).fill(Color(uiColor: UIColor.AColor.accent)))
+                                }
                             }
                         }
+                        .opacity(drawViewToggle ? 1 : 1)
+
                     }
                 }
             }
             if eveningPillList.count != 0 {
-                Section(header: Text("저"
-                                    )) {
-                    ForEach(eveningPillList, id: \.self) { pill in
+                Section(header: Text("저녁")) {
+                    ForEach(eveningPillList.indices) { index in
                         Button {
-                            if pill.isTaking {
+                            if eveningPillList[index].isTaking {
                                 // 약을 이미 먹은 경우
+                                
+                                eveningPillList[index].isTaking.toggle()
+                                drawViewToggle.toggle()
+                                ConnectionModelWatch.shared.session.sendMessage(["message" : "UndoTakePill", "id": eveningPillList[index].id?.uuidString ?? UUID().uuidString], replyHandler: nil)
                                 
                             } else {
                                 // 약을 아직 먹지 않은 경우
-                                
+                                eveningPillList[index].isTaking.toggle()
+                                drawViewToggle.toggle()
+                                ConnectionModelWatch.shared.session.sendMessage(["message" : "TakePill", "id": eveningPillList[index].id?.uuidString ?? UUID().uuidString], replyHandler: nil)
                             }
+                            
                         } label: {
                             HStack {
-                                Text(pill.name! + " " + pill.dosage!)
+                                Text(eveningPillList[index].name! + " " + eveningPillList[index].dosage!)
+                                    .lineLimit(1)
+                                
+                                Spacer()
+                                
+                                if eveningPillList[index].isTaking {
+                                    // 약을 이미 먹은 경우
+                                    Text("✓")
+                                        .frame(width: 40, height: 25, alignment: .center)
+                                        .foregroundColor(Color(uiColor: UIColor.AColor.white))
+                                        .background(RoundedRectangle(cornerRadius: 15).fill(Color(uiColor: UIColor.AColor.gray)))
+                                } else {
+                                    // 약을 아직 먹지 않은 경우
+                                    Text("복약")
+                                        .frame(width: 40, height: 25, alignment: .center)
+                                        .foregroundColor(Color(uiColor: UIColor.AColor.white))
+                                        .background(RoundedRectangle(cornerRadius: 15).fill(Color(uiColor: UIColor.AColor.accent)))
+                                }
                             }
                         }
+                        .opacity(drawViewToggle ? 1 : 1)
+
                     }
                 }
             }
         }
         .onAppear {
-            // TestCode
-//                        coreDataManager.addShowPrimaryPill(name: "콘서타", dosage: "18mg", cycle: 1, selectDate: "2022-07-28")
-//                        coreDataManager.addShowPrimaryPill(name: "콘서타", dosage: "18mg", cycle: 2, selectDate: "2022-07-28")
-//                        coreDataManager.addShowPrimaryPill(name: "메디키넷", dosage: "1정", cycle: 1, selectDate: "2022-07-28")
-//                        coreDataManager.addShowPrimaryPill(name: "메디키넷", dosage: "1정", cycle: 4, selectDate: "2022-07-28")
-//                        coreDataManager.addShowPrimaryPill(name: "아세트아미노펜", dosage: "1정", cycle: 1, selectDate: "2022-07-28")
-            
-            
-            
-            let showPrimaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+            let showPrimaryPillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
             for pill in showPrimaryPillList {
+                print(pill.name ?? "없음")
                 switch pill.cycle {
                 case 1:
                     morningPillList.append(pill)

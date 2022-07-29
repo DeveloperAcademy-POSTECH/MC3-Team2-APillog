@@ -253,6 +253,25 @@ class CoreDataManager {
         saveToContext()
     }
     
+    func findShowPrimaryPillWithID(id: UUID)-> ShowPrimaryPill? {
+        
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do {
+            let pills = try context.fetch(request)
+            for pill in pills{
+                if pill.id == id {
+                    return pill
+                }
+            }
+        }
+        catch{
+            print("---------error---------")
+        }
+        
+        print("ID에 해당하는 ShowPrimaryPill을 찾지 못하였음")
+        return nil
+    }
+    
     // MARK: - page별 기능 추가
     //오늘의 복용약에서 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: ShowPrimaryPill) {
@@ -432,6 +451,32 @@ class CoreDataManager {
         }
     }
     
+    func copyShowPrimaryPill(id: UUID, name: String, dosage: String, selectDate: String, isTaking: Bool, cycle: Int16, takeTime: Date?) {
+        let showPrimaryPill = ShowPrimaryPill(context: persistentContainer.viewContext)
+        
+        showPrimaryPill.id = id
+        showPrimaryPill.name = name
+        showPrimaryPill.dosage = dosage
+        showPrimaryPill.selectDate = selectDate
+        showPrimaryPill.isTaking = isTaking
+        showPrimaryPill.cycle = cycle
+        showPrimaryPill.takeTime = takeTime
+        
+        saveToContext()
+    }
+    
+    func deleteEntireShowPrimaryPill() {
+        print("delete")
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray {
+                context.delete(pill)
+            }
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+    }
     
     // MARK: - Core Data READ
     
