@@ -21,28 +21,28 @@
                                 <rect key="frame" x="25" y="44" width="364" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNk-fr-GsL">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="735"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="785"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="15q-Nt-gA5">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="735"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="15q-Nt-gA5">
+                                                <rect key="frame" x="0.0" y="30" width="364" height="755"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-48-AsS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="140"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람을 켜 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6p-9H-g2l">
-                                                                <rect key="frame" x="26" y="37" width="130" height="24"/>
+                                                                <rect key="frame" x="10" y="20" width="130" height="24"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배너 알림을 받으시려면 환경설정에서 알림을 허용해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-SD-ZKg">
-                                                                <rect key="frame" x="40" y="70" width="264" height="36"/>
+                                                                <rect key="frame" x="23" y="53" width="281" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="AGray"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-bE-Tdf">
-                                                                <rect key="frame" x="40" y="116" width="125" height="31"/>
+                                                                <rect key="frame" x="23" y="99" width="125" height="31"/>
                                                                 <color key="tintColor" name="AAccent"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="설정으로 이동하기">
@@ -53,20 +53,25 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="ABackground"/>
                                                         <constraints>
-                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="top" secondItem="s1p-48-AsS" secondAttribute="top" constant="37" id="2vb-bf-aUF"/>
+                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="top" secondItem="s1p-48-AsS" secondAttribute="top" constant="20" id="2vb-bf-aUF"/>
                                                             <constraint firstAttribute="trailing" secondItem="QGa-SD-ZKg" secondAttribute="trailing" constant="60" id="L07-fd-Hfb"/>
-                                                            <constraint firstItem="QGa-SD-ZKg" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="40" id="L15-lA-MfX"/>
-                                                            <constraint firstAttribute="height" constant="180" id="M96-x2-pOo"/>
-                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="26" id="mqi-Ow-Kaj"/>
-                                                            <constraint firstItem="WdD-bE-Tdf" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="40" id="pC3-p8-MNP"/>
+                                                            <constraint firstItem="QGa-SD-ZKg" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="23" id="L15-lA-MfX"/>
+                                                            <constraint firstAttribute="height" constant="140" id="M96-x2-pOo"/>
+                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="10" id="mqi-Ow-Kaj"/>
+                                                            <constraint firstItem="WdD-bE-Tdf" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="23" id="pC3-p8-MNP"/>
                                                             <constraint firstItem="QGa-SD-ZKg" firstAttribute="top" secondItem="G6p-9H-g2l" secondAttribute="bottom" constant="9" id="pEK-qw-5ta"/>
                                                             <constraint firstItem="WdD-bE-Tdf" firstAttribute="top" secondItem="QGa-SD-ZKg" secondAttribute="bottom" constant="10" id="pve-wJ-hwd"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZu-WY-Ozq">
-                                                        <rect key="frame" x="0.0" y="180" width="364" height="346"/>
+                                                        <rect key="frame" x="0.0" y="170" width="364" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-aY-LFD" userLabel="seperator">
                                                                 <rect key="frame" x="23" y="181" width="318" height="0.5"/>
@@ -194,7 +199,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xck-gJ-LZc">
-                                                        <rect key="frame" x="0.0" y="526" width="364" height="209"/>
+                                                        <rect key="frame" x="0.0" y="546" width="364" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실수노트 알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-JN-MT2">
                                                                 <rect key="frame" x="23" y="20" width="92.5" height="20.5"/>
@@ -277,8 +282,13 @@
                                                 </constraints>
                                             </stackView>
                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oug-zm-h36">
-                                                <rect key="frame" x="0.0" y="180" width="364" height="555"/>
+                                                <rect key="frame" x="0.0" y="200" width="364" height="585"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" name="ABackground"/>
@@ -288,10 +298,10 @@
                                             <constraint firstAttribute="trailing" secondItem="oug-zm-h36" secondAttribute="trailing" id="Ggg-FT-j2P"/>
                                             <constraint firstAttribute="height" priority="750" constant="729" id="UCV-ya-ZW4"/>
                                             <constraint firstItem="oug-zm-h36" firstAttribute="leading" secondItem="SNk-fr-GsL" secondAttribute="leading" id="VyC-1S-pRb"/>
-                                            <constraint firstItem="oug-zm-h36" firstAttribute="top" secondItem="SNk-fr-GsL" secondAttribute="top" constant="180" id="dy8-ww-R0c"/>
+                                            <constraint firstItem="oug-zm-h36" firstAttribute="top" secondItem="SNk-fr-GsL" secondAttribute="top" constant="200" id="dy8-ww-R0c"/>
                                             <constraint firstAttribute="bottom" secondItem="15q-Nt-gA5" secondAttribute="bottom" id="mqK-qW-lYx"/>
                                             <constraint firstAttribute="bottom" secondItem="oug-zm-h36" secondAttribute="bottom" id="oCp-cH-eZ6"/>
-                                            <constraint firstItem="15q-Nt-gA5" firstAttribute="top" secondItem="SNk-fr-GsL" secondAttribute="top" id="yRz-ci-Tfu"/>
+                                            <constraint firstItem="15q-Nt-gA5" firstAttribute="top" secondItem="SNk-fr-GsL" secondAttribute="top" constant="30" id="yRz-ci-Tfu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
