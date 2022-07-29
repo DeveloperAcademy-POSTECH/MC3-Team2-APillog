@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-class PushNotificationController: UIViewController{
+class PushNotificationController: UIViewController {
     
     // switch
     @IBOutlet weak var isTakeAlarmSwitch: UISwitch!
@@ -22,7 +22,6 @@ class PushNotificationController: UIViewController{
     @IBOutlet weak var blockView: UIView!
     
     let UserDefault = UserDefaults.standard
-
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchNotificationInfo()
@@ -56,6 +55,17 @@ class PushNotificationController: UIViewController{
         })
     }
     
+    @IBAction func linkPreference(_ sender: Any) {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+    }
     
     // MARK: notification center
     private func fetchNotificationInfo() {

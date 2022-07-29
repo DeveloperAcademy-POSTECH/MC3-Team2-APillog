@@ -48,6 +48,9 @@
                                                                 <buttonConfiguration key="configuration" style="filled" title="설정으로 이동하기">
                                                                     <color key="baseBackgroundColor" name="AAccent"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="linkPreference:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zsl-PF-FPl"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
