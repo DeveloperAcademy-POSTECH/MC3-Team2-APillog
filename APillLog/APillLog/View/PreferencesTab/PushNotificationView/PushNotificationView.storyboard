@@ -21,16 +21,16 @@
                                 <rect key="frame" x="25" y="44" width="364" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNk-fr-GsL">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="785"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="795"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="15q-Nt-gA5">
-                                                <rect key="frame" x="0.0" y="30" width="364" height="755"/>
+                                                <rect key="frame" x="0.0" y="30" width="364" height="765"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-48-AsS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="140"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람을 켜 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6p-9H-g2l">
-                                                                <rect key="frame" x="10" y="20" width="130" height="24"/>
+                                                                <rect key="frame" x="23" y="20" width="130" height="24"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -42,10 +42,11 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-bE-Tdf">
-                                                                <rect key="frame" x="23" y="99" width="125" height="31"/>
+                                                                <rect key="frame" x="23" y="99" width="139" height="33.5"/>
                                                                 <color key="tintColor" name="AAccent"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="설정으로 이동하기">
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="baseBackgroundColor" name="AAccent"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
@@ -53,13 +54,13 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="ABackground"/>
+                                                        <color key="backgroundColor" name="AWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="G6p-9H-g2l" firstAttribute="top" secondItem="s1p-48-AsS" secondAttribute="top" constant="20" id="2vb-bf-aUF"/>
                                                             <constraint firstAttribute="trailing" secondItem="QGa-SD-ZKg" secondAttribute="trailing" constant="60" id="L07-fd-Hfb"/>
                                                             <constraint firstItem="QGa-SD-ZKg" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="23" id="L15-lA-MfX"/>
-                                                            <constraint firstAttribute="height" constant="140" id="M96-x2-pOo"/>
-                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="10" id="mqi-Ow-Kaj"/>
+                                                            <constraint firstAttribute="height" constant="150" id="M96-x2-pOo"/>
+                                                            <constraint firstItem="G6p-9H-g2l" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="23" id="mqi-Ow-Kaj"/>
                                                             <constraint firstItem="WdD-bE-Tdf" firstAttribute="leading" secondItem="s1p-48-AsS" secondAttribute="leading" constant="23" id="pC3-p8-MNP"/>
                                                             <constraint firstItem="QGa-SD-ZKg" firstAttribute="top" secondItem="G6p-9H-g2l" secondAttribute="bottom" constant="9" id="pEK-qw-5ta"/>
                                                             <constraint firstItem="WdD-bE-Tdf" firstAttribute="top" secondItem="QGa-SD-ZKg" secondAttribute="bottom" constant="10" id="pve-wJ-hwd"/>
@@ -71,7 +72,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZu-WY-Ozq">
-                                                        <rect key="frame" x="0.0" y="170" width="364" height="346"/>
+                                                        <rect key="frame" x="0.0" y="180" width="364" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-aY-LFD" userLabel="seperator">
                                                                 <rect key="frame" x="23" y="181" width="318" height="0.5"/>
@@ -199,7 +200,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xck-gJ-LZc">
-                                                        <rect key="frame" x="0.0" y="546" width="364" height="209"/>
+                                                        <rect key="frame" x="0.0" y="556" width="364" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실수노트 알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-JN-MT2">
                                                                 <rect key="frame" x="23" y="20" width="92.5" height="20.5"/>
@@ -282,7 +283,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oug-zm-h36">
-                                                <rect key="frame" x="0.0" y="200" width="364" height="585"/>
+                                                <rect key="frame" x="0.0" y="200" width="364" height="595"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -355,6 +356,9 @@
         </namedColor>
         <namedColor name="AGray">
             <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
