@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
+		34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */; };
 		34743DD8289441FB00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DD7289441FB00F3A2DC /* Assets.xcassets */; };
 		34743DDE289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34743DE3289441FB00F3A2DC /* APillLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE2289441FB00F3A2DC /* APillLogApp.swift */; };
@@ -151,6 +152,7 @@
 /* Begin PBXFileReference section */
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
+		34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelPhone.swift; sourceTree = "<group>"; };
 		34743DD5289441FA00F3A2DC /* ApillLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApillLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34743DD7289441FB00F3A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ApillLogWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +264,14 @@
 			path = ManageDosingView;
 			sourceTree = "<group>";
 		};
+		34500DCC28944ACF00CC96F1 /* WatchConnection */ = {
+			isa = PBXGroup;
+			children = (
+				34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */,
+			);
+			path = WatchConnection;
+			sourceTree = "<group>";
+		};
 		34743DD6289441FA00F3A2DC /* ApillLogWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,7 @@
 		876ED19E2882A33B00179767 /* APillLog */ = {
 			isa = PBXGroup;
 			children = (
+				34500DCC28944ACF00CC96F1 /* WatchConnection */,
 				876ED1B02882A33C00179767 /* Info.plist */,
 				A8209F0B28846546006F35DF /* Application */,
 				A8F4F2AA288475240008EB48 /* Utility */,
@@ -807,6 +818,7 @@
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
+				34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */,
 				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
 				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
