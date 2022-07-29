@@ -38,8 +38,6 @@ class PreferencesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        //        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
     }
 }
 extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,13 +45,10 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == featuresTable {
             print("count-----",features.count)
-            return /*self.features.count*/ 1
-            
+            return self.features.count
         }
         else{
-            
             return self.information.count
-            
         }
     }
     
@@ -61,7 +56,6 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
         //   if tableView == informationTable{
         if tableView == featuresTable {
             let cell: PreferencesCell = tableView.dequeueReusableCell(withIdentifier: "PreferencesCell", for: indexPath) as! PreferencesCell
-            
             cell.name.text = features[indexPath.row]
             cell.arrow.text = ">"
             return cell
@@ -78,9 +72,7 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         if tableView == featuresTable {
             let storyboard = UIStoryboard(name: "PushNotificationView", bundle: nil)
-            
             let vc =  storyboard.instantiateViewController(withIdentifier: "PushNotificationView") as! PushNotificationController
-            
             navigationController?.pushViewController(vc, animated: true)
         }
         else{

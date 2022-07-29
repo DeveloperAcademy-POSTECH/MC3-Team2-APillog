@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 class ThanksToViewController: UIViewController {
-    
+    // self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
 }
