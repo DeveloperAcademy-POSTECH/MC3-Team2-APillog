@@ -11,11 +11,14 @@ import WidgetKit
 
 class DiaryWriteViewController: UIViewController {
     var coredataManager: CoreDataManager = CoreDataManager()
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var mistakeTextView: UITextView!
+    @IBOutlet weak var recognizeTextView: UITextView!
+    @IBOutlet weak var actionTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var diaryWriteDatePicker: UIDatePicker!
     
     @IBAction func didTapSaveButton(_ sender: Any) {
+
         if !textView.text.trimmingCharacters(in: .whitespaces).isEmpty{
             coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
             _ = navigationController?.popViewController(animated: true)
@@ -28,6 +31,10 @@ class DiaryWriteViewController: UIViewController {
             _ = navigationController?.popViewController(animated: true)
         }
         
+
+//        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, mistakeContext: mistakeTextView.text, recognizeContext: recognizeTextView.text!, actionContext: actionTextView.text!)
+//        _ = navigationController?.popViewController(animated: true)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,7 @@ class DiaryWriteViewController: UIViewController {
            }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.textView.becomeFirstResponder()
+        self.mistakeTextView.becomeFirstResponder()
     }
     
 //    MARK: - For the Sprint2  (in case of moving textview)

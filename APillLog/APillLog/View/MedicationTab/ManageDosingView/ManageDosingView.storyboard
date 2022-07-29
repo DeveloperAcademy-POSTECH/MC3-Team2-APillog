@@ -151,14 +151,6 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="137.94642857142856"/>
         </scene>
-        <!--AddPrimaryPill-->
-        <scene sceneID="Kub-CF-dwB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddPrimaryPill" id="hpe-77-QQ9" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEA-4g-Adv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="744" y="138"/>
-        </scene>
     </scenes>
     <resources>
         <image name="left-black" width="10" height="18"/>

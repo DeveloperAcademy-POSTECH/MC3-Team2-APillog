@@ -46,7 +46,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8yo-pj-STi">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6nW-lr-A5S">
                                 <rect key="frame" x="20" y="105" width="374" height="243.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XcT-d7-BZM">
@@ -73,7 +73,7 @@
                                             <constraint firstAttribute="trailing" secondItem="K92-cZ-HD5" secondAttribute="trailing" id="no6-Bf-RbU"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SmO-cQ-mAV">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-8P-lCH">
                                         <rect key="frame" x="0.0" y="92.5" width="374" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="용량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIn-KH-0jE">
@@ -82,23 +82,46 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mg, 정 단위로 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-LO-4P8">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qbn-At-qzF">
                                                 <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
-                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
-                                                    <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
-                                                </connections>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="약의 용량을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-LO-4P8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
+                                                            <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
+                                                            <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nUg-f0-7F0">
+                                                        <rect key="frame" x="254" y="0.0" width="120" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="3vB-tT-a0w"/>
+                                                            <constraint firstAttribute="width" constant="120" id="N9d-HO-eMN"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="mg"/>
+                                                            <segment title="정"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="selectPrimaryPillDosage:" destination="Y6W-OH-hqX" eventType="valueChanged" id="7TW-0x-c6I"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nUg-f0-7F0" firstAttribute="leading" secondItem="B7E-LO-4P8" secondAttribute="trailing" priority="750" constant="20" id="iGx-Ut-p21"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nUg-f0-7F0" secondAttribute="trailing" id="saR-Bu-TX0"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="B7E-LO-4P8" secondAttribute="trailing" id="VKh-V3-BBC"/>
+                                            <constraint firstAttribute="trailing" secondItem="qbn-At-qzF" secondAttribute="trailing" id="g6b-Ji-Ppa"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Gi-Tzc">
-                                        <rect key="frame" x="0.0" y="185" width="374" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="185" width="200" height="58.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 시간대" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-0g-bRX">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
@@ -175,12 +198,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XcT-d7-BZM" secondAttribute="trailing" id="ADm-U9-Fhk"/>
-                                    <constraint firstAttribute="trailing" secondItem="SmO-cQ-mAV" secondAttribute="trailing" id="eFp-qC-ati"/>
-                                    <constraint firstItem="XcT-d7-BZM" firstAttribute="leading" secondItem="8yo-pj-STi" secondAttribute="leading" id="gxh-nd-K5A"/>
-                                    <constraint firstAttribute="trailing" secondItem="ojo-Gi-Tzc" secondAttribute="trailing" id="kwe-tW-ZID"/>
-                                    <constraint firstItem="SmO-cQ-mAV" firstAttribute="leading" secondItem="8yo-pj-STi" secondAttribute="leading" id="qfs-ei-UPb"/>
-                                    <constraint firstItem="ojo-Gi-Tzc" firstAttribute="leading" secondItem="8yo-pj-STi" secondAttribute="leading" id="sWV-R1-PRP"/>
+                                    <constraint firstAttribute="trailing" secondItem="XcT-d7-BZM" secondAttribute="trailing" id="LDD-VE-X4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="AUA-8P-lCH" secondAttribute="trailing" id="ueu-yw-w6S"/>
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동일한 이름과 용량의 약이 이미 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Ae-FQO">
@@ -193,14 +212,14 @@
                         <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="8yo-pj-STi" secondAttribute="bottom" constant="25" id="4UE-Jl-DEa"/>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
+                            <constraint firstItem="6nW-lr-A5S" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="Uw7-ib-Z3g"/>
+                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="6nW-lr-A5S" secondAttribute="bottom" constant="25" id="Vcp-0v-GG9"/>
                             <constraint firstItem="bwJ-Ae-FQO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vm8-u7-W64"/>
-                            <constraint firstAttribute="trailing" secondItem="8yo-pj-STi" secondAttribute="trailing" constant="20" id="aI7-Wk-eJf"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="25" id="eG4-Df-GjH"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="i9b-Iy-In6"/>
-                            <constraint firstItem="8yo-pj-STi" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="ii8-nd-zIM"/>
-                            <constraint firstItem="8yo-pj-STi" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="50" id="njw-R0-Hbe"/>
+                            <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="6nW-lr-A5S" secondAttribute="trailing" constant="20" id="ijS-1B-Ie2"/>
+                            <constraint firstItem="6nW-lr-A5S" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="50" id="y4D-Px-f9W"/>
                         </constraints>
                     </view>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -209,6 +228,7 @@
                         <outlet property="PrimaryPillName" destination="K92-cZ-HD5" id="LBs-Yg-VOs"/>
                         <outlet property="duplicateWarningLabel" destination="bwJ-Ae-FQO" id="wdq-rM-Ocz"/>
                         <outlet property="primaryPillAfternoonButton" destination="S4S-Gm-JRC" id="Y2L-w7-RYR"/>
+                        <outlet property="primaryPillDosageSegmentedControl" destination="nUg-f0-7F0" id="FpA-Gb-GLC"/>
                         <outlet property="primaryPillEveningButton" destination="2Dt-Ow-oRz" id="8wY-3e-k1B"/>
                         <outlet property="primaryPillMorningButton" destination="G0B-xU-NoB" id="PZR-vh-3kg"/>
                         <outlet property="savePrimaryPillButton" destination="K6j-Ph-Ykm" id="VPX-NT-isU"/>
