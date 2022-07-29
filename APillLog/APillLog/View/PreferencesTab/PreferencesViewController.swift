@@ -84,18 +84,21 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
             navigationController?.pushViewController(vc, animated: true)
         }
         else{
-            let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
             
             var vc: UIViewController
             
             switch indexPath.row {
             case 0:
+                let storyboard = UIStoryboard(name: "LicenseView", bundle: nil)
                 vc =  storyboard.instantiateViewController(withIdentifier: "LicenseView") as! LicenseViewController
             case 1:
+                let storyboard = UIStoryboard(name: "QuestionsView", bundle: nil)
                 vc =  storyboard.instantiateViewController(withIdentifier: "QuestionsView") as! QuestionsViewController
             case 2:
+                let storyboard = UIStoryboard(name: "VersionView", bundle: nil)
                 vc =  storyboard.instantiateViewController(withIdentifier: "VersionView") as! VersionViewController
             default:
+                let storyboard = UIStoryboard(name: "ThanksToView", bundle: nil)
                 vc =  storyboard.instantiateViewController(withIdentifier: "ThanksToView") as! ThanksToViewController
                 
             }

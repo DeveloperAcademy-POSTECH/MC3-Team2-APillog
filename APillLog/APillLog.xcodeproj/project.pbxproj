@@ -19,6 +19,7 @@
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
 		78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */; };
+		8711C3DF28929FDF00F7625F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C3DE28929FDF00F7625F /* UIView.swift */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
@@ -47,6 +48,10 @@
 		9A890AF52891979D00BD312C /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF42891979D00BD312C /* VersionController.swift */; };
 		9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF6289198C500BD312C /* ThanksToController.swift */; };
 		9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */; };
+		9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0228927AAD00BD312C /* ThanksToView.storyboard */; };
+		9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0428927ACA00BD312C /* VersionView.storyboard */; };
+		9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0628927AE600BD312C /* QuestionsView.storyboard */; };
+		9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0828927AF900BD312C /* LicenseView.storyboard */; };
 		9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */; };
 		9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
@@ -83,6 +88,7 @@
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
+		8711C3DE28929FDF00F7625F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 		9A890AF42891979D00BD312C /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
 		9A890AF6289198C500BD312C /* ThanksToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksToController.swift; sourceTree = "<group>"; };
 		9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCheck.swift; sourceTree = "<group>"; };
+		9A890B0228927AAD00BD312C /* ThanksToView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThanksToView.storyboard; sourceTree = "<group>"; };
+		9A890B0428927ACA00BD312C /* VersionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VersionView.storyboard; sourceTree = "<group>"; };
+		9A890B0628927AE600BD312C /* QuestionsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionsView.storyboard; sourceTree = "<group>"; };
+		9A890B0828927AF900BD312C /* LicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseView.storyboard; sourceTree = "<group>"; };
 		9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesView.storyboard; sourceTree = "<group>"; };
 		9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -264,10 +274,10 @@
 		9A890AF12891977200BD312C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9A890AEF289194A200BD312C /* QuestionViewController.swift */,
-				9A890AF22891979000BD312C /* LicenseController.swift */,
-				9A890AF42891979D00BD312C /* VersionController.swift */,
-				9A890AF6289198C500BD312C /* ThanksToController.swift */,
+				9A890AFF28927A5000BD312C /* ThanksToView */,
+				9A890AFE28927A3300BD312C /* VersionView */,
+				9A890AFD28927A1D00BD312C /* LicenseView */,
+				9A890AFC28927A0D00BD312C /* QuestionsView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +288,42 @@
 				9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */,
 			);
 			path = AppVersionCheck;
+			sourceTree = "<group>";
+		};
+		9A890AFC28927A0D00BD312C /* QuestionsView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AEF289194A200BD312C /* QuestionViewController.swift */,
+				9A890B0628927AE600BD312C /* QuestionsView.storyboard */,
+			);
+			path = QuestionsView;
+			sourceTree = "<group>";
+		};
+		9A890AFD28927A1D00BD312C /* LicenseView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF22891979000BD312C /* LicenseController.swift */,
+				9A890B0828927AF900BD312C /* LicenseView.storyboard */,
+			);
+			path = LicenseView;
+			sourceTree = "<group>";
+		};
+		9A890AFE28927A3300BD312C /* VersionView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF42891979D00BD312C /* VersionController.swift */,
+				9A890B0428927ACA00BD312C /* VersionView.storyboard */,
+			);
+			path = VersionView;
+			sourceTree = "<group>";
+		};
+		9A890AFF28927A5000BD312C /* ThanksToView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF6289198C500BD312C /* ThanksToController.swift */,
+				9A890B0228927AAD00BD312C /* ThanksToView.storyboard */,
+			);
+			path = ThanksToView;
 			sourceTree = "<group>";
 		};
 		9A91D6032890EDCA0026F3B6 /* PreferencesTab */ = {
@@ -341,6 +387,7 @@
 			children = (
 				A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */,
 				A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */,
+				8711C3DE28929FDF00F7625F /* UIView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -466,6 +513,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
+				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
@@ -474,7 +523,9 @@
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
 				A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */,
 				A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */,
+				9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */,
 				A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */,
+				9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
@@ -512,6 +563,7 @@
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
+				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -684,7 +736,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BP6V55LTAQ;
+				DEVELOPMENT_TEAM = 7JPPWR5997;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
