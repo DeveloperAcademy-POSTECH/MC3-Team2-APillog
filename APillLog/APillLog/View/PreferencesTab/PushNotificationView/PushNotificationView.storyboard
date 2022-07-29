@@ -319,11 +319,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="afternoonTimePicker" destination="QIn-AB-2QF" id="JZv-tW-PlD"/>
+                        <outlet property="blockView" destination="oug-zm-h36" id="DKS-Eg-mfl"/>
                         <outlet property="eveningTimePicker" destination="gIP-ra-dZy" id="LID-NX-CtC"/>
                         <outlet property="isTakeAlarmSwitch" destination="NGw-Gq-y6o" id="uia-IE-TiH"/>
                         <outlet property="isWriteAlarmSwitch" destination="Xex-0M-mbm" id="RY0-Jr-a9W"/>
                         <outlet property="morningTimePicker" destination="zbb-Fa-2Gc" id="6iM-92-XgN"/>
                         <outlet property="noteTimePicker" destination="hsG-cp-cyQ" id="iau-O1-0bn"/>
+                        <outlet property="systemPreferenceView" destination="s1p-48-AsS" id="eAq-91-GeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
