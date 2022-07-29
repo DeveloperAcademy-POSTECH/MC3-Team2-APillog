@@ -57,7 +57,7 @@
                                 <rect key="frame" x="25" y="225" width="330" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="0aN-9f-gLP"/>
-                                    <constraint firstAttribute="width" constant="330" id="yWW-IQ-EcD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="bNc-sg-iQz"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
@@ -71,12 +71,14 @@
                         <viewLayoutGuide key="safeArea" id="L4A-E4-rAu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="L4A-E4-rAu" firstAttribute="trailing" secondItem="EsX-KE-SUc" secondAttribute="trailing" constant="25" id="4q5-1m-JY2"/>
                             <constraint firstItem="EsX-KE-SUc" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="6ix-4m-EuM"/>
                             <constraint firstItem="aWG-Ku-DEK" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="6jy-gm-biV"/>
                             <constraint firstItem="Mvy-Mx-85p" firstAttribute="top" secondItem="L4A-E4-rAu" secondAttribute="top" constant="50" id="86i-cy-XSO"/>
                             <constraint firstItem="aWG-Ku-DEK" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="BOC-zB-QLV"/>
                             <constraint firstItem="agy-nb-bX6" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="KuA-qt-39t"/>
                             <constraint firstItem="EsX-KE-SUc" firstAttribute="top" secondItem="agy-nb-bX6" secondAttribute="bottom" constant="25" id="MO0-a8-qiK"/>
+                            <constraint firstItem="L4A-E4-rAu" firstAttribute="trailing" secondItem="aWG-Ku-DEK" secondAttribute="trailing" constant="25" id="WgP-ss-I3j"/>
                             <constraint firstItem="agy-nb-bX6" firstAttribute="top" secondItem="Mvy-Mx-85p" secondAttribute="bottom" constant="25" id="ZcM-dG-BNc"/>
                             <constraint firstItem="aWG-Ku-DEK" firstAttribute="top" secondItem="agy-nb-bX6" secondAttribute="bottom" constant="25" id="eY2-lf-Fe1"/>
                             <constraint firstItem="Mvy-Mx-85p" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="rhk-Qo-g7O"/>

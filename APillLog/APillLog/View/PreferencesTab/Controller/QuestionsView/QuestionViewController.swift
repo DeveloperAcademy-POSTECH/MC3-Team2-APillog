@@ -19,12 +19,12 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
 //      NSAttributedString.Key.font: UIFont(name: "Futura-Bold", size: 40)!
 //    ]
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
-        super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
         self.navigationItem.title = "문의사항"
         self.welcomeText.font = UIFont.AFont.cardViewTitle
-        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
     }
         
         func showSendMailErrorAlert() {

@@ -14,7 +14,10 @@ class ThanksToViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.subView.backgroundColor = UIColor.AColor.background
+        
         self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        
     }
 }

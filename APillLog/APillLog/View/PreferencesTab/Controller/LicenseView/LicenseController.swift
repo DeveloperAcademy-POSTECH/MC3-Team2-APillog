@@ -14,5 +14,6 @@ class LicenseViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
     }
 }

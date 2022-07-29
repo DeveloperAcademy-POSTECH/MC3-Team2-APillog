@@ -33,6 +33,7 @@ class VersionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
         self.navigationItem.title = "버전정보"
         version.text = comparingVersion!
         version.font = UIFont.AFont.caption

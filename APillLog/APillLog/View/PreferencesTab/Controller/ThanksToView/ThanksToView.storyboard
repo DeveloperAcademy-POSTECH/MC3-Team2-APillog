@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-1v-hh7">
-                                        <rect key="frame" x="0.0" y="0.0" width="424.5" height="531"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="531"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eb-Cd-BCs">
-                                                <rect key="frame" x="42" y="40" width="340" height="390"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eb-Cd-BCs" userLabel="firstView">
+                                                <rect key="frame" x="37" y="40" width="340" height="390"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Var:Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMo-iV-JhK">
                                                         <rect key="frame" x="15" y="10" width="80" height="20"/>
@@ -264,8 +264,8 @@
                                                     <constraint firstItem="BD8-93-ecs" firstAttribute="leading" secondItem="IRy-0G-5Ox" secondAttribute="trailing" constant="10" id="xEY-kq-8E2"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb3-H0-Suj">
-                                                <rect key="frame" x="42" y="460" width="340" height="300"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb3-H0-Suj" userLabel="secondView">
+                                                <rect key="frame" x="37" y="460" width="340" height="300"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박원찬 약사님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abK-e4-JgH">
                                                         <rect key="frame" x="60" y="165" width="93" height="20"/>
@@ -407,11 +407,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LmV-1v-hh7" firstAttribute="height" secondItem="0GU-cY-ZTd" secondAttribute="height" multiplier="0.649144" id="HIT-Ra-zFW"/>
-                                    <constraint firstAttribute="trailing" secondItem="LmV-1v-hh7" secondAttribute="trailing" constant="-10" id="ImT-dU-OOP"/>
+                                    <constraint firstAttribute="trailing" secondItem="LmV-1v-hh7" secondAttribute="trailing" id="ImT-dU-OOP"/>
                                     <constraint firstItem="LmV-1v-hh7" firstAttribute="leading" secondItem="0GU-cY-ZTd" secondAttribute="leading" id="Snc-fs-dVw"/>
                                     <constraint firstAttribute="bottom" secondItem="LmV-1v-hh7" secondAttribute="bottom" constant="287" id="YEs-Qa-EiI"/>
                                     <constraint firstItem="LmV-1v-hh7" firstAttribute="top" secondItem="0GU-cY-ZTd" secondAttribute="top" id="muS-MS-jeB"/>
-                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="width" secondItem="0GU-cY-ZTd" secondAttribute="width" multiplier="1.02525" id="qcW-uH-FiN"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="width" secondItem="0GU-cY-ZTd" secondAttribute="width" id="qcW-uH-FiN"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="syh-Ha-LjN"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="lof-UH-OoQ"/>
