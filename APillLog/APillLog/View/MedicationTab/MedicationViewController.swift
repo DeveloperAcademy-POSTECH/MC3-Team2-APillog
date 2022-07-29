@@ -11,7 +11,6 @@ class MedicationViewController: UIViewController {
 
     // MARK: - Properties
     let cellIdentifier = "medicationPillCell"
-    var coreDataManager = CoreDataManager()
 
     // Primary Pill
     var primaryPillList: [ShowPrimaryPill] = []
@@ -124,12 +123,12 @@ class MedicationViewController: UIViewController {
     }
 
     private func reloadPrimaryPillTableView() {
-        coreDataManager.sendPrimarypillToShowPrimaryPill()
+        CoreDataManager.shared.sendPrimarypillToShowPrimaryPill()
 
-        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: date)
-        primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
-        primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
-        primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: date)
+        primaryPillListMorning = CoreDataManager.shared.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListLunch = CoreDataManager.shared.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListDinner = CoreDataManager.shared.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
 
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
@@ -147,7 +146,7 @@ class MedicationViewController: UIViewController {
     }
 
     private func reloadSecondaryPillTableView() {
-        secondaryPillList = coreDataManager.fetchShowSecondaryPill(selectedDate: date)
+        secondaryPillList = CoreDataManager.shared.fetchShowSecondaryPill(selectedDate: date)
         resizingSecondaryPillTableViewHeight()
         secondaryPillTableView.reloadData()
     }
@@ -262,7 +261,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == secondaryPillTableView {
             if editingStyle == .delete {
-                coreDataManager.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
+                CoreDataManager.shared.deleteShowSecondaryPill(pill: secondaryPillList[indexPath.row])
                 secondaryPillList.remove(at: indexPath.row)
                 if secondaryPillList.count != 0 {
                     secondaryPillTableView.deleteRows(at: [indexPath], with: .fade)
@@ -285,20 +284,20 @@ extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
 extension MedicationViewController: TakeMedicationDelegate {
     func setPillTake(rowNumber: Int, isPrimary: Bool) {
         if isPrimary {
-            coreDataManager.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber])
+            CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber])
             primaryPillTableView.reloadData()
         } else {
-            coreDataManager.recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: secondaryPillList[rowNumber])
+            CoreDataManager.shared.recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: secondaryPillList[rowNumber])
             secondaryPillTableView.reloadData()
         }
     }
     func setPillNotTake(rowNumber: Int, isPrimary: Bool) {
         if isPrimary {
-            coreDataManager.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
+            CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
             primaryPillTableView.reloadData()
         }
         else {
-            coreDataManager.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
+            CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
             secondaryPillTableView.reloadData()
         }
     }

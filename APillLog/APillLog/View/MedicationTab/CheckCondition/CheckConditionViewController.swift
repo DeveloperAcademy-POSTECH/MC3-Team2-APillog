@@ -35,9 +35,7 @@ class CheckConditionViewController: UIViewController {
     
     var pillSideEffectDummyData: [String : Bool]!
     var pillMedicinalEffectDummyData: [String: Bool]!
-    
-    var coreDataManager: CoreDataManager = CoreDataManager()
-    
+        
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!
     @IBOutlet weak var conditionBackgroundView: UIView!
@@ -153,7 +151,7 @@ class CheckConditionViewController: UIViewController {
         // 상세 설명 저장
         self.pillDetailContext = self.detailContext.text
         
-        coreDataManager.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: self.pillSideEffect, medicinalEffect: self.pillMedicinalEffect, detailContext: self.pillDetailContext)
+        CoreDataManager.shared.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: self.pillSideEffect, medicinalEffect: self.pillMedicinalEffect, detailContext: self.pillDetailContext)
         
         self.navigationController?.popViewController(animated: true)
     }
