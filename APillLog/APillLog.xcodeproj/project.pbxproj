@@ -26,6 +26,7 @@
 		8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */; };
 		8750B9582895963A00BF9136 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
 		8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 		8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailChartView.swift; sourceTree = "<group>"; };
 		8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailChartView.xib; sourceTree = "<group>"; };
 		8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressViewCell.swift; sourceTree = "<group>"; };
+		8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressViewCell.xib; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */,
+				8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */,
 			);
 			path = HistoryDetailProgressView;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
+				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
