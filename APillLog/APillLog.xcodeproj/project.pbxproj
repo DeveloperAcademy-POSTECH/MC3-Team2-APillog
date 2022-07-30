@@ -14,7 +14,7 @@
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
 		34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */; };
-		34F397C82892E8B20074A03D /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
@@ -41,6 +41,8 @@
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
+		9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */; };
+		9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */; };
 		9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AEF289194A200BD312C /* QuestionViewController.swift */; };
 		9A890AF32891979000BD312C /* LicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF22891979000BD312C /* LicenseController.swift */; };
 		9A890AF52891979D00BD312C /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF42891979D00BD312C /* VersionController.swift */; };
@@ -74,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.release.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.release.xcconfig"; sourceTree = "<group>"; };
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.debug.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.debug.xcconfig"; sourceTree = "<group>"; };
 		8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrimaryPillViewController.swift; sourceTree = "<group>"; };
 		8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPrimaryPill.storyboard; sourceTree = "<group>"; };
 		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FSCalendarView.storyboard; sourceTree = "<group>"; };
+		9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewController.swift; sourceTree = "<group>"; };
 		9A890AEF289194A200BD312C /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9A890AF22891979000BD312C /* LicenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseController.swift; sourceTree = "<group>"; };
 		9A890AF42891979D00BD312C /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APillLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,12 +154,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C28D38029F6FCCE74B3A32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34440E5F28870ACD00AA3996 /* ManageDosingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +211,8 @@
 			children = (
 				876ED19E2882A33B00179767 /* APillLog */,
 				876ED19D2882A33B00179767 /* Products */,
+				A41DB93C38DE99A48C23A0AF /* Pods */,
+				04C28D38029F6FCCE74B3A32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +274,15 @@
 				8BFE752928884E2A008748B9 /* PillDummyData.swift */,
 			);
 			path = CheckCondition;
+			sourceTree = "<group>";
+		};
+		9A6009F1289517A200E7E82F /* FSCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */,
+				9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */,
+			);
+			path = FSCalendarView;
 			sourceTree = "<group>";
 		};
 		9A890AF12891977200BD312C /* Controller */ = {
@@ -325,6 +352,15 @@
 			path = PreferencesTab;
 			sourceTree = "<group>";
 		};
+		A41DB93C38DE99A48C23A0AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */,
+				3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A8209F0B28846546006F35DF /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +394,7 @@
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A6009F1289517A200E7E82F /* FSCalendarView */,
 				9A91D6032890EDCA0026F3B6 /* PreferencesTab */,
 				876ED1A52882A33B00179767 /* Main.storyboard */,
 				876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */,
@@ -448,9 +485,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 876ED1B32882A33C00179767 /* Build configuration list for PBXNativeTarget "APillLog" */;
 			buildPhases = (
+				A18B8DE0913DB7B842790994 /* [CP] Check Pods Manifest.lock */,
 				876ED1982882A33B00179767 /* Sources */,
 				876ED1992882A33B00179767 /* Frameworks */,
 				876ED19A2882A33B00179767 /* Resources */,
+				E8131155CDBAEAA3FC3250B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -514,6 +553,7 @@
 				9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
+				9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
@@ -532,6 +572,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A18B8DE0913DB7B842790994 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APillLog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8131155CDBAEAA3FC3250B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		876ED1982882A33B00179767 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -548,6 +630,7 @@
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
+				9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -713,6 +796,7 @@
 		};
 		876ED1B42882A33C00179767 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -745,6 +829,7 @@
 		};
 		876ED1B52882A33C00179767 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
