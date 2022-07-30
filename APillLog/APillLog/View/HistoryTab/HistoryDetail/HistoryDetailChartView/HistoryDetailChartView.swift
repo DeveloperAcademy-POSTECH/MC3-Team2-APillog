@@ -38,16 +38,16 @@ class HistoryDetailChartView: UIView {
         barChartView.noDataText = "아직 남긴 기록이 없어요"
         barChartView.noDataTextColor = .lightGray
         
-        
         condition = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+
         conditionCount = [5, 10, 7, 3, 2, 5, 3, 7, 9, 12]
         
         setChart(dataPoints: condition, values: conditionCount)
         
     }
     
-    // MARK: Function
     
+    // MARK: Function
     func setChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [BarChartDataEntry] = []
@@ -60,8 +60,8 @@ class HistoryDetailChartView: UIView {
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
 
         // 차트 설정
-//        chartDataSet.highlightEnabled = false
-//        barChartView.doubleTapToZoomEnabled = false
+        chartDataSet.highlightEnabled = false
+        barChartView.doubleTapToZoomEnabled = false
 
         chartDataSet.colors = [.AColor.accent]
 
@@ -82,15 +82,12 @@ class HistoryDetailChartView: UIView {
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
         barChartView.xAxis.labelPosition = .bottom
         
-        chartDataSet.valueFont = UIFont.AFont.articleBody
-        
-        
         
         // Text 관련
-        barChartView.xAxis.labelFont = UIFont.AFont.navigationTitle
-        
-        
-
+        barChartView.xAxis.labelFont = UIFont.AFont.articleBody
+        //        chartDataSet.valueFont = UIFont.AFont.navigationTitle
+        chartDataSet.valueColors = [UIColor.clear]
+        barChartView.leftAxis.labelFont = UIFont.AFont.navigationTitle
         
         // 데이터 삽입
         let chartData = BarChartData(dataSet: chartDataSet)

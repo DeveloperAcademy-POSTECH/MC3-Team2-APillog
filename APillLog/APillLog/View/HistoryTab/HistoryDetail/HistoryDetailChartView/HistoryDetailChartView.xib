@@ -39,7 +39,7 @@
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-I5-8ff">
-                                    <rect key="frame" x="-1" y="-1" width="650.00000000000023" height="306.00000000000011"/>
+                                    <rect key="frame" x="-1" y="-1" width="650" height="306"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </view>
