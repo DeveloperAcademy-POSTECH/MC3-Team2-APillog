@@ -44,7 +44,6 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == featuresTable {
-            print("count-----",features.count)
             return self.features.count
         }
         else{

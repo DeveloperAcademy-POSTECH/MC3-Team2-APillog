@@ -60,7 +60,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
         
         coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
-        print(pillDosage)
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }

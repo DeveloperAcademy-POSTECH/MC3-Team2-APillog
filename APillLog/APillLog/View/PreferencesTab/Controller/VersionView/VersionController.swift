@@ -66,8 +66,6 @@ class VersionViewController: UIViewController {
         let nowVersionArr = version.split(separator: ".").map { $0 }
         let storeVersionArr = appStoreVersion.split(separator: ".").map { $0 }
         
-        print("nowVersion", nowVersionArr)
-        print("storeVersion", storeVersionArr)
         
         // 가장 앞자리가 다르면 -> 업데이트 필요
         if nowVersionArr[0] < storeVersionArr[0] {
