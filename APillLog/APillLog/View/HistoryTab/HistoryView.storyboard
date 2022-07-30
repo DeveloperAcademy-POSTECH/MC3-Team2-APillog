@@ -86,7 +86,6 @@
         <!--히스토리-->
         <scene sceneID="Q0F-iR-JRs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dlz-SC-Xkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HistoryViewController" automaticallyAdjustsScrollViewInsets="NO" id="F5k-Bc-vbY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="A2V-tg-VUy"/>
                     <toolbarItems/>
@@ -99,6 +98,7 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="3iL-ea-Z1T"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlz-SC-Xkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-278.26086956521743" y="95.758928571428569"/>
         </scene>
