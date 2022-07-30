@@ -19,9 +19,9 @@ class PreferencesViewController: UIViewController {
     // MARK: @IBOutlet
     @IBOutlet weak var settingNotificationView: UIView!
     @IBOutlet weak var licenseView: UIView!
-    @IBOutlet weak var questionsView: UIView!
     @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var thanksToView: UIView!
+    @IBOutlet weak var questionsView: UIView!
     
     // MARK: Style Function
     func settingCellStyle() {
@@ -50,7 +50,7 @@ class PreferencesViewController: UIViewController {
     }
     
     @IBAction func tapQuestionsButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
+        let storyboard = UIStoryboard(name: "QuestionsView", bundle: nil)
                     
         let vc = storyboard.instantiateViewController(withIdentifier: "QuestionsView") as! QuestionsViewController
         
@@ -58,7 +58,7 @@ class PreferencesViewController: UIViewController {
     }
 
     @IBAction func tapVersionButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
+        let storyboard = UIStoryboard(name: "VersionView", bundle: nil)
                     
         let vc = storyboard.instantiateViewController(withIdentifier: "VersionView") as! VersionViewController
 
@@ -67,7 +67,7 @@ class PreferencesViewController: UIViewController {
     }
     
     @IBAction func tapThanksToButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
+        let storyboard = UIStoryboard(name: "ThanksToView", bundle: nil)
                     
         let vc = storyboard.instantiateViewController(withIdentifier: "ThanksToView") as! ThanksToViewController
         

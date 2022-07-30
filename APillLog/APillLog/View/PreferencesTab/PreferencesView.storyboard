@@ -4,26 +4,27 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Preferences View Controller-->
         <scene sceneID="s0d-6b-0kx">
-            <objects
+            <objects>
                 <viewController id="Y6W-OH-hqX" customClass="PreferencesViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="PreferencesView" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WV-yZ-Jbt">
-                                <rect key="frame" x="40" y="113" width="21" height="14.5"/>
+                                <rect key="frame" x="40" y="136" width="21" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" name="AGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42q-xu-htb">
-                                <rect key="frame" x="25" y="137.5" width="364" height="44"/>
+                                <rect key="frame" x="25" y="160.5" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajd-rh-QEy">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -60,23 +61,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-l0-6CJ" userLabel="SettingNotificationButton">
-                                <rect key="frame" x="25" y="137.5" width="364" height="44"/>
+                                <rect key="frame" x="25" y="160.5" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6gN-be-XPl"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ECT-IV-dev"/>
+                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="axv-lb-fnd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUX-qg-huc">
-                                <rect key="frame" x="40" y="221.5" width="21" height="14.5"/>
+                                <rect key="frame" x="40" y="244.5" width="21" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" name="AGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUp-aF-Znc" userLabel="License View">
-                                <rect key="frame" x="25" y="246" width="364" height="44"/>
+                                <rect key="frame" x="25" y="269" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이센스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-VF-L2C">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -107,18 +108,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-a9-K9f" userLabel="LicenseButton">
-                                <rect key="frame" x="25" y="246" width="364" height="44"/>
+                                <rect key="frame" x="25" y="269" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gQJ-0u-sg6"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="tapLicenseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EgD-Zo-Pgn"/>
-                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gcw-p9-c4y"/>
+                                    <action selector="tapLicenseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xkx-1c-IbK"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-0u-j0F" userLabel="Question View">
-                                <rect key="frame" x="25" y="295" width="364" height="44"/>
+                                <rect key="frame" x="25" y="318" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의 사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aln-IH-ber">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -149,19 +149,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-X0-xds" userLabel="Question Button">
-                                <rect key="frame" x="25" y="295" width="364" height="44"/>
+                                <rect key="frame" x="25" y="318" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Gva-Xi-9Rd"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="tapLicenseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SBG-QI-Uys"/>
-                                    <action selector="tapQueryButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bt8-Ek-1b5"/>
-                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4I8-Ga-kDp"/>
+                                    <action selector="tapQuestionsButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PYP-6a-bZb"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXc-7l-X2n" userLabel="Version View">
-                                <rect key="frame" x="25" y="344" width="364" height="44"/>
+                                <rect key="frame" x="25" y="367" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-Cc-l6z">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -192,20 +190,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHu-A7-0fp" userLabel="Version Button">
-                                <rect key="frame" x="25" y="344" width="364" height="44"/>
+                                <rect key="frame" x="25" y="367" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="erX-mX-3bR"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="tapLicenseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bfT-IM-epG"/>
-                                    <action selector="tapQueryButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R5x-Xe-OhT"/>
-                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c0n-KH-UJd"/>
-                                    <action selector="tapVersionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lE0-t5-j8S"/>
+                                    <action selector="tapVersionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iqz-Bm-eef"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoP-hl-HeA" userLabel="ThanksTo View">
-                                <rect key="frame" x="25" y="393" width="364" height="44"/>
+                                <rect key="frame" x="25" y="416" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apillog 에 대해서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2y-fe-xFf">
                                         <rect key="frame" x="15" y="11" width="200" height="20.5"/>
@@ -236,20 +231,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZA-1z-9mL" userLabel="ThanksTo Button">
-                                <rect key="frame" x="25" y="393" width="364" height="44"/>
+                                <rect key="frame" x="25" y="416" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HVB-Ue-FLK"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="tapLicenseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X6Y-fK-ibx"/>
-                                    <action selector="tapQueryButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gff-rG-u8x"/>
-                                    <action selector="tapSettingNotificationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="l69-XI-Fm5"/>
-                                    <action selector="tapThanksToButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MQJ-Sd-NvL"/>
-                                    <action selector="tapVersionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TWT-g0-BGe"/>
+                                    <action selector="tapThanksToButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ENu-lb-v9w"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ekc-k3-p8B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FZz-bc-GmQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="82o-6l-CNv"/>
@@ -293,7 +285,7 @@
                     <navigationItem key="navigationItem" id="vgc-FC-XlT"/>
                     <connections>
                         <outlet property="licenseView" destination="oUp-aF-Znc" id="INx-N4-m0N"/>
-                        <outlet property="questionsView" destination="Chf-0u-j0F" id="3zv-oX-Vt7"/>
+                        <outlet property="questionsView" destination="Chf-0u-j0F" id="VaK-n7-erO"/>
                         <outlet property="settingNotificationView" destination="42q-xu-htb" id="hio-U5-36I"/>
                         <outlet property="thanksToView" destination="xoP-hl-HeA" id="IGr-Eb-8aT"/>
                         <outlet property="versionView" destination="nXc-7l-X2n" id="zw8-jA-8yr"/>
@@ -303,14 +295,16 @@
             </objects>
             <point key="canvasLocation" x="971.01449275362324" y="73.660714285714278"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--설정-->
         <scene sceneID="Ib3-VE-ITs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="an0-zI-7vI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="an0-zI-7vI" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="VCR-Cr-d1C"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBA-kL-xpb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -324,6 +318,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="right-gray" width="10" height="19"/>
         <namedColor name="AGray">
             <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
