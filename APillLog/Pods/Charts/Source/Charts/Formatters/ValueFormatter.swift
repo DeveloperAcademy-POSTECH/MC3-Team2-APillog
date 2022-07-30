@@ -34,4 +34,3 @@ public protocol ValueFormatter: AnyObject
                         dataSetIndex: Int,
                         viewPortHandler: ViewPortHandler?) -> String
 }
-
