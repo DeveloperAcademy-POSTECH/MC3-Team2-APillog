@@ -244,7 +244,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
                 // Time Log
-                cell.timeLogLabel.text = primaryPillListDataSource[indexPath.row].takeTime == nil ? "아직 복약 전이에요" : dateFormatter.string(from: primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요"
+                cell.timeLogLabel.text = primaryPillListDataSource[indexPath.row].takeTime == nil ? "아직 복용 전이에요" : dateFormatter.string(from: primaryPillListDataSource[indexPath.row].takeTime!) + "에 복용했어요"
 
                 cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
@@ -272,7 +272,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 // Title
                 cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
                 // Time Log
-                cell.timeLogLabel.text = secondaryPillList[indexPath.row].takeTime == nil ? "아직 복약 전이에요" : dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요"
+                cell.timeLogLabel.text = secondaryPillList[indexPath.row].takeTime == nil ? "아직 복용 전이에요" : dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 복용했어요"
 
                 // Taking Button
                 cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
