@@ -30,7 +30,6 @@
 		8773A320289253820096A42B /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A31F289253820096A42B /* PushNotificationController.swift */; };
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
-		87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
 		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
 		8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */; };
@@ -55,7 +54,8 @@
 		9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
 		9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
-		A8E30316289547E500E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -552,17 +552,16 @@
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
 				9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */,
+				A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
-				A8E30316289547E500E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
+				A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
-				9AE1C0F22895482700325FE2 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
-				87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */,
 				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
 				87D759322887F172007FCDF0 /* CalendarView.xib in Resources */,
 				876ED1A72882A33B00179767 /* Main.storyboard in Resources */,
