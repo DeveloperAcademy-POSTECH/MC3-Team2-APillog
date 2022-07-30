@@ -22,6 +22,7 @@ class PreferencesViewController: UIViewController {
     @IBOutlet weak var licenseView: UIView!
     @IBOutlet weak var questionsView: UIView!
     @IBOutlet weak var versionView: UIView!
+    @IBOutlet weak var thanksToView: UIView!
     
     // MARK: Style Function
     func settingCellStyle() {
@@ -29,6 +30,7 @@ class PreferencesViewController: UIViewController {
         self.licenseView.layer.cornerRadius = 14
         self.questionsView.layer.cornerRadius = 14
         self.versionView.layer.cornerRadius = 14
+        self.thanksToView.layer.cornerRadius = 14
     }
     
     // MARK: @IBAction
@@ -64,4 +66,11 @@ class PreferencesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func tapThanksToButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
+                    
+        let vc = storyboard.instantiateViewController(withIdentifier: "ThanksToView") as! ThanksToViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

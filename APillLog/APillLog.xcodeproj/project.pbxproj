@@ -38,8 +38,6 @@
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
-		9A890AEB289153E900BD312C /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AEA289153E900BD312C /* PreferencesCell.swift */; };
-		9A890AED28916CCD00BD312C /* PreferencesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A890AEC28916CCD00BD312C /* PreferencesCell.xib */; };
 		9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AEF289194A200BD312C /* QuestionViewController.swift */; };
 		9A890AF32891979000BD312C /* LicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF22891979000BD312C /* LicenseController.swift */; };
 		9A890AF52891979D00BD312C /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF42891979D00BD312C /* VersionController.swift */; };
@@ -102,8 +100,6 @@
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		9A890AEA289153E900BD312C /* PreferencesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesCell.swift; sourceTree = "<group>"; };
-		9A890AEC28916CCD00BD312C /* PreferencesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesCell.xib; sourceTree = "<group>"; };
 		9A890AEF289194A200BD312C /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9A890AF22891979000BD312C /* LicenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseController.swift; sourceTree = "<group>"; };
 		9A890AF42891979D00BD312C /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
@@ -238,15 +234,6 @@
 			path = CheckCondition;
 			sourceTree = "<group>";
 		};
-		9A890AEE28916D2900BD312C /* PreferencesCustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				9A890AEA289153E900BD312C /* PreferencesCell.swift */,
-				9A890AEC28916CCD00BD312C /* PreferencesCell.xib */,
-			);
-			path = PreferencesCustomCell;
-			sourceTree = "<group>";
-		};
 		9A890AF12891977200BD312C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +259,6 @@
 				8773A31C289253200096A42B /* PushNotificationView */,
 				9A890AF82891B2BB00BD312C /* AppVersionCheck */,
 				9A890AF12891977200BD312C /* Controller */,
-				9A890AEE28916D2900BD312C /* PreferencesCustomCell */,
 				9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */,
 				9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */,
 			);
@@ -467,7 +453,6 @@
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
-				9A890AED28916CCD00BD312C /* PreferencesCell.xib in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
@@ -503,7 +488,6 @@
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */,
 				9A890AF32891979000BD312C /* LicenseController.swift in Sources */,
-				9A890AEB289153E900BD312C /* PreferencesCell.swift in Sources */,
 				9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */,
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
 				34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */,
