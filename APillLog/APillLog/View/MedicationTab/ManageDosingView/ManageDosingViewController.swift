@@ -16,14 +16,13 @@ class ManageDosingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Property
-    var coreDataManager: CoreDataManager = CoreDataManager()
     let cellIdentifier = "ManageDosingCell"
     var primaryPillList: [PrimaryPill] = []
 
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         self.viewTitle.font = UIFont.AFont.navigationTitle
-        self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
+        self.primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         self.tableView.delegate = self
         let nibName = UINib(nibName: "EmptyDosingTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "emptyDosingCell")
@@ -111,7 +110,7 @@ extension ManageDosingViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            coreDataManager.deletePrimaryPill(pill: primaryPillList[indexPath.row])
+            CoreDataManager.shared.deletePrimaryPill(pill: primaryPillList[indexPath.row])
             primaryPillList.remove(at: indexPath.row)
             if primaryPillList.count != 0 {
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -132,7 +131,7 @@ extension ManageDosingViewController: UITableViewDelegate {
 extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
 
-        self.primaryPillList = self.coreDataManager.fetchPrimaryPill()
+        self.primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         let indexPath = IndexPath(row: primaryPillList.count - 1, section: 0)
 
             tableView.beginUpdates()
@@ -154,11 +153,10 @@ class ManageDosingTableViewCell: UITableViewCell {
     
     // MARK: Property
     var primaryPill: PrimaryPill? = nil
-    var coreDataManager = CoreDataManager()
 
     // MARK: @IBAction
     @IBAction func toggleIsShowing(_ sender: UISwitch) {
-        coreDataManager.togglePrimaryPillIsShowing(pill: primaryPill!)
+        CoreDataManager.shared.togglePrimaryPillIsShowing(pill: primaryPill!)
     }
 }
 

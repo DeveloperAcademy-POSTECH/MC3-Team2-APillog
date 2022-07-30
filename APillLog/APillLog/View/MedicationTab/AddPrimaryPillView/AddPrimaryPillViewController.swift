@@ -28,7 +28,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var primaryPillDosageSegmentedControl: UISegmentedControl!
     
     // MARK: Property
-    var coredataManager:CoreDataManager = CoreDataManager()
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
     var primaryPillDosageSegmentedTitle = "mg"
@@ -45,7 +44,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
-        primaryPillList = coredataManager.fetchPrimaryPill()
+        primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
     }
@@ -58,8 +57,9 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBAction func tapSaveButton() {
         let pillName = PrimaryPillName.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
-        
-        coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+       
+        CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        print(pillDosage)
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }

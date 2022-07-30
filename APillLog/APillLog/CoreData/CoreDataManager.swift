@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 import CoreData
-class CoreDataManager{
+
+class CoreDataManager {
     //사용법
-    //var coredataManager: CoreDataManager = CoreDataManager()
-    //coredataManager.함수
+    // CoreDataManager.shared.함수
     
-    // MARK: - Core Data Saving support
+    static let shared: CoreDataManager = CoreDataManager()
+    
+    //coredataManager.함수
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "APillLog")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
