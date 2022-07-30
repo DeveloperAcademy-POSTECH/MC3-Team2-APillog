@@ -49,6 +49,11 @@ class VersionViewController: UIViewController {
         button.isHidden = check
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func needUpdate() -> Bool {
         
         guard

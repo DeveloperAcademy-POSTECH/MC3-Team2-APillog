@@ -16,4 +16,9 @@ class LicenseViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         self.navigationController?.navigationBar.topItem?.title = "뒤로"
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.popViewController(animated: true)
+    }
 }

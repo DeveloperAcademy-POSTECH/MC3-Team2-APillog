@@ -33,7 +33,10 @@ class PushNotificationController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "알림 설정"
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.popViewController(animated: true)
+    }
     
     // MARK: setting View
     @objc func willEnterForeground() {
