@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 import CoreData
-class CoreDataManager{
+
+class CoreDataManager {
     //사용법
-    //var coredataManager: CoreDataManager = CoreDataManager()
-    //coredataManager.함수
+    // CoreDataManager.shared.함수
     
-    // MARK: - Core Data Saving support
+    static let shared: CoreDataManager = CoreDataManager()
+    
+    //coredataManager.함수
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "APillLog")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -81,6 +83,28 @@ class CoreDataManager{
        
     }
     
+    func deleteShowSecondaryPill(pill: ShowSecondaryPill){
+        let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
+        //현재의 날짜를 선택
+        let todayDate: String = changeSelectedDateToString(Date())
+        do {
+            let pillArray = try context.fetch(request)
+            
+            for item in pillArray {
+                if (item.selectDate == todayDate && item.name == pill.name &&
+                    item.dosage == pill.dosage)
+                {
+                    self.context.delete(item)
+                    saveToContext()
+                }
+            }
+            
+        } catch{
+            print("-----fetchShowPrimaryPill error-------")
+        }
+       
+    }
+    
     func deletePrimaryPill(pill: PrimaryPill) {
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         
@@ -101,7 +125,7 @@ class CoreDataManager{
         }
         saveToContext()
     }
-    
+
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
@@ -144,7 +168,7 @@ class CoreDataManager{
         showSecondaryPill.id = UUID()
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
-        showSecondaryPill.isTaking = false
+        showSecondaryPill.isTaking = true
         showSecondaryPill.takeTime = nil
         showSecondaryPill.selectDate = selectedDate
         saveToContext()
@@ -163,12 +187,14 @@ class CoreDataManager{
         saveToContext()
     }
     
-    func addCBT(selectDate: Date, cbtContext: String) {
+    func addCBT(selectDate: Date, mistakeContext: String, recognizeContext: String, actionContext: String) {
         let selectedDate: String = changeSelectedDateToString(selectDate)
         let cbt = CBT(context: persistentContainer.viewContext)
         cbt.cbtId = UUID()
         cbt.selectDate = selectedDate
-        cbt.cbtContext = cbtContext
+        cbt.mistakeContext = mistakeContext
+        cbt.recognizeContext = recognizeContext
+        cbt.actionContext = actionContext
         cbt.createTime = Date()
         
         saveToContext()
@@ -544,7 +570,7 @@ class CoreDataManager{
             }
             return historyResult
         } catch{
-            print("-----CBT error-------")
+            print("-----fetchHistory error-------")
         }
         return historyResult
     }
@@ -603,7 +629,9 @@ class CoreDataManager{
             let cbtArray = try context.fetch(request)
             for data in cbtArray{
                 if data.cbtId == receivedCBT.cbtId{
-                    data.cbtContext = receivedCBT.cbtContext
+                    data.mistakeContext = receivedCBT.mistakeContext
+                    data.recognizeContext = receivedCBT.recognizeContext
+                    data.actionContext = receivedCBT.actionContext
                     saveToContext()
                     break
                 }

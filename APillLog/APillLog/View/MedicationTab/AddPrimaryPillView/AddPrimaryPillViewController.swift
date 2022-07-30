@@ -25,11 +25,12 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var cancleButton: UIButton!
     @IBOutlet weak var duplicateWarningLabel: UILabel!
     
+    @IBOutlet weak var primaryPillDosageSegmentedControl: UISegmentedControl!
     
     // MARK: Property
-    var coredataManager:CoreDataManager = CoreDataManager()
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
+    var primaryPillDosageSegmentedTitle = "mg"
     
     var delegate: AddPrimaryPillViewControllerDelegate?
     
@@ -43,7 +44,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
-        primaryPillList = coredataManager.fetchPrimaryPill()
+        primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
     }
@@ -55,15 +56,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
  
     @IBAction func tapSaveButton() {
         let pillName = PrimaryPillName.text ?? ""
-        let pillDosage = PrimaryPillDosage.text ?? ""
-        
-        coredataManager.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
+       
+        CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        print(pillDosage)
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
-       
-        
     }
-    
     
     @IBAction func detectNameTextField(){
         detectEnableSaveButton()
@@ -120,6 +119,18 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         detectEnableSaveButton()
     }
     
+    @IBAction func selectPrimaryPillDosage(_ sender: UISegmentedControl) {
+        switch(primaryPillDosageSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            primaryPillDosageSegmentedTitle = "mg"
+            detectEnableSaveButton()
+        case 1:
+            primaryPillDosageSegmentedTitle = "정"
+            detectEnableSaveButton()
+        default:
+            return
+        }
+    }
     
     // MARK: Function
     func changePrimaryPillDosingButtonState(_ button: UIButton) {
@@ -152,7 +163,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     func checkDuplication() {
         for pill in primaryPillList {
-            if PrimaryPillName.text == pill.name && PrimaryPillDosage.text == pill.dosage {
+            if PrimaryPillName.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
                 savePrimaryPillButton.isEnabled = false
                 duplicateWarningLabel.isHidden = false
                 return

@@ -16,7 +16,6 @@ class PreferencesViewController: UIViewController {
         self.view.backgroundColor = UIColor.AColor.background
         self.settingCellStyle()
     }
-    
     // MARK: @IBOutlet
     @IBOutlet weak var settingNotificationView: UIView!
     @IBOutlet weak var licenseView: UIView!
@@ -57,11 +56,12 @@ class PreferencesViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @IBAction func tapVersionButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "PreferencesView", bundle: nil)
                     
         let vc = storyboard.instantiateViewController(withIdentifier: "VersionView") as! VersionViewController
+
         
         navigationController?.pushViewController(vc, animated: true)
     }

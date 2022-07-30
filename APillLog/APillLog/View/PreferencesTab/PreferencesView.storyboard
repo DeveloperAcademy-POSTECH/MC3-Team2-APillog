@@ -10,7 +10,7 @@
     <scenes>
         <!--Preferences View Controller-->
         <scene sceneID="s0d-6b-0kx">
-            <objects>
+            <objects
                 <viewController id="Y6W-OH-hqX" customClass="PreferencesViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="PreferencesView" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -309,6 +309,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="an0-zI-7vI" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBA-kL-xpb">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

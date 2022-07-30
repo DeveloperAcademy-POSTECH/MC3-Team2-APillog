@@ -48,6 +48,9 @@ extension UIFont {
     
     // 필요한 폰트 종류는 여기에 추가하기
     enum AFont {
+        static var thanksToTitle: UIFont{ UIFont.APillLogFont(forTextStyle: .title3)}
+        static var thanksToName: UIFont{ UIFont.APillLogFont(forTextStyle: .body)}
+        
         static var calenderText: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var modalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var halfModalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }

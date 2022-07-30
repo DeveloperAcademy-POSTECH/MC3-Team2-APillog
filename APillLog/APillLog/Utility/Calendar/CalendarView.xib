@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,12 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-H1-fg8">
-                    <rect key="frame" x="185" y="33.5" width="44.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41g-cQ-38l">
                     <rect key="frame" x="20" y="28" width="37" height="31"/>
                     <state key="normal" title="Button"/>
@@ -40,22 +35,46 @@
                         <action selector="didTapNextButton" destination="-1" eventType="touchUpInside" id="iTg-Bg-zhy"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="41B-tG-Dn9">
+                    <rect key="frame" x="173.5" y="34.5" width="67.5" height="18"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="O0r-c2-YWq">
+                            <rect key="frame" x="0.0" y="2.5" width="18" height="12.5"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="O0r-c2-YWq" secondAttribute="height" id="NJp-2w-ZJR"/>
+                                <constraint firstAttribute="height" constant="18" id="gIM-nO-9OE"/>
+                            </constraints>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-H1-fg8">
+                            <rect key="frame" x="23" y="0.0" width="44.5" height="18"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="spN-ch-wd0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0xG-Ci-YeW"/>
-                <constraint firstItem="rUE-H1-fg8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="77l-D4-O1v"/>
-                <constraint firstItem="rUE-H1-fg8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="78z-Y5-FTJ"/>
+                <constraint firstItem="41B-tG-Dn9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SYj-Po-jd7"/>
+                <constraint firstItem="41B-tG-Dn9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V7U-pE-jWX"/>
                 <constraint firstItem="41g-cQ-38l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bk0-w2-Peo"/>
                 <constraint firstItem="41g-cQ-38l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="vA2-uV-Aiq"/>
                 <constraint firstAttribute="trailing" secondItem="spN-ch-wd0" secondAttribute="trailing" constant="20" id="xnc-Ru-Dkm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="133.33333333333334" y="-151.67410714285714"/>
+            <point key="canvasLocation" x="244.92753623188409" y="-105.46875"/>
         </view>
     </objects>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

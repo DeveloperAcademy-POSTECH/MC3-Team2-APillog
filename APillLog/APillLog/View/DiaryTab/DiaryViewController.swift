@@ -13,7 +13,6 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
-    var coredataManager: CoreDataManager = CoreDataManager()
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = [CBT()]
     var selectedBody = ""
@@ -25,7 +24,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCellTableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell
         cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
-        cell.cellTitle.text = myCBT[indexPath.row].cbtContext ?? "text"
+        cell.cellTitle.text = myCBT[indexPath.row].mistakeContext ?? "text"
         cell.cellTitle.font = UIFont.AFont.tableViewTitle
         cell.cellTitle.textColor = UIColor.AColor.black
         cell.cellDate.text = myCBT[indexPath.row].selectDate
@@ -47,7 +46,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        myCBT = coredataManager.fetchCBT()
+        myCBT = CoreDataManager.shared.fetchCBT()
         myCBT = myCBT.sorted(by: {
             $0.selectDate!>$1.selectDate!
         })
@@ -72,11 +71,11 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBody = myCBT[indexPath.row].cbtContext!
+        selectedBody = myCBT[indexPath.row].mistakeContext!
         selectedDate = myCBT[indexPath.row].selectDate!
         let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
         let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
-        vc.body = myCBT[indexPath.row].cbtContext!
+        vc.body = myCBT[indexPath.row].mistakeContext!
         vc.date = myCBT[indexPath.row].selectDate!
         vc.id = myCBT[indexPath.row].cbtId!
         vc.receivedCBT = myCBT[indexPath.row]
@@ -91,7 +90,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     ) {
         if editingStyle == .delete {
             let CBT = myCBT[indexPath.row]
-            coredataManager.deleteCBT(CBT: CBT)
+            CoreDataManager.shared.deleteCBT(CBT: CBT)
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
