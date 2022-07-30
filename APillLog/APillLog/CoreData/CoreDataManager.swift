@@ -474,7 +474,40 @@ class CoreDataManager {
         }
         return pillArrayResult
     }
+    func fetchPrimaryPillIsShowOn() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing{
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
+    }
     
+    func fetchPrimaryPillIsShowOff() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+             let  pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing == false {
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
+    }
+
     //오늘의 메인약 아침
     func fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: [ShowPrimaryPill]?) -> [ShowPrimaryPill] {
         var pillArrayResult: [ShowPrimaryPill] = []
