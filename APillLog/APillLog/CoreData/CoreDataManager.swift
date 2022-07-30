@@ -733,6 +733,12 @@ class CoreDataManager {
             result.append((key, doneValue, doValue))
         }
         print("DEBUG DAY",  result)
+        
+        if result.isEmpty {
+            for pill in doTakePill {
+                result.append((pill.key, 0, pill.value))
+            }
+        }
         return result
     }
     

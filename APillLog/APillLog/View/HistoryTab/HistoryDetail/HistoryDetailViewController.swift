@@ -11,9 +11,6 @@ import UIKit
 
 class HistoryDetailViewController: UIViewController {
     
-    var pillNames = ["콘서타", "메디키넷", "어쩌고", "저쩌고"]
-    var pillDosage: [Float] = [0.5, 0.3, 0.7, 0.8]
-    var historyData = [History]()
     var result = [(String, Int, Int)]()
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
@@ -25,8 +22,8 @@ class HistoryDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
-        pillDosageTableHight.constant = CGFloat(pillNames.count * 80)
         result = CoreDataManager.shared.fetchPillInformationLastWeek()
+        pillDosageTableHight.constant = CGFloat(result.count * 100)
     }
     
 }
