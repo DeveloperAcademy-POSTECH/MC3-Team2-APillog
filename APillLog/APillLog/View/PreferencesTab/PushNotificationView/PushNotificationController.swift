@@ -91,6 +91,7 @@ class PushNotificationController: UIViewController {
             timePicker.setOnDateChangeListener { [self] in
                 UserDefault.set(calculateTime(time: timePicker.date), forKey: key)
                 if isTakeAlarmSwitch.isOn {
+                    removeNotificationCenter(key: key)
                     addNotificationCenter(key: key, type: type, time: timePicker.date)
                 } else {
                     removeNotificationCenter(key: key)
@@ -101,6 +102,7 @@ class PushNotificationController: UIViewController {
         noteTimePicker.setOnDateChangeListener { [self] in
             UserDefault.set(calculateTime(time: noteTimePicker.date), forKey: "noteTimePicker")
             if isWriteAlarmSwitch.isOn {
+                removeNotificationCenter(key: "noteTimePicker")
                 addNotificationCenter(time: noteTimePicker.date)
             } else {
                 removeNotificationCenter(key: "noteTimePicker")
