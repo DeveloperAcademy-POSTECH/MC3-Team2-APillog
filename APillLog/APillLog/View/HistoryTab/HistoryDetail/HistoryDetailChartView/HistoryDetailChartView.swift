@@ -7,14 +7,18 @@
 
 import UIKit
 import Charts
+import Foundation
+
 
 @IBDesignable
 class HistoryDetailChartView: UIView {
     
     @IBOutlet var barChartView: BarChartView!
-
-    var condition: [String]!
-    var conditionCount: [Double]!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var sideEffect: [String] = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+    var sideEffectCount: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
     
     let barCornerRadius = CGFloat(10.0)
     
@@ -26,6 +30,8 @@ class HistoryDetailChartView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadView()
+        
+        setSegmentedControlStyle()
     }
     
     private func loadView() {
@@ -38,12 +44,8 @@ class HistoryDetailChartView: UIView {
         barChartView.noDataText = "아직 남긴 기록이 없어요"
         barChartView.noDataTextColor = .lightGray
         
-        condition = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
-
-        conditionCount = [5, 10, 7, 3, 2, 5, 3, 7, 9, 12]
-        
-        setChart(dataPoints: condition, values: conditionCount)
-        
+        loadData()
+        setChart(dataPoints: sideEffect, values: sideEffectCount)
     }
     
     
@@ -93,4 +95,67 @@ class HistoryDetailChartView: UIView {
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
     }
+    
+    func setSegmentedControlStyle() {
+
+    }
+    
+    func loadData() {
+        var date = Date()
+        
+        for _ in 0..<7 {
+            let history: [History] = CoreDataManager.shared.fetchHistory(selectedDate: date)
+            
+            for data in history {
+                for effect in data.sideEffect ?? [] {
+//         condition = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+
+                    switch effect {
+                    case "불면":
+                        sideEffectCount[0] += 1
+                        
+                    case "빈맥":
+                        sideEffectCount[1] += 1
+                        
+                    case "두통":
+                        sideEffectCount[2] += 1
+                        
+                    case "어지러움":
+                        sideEffectCount[3] += 1
+                        
+                    case "불안":
+                        sideEffectCount[4] += 1
+                        
+                    case "식욕 감소":
+                        sideEffectCount[5] += 1
+                        
+                    case "구역":
+                        sideEffectCount[6] += 1
+                        
+                    case "입안 건조":
+                        sideEffectCount[7] += 1
+                        
+                    case "과민성":
+                        sideEffectCount[8] += 1
+                        
+                    case "땀 과다증":
+                        sideEffectCount[9] += 1
+                        
+                    default:
+                        print("잘못된 부작용 명")
+                    }
+                }
+            }
+            date = Calendar.current.date(byAdding: .day, value: -1, to: date)!
+        }
+        
+        
+        
+        
+    }
+    // MARK: @IBAction
+    @IBAction func changeSegmentedControl(_ sender: Any) {
+        let index = segmentedControl.selectedSegmentIndex
+    }
+    
 }

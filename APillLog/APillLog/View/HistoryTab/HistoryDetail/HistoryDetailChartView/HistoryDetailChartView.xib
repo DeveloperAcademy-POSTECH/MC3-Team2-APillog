@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
             <connections>
                 <outlet property="barChartView" destination="GnZ-rl-raG" id="JtA-Nl-gHm"/>
+                <outlet property="segmentedControl" destination="9or-Zi-d7u" id="Ioi-fI-HVU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,9 +23,12 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9or-Zi-d7u">
                     <rect key="frame" x="15" y="15" width="384" height="32"/>
                     <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
+                        <segment title="증상 빈도"/>
+                        <segment title="일 별 빈도"/>
                     </segments>
+                    <connections>
+                        <action selector="changeSegmentedControl:" destination="-1" eventType="valueChanged" id="arA-Wj-zGc"/>
+                    </connections>
                 </segmentedControl>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMi-gi-S23">
                     <rect key="frame" x="15" y="56" width="384" height="306"/>
