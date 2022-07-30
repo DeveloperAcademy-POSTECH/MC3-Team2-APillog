@@ -31,7 +31,7 @@ class HistoryDetailViewController: UIViewController {
         let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
-        pillDosageTableHight.constant = CGFloat(result.count * 85)
+        pillDosageTableHight.constant = CGFloat(25 + result.count * 72)
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
     }

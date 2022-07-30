@@ -32,12 +32,17 @@
                                                 <color key="sectionIndexBackgroundColor" name="AAccent"/>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="264" width="364" height="400"/>
+                                                <rect key="frame" x="25" y="244" width="364" height="400"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
                                                     <constraint firstAttribute="height" constant="400" id="dF2-gB-pyl"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 일주일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
                                                 <rect key="frame" x="172.5" y="16" width="69" height="18"/>
@@ -56,7 +61,7 @@
                                             <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" id="QaM-89-a1u"/>
                                             <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
                                             <constraint firstItem="xN6-7I-eWn" firstAttribute="centerX" secondItem="gE8-Yg-pjN" secondAttribute="centerX" id="suw-ZD-36A"/>
-                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="30" id="tX1-NO-oAR"/>
+                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="10" id="tX1-NO-oAR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
