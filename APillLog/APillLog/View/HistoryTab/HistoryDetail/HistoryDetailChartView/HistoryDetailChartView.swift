@@ -17,10 +17,15 @@ class HistoryDetailChartView: UIView {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var sideEffect: [String] = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+    var dateArray: [String] = ["", "", "", "", "", "", "",]
     var sideEffectCount: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var sideEffectCountPerDate: [Double] = [0, 0, 0, 0, 0, 0, 0]
     
-    
-    let barCornerRadius = CGFloat(10.0)
+    let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd일"
+        return dateFormatter
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,7 +89,6 @@ class HistoryDetailChartView: UIView {
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
         barChartView.xAxis.labelPosition = .bottom
         
-        
         // Text 관련
         barChartView.xAxis.labelFont = UIFont.AFont.articleBody
         //        chartDataSet.valueFont = UIFont.AFont.navigationTitle
@@ -101,15 +105,19 @@ class HistoryDetailChartView: UIView {
     }
     
     func loadData() {
-        var date = Date()
+        sideEffectCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        sideEffectCountPerDate = [0, 0, 0, 0, 0, 0, 0]
         
-        for _ in 0..<7 {
+        var date = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
+        for idx in 0..<7 {
+            dateArray[idx] = dateFormatter.string(from: date)
             let history: [History] = CoreDataManager.shared.fetchHistory(selectedDate: date)
             
             for data in history {
                 for effect in data.sideEffect ?? [] {
-//         condition = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
-
+                    sideEffectCountPerDate[idx] += Double(effect.count)
+                    print(effect)
+                    
                     switch effect {
                     case "불면":
                         sideEffectCount[0] += 1
@@ -146,16 +154,22 @@ class HistoryDetailChartView: UIView {
                     }
                 }
             }
-            date = Calendar.current.date(byAdding: .day, value: -1, to: date)!
+            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         }
-        
-        
-        
-        
     }
     // MARK: @IBAction
     @IBAction func changeSegmentedControl(_ sender: Any) {
-        let index = segmentedControl.selectedSegmentIndex
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            setChart(dataPoints: sideEffect, values: sideEffectCount)
+
+        case 1:
+            setChart(dataPoints: dateArray, values: sideEffectCountPerDate)
+            
+        default:
+            print("잘못된 Segmented Control Index")
+            
+        }
     }
     
 }
