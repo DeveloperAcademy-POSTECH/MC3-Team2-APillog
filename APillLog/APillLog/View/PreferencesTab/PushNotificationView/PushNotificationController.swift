@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-class PushNotificationController: UIViewController{
+class PushNotificationController: UIViewController {
     
     // switch
     @IBOutlet weak var isTakeAlarmSwitch: UISwitch!
@@ -18,19 +18,54 @@ class PushNotificationController: UIViewController{
     @IBOutlet weak var afternoonTimePicker: UIDatePicker!
     @IBOutlet weak var eveningTimePicker: UIDatePicker!
     @IBOutlet weak var noteTimePicker: UIDatePicker!
+    @IBOutlet weak var systemPreferenceView: UIView!
+    @IBOutlet weak var blockView: UIView!
     
     let UserDefault = UserDefaults.standard
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchNotificationInfo()
         setChangeListener()
+        checkSettingValue()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "알림 설정"
     }
     
+    
+    // MARK: setting View
+    @objc func willEnterForeground() {
+        checkSettingValue()
+    }
+    
+    private func checkSettingValue() {
+        AppDelegate.center.getNotificationSettings(completionHandler: { (setting) in
+            
+            DispatchQueue.main.async {
+                if setting.authorizationStatus == .denied {
+                    self.systemPreferenceView.isHidden = false
+                    self.blockView.isHidden = false
+                } else {
+                    self.systemPreferenceView.isHidden = true
+                    self.blockView.isHidden = true
+                }
+            }
+        })
+    }
+    
+    @IBAction func linkPreference(_ sender: Any) {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+    }
     
     // MARK: notification center
     private func fetchNotificationInfo() {
@@ -56,6 +91,7 @@ class PushNotificationController: UIViewController{
             timePicker.setOnDateChangeListener { [self] in
                 UserDefault.set(calculateTime(time: timePicker.date), forKey: key)
                 if isTakeAlarmSwitch.isOn {
+                    removeNotificationCenter(key: key)
                     addNotificationCenter(key: key, type: type, time: timePicker.date)
                 } else {
                     removeNotificationCenter(key: key)
@@ -66,6 +102,7 @@ class PushNotificationController: UIViewController{
         noteTimePicker.setOnDateChangeListener { [self] in
             UserDefault.set(calculateTime(time: noteTimePicker.date), forKey: "noteTimePicker")
             if isWriteAlarmSwitch.isOn {
+                removeNotificationCenter(key: "noteTimePicker")
                 addNotificationCenter(time: noteTimePicker.date)
             } else {
                 removeNotificationCenter(key: "noteTimePicker")
@@ -108,10 +145,8 @@ class PushNotificationController: UIViewController{
     
     private func removeNotificationCenter(key: String) {
         let notificationCenter = UNUserNotificationCenter.current()
-        //for key in keys {
             notificationCenter.removePendingNotificationRequests(withIdentifiers: [key])
             notificationCenter.removeDeliveredNotifications(withIdentifiers: [key])
-        //}
     }
     
     // MARK: Date Picker func
