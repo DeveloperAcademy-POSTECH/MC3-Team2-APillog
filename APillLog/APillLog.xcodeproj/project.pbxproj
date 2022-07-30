@@ -15,7 +15,7 @@
 		34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
-		34CF98292895B952009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
+		34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
 		34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */; };
 		47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
@@ -678,7 +678,7 @@
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
-				34CF98292895B952009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */,
+				34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */,
 				9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -853,7 +853,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = BP6V55LTAQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -886,7 +886,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = 22A6RK2943;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
