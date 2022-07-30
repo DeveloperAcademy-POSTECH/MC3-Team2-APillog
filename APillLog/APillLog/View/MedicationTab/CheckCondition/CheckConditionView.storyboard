@@ -41,7 +41,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9zU-my-jKz">
-                                                <rect key="frame" x="24" y="32" width="274" height="171"/>
+                                                <rect key="frame" x="24" y="32" width="285" height="171"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편 사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deb-cm-JXz">
                                                         <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="24"/>
@@ -50,10 +50,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AG-bp-XpC">
-                                                        <rect key="frame" x="0.0" y="38" width="274" height="133"/>
+                                                        <rect key="frame" x="0.0" y="38" width="285" height="133"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="evw-P6-EXX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="257" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="33"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-rq-xwl" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="33"/>
@@ -113,14 +113,14 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-cY-LNs" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="201" y="0.0" width="56" height="33"/>
+                                                                        <rect key="frame" x="201" y="0.0" width="84" height="33"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="56" id="N4T-KS-hd0"/>
+                                                                            <constraint firstAttribute="width" constant="84" id="N4T-KS-hd0"/>
                                                                             <constraint firstAttribute="height" constant="33" id="bhi-P6-1Mb"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="빈맥">
+                                                                        <state key="normal" title="두근거림">
                                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <state key="selected" title="빈맥"/>
@@ -377,7 +377,7 @@
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="dBe-cY-LNs">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="hbe-b2-3Lb">
             <size key="intrinsicContentSize" width="30" height="32"/>
