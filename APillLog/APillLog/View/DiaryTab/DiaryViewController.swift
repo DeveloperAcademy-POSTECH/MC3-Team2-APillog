@@ -47,6 +47,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
                                   forHeaderFooterViewReuseIdentifier: "sectionHeader")
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
+        
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +65,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         else{
             diaryViewGuideLabel.isHidden = true
             UserDefaults(suiteName:
-                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].cbtContext, forKey: "content")
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
@@ -72,7 +73,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     override func viewWillDisappear(_ animated: Bool) {
         if myCBT.count != 0{
             UserDefaults(suiteName:
-                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].cbtContext, forKey: "content")
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
         else{
@@ -100,6 +101,8 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
         vc.body = myCBT[indexPath.row].mistakeContext!
         vc.date = myCBT[indexPath.row].selectDate!
+        vc.recognizeString = myCBT[indexPath.row].recognizeContext!
+        vc.actionString = myCBT[indexPath.row].actionContext!
         vc.id = myCBT[indexPath.row].cbtId!
         vc.receivedCBT = myCBT[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
@@ -118,7 +121,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
             UserDefaults(suiteName:
-                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].cbtContext, forKey: "content")
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
     }

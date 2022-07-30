@@ -9,69 +9,76 @@ import UIKit
 import CoreData
 import WidgetKit
 
-class DiaryWriteViewController: UIViewController {
+class DiaryWriteViewController: UIViewController, UITextViewDelegate {
     var coredataManager: CoreDataManager = CoreDataManager()
     @IBOutlet weak var mistakeTextView: UITextView!
-    @IBOutlet weak var recognizeTextView: UITextView!
-    @IBOutlet weak var actionTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var diaryWriteDatePicker: UIDatePicker!
+    @IBOutlet weak var diaryWriteDatePicker1 : UIDatePicker!
     
-    @IBAction func didTapSaveButton(_ sender: Any) {
-
-        if !textView.text.trimmingCharacters(in: .whitespaces).isEmpty{
-            coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, cbtContext: textView.text)
-            _ = navigationController?.popViewController(animated: true)
-            
-            UserDefaults(suiteName:
-                            "group.com.varcode.APillLog.ApilogWidget")!.set(textView.text, forKey: "content")
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-        else{
-            _ = navigationController?.popViewController(animated: true)
-        }
+    
+    @IBOutlet weak var diaryWriteSaveButton1: UIButton!
+    
+    
+    var mistakeString = ""
+    var currentDate = Date()
+    @IBAction func didTapSaveButton1(_ sender: Any) {
+        currentDate = diaryWriteDatePicker1.date
+//        self.performSegue(withIdentifier: "DiaryWriteView2", sender: self)
+//        diaryWriteDatePicker2.date = currentDate
+    }
+    
+    
+//    @IBAction func didTapSaveButton(_ sender: Any) {
+//
+//        if  !actionTextView.text.trimmingCharacters(in: .whitespaces).isEmpty && !mistakeTextView.text.trimmingCharacters(in: .whitespaces).isEmpty{
+//            coredataManager.addCBT(selectDate: diaryWriteDatePicker1.date,mistakeContext: mistakeTextView.text,recognizeContext: recognizeTextView.text,actionContext: actionTextView.text)
+//            _ = navigationController?.popViewController(animated: true)
+//
+//            UserDefaults(suiteName:
+//                            "group.com.varcode.APillLog.ApilogWidget")!.set(actionTextView.text, forKey: "content")
+//            WidgetCenter.shared.reloadAllTimelines()
+//        }
+//        else{
+//            _ = navigationController?.popViewController(animated: true)
+//        }
         
 
 //        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, mistakeContext: mistakeTextView.text, recognizeContext: recognizeTextView.text!, actionContext: actionTextView.text!)
 //        _ = navigationController?.popViewController(animated: true)
 
-    }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        diaryWriteDatePicker.tintColor = UIColor.AColor.accent
-        // Do any additional setup after loading the view.
+        mistakeTextView.delegate = self
+        diaryWriteSaveButton1.isEnabled = false
+        diaryWriteSaveButton1.backgroundColor = UIColor.AColor.disable
+        mistakeTextView.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-               hideKeyboard()
-           }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.mistakeTextView.becomeFirstResponder()
-    }
-    
-//    MARK: - For the Sprint2  (in case of moving textview)
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//
-//            guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-//               // if keyboard size is not available for some reason, dont do anything
-//               return
-//            }
-//
-//          // move the root view up by the distance of keyboard height
-//          self.view.frame.origin.y = 0 - keyboardSize.height
-//        }
-//
-//        @objc func keyboardWillHide(notification: NSNotification) {
-//          // move back the root view origin to zero
-//          self.view.frame.origin.y = 0
-//        }
-
-    func hideKeyboard() {
-
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            diaryWriteSaveButton1.isEnabled = false
+            diaryWriteSaveButton1.backgroundColor = UIColor.AColor.disable
         }
+        else{
+            diaryWriteSaveButton1.isEnabled = true
+            diaryWriteSaveButton1.backgroundColor = UIColor.AColor.accent
+        }
+        
+       }
+    override func viewDidAppear(_ animated: Bool) {
+        
+            self.mistakeTextView.becomeFirstResponder()
+        
+        
+        
+        
+    }
 
+ 
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -82,4 +89,17 @@ class DiaryWriteViewController: UIViewController {
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             if (segue.identifier == "DiaryWriteView2"){
+                 let displayVC = segue.destination as! DiaryWriteViewController2
+              
+               //Assigns the name entered in the AViewController to display it in BViewController
+               
+                 displayVC.currentDate = diaryWriteDatePicker1.date
+                 displayVC.mistakeString = mistakeTextView.text
+                 
+             }
+         }
 }
+
+
