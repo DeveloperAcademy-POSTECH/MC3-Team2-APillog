@@ -66,6 +66,7 @@ class CheckConditionViewController: UIViewController {
         self.detailContext.layer.borderWidth = 1.0
         self.detailContext.layer.borderColor = UIColor.AColor.gray.cgColor
         self.detailContext.layer.cornerRadius = 10
+        self.detailContext.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     private func setConditionBackgroundViewStyle() {
@@ -211,10 +212,10 @@ extension CheckConditionViewController {
     
     @objc func keyboardUp(notification: NSNotification){
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
+            _ = keyboardFrame.cgRectValue
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.conditionBackgroundView.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height)
+                self.conditionBackgroundView.transform = CGAffineTransform(translationX: 0, y: -50)
             })
         }
     }

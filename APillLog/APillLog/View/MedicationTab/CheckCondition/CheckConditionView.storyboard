@@ -317,7 +317,7 @@
                                     <navigationItem title="증상 입력" id="ahk-r0-V1L">
                                         <barButtonItem key="leftBarButtonItem" style="done" id="Pga-xO-Dze">
                                             <imageReference key="image" image="left-black" symbolScale="large"/>
-                                            <color key="tintColor" name="AAccent"/>
+                                            <color key="tintColor" name="ABlack"/>
                                             <connections>
                                                 <action selector="tapBackButton:" destination="jTN-oo-mAg" id="5jg-vu-wKE"/>
                                             </connections>
@@ -391,11 +391,11 @@
     </designables>
     <resources>
         <image name="left-black" width="10" height="18"/>
-        <namedColor name="AAccent">
-            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ABackground">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ABlack">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ADisable">
             <color red="0.73299998044967651" green="0.73299998044967651" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
