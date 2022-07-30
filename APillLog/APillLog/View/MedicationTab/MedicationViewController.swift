@@ -123,7 +123,7 @@ class MedicationViewController: UIViewController {
         takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.accent
         takingAllPrimaryPillsButton.layer.cornerRadius = 10
         takingAllPrimaryPillsButton.setTitle("전체 복용", for: .normal)
-        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonText
+        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
         
         
     }
@@ -178,6 +178,21 @@ class MedicationViewController: UIViewController {
         secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
     }
 
+    // MARK: - IBActions
+    
+    @IBAction func tapAddConditionButton(_ sender: UIButton) {
+        guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
+
+        self.navigationController?.pushViewController(checkConditionViewController, animated: true)
+    }
+
+    @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
+        for pills in primaryPillListDataSource {
+            pills.isTaking = true
+            primaryPillTableView.reloadData()
+        }
+    }
+
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
@@ -187,11 +202,6 @@ class MedicationViewController: UIViewController {
         self.present(nextViewController, animated: true)
     }
 
-    @IBAction func tapAddConditionButton(_ sender: UIButton) {
-        guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
-
-        self.navigationController?.pushViewController(checkConditionViewController, animated: true)
-    }
 }
 
 extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {

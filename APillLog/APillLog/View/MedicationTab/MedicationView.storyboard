@@ -180,13 +180,16 @@
                                                                     <segue destination="99O-g9-za1" kind="show" id="GIe-ra-ife"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njF-YA-P8j">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njF-YA-P8j">
                                                                 <rect key="frame" x="15" y="245" width="310" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="50b-20-vWQ"/>
                                                                 </constraints>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="tapTakingAllPrimaryPillsButton:" destination="en2-nt-aBt" eventType="touchUpInside" id="8Wm-Qn-98m"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
