@@ -38,7 +38,8 @@ extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegat
         
         cell.pillName.text = result[indexPath.row].0
         cell.pillDosage.progress = Float(result[indexPath.row].1) / Float(result[indexPath.row].2)
-        print("DEBUG: " , result[indexPath.row])
+        
+        cell.pillRatio.text = result[indexPath.row].1 == 0 ? "" : String("\(result[indexPath.row].1) / \(result[indexPath.row].2)" )
         return cell
     }
     

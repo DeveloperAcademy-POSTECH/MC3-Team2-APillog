@@ -667,16 +667,11 @@ class CoreDataManager {
         // 오늘 날짜 기준으로 현재 복용 중인 약의 종류를 가져옴
         let showPrimaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
         for pill in showPrimaryPill {
-            //if pill.isTaking {
-                if doTakePill[pill.name! + pill.dosage!] == nil {
-                    doTakePill[pill.name! + pill.dosage!] = Int(pill.cycle)
-                } else {
-                    doTakePill[pill.name! + pill.dosage!]! += Int(pill.cycle)
-                }
-//                doTakePill[pill.name! + pill.dosage!] = Int(pill.cycle)
-                print("DEBUG PILL KEY", pill)
-                print("DEBUG CYCLE", pill.cycle)
-           // }
+            if doTakePill[pill.name! + pill.dosage!] == nil {
+                doTakePill[pill.name! + pill.dosage!] = Int(pill.cycle)
+            } else {
+                doTakePill[pill.name! + pill.dosage!]! += Int(pill.cycle)
+            }
         }
         
         // cycle에 따라 각 횟수 계산 및 저장
@@ -696,13 +691,12 @@ class CoreDataManager {
             }
             
             if [1, 2, 4].contains(value) {
-              doTakePillResult[key] = 1 * day
+                doTakePillResult[key] = 1 * day
             } else if [3, 5, 6].contains(value) {
                 doTakePillResult[key] = 2 * day
             } else {
                 doTakePillResult[key] = 3 * day
             }
-            print("DEBUG", doTakePillResult[key])
         }
         
         // 7일간의 히스토리 분석
@@ -732,7 +726,6 @@ class CoreDataManager {
             let doValue = doTakePillResult[key] ?? 1
             result.append((key, doneValue, doValue))
         }
-        print("DEBUG DAY",  result)
         
         if result.isEmpty {
             for pill in doTakePill {
@@ -741,6 +734,5 @@ class CoreDataManager {
         }
         return result
     }
-    
 }
 
