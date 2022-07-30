@@ -23,10 +23,11 @@
 		78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */; };
 		8711C3DF28929FDF00F7625F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C3DE28929FDF00F7625F /* UIView.swift */; };
 		8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */; };
-		8711C43628951C8900F7625F /* HistoryDetailProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43528951C8900F7625F /* HistoryDetailProgressView.xib */; };
-		8711C43828951C9300F7625F /* HistoryDetailProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43728951C9300F7625F /* HistoryDetailProgressView.swift */; };
 		8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */; };
 		8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */; };
+		8750B9582895963A00BF9136 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
+		8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
@@ -97,10 +98,10 @@
 		78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
 		8711C3DE28929FDF00F7625F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
-		8711C43528951C8900F7625F /* HistoryDetailProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressView.xib; sourceTree = "<group>"; };
-		8711C43728951C9300F7625F /* HistoryDetailProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressView.swift; sourceTree = "<group>"; };
 		8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailChartView.swift; sourceTree = "<group>"; };
 		8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailChartView.xib; sourceTree = "<group>"; };
+		8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressViewCell.swift; sourceTree = "<group>"; };
+		8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressViewCell.xib; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,8 +231,8 @@
 		8711C43228951C3D00F7625F /* HistoryDetailProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				8711C43528951C8900F7625F /* HistoryDetailProgressView.xib */,
-				8711C43728951C9300F7625F /* HistoryDetailProgressView.swift */,
+				8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */,
+				8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */,
 			);
 			path = HistoryDetailProgressView;
 			sourceTree = "<group>";
@@ -568,10 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
-				8711C43628951C8900F7625F /* HistoryDetailProgressView.xib in Resources */,
 				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
 				34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
+				8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
@@ -589,6 +590,7 @@
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
 				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
+				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
@@ -662,6 +664,7 @@
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
+				8750B9582895963A00BF9136 /* HistoryDetailProgressViewCell.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -685,7 +688,6 @@
 				9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */,
 				8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */,
 				8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */,
-				8711C43828951C9300F7625F /* HistoryDetailProgressView.swift in Sources */,
 				34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */,
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,

@@ -658,5 +658,81 @@ class CoreDataManager {
         return selectedDate
     }
     
+    func fetchPillInformationLastWeek() -> [(String, Int, Int)] {
+        var doTakePill = [String: Int]()
+        var doTakePillResult = [String: Int]()
+        var doneTakePill = [String: Int]()
+        var result = [(String, Int, Int)]()
+        
+        // 오늘 날짜 기준으로 현재 복용 중인 약의 종류를 가져옴
+        let showPrimaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
+        for pill in showPrimaryPill {
+            if doTakePill[pill.name! + pill.dosage!] == nil {
+                doTakePill[pill.name! + pill.dosage!] = Int(pill.cycle)
+            } else {
+                doTakePill[pill.name! + pill.dosage!]! += Int(pill.cycle)
+            }
+        }
+        
+        // cycle에 따라 각 횟수 계산 및 저장
+        for (key, value) in doTakePill {
+            
+            var day = 1
+            for i in 1..<7 {
+                let date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+                let primaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: date ?? Date())
+                for pill in primaryPill {
+                    if pill.isTaking {
+                        day += 1
+                    } else {
+                        break
+                    }
+                }
+            }
+            
+            if [1, 2, 4].contains(value) {
+                doTakePillResult[key] = 1 * day
+            } else if [3, 5, 6].contains(value) {
+                doTakePillResult[key] = 2 * day
+            } else {
+                doTakePillResult[key] = 3 * day
+            }
+        }
+        
+        // 7일간의 히스토리 분석
+        for i in 0..<7 {
+            let date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            let histories = CoreDataManager.shared.fetchHistory(selectedDate: date ?? Date())
+            
+            // 약을 먹은 경우에 +1
+            for history in histories {
+                if let h = history.pillName {
+                    let key = h + (history.dosage ?? "")
+                    if doneTakePill.keys.contains(key) {
+                        doneTakePill[key]! += 1
+                    } else {
+                        doneTakePill[key] = 1
+                    }
+                }
+            }
+        }
+        
+        let doneTakePillResult = doneTakePill.sorted { (first, second) in
+            return first.value > second.value }
+        
+        for i in 0 ..< doneTakePillResult.count {
+            let key = doneTakePillResult[i].key
+            let doneValue = doneTakePillResult[i].value
+            let doValue = doTakePillResult[key] ?? 1
+            result.append((key, doneValue, doValue))
+        }
+        
+        if result.isEmpty {
+            for pill in doTakePill {
+                result.append((pill.key, 0, pill.value))
+            }
+        }
+        return result
+    }
 }
 
