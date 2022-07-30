@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct APillLogApp: App {
+        
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {

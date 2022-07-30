@@ -16,6 +16,12 @@ protocol ConnectionModelPhoneDelegate {
 class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     static let shared: ConnectionModelPhone = ConnectionModelPhone()
     
+    let watchDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        return dateFormatter
+    }()
+    
     var delegate: ConnectionModelPhoneDelegate?
     
     @Published var messageText = ""
@@ -37,19 +43,18 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
         DispatchQueue.main.async {
             switch message["message"] as! String {
             case "TakePill":
-                let id = UUID(uuidString: message["id"] as! String)
-                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id!)
+                let time = message["time"] as! String
                 
-                CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill ?? ShowPrimaryPill())
-
-                self.delegate?.reloadTableView()
-                
-            case "UndoTakePill":
-                let id = UUID(uuidString: message["id"] as! String)
-                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id!)
-                
-                CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill ?? ShowPrimaryPill())
-                
+                switch time{
+                case "morning":
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 1)
+                case "afternoon":
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 2)
+                case "evening":
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 4)
+                default:
+                    print("Wrong Watch Take Pill Message")
+                }
                 self.delegate?.reloadTableView()
                 
             case "Condition":
@@ -64,6 +69,9 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                 
                 CoreDataManager.shared.addHistory(pillId: UUID(), pillName: pillName, dosage: dosage, isMainPill: isMainPill, pillNames: pillNames, dosages: dosages, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
             
+            case "active":
+                print("Watch로부터의 연결 시도 신호")
+                
             default :
                 print("알 수 없는 통신 - Watch to Phone")
             }
@@ -76,5 +84,36 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
+    }
+    
+    func sendShowPrimaryPillToWatch() {
+        
+        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
+        
+        let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
+        
+        for pill in pillList {
+            let cycle = pill.cycle
+            let dosage = pill.dosage ?? "복용량없음"
+            let id = pill.id?.uuidString ?? ""
+            let isTaking = pill.isTaking
+            let name = pill.name ?? "이름없음"
+            let selectDate = pill.selectDate ?? watchDateFormatter.string(from: Date())
+            let takeTime = pill.takeTime == nil ? Date(timeIntervalSince1970: 0) : pill.takeTime!
+            
+            
+            ConnectionModelPhone.shared.session.sendMessage(["message": "pillData",
+                                                             "cycle": cycle,
+                                                             "dosage": dosage,
+                                                             "id": id,
+                                                             "isTaking": isTaking,
+                                                             "name": name,
+                                                             "selectDate": selectDate,
+                                                             "takeTime": takeTime
+                                                            ], replyHandler: nil)
+        }
+        
+        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
+
     }
 }

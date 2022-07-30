@@ -29,13 +29,7 @@ class MedicationViewController: UIViewController {
         dateFormatter.dateFormat = "hh:mm"
         return dateFormatter
     }()
-    
-    let watchDateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
-        return dateFormatter
-    }()
-    
+
     // MARK: - IBOutlets
     // Symptom Button
     @IBOutlet weak var symptomButton: UIButton!
@@ -76,7 +70,6 @@ class MedicationViewController: UIViewController {
         setCalendarView()
         
         ConnectionModelPhone.shared.delegate = self
-        sendShowPrimaryPillToWatch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -318,36 +311,7 @@ extension MedicationViewController: ConnectionModelPhoneDelegate {
         reloadPrimaryPillTableView()
     }
     
-    func sendShowPrimaryPillToWatch() {
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
-        
-        let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
-        
-        for pill in pillList {
-            let cycle = pill.cycle
-            let dosage = pill.dosage ?? "복용량없음"
-            let id = pill.id?.uuidString ?? ""
-            let isTaking = pill.isTaking
-            let name = pill.name ?? "이름없음"
-            let selectDate = pill.selectDate ?? watchDateFormatter.string(from: Date())
-            let takeTime = pill.takeTime == nil ? Date(timeIntervalSince1970: 0) : pill.takeTime!
-            
-            
-            ConnectionModelPhone.shared.session.sendMessage(["message": "pillData",
-                                                             "cycle": cycle,
-                                                             "dosage": dosage,
-                                                             "id": id,
-                                                             "isTaking": isTaking,
-                                                             "name": name,
-                                                             "selectDate": selectDate,
-                                                             "takeTime": takeTime
-                                                            ], replyHandler: nil)
-        }
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
-
-    }
+    
 }
 
 extension MedicationViewController: CalendarViewDelegate {

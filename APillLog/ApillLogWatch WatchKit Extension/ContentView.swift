@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             List {
                 NavigationLink {
                     RecordPrimaryPillView()
@@ -22,7 +22,7 @@ struct ContentView: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.bold)
                                 .padding(.leading, 8)
-
+                            
                         } icon: {
                             Image(systemName: "pills")
                                 .foregroundColor(Color(uiColor: UIColor.AColor.accent))
@@ -54,12 +54,7 @@ struct ContentView: View {
                     .padding(.leading, 8)
                 }
             }
+            .navigationTitle("Apillog")
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

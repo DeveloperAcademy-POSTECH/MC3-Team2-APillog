@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CheckConditionView: View {
     @Environment(\.dismiss) var dismiss
+
     let negativeConditionData: [String] = ["불면", "불안", "두통", "두근거림", "어지러움", "식욕 감소", "입안 건조", "구역", "땀 과다증", "과민성"]
     @State var selectedNegativeConditionData: [Bool] = []
     

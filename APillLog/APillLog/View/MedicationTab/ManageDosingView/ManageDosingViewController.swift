@@ -31,7 +31,6 @@ class ManageDosingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        sendShowPrimaryPillToWatch()
     }
 
     // MARK: Function
@@ -147,7 +146,6 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
             tableView.insertRows(at: [indexPath] , with: .top)
             tableView.endUpdates()
         
-        sendShowPrimaryPillToWatch()
     }
 }
 
@@ -168,42 +166,3 @@ class ManageDosingTableViewCell: UITableViewCell {
     }
 }
 
-// Watch
-extension ManageDosingViewController {
-    func sendShowPrimaryPillToWatch() {
-        
-        let watchDateFormatter: DateFormatter = {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-mm-dd"
-            return dateFormatter
-        }()
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
-        
-        let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
-        
-        for pill in pillList {
-            let cycle = pill.cycle
-            let dosage = pill.dosage ?? "복용량없음"
-            let id = pill.id?.uuidString ?? ""
-            let isTaking = pill.isTaking
-            let name = pill.name ?? "이름없음"
-            let selectDate = pill.selectDate ?? watchDateFormatter.string(from: Date())
-            let takeTime = pill.takeTime == nil ? Date(timeIntervalSince1970: 0) : pill.takeTime!
-            
-            
-            ConnectionModelPhone.shared.session.sendMessage(["message": "pillData",
-                                                             "cycle": cycle,
-                                                             "dosage": dosage,
-                                                             "id": id,
-                                                             "isTaking": isTaking,
-                                                             "name": name,
-                                                             "selectDate": selectDate,
-                                                             "takeTime": takeTime
-                                                            ], replyHandler: nil)
-        }
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
-
-    }
-}
