@@ -113,11 +113,24 @@ class MedicationViewController: UIViewController {
     }
 
     private func setPrimaryPillViewStyle() {
+        
+        // Primary Pill 영역
         primaryPillField.layer.cornerRadius = 10
         primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
+        
+        // 전체복용 버튼
+        takingAllPrimaryPillsButton.tintColor = UIColor.AColor.white
+        takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.accent
+        takingAllPrimaryPillsButton.layer.cornerRadius = 10
+        takingAllPrimaryPillsButton.setTitle("전체 복용", for: .normal)
+        takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonText
+        
+        
     }
 
     private func setSecondaryPillViewStyle() {
+        
+        // Secondary Pill 영역
         secondaryPillField.layer.cornerRadius = 10
         secondaryPillModalButtonLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
     }
