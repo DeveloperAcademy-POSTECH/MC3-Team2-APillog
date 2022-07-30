@@ -17,15 +17,24 @@ class HistoryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = false
         result = CoreDataManager.shared.fetchPillInformationLastWeek()
-        pillDosageTableHight.constant = CGFloat(result.count * 100)
+        setDelegate()
+        setStyle()
     }
     
+    private func setDelegate() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    private func setStyle() {
+        let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
+        tableView.isScrollEnabled = false
+        pillDosageTableHight.constant = CGFloat(result.count * 85)
+        self.navigationController?.navigationBar.tintColor = .AColor.accent
+        self.navigationItem.title = "한 눈에 보기"
+    }
 }
 
 extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegate {
