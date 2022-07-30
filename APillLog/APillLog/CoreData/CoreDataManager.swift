@@ -169,7 +169,7 @@ class CoreDataManager {
         showSecondaryPill.name = name
         showSecondaryPill.dosage = dosage
         showSecondaryPill.isTaking = true
-        showSecondaryPill.takeTime = nil
+        showSecondaryPill.takeTime = Date()
         showSecondaryPill.selectDate = selectedDate
         saveToContext()
     }
@@ -302,6 +302,7 @@ class CoreDataManager {
             let pillArray = try context.fetch(request)
             for pill in pillArray {
                 if(pill.selectDate == selectedDate && pill.cycle == dosingCycle && pill.isTaking == false){
+                    pill.takeTime = Date()
                     pill.isTaking = true
                     addHistory(pillId: pill.id, pillName: pill.name, dosage: pill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
                     saveToContext()

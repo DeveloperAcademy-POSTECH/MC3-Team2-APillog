@@ -197,7 +197,7 @@ class MedicationViewController: UIViewController {
 
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
         CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime))
-        print(nowDosingTime)
+
         reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
         
