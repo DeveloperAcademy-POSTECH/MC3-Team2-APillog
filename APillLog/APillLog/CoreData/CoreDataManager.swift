@@ -256,6 +256,7 @@ class CoreDataManager {
     // MARK: - page별 기능 추가
     //오늘의 복용약에서 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.takeTime = Date()
         showPrimaryPill.isTaking = true
         saveToContext()
         addHistory(pillId:showPrimaryPill.id ,pillName: showPrimaryPill.name, dosage: showPrimaryPill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
@@ -280,14 +281,16 @@ class CoreDataManager {
     }
     
     func changePrimaryIsTakingAndCancelHistory(showPrimaryPill: ShowPrimaryPill){
+        showPrimaryPill.takeTime = nil
         showPrimaryPill.isTaking = false
         deletePillHistory(pillId: showPrimaryPill.id ?? UUID())
     }
 
     func changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: ShowSecondaryPill){
-            showSecondaryPill.isTaking = false
-            saveToContext()
-            deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
+        showSecondaryPill.takeTime = nil
+        showSecondaryPill.isTaking = false
+        saveToContext()
+        deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
     }
 
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
@@ -313,6 +316,7 @@ class CoreDataManager {
     
     //오늘의 복용약에서 서브 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: ShowSecondaryPill) {
+        showSecondaryPill.takeTime = Date()
         showSecondaryPill.isTaking = true
         let request : NSFetchRequest<ShowSecondaryPill> = ShowSecondaryPill.fetchRequest()
         
@@ -343,6 +347,7 @@ class CoreDataManager {
             let pillArray = try context.fetch(request)
             for pill in pillArray {
                 if(pill.selectDate == selectedDate && pill.isTaking == false){
+                    pill.takeTime = Date()
                     pill.isTaking = true
                     addHistory(pillId:pill.id ,pillName: pill.name, dosage: pill.dosage, isMainPill: true, pillNames: nil, dosages: nil, sideEffect: nil, medicinalEffect: nil, detailContext: nil)
                     saveToContext()

@@ -23,10 +23,12 @@ class MedicationViewController: UIViewController {
     var secondaryPillList: [ShowSecondaryPill] = []
 
     private var date = Date()
+    var historyData = [History]()
+    private var nowDosingTime: Int16 = 1
 
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter
     }()
 
@@ -75,15 +77,22 @@ class MedicationViewController: UIViewController {
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        historyData = CoreDataManager.shared.fetchHistory(selectedDate: date)
+    }
 
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
+            nowDosingTime = 1
             primaryPillListDataSource = primaryPillListMorning
         case 1:
             primaryPillListDataSource = primaryPillListLunch
+            nowDosingTime = 2
         case 2:
             primaryPillListDataSource = primaryPillListDinner
+            nowDosingTime = 4
         default:
             primaryPillListDataSource = []
         }
@@ -187,10 +196,11 @@ class MedicationViewController: UIViewController {
     }
 
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
-        for pills in primaryPillListDataSource {
-            pills.isTaking = true
-            primaryPillTableView.reloadData()
-        }
+        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime))
+        print(nowDosingTime)
+        reloadPrimaryPillTableView()
+        primaryPillTableView.reloadData()
+        
     }
 
     @IBAction func tapAddSecondaryPillButton() {
@@ -233,14 +243,18 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 // Cell Data
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
-                // TODO: - 타임 스탬프
-//                cell.pillTimeLabel.text = primaryPillListDataSource[indexPath.row].takeTime != nil ? dateFormatter.string(from:  primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+                // Time Log
+                cell.timeLogLabel.text = primaryPillListDataSource[indexPath.row].takeTime == nil ? "아직 복약 전이에요" : dateFormatter.string(from: primaryPillListDataSource[indexPath.row].takeTime!) + "에 먹었어요"
+
                 cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
 
                 // Data for delegate
                 cell.rowNumber = indexPath.row
                 cell.isPrimary = true
+                
+                // Style
+                cell.timeLogLabel.font = UIFont.AFont.explainText
             }
         } else {
             if secondaryPillList.count == 0 {
@@ -257,8 +271,9 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.pillImageView.image = UIImage(named: "secondaryPill")
                 // Title
                 cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
-                // TODO: - TimeLog
-//                cell.pillTimeLabel.text = secondaryPillList[indexPath.row].takeTime != nil ? dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요" : "아직 복약 전이예요"
+                // Time Log
+                cell.timeLogLabel.text = secondaryPillList[indexPath.row].takeTime == nil ? "아직 복약 전이에요" : dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 먹었어요"
+
                 // Taking Button
                 cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
@@ -267,7 +282,8 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.isPrimary = false
 
                 // Style
-                cell.takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
+//                cell.takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
+                cell.timeLogLabel.font = UIFont.AFont.explainText
             }
         }
         return cell
