@@ -1,0 +1,22 @@
+PODS:
+  - Charts (4.0.3):
+    - Charts/Core (= 4.0.3)
+  - Charts/Core (4.0.3):
+    - SwiftAlgorithms (~> 1.0)
+  - SwiftAlgorithms (1.0.0)
+
+DEPENDENCIES:
+  - Charts
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - SwiftAlgorithms
+
+SPEC CHECKSUMS:
+  Charts: d959d6723c8eedfdd0735dfc28cb0a71762ac4d9
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+
+PODFILE CHECKSUM: 1fe82c8b3b7712125b990bf588c8dfe4e91c3ff5
+
+COCOAPODS: 1.11.3
