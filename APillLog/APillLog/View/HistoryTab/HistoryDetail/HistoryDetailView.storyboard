@@ -3,15 +3,16 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--History Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HistoryDetailView" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryDetailView" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="HistoryDetailViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +21,18 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-Yg-pjN">
-                                        <rect key="frame" x="0.0" y="-48" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="37" width="414" height="200"/>
+                                                <color key="backgroundColor" name="ABackground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="2XB-o6-RoR"/>
+                                                </constraints>
+                                                <color key="sectionIndexBackgroundColor" name="AAccent"/>
+                                            </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="327" width="364" height="400"/>
+                                                <rect key="frame" x="25" y="267" width="364" height="400"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
@@ -31,42 +40,30 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
-                                                <rect key="frame" x="186" y="50" width="42" height="21"/>
+                                                <rect key="frame" x="186" y="16" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1s-AW-Q23" customClass="HistoryDetailProgressView" customModule="APillLog" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="87" width="364" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="7Da-5r-1LC"/>
-                                                    <constraint firstAttribute="height" constant="200" id="FOU-vY-GFZ"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="q4Y-OZ-Ks7"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="ABackground"/>
                                         <constraints>
                                             <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="3Jk-qN-4IM"/>
-                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="x1s-AW-Q23" secondAttribute="bottom" constant="40" id="CpQ-vc-ddC"/>
-                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="50" id="GTO-FC-mkq"/>
-                                            <constraint firstItem="x1s-AW-Q23" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" constant="16" id="GXV-9U-3Ac"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="8M4-CD-Ru8"/>
+                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="16" id="GTO-FC-mkq"/>
                                             <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="Lnk-qt-Gj4"/>
-                                            <constraint firstItem="x1s-AW-Q23" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="NZw-H9-M49"/>
-                                            <constraint firstItem="x1s-AW-Q23" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="PDV-F5-bpH"/>
-                                            <constraint firstItem="x1s-AW-Q23" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" constant="16" id="YbK-9o-1Gh"/>
+                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="PfY-7J-mEe"/>
+                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" id="QaM-89-a1u"/>
                                             <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
                                             <constraint firstItem="xN6-7I-eWn" firstAttribute="centerX" secondItem="gE8-Yg-pjN" secondAttribute="centerX" id="suw-ZD-36A"/>
-                                            <constraint firstAttribute="trailing" secondItem="x1s-AW-Q23" secondAttribute="trailing" constant="25" id="tck-pR-noW"/>
-                                            <constraint firstAttribute="trailing" secondItem="x1s-AW-Q23" secondAttribute="trailing" constant="25" id="wWx-HZ-BeS"/>
+                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="30" id="tX1-NO-oAR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gE8-Yg-pjN" firstAttribute="trailing" secondItem="rw2-lC-o5b" secondAttribute="trailing" id="5y0-7E-gem"/>
-                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="bottom" secondItem="rw2-lC-o5b" secondAttribute="bottom" constant="148" id="6aK-SI-zmg"/>
-                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="top" secondItem="rw2-lC-o5b" secondAttribute="top" constant="-48" id="hqY-MK-Pg5"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="bottom" secondItem="rw2-lC-o5b" secondAttribute="bottom" id="6aK-SI-zmg"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="top" secondItem="rw2-lC-o5b" secondAttribute="top" id="hqY-MK-Pg5"/>
                                     <constraint firstItem="gE8-Yg-pjN" firstAttribute="width" secondItem="e9a-f4-Bwf" secondAttribute="width" id="jDi-jU-V3d"/>
                                     <constraint firstItem="gE8-Yg-pjN" firstAttribute="leading" secondItem="rw2-lC-o5b" secondAttribute="leading" id="uDd-xK-z9J"/>
                                 </constraints>
@@ -75,7 +72,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ABackground"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4UK-Hz-mfj" secondAttribute="bottom" id="8vn-Tv-yJF"/>
                             <constraint firstItem="4UK-Hz-mfj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EHg-UO-KNO"/>
@@ -83,6 +80,10 @@
                             <constraint firstItem="4UK-Hz-mfj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xpP-74-ze2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
+                        <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,6 +91,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AAccent">
+            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ABackground">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
