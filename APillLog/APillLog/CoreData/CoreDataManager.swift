@@ -80,7 +80,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deleteShowSecondaryPill(pill: ShowSecondaryPill){
@@ -102,7 +102,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deletePrimaryPill(pill: PrimaryPill) {
@@ -125,7 +125,7 @@ class CoreDataManager {
         }
         saveToContext()
     }
-
+    
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
@@ -285,14 +285,14 @@ class CoreDataManager {
         showPrimaryPill.isTaking = false
         deletePillHistory(pillId: showPrimaryPill.id ?? UUID())
     }
-
+    
     func changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: ShowSecondaryPill){
         showSecondaryPill.takeTime = nil
         showSecondaryPill.isTaking = false
         saveToContext()
         deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
     }
-
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16) {
         
@@ -462,7 +462,7 @@ class CoreDataManager {
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-//                print("pill selectedData",pill.selectDate)
+                //                print("pill selectedData",pill.selectDate)
                 if pill.selectDate == selectDate
                 {
                     pillArrayResult.append(pill)
@@ -495,7 +495,7 @@ class CoreDataManager {
         var pillResult: [PrimaryPill] = []
         let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
         do {
-             let  pillArray = try context.fetch(request)
+            let  pillArray = try context.fetch(request)
             for pill in pillArray {
                 if pill.isShowing == false {
                     
@@ -507,7 +507,7 @@ class CoreDataManager {
         }
         return pillResult
     }
-
+    
     //오늘의 메인약 아침
     func fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: [ShowPrimaryPill]?) -> [ShowPrimaryPill] {
         var pillArrayResult: [ShowPrimaryPill] = []
@@ -596,7 +596,7 @@ class CoreDataManager {
     func fetchHistory(selectedDate: Date) -> [History] {
         //let sortDescriptor = NSSortDescriptor(key: "selectDate", ascending: true)
         let request : NSFetchRequest<History> = History.fetchRequest()
-      //  request.sortDescriptors = [sortDescriptor]
+        //  request.sortDescriptors = [sortDescriptor]
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
         do {
@@ -644,7 +644,7 @@ class CoreDataManager {
         
         return CBT()
     }
-
+    
     
     func fetchRecentAddedSecondaryPill() -> [RecentAddedSecondaryPill] {
         let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
@@ -658,11 +658,11 @@ class CoreDataManager {
         return [RecentAddedSecondaryPill()]
     }
     
-
-
+    
+    
     //CBT를 업데이트 하는 함수
     func updateOneCBT(receivedCBT : CBT) {
-
+        
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
             let cbtArray = try context.fetch(request)
@@ -688,6 +688,112 @@ class CoreDataManager {
         saveToContext()
     }
     
+    func fetchWeekPillTakingPercent(date: Date) -> [String: (Int,Int)]? {
+        
+        let selectedDate: String = changeDateToMonth(date)
+        var tempDateArray: [ShowPrimaryPill] = []
+        var pillDictionary: [String: (Int,Int)]  = [:]
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            var i: Int = 0
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy" // 2022-08-13
+            var year: Int = Int(dateFormatter.string(from: date)) ?? 0
+            
+            dateFormatter.dateFormat = "MM"
+            var month: Int = Int(dateFormatter.string(from: date)) ?? 0
+            
+            dateFormatter.dateFormat = "dd"
+            var day: Int = Int(dateFormatter.string(from: date)) ?? 0
+            
+            while i<7 {
+                let compareDate: String
+                //월이 바뀌는 경우
+                if day == 0{
+                    month -= 1
+                    if(month == 0) {
+                        year -= 1
+                    }
+                    //윤년 처리 x
+                    switch (month) {
+                    case 1,3,5,7,8,10,12 :
+                        day = 31
+                    case 4,6,9,11:
+                        day = 30
+                    default:
+                        day = 28
+                    }
+                    // 자리수가 변경되는 경우
+                    if month < 10 {
+                        compareDate = String(year) + "-0" + String(month) + "-" + String(day)
+                    }
+                    else{
+                        compareDate = String(year) + "-" + String(month) + "-" + String(day)
+                    }
+                }
+                // '일' 자리수 변경
+                else if day < 10
+                {
+                    //월 자리수 변경
+                    if month < 10 {
+                        compareDate = String(year) + "-0" + String(month) + "-0" + String(day)
+                    }
+                    else{
+                        compareDate = String(year) + "-" + String(month) + "-0" + String(day)
+                    }
+                }
+                else{
+                    if month < 10 {
+                        compareDate = String(year) + "-0" + String(month) + "-" + String(day)
+                    }
+                    else{
+                        compareDate = String(year) + "-" + String(month) + "-" + String(day)
+                    }
+                }
+                //7일 이내의 모든 ShowPrimaryPill 가져온다
+                for pill in pillArray{
+                    if pill.selectDate! == compareDate
+                    {
+                        tempDateArray.append(pill)
+                    }
+                }
+                
+                i += 1
+                day -= 1
+            }
+            // 7일이내의 ShowPrimaryPill에서 name을 기준으로한 value : (Int, Int)를 만든다.
+            // (Int, Int) 첫번째는 복용한 횟수, 두번째는 먹어야하는 총 횟수
+            for pill in tempDateArray{
+                //튜플이 nill이 아니라면 복용여부에따라 +1을 해준다.
+                if let pillTuple = pillDictionary[pill.name ?? ""] {
+                    if pill.isTaking {
+                        pillDictionary[pill.name ?? ""]!.0 += 1
+                        pillDictionary[pill.name ?? ""]!.1 += 1
+                    }
+                    else{
+                        pillDictionary[pill.name ?? ""]!.1 += 1
+                    }
+                }
+                //튜플이 nill이라면 복용여부에 따라 (1,1) (0,0)추가
+                else{
+                    if pill.isTaking {
+                        pillDictionary[pill.name ?? ""] = (1,1)
+                    }
+                    else{
+                        pillDictionary[pill.name ?? ""] = (0,1)
+                    }
+                }
+            }
+            
+        } catch{
+            print("-----fetchWeekTakePercent error-------")
+        }
+        
+        return pillDictionary
+    }
+    
+    
     func fetchMonthDosingPillDate(date: Date) -> [String]{
         
         var resultDate: [String] = []
@@ -705,7 +811,7 @@ class CoreDataManager {
                 
                 if i < 10
                 {
-                     compareDate = selectedDate + "-0" + "\(i)"
+                    compareDate = selectedDate + "-0" + "\(i)"
                 }
                 else{
                     compareDate = selectedDate + "-\(i)"
@@ -731,7 +837,7 @@ class CoreDataManager {
                 i += 1
             }
             
-           
+            
             
         } catch{
             print("-----fetchMonthSideEffectDate error-------")
