@@ -11,7 +11,7 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     var selectedDate = Date()
     
     func fetchDate(date: Date) {
-        historyData = coredataManager.fetchHistory(selectedDate: date)
+        historyData = CoreDataManager.shared.fetchHistory(selectedDate: date)
         tableView.reloadData()
         if historyData.count == 0 { guideLabelHidden = false }
         else { guideLabelHidden = true }
@@ -21,7 +21,6 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var historyViewGuideLabel: UILabel!
     
-    let coredataManager: CoreDataManager = CoreDataManager()
     var historyData = [History]()
     var guideLabelHidden = true {
         didSet {
@@ -38,7 +37,7 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        historyData = coredataManager.fetchHistory(selectedDate: selectedDate)
+        historyData = CoreDataManager.shared.fetchHistory(selectedDate: selectedDate)
         
         tableView.reloadData()
         if historyData.count == 0 { guideLabelHidden = false }
@@ -47,7 +46,7 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     
     private func setDelegate() {
         calendarView.delegate = self
-        historyData = coredataManager.fetchHistory(selectedDate: Date())
+        historyData = CoreDataManager.shared.fetchHistory(selectedDate: Date())
         tableView.delegate = self
         tableView.dataSource = self
         historyViewGuideLabel.textColor = UIColor.AColor.gray
