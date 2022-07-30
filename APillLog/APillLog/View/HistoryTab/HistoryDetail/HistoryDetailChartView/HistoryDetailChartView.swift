@@ -105,6 +105,8 @@ class HistoryDetailChartView: UIView {
     }
     
     func loadData() {
+        sideEffect = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+        dateArray = ["", "", "", "", "", "", "",]
         sideEffectCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         sideEffectCountPerDate = [0, 0, 0, 0, 0, 0, 0]
         
@@ -116,7 +118,6 @@ class HistoryDetailChartView: UIView {
             for data in history {
                 for effect in data.sideEffect ?? [] {
                     sideEffectCountPerDate[idx] += Double(effect.count)
-                    print(effect)
                     
                     switch effect {
                     case "불면":
@@ -156,7 +157,33 @@ class HistoryDetailChartView: UIView {
             }
             date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         }
+        
+        sortSideEffect()
     }
+    
+    // 리스트의 값을 이용해 인덱스를 정렬하는 함수
+    // ex) [ 10, -1, 7] -> [0, 2, 1]
+    func argsort<T:Comparable>( a : [T] ) -> [Int] {
+        var r = Array(0..<a.count)
+        r.sort(by: { a[$0] > a[$1] })
+        return r
+    }
+
+    func sortSideEffect() {
+        var sortedSideEffect:[String] = []
+        var sortedSideEffectCount:[Double] = []
+        
+        let sortedIndex = argsort(a: sideEffectCount)
+        
+        for idx in sortedIndex {
+            sortedSideEffect.append(sideEffect[idx])
+            sortedSideEffectCount.append(sideEffectCount[idx])
+        }
+        
+        sideEffect = sortedSideEffect
+        sideEffectCount = sortedSideEffectCount
+    }
+    
     // MARK: @IBAction
     @IBAction func changeSegmentedControl(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
