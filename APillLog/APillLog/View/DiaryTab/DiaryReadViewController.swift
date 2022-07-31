@@ -41,15 +41,69 @@ class DiaryReadViewController: UIViewController {
         
     }
     
+ 
     override func viewWillDisappear(_ animated: Bool) {
-        receivedCBT.mistakeContext = DiaryReadViewBody.text
-        receivedCBT.selectDate = DiaryReadViewDate.text
-        coredataManager.updateOneCBT(receivedCBT: receivedCBT)
+//        receivedCBT.mistakeContext = DiaryReadViewBody.text
+//        receivedCBT.selectDate = DiaryReadViewDate.text
+//        coredataManager.updateOneCBT(receivedCBT: receivedCBT)
     }
     
+    @IBAction func editMistake(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryEditView") as! DiaryEditViewController
+        vc.receivedCBT = receivedCBT
+        vc.type = 1
+        vc.date = date
+        vc.questionString = "오늘의 나는 어떤 실수를 했나요?"
+        vc.textViewContent = body
+        vc.mistakeString = body
+        vc.recognizeString = recognizeString
+        vc.actionString = actionString
+        vc.completioHandler = {
+                    msg in
+                    print("messgae : \(msg)")
+            self.DiaryReadViewBody.text = msg
+                }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
+    @IBAction func editRecognize(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryEditView") as! DiaryEditViewController
+        vc.type = 2
+        vc.receivedCBT = receivedCBT
+        vc.date = date
+        vc.questionString = "실수했다는 사실을 어떻게 인지했나요?"
+        vc.textViewContent = recognizeString
+        vc.mistakeString = body
+        vc.recognizeString = recognizeString
+        vc.actionString = actionString
+        vc.completioHandler = {
+                    msg in
+            self.DiaryReadRecognizeString.text = msg
+                }
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
-
+    @IBAction func editAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryEditView") as! DiaryEditViewController
+        vc.type = 3
+        vc.receivedCBT = receivedCBT
+        vc.date = date
+        vc.questionString = "내일의 나는 어떻게 행동할까요?"
+        vc.textViewContent = actionString
+        vc.mistakeString = body
+        vc.recognizeString = recognizeString
+        vc.actionString = actionString
+        vc.completioHandler = {
+                    msg in
+            self.DiaryReadActionString.text = msg
+                }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

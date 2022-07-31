@@ -26,7 +26,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCellTableViewCell = self.mistakeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell
         cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
-        cell.cellTitle.text = myCBT[indexPath.row].mistakeContext ?? "text"
+        cell.cellTitle.text = myCBT[indexPath.row].actionContext ?? "text"
         cell.cellTitle.font = UIFont.AFont.tableViewTitle
         cell.cellTitle.textColor = UIColor.AColor.black
         cell.cellDate.text = myCBT[indexPath.row].selectDate
@@ -88,7 +88,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
                                                                 "sectionHeader") as! MyCustomHeader
         
-        view.title.text = "작성했던 실수 노트들"
+        view.title.text = "작성했던 에필로그들"
         view.title.font = UIFont.AFont.tableViewTitle
         
         return view

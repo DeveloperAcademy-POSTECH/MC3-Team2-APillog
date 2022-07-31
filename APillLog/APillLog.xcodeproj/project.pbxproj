@@ -22,6 +22,7 @@
 		781EABD32891B37200F1A2F4 /* ApilogWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		786006D928951CF100E6A07C /* DiaryWriteViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */; };
 		786006DB28951CFF00E6A07C /* DiaryWriteViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */; };
+		786006FD289655DC00E6A07C /* DiaryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006FC289655DC00E6A07C /* DiaryEditViewController.swift */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
@@ -125,6 +126,7 @@
 		781EABD92891BB6400F1A2F4 /* ApilogWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApilogWidgetExtension.entitlements; sourceTree = "<group>"; };
 		786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController2.swift; sourceTree = "<group>"; };
 		786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController3.swift; sourceTree = "<group>"; };
+		786006FC289655DC00E6A07C /* DiaryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditViewController.swift; sourceTree = "<group>"; };
 		78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */,
 				786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */,
 				78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */,
+				786006FC289655DC00E6A07C /* DiaryEditViewController.swift */,
 			);
 			path = DiaryTab;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
+				786006FD289655DC00E6A07C /* DiaryEditViewController.swift in Sources */,
 				87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */,
