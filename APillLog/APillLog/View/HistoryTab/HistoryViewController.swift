@@ -71,35 +71,41 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dateformatter = DateFormatter()
-            dateformatter.dateFormat = "HH:mm"
+            dateformatter.dateFormat = "a hh:mm"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! HistoryTableViewCell
         
         cell.createdTime.text = dateformatter.string(from:historyData[indexPath.row].createTime ?? Date())
-        cell.pillName.text = historyData[indexPath.row].pillName
+        
+        
+        if historyData[indexPath.row].pillName != nil {
+            cell.pillName.text = "💊  " + historyData[indexPath.row].pillName!
+        } else {
+            cell.pillName.text = historyData[indexPath.row].pillName
+        }
         cell.sideEffect.text = historyData[indexPath.row].sideEffect?.joined(separator: " / ")
-        cell.medicinalEffect.text = historyData[indexPath.row].medicinalEffect?.joined(separator: " / ")
         cell.detailContext.text = historyData[indexPath.row].detailContext
 
         if cell.pillName.text == nil || cell.pillName.text == "" {
             cell.stackViewPillName.isHidden = true
+            cell.pillLabelView.isHidden = true
         } else {
             cell.stackViewPillName.isHidden = false
+            cell.pillLabelView.isHidden = false
         }
         if cell.sideEffect.text == nil || cell.sideEffect.text == "" {
             cell.stackViewSideEffect.isHidden = true
+            cell.sideEffectLabelView.isHidden = true
         } else {
             cell.stackViewSideEffect.isHidden = false
-        }
-        if cell.medicinalEffect.text == nil || cell.medicinalEffect.text == "" {
-            cell.stackViewMedicinalEffect.isHidden = true
-        } else {
-            cell.stackViewMedicinalEffect.isHidden = false
+            cell.sideEffectLabelView.isHidden = false
         }
         if cell.detailContext.text == nil || cell.detailContext.text == "" {
             cell.stackViewDetailContext.isHidden = true
+            cell.detailContextLabelView.isHidden = true
         } else {
             cell.stackViewDetailContext.isHidden = false
+            cell.detailContextLabelView.isHidden = false
         }
         
         return cell
@@ -107,7 +113,7 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     private func registerNib() {
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
+        tableView.register(nib, forCellReuseIdentifier: "historyTableViewCell")
     }
     
     private func fetchPillNameText(index: Int) -> String? {

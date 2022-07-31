@@ -15,16 +15,31 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apilllog" translatesAutoresizingMaskIntoConstraints="NO" id="hsd-S2-cX9">
+                                <rect key="frame" x="112" y="398" width="190" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9yi-7S-Dlt"/>
+                                    <constraint firstAttribute="width" constant="190" id="rqW-Dd-YUh"/>
+                                    <constraint firstAttribute="height" constant="100" id="wuu-7x-nx6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hsd-S2-cX9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V8Z-Za-Zr0"/>
+                            <constraint firstItem="hsd-S2-cX9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="f4V-r8-BjS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Apilllog" width="143" height="42"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
