@@ -126,7 +126,7 @@ class FSCalendarViewController: UIViewController{
         
         calendarView.appearance.titleDefaultColor = UIColor.AColor.black
         
-        calendarView.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.7)
+        calendarView.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
         calendarView.appearance.selectionColor = UIColor.AColor.accent
         
         calendarView.calendarWeekdayView.weekdayLabels[0].text = "SUN"
