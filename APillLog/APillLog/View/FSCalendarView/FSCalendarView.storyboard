@@ -27,24 +27,25 @@
                                                 <rect key="frame" x="25" y="25" width="364" height="440"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9lZ-OD-mDs" userLabel="headerLabel View">
-                                                        <rect key="frame" x="25" y="15" width="314" height="31"/>
+                                                        <rect key="frame" x="25" y="15" width="314" height="29.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO3-pz-0hr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="196" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="196" height="29.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="yuG-80-MaJ">
-                                                                <rect key="frame" x="246" y="0.0" width="68" height="31"/>
+                                                                <rect key="frame" x="246" y="0.0" width="68" height="29.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3a-km-FBY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="29.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="20" id="dJR-g3-cxM"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
                                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </buttonConfiguration>
                                                                         <connections>
@@ -52,12 +53,13 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLh-al-zb8">
-                                                                        <rect key="frame" x="48" y="0.0" width="20" height="31"/>
+                                                                        <rect key="frame" x="48" y="0.0" width="20" height="29.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="20" id="r7C-jc-dQu"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
                                                                             <color key="baseForegroundColor" name="ABlack"/>
                                                                         </buttonConfiguration>
                                                                         <connections>
@@ -69,7 +71,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7H-zJ-OYH" customClass="FSCalendar">
-                                                        <rect key="frame" x="15" y="61" width="334" height="320"/>
+                                                        <rect key="frame" x="15" y="59.5" width="334" height="320"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="320" id="XAg-aF-WCd"/>
@@ -81,7 +83,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Kb-zM-Pih">
-                                                        <rect key="frame" x="25" y="396" width="221.5" height="12"/>
+                                                        <rect key="frame" x="25" y="394.5" width="221.5" height="12"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dwe-ke-LNc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="12"/>
