@@ -44,6 +44,7 @@
 		8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */; };
 		8BFE752628880311008748B9 /* CheckConditionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE752528880310008748B9 /* CheckConditionView.storyboard */; };
 		8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE75272888031A008748B9 /* CheckConditionViewController.swift */; };
+		9A13A8302896C61000F5C141 /* CustomLicenseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */; };
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
@@ -62,6 +63,10 @@
 		9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
 		9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
+		9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */; };
+		9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */; };
+		9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */; };
+		9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */; };
 		A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
@@ -124,6 +129,7 @@
 		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
 		8BFE752528880310008748B9 /* CheckConditionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckConditionView.storyboard; sourceTree = "<group>"; };
 		8BFE75272888031A008748B9 /* CheckConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConditionViewController.swift; sourceTree = "<group>"; };
+		9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLicenseTableCell.swift; sourceTree = "<group>"; };
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -142,6 +148,10 @@
 		9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FSLicenseView.storyboard; sourceTree = "<group>"; };
+		9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSLicenseViewController.swift; sourceTree = "<group>"; };
+		9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsLicenseView.storyboard; sourceTree = "<group>"; };
+		9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLicenseViewController.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -357,8 +367,10 @@
 		9A890AFD28927A1D00BD312C /* LicenseView */ = {
 			isa = PBXGroup;
 			children = (
+				9AE1C0F32896B06600325FE2 /* LicenseDetailView */,
 				9A890AF22891979000BD312C /* LicenseController.swift */,
 				9A890B0828927AF900BD312C /* LicenseView.storyboard */,
+				9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */,
 			);
 			path = LicenseView;
 			sourceTree = "<group>";
@@ -391,6 +403,17 @@
 				9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */,
 			);
 			path = PreferencesTab;
+			sourceTree = "<group>";
+		};
+		9AE1C0F32896B06600325FE2 /* LicenseDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */,
+				9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */,
+				9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */,
+				9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */,
+			);
+			path = LicenseDetailView;
 			sourceTree = "<group>";
 		};
 		A41DB93C38DE99A48C23A0AF /* Pods */ = {
@@ -582,6 +605,7 @@
 			files = (
 				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
 				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
+				9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */,
 				34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
 				8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */,
@@ -609,6 +633,7 @@
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
 				A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
+				9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
 				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
@@ -684,6 +709,7 @@
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */,
+				9A13A8302896C61000F5C141 /* CustomLicenseTableCell.swift in Sources */,
 				9A890AF32891979000BD312C /* LicenseController.swift in Sources */,
 				9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */,
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
@@ -696,9 +722,11 @@
 				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
 				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
+				9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */,
 				9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */,
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
+				9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */,
 				9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */,
 				8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */,
 				8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */,
