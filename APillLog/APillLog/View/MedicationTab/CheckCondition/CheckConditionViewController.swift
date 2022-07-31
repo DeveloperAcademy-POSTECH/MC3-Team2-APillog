@@ -12,12 +12,10 @@ class CheckConditionViewController: UIViewController {
     // MARK: 변수
     // 증상 반환
     var pillSideEffect: [String] = []
-    var pillMedicinalEffect: [String] = []
     var pillDetailContext: String = ""
     
     // 증상 저장 버튼 활성화를 위한 변수
     var pillSideEffectIsOn: Bool = false
-    var pillMedicinalEffectIsOn: Bool = false
     var pillDetailContextIsOn: Bool = false
     
     // 증상 저장 버튼 상태
@@ -35,9 +33,8 @@ class CheckConditionViewController: UIViewController {
     
     var pillSideEffectDummyData: [String : Bool]!
     var pillMedicinalEffectDummyData: [String: Bool]!
-    
-    var coreDataManager: CoreDataManager = CoreDataManager()
-    
+    var pillDisadvantage: [String: Bool] = ["불면" : false, "불안" : false, "두통" : false, "빈맥" : false, "어지러움" : false, "식욕 감소" : false, "입안 건조" : false, "구역" : false, "땀 과다증" : false, "과민성" : false]
+        
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!
     @IBOutlet weak var conditionBackgroundView: UIView!
@@ -52,8 +49,7 @@ class CheckConditionViewController: UIViewController {
         
         setStyle()
         
-        pillSideEffectDummyData = PillData.pillData[0].pillDisadvantage
-        pillMedicinalEffectDummyData = PillData.pillData[0].pillAdvantage
+        pillSideEffectDummyData = self.pillDisadvantage
     }
     
     
@@ -70,6 +66,7 @@ class CheckConditionViewController: UIViewController {
         self.detailContext.layer.borderWidth = 1.0
         self.detailContext.layer.borderColor = UIColor.AColor.gray.cgColor
         self.detailContext.layer.cornerRadius = 10
+        self.detailContext.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     private func setConditionBackgroundViewStyle() {
@@ -110,28 +107,6 @@ class CheckConditionViewController: UIViewController {
         self.changeButtonState(sender)
     }
     
-    @IBAction func toggleMedicinalEffectButtonState(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
-            self.pillMedicinalEffectDummyData["\(sender.titleLabel?.text ?? "")"] = true
-        } else {
-            self.pillMedicinalEffectDummyData["\(sender.titleLabel?.text ?? "")"] = false
-        }
-        
-        for (_, value) in pillMedicinalEffectDummyData {
-            if value {
-                self.pillMedicinalEffectIsOn = true
-                break
-            } else {
-                self.pillMedicinalEffectIsOn = false
-            }
-        }
-        
-        self.checkSaveButtonState()
-        
-        self.changeButtonState(sender)
-    }
-    
     @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -144,16 +119,10 @@ class CheckConditionViewController: UIViewController {
             }
         }
         
-        // 약 효능 저장
-        for (key, value) in pillMedicinalEffectDummyData {
-            if value {
-                self.pillMedicinalEffect.append("\(key)")
-            }
-        }
         // 상세 설명 저장
         self.pillDetailContext = self.detailContext.text
         
-        coreDataManager.recordHistoryAndRecordCondition(name: [PillData.pillData[0].pillName], dosage: [PillData.pillData[0].pillDosage], sideEffect: self.pillSideEffect, medicinalEffect: self.pillMedicinalEffect, detailContext: self.pillDetailContext)
+        CoreDataManager.shared.recordHistoryAndRecordCondition(name: nil, dosage: nil, sideEffect: self.pillSideEffect, medicinalEffect: nil, detailContext: self.pillDetailContext , takingTime: Date())
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -195,7 +164,7 @@ class CheckConditionViewController: UIViewController {
     
     // conditionSaveButton 의 State 를 확인하는 함수
     func checkSaveButtonState() {
-        if self.pillSideEffectIsOn || self.pillMedicinalEffectIsOn || self.pillDetailContextIsOn {
+        if self.pillSideEffectIsOn || self.pillDetailContextIsOn {
             self.saveButtonState = true
         } else {
             self.saveButtonState = false
@@ -243,10 +212,10 @@ extension CheckConditionViewController {
     
     @objc func keyboardUp(notification: NSNotification){
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
+            _ = keyboardFrame.cgRectValue
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.conditionBackgroundView.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height)
+                self.conditionBackgroundView.transform = CGAffineTransform(translationX: 0, y: -50)
             })
         }
     }

@@ -16,7 +16,7 @@ class DiaryReadViewController: UIViewController {
     var actionString = ""
     var id  = UUID()
     var receivedCBT : CBT = CBT()
-    var coredataManager: CoreDataManager = CoreDataManager()
+
     @IBOutlet weak var DiaryReadViewDate: UILabel!
     @IBOutlet weak var DiaryReadViewBody: UITextView!
     @IBOutlet weak var DiaryReadRecognizeString: UITextView!

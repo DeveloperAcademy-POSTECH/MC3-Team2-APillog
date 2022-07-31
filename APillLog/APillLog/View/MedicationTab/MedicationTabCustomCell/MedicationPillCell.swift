@@ -16,7 +16,8 @@ class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var pillImageView: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var takingPillButton: UIButton!
-
+    @IBOutlet weak var timeLogLabel: UILabel!
+    
     var rowNumber: Int = 0
     var isPrimary: Bool = false
     var delegate: TakeMedicationDelegate?

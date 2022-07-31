@@ -9,103 +9,68 @@ import UIKit
 
 class PreferencesViewController: UIViewController {
     
-    @IBOutlet weak var featuresTable: UITableView!
-    @IBOutlet weak var informationTable: UITableView!
-    
-    var features:[String] = ["알림 설정"]
-    var information:[String] = ["라이센스","문의사항","버전정보","고마운 사람들"]
-    
-    
-    
+    // MARK: View LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        features = ["알림 설정"]
-        information = ["라이센스","문의사항","버전정보","고마운 사람들"]
         
-        let nibName = UINib(nibName: "PreferencesCell", bundle: nil)
-        featuresTable.register(nibName, forCellReuseIdentifier:  "PreferencesCell")
-        informationTable.register(nibName, forCellReuseIdentifier:  "PreferencesCell")
-        
-        featuresTable.dataSource = self
-        featuresTable.delegate = self
-        
-        informationTable.delegate = self
-        informationTable.dataSource = self
-        
-        
-        
+        self.view.backgroundColor = UIColor.AColor.background
+        self.settingCellStyle()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-        //        self.primaryPillTableView.addObserver(self, forKeyPath: "primaryPillTableViewContentSize", options: .new, context: nil)
-    }
-}
-extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource {
+    // MARK: @IBOutlet
+    @IBOutlet weak var settingNotificationView: UIView!
+    @IBOutlet weak var licenseView: UIView!
+    @IBOutlet weak var versionView: UIView!
+    @IBOutlet weak var thanksToView: UIView!
+    @IBOutlet weak var questionsView: UIView!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == featuresTable {
-            print("count-----",features.count)
-            return /*self.features.count*/ 1
-            
-        }
-        else{
-            
-            return self.information.count
-            
-        }
+    // MARK: Style Function
+    func settingCellStyle() {
+        self.settingNotificationView.layer.cornerRadius = 14
+        self.licenseView.layer.cornerRadius = 14
+        self.questionsView.layer.cornerRadius = 14
+        self.versionView.layer.cornerRadius = 14
+        self.thanksToView.layer.cornerRadius = 14
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //   if tableView == informationTable{
-        if tableView == featuresTable {
-            let cell: PreferencesCell = tableView.dequeueReusableCell(withIdentifier: "PreferencesCell", for: indexPath) as! PreferencesCell
-            
-            cell.name.text = features[indexPath.row]
-            cell.arrow.text = ">"
-            return cell
-        }
-        else{
-            let cell: PreferencesCell = tableView.dequeueReusableCell(withIdentifier: "PreferencesCell", for: indexPath) as! PreferencesCell
-            cell.name.text = information[indexPath.row]
-            cell.arrow.text = ">"
-            return cell
-        }
-        
+    // MARK: @IBAction
+    @IBAction func tapSettingNotificationButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "PushNotificationView", bundle: nil)
+
+        let vc =  storyboard.instantiateViewController(withIdentifier: "PushNotificationView") as! PushNotificationController
+
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
-        if tableView == featuresTable {
-            let storyboard = UIStoryboard(name: "PushNotificationView", bundle: nil)
-            
-            let vc =  storyboard.instantiateViewController(withIdentifier: "PushNotificationView") as! PushNotificationController
-            
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        else{
-            
-            var vc: UIViewController
-            
-            switch indexPath.row {
-            case 0:
-                let storyboard = UIStoryboard(name: "LicenseView", bundle: nil)
-                vc =  storyboard.instantiateViewController(withIdentifier: "LicenseView") as! LicenseViewController
-            case 1:
-                let storyboard = UIStoryboard(name: "QuestionsView", bundle: nil)
-                vc =  storyboard.instantiateViewController(withIdentifier: "QuestionsView") as! QuestionsViewController
-            case 2:
-                let storyboard = UIStoryboard(name: "VersionView", bundle: nil)
-                vc =  storyboard.instantiateViewController(withIdentifier: "VersionView") as! VersionViewController
-            default:
-                let storyboard = UIStoryboard(name: "ThanksToView", bundle: nil)
-                vc =  storyboard.instantiateViewController(withIdentifier: "ThanksToView") as! ThanksToViewController
-                
-            }
-            navigationController?.pushViewController(vc, animated: true)
-        }
+    @IBAction func tapLicenseButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "LicenseView", bundle: nil)
+                    
+        let vc = storyboard.instantiateViewController(withIdentifier: "LicenseView") as! LicenseViewController
         
-       
+        navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func tapQuestionsButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "QuestionsView", bundle: nil)
+                    
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuestionsView") as! QuestionsViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func tapVersionButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "VersionView", bundle: nil)
+                    
+        let vc = storyboard.instantiateViewController(withIdentifier: "VersionView") as! VersionViewController
+
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func tapThanksToButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "ThanksToView", bundle: nil)
+                    
+        let vc = storyboard.instantiateViewController(withIdentifier: "ThanksToView") as! ThanksToViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

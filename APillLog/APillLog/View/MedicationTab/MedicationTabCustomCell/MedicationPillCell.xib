@@ -40,25 +40,36 @@
                             <action selector="tapTakingPillButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OMS-fM-OF4"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-E6-99C">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D2Y-9u-mnE">
                         <rect key="frame" x="80" y="15" width="162.5" height="35"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-E6-99C">
+                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHu-YM-TXv">
+                                <rect key="frame" x="0.0" y="14.5" width="162.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="L2j-7H-qGr" secondAttribute="bottom" constant="20" id="1NS-dL-MLQ"/>
                     <constraint firstAttribute="trailing" secondItem="L2j-7H-qGr" secondAttribute="trailing" id="DAb-RR-smM"/>
-                    <constraint firstItem="FaO-E6-99C" firstAttribute="leading" secondItem="cfU-Vh-3kU" secondAttribute="trailing" constant="15" id="FCS-Cd-tCd"/>
                     <constraint firstItem="cfU-Vh-3kU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hdh-aw-Xch"/>
+                    <constraint firstAttribute="bottom" secondItem="D2Y-9u-mnE" secondAttribute="bottom" constant="15" id="PgY-id-D7u"/>
                     <constraint firstItem="cfU-Vh-3kU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R9Z-N6-AtN"/>
                     <constraint firstItem="L2j-7H-qGr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Yfh-Qq-LkY"/>
-                    <constraint firstAttribute="bottom" secondItem="FaO-E6-99C" secondAttribute="bottom" constant="15" id="d6N-bm-whV"/>
+                    <constraint firstItem="L2j-7H-qGr" firstAttribute="leading" secondItem="D2Y-9u-mnE" secondAttribute="trailing" constant="15" id="dih-t1-Sz2"/>
+                    <constraint firstItem="D2Y-9u-mnE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="nce-Hw-kHP"/>
                     <constraint firstItem="L2j-7H-qGr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pdd-U6-062"/>
-                    <constraint firstItem="FaO-E6-99C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ro4-Vi-cgx"/>
+                    <constraint firstItem="D2Y-9u-mnE" firstAttribute="leading" secondItem="cfU-Vh-3kU" secondAttribute="trailing" constant="15" id="qfq-cz-iWH"/>
                     <constraint firstAttribute="bottom" secondItem="cfU-Vh-3kU" secondAttribute="bottom" id="uAX-xj-aNc"/>
-                    <constraint firstItem="L2j-7H-qGr" firstAttribute="leading" secondItem="FaO-E6-99C" secondAttribute="trailing" constant="15" id="vWA-Ye-Qam"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -66,6 +77,7 @@
                 <outlet property="cellTitleLabel" destination="FaO-E6-99C" id="xnX-FZ-dSo"/>
                 <outlet property="pillImageView" destination="cfU-Vh-3kU" id="FNq-J0-HtZ"/>
                 <outlet property="takingPillButton" destination="L2j-7H-qGr" id="m2g-aM-aIk"/>
+                <outlet property="timeLogLabel" destination="nHu-YM-TXv" id="vqi-hf-H5K"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </tableViewCell>
