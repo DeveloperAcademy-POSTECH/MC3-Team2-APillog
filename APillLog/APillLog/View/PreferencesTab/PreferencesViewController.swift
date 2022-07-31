@@ -15,6 +15,8 @@ class PreferencesViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = "설정"
         self.view.backgroundColor = UIColor.AColor.background
         self.settingCellStyle()
+        featureLabel.font = UIFont.AFont.navigationTitle
+        informationLabel.font = UIFont.AFont.navigationTitle
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,7 +29,8 @@ class PreferencesViewController: UIViewController {
     @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var thanksToView: UIView!
     @IBOutlet weak var questionsView: UIView!
-    
+    @IBOutlet weak var featureLabel: UILabel!
+    @IBOutlet weak var informationLabel: UILabel!
     // MARK: Style Function
     func settingCellStyle() {
         self.settingNotificationView.layer.cornerRadius = 14
