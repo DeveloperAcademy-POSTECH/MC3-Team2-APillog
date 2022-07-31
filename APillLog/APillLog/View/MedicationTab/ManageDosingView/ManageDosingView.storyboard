@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,28 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Eq-fJ0">
-                                <rect key="frame" x="5" y="139" width="380" height="651"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Eq-fJ0">
+                                <rect key="frame" x="5" y="129" width="380" height="661"/>
+                                <color key="backgroundColor" name="ABackground"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageDosingCell" rowHeight="72" id="u1W-0X-cXD" customClass="ManageDosingTableViewCell" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="380" height="72"/>
+                                        <rect key="frame" x="20" y="49" width="340" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u1W-0X-cXD" id="RMN-Rp-eEv">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lHJ-9O-JIx">
-                                                    <rect key="frame" x="20" y="18.333333333333332" width="281" height="35.333333333333343"/>
+                                                    <rect key="frame" x="20" y="18.333333333333332" width="241" height="35.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아침, 저심" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-Zf-ASP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="281" height="13.333333333333334"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="241" height="13.333333333333334"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콘서타 18mg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buv-3I-j7L">
-                                                            <rect key="frame" x="0.0" y="18.333333333333332" width="281" height="16.999999999999996"/>
+                                                            <rect key="frame" x="0.0" y="18.333333333333332" width="241" height="16.999999999999996"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -55,7 +54,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-CT-SZ7">
-                                                    <rect key="frame" x="311" y="20.666666666666671" width="51" height="31"/>
+                                                    <rect key="frame" x="271" y="20.666666666666671" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="toggleIsShowing:" destination="u1W-0X-cXD" eventType="valueChanged" id="REW-Ai-dAJ"/>
                                                     </connections>
@@ -84,7 +83,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-Au-a2s">
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
-                                    <navigationItem title="복용 관리" id="Pqf-Ji-uCo">
+                                    <navigationItem title="약 등록" id="Pqf-Ji-uCo">
                                         <barButtonItem key="leftBarButtonItem" style="done" id="LrG-tK-h9T">
                                             <imageReference key="image" image="left-black" symbolScale="large"/>
                                             <color key="tintColor" name="AAccent"/>
@@ -95,7 +94,7 @@
                                     </navigationItem>
                                 </items>
                                 <navigationBarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" name="AWhite"/>
+                                    <color key="backgroundColor" name="ABackground"/>
                                     <color key="shadowColor" name="AWhite"/>
                                 </navigationBarAppearance>
                             </navigationBar>
@@ -113,6 +112,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="D9i-uA-Wqa"/>
                                         </constraints>
+                                        <color key="tintColor" name="AAccent"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="추가"/>
                                         <connections>
@@ -127,12 +127,12 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ABackground"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MfP-j5-bFK" secondAttribute="trailing" constant="25" id="5bY-zu-2YV"/>
                             <constraint firstItem="Gni-Eq-fJ0" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-5" id="7xS-om-ujS"/>
                             <constraint firstItem="MfP-j5-bFK" firstAttribute="top" secondItem="hAf-Au-a2s" secondAttribute="bottom" constant="10" id="FvS-Nd-Vf2"/>
-                            <constraint firstItem="Gni-Eq-fJ0" firstAttribute="top" secondItem="MfP-j5-bFK" secondAttribute="bottom" constant="10" id="JWw-Gb-MoI"/>
+                            <constraint firstItem="Gni-Eq-fJ0" firstAttribute="top" secondItem="MfP-j5-bFK" secondAttribute="bottom" id="JWw-Gb-MoI"/>
                             <constraint firstItem="Gni-Eq-fJ0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="LeA-Wl-6CR"/>
                             <constraint firstItem="hAf-Au-a2s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bKa-Tt-qVs"/>
                             <constraint firstItem="MfP-j5-bFK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="eDs-7q-AuX"/>
@@ -157,11 +157,11 @@
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ABackground">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
