@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--hello-->
+        <!--히스토리-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="FSCalendarViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,19 +23,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-gU-m97">
-                                                <rect key="frame" x="25" y="15" width="364" height="40"/>
+                                                <rect key="frame" x="25" y="10" width="364" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="9lZ-OD-mDs">
-                                                        <rect key="frame" x="15" y="4.5" width="334" height="31"/>
+                                                        <rect key="frame" x="10" y="4.5" width="339" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO3-pz-0hr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="125" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="yuG-80-MaJ">
-                                                                <rect key="frame" x="266" y="0.0" width="68" height="31"/>
+                                                                <rect key="frame" x="271" y="0.0" width="68" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3a-km-FBY">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="31"/>
@@ -73,11 +73,11 @@
                                                     <constraint firstAttribute="trailing" secondItem="9lZ-OD-mDs" secondAttribute="trailing" constant="15" id="LDx-Vk-erv"/>
                                                     <constraint firstAttribute="height" constant="40" id="RTu-DX-E0H"/>
                                                     <constraint firstItem="9lZ-OD-mDs" firstAttribute="centerY" secondItem="4fz-gU-m97" secondAttribute="centerY" id="T7d-xQ-Q41"/>
-                                                    <constraint firstItem="9lZ-OD-mDs" firstAttribute="leading" secondItem="4fz-gU-m97" secondAttribute="leading" constant="15" id="h4P-Cu-OA1"/>
+                                                    <constraint firstItem="9lZ-OD-mDs" firstAttribute="leading" secondItem="4fz-gU-m97" secondAttribute="leading" constant="10" id="h4P-Cu-OA1"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7H-zJ-OYH" customClass="FSCalendar">
-                                                <rect key="frame" x="37" y="55" width="340" height="340"/>
+                                                <rect key="frame" x="37" y="50" width="340" height="340"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="340" id="XAg-aF-WCd"/>
@@ -94,7 +94,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="808" id="CAg-sk-u3f"/>
                                             <constraint firstItem="4fz-gU-m97" firstAttribute="leading" secondItem="Ou7-pM-gf9" secondAttribute="leading" constant="25" id="CNQ-HK-iG5"/>
-                                            <constraint firstItem="4fz-gU-m97" firstAttribute="top" secondItem="Ou7-pM-gf9" secondAttribute="top" constant="15" id="COb-iB-OpQ"/>
+                                            <constraint firstItem="4fz-gU-m97" firstAttribute="top" secondItem="Ou7-pM-gf9" secondAttribute="top" constant="10" id="COb-iB-OpQ"/>
                                             <constraint firstAttribute="trailing" secondItem="4fz-gU-m97" secondAttribute="trailing" constant="25" id="PBr-0I-CRQ"/>
                                             <constraint firstItem="D7H-zJ-OYH" firstAttribute="top" secondItem="4fz-gU-m97" secondAttribute="bottom" id="R80-JN-BXo"/>
                                             <constraint firstItem="D7H-zJ-OYH" firstAttribute="centerX" secondItem="Ou7-pM-gf9" secondAttribute="centerX" id="oUS-AJ-QYX"/>
@@ -121,7 +121,11 @@
                             <constraint firstItem="zf8-Ec-20i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="a6C-Ev-jPr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="hello" id="yH2-Ad-CZ1"/>
+                    <navigationItem key="navigationItem" title="히스토리" id="yH2-Ad-CZ1">
+                        <barButtonItem key="rightBarButtonItem" title="한 눈에 보기" id="EE7-Kl-wep">
+                            <color key="tintColor" systemColor="linkColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="Ou7-pM-gf9" id="NYN-TP-m2p"/>
                         <outlet property="calendarHeaderView" destination="4fz-gU-m97" id="B0u-Zy-if4"/>
@@ -161,6 +165,9 @@
         <namedColor name="ABlack">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

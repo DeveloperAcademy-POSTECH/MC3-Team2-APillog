@@ -19,7 +19,6 @@ class FSCalendarViewController: UIViewController{
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarHeaderView: UIView!
     
-    
     private var currentPage: Date?
     
     private lazy var today: Date = {
@@ -33,6 +32,10 @@ class FSCalendarViewController: UIViewController{
         return df
     }()
     
+    var dosingPillEvents: [String] = []
+    var sideEffectEvents: [String] = []
+    var detailSideEffectEvents: [String] = []
+    
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,7 @@ class FSCalendarViewController: UIViewController{
         self.backgroundView.backgroundColor = UIColor.AColor.background
         self.calendarHeaderView.backgroundColor = UIColor.AColor.white
         
+        // delegation, datasource 할당
         setUpEvents()
         
         dosingPillEvents = CoreDataManager.shared.fetchMonthDosingPillDate(date: Date())
@@ -50,7 +54,6 @@ class FSCalendarViewController: UIViewController{
         setCalendarStyle()
         
         self.headerLabel.font = UIFont.AFont.calenderText
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,10 +67,8 @@ class FSCalendarViewController: UIViewController{
         super.viewWillLayoutSubviews()
         self.calendarHeaderView.layoutIfNeeded()
         self.calendarHeaderView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
-        
         self.calendarView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
     }
-    
     
     // MARK: @IBAction
     @IBAction func tapPrevButton(_ sender: UIButton) {
@@ -76,6 +77,11 @@ class FSCalendarViewController: UIViewController{
     
     @IBAction func tapNextButton(_ sender: UIButton) {
         scrollCurrentPage(isPrev: false)
+    }
+    
+    func setUpEvents() {
+        calendarView.delegate = self
+        calendarView.dataSource = self
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -88,8 +94,6 @@ class FSCalendarViewController: UIViewController{
     }
     
     func setCalendar() {
-        calendarView.delegate = self
-        calendarView.headerHeight = 0
         calendarView.scope = .month
         headerLabel.text = self.dateFormatter.string(from: calendarView.currentPage)
     }
@@ -104,13 +108,12 @@ class FSCalendarViewController: UIViewController{
         calendarView.reloadData()
     }
     
+    // Calendar Style
     func setCalendarStyle() {
-        self.calendarView.locale = Locale(identifier: "ko_KR")
-        self.calendarView.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
+        calendarView.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
         
         calendarView.scrollEnabled = false
         calendarView.headerHeight = 0
-        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
         
         calendarView.appearance.weekdayTextColor = UIColor.AColor.gray
         calendarView.appearance.subtitleOffset = CGPoint(x: 0, y: 0.8)
@@ -119,19 +122,16 @@ class FSCalendarViewController: UIViewController{
         
         calendarView.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.7)
         calendarView.appearance.selectionColor = UIColor.AColor.accent
+        
+        calendarView.calendarWeekdayView.weekdayLabels[0].text = "SUN"
+        calendarView.calendarWeekdayView.weekdayLabels[1].text = "MON"
+        calendarView.calendarWeekdayView.weekdayLabels[2].text = "TUE"
+        calendarView.calendarWeekdayView.weekdayLabels[3].text = "WED"
+        calendarView.calendarWeekdayView.weekdayLabels[4].text = "THU"
+        calendarView.calendarWeekdayView.weekdayLabels[5].text = "FRI"
+        calendarView.calendarWeekdayView.weekdayLabels[6].text = "SAT"
     }
    
-    
-    var dosingPillEvents: [String] = []
-    var sideEffectEvents: [String] = []
-    var detailSideEffectEvents: [String] = []
-    
-    func setUpEvents() {
-        calendarView.delegate = self
-        calendarView.dataSource = self
-    }
-   
-
 }
 
 extension UIView {
@@ -146,7 +146,6 @@ extension UIView {
 extension FSCalendarViewController : FSCalendarDelegateAppearance {
 
     // MARK: - FSCalendarDelegateAppearance
-    
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
