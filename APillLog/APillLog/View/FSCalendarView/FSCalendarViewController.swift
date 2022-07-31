@@ -19,6 +19,8 @@ class FSCalendarViewController: UIViewController{
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarHeaderView: UIView!
     
+    @IBOutlet weak var reportButton: UIBarButtonItem!
+    
     private var currentPage: Date?
     
     private lazy var today: Date = {
@@ -110,6 +112,10 @@ class FSCalendarViewController: UIViewController{
         self.calendarHeaderView.backgroundColor = UIColor.AColor.white
         
         self.guideLabel.font = UIFont.AFont.noHistory
+        
+        
+        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 17)]
+        self.reportButton.setTitleTextAttributes(attributes, for: .normal)
         
         // delegation, datasource 할당
         setUpEvents()

@@ -213,7 +213,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar" id="pK6-OH-1CH"/>
                     <navigationItem key="navigationItem" title="히스토리" id="yH2-Ad-CZ1">
-                        <barButtonItem key="rightBarButtonItem" title="리포트" id="EE7-Kl-wep">
+                        <barButtonItem key="rightBarButtonItem" title="리포트   " id="EE7-Kl-wep">
                             <color key="tintColor" name="AAccent"/>
                             <connections>
                                 <segue destination="DQT-II-Bpx" kind="show" id="Iu8-hF-d7Z"/>
@@ -230,6 +230,7 @@
                         <outlet property="headerLabel" destination="EO3-pz-0hr" id="92o-SN-0v1"/>
                         <outlet property="nextButton" destination="LLh-al-zb8" id="eFo-c2-7ql"/>
                         <outlet property="prevButton" destination="o3a-km-FBY" id="xZe-x9-qtx"/>
+                        <outlet property="reportButton" destination="EE7-Kl-wep" id="7Z8-14-YqA"/>
                         <outlet property="scrollBackgroundView" destination="5EZ-qb-Rvc" id="W3P-JC-lu6"/>
                         <outlet property="scrollView" destination="zf8-Ec-20i" id="MW5-v5-eLh"/>
                         <outlet property="tableView" destination="rKK-RL-QKG" id="tv0-NK-Sgg"/>
