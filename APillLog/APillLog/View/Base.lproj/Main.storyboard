@@ -74,16 +74,6 @@
             </objects>
             <point key="canvasLocation" x="647" y="331"/>
         </scene>
-        <!--HistoryViewController-->
-        <scene sceneID="g2n-ty-1G5">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HistoryView" storyboardName="HistoryView" referencedIdentifier="HistoryViewController" id="WoF-8C-tyc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XS4-Fe-z21"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lwU-A1-bRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="649" y="236"/>
-        </scene>
     </scenes>
     <color key="tintColor" name="AAccent"/>
     <resources>

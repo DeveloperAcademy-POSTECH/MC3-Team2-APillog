@@ -77,10 +77,8 @@
 		A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */; };
 		A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C328847A010008EB48 /* MedicationView.storyboard */; };
 		A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */; };
-		A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C828847A270008EB48 /* HistoryView.storyboard */; };
 		A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */; };
 		A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */; };
-		A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,10 +153,8 @@
 		A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		A8F4F2C328847A010008EB48 /* MedicationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicationView.storyboard; sourceTree = "<group>"; };
 		A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryView.storyboard; sourceTree = "<group>"; };
-		A8F4F2C828847A270008EB48 /* HistoryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryView.storyboard; sourceTree = "<group>"; };
 		A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
-		A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APillLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -485,8 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				3459C3DB289517E100C68B34 /* HistoryDetail */,
-				A8F4F2C828847A270008EB48 /* HistoryView.storyboard */,
-				A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */,
 				87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */,
 				87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */,
 			);
@@ -585,7 +579,6 @@
 				34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
 				8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */,
-				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
 				34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */,
@@ -671,7 +664,6 @@
 				87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */,
-				A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */,
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
