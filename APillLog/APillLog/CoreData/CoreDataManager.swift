@@ -80,7 +80,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deleteShowSecondaryPill(pill: ShowSecondaryPill){
@@ -102,7 +102,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deletePrimaryPill(pill: PrimaryPill) {
@@ -125,7 +125,7 @@ class CoreDataManager {
         }
         saveToContext()
     }
-
+    
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
@@ -304,14 +304,14 @@ class CoreDataManager {
         showPrimaryPill.isTaking = false
         deletePillHistory(pillId: showPrimaryPill.id ?? UUID())
     }
-
+    
     func changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: ShowSecondaryPill){
         showSecondaryPill.takeTime = nil
         showSecondaryPill.isTaking = false
         saveToContext()
         deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
     }
-
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16, takingTime: Date) {
         
@@ -507,7 +507,7 @@ class CoreDataManager {
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-//                print("pill selectedData",pill.selectDate)
+                //                print("pill selectedData",pill.selectDate)
                 if pill.selectDate == selectDate
                 {
                     pillArrayResult.append(pill)
@@ -518,6 +518,39 @@ class CoreDataManager {
             print("-----fetchShowPrimaryPill error-------")
         }
         return pillArrayResult
+    }
+    func fetchPrimaryPillIsShowOn() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing{
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
+    }
+    
+    func fetchPrimaryPillIsShowOff() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let  pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing == false {
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
     }
     
     //오늘의 메인약 아침
@@ -608,7 +641,7 @@ class CoreDataManager {
     func fetchHistory(selectedDate: Date) -> [History] {
         //let sortDescriptor = NSSortDescriptor(key: "selectDate", ascending: true)
         let request : NSFetchRequest<History> = History.fetchRequest()
-      //  request.sortDescriptors = [sortDescriptor]
+        //  request.sortDescriptors = [sortDescriptor]
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
         do {
@@ -656,7 +689,7 @@ class CoreDataManager {
         
         return CBT()
     }
-
+    
     
     func fetchRecentAddedSecondaryPill() -> [RecentAddedSecondaryPill] {
         let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
@@ -670,11 +703,11 @@ class CoreDataManager {
         return [RecentAddedSecondaryPill()]
     }
     
-
-
+    
+    
     //CBT를 업데이트 하는 함수
     func updateOneCBT(receivedCBT : CBT) {
-
+        
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
             let cbtArray = try context.fetch(request)
@@ -700,6 +733,8 @@ class CoreDataManager {
         saveToContext()
     }
     
+  
+    
     func fetchMonthDosingPillDate(date: Date) -> [String]{
         
         var resultDate: [String] = []
@@ -717,7 +752,7 @@ class CoreDataManager {
                 
                 if i < 10
                 {
-                     compareDate = selectedDate + "-0" + "\(i)"
+                    compareDate = selectedDate + "-0" + "\(i)"
                 }
                 else{
                     compareDate = selectedDate + "-\(i)"
@@ -743,7 +778,7 @@ class CoreDataManager {
                 i += 1
             }
             
-           
+            
             
         } catch{
             print("-----fetchMonthSideEffectDate error-------")
@@ -864,5 +899,81 @@ class CoreDataManager {
     }
     
     
+    func fetchPillInformationLastWeek() -> [(String, Int, Int)] {
+        var doTakePill = [String: Int]()
+        var doTakePillResult = [String: Int]()
+        var doneTakePill = [String: Int]()
+        var result = [(String, Int, Int)]()
+        
+        // 오늘 날짜 기준으로 현재 복용 중인 약의 종류를 가져옴
+        let showPrimaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
+        for pill in showPrimaryPill {
+            if doTakePill[pill.name! + pill.dosage!] == nil {
+                doTakePill[pill.name! + pill.dosage!] = Int(pill.cycle)
+            } else {
+                doTakePill[pill.name! + pill.dosage!]! += Int(pill.cycle)
+            }
+        }
+        
+        // cycle에 따라 각 횟수 계산 및 저장
+        for (key, value) in doTakePill {
+            
+            var day = 1
+            for i in 1..<7 {
+                let date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+                let primaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: date ?? Date())
+                for pill in primaryPill {
+                    if pill.isTaking {
+                        day += 1
+                    } else {
+                        break
+                    }
+                }
+            }
+            
+            if [1, 2, 4].contains(value) {
+                doTakePillResult[key] = 1 * day
+            } else if [3, 5, 6].contains(value) {
+                doTakePillResult[key] = 2 * day
+            } else {
+                doTakePillResult[key] = 3 * day
+            }
+        }
+        
+        // 7일간의 히스토리 분석
+        for i in 0..<7 {
+            let date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            let histories = CoreDataManager.shared.fetchHistory(selectedDate: date ?? Date())
+            
+            // 약을 먹은 경우에 +1
+            for history in histories {
+                if let h = history.pillName {
+                    let key = h + (history.dosage ?? "")
+                    if doneTakePill.keys.contains(key) {
+                        doneTakePill[key]! += 1
+                    } else {
+                        doneTakePill[key] = 1
+                    }
+                }
+            }
+        }
+        
+        let doneTakePillResult = doneTakePill.sorted { (first, second) in
+            return first.value > second.value }
+        
+        for i in 0 ..< doneTakePillResult.count {
+            let key = doneTakePillResult[i].key
+            let doneValue = doneTakePillResult[i].value
+            let doValue = doTakePillResult[key] ?? 1
+            result.append((key, doneValue, doValue))
+        }
+        
+        if result.isEmpty {
+            for pill in doTakePill {
+                result.append((pill.key, 0, pill.value))
+            }
+        }
+        return result
+    }
 }
 
