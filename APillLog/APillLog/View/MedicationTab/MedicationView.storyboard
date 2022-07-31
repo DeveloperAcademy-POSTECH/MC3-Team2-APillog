@@ -64,7 +64,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Vv-PBW">
-                                                                        <rect key="frame" x="304.66666666666669" y="31.999999999999993" width="20.333333333333314" height="16.66666666666665"/>
+                                                                        <rect key="frame" x="304.66666666666669" y="31.999999999999989" width="20.333333333333314" height="16.666666666666668"/>
                                                                         <color key="tintColor" name="ABlack"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="EAi-Vv-PBW" secondAttribute="height" id="sF6-AM-W8V"/>
@@ -348,6 +348,7 @@
                         <outlet property="primaryPillTableView" destination="N6s-gf-qSi" id="JwQ-eh-8wK"/>
                         <outlet property="primaryPillTableViewHeight" destination="agQ-qx-kS1" id="ceM-Nr-wCW"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
+                        <outlet property="primaryPillViewLinkImage" destination="tUW-8y-ziC" id="bs3-66-h37"/>
                         <outlet property="primaryPillViewLinkLabel" destination="cVz-VI-Kla" id="Rlw-Mr-822"/>
                         <outlet property="primaryPillViewTitle" destination="qR7-9z-koG" id="cVI-fP-rR3"/>
                         <outlet property="secondaryPillField" destination="PMK-9x-uNM" id="7Mt-zM-m1u"/>
@@ -358,6 +359,7 @@
                         <outlet property="secondaryPillTableViewHeight" destination="lPD-QO-HsM" id="7Ld-bK-jKD"/>
                         <outlet property="symptomButton" destination="tZT-C6-653" id="DgG-lH-SAn"/>
                         <outlet property="symptomButtonBackgroundView" destination="8Zb-1n-zaM" id="U2a-1w-CH5"/>
+                        <outlet property="symptomButtonStack" destination="v9O-Gs-4Cx" id="nC9-kf-JFr"/>
                         <outlet property="takingAllPrimaryPillsButton" destination="njF-YA-P8j" id="gJG-uX-bYX"/>
                         <outlet property="timeSegmentedControl" destination="8wI-wB-lPe" id="7Hs-Tb-Hfu"/>
                     </connections>

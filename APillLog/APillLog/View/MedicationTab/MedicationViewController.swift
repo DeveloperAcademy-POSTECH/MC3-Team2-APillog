@@ -27,10 +27,11 @@ class MedicationViewController: UIViewController {
     private var nowDosingTime: Int16 = 1
 
     var takingTime: Date = Date()
+    var isToday: Bool = true
     
     let dateFormatterForCompare: DateFormatter = {
        let df = DateFormatter()
-        df.dateFormat = "yyyy-mm-dd"
+        df.dateFormat = "yyyy-MM-dd"
         return df
     }()
     
@@ -44,12 +45,14 @@ class MedicationViewController: UIViewController {
     // Symptom Button
     @IBOutlet weak var symptomButton: UIButton!
     @IBOutlet weak var symptomButtonBackgroundView: UIView!
-
+    @IBOutlet weak var symptomButtonStack: UIStackView!
+    
     // Primary Pill
     @IBOutlet weak var primaryPillViewTitle: UILabel!
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var primaryPillViewLinkLabel: UILabel!
+    @IBOutlet weak var primaryPillViewLinkImage: UIImageView!
     @IBOutlet weak var primaryPillViewLinkButton: UIButton!
     @IBOutlet weak var primaryPillTableView: UITableView!
     @IBOutlet weak var primaryPillTableViewHeight: NSLayoutConstraint!
@@ -195,11 +198,36 @@ class MedicationViewController: UIViewController {
         secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
     }
     
-    private func setPrimaryTableViewTitleText(selectedDate: Date) {
-        if  dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()) {
+    private func checkIsToday(selectedDate: Date) {
+        self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
+        print(dateFormatterForCompare.string(from: selectedDate))
+    }
+    
+    private func setPrimaryTableViewTitleText() {
+        if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
         } else {
             primaryPillViewTitle.text = "이전에 복용했던 약이예요"
+        }
+    }
+    
+    private func setPrimaryPillViewLinkActivation() {
+        if isToday {
+            primaryPillViewLinkButton.isEnabled = true
+            primaryPillViewLinkLabel.textColor = .AColor.black
+            primaryPillViewLinkImage.tintColor = .AColor.black
+        } else {
+            primaryPillViewLinkButton.isEnabled = false
+            primaryPillViewLinkLabel.textColor = .AColor.disable
+            primaryPillViewLinkImage.tintColor = .AColor.disable
+        }
+    }
+    
+    private func setSymptomButtonAvailable() {
+        if isToday {
+            symptomButtonStack.isHidden = false
+        } else {
+            symptomButtonStack.isHidden = true
         }
     }
 
@@ -361,9 +389,16 @@ extension MedicationViewController: TakeMedicationDelegate {
 extension MedicationViewController: CalendarViewDelegate {
     func fetchDate(date: Date) {
         self.date = date
+        
+        checkIsToday(selectedDate: date)
+        
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
-        setPrimaryTableViewTitleText(selectedDate: date)
+        
+        setPrimaryTableViewTitleText()
+        setPrimaryPillViewLinkActivation()
+        setSymptomButtonAvailable()
+        
         takingTime = date
     }
 
