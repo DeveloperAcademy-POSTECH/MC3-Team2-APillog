@@ -211,11 +211,16 @@
                             <constraint firstItem="zf8-Ec-20i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="a6C-Ev-jPr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar" id="pK6-OH-1CH"/>
                     <navigationItem key="navigationItem" title="히스토리" id="yH2-Ad-CZ1">
                         <barButtonItem key="rightBarButtonItem" title="리포트" id="EE7-Kl-wep">
                             <color key="tintColor" name="AAccent"/>
+                            <connections>
+                                <segue destination="DQT-II-Bpx" kind="show" id="Iu8-hF-d7Z"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundView" destination="Ou7-pM-gf9" id="NYN-TP-m2p"/>
                         <outlet property="backgroundViewHeight" destination="66K-pb-0Af" id="Lx4-ee-rcR"/>
@@ -253,8 +258,19 @@
             </objects>
             <point key="canvasLocation" x="682.60869565217399" y="144.64285714285714"/>
         </scene>
+        <!--HistoryDetailView-->
+        <scene sceneID="Hvn-8X-tOF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryDetailView" referencedIdentifier="HistoryDetailView" id="DQT-II-Bpx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Fd9-SS-SVX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MjO-Fd-z1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2213" y="-42"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>

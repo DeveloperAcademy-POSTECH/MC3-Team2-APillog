@@ -23,7 +23,6 @@
                     <connections>
                         <segue destination="Dhf-Tm-d6G" kind="relationship" relationship="viewControllers" id="lrl-8E-fwa"/>
                         <segue destination="7jI-iI-5fz" kind="relationship" relationship="viewControllers" id="LE0-3c-cRU"/>
-                        <segue destination="WoF-8C-tyc" kind="relationship" relationship="viewControllers" id="37R-k2-5VH"/>
                         <segue destination="dLJ-Fc-btE" kind="relationship" relationship="viewControllers" id="x7k-ML-g6u"/>
                         <segue destination="RMa-02-m6V" kind="relationship" relationship="viewControllers" id="9pu-Od-kWJ"/>
                     </connections>
@@ -69,11 +68,11 @@
         <scene sceneID="XTL-NU-07R">
             <objects>
                 <viewControllerPlaceholder storyboardName="FSCalendarView" id="RMa-02-m6V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="d4W-vq-nwH"/>
+                    <tabBarItem key="tabBarItem" title="히스토리" selectedImage="chart.bar" catalog="system" id="d4W-vq-nwH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAj-xV-qQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533" y="428"/>
+            <point key="canvasLocation" x="543" y="459"/>
         </scene>
         <!--HistoryViewController-->
         <scene sceneID="g2n-ty-1G5">
@@ -88,6 +87,7 @@
     </scenes>
     <color key="tintColor" name="AAccent"/>
     <resources>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="pills" catalog="system" width="128" height="106"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
         <namedColor name="AAccent">
