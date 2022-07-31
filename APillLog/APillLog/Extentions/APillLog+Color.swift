@@ -16,6 +16,9 @@ extension UIColor {
         static var black: UIColor { UIColor(named: "ABlack")! }
         static var blue: UIColor { UIColor(named: "ABlue")! }
         static var gray: UIColor { UIColor(named: "AGray")! }
+        static var calendarPill: UIColor { UIColor(named: "ACalendarPill")! }
+        static var calendarSide: UIColor { UIColor(named: "AcalendarSide")! }
+        static var calendarDetail: UIColor { UIColor(named: "AcalendarDetail")! }
     }
 }
 
