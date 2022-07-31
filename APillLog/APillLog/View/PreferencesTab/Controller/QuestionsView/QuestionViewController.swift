@@ -10,14 +10,22 @@ import UIKit
 import MessageUI
 
 class QuestionsViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    @IBOutlet weak var questiontitle: UINavigationBar!
+   
     @IBOutlet weak var welcomeText: UILabel!
     @IBOutlet weak var requestText: UILabel!
     @IBOutlet weak var sendButton: UIButton!
-    
+    @IBOutlet weak var buttonView: UIView!
+
     override func viewDidLoad() {
-            super.viewDidLoad()
-        }
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.AColor.background
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+
+        self.navigationItem.title = "문의사항"
+        self.welcomeText.font = UIFont.AFont.cardViewTitle
+    }
         
         func showSendMailErrorAlert() {
             let sendMailErrorAlert = UIAlertController(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", preferredStyle: .alert)
@@ -28,8 +36,8 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
             sendMailErrorAlert.addAction(confirmAction)
             self.present(sendMailErrorAlert, animated: true, completion: nil)
         }
-        
-        @IBAction func sendEmailTapped(_ sender: UIButton) {
+    
+          @IBAction func sendEmailTapped(_ sender: UIButton) {
             
             if MFMailComposeViewController.canSendMail() {
                 

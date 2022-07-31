@@ -32,10 +32,19 @@ class VersionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 앱 버전 체크 실행
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationItem.title = "버전정보"
         version.text = comparingVersion!
+        version.font = UIFont.AFont.caption
+        button.tintColor = UIColor.AColor.accent
         var check: Bool = needUpdate()
+        if check == false {
+            self.context.text =  "최신 버전을 사용하고 있어요"
+        }
+        else {
+            self.context.text = "새로운 버전으로 업데이트 해주세요"
+        }
         check.toggle()
         button.isHidden = check
     }
@@ -57,8 +66,6 @@ class VersionViewController: UIViewController {
         let nowVersionArr = version.split(separator: ".").map { $0 }
         let storeVersionArr = appStoreVersion.split(separator: ".").map { $0 }
         
-        print(nowVersionArr)
-        print(storeVersionArr)
         
         // 가장 앞자리가 다르면 -> 업데이트 필요
         if nowVersionArr[0] < storeVersionArr[0] {
