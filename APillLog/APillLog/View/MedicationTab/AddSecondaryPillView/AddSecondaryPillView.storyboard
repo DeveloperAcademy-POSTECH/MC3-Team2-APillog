@@ -18,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가로 먹은 약을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX1-lp-6X6">
-                                <rect key="frame" x="25" y="75" width="340" height="24"/>
+                                <rect key="frame" x="25" y="74" width="340" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="약 이름을 검색하세요" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-BM-5jE">
-                                <rect key="frame" x="25" y="115" width="340" height="51"/>
+                                <rect key="frame" x="25" y="114" width="340" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="v62-c9-Gww" id="epM-cL-34X"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-0b-GqK">
-                                <rect key="frame" x="25" y="209.33333333333331" width="340" height="609.66666666666674"/>
+                                <rect key="frame" x="25" y="208.33333333333331" width="340" height="610.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondaryPillTableViewCell" rowHeight="60" id="mXK-JT-OpP" customClass="SecondaryPillTableViewCell" customModule="APillLog" customModuleProvider="target">
@@ -66,20 +66,22 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjD-Xr-wH6">
-                                <rect key="frame" x="25" y="25" width="80" height="34"/>
+                                <rect key="frame" x="25" y="25" width="80" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="TmT-2G-lrn"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="tintColor" name="AAccent"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="취소">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" name="AAccent"/>
                                 </state>
                                 <connections>
                                     <action selector="tapCancleButton" destination="v62-c9-Gww" eventType="touchUpInside" id="J44-Zc-iBP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-PY-MvB">
-                                <rect key="frame" x="250" y="166" width="110" height="40"/>
+                                <rect key="frame" x="250" y="165" width="110" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="R6t-LD-bjL"/>
                                     <constraint firstAttribute="height" constant="40" id="owf-hS-bJd"/>
@@ -104,13 +106,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="없는 약 추가하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-ZM-ucC">
-                                <rect key="frame" x="34.999999999999993" y="176.33333333333334" width="105.33333333333331" height="19.333333333333343"/>
+                                <rect key="frame" x="34.999999999999993" y="175.33333333333334" width="105.33333333333331" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-ts-bDs" userLabel="seperator">
-                                <rect key="frame" x="41" y="209" width="324" height="0.33333333333334281"/>
+                                <rect key="frame" x="41" y="208" width="324" height="0.33333333333334281"/>
                                 <color key="backgroundColor" systemColor="separatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="900" constant="0.5" id="e6r-4a-CGb"/>
@@ -160,8 +162,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AAccent">
+            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
