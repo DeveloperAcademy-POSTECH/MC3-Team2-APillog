@@ -26,6 +26,7 @@ class MedicationViewController: UIViewController {
     var historyData = [History]()
     private var nowDosingTime: Int16 = 1
 
+    var takingTime: Date = Date()
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -198,7 +199,7 @@ class MedicationViewController: UIViewController {
     }
 
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
-        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime))
+        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
 
         reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
@@ -324,10 +325,10 @@ extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
 extension MedicationViewController: TakeMedicationDelegate {
     func setPillTake(rowNumber: Int, isPrimary: Bool) {
         if isPrimary {
-            CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber])
+            CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber], takingTime: changeDateFormat(date: takingTime))
             primaryPillTableView.reloadData()
         } else {
-            CoreDataManager.shared.recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: secondaryPillList[rowNumber])
+            CoreDataManager.shared.recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: secondaryPillList[rowNumber], takingTime: changeDateFormat(date: takingTime))
             secondaryPillTableView.reloadData()
         }
     }
@@ -357,13 +358,24 @@ extension MedicationViewController: CalendarViewDelegate {
         self.date = date
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
+        takingTime = date
     }
     
     func setCalendarView() {
         calendarView.delegate = self
     }
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
+    }
+    
 }
-
 // 비어있는 테이블에 대해서
 class EmptyPrimaryPillCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
