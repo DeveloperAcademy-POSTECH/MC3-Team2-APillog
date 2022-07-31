@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Eq-fJ0">
-                                <rect key="frame" x="5" y="129" width="380" height="661"/>
+                                <rect key="frame" x="5" y="132.33333333333331" width="380" height="657.66666666666674"/>
                                 <color key="backgroundColor" name="ABackground"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageDosingCell" rowHeight="72" id="u1W-0X-cXD" customClass="ManageDosingTableViewCell" customModule="APillLog" customModuleProvider="target">
@@ -99,22 +99,24 @@
                                 </navigationBarAppearance>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-j5-bFK">
-                                <rect key="frame" x="25" y="98" width="340" height="31"/>
+                                <rect key="frame" x="25" y="98" width="340" height="34.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="복용할 약 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-Fz-Twc">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="34.333333333333336"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-nq-6lg">
-                                        <rect key="frame" x="280" y="0.0" width="60" height="31"/>
+                                        <rect key="frame" x="280" y="0.0" width="60" height="34.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="D9i-uA-Wqa"/>
                                         </constraints>
                                         <color key="tintColor" name="AAccent"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="추가">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tapAddButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QEh-Yy-gk8"/>
                                         </connections>
