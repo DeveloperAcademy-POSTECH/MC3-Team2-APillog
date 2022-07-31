@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class DiaryEditViewController: UIViewController, UITextViewDelegate {
 
@@ -36,6 +37,7 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
         DiaryEditSaveButton.isEnabled = false
         DiaryEditSaveButton.backgroundColor = UIColor.AColor.disable
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
     }
     
     func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
@@ -65,7 +67,6 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
             completioHandler?(DiaryEditTextView.text)
             receivedCBT.actionContext = DiaryEditTextView.text
             coredataManager.updateOneCBT(receivedCBT: receivedCBT)
-
         }
         
         

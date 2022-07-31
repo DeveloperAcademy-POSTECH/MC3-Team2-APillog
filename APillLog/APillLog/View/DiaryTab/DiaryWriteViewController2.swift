@@ -23,6 +23,7 @@ class DiaryWriteViewController2: UIViewController, UITextViewDelegate {
         diarySaveButton2.isEnabled = false
         diarySaveButton2.backgroundColor = UIColor.AColor.disable
         diaryWriteTextView2.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
     }
     @IBOutlet weak var diarySaveButton2: UIButton!
     

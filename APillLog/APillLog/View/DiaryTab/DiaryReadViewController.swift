@@ -38,7 +38,7 @@ class DiaryReadViewController: UIViewController {
         DiaryReadActionString.layer.borderWidth = 1
         DiaryReadActionString.layer.borderColor = borderColor.cgColor
         DiaryReadActionString.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
-        
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
     }
     
  
@@ -61,8 +61,8 @@ class DiaryReadViewController: UIViewController {
         vc.actionString = actionString
         vc.completioHandler = {
                     msg in
-                    print("messgae : \(msg)")
             self.DiaryReadViewBody.text = msg
+            self.body = msg
                 }
         
         navigationController?.pushViewController(vc, animated: true)
@@ -82,6 +82,7 @@ class DiaryReadViewController: UIViewController {
         vc.completioHandler = {
                     msg in
             self.DiaryReadRecognizeString.text = msg
+            self.recognizeString = msg
                 }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -100,6 +101,7 @@ class DiaryReadViewController: UIViewController {
         vc.completioHandler = {
                     msg in
             self.DiaryReadActionString.text = msg
+            self.actionString = msg
                 }
         navigationController?.pushViewController(vc, animated: true)
     }
