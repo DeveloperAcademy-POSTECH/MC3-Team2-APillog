@@ -122,7 +122,7 @@ class CheckConditionViewController: UIViewController {
         // 상세 설명 저장
         self.pillDetailContext = self.detailContext.text
         
-        CoreDataManager.shared.recordHistoryAndRecordCondition(name: nil, dosage: nil, sideEffect: self.pillSideEffect, medicinalEffect: nil, detailContext: self.pillDetailContext)
+        CoreDataManager.shared.recordHistoryAndRecordCondition(name: nil, dosage: nil, sideEffect: self.pillSideEffect, medicinalEffect: nil, detailContext: self.pillDetailContext , takingTime: Date())
         
         self.navigationController?.popViewController(animated: true)
     }
