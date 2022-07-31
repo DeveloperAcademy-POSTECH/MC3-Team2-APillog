@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class MedicationViewController: UIViewController {
 
@@ -62,6 +63,7 @@ class MedicationViewController: UIViewController {
     // Secondary Pill
     @IBOutlet weak var secondaryPillField: UIView!
     @IBOutlet weak var secondaryPillModalButtonLabel: UILabel!
+    @IBOutlet weak var secondaryPillModalButtonImage: UIImageView!
     @IBOutlet weak var secondaryPillModalButton: UIButton!
     @IBOutlet weak var secondaryPillTableView: UITableView!
     @IBOutlet weak var secondaryPillTableViewHeight: NSLayoutConstraint!
@@ -134,6 +136,9 @@ class MedicationViewController: UIViewController {
 
     private func setPrimaryPillViewStyle() {
         
+        // 버튼 UI
+        primaryPillViewLinkImage.image = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(font: NSUIFont.AFont.navigationButtonDescriptionLabel))
+        
         // Primary Pill 영역
         primaryPillField.layer.cornerRadius = 10
         primaryPillViewLinkLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
@@ -149,6 +154,9 @@ class MedicationViewController: UIViewController {
     }
 
     private func setSecondaryPillViewStyle() {
+        
+        // 버튼 UI
+        secondaryPillModalButtonImage.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(font: NSUIFont.AFont.navigationButtonDescriptionLabel))
         
         // Secondary Pill 영역
         secondaryPillField.layer.cornerRadius = 10
