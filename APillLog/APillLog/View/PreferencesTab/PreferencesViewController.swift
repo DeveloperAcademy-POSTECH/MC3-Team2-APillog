@@ -12,10 +12,15 @@ class PreferencesViewController: UIViewController {
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.topItem?.title = "설정"
         self.view.backgroundColor = UIColor.AColor.background
         self.settingCellStyle()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "설정"
+    }
+   
     // MARK: @IBOutlet
     @IBOutlet weak var settingNotificationView: UIView!
     @IBOutlet weak var licenseView: UIView!

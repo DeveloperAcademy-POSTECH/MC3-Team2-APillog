@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WV-yZ-Jbt">
-                                <rect key="frame" x="40" y="136" width="21" height="14.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <rect key="frame" x="40" y="136" width="24.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="AGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42q-xu-htb">
-                                <rect key="frame" x="25" y="160.5" width="364" height="44"/>
+                                <rect key="frame" x="25" y="163" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajd-rh-QEy">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -54,14 +54,14 @@
                                     <constraint firstAttribute="width" priority="750" constant="364" id="mY2-qb-e8b"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZz-bc-GmQ">
-                                <rect key="frame" x="192.5" y="65" width="29.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZz-bc-GmQ">
+                                <rect key="frame" x="207" y="65" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-l0-6CJ" userLabel="SettingNotificationButton">
-                                <rect key="frame" x="25" y="160.5" width="364" height="44"/>
+                                <rect key="frame" x="25" y="163" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6gN-be-XPl"/>
                                 </constraints>
@@ -71,13 +71,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUX-qg-huc">
-                                <rect key="frame" x="40" y="244.5" width="21" height="14.5"/>
+                                <rect key="frame" x="40" y="247" width="21" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" name="AGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUp-aF-Znc" userLabel="License View">
-                                <rect key="frame" x="25" y="269" width="364" height="44"/>
+                                <rect key="frame" x="25" y="271.5" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이센스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-VF-L2C">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -108,7 +108,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-a9-K9f" userLabel="LicenseButton">
-                                <rect key="frame" x="25" y="269" width="364" height="44"/>
+                                <rect key="frame" x="25" y="271.5" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gQJ-0u-sg6"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-0u-j0F" userLabel="Question View">
-                                <rect key="frame" x="25" y="318" width="364" height="44"/>
+                                <rect key="frame" x="25" y="320.5" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의 사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aln-IH-ber">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -149,7 +149,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-X0-xds" userLabel="Question Button">
-                                <rect key="frame" x="25" y="318" width="364" height="44"/>
+                                <rect key="frame" x="25" y="320.5" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Gva-Xi-9Rd"/>
                                 </constraints>
@@ -159,7 +159,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXc-7l-X2n" userLabel="Version View">
-                                <rect key="frame" x="25" y="367" width="364" height="44"/>
+                                <rect key="frame" x="25" y="369.5" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-Cc-l6z">
                                         <rect key="frame" x="15" y="11" width="100" height="20.5"/>
@@ -190,7 +190,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHu-A7-0fp" userLabel="Version Button">
-                                <rect key="frame" x="25" y="367" width="364" height="44"/>
+                                <rect key="frame" x="25" y="369.5" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="erX-mX-3bR"/>
                                 </constraints>
@@ -200,7 +200,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoP-hl-HeA" userLabel="ThanksTo View">
-                                <rect key="frame" x="25" y="416" width="364" height="44"/>
+                                <rect key="frame" x="25" y="418.5" width="364" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apillog 에 대해서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2y-fe-xFf">
                                         <rect key="frame" x="15" y="11" width="200" height="20.5"/>
@@ -231,7 +231,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZA-1z-9mL" userLabel="ThanksTo Button">
-                                <rect key="frame" x="25" y="416" width="364" height="44"/>
+                                <rect key="frame" x="25" y="418.5" width="364" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HVB-Ue-FLK"/>
                                 </constraints>

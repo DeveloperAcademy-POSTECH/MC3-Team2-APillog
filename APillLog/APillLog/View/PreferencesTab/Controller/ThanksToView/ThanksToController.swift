@@ -18,6 +18,6 @@ class ThanksToViewController: UIViewController {
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.topItem?.title = "뒤로"
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
-        
+      
     }
 }

@@ -11,7 +11,7 @@
         <!--License View Controller-->
         <scene sceneID="wOJ-Ck-yFG">
             <objects>
-                <viewController storyboardIdentifier="LicenseView" id="84e-GJ-dIr" customClass="LicenseViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LicenseView" hidesBottomBarWhenPushed="YES" id="84e-GJ-dIr" customClass="LicenseViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qQB-Ee-1tH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
