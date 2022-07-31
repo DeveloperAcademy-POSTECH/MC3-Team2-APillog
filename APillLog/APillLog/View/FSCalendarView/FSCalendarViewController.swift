@@ -57,7 +57,7 @@ class FSCalendarViewController: UIViewController{
         super.viewWillAppear(animated)
         setCalendar()
         // 확인 필요
-//        calendarView.reloadData()
+        calendarView.reloadData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -108,8 +108,6 @@ class FSCalendarViewController: UIViewController{
         self.calendarView.locale = Locale(identifier: "ko_KR")
         self.calendarView.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
         
-//        calendarView.layer.cornerRadius = 10
-        
         calendarView.scrollEnabled = false
         calendarView.headerHeight = 0
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
@@ -118,6 +116,9 @@ class FSCalendarViewController: UIViewController{
         calendarView.appearance.subtitleOffset = CGPoint(x: 0, y: 0.8)
         
         calendarView.appearance.titleDefaultColor = UIColor.AColor.black
+        
+        calendarView.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.7)
+        calendarView.appearance.selectionColor = UIColor.AColor.accent
     }
    
     
