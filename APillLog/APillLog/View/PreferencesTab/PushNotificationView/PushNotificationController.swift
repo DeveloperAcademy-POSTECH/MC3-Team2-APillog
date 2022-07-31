@@ -75,7 +75,7 @@ class PushNotificationController: UIViewController {
         
         morningTimePicker.date = calculateTime(time: UserDefault.string(forKey: "morningTimePicker") ?? "09:00")
         afternoonTimePicker.date = calculateTime(time: UserDefault.string(forKey: "afternoonTimePicker") ?? "13:00")
-        eveningTimePicker.date = calculateTime(time: UserDefault.string(forKey: "eveningTimePIcker") ?? "19:00")
+        eveningTimePicker.date = calculateTime(time: UserDefault.string(forKey: "eveningTimePicker") ?? "19:00")
         noteTimePicker.date = calculateTime(time: UserDefault.string(forKey: "noteTimePicker") ?? "21:00")
     }
     
@@ -175,7 +175,7 @@ class PushNotificationController: UIViewController {
         if isTakeAlarmSwitch.isOn {
             addNotificationCenter(key: "morningTimePicker",  type: "아침", time: morningTimePicker.date)
             addNotificationCenter(key: "afternoonTimePicker", type: "점심", time: afternoonTimePicker.date)
-            addNotificationCenter(key: "afternoonTimePicker", type: "저녁", time: eveningTimePicker.date)
+            addNotificationCenter(key: "eveningTimePicker", type: "저녁", time: eveningTimePicker.date)
         } else {
             removeNotificationCenter(key: "morningTimePicker")
             removeNotificationCenter(key: "StringafternoonTimePicker")
