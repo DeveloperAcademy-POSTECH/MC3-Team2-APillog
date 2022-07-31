@@ -36,11 +36,18 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-Su-KlC">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="45.333333333333336"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="109" translatesAutoresizingMaskIntoConstraints="NO" id="qsf-ZJ-a5B">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsf-ZJ-a5B">
                                                 <rect key="frame" x="0.0" y="0.0" width="340" height="35"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-Ll-0cC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="35"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="wiW-Ls-GmC"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="없는 약 추가하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-ZM-ucC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="121" height="35"/>
+                                                        <rect key="frame" x="10" y="0.0" width="220" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -73,17 +80,29 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-ts-bDs" userLabel="seperator">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcK-xl-gbe">
                                                 <rect key="frame" x="0.0" y="45" width="340" height="0.3333333333333357"/>
-                                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORQ-br-qeS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="0.33333333333333331"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="V6l-5X-8IO"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-ts-bDs" userLabel="seperator">
+                                                        <rect key="frame" x="20" y="0.0" width="320" height="0.33333333333333331"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="900" constant="0.29999999999999999" id="e6r-4a-CGb"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" priority="900" constant="0.5" id="e6r-4a-CGb"/>
+                                                    <constraint firstItem="ORQ-br-qeS" firstAttribute="leading" secondItem="QcK-xl-gbe" secondAttribute="leading" id="VyC-EA-0gG"/>
                                                 </constraints>
-                                            </view>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="V1x-ts-bDs" firstAttribute="leading" secondItem="qsf-ZJ-a5B" secondAttribute="leading" id="wbk-HN-I3o"/>
-                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-0b-GqK">
                                         <rect key="frame" x="0.0" y="55.333333333333314" width="340" height="618.33333333333348"/>
