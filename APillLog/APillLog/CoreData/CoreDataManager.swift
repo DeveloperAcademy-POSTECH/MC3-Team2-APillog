@@ -80,7 +80,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deleteShowSecondaryPill(pill: ShowSecondaryPill){
@@ -102,7 +102,7 @@ class CoreDataManager {
         } catch{
             print("-----fetchShowPrimaryPill error-------")
         }
-       
+        
     }
     
     func deletePrimaryPill(pill: PrimaryPill) {
@@ -125,7 +125,7 @@ class CoreDataManager {
         }
         saveToContext()
     }
-
+    
     // MARK: - Core Data Create
     func addPrimaryPill(name: String, dosage: String, dosingCycle: Int16){
         let primaryPill = PrimaryPill(context: persistentContainer.viewContext)
@@ -285,14 +285,14 @@ class CoreDataManager {
         showPrimaryPill.isTaking = false
         deletePillHistory(pillId: showPrimaryPill.id ?? UUID())
     }
-
+    
     func changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: ShowSecondaryPill){
         showSecondaryPill.takeTime = nil
         showSecondaryPill.isTaking = false
         saveToContext()
         deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
     }
-
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16, takingTime: Date) {
         
@@ -462,7 +462,7 @@ class CoreDataManager {
         do {
             let pillArray = try context.fetch(request)
             for pill in pillArray{
-//                print("pill selectedData",pill.selectDate)
+                //                print("pill selectedData",pill.selectDate)
                 if pill.selectDate == selectDate
                 {
                     pillArrayResult.append(pill)
@@ -473,6 +473,39 @@ class CoreDataManager {
             print("-----fetchShowPrimaryPill error-------")
         }
         return pillArrayResult
+    }
+    func fetchPrimaryPillIsShowOn() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing{
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
+    }
+    
+    func fetchPrimaryPillIsShowOff() -> [PrimaryPill] {
+        var pillResult: [PrimaryPill] = []
+        let request : NSFetchRequest<PrimaryPill> = PrimaryPill.fetchRequest()
+        do {
+            let  pillArray = try context.fetch(request)
+            for pill in pillArray {
+                if pill.isShowing == false {
+                    
+                    pillResult.append(pill)
+                }
+            }
+        } catch{
+            print("-----fetchPrimaryPill error -------")
+        }
+        return pillResult
     }
     
     //오늘의 메인약 아침
@@ -563,7 +596,7 @@ class CoreDataManager {
     func fetchHistory(selectedDate: Date) -> [History] {
         //let sortDescriptor = NSSortDescriptor(key: "selectDate", ascending: true)
         let request : NSFetchRequest<History> = History.fetchRequest()
-      //  request.sortDescriptors = [sortDescriptor]
+        //  request.sortDescriptors = [sortDescriptor]
         let selectDate: String = changeSelectedDateToString(selectedDate)
         var historyResult: [History] = []
         do {
@@ -611,7 +644,7 @@ class CoreDataManager {
         
         return CBT()
     }
-
+    
     
     func fetchRecentAddedSecondaryPill() -> [RecentAddedSecondaryPill] {
         let request : NSFetchRequest<RecentAddedSecondaryPill> = RecentAddedSecondaryPill.fetchRequest()
@@ -625,11 +658,11 @@ class CoreDataManager {
         return [RecentAddedSecondaryPill()]
     }
     
-
-
+    
+    
     //CBT를 업데이트 하는 함수
     func updateOneCBT(receivedCBT : CBT) {
-
+        
         let request : NSFetchRequest<CBT> = CBT.fetchRequest()
         do {
             let cbtArray = try context.fetch(request)
@@ -655,6 +688,8 @@ class CoreDataManager {
         saveToContext()
     }
     
+  
+    
     func fetchMonthDosingPillDate(date: Date) -> [String]{
         
         var resultDate: [String] = []
@@ -672,7 +707,7 @@ class CoreDataManager {
                 
                 if i < 10
                 {
-                     compareDate = selectedDate + "-0" + "\(i)"
+                    compareDate = selectedDate + "-0" + "\(i)"
                 }
                 else{
                     compareDate = selectedDate + "-\(i)"
@@ -698,7 +733,7 @@ class CoreDataManager {
                 i += 1
             }
             
-           
+            
             
         } catch{
             print("-----fetchMonthSideEffectDate error-------")
