@@ -47,11 +47,11 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                 
                 switch time{
                 case "morning":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 1)
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 1, takingTime: Date())
                 case "afternoon":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 2)
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 2, takingTime: Date())
                 case "evening":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 4)
+                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 4, takingTime: Date())
                 default:
                     print("Wrong Watch Take Pill Message")
                 }
@@ -67,7 +67,7 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                 let medicinalEffect: [String]? = message["medicinalEffect"] as? [String] ?? nil
                 let detailContext: String? = message["detailContext"] as? String ?? nil
                 
-                CoreDataManager.shared.addHistory(pillId: UUID(), pillName: pillName, dosage: dosage, isMainPill: isMainPill, pillNames: pillNames, dosages: dosages, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext)
+                CoreDataManager.shared.addHistory(pillId: UUID(), pillName: pillName, dosage: dosage, isMainPill: isMainPill, pillNames: pillNames, dosages: dosages, sideEffect: sideEffect, medicinalEffect: medicinalEffect, detailContext: detailContext, takingTime: nil)
             
             case "active":
                 print("Watch로부터의 연결 시도 신호")
