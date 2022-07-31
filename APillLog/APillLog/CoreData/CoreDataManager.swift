@@ -68,7 +68,7 @@ class CoreDataManager {
             
             for item in pillArray {
                 if (item.selectDate == todayDate && item.name == pill.name &&
-                    item.dosage == pill.dosage && ((item.cycle & pill.dosingCycle) != 0))
+                    item.dosage == pill.dosage && ((item.cycle & pill.dosingCycle) != 0) && !item.isTaking)
                 {
                     
                     self.context.delete(item)
