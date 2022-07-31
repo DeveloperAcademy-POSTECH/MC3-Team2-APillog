@@ -714,7 +714,7 @@ class CoreDataManager {
         do {
             let historyArray = try context.fetch(request)
             for history in historyArray{
-                if history.sideEffect != [] &&  changeDateToMonth(history.createTime ?? Date()) == selectedDate
+                if history.sideEffect != [] && history.sideEffect != nil &&  changeDateToMonth(history.createTime ?? Date()) == selectedDate
                 {
                     resultDate.append(changeSelectedDateToString(history.createTime ?? Date()))
                 }
@@ -733,7 +733,7 @@ class CoreDataManager {
         do {
             let historyArray = try context.fetch(request)
             for history in historyArray{
-                if history.detailContext != "" &&  changeDateToMonth(history.createTime ?? Date()) == selectedDate
+                if history.detailContext != "" && history.detailContext != nil &&  changeDateToMonth(history.createTime ?? Date()) == selectedDate
                 {
                     
                     resultDate.append(changeSelectedDateToString(history.createTime ?? Date()))

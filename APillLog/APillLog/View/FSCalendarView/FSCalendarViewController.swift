@@ -18,6 +18,7 @@ class FSCalendarViewController: UIViewController{
     @IBOutlet var scrollBackgroundView: UIView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarHeaderView: UIView!
+    
     private var currentPage: Date?
     
     private lazy var today: Date = {
@@ -68,7 +69,7 @@ class FSCalendarViewController: UIViewController{
     
     private func resizingTableViewHeight(dataCount count: Double) {
         if count == 0 {
-            tableViewHeight.constant = 66.0
+            tableViewHeight.constant = 0
         } else {
             tableViewHeight.constant = 91.0 * CGFloat(count)
         }
@@ -125,12 +126,6 @@ class FSCalendarViewController: UIViewController{
         setUITableDelegate()
         registerNib()
         self.tableView.layer.cornerRadius = 10
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setCalendar()
         
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: Date())
         tableView.reloadData()
@@ -142,12 +137,30 @@ class FSCalendarViewController: UIViewController{
         else { guideLabelHidden = true }
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.calendarHeaderView.layoutIfNeeded()
-        self.calendarHeaderView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
-        self.calendarView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("🐧")
+        setCalendar()
+        
+        historyData = CoreDataManager.shared.fetchHistory(selectedDate: Date())
+        tableView.reloadData()
+        calendarCurrentPageDidChange(self.calendarView)
+        
+        calendarView.reloadData()
+        
+        let cellCount = calculateTableViewCellHeight(Date())
+        resizingTableViewHeight(dataCount: cellCount)
+        
+        if historyData.count == 0 { guideLabelHidden = false }
+        else { guideLabelHidden = true }
     }
+    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        self.calendarHeaderView.layoutIfNeeded()
+//        self.calendarHeaderView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
+//        self.calendarView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
+//    }
     
     // MARK: @IBAction
     @IBAction func tapPrevButton(_ sender: UIButton) {
@@ -212,15 +225,15 @@ class FSCalendarViewController: UIViewController{
     }
    
 }
-
-extension UIView {
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
-    }
-}
+//
+//extension UIView {
+//    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+//        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+//        let mask = CAShapeLayer()
+//        mask.path = path.cgPath
+//        layer.mask = mask
+//    }
+//}
 
 extension FSCalendarViewController : FSCalendarDelegateAppearance {
 
@@ -229,15 +242,15 @@ extension FSCalendarViewController : FSCalendarDelegateAppearance {
         let selectedDate: String = calendarDotDateFormatter.string(from: date)
         var colorSet:[UIColor] = []
         if self.sideEffectEvents.contains(selectedDate) {
-            colorSet.append(UIColor.blue)
+            colorSet.append(UIColor.AColor.calendarSide)
         }
         
         if self.detailSideEffectEvents.contains(selectedDate){
-            colorSet.append(UIColor.black)
+            colorSet.append(UIColor.AColor.calendarDetail)
         }
         
         if self.dosingPillEvents.contains(selectedDate){
-            colorSet.append(UIColor.red)
+            colorSet.append(UIColor.AColor.calendarPill)
         }
         return colorSet
     }
