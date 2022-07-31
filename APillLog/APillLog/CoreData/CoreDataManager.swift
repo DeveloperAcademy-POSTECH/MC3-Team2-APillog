@@ -885,7 +885,7 @@ class CoreDataManager {
         for pill in doTakePill {
             let key = pill.key
             let doValue = pill.value
-            let doneValue = doneTakePill[key] ?? 1
+            let doneValue = doneTakePill[key] ?? 0
             result.append((key, doneValue, doValue))
         }
         
