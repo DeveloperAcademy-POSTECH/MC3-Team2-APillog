@@ -349,6 +349,7 @@
                         <outlet property="primaryPillTableViewHeight" destination="agQ-qx-kS1" id="ceM-Nr-wCW"/>
                         <outlet property="primaryPillViewLinkButton" destination="d1n-kx-B9D" id="eMH-xj-lJg"/>
                         <outlet property="primaryPillViewLinkLabel" destination="cVz-VI-Kla" id="Rlw-Mr-822"/>
+                        <outlet property="primaryPillViewTitle" destination="qR7-9z-koG" id="cVI-fP-rR3"/>
                         <outlet property="secondaryPillField" destination="PMK-9x-uNM" id="7Mt-zM-m1u"/>
                         <outlet property="secondaryPillFieldHeight" destination="5Pw-3g-7Bh" id="NQ8-mM-Fzq"/>
                         <outlet property="secondaryPillModalButton" destination="168-Nr-JJL" id="31V-cm-Osa"/>

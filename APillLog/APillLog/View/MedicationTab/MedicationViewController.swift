@@ -27,6 +27,13 @@ class MedicationViewController: UIViewController {
     private var nowDosingTime: Int16 = 1
 
     var takingTime: Date = Date()
+    
+    let dateFormatterForCompare: DateFormatter = {
+       let df = DateFormatter()
+        df.dateFormat = "yyyy-mm-dd"
+        return df
+    }()
+    
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -39,6 +46,7 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var symptomButtonBackgroundView: UIView!
 
     // Primary Pill
+    @IBOutlet weak var primaryPillViewTitle: UILabel!
     @IBOutlet weak var primaryPillField: UIView!
     @IBOutlet weak var timeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var primaryPillViewLinkLabel: UILabel!
@@ -185,6 +193,14 @@ class MedicationViewController: UIViewController {
         secondaryPillList.count == 0 ? 40.0 :
         66.0 * CGFloat(secondaryPillList.count)
         secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
+    }
+    
+    private func setPrimaryTableViewTitleText(selectedDate: Date) {
+        if  dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()) {
+            primaryPillViewTitle.text = "오늘 복용할 약이에요"
+        } else {
+            primaryPillViewTitle.text = "이전에 복용했던 약이예요"
+        }
     }
 
     // MARK: - IBActions
@@ -347,12 +363,14 @@ extension MedicationViewController: CalendarViewDelegate {
         self.date = date
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
+        setPrimaryTableViewTitleText(selectedDate: date)
         takingTime = date
     }
 
     func setCalendarView() {
         calendarView.delegate = self
     }
+    
     func changeDateFormat(date: Date) -> Date{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
