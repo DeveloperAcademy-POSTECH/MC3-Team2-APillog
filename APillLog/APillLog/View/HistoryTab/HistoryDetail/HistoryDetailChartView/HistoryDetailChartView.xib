@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
+            <connections>
+                <outlet property="barChartView" destination="GnZ-rl-raG" id="JtA-Nl-gHm"/>
+                <outlet property="segmentedControl" destination="9or-Zi-d7u" id="Ioi-fI-HVU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="377"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9or-Zi-d7u">
+                    <rect key="frame" x="15" y="15" width="384" height="32"/>
+                    <segments>
+                        <segment title="증상 빈도"/>
+                        <segment title="일 별 빈도"/>
+                    </segments>
+                    <connections>
+                        <action selector="changeSegmentedControl:" destination="-1" eventType="valueChanged" id="arA-Wj-zGc"/>
+                    </connections>
+                </segmentedControl>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMi-gi-S23">
+                    <rect key="frame" x="15" y="56" width="384" height="306"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Tb-bgB">
+                            <rect key="frame" x="0.0" y="0.0" width="650" height="306"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" id="GnZ-rl-raG" customClass="BarChartView" customModule="Charts">
+                                    <rect key="frame" x="0.0" y="0.0" width="650" height="306"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <viewLayoutGuide key="safeArea" id="oxb-wB-sbT"/>
+                                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-I5-8ff">
+                                    <rect key="frame" x="-1" y="-1" width="650" height="306"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="750" constant="650" id="E0U-65-haD"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="AWhite"/>
+                    <constraints>
+                        <constraint firstItem="ZgM-Tb-bgB" firstAttribute="trailing" secondItem="ODl-hS-LKC" secondAttribute="trailing" id="Cr6-p3-6eK"/>
+                        <constraint firstItem="ZgM-Tb-bgB" firstAttribute="top" secondItem="ODl-hS-LKC" secondAttribute="top" id="eLk-tt-VjH"/>
+                        <constraint firstItem="ZgM-Tb-bgB" firstAttribute="bottom" secondItem="ODl-hS-LKC" secondAttribute="bottom" id="iv2-sd-7vt"/>
+                        <constraint firstItem="ZgM-Tb-bgB" firstAttribute="height" secondItem="fZb-Bg-CGd" secondAttribute="height" id="lZH-Bk-IbS"/>
+                        <constraint firstItem="ZgM-Tb-bgB" firstAttribute="leading" secondItem="ODl-hS-LKC" secondAttribute="leading" id="w7w-VD-nnT"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="ODl-hS-LKC"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="fZb-Bg-CGd"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="AWhite"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LMi-gi-S23" secondAttribute="bottom" constant="15" id="BM4-wZ-WuK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9or-Zi-d7u" secondAttribute="trailing" constant="15" id="Cgu-4x-AKA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LMi-gi-S23" secondAttribute="trailing" constant="15" id="EAu-vi-k4N"/>
+                <constraint firstItem="9or-Zi-d7u" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="N8S-WV-2QE"/>
+                <constraint firstItem="9or-Zi-d7u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="S2U-0x-Hjn"/>
+                <constraint firstItem="LMi-gi-S23" firstAttribute="top" secondItem="9or-Zi-d7u" secondAttribute="bottom" constant="10" id="d3e-63-brp"/>
+                <constraint firstItem="LMi-gi-S23" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="plp-nI-g9A"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="160.86956521739131" y="27.790178571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

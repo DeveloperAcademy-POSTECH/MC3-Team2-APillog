@@ -11,6 +11,7 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
     var selectedDate = Date()
     
     func fetchDate(date: Date) {
+        selectedDate = date
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: date)
         tableView.reloadData()
         if historyData.count == 0 { guideLabelHidden = false }

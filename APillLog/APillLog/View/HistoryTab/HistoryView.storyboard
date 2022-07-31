@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5k-Bc-vbY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--히스토리-->
+        <!--History View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HistoryViewController" id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qow-mr-XbH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIn-LN-qwr" customClass="CalendarView" customModule="APillLog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -27,7 +27,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-eL-WjG">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="782"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="738"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
@@ -46,6 +46,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVI-aT-oVV">
+                                <rect key="frame" x="0.0" y="432" width="414" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="한 눈에 보기 &gt;"/>
+                                <connections>
+                                    <segue destination="9SC-Nh-T6K" kind="show" id="gUc-SH-j3W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h6C-pw-iL9"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,7 +65,7 @@
                             <constraint firstItem="qow-mr-XbH" firstAttribute="trailing" secondItem="h6C-pw-iL9" secondAttribute="trailing" id="cwr-Ug-YzI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="A2V-tg-VUy"/>
+                    <navigationItem key="navigationItem" id="3fY-zH-Xdi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="KIn-LN-qwr" id="eEE-0y-j7P"/>
@@ -71,7 +80,36 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-146" y="94"/>
+            <point key="canvasLocation" x="631.8840579710145" y="95.758928571428569"/>
+        </scene>
+        <!--히스토리-->
+        <scene sceneID="Q0F-iR-JRs">
+            <objects>
+                <navigationController storyboardIdentifier="HistoryViewController" automaticallyAdjustsScrollViewInsets="NO" id="F5k-Bc-vbY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="히스토리" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="A2V-tg-VUy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aFe-pW-jxj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="3iL-ea-Z1T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlz-SC-Xkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278.26086956521743" y="95.758928571428569"/>
+        </scene>
+        <!--HistoryDetailView-->
+        <scene sceneID="Ehd-f1-aZt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryDetailView" referencedIdentifier="HistoryDetailView" id="9SC-Nh-T6K" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IHl-KF-QEk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6N-tJ-bub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="96"/>
         </scene>
     </scenes>
     <resources>

@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
+		3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
+		34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
+		34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
 		34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */; };
 		47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
@@ -20,6 +23,11 @@
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
 		78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */; };
 		8711C3DF28929FDF00F7625F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C3DE28929FDF00F7625F /* UIView.swift */; };
+		8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */; };
+		8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */; };
+		8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */; };
+		8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
@@ -79,6 +87,7 @@
 		3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.release.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.release.xcconfig"; sourceTree = "<group>"; };
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
+		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
@@ -90,6 +99,11 @@
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
 		8711C3DE28929FDF00F7625F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailChartView.swift; sourceTree = "<group>"; };
+		8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailChartView.xib; sourceTree = "<group>"; };
+		8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressViewCell.swift; sourceTree = "<group>"; };
+		8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressViewCell.xib; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +192,17 @@
 			path = ManageDosingView;
 			sourceTree = "<group>";
 		};
+		3459C3DB289517E100C68B34 /* HistoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
+				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
+				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
+				8711C43128951C3400F7625F /* HistoryDetailChartView */,
+			);
+			path = HistoryDetail;
+			sourceTree = "<group>";
+		};
 		347E4F902892E7150043136A /* ManageDosingViewCustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +228,24 @@
 				34CE29112889308200644E4E /* MedicationPillCell.swift */,
 			);
 			path = MedicationTabCustomCell;
+			sourceTree = "<group>";
+		};
+		8711C43128951C3400F7625F /* HistoryDetailChartView */ = {
+			isa = PBXGroup;
+			children = (
+				8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */,
+				8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */,
+			);
+			path = HistoryDetailChartView;
+			sourceTree = "<group>";
+		};
+		8711C43228951C3D00F7625F /* HistoryDetailProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */,
+				8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */,
+			);
+			path = HistoryDetailProgressView;
 			sourceTree = "<group>";
 		};
 		876ED1932882A33B00179767 = {
@@ -441,6 +484,7 @@
 		A8F4F2C0288477C40008EB48 /* HistoryTab */ = {
 			isa = PBXGroup;
 			children = (
+				3459C3DB289517E100C68B34 /* HistoryDetail */,
 				A8F4F2C828847A270008EB48 /* HistoryView.storyboard */,
 				A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */,
 				87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */,
@@ -538,7 +582,9 @@
 			files = (
 				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
 				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
+				34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
+				8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
@@ -549,13 +595,16 @@
 				9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */,
 				A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */,
 				9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */,
+				3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
 				9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */,
 				A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */,
 				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
+				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
+				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
@@ -629,6 +678,7 @@
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
 				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
+				34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */,
 				9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */,
 				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
@@ -650,6 +700,8 @@
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
 				9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */,
+				8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */,
+				8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */,
 				34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */,
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
