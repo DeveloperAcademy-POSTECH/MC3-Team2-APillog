@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf8-Ec-20i">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf8-Ec-20i">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ou7-pM-gf9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-gU-m97">
                                                 <rect key="frame" x="25" y="10" width="364" height="40"/>
@@ -89,15 +90,34 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="364" placeholderIntrinsicHeight="388" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rKK-RL-QKG">
+                                                <rect key="frame" x="25" y="420" width="364" height="600"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="jEh-1n-JN1"/>
+                                                </constraints>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남겨진 히스토리가 없어요 :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGm-k7-MFu">
+                                                <rect key="frame" x="25" y="442" width="364" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="AGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="808" id="CAg-sk-u3f"/>
+                                            <constraint firstItem="rKK-RL-QKG" firstAttribute="top" secondItem="D7H-zJ-OYH" secondAttribute="bottom" constant="30" id="4qi-Y8-7Dn"/>
+                                            <constraint firstAttribute="height" constant="800" id="66K-pb-0Af"/>
+                                            <constraint firstAttribute="trailing" secondItem="PGm-k7-MFu" secondAttribute="trailing" constant="25" id="83k-i9-0gV"/>
                                             <constraint firstItem="4fz-gU-m97" firstAttribute="leading" secondItem="Ou7-pM-gf9" secondAttribute="leading" constant="25" id="CNQ-HK-iG5"/>
                                             <constraint firstItem="4fz-gU-m97" firstAttribute="top" secondItem="Ou7-pM-gf9" secondAttribute="top" constant="10" id="COb-iB-OpQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rKK-RL-QKG" secondAttribute="trailing" constant="25" id="NvB-eh-l16"/>
                                             <constraint firstAttribute="trailing" secondItem="4fz-gU-m97" secondAttribute="trailing" constant="25" id="PBr-0I-CRQ"/>
+                                            <constraint firstItem="PGm-k7-MFu" firstAttribute="leading" secondItem="Ou7-pM-gf9" secondAttribute="leading" constant="25" id="PEg-xy-rnV"/>
                                             <constraint firstItem="D7H-zJ-OYH" firstAttribute="top" secondItem="4fz-gU-m97" secondAttribute="bottom" id="R80-JN-BXo"/>
+                                            <constraint firstItem="PGm-k7-MFu" firstAttribute="top" secondItem="D7H-zJ-OYH" secondAttribute="bottom" constant="52" id="f5e-fq-PgM"/>
                                             <constraint firstItem="D7H-zJ-OYH" firstAttribute="centerX" secondItem="Ou7-pM-gf9" secondAttribute="centerX" id="oUS-AJ-QYX"/>
+                                            <constraint firstItem="rKK-RL-QKG" firstAttribute="leading" secondItem="Ou7-pM-gf9" secondAttribute="leading" constant="25" id="vo8-V2-FDw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -122,18 +142,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="히스토리" id="yH2-Ad-CZ1">
-                        <barButtonItem key="rightBarButtonItem" title="한 눈에 보기" id="EE7-Kl-wep">
-                            <color key="tintColor" systemColor="linkColor"/>
+                        <barButtonItem key="rightBarButtonItem" title="리포트" id="EE7-Kl-wep">
+                            <color key="tintColor" name="AAccent"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="Ou7-pM-gf9" id="NYN-TP-m2p"/>
+                        <outlet property="backgroundViewHeight" destination="66K-pb-0Af" id="Lx4-ee-rcR"/>
                         <outlet property="calendarHeaderView" destination="4fz-gU-m97" id="B0u-Zy-if4"/>
                         <outlet property="calendarView" destination="D7H-zJ-OYH" id="ev2-2v-ALT"/>
+                        <outlet property="guideLabel" destination="PGm-k7-MFu" id="XNa-Vm-MtN"/>
                         <outlet property="headerLabel" destination="EO3-pz-0hr" id="92o-SN-0v1"/>
                         <outlet property="nextButton" destination="LLh-al-zb8" id="eFo-c2-7ql"/>
                         <outlet property="prevButton" destination="o3a-km-FBY" id="xZe-x9-qtx"/>
                         <outlet property="scrollBackgroundView" destination="5EZ-qb-Rvc" id="W3P-JC-lu6"/>
+                        <outlet property="scrollView" destination="zf8-Ec-20i" id="MW5-v5-eLh"/>
+                        <outlet property="tableView" destination="rKK-RL-QKG" id="tv0-NK-Sgg"/>
+                        <outlet property="tableViewHeight" destination="jEh-1n-JN1" id="pbn-hS-T7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -162,12 +187,15 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <namedColor name="AAccent">
+            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ABlack">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="AGray">
+            <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
