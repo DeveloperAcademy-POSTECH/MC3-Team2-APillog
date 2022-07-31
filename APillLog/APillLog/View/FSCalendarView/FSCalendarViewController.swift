@@ -25,16 +25,22 @@ class FSCalendarViewController: UIViewController{
         return Date()
     }()
     
-    private lazy var dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "yyyy년 M월"
-        return df
+    private lazy var headerDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 M월"
+        return dateFormatter
     }()
     
     var dosingPillEvents: [String] = []
     var sideEffectEvents: [String] = []
     var detailSideEffectEvents: [String] = []
+    
+    let calendarDotDateFormatter : DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
     
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
@@ -95,11 +101,11 @@ class FSCalendarViewController: UIViewController{
     
     func setCalendar() {
         calendarView.scope = .month
-        headerLabel.text = self.dateFormatter.string(from: calendarView.currentPage)
+        headerLabel.text = self.headerDateFormatter.string(from: calendarView.currentPage)
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        self.headerLabel.text = self.dateFormatter.string(from: calendar.currentPage)
+        self.headerLabel.text = self.headerDateFormatter.string(from: calendar.currentPage)
         
         dosingPillEvents = CoreDataManager.shared.fetchMonthDosingPillDate(date: calendar.currentPage)
         sideEffectEvents = CoreDataManager.shared.fetchMonthSideEffectDate(date: calendar.currentPage)
@@ -147,9 +153,7 @@ extension FSCalendarViewController : FSCalendarDelegateAppearance {
 
     // MARK: - FSCalendarDelegateAppearance
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let selectedDate: String = dateFormatter.string(from: date)
+        let selectedDate: String = calendarDotDateFormatter.string(from: date)
         var colorSet:[UIColor] = []
         if self.sideEffectEvents.contains(selectedDate) {
             colorSet.append(UIColor.blue)
@@ -173,9 +177,7 @@ extension FSCalendarViewController : FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let selectedDate: String = dateFormatter.string(from: date)
+        let selectedDate: String = calendarDotDateFormatter.string(from: date)
         var count: Int = 0
         if self.sideEffectEvents.contains(selectedDate) {
             count += 1
