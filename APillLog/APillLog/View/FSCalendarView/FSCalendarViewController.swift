@@ -139,7 +139,6 @@ class FSCalendarViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("🐧")
         setCalendar()
         
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: Date())
@@ -154,13 +153,6 @@ class FSCalendarViewController: UIViewController{
         if historyData.count == 0 { guideLabelHidden = false }
         else { guideLabelHidden = true }
     }
-    
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//        self.calendarHeaderView.layoutIfNeeded()
-//        self.calendarHeaderView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
-//        self.calendarView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
-//    }
     
     // MARK: @IBAction
     @IBAction func tapPrevButton(_ sender: UIButton) {
@@ -225,15 +217,6 @@ class FSCalendarViewController: UIViewController{
     }
    
 }
-//
-//extension UIView {
-//    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-//        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-//        let mask = CAShapeLayer()
-//        mask.path = path.cgPath
-//        layer.mask = mask
-//    }
-//}
 
 extension FSCalendarViewController : FSCalendarDelegateAppearance {
 

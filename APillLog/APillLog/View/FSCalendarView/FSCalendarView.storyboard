@@ -235,35 +235,6 @@
             </objects>
             <point key="canvasLocation" x="1592.753623188406" y="145.3125"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sQh-Ss-3QG">
-            <objects>
-                <viewController id="d5b-aO-ON1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fJN-tt-XPr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-gU-m97">
-                                <rect key="frame" x="25" y="470" width="364" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RTu-DX-E0H"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="cxC-3P-uOp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4fz-gU-m97" firstAttribute="leading" secondItem="fJN-tt-XPr" secondAttribute="leading" constant="25" id="QNc-py-seH"/>
-                            <constraint firstAttribute="trailing" secondItem="4fz-gU-m97" secondAttribute="trailing" constant="25" id="YML-g6-IkT"/>
-                            <constraint firstItem="4fz-gU-m97" firstAttribute="top" secondItem="fJN-tt-XPr" secondAttribute="top" constant="470" id="tYm-aO-6ZD"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTM-jk-NMk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2407" y="145"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="agM-BB-xeE">
             <objects>
