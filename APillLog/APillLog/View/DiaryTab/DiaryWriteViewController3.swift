@@ -20,10 +20,13 @@ class DiaryWriteViewController3: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var borderColor : UIColor = UIColor.AColor.accent
         self.diaryWriteDatePicker3.date = currentDate
         self.diaryWriteTextView3.becomeFirstResponder()
         // Do any additional setup after loading the view.
         self.diaryWriteTextView3.delegate = self
+        diaryWriteTextView3.layer.borderWidth = 1
+        diaryWriteTextView3.layer.borderColor = borderColor.cgColor
         diarySaveButton3.isEnabled = false
         diarySaveButton3.backgroundColor = UIColor.AColor.disable
         diaryWriteTextView3.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)

@@ -29,13 +29,13 @@ class DiaryReadViewController: UIViewController {
         DiaryReadActionString.text = actionString
         DiaryReadRecognizeString.text = recognizeString
         self.navigationController?.title = "에필로그"
-        DiaryReadViewBody.layer.borderWidth = 2
+        DiaryReadViewBody.layer.borderWidth = 1
         DiaryReadViewBody.layer.borderColor = borderColor.cgColor
         DiaryReadViewBody.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
-        DiaryReadRecognizeString.layer.borderWidth = 2
+        DiaryReadRecognizeString.layer.borderWidth = 1
         DiaryReadRecognizeString.layer.borderColor = borderColor.cgColor
         DiaryReadRecognizeString.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
-        DiaryReadActionString.layer.borderWidth = 2
+        DiaryReadActionString.layer.borderWidth = 1
         DiaryReadActionString.layer.borderColor = borderColor.cgColor
         DiaryReadActionString.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         
@@ -54,7 +54,7 @@ class DiaryReadViewController: UIViewController {
         vc.receivedCBT = receivedCBT
         vc.type = 1
         vc.date = date
-        vc.questionString = "오늘의 나는 어떤 실수를 했나요?"
+        vc.questionString = "오늘 하루 후회되는 일이 있나요?"
         vc.textViewContent = body
         vc.mistakeString = body
         vc.recognizeString = recognizeString
@@ -74,7 +74,7 @@ class DiaryReadViewController: UIViewController {
         vc.type = 2
         vc.receivedCBT = receivedCBT
         vc.date = date
-        vc.questionString = "실수했다는 사실을 어떻게 인지했나요?"
+        vc.questionString = "왜 후회하나요?"
         vc.textViewContent = recognizeString
         vc.mistakeString = body
         vc.recognizeString = recognizeString
@@ -92,7 +92,7 @@ class DiaryReadViewController: UIViewController {
         vc.type = 3
         vc.receivedCBT = receivedCBT
         vc.date = date
-        vc.questionString = "내일의 나는 어떻게 행동할까요?"
+        vc.questionString = "내일의 나는 어떻게 행동하면 좋을까요?"
         vc.textViewContent = actionString
         vc.mistakeString = body
         vc.recognizeString = recognizeString

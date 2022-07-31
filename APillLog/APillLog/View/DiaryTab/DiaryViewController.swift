@@ -45,6 +45,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.sectionHeaderTopPadding = 0
         mistakeTableView.register(MyCustomHeader.self,
                                   forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        mistakeTableView.rowHeight = 55
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
         

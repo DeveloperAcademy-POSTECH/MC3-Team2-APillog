@@ -49,7 +49,10 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        var borderColor : UIColor = UIColor.AColor.accent
         mistakeTextView.delegate = self
+        mistakeTextView.layer.borderWidth = 1
+        mistakeTextView.layer.borderColor = borderColor.cgColor
         diaryWriteSaveButton1.isEnabled = false
         diaryWriteSaveButton1.backgroundColor = UIColor.AColor.disable
         mistakeTextView.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)

@@ -25,11 +25,14 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var DiaryEditDateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var borderColor : UIColor = UIColor.AColor.accent
         DiaryEditDateLabel.text = date
         DiaryEditString.text = questionString
         DiaryEditTextView.text = textViewContent
         DiaryEditTextView.becomeFirstResponder()
         DiaryEditTextView.delegate = self
+        DiaryEditTextView.layer.borderWidth = 1
+        DiaryEditTextView.layer.borderColor = borderColor.cgColor
         // Do any additional setup after loading the view.
         DiaryEditSaveButton.isEnabled = false
         DiaryEditSaveButton.backgroundColor = UIColor.AColor.disable

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--실수노트-->
+        <!--에필로그-->
         <scene sceneID="JLd-a3-ohc">
             <objects>
                 <viewController storyboardIdentifier="DiaryViewController" modalTransitionStyle="flipHorizontal" id="rHe-0X-iux" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,17 +59,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w0-f7-gbl">
-                                                    <rect key="frame" x="20" y="23" width="311" height="21"/>
+                                                    <rect key="frame" x="20" y="27" width="311" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-navigation" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-IL-Uxg">
-                                                    <rect key="frame" x="315" y="17" width="7" height="10"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-IL-Uxg">
+                                                    <rect key="frame" x="309.33333333333331" y="19" width="12.666666666666686" height="16.666666666666664"/>
+                                                    <color key="tintColor" name="ABlack"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c32-uG-czh">
-                                                    <rect key="frame" x="20" y="0.0" width="311" height="21"/>
+                                                    <rect key="frame" x="20" y="5" width="311" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -93,26 +94,27 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실수노트 적기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvB-Gu-C5F">
-                                <rect key="frame" x="134" y="251.66666666666666" width="87.666666666666686" height="19.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에필로그 적기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvB-Gu-C5F">
+                                <rect key="frame" x="139" y="251.66666666666663" width="88" height="20"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-navigation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtf-De-T8L">
-                                <rect key="frame" x="340" y="254.33333333333337" width="7" height="10"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rtf-De-T8L">
+                                <rect key="frame" x="334.33333333333331" y="246" width="12.666666666666686" height="16.666666666666686"/>
+                                <color key="tintColor" name="ABlack"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✏️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd3-dH-PYh">
-                                <rect key="frame" x="38" y="227.33333333333337" width="54" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 실수노트가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
                                 <rect key="frame" x="110" y="425" width="414" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <color key="textColor" name="ADisable"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✏️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd3-dH-PYh">
+                                <rect key="frame" x="38" y="240" width="40" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -126,9 +128,9 @@
                             <constraint firstItem="iX0-KJ-blP" firstAttribute="top" secondItem="WoG-be-VzB" secondAttribute="top" constant="116" id="GWU-9L-cOh"/>
                             <constraint firstItem="pkA-a8-yLu" firstAttribute="top" secondItem="G2i-NX-mcY" secondAttribute="bottom" constant="27" id="OAR-ft-D07"/>
                             <constraint firstItem="vIK-K8-xhd" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="PCy-TY-8Up"/>
-                            <constraint firstItem="Dd3-dH-PYh" firstAttribute="top" secondItem="G2i-NX-mcY" secondAttribute="bottom" constant="26.5" id="Qtb-EW-X90"/>
+                            <constraint firstItem="Dd3-dH-PYh" firstAttribute="top" secondItem="G2i-NX-mcY" secondAttribute="bottom" constant="39.333333333333343" id="Qtb-EW-X90"/>
                             <constraint firstItem="G2i-NX-mcY" firstAttribute="top" secondItem="iX0-KJ-blP" secondAttribute="bottom" constant="16" id="W7v-bM-g6X"/>
-                            <constraint firstItem="LvB-Gu-C5F" firstAttribute="leading" secondItem="Dd3-dH-PYh" secondAttribute="trailing" constant="42" id="WmW-vp-5AR"/>
+                            <constraint firstItem="LvB-Gu-C5F" firstAttribute="leading" secondItem="Dd3-dH-PYh" secondAttribute="trailing" constant="61" id="WmW-vp-5AR"/>
                             <constraint firstItem="pkA-a8-yLu" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="ZUP-UI-dKD"/>
                             <constraint firstItem="vIK-K8-xhd" firstAttribute="top" secondItem="pkA-a8-yLu" secondAttribute="bottom" constant="27" id="deY-Sg-DKy"/>
                             <constraint firstItem="1lm-OZ-M6b" firstAttribute="top" secondItem="lsx-aD-u3n" secondAttribute="top" constant="337" id="ejN-FN-PxP"/>
@@ -139,7 +141,7 @@
                             <constraint firstItem="Dd3-dH-PYh" firstAttribute="leading" secondItem="WoG-be-VzB" secondAttribute="leadingMargin" constant="22" id="zZP-9M-5Dp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="실수노트" image="doc" catalog="system" selectedImage="doc.fill" id="mtL-Ys-d7e"/>
+                    <tabBarItem key="tabBarItem" title="에필로그" image="doc" catalog="system" selectedImage="doc.fill" id="mtL-Ys-d7e"/>
                     <navigationItem key="navigationItem" id="huT-8A-fqg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -185,7 +187,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 나는 어떤 실수를 했나요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-sP-S4d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 하루 후회되는 일이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-sP-S4d">
                                 <rect key="frame" x="24.999999999999986" y="157" width="216.66666666666663" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -206,11 +208,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-sk-ToI">
-                                <rect key="frame" x="135" y="88" width="100.33333333333331" height="31"/>
-                                <color key="tintColor" name="AccentColor"/>
-                                <locale key="locale" localeIdentifier="ko_KR"/>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QB-yd-PrN">
                                 <rect key="frame" x="25" y="405.66666666666669" width="340" height="45"/>
                                 <color key="backgroundColor" name="AAccent"/>
@@ -233,7 +230,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SR0-eZ-TRI">
-                                <rect key="frame" x="243" y="88" width="23" height="31"/>
+                                <rect key="frame" x="243" y="101" width="23" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="IKS-zP-bsw"/>
                                 </constraints>
@@ -241,6 +238,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-sk-ToI">
+                                <rect key="frame" x="135" y="101" width="100.33333333333331" height="31"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cUy-13-dRB"/>
                         <color key="backgroundColor" name="ABackground"/>
@@ -249,14 +251,14 @@
                             <constraint firstItem="zZ2-sP-S4d" firstAttribute="leading" secondItem="cUy-13-dRB" secondAttribute="leading" constant="25" id="Cbo-n9-mpP"/>
                             <constraint firstItem="5QB-yd-PrN" firstAttribute="leading" secondItem="cUy-13-dRB" secondAttribute="leading" constant="25" id="Dbr-tF-QPb"/>
                             <constraint firstItem="8r3-sk-ToI" firstAttribute="leading" secondItem="cUy-13-dRB" secondAttribute="leading" constant="135" id="E4t-oO-47U"/>
-                            <constraint firstItem="zZ2-sP-S4d" firstAttribute="top" secondItem="8r3-sk-ToI" secondAttribute="bottom" constant="38" id="GLY-IW-eiR"/>
+                            <constraint firstItem="zZ2-sP-S4d" firstAttribute="top" secondItem="8r3-sk-ToI" secondAttribute="bottom" constant="25" id="GLY-IW-eiR"/>
                             <constraint firstItem="PeY-wI-H0U" firstAttribute="top" secondItem="zZ2-sP-S4d" secondAttribute="bottom" constant="25" id="Kac-I6-diL"/>
                             <constraint firstItem="5QB-yd-PrN" firstAttribute="top" secondItem="PeY-wI-H0U" secondAttribute="bottom" constant="54" id="L0a-5m-DcK"/>
-                            <constraint firstItem="8r3-sk-ToI" firstAttribute="top" secondItem="cUy-13-dRB" secondAttribute="top" id="OIT-YI-Gbn"/>
+                            <constraint firstItem="8r3-sk-ToI" firstAttribute="top" secondItem="cUy-13-dRB" secondAttribute="top" constant="13" id="OIT-YI-Gbn"/>
                             <constraint firstItem="cUy-13-dRB" firstAttribute="trailing" secondItem="5QB-yd-PrN" secondAttribute="trailing" constant="25" id="PUO-X5-TGH"/>
                             <constraint firstItem="cUy-13-dRB" firstAttribute="trailing" secondItem="PeY-wI-H0U" secondAttribute="trailing" constant="25" id="Tts-7c-C8x"/>
                             <constraint firstItem="PeY-wI-H0U" firstAttribute="leading" secondItem="cUy-13-dRB" secondAttribute="leading" constant="25" id="Vat-Hs-YIa"/>
-                            <constraint firstItem="SR0-eZ-TRI" firstAttribute="top" secondItem="cUy-13-dRB" secondAttribute="top" id="e8B-lw-7FU"/>
+                            <constraint firstItem="SR0-eZ-TRI" firstAttribute="top" secondItem="cUy-13-dRB" secondAttribute="top" constant="13" id="e8B-lw-7FU"/>
                             <constraint firstItem="SR0-eZ-TRI" firstAttribute="leading" secondItem="8r3-sk-ToI" secondAttribute="trailing" constant="7.6699999999999999" id="xdM-36-Jum"/>
                         </constraints>
                     </view>
@@ -279,7 +281,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실수했다는 사실을 어떻게 인지했나요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyk-yH-Tf9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왜 후회하나요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyk-yH-Tf9">
                                 <rect key="frame" x="25" y="157" width="340" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -301,7 +303,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="KhF-mh-2E5">
-                                <rect key="frame" x="135" y="88" width="100.33333333333331" height="31"/>
+                                <rect key="frame" x="135" y="101" width="100.33333333333331" height="31"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
                             </datePicker>
@@ -327,7 +329,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyN-b2-ZhQ">
-                                <rect key="frame" x="243" y="88" width="23" height="31"/>
+                                <rect key="frame" x="243" y="101" width="23" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="HUV-jq-wKY"/>
                                 </constraints>
@@ -340,16 +342,16 @@
                         <color key="backgroundColor" name="ABackground"/>
                         <constraints>
                             <constraint firstItem="KhF-mh-2E5" firstAttribute="leading" secondItem="i4T-V3-48Q" secondAttribute="leading" constant="135" id="Ac4-pr-shW"/>
-                            <constraint firstItem="Tyk-yH-Tf9" firstAttribute="top" secondItem="KhF-mh-2E5" secondAttribute="bottom" constant="38" id="KxZ-Cn-KWo"/>
+                            <constraint firstItem="Tyk-yH-Tf9" firstAttribute="top" secondItem="KhF-mh-2E5" secondAttribute="bottom" constant="25" id="KxZ-Cn-KWo"/>
                             <constraint firstItem="i4T-V3-48Q" firstAttribute="trailing" secondItem="KhF-mh-2E5" secondAttribute="trailing" constant="154.66999999999999" id="Oa4-Wj-0ZM"/>
                             <constraint firstItem="Tyk-yH-Tf9" firstAttribute="leading" secondItem="i4T-V3-48Q" secondAttribute="leading" constant="25" id="PL8-Py-YcH"/>
                             <constraint firstItem="ZJH-CU-v24" firstAttribute="leading" secondItem="i4T-V3-48Q" secondAttribute="leading" constant="25" id="Uha-5f-lpI"/>
-                            <constraint firstItem="KhF-mh-2E5" firstAttribute="top" secondItem="i4T-V3-48Q" secondAttribute="top" id="Z0i-Q1-S5x"/>
+                            <constraint firstItem="KhF-mh-2E5" firstAttribute="top" secondItem="i4T-V3-48Q" secondAttribute="top" constant="13" id="Z0i-Q1-S5x"/>
                             <constraint firstItem="ZJH-CU-v24" firstAttribute="top" secondItem="Tyk-yH-Tf9" secondAttribute="bottom" constant="25" id="ZAp-v6-4xN"/>
                             <constraint firstItem="i4T-V3-48Q" firstAttribute="trailing" secondItem="Tyk-yH-Tf9" secondAttribute="trailing" constant="25" id="aKk-N8-kgU"/>
                             <constraint firstItem="tPS-dJ-7BW" firstAttribute="leading" secondItem="i4T-V3-48Q" secondAttribute="leading" constant="25" id="h0a-1x-r1c"/>
                             <constraint firstItem="tPS-dJ-7BW" firstAttribute="top" secondItem="ZJH-CU-v24" secondAttribute="bottom" constant="54" id="hZQ-3O-4Pi"/>
-                            <constraint firstItem="VyN-b2-ZhQ" firstAttribute="top" secondItem="i4T-V3-48Q" secondAttribute="top" id="hge-QS-X4r"/>
+                            <constraint firstItem="VyN-b2-ZhQ" firstAttribute="top" secondItem="i4T-V3-48Q" secondAttribute="top" constant="13" id="hge-QS-X4r"/>
                             <constraint firstItem="i4T-V3-48Q" firstAttribute="trailing" secondItem="ZJH-CU-v24" secondAttribute="trailing" constant="25" id="iq3-R0-QGG"/>
                             <constraint firstItem="VyN-b2-ZhQ" firstAttribute="leading" secondItem="KhF-mh-2E5" secondAttribute="trailing" constant="7.6699999999999999" id="k9U-bL-j3f"/>
                             <constraint firstItem="i4T-V3-48Q" firstAttribute="trailing" secondItem="tPS-dJ-7BW" secondAttribute="trailing" constant="25" id="mnK-Ch-dbh"/>
@@ -410,12 +412,12 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="86N-1m-TwL">
-                                <rect key="frame" x="135" y="88" width="100.33333333333331" height="31"/>
+                                <rect key="frame" x="135" y="101" width="100.33333333333331" height="31"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWd-I0-1Vd">
-                                <rect key="frame" x="243" y="88" width="23" height="31"/>
+                                <rect key="frame" x="243" y="101" width="23" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="7ud-Pr-HZU"/>
                                 </constraints>
@@ -423,7 +425,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 나는 어떻게 행동할까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-4H-Vh9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 나는 어떻게 행동하면 좋을까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-4H-Vh9">
                                 <rect key="frame" x="25" y="157" width="340" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -437,12 +439,12 @@
                             <constraint firstItem="LIp-N7-F0A" firstAttribute="leading" secondItem="ucE-XC-wFQ" secondAttribute="leading" constant="25" id="2xw-bx-TZo"/>
                             <constraint firstItem="UpX-4H-Vh9" firstAttribute="leading" secondItem="ucE-XC-wFQ" secondAttribute="leading" constant="25" id="37w-bU-iI7"/>
                             <constraint firstItem="RWd-I0-1Vd" firstAttribute="leading" secondItem="86N-1m-TwL" secondAttribute="trailing" constant="7.6699999999999999" id="4bw-No-3H5"/>
-                            <constraint firstItem="86N-1m-TwL" firstAttribute="top" secondItem="ucE-XC-wFQ" secondAttribute="top" id="4vl-qL-JzX"/>
+                            <constraint firstItem="86N-1m-TwL" firstAttribute="top" secondItem="ucE-XC-wFQ" secondAttribute="top" constant="13" id="4vl-qL-JzX"/>
                             <constraint firstItem="LIp-N7-F0A" firstAttribute="top" secondItem="UpX-4H-Vh9" secondAttribute="bottom" constant="25" id="5ao-Di-Q7K"/>
                             <constraint firstItem="ucE-XC-wFQ" firstAttribute="trailing" secondItem="LIp-N7-F0A" secondAttribute="trailing" constant="25" id="74l-8t-DWA"/>
-                            <constraint firstItem="RWd-I0-1Vd" firstAttribute="top" secondItem="ucE-XC-wFQ" secondAttribute="top" id="9tg-2B-kgf"/>
+                            <constraint firstItem="RWd-I0-1Vd" firstAttribute="top" secondItem="ucE-XC-wFQ" secondAttribute="top" constant="13" id="9tg-2B-kgf"/>
                             <constraint firstItem="ucE-XC-wFQ" firstAttribute="trailing" secondItem="86N-1m-TwL" secondAttribute="trailing" constant="154.66999999999999" id="eeO-LG-Y3m"/>
-                            <constraint firstItem="UpX-4H-Vh9" firstAttribute="top" secondItem="86N-1m-TwL" secondAttribute="bottom" constant="38" id="gHn-u0-tDq"/>
+                            <constraint firstItem="UpX-4H-Vh9" firstAttribute="top" secondItem="86N-1m-TwL" secondAttribute="bottom" constant="25" id="gHn-u0-tDq"/>
                             <constraint firstItem="Epa-J0-Mdq" firstAttribute="top" secondItem="LIp-N7-F0A" secondAttribute="bottom" constant="54" id="gSY-0m-Pr9"/>
                             <constraint firstItem="86N-1m-TwL" firstAttribute="leading" secondItem="ucE-XC-wFQ" secondAttribute="leading" constant="135" id="oM5-W8-GeK"/>
                             <constraint firstItem="ucE-XC-wFQ" firstAttribute="trailing" secondItem="UpX-4H-Vh9" secondAttribute="trailing" constant="25" id="sWz-yO-LXk"/>
@@ -489,7 +491,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 나는 어떤 실수를 했나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORy-Io-cdY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 하루 후회되는 일이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORy-Io-cdY">
                                 <rect key="frame" x="25" y="152" width="340" height="21"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -510,7 +512,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실수했다는 사실을 어떻게 인지했나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwx-TV-1zX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왜 후회하나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwx-TV-1zX">
                                 <rect key="frame" x="25" y="376" width="340" height="21"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -531,35 +533,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 나는 어떻게 행동할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epF-DZ-8F7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 나는 어떻게 행동하면 좋을까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epF-DZ-8F7">
                                 <rect key="frame" x="25" y="600" width="340" height="21"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgh-gr-mIv">
-                                <rect key="frame" x="331" y="147" width="42.333333333333314" height="30.666666666666657"/>
-                                <color key="tintColor" name="ABlack"/>
+                                <rect key="frame" x="325" y="147" width="48.333333333333314" height="31"/>
+                                <color key="tintColor" name="AAccent"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="수정"/>
                                 <connections>
                                     <action selector="editMistake:" destination="zN5-q0-wR9" eventType="touchUpInside" id="6hm-AD-P5R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-Oz-GZd">
-                                <rect key="frame" x="331" y="371" width="42.333333333333314" height="30.666666666666686"/>
-                                <color key="tintColor" name="ABlack"/>
+                                <rect key="frame" x="325" y="371" width="48.333333333333314" height="31"/>
+                                <color key="tintColor" name="AAccent"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="수정"/>
                                 <connections>
                                     <action selector="editRecognize:" destination="zN5-q0-wR9" eventType="touchUpInside" id="Ba5-Fi-8nr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr6-yG-BJz">
-                                <rect key="frame" x="331" y="595" width="42.333333333333314" height="30.666666666666629"/>
-                                <color key="tintColor" name="ABlack"/>
+                                <rect key="frame" x="325" y="595" width="48.333333333333314" height="31"/>
+                                <color key="tintColor" name="AAccent"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="수정"/>
                                 <connections>
                                     <action selector="editAction:" destination="zN5-q0-wR9" eventType="touchUpInside" id="SWR-96-RO8"/>
                                 </connections>
@@ -717,10 +719,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="sign-navigation" width="7" height="10"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
