@@ -28,10 +28,6 @@ class HistoryViewController: UIViewController, CalendarViewDelegate {
         }
     }
     
-    @IBAction func tapHistoryDetailView(_ sender: Any) {
-        
-    }
-    
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

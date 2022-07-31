@@ -26,10 +26,8 @@
                                             <constraint firstAttribute="height" constant="70" id="a7o-2C-9fh"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-eL-WjG">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="738"/>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-eL-WjG">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="782"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="738"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
@@ -54,7 +52,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="한 눈에 보기 &gt;"/>
                                 <connections>
-                                    <action selector="tapHistoryDetailView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iey-nd-9pk"/>
                                     <segue destination="9SC-Nh-T6K" kind="show" id="gUc-SH-j3W"/>
                                 </connections>
                             </button>
