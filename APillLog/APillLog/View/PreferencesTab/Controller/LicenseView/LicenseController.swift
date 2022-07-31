@@ -12,7 +12,6 @@ class LicenseViewController: UIViewController {
     
     @IBOutlet weak var fsButton: UIButton!
     @IBOutlet weak var chartsButton: UIButton!
-    @IBOutlet weak var licenseTitle: UILabel!
     
     @IBAction func tapFSButton(){
         let storyboard = UIStoryboard(name: "FSLicenseView", bundle: nil)
@@ -24,15 +23,18 @@ class LicenseViewController: UIViewController {
         let vc =  storyboard.instantiateViewController(withIdentifier: "ChartsLicenseView") as! ChartsLicenseViewController
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "라이센스"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
-        self.navigationController?.title = "설정"
+        self.navigationController?.title = "License"
         self.navigationController?.navigationBar.topItem?.title = "뒤로"
         self.fsButton.layer.cornerRadius = 14
         self.chartsButton.layer.cornerRadius = 14
-        self.licenseTitle.font = UIFont.AFont.navigationTitle
     }
 }
