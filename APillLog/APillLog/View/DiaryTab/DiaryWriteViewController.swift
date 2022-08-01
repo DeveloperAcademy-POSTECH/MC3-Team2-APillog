@@ -56,6 +56,7 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
         diaryWriteSaveButton1.isEnabled = false
         diaryWriteSaveButton1.backgroundColor = UIColor.AColor.disable
         mistakeTextView.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
     }
     
     func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
