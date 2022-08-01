@@ -33,7 +33,7 @@ class CheckConditionViewController: UIViewController {
     
     var pillSideEffectDummyData: [String : Bool]!
     var pillMedicinalEffectDummyData: [String: Bool]!
-    var pillDisadvantage: [String: Bool] = ["불면" : false, "불안" : false, "두통" : false, "빈맥" : false, "어지러움" : false, "식욕 감소" : false, "입안 건조" : false, "구역" : false, "땀 과다증" : false, "과민성" : false]
+    var pillDisadvantage: [String: Bool] = ["불면" : false, "불안" : false, "두통" : false, "두근거림" : false, "어지러움" : false, "식욕 감소" : false, "입안 건조" : false, "구역" : false, "땀 과다증" : false, "과민성" : false]
         
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!

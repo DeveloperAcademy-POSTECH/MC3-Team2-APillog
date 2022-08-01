@@ -123,7 +123,7 @@ class HistoryDetailChartView: UIView {
                     case "불면":
                         sideEffectCount[0] += 1
                         
-                    case "빈맥":
+                    case "두근거림":
                         sideEffectCount[1] += 1
                         
                     case "두통":
