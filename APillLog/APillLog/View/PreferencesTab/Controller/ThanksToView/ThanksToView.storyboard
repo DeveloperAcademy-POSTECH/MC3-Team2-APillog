@@ -263,6 +263,11 @@
                                                     <constraint firstAttribute="width" constant="340" id="xEO-qw-TgO"/>
                                                     <constraint firstItem="BD8-93-ecs" firstAttribute="leading" secondItem="IRy-0G-5Ox" secondAttribute="trailing" constant="10" id="xEY-kq-8E2"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb3-H0-Suj" userLabel="secondView">
                                                 <rect key="frame" x="37" y="460" width="340" height="300"/>
@@ -369,7 +374,7 @@
                                                 <constraints>
                                                     <constraint firstItem="gaQ-3U-WcZ" firstAttribute="top" secondItem="abK-e4-JgH" secondAttribute="bottom" constant="35" id="6ax-Ti-gAD"/>
                                                     <constraint firstAttribute="width" constant="340" id="9dA-In-rrA"/>
-                                                    <constraint firstAttribute="height" constant="300" id="A2w-VC-gnz"/>
+                                                    <constraint firstAttribute="height" constant="320" id="A2w-VC-gnz"/>
                                                     <constraint firstItem="Idz-ds-6bE" firstAttribute="top" secondItem="P19-6b-bo9" secondAttribute="bottom" constant="15" id="Ahs-mm-Vnv"/>
                                                     <constraint firstItem="gaQ-3U-WcZ" firstAttribute="leading" secondItem="WGf-Rb-1Wt" secondAttribute="trailing" constant="10" id="DAY-Hz-R51"/>
                                                     <constraint firstItem="owB-At-Jz1" firstAttribute="leading" secondItem="qb3-H0-Suj" secondAttribute="leading" constant="10" id="FPj-rj-jiL"/>
@@ -394,24 +399,29 @@
                                                     <constraint firstItem="GaT-TH-bla" firstAttribute="leading" secondItem="keC-kM-PU7" secondAttribute="trailing" constant="10" id="uNh-tg-e8E"/>
                                                     <constraint firstItem="keC-kM-PU7" firstAttribute="leading" secondItem="qb3-H0-Suj" secondAttribute="leading" constant="10" id="v1Z-P0-Ngy"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="8Eb-Cd-BCs" firstAttribute="centerX" secondItem="LmV-1v-hh7" secondAttribute="centerX" id="BKf-Cu-shG"/>
+                                            <constraint firstAttribute="height" priority="750" constant="765" id="Cxg-QS-EBO"/>
                                             <constraint firstItem="qb3-H0-Suj" firstAttribute="centerX" secondItem="LmV-1v-hh7" secondAttribute="centerX" id="Ri1-IN-LIR"/>
-                                            <constraint firstItem="8Eb-Cd-BCs" firstAttribute="top" secondItem="LmV-1v-hh7" secondAttribute="top" constant="40" id="iDY-35-vlS"/>
-                                            <constraint firstItem="qb3-H0-Suj" firstAttribute="top" secondItem="8Eb-Cd-BCs" secondAttribute="bottom" constant="30" id="vsW-WV-Bxr"/>
+                                            <constraint firstItem="8Eb-Cd-BCs" firstAttribute="top" secondItem="LmV-1v-hh7" secondAttribute="top" constant="25" id="iDY-35-vlS"/>
+                                            <constraint firstItem="qb3-H0-Suj" firstAttribute="top" secondItem="8Eb-Cd-BCs" secondAttribute="bottom" constant="15" id="vsW-WV-Bxr"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="height" secondItem="0GU-cY-ZTd" secondAttribute="height" multiplier="0.649144" id="HIT-Ra-zFW"/>
-                                    <constraint firstAttribute="trailing" secondItem="LmV-1v-hh7" secondAttribute="trailing" id="ImT-dU-OOP"/>
-                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="leading" secondItem="0GU-cY-ZTd" secondAttribute="leading" id="Snc-fs-dVw"/>
-                                    <constraint firstAttribute="bottom" secondItem="LmV-1v-hh7" secondAttribute="bottom" constant="287" id="YEs-Qa-EiI"/>
-                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="top" secondItem="0GU-cY-ZTd" secondAttribute="top" id="muS-MS-jeB"/>
-                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="width" secondItem="0GU-cY-ZTd" secondAttribute="width" id="qcW-uH-FiN"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="trailing" secondItem="syh-Ha-LjN" secondAttribute="trailing" id="CIA-GF-bXO"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="top" secondItem="syh-Ha-LjN" secondAttribute="top" id="Ec4-Fo-hwn"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="width" secondItem="lof-UH-OoQ" secondAttribute="width" id="JuJ-iM-zOd"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="leading" secondItem="syh-Ha-LjN" secondAttribute="leading" id="mHe-Ym-jit"/>
+                                    <constraint firstItem="LmV-1v-hh7" firstAttribute="bottom" secondItem="syh-Ha-LjN" secondAttribute="bottom" id="znf-oG-pe3"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="syh-Ha-LjN"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="lof-UH-OoQ"/>
