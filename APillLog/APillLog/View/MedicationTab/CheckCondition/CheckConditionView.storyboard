@@ -319,7 +319,7 @@
                                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" name="AAccent"/>
                                             <connections>
-                                                <action selector="tapBackButton:" destination="jTN-oo-mAg" id="5jg-vu-wKE"/>
+                                                <action selector="tapBackButton:" destination="jTN-oo-mAg" id="KKB-mq-hlR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

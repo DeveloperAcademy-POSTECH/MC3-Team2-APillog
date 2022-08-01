@@ -60,6 +60,19 @@ class CheckConditionViewController: UIViewController {
         setConditionBackgroundViewStyle()
         setConditionViewNavigationBarStyle()
         setConditionSaveButtonStyle()
+        setBackButtonStyle()
+    }
+    
+    private func setBackButtonStyle() {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(hierarchicalColor: UIColor.AColor.accent)), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 70, height: 30)
+        button.setTitle("뒤로", for: .normal)
+        button.setTitleColor(UIColor.AColor.accent, for: .normal)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        
+        self.conditionViewNavigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
     
     private func setDetailContextStyle() {
@@ -107,7 +120,7 @@ class CheckConditionViewController: UIViewController {
         self.changeButtonState(sender)
     }
     
-    @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
+    @objc func tapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     

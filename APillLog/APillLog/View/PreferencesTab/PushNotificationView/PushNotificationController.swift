@@ -32,7 +32,7 @@ class PushNotificationController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "알림 설정"
-        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationController?.navigationBar.topItem?.title = "설정"
     }
     
     

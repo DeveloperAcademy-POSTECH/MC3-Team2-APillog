@@ -21,7 +21,7 @@ class QuestionsViewController: UIViewController, MFMailComposeViewControllerDele
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
-        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationController?.navigationBar.topItem?.title = "설정"
         self.navigationItem.title = "문의사항"
         self.welcomeText.font = UIFont.AFont.cardViewTitle
     }
