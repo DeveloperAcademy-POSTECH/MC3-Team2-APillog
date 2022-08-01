@@ -123,7 +123,7 @@
                                                                         <state key="normal" title="두근거림">
                                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
-                                                                        <state key="selected" title="빈맥"/>
+                                                                        <state key="selected" title="두근거림"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
