@@ -511,10 +511,10 @@
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A6009F1289517A200E7E82F /* FSCalendarView */,
-				9A91D6032890EDCA0026F3B6 /* PreferencesTab */,
 				876ED1A52882A33B00179767 /* Main.storyboard */,
 				876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */,
+				9A6009F1289517A200E7E82F /* FSCalendarView */,
+				9A91D6032890EDCA0026F3B6 /* PreferencesTab */,
 				A8F4F2C2288478010008EB48 /* MedicationTab */,
 				A8F4F2C1288477FB0008EB48 /* DiaryTab */,
 				A8F4F2C0288477C40008EB48 /* HistoryTab */,
@@ -867,7 +867,7 @@
 				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApilogWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
@@ -896,7 +896,7 @@
 				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApilogWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
@@ -1042,7 +1042,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1078,7 +1078,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

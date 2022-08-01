@@ -23,7 +23,7 @@ class DiaryReadViewController: UIViewController {
     @IBOutlet weak var DiaryReadActionString: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var borderColor : UIColor = UIColor.AColor.accent
+        let borderColor : UIColor = UIColor.AColor.accent
         DiaryReadViewBody.text = body
         DiaryReadViewDate.text = date
         DiaryReadActionString.text = actionString
@@ -39,6 +39,8 @@ class DiaryReadViewController: UIViewController {
         DiaryReadActionString.layer.borderColor = borderColor.cgColor
         DiaryReadActionString.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
+        
+        
     }
     
  

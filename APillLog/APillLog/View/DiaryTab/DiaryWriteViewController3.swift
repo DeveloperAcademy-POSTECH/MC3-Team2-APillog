@@ -20,7 +20,7 @@ class DiaryWriteViewController3: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var borderColor : UIColor = UIColor.AColor.accent
+        let borderColor : UIColor = UIColor.AColor.accent
         self.diaryWriteDatePicker3.date = currentDate
         self.diaryWriteTextView3.becomeFirstResponder()
         // Do any additional setup after loading the view.

@@ -26,7 +26,7 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var DiaryEditDateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var borderColor : UIColor = UIColor.AColor.accent
+        let borderColor : UIColor = UIColor.AColor.accent
         DiaryEditDateLabel.text = date
         DiaryEditString.text = questionString
         DiaryEditTextView.text = textViewContent

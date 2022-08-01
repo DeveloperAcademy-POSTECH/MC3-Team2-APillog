@@ -14,7 +14,7 @@ class DiaryWriteViewController2: UIViewController, UITextViewDelegate {
     @IBOutlet weak var diaryWriteTextView2: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var borderColor : UIColor = UIColor.AColor.accent
+        let borderColor : UIColor = UIColor.AColor.accent
         self.diaryWriteDatePicker2.date = currentDate
         self.diaryWriteTextView2.becomeFirstResponder()
         diaryWriteTextView2.delegate = self

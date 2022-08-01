@@ -49,7 +49,7 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        var borderColor : UIColor = UIColor.AColor.accent
+        let borderColor : UIColor = UIColor.AColor.accent
         mistakeTextView.delegate = self
         mistakeTextView.layer.borderWidth = 1
         mistakeTextView.layer.borderColor = borderColor.cgColor
