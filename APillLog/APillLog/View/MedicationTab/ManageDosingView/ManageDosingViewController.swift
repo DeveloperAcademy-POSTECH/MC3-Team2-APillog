@@ -27,6 +27,11 @@ class ManageDosingViewController: UIViewController {
         let nibName = UINib(nibName: "EmptyDosingTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "emptyDosingCell")
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
 
     // MARK: Function
     private func dosingCycleToString(dosingCycle: Int16) -> String {
@@ -140,6 +145,7 @@ extension ManageDosingViewController: AddPrimaryPillViewControllerDelegate {
             }
             tableView.insertRows(at: [indexPath] , with: .top)
             tableView.endUpdates()
+        
     }
 }
 
