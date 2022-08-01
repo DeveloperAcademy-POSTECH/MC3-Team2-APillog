@@ -12,17 +12,25 @@ class PreferencesViewController: UIViewController {
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.topItem?.title = "설정"
         self.view.backgroundColor = UIColor.AColor.background
         self.settingCellStyle()
+        featureLabel.font = UIFont.AFont.navigationTitle
+        informationLabel.font = UIFont.AFont.navigationTitle
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "설정"
+    }
+   
     // MARK: @IBOutlet
     @IBOutlet weak var settingNotificationView: UIView!
     @IBOutlet weak var licenseView: UIView!
     @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var thanksToView: UIView!
     @IBOutlet weak var questionsView: UIView!
-    
+    @IBOutlet weak var featureLabel: UILabel!
+    @IBOutlet weak var informationLabel: UILabel!
     // MARK: Style Function
     func settingCellStyle() {
         self.settingNotificationView.layer.cornerRadius = 14
