@@ -59,7 +59,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
        
         CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
-        print(pillDosage)
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
@@ -170,6 +169,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
             }
         }
         savePrimaryPillButton.isEnabled = true
+        savePrimaryPillButton.tintColor = UIColor.AColor.accent
         duplicateWarningLabel.isHidden = true
     }
 }

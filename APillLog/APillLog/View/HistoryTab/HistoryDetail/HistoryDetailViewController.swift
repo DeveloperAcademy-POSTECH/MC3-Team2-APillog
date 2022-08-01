@@ -14,6 +14,7 @@ class HistoryDetailViewController: UIViewController {
     var result = [(String, Int, Int)]()
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var reportViewTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class HistoryDetailViewController: UIViewController {
         pillDosageTableHight.constant = CGFloat(25 + result.count * 72)
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
+        self.reportViewTitle.font = UIFont.AFont.navigationTitle
     }
 }
 
