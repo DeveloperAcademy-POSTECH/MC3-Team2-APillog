@@ -87,9 +87,6 @@
                                         <barButtonItem key="leftBarButtonItem" style="done" id="LrG-tK-h9T">
                                             <imageReference key="image" image="left-black" symbolScale="large"/>
                                             <color key="tintColor" name="AAccent"/>
-                                            <connections>
-                                                <action selector="tapBackButton:" destination="Y6W-OH-hqX" id="cLc-hs-Fzu"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -145,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="BR7-nq-6lg" id="hMx-0r-NvV"/>
+                        <outlet property="manageDosingNavigatoinBar" destination="hAf-Au-a2s" id="OPi-fS-Q6x"/>
                         <outlet property="tableView" destination="Gni-Eq-fJ0" id="XLi-mx-vRa"/>
                         <outlet property="viewTitle" destination="9Oh-Fz-Twc" id="bUl-xb-jPF"/>
                     </connections>

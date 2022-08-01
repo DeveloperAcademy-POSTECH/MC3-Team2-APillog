@@ -10,7 +10,7 @@ class ChartsLicenseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Charts"
-        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationController?.navigationBar.topItem?.title = "라이센스"
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
     }
 }

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-pn-FE1">
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-pn-FE1" userLabel="Title">
                                 <rect key="frame" x="20" y="25" width="374" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR2-Ex-lCt">
@@ -206,7 +206,7 @@
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동일한 이름과 용량의 약이 이미 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Ae-FQO">
-                                <rect key="frame" x="71" y="373.5" width="272" height="20.5"/>
+                                <rect key="frame" x="71" y="70" width="272" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,7 +217,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
                             <constraint firstItem="6nW-lr-A5S" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="Uw7-ib-Z3g"/>
-                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="6nW-lr-A5S" secondAttribute="bottom" constant="25" id="Vcp-0v-GG9"/>
+                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="15" id="Vcp-0v-GG9"/>
                             <constraint firstItem="bwJ-Ae-FQO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vm8-u7-W64"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="25" id="eG4-Df-GjH"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="i9b-Iy-In6"/>

@@ -73,7 +73,7 @@ class FSCalendarViewController: UIViewController{
         if count == 0 {
             tableViewHeight.constant = 0
         } else {
-            tableViewHeight.constant = 91.0 * CGFloat(count)
+            tableViewHeight.constant = 87.0 * CGFloat(count)
         }
         
         backgroundViewHeight.constant = CGFloat(tableViewHeight.constant) + 500
@@ -97,7 +97,7 @@ class FSCalendarViewController: UIViewController{
             if cell.detailContext == nil || cell.detailContext == "" {
                 
             } else {
-                result += 0.8
+                result += 0.9
             }
         }
         return result
@@ -131,7 +131,7 @@ class FSCalendarViewController: UIViewController{
         // History
         setUITableDelegate()
         registerNib()
-        self.tableView.layer.cornerRadius = 10
+        self.tableView.layer.cornerRadius = 15
         
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: Date())
         tableView.reloadData()

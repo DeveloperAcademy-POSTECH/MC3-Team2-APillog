@@ -33,7 +33,7 @@ class CheckConditionViewController: UIViewController {
     
     var pillSideEffectDummyData: [String : Bool]!
     var pillMedicinalEffectDummyData: [String: Bool]!
-    var pillDisadvantage: [String: Bool] = ["불면" : false, "불안" : false, "두통" : false, "빈맥" : false, "어지러움" : false, "식욕 감소" : false, "입안 건조" : false, "구역" : false, "땀 과다증" : false, "과민성" : false]
+    var pillDisadvantage: [String: Bool] = ["불면" : false, "불안" : false, "두통" : false, "두근거림" : false, "어지러움" : false, "식욕 감소" : false, "입안 건조" : false, "구역" : false, "땀 과다증" : false, "과민성" : false]
         
     // MARK: @IBOutlet
     @IBOutlet weak var detailContext: UITextView!
@@ -60,6 +60,19 @@ class CheckConditionViewController: UIViewController {
         setConditionBackgroundViewStyle()
         setConditionViewNavigationBarStyle()
         setConditionSaveButtonStyle()
+        setBackButtonStyle()
+    }
+    
+    private func setBackButtonStyle() {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(hierarchicalColor: UIColor.AColor.accent)), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 70, height: 30)
+        button.setTitle("뒤로", for: .normal)
+        button.setTitleColor(UIColor.AColor.accent, for: .normal)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        
+        self.conditionViewNavigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
     
     private func setDetailContextStyle() {
@@ -107,7 +120,7 @@ class CheckConditionViewController: UIViewController {
         self.changeButtonState(sender)
     }
     
-    @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
+    @objc func tapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     

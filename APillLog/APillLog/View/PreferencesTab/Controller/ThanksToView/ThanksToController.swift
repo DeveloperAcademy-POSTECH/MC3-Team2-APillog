@@ -16,7 +16,8 @@ class ThanksToViewController: UIViewController {
         self.subView.backgroundColor = UIColor.AColor.background
         
         self.view.backgroundColor = UIColor.AColor.background
-        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationController?.navigationBar.topItem?.title = "설정"
+        self.navigationItem.title = "Apillog에 대해서"
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
       
     }
