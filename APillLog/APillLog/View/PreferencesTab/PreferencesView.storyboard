@@ -54,8 +54,8 @@
                                     <constraint firstAttribute="width" priority="750" constant="364" id="mY2-qb-e8b"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZz-bc-GmQ">
-                                <rect key="frame" x="192.5" y="65" width="29.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZz-bc-GmQ">
+                                <rect key="frame" x="207" y="65" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -284,6 +284,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="vgc-FC-XlT"/>
                     <connections>
+                        <outlet property="featureLabel" destination="6WV-yZ-Jbt" id="bWb-6B-2v7"/>
+                        <outlet property="informationLabel" destination="bUX-qg-huc" id="WF5-y0-xK8"/>
                         <outlet property="licenseView" destination="oUp-aF-Znc" id="INx-N4-m0N"/>
                         <outlet property="questionsView" destination="Chf-0u-j0F" id="VaK-n7-erO"/>
                         <outlet property="settingNotificationView" destination="42q-xu-htb" id="hio-U5-36I"/>

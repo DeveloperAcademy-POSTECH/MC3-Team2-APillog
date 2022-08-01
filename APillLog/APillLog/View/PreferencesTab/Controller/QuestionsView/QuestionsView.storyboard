@@ -11,7 +11,7 @@
         <!--Questions View Controller-->
         <scene sceneID="nod-NG-41b">
             <objects>
-                <viewController storyboardIdentifier="QuestionsView" id="KJN-pC-Ed2" customClass="QuestionsViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsView" hidesBottomBarWhenPushed="YES" id="KJN-pC-Ed2" customClass="QuestionsViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jrr-Vc-xZR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

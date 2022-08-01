@@ -82,5 +82,7 @@ extension UIFont {
         static var caption: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         
         static var historyCategory: UIFont { UIFont.APillLogFont(forTextStyle: .body)}
+        
+        static var noHistory: UIFont{ UIFont.APillLogFont(forTextStyle: .body)}
     }
 }

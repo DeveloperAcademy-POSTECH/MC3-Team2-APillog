@@ -44,8 +44,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 일주일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
-                                                <rect key="frame" x="172.5" y="16" width="69" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 일주일간의 기록이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
+                                                <rect key="frame" x="25" y="16" width="163" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -55,12 +55,12 @@
                                         <constraints>
                                             <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="3Jk-qN-4IM"/>
                                             <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="8M4-CD-Ru8"/>
+                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="9w1-oz-No8"/>
                                             <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="16" id="GTO-FC-mkq"/>
                                             <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="Lnk-qt-Gj4"/>
                                             <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="PfY-7J-mEe"/>
                                             <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" id="QaM-89-a1u"/>
                                             <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
-                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="centerX" secondItem="gE8-Yg-pjN" secondAttribute="centerX" id="suw-ZD-36A"/>
                                             <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="10" id="tX1-NO-oAR"/>
                                         </constraints>
                                     </view>
@@ -87,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
+                        <outlet property="reportViewTitle" destination="xN6-7I-eWn" id="8TA-TQ-3IN"/>
                         <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
                     </connections>
                 </viewController>

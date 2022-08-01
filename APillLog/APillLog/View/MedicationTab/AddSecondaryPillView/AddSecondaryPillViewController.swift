@@ -17,7 +17,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchKeyword: UILabel!
-    @IBOutlet weak var addUnknownPillButton: UIButton!
+    @IBOutlet weak var addUnKnownPillStack: UIStackView!
     
     // MARK: Properties
     let cellIdentifier = "SecondaryPillTableViewCell"
@@ -36,7 +36,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
         filteredData.append(contentsOf: recentAddedPillNameList)
         filteredData.append(contentsOf: dummy)
         
-        addUnknownPillButton.isEnabled = false
+        addUnKnownPillStack.isHidden = true
     }
     
     
@@ -73,8 +73,8 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        addUnknownPillButton.isEnabled = searchText.isEmpty ? false : true
-        
+        addUnKnownPillStack.isHidden = false
+        addUnKnownPillStack.isHidden = searchText.isEmpty ? true : false
         setSearchKeywordText(text: searchText)
         
         filteredData = []
