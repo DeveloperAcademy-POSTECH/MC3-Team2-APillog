@@ -935,7 +935,7 @@ class CoreDataManager {
         }
         
         let resultData = result.sorted { (first, second) in
-            return first.1 > second.1
+            return first.1/first.2 > second.1/second.2
         }
         
         return resultData

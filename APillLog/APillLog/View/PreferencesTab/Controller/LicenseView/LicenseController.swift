@@ -33,7 +33,7 @@ class LicenseViewController: UIViewController {
         self.view.backgroundColor = UIColor.AColor.background
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         self.navigationController?.title = "License"
-        self.navigationController?.navigationBar.topItem?.title = "뒤로"
+        self.navigationController?.navigationBar.topItem?.title = "설정"
         self.fsButton.layer.cornerRadius = 14
         self.chartsButton.layer.cornerRadius = 14
     }

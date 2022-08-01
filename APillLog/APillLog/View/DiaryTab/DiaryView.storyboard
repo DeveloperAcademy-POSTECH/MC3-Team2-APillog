@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--실수노트-->
+        <!--에필로그-->
         <scene sceneID="JLd-a3-ohc">
             <objects>
                 <viewController storyboardIdentifier="DiaryViewController" modalTransitionStyle="flipHorizontal" id="rHe-0X-iux" customClass="DiaryViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
                             <constraint firstItem="Dd3-dH-PYh" firstAttribute="leading" secondItem="WoG-be-VzB" secondAttribute="leadingMargin" constant="22" id="zZP-9M-5Dp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="실수노트" image="doc" catalog="system" selectedImage="doc.fill" id="mtL-Ys-d7e"/>
+                    <tabBarItem key="tabBarItem" title="에필로그" image="doc" catalog="system" selectedImage="doc.fill" id="mtL-Ys-d7e"/>
                     <navigationItem key="navigationItem" id="huT-8A-fqg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
