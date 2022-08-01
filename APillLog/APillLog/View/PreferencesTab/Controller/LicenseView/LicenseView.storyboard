@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,20 +12,93 @@
         <!--License View Controller-->
         <scene sceneID="wOJ-Ck-yFG">
             <objects>
-                <viewController storyboardIdentifier="LicenseView" id="84e-GJ-dIr" customClass="LicenseViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LicenseView" hidesBottomBarWhenPushed="YES" id="84e-GJ-dIr" customClass="LicenseViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qQB-Ee-1tH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDY-dp-QWK" userLabel="LicenseButton">
+                                <rect key="frame" x="25" y="138.5" width="364" height="45"/>
+                                <color key="backgroundColor" name="AWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="C8o-bV-AfY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" name="ADisable"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapChartsButton" destination="84e-GJ-dIr" eventType="touchUpInside" id="CUD-sJ-fFG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhn-Hv-bjk">
+                                <rect key="frame" x="40" y="149.5" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRe-KV-pRc" userLabel="LicenseButton">
+                                <rect key="frame" x="25" y="88.5" width="364" height="45"/>
+                                <color key="backgroundColor" name="AWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="10f-n1-boW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tapFSButton" destination="84e-GJ-dIr" eventType="touchUpInside" id="drb-cx-jfb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FSCalendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-f7-KYL">
+                                <rect key="frame" x="40" y="99.5" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-gray" translatesAutoresizingMaskIntoConstraints="NO" id="apv-r2-RYo">
+                                <rect key="frame" x="364" y="151.5" width="10" height="19"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-gray" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-jk-6ER">
+                                <rect key="frame" x="364" y="99.5" width="10" height="19"/>
+                                <color key="tintColor" name="ADisable"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="884-vb-8i6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rhn-Hv-bjk" firstAttribute="leading" secondItem="884-vb-8i6" secondAttribute="leading" constant="40" id="C2Y-k5-u6y"/>
+                            <constraint firstItem="vRe-KV-pRc" firstAttribute="leading" secondItem="884-vb-8i6" secondAttribute="leading" constant="25" id="Ifm-aJ-auV"/>
+                            <constraint firstItem="884-vb-8i6" firstAttribute="trailing" secondItem="gdV-jk-6ER" secondAttribute="trailing" constant="40" id="LOk-SB-ndq"/>
+                            <constraint firstItem="2Zb-f7-KYL" firstAttribute="top" secondItem="884-vb-8i6" secondAttribute="top" constant="55.5" id="RBT-Rl-yat"/>
+                            <constraint firstItem="884-vb-8i6" firstAttribute="trailing" secondItem="EDY-dp-QWK" secondAttribute="trailing" constant="25" id="V5J-pI-7R0"/>
+                            <constraint firstItem="rhn-Hv-bjk" firstAttribute="top" secondItem="2Zb-f7-KYL" secondAttribute="bottom" constant="29" id="YKh-IY-3sP"/>
+                            <constraint firstItem="gdV-jk-6ER" firstAttribute="top" secondItem="884-vb-8i6" secondAttribute="top" constant="55.5" id="d8g-ad-F2F"/>
+                            <constraint firstItem="884-vb-8i6" firstAttribute="trailing" secondItem="vRe-KV-pRc" secondAttribute="trailing" constant="25" id="fQJ-YE-PyU"/>
+                            <constraint firstItem="EDY-dp-QWK" firstAttribute="top" secondItem="vRe-KV-pRc" secondAttribute="bottom" constant="5" id="sus-dV-EHu"/>
+                            <constraint firstItem="EDY-dp-QWK" firstAttribute="leading" secondItem="884-vb-8i6" secondAttribute="leading" constant="25" id="t7u-hS-een"/>
+                            <constraint firstItem="884-vb-8i6" firstAttribute="trailing" secondItem="apv-r2-RYo" secondAttribute="trailing" constant="40" id="tNQ-Jn-8YS"/>
+                            <constraint firstItem="apv-r2-RYo" firstAttribute="top" secondItem="gdV-jk-6ER" secondAttribute="bottom" constant="33" id="uhS-qV-P4k"/>
+                            <constraint firstItem="2Zb-f7-KYL" firstAttribute="leading" secondItem="884-vb-8i6" secondAttribute="leading" constant="40" id="ykx-R9-eZZ"/>
+                            <constraint firstItem="vRe-KV-pRc" firstAttribute="top" secondItem="884-vb-8i6" secondAttribute="top" constant="44.5" id="yxX-q4-kfH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartsButton" destination="EDY-dp-QWK" id="0nf-yJ-r08"/>
+                        <outlet property="fsButton" destination="vRe-KV-pRc" id="vhb-c9-ZeA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7d-0P-zb4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="-417"/>
+            <point key="canvasLocation" x="2292.753623188406" y="-417.1875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="right-gray" width="10" height="19"/>
+        <namedColor name="ADisable">
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

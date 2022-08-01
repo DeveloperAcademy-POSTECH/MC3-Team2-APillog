@@ -11,7 +11,7 @@
         <!--Version View Controller-->
         <scene sceneID="bVv-he-6AL">
             <objects>
-                <viewController storyboardIdentifier="VersionView" id="m9d-cJ-tFP" customClass="VersionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VersionView" hidesBottomBarWhenPushed="YES" id="m9d-cJ-tFP" customClass="VersionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y9m-Ui-gHH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
