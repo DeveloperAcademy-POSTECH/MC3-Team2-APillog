@@ -208,7 +208,6 @@ class MedicationViewController: UIViewController {
     
     private func checkIsToday(selectedDate: Date) {
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
-        print(dateFormatterForCompare.string(from: selectedDate))
     }
     
     private func setPrimaryTableViewTitleText() {
