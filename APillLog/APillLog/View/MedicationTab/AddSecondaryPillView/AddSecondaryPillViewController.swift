@@ -17,12 +17,11 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchKeyword: UILabel!
-    @IBOutlet weak var addUnknownPillButton: UIButton!
+    @IBOutlet weak var addUnKnownPillStack: UIStackView!
     
     // MARK: Properties
     let cellIdentifier = "SecondaryPillTableViewCell"
     var delegate: AddSecondaryPillViewControllerDelegate! = nil
-    var coreDataManager = CoreDataManager()
     
     
     var dummy: [String] = ["타이레놀정 500mg", "타이레놀정 160mg", "타이레놀정 80mg", "타이레놀현탁액 100ml", "부루펜시럽 80ml", "베아제정", "닥터베아제정", "훼스탈골드정", "훼스탈플러스정", "판콜에이내복액 30ml", "판피린티정", "제일쿨파스", "신신파스아렉스", "베아제정2", "닥터베아제정2", "훼스탈골드정2", "훼스탈플러스정2", "판콜에이내복액 30ml2", "판피린티정2", "제일쿨파스2", "신신파스아렉스2"]
@@ -37,7 +36,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
         filteredData.append(contentsOf: recentAddedPillNameList)
         filteredData.append(contentsOf: dummy)
         
-        addUnknownPillButton.isEnabled = false
+        addUnKnownPillStack.isHidden = true
     }
     
     
@@ -66,16 +65,16 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
-        coreDataManager.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
-        coreDataManager.addRecentAddedSecondaryPill(name: filteredData[indexPath.row])
+        CoreDataManager.shared.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
+        CoreDataManager.shared.addRecentAddedSecondaryPill(name: filteredData[indexPath.row])
         self.delegate.didFinishModal()
     }
     
     // MARK: UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        addUnknownPillButton.isEnabled = searchText.isEmpty ? false : true
-        
+        addUnKnownPillStack.isHidden = false
+        addUnKnownPillStack.isHidden = searchText.isEmpty ? true : false
         setSearchKeywordText(text: searchText)
         
         filteredData = []
@@ -103,7 +102,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     }
 
     func fetchRecentAddedPillNameList() -> [String] {
-        let recentAddedPillList = coreDataManager.fetchRecentAddedSecondaryPill()
+        let recentAddedPillList = CoreDataManager.shared.fetchRecentAddedSecondaryPill()
         var recentAddedPillNameList: [String] = []
         
         for pill in recentAddedPillList {
@@ -119,8 +118,8 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func tapAddPillButton() {
-        coreDataManager.addShowSecondaryPill(name: self.searchBar.text!, dosage: "", selectDate: Date())
-        coreDataManager.addRecentAddedSecondaryPill(name: self.searchBar.text!)
+        CoreDataManager.shared.addShowSecondaryPill(name: self.searchBar.text!, dosage: "", selectDate: Date())
+        CoreDataManager.shared.addRecentAddedSecondaryPill(name: self.searchBar.text!)
         delegate.didFinishModal()
         dismiss(animated: true)
     }

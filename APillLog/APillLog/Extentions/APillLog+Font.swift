@@ -48,6 +48,9 @@ extension UIFont {
     
     // 필요한 폰트 종류는 여기에 추가하기
     enum AFont {
+        static var thanksToTitle: UIFont{ UIFont.APillLogFont(forTextStyle: .title3)}
+        static var thanksToName: UIFont{ UIFont.APillLogFont(forTextStyle: .body)}
+        
         static var calenderText: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var modalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var halfModalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
@@ -56,6 +59,7 @@ extension UIFont {
         static var datePickerText: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var tableViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var navigationButtonDescriptionLabel: UIFont { UIFont.APillLogFont(forTextStyle: .footnote) }
+        static var calendarWeekDayFont: UIFont { UIFont.APillLogFont(forTextStyle: .callout) }
 
         static var cardViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title3) }
         static var cardViewPillName: UIFont { UIFont.APillLogFont(forTextStyle: .title3) }
@@ -78,5 +82,7 @@ extension UIFont {
         static var caption: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         
         static var historyCategory: UIFont { UIFont.APillLogFont(forTextStyle: .body)}
+        
+        static var noHistory: UIFont{ UIFont.APillLogFont(forTextStyle: .body)}
     }
 }

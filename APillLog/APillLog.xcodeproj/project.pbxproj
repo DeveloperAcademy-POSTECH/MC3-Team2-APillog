@@ -9,35 +9,106 @@
 /* Begin PBXBuildFile section */
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
+		34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */; };
+		3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */; };
+		34743DD8289441FB00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DD7289441FB00F3A2DC /* Assets.xcassets */; };
+		34743DDE289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34743DE3289441FB00F3A2DC /* APillLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE2289441FB00F3A2DC /* APillLogApp.swift */; };
+		34743DE5289441FB00F3A2DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE4289441FB00F3A2DC /* ContentView.swift */; };
+		34743DE7289441FB00F3A2DC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE6289441FB00F3A2DC /* NotificationController.swift */; };
+		34743DE9289441FB00F3A2DC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE8289441FB00F3A2DC /* NotificationView.swift */; };
+		34743DEB289441FB00F3A2DC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DEA289441FB00F3A2DC /* ComplicationController.swift */; };
+		34743DED289441FC00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DEC289441FC00F3A2DC /* Assets.xcassets */; };
+		34743DF0289441FC00F3A2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */; };
+		34743DF5289441FC00F3A2DC /* ApillLogWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34743DD5289441FA00F3A2DC /* ApillLogWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34743DFE2894482200F3A2DC /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
+		34743DFF2894482200F3A2DC /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
+		34743E002894482200F3A2DC /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
+		34743E012894482200F3A2DC /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
+		34743E022894482200F3A2DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
+		34743E032894482600F3A2DC /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
+		34743E042894482B00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
+		34743E052894483200F3A2DC /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
+		34743E062894483200F3A2DC /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
+		34743E072894483B00F3A2DC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B4288477390008EB48 /* AppleSDGothicNeoB.ttf */; };
+		34743E082894483B00F3A2DC /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AF288477380008EB48 /* AppleSDGothicNeoM.ttf */; };
+		34743E092894483B00F3A2DC /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B3288477390008EB48 /* AppleSDGothicNeoH.ttf */; };
+		34743E0A2894483B00F3A2DC /* AppleSDGothicNeoT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AD288477380008EB48 /* AppleSDGothicNeoT.ttf */; };
+		34743E0B2894483B00F3A2DC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */; };
+		34743E0C2894483B00F3A2DC /* AppleSDGothicNeoL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B1288477390008EB48 /* AppleSDGothicNeoL.ttf */; };
+		34743E0D2894483B00F3A2DC /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
+		34743E0E2894483B00F3A2DC /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2B0288477390008EB48 /* AppleSDGothicNeoR.ttf */; };
+		34743E0F2894483B00F3A2DC /* AppleSDGothicNeoUL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AE288477380008EB48 /* AppleSDGothicNeoUL.ttf */; };
+		34743E13289448D000F3A2DC /* RecordPrimaryPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */; };
+		34743E15289448E000F3A2DC /* CheckConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E14289448E000F3A2DC /* CheckConditionView.swift */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
+		34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CE290F2889307500644E4E /* MedicationPillCell.xib */; };
 		34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE29112889308200644E4E /* MedicationPillCell.swift */; };
+		34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */; };
+		34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */; };
+		47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */; };
+		781247C42897B217002E0C10 /* ApilogWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */; };
+		781247C82897B5C6002E0C10 /* ConnectionModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */; };
+		781EABC82891B37100F1A2F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC72891B37100F1A2F4 /* WidgetKit.framework */; };
+		781EABCA2891B37100F1A2F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC92891B37100F1A2F4 /* SwiftUI.framework */; };
+		781EABCD2891B37100F1A2F4 /* ApilogWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */; };
+		781EABCF2891B37200F1A2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781EABCE2891B37200F1A2F4 /* Assets.xcassets */; };
+		786006D928951CF100E6A07C /* DiaryWriteViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */; };
+		786006DB28951CFF00E6A07C /* DiaryWriteViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */; };
+		786006FD289655DC00E6A07C /* DiaryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786006FC289655DC00E6A07C /* DiaryEditViewController.swift */; };
 		78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */; };
 		78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */; };
 		78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */; };
 		78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */; };
+		8711C3DF28929FDF00F7625F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C3DE28929FDF00F7625F /* UIView.swift */; };
+		8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */; };
+		8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */; };
+		8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */; };
+		8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
 		876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A12882A33B00179767 /* SceneDelegate.swift */; };
 		876ED1A72882A33B00179767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1A52882A33B00179767 /* Main.storyboard */; };
 		876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876ED1A82882A33B00179767 /* APillLog.xcdatamodeld */; };
 		876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AB2882A33C00179767 /* Assets.xcassets */; };
 		876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */; };
+		8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8773A31D289253700096A42B /* PushNotificationView.storyboard */; };
+		8773A320289253820096A42B /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A31F289253820096A42B /* PushNotificationController.swift */; };
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
-		87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
 		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
 		8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */; };
 		8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */; };
 		8BFE752628880311008748B9 /* CheckConditionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE752528880310008748B9 /* CheckConditionView.storyboard */; };
 		8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE75272888031A008748B9 /* CheckConditionViewController.swift */; };
-		8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE752928884E2A008748B9 /* PillDummyData.swift */; };
+		9A13A8302896C61000F5C141 /* CustomLicenseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */; };
 		9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */; };
 		9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
 		9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273C2B2885390F0006427B /* CoreDataManager.swift */; };
+		9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */; };
+		9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */; };
+		9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AEF289194A200BD312C /* QuestionViewController.swift */; };
+		9A890AF32891979000BD312C /* LicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF22891979000BD312C /* LicenseController.swift */; };
+		9A890AF52891979D00BD312C /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF42891979D00BD312C /* VersionController.swift */; };
+		9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF6289198C500BD312C /* ThanksToController.swift */; };
+		9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */; };
+		9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0228927AAD00BD312C /* ThanksToView.storyboard */; };
+		9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0428927ACA00BD312C /* VersionView.storyboard */; };
+		9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0628927AE600BD312C /* QuestionsView.storyboard */; };
+		9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A890B0828927AF900BD312C /* LicenseView.storyboard */; };
+		9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */; };
+		9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */; };
 		9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
 		9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
+		9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */; };
+		9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */; };
+		9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */; };
+		9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */; };
+		A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
+		A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
 		A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */; };
 		A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */; };
@@ -51,23 +122,118 @@
 		A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */; };
 		A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C328847A010008EB48 /* MedicationView.storyboard */; };
 		A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */; };
-		A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F4F2C828847A270008EB48 /* HistoryView.storyboard */; };
 		A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */; };
 		A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */; };
-		A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		34743DDF289441FB00F3A2DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34743DDC289441FB00F3A2DC;
+			remoteInfo = "ApillLogWatch WatchKit Extension";
+		};
+		34743DF3289441FC00F3A2DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34743DD4289441FA00F3A2DC;
+			remoteInfo = ApillLogWatch;
+		};
+		781EABD12891B37200F1A2F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 876ED1942882A33B00179767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 781EABC42891B37100F1A2F4;
+			remoteInfo = ApilogWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		34743DF6289441FC00F3A2DC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				34743DF5289441FC00F3A2DC /* ApillLogWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34743DF9289441FC00F3A2DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				34743DDE289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		781EABD42891B37200F1A2F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				781247C42897B217002E0C10 /* ApilogWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.release.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.release.xcconfig"; sourceTree = "<group>"; };
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
+		34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelPhone.swift; sourceTree = "<group>"; };
+		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
+		34743DD5289441FA00F3A2DC /* ApillLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApillLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34743DD7289441FB00F3A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ApillLogWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34743DE2289441FB00F3A2DC /* APillLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APillLogApp.swift; sourceTree = "<group>"; };
+		34743DE4289441FB00F3A2DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34743DE6289441FB00F3A2DC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		34743DE8289441FB00F3A2DC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		34743DEA289441FB00F3A2DC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		34743DEC289441FC00F3A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34743DF1289441FC00F3A2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelWatch.swift; sourceTree = "<group>"; };
+		34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPrimaryPillView.swift; sourceTree = "<group>"; };
+		34743E14289448E000F3A2DC /* CheckConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConditionView.swift; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
 		34CE29112889308200644E4E /* MedicationPillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
+		34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDosingTableViewCell.swift; sourceTree = "<group>"; };
+		34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDosingTableViewCell.xib; sourceTree = "<group>"; };
+		781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ApilogWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		781EABC72891B37100F1A2F4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		781EABC92891B37100F1A2F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApilogWidget.swift; sourceTree = "<group>"; };
+		781EABCE2891B37200F1A2F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		781EABD02891B37200F1A2F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		781EABD82891B80B00F1A2F4 /* APillLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APillLog.entitlements; sourceTree = "<group>"; };
+		781EABD92891BB6400F1A2F4 /* ApilogWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApilogWidgetExtension.entitlements; sourceTree = "<group>"; };
+		786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController2.swift; sourceTree = "<group>"; };
+		786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController3.swift; sourceTree = "<group>"; };
+		786006FC289655DC00E6A07C /* DiaryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditViewController.swift; sourceTree = "<group>"; };
 		78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
+		8711C3DE28929FDF00F7625F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailChartView.swift; sourceTree = "<group>"; };
+		8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailChartView.xib; sourceTree = "<group>"; };
+		8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressViewCell.swift; sourceTree = "<group>"; };
+		8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressViewCell.xib; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876ED19F2882A33B00179767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876ED1A12882A33B00179767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,21 +242,41 @@
 		876ED1AB2882A33C00179767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876ED1AE2882A33C00179767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		876ED1B02882A33C00179767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8773A31D289253700096A42B /* PushNotificationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushNotificationView.storyboard; sourceTree = "<group>"; };
+		8773A31F289253820096A42B /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		87D759312887F172007FCDF0 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.debug.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.debug.xcconfig"; sourceTree = "<group>"; };
 		8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrimaryPillViewController.swift; sourceTree = "<group>"; };
 		8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPrimaryPill.storyboard; sourceTree = "<group>"; };
 		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
 		8BFE752528880310008748B9 /* CheckConditionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckConditionView.storyboard; sourceTree = "<group>"; };
 		8BFE75272888031A008748B9 /* CheckConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConditionViewController.swift; sourceTree = "<group>"; };
-		8BFE752928884E2A008748B9 /* PillDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDummyData.swift; sourceTree = "<group>"; };
+		9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLicenseTableCell.swift; sourceTree = "<group>"; };
 		9A273BF92883ED1B0006427B /* Condition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A273C2B2885390F0006427B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FSCalendarView.storyboard; sourceTree = "<group>"; };
+		9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewController.swift; sourceTree = "<group>"; };
+		9A890AEF289194A200BD312C /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		9A890AF22891979000BD312C /* LicenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseController.swift; sourceTree = "<group>"; };
+		9A890AF42891979D00BD312C /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
+		9A890AF6289198C500BD312C /* ThanksToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksToController.swift; sourceTree = "<group>"; };
+		9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCheck.swift; sourceTree = "<group>"; };
+		9A890B0228927AAD00BD312C /* ThanksToView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThanksToView.storyboard; sourceTree = "<group>"; };
+		9A890B0428927ACA00BD312C /* VersionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VersionView.storyboard; sourceTree = "<group>"; };
+		9A890B0628927AE600BD312C /* QuestionsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionsView.storyboard; sourceTree = "<group>"; };
+		9A890B0828927AF900BD312C /* LicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseView.storyboard; sourceTree = "<group>"; };
+		9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesView.storyboard; sourceTree = "<group>"; };
+		9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FSLicenseView.storyboard; sourceTree = "<group>"; };
+		9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSLicenseViewController.swift; sourceTree = "<group>"; };
+		9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsLicenseView.storyboard; sourceTree = "<group>"; };
+		9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLicenseViewController.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -104,30 +290,118 @@
 		A8F4F2BE288477750008EB48 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		A8F4F2C328847A010008EB48 /* MedicationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicationView.storyboard; sourceTree = "<group>"; };
 		A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryView.storyboard; sourceTree = "<group>"; };
-		A8F4F2C828847A270008EB48 /* HistoryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryView.storyboard; sourceTree = "<group>"; };
 		A8F4F2CA28847A380008EB48 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
-		A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APillLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		876ED1992882A33B00179767 /* Frameworks */ = {
+		34743DDA289441FB00F3A2DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		781EABC22891B37100F1A2F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCA2891B37100F1A2F4 /* SwiftUI.framework in Frameworks */,
+				781EABC82891B37100F1A2F4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		876ED1992882A33B00179767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C28D38029F6FCCE74B3A32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34440E5F28870ACD00AA3996 /* ManageDosingView */ = {
 			isa = PBXGroup;
 			children = (
+				347E4F902892E7150043136A /* ManageDosingViewCustomCell */,
 				34440E6028870AE700AA3996 /* ManageDosingView.storyboard */,
 				34440E6228870B1200AA3996 /* ManageDosingViewController.swift */,
 			);
 			path = ManageDosingView;
+			sourceTree = "<group>";
+		};
+		34500DCC28944ACF00CC96F1 /* WatchConnection */ = {
+			isa = PBXGroup;
+			children = (
+				34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */,
+			);
+			path = WatchConnection;
+			sourceTree = "<group>";
+		};
+		3459C3DB289517E100C68B34 /* HistoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
+				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
+				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
+				8711C43128951C3400F7625F /* HistoryDetailChartView */,
+			);
+			path = HistoryDetail;
+			sourceTree = "<group>";
+		};
+		34743DD6289441FA00F3A2DC /* ApillLogWatch */ = {
+			isa = PBXGroup;
+			children = (
+				34743DD7289441FB00F3A2DC /* Assets.xcassets */,
+			);
+			path = ApillLogWatch;
+			sourceTree = "<group>";
+		};
+		34743DE1289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				34743DE2289441FB00F3A2DC /* APillLogApp.swift */,
+				34743DE4289441FB00F3A2DC /* ContentView.swift */,
+				34743E14289448E000F3A2DC /* CheckConditionView.swift */,
+				34743DE6289441FB00F3A2DC /* NotificationController.swift */,
+				34743DE8289441FB00F3A2DC /* NotificationView.swift */,
+				34743DEA289441FB00F3A2DC /* ComplicationController.swift */,
+				34743DEC289441FC00F3A2DC /* Assets.xcassets */,
+				34743DF1289441FC00F3A2DC /* Info.plist */,
+				34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */,
+				34743DEE289441FC00F3A2DC /* Preview Content */,
+				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
+				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
+			);
+			path = "ApillLogWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		34743DEE289441FC00F3A2DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		347E4F902892E7150043136A /* ManageDosingViewCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */,
+				34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */,
+			);
+			path = ManageDosingViewCustomCell;
 			sourceTree = "<group>";
 		};
 		34982C5E2885415E003BBBD4 /* AddSecondaryPillView */ = {
@@ -139,20 +413,64 @@
 			path = AddSecondaryPillView;
 			sourceTree = "<group>";
 		};
-		34CE29172889BA8300644E4E /* CustomCell */ = {
+		34CE29172889BA8300644E4E /* MedicationTabCustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				34CE290F2889307500644E4E /* MedicationPillCell.xib */,
 				34CE29112889308200644E4E /* MedicationPillCell.swift */,
 			);
-			path = CustomCell;
+			path = MedicationTabCustomCell;
+			sourceTree = "<group>";
+		};
+		781EABC62891B37100F1A2F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781EABC72891B37100F1A2F4 /* WidgetKit.framework */,
+				781EABC92891B37100F1A2F4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		781EABCB2891B37100F1A2F4 /* ApilogWidget */ = {
+			isa = PBXGroup;
+			children = (
+				781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */,
+				781EABCE2891B37200F1A2F4 /* Assets.xcassets */,
+				781EABD02891B37200F1A2F4 /* Info.plist */,
+			);
+			path = ApilogWidget;
+			sourceTree = "<group>";
+		};
+		8711C43128951C3400F7625F /* HistoryDetailChartView */ = {
+			isa = PBXGroup;
+			children = (
+				8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */,
+				8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */,
+			);
+			path = HistoryDetailChartView;
+			sourceTree = "<group>";
+		};
+		8711C43228951C3D00F7625F /* HistoryDetailProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */,
+				8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */,
+			);
+			path = HistoryDetailProgressView;
 			sourceTree = "<group>";
 		};
 		876ED1932882A33B00179767 = {
 			isa = PBXGroup;
 			children = (
+				781EABD92891BB6400F1A2F4 /* ApilogWidgetExtension.entitlements */,
 				876ED19E2882A33B00179767 /* APillLog */,
+				781EABCB2891B37100F1A2F4 /* ApilogWidget */,
+				781EABC62891B37100F1A2F4 /* Frameworks */,
+				34743DD6289441FA00F3A2DC /* ApillLogWatch */,
+				34743DE1289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */,
 				876ED19D2882A33B00179767 /* Products */,
+				A41DB93C38DE99A48C23A0AF /* Pods */,
+				04C28D38029F6FCCE74B3A32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +478,9 @@
 			isa = PBXGroup;
 			children = (
 				876ED19C2882A33B00179767 /* APillLog.app */,
+				781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */,
+				34743DD5289441FA00F3A2DC /* ApillLogWatch.app */,
+				34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +488,8 @@
 		876ED19E2882A33B00179767 /* APillLog */ = {
 			isa = PBXGroup;
 			children = (
+				781EABD82891B80B00F1A2F4 /* APillLog.entitlements */,
+				34500DCC28944ACF00CC96F1 /* WatchConnection */,
 				876ED1B02882A33C00179767 /* Info.plist */,
 				A8209F0B28846546006F35DF /* Application */,
 				A8F4F2AA288475240008EB48 /* Utility */,
@@ -176,6 +499,15 @@
 				A8209F0C28846552006F35DF /* CoreData */,
 			);
 			path = APillLog;
+			sourceTree = "<group>";
+		};
+		8773A31C289253200096A42B /* PushNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				8773A31D289253700096A42B /* PushNotificationView.storyboard */,
+				8773A31F289253820096A42B /* PushNotificationController.swift */,
+			);
+			path = PushNotificationView;
 			sourceTree = "<group>";
 		};
 		87D759302887F14D007FCDF0 /* Calendar */ = {
@@ -202,9 +534,106 @@
 			children = (
 				8BFE752528880310008748B9 /* CheckConditionView.storyboard */,
 				8BFE75272888031A008748B9 /* CheckConditionViewController.swift */,
-				8BFE752928884E2A008748B9 /* PillDummyData.swift */,
 			);
 			path = CheckCondition;
+			sourceTree = "<group>";
+		};
+		9A6009F1289517A200E7E82F /* FSCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				9A6009F2289517CB00E7E82F /* FSCalendarView.storyboard */,
+				9A6009F4289517DD00E7E82F /* FSCalendarViewController.swift */,
+			);
+			path = FSCalendarView;
+			sourceTree = "<group>";
+		};
+		9A890AF12891977200BD312C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AFF28927A5000BD312C /* ThanksToView */,
+				9A890AFE28927A3300BD312C /* VersionView */,
+				9A890AFD28927A1D00BD312C /* LicenseView */,
+				9A890AFC28927A0D00BD312C /* QuestionsView */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A890AF82891B2BB00BD312C /* AppVersionCheck */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF92891B2DB00BD312C /* AppVersionCheck.swift */,
+			);
+			path = AppVersionCheck;
+			sourceTree = "<group>";
+		};
+		9A890AFC28927A0D00BD312C /* QuestionsView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AEF289194A200BD312C /* QuestionViewController.swift */,
+				9A890B0628927AE600BD312C /* QuestionsView.storyboard */,
+			);
+			path = QuestionsView;
+			sourceTree = "<group>";
+		};
+		9A890AFD28927A1D00BD312C /* LicenseView */ = {
+			isa = PBXGroup;
+			children = (
+				9AE1C0F32896B06600325FE2 /* LicenseDetailView */,
+				9A890AF22891979000BD312C /* LicenseController.swift */,
+				9A890B0828927AF900BD312C /* LicenseView.storyboard */,
+				9A13A82F2896C61000F5C141 /* CustomLicenseTableCell.swift */,
+			);
+			path = LicenseView;
+			sourceTree = "<group>";
+		};
+		9A890AFE28927A3300BD312C /* VersionView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF42891979D00BD312C /* VersionController.swift */,
+				9A890B0428927ACA00BD312C /* VersionView.storyboard */,
+			);
+			path = VersionView;
+			sourceTree = "<group>";
+		};
+		9A890AFF28927A5000BD312C /* ThanksToView */ = {
+			isa = PBXGroup;
+			children = (
+				9A890AF6289198C500BD312C /* ThanksToController.swift */,
+				9A890B0228927AAD00BD312C /* ThanksToView.storyboard */,
+			);
+			path = ThanksToView;
+			sourceTree = "<group>";
+		};
+		9A91D6032890EDCA0026F3B6 /* PreferencesTab */ = {
+			isa = PBXGroup;
+			children = (
+				8773A31C289253200096A42B /* PushNotificationView */,
+				9A890AF82891B2BB00BD312C /* AppVersionCheck */,
+				9A890AF12891977200BD312C /* Controller */,
+				9A91D60C289132F40026F3B6 /* PreferencesView.storyboard */,
+				9A91D60E2891519A0026F3B6 /* PreferencesViewController.swift */,
+			);
+			path = PreferencesTab;
+			sourceTree = "<group>";
+		};
+		9AE1C0F32896B06600325FE2 /* LicenseDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9AE1C0F42896B07900325FE2 /* FSLicenseView.storyboard */,
+				9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */,
+				9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */,
+				9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */,
+			);
+			path = LicenseDetailView;
+			sourceTree = "<group>";
+		};
+		A41DB93C38DE99A48C23A0AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */,
+				3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		A8209F0B28846546006F35DF /* Application */ = {
@@ -242,6 +671,8 @@
 			children = (
 				876ED1A52882A33B00179767 /* Main.storyboard */,
 				876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */,
+				9A6009F1289517A200E7E82F /* FSCalendarView */,
+				9A91D6032890EDCA0026F3B6 /* PreferencesTab */,
 				A8F4F2C2288478010008EB48 /* MedicationTab */,
 				A8F4F2C1288477FB0008EB48 /* DiaryTab */,
 				A8F4F2C0288477C40008EB48 /* HistoryTab */,
@@ -254,6 +685,7 @@
 			children = (
 				A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */,
 				A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */,
+				8711C3DE28929FDF00F7625F /* UIView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -286,8 +718,7 @@
 		A8F4F2C0288477C40008EB48 /* HistoryTab */ = {
 			isa = PBXGroup;
 			children = (
-				A8F4F2C828847A270008EB48 /* HistoryView.storyboard */,
-				A8F4F2CE28847A510008EB48 /* HistoryViewController.swift */,
+				3459C3DB289517E100C68B34 /* HistoryDetail */,
 				87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */,
 				87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */,
 			);
@@ -300,9 +731,12 @@
 				A8F4F2C528847A0A0008EB48 /* DiaryView.storyboard */,
 				78D8B11F2888F8F800ADF830 /* DiaryReadViewController.swift */,
 				A8F4F2CC28847A450008EB48 /* DiaryViewController.swift */,
-				78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */,
 				78D8B11B2887E6E100ADF830 /* MyCustomHeader.swift */,
+				78D8B1192887D42500ADF830 /* DiaryWriteViewController.swift */,
+				786006D828951CF100E6A07C /* DiaryWriteViewController2.swift */,
+				786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */,
 				78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */,
+				786006FC289655DC00E6A07C /* DiaryEditViewController.swift */,
 			);
 			path = DiaryTab;
 			sourceTree = "<group>";
@@ -310,7 +744,7 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
-				34CE29172889BA8300644E4E /* CustomCell */,
+				34CE29172889BA8300644E4E /* MedicationTabCustomCell */,
 				8BFE7524288802AC008748B9 /* CheckCondition */,
 				34440E5F28870ACD00AA3996 /* ManageDosingView */,
 				8B942AFD28854E2300507AC5 /* AddPrimaryPillView */,
@@ -324,17 +758,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		876ED19B2882A33B00179767 /* APillLog */ = {
+		34743DD4289441FA00F3A2DC /* ApillLogWatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 876ED1B32882A33C00179767 /* Build configuration list for PBXNativeTarget "APillLog" */;
+			buildConfigurationList = 34743DFD289441FC00F3A2DC /* Build configuration list for PBXNativeTarget "ApillLogWatch" */;
 			buildPhases = (
-				876ED1982882A33B00179767 /* Sources */,
-				876ED1992882A33B00179767 /* Frameworks */,
-				876ED19A2882A33B00179767 /* Resources */,
+				34743DD3289441FA00F3A2DC /* Resources */,
+				34743DF9289441FC00F3A2DC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				34743DE0289441FB00F3A2DC /* PBXTargetDependency */,
+			);
+			name = ApillLogWatch;
+			productName = ApillLogWatch;
+			productReference = 34743DD5289441FA00F3A2DC /* ApillLogWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		34743DDC289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34743DFC289441FC00F3A2DC /* Build configuration list for PBXNativeTarget "ApillLogWatch WatchKit Extension" */;
+			buildPhases = (
+				34743DD9289441FB00F3A2DC /* Sources */,
+				34743DDA289441FB00F3A2DC /* Frameworks */,
+				34743DDB289441FB00F3A2DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ApillLogWatch WatchKit Extension";
+			productName = "ApillLogWatch WatchKit Extension";
+			productReference = 34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 781EABD72891B37200F1A2F4 /* Build configuration list for PBXNativeTarget "ApilogWidgetExtension" */;
+			buildPhases = (
+				781EABC12891B37100F1A2F4 /* Sources */,
+				781EABC22891B37100F1A2F4 /* Frameworks */,
+				781EABC32891B37100F1A2F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApilogWidgetExtension;
+			productName = ApilogWidgetExtension;
+			productReference = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		876ED19B2882A33B00179767 /* APillLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 876ED1B32882A33C00179767 /* Build configuration list for PBXNativeTarget "APillLog" */;
+			buildPhases = (
+				A18B8DE0913DB7B842790994 /* [CP] Check Pods Manifest.lock */,
+				876ED1982882A33B00179767 /* Sources */,
+				876ED1992882A33B00179767 /* Frameworks */,
+				876ED19A2882A33B00179767 /* Resources */,
+				781EABD42891B37200F1A2F4 /* Embed App Extensions */,
+				34743DF6289441FC00F3A2DC /* Embed Watch Content */,
+				E8131155CDBAEAA3FC3250B5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				781EABD22891B37200F1A2F4 /* PBXTargetDependency */,
+				34743DF4289441FC00F3A2DC /* PBXTargetDependency */,
 			);
 			name = APillLog;
 			productName = APillLog;
@@ -348,9 +839,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					34743DD4289441FA00F3A2DC = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					34743DDC289441FB00F3A2DC = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					781EABC42891B37100F1A2F4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					876ED19B2882A33B00179767 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -358,9 +858,10 @@
 			};
 			buildConfigurationList = 876ED1972882A33B00179767 /* Build configuration list for PBXProject "APillLog" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				ko,
 				en,
 				Base,
 			);
@@ -370,33 +871,85 @@
 			projectRoot = "";
 			targets = (
 				876ED19B2882A33B00179767 /* APillLog */,
+				781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */,
+				34743DD4289441FA00F3A2DC /* ApillLogWatch */,
+				34743DDC289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		34743DD3289441FA00F3A2DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34743DD8289441FB00F3A2DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34743DDB289441FB00F3A2DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34743E0F2894483B00F3A2DC /* AppleSDGothicNeoUL.ttf in Resources */,
+				34743E0E2894483B00F3A2DC /* AppleSDGothicNeoR.ttf in Resources */,
+				34743E0D2894483B00F3A2DC /* AppleSDGothicNeoSB.ttf in Resources */,
+				34743E072894483B00F3A2DC /* AppleSDGothicNeoB.ttf in Resources */,
+				34743E0A2894483B00F3A2DC /* AppleSDGothicNeoT.ttf in Resources */,
+				34743E0B2894483B00F3A2DC /* AppleSDGothicNeoEB.ttf in Resources */,
+				34743DF0289441FC00F3A2DC /* Preview Assets.xcassets in Resources */,
+				34743E092894483B00F3A2DC /* AppleSDGothicNeoH.ttf in Resources */,
+				34743E0C2894483B00F3A2DC /* AppleSDGothicNeoL.ttf in Resources */,
+				34743E042894482B00F3A2DC /* Assets.xcassets in Resources */,
+				34743DED289441FC00F3A2DC /* Assets.xcassets in Resources */,
+				34743E082894483B00F3A2DC /* AppleSDGothicNeoM.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		781EABC32891B37100F1A2F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCF2891B37200F1A2F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		876ED19A2882A33B00179767 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A890B0528927ACA00BD312C /* VersionView.storyboard in Resources */,
+				9A890B0928927AF900BD312C /* LicenseView.storyboard in Resources */,
+				9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */,
+				34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */,
 				A8F4F2B7288477390008EB48 /* AppleSDGothicNeoUL.ttf in Resources */,
-				A8F4F2C928847A270008EB48 /* HistoryView.storyboard in Resources */,
+				8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */,
 				34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */,
 				A8F4F2B8288477390008EB48 /* AppleSDGothicNeoM.ttf in Resources */,
 				34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */,
 				A8F4F2B6288477390008EB48 /* AppleSDGothicNeoT.ttf in Resources */,
 				A8F4F2C628847A0A0008EB48 /* DiaryView.storyboard in Resources */,
 				A8F4F2C428847A010008EB48 /* MedicationView.storyboard in Resources */,
+				9A890B0728927AE600BD312C /* QuestionsView.storyboard in Resources */,
 				A8F4F2B5288477390008EB48 /* AppleSDGothicNeoSB.ttf in Resources */,
+				9A890B0328927AAD00BD312C /* ThanksToView.storyboard in Resources */,
+				3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */,
 				A8F4F2B9288477390008EB48 /* AppleSDGothicNeoR.ttf in Resources */,
 				A8F4F2BA288477390008EB48 /* AppleSDGothicNeoL.ttf in Resources */,
+				9A6009F3289517CB00E7E82F /* FSCalendarView.storyboard in Resources */,
+				A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */,
+				9A91D60D289132F40026F3B6 /* PreferencesView.storyboard in Resources */,
 				876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */,
+				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
+				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
+				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
+				A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
+				9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
-				87DFC9E228854E2D00CED53C /* HistoryTableViewCell.xib in Resources */,
 				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
 				87D759322887F172007FCDF0 /* CalendarView.xib in Resources */,
 				876ED1A72882A33B00179767 /* Main.storyboard in Resources */,
@@ -406,34 +959,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A18B8DE0913DB7B842790994 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APillLog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8131155CDBAEAA3FC3250B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APillLog/Pods-APillLog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		34743DD9289441FB00F3A2DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34743DFF2894482200F3A2DC /* History+CoreDataProperties.swift in Sources */,
+				34743E012894482200F3A2DC /* Condition+CoreDataClass.swift in Sources */,
+				34743DE7289441FB00F3A2DC /* NotificationController.swift in Sources */,
+				34743E15289448E000F3A2DC /* CheckConditionView.swift in Sources */,
+				34743DE5289441FB00F3A2DC /* ContentView.swift in Sources */,
+				34743E13289448D000F3A2DC /* RecordPrimaryPillView.swift in Sources */,
+				34743E002894482200F3A2DC /* Condition+CoreDataProperties.swift in Sources */,
+				34743E052894483200F3A2DC /* APillLog+Color.swift in Sources */,
+				34743DEB289441FB00F3A2DC /* ComplicationController.swift in Sources */,
+				34743E032894482600F3A2DC /* APillLog.xcdatamodeld in Sources */,
+				34743DE3289441FB00F3A2DC /* APillLogApp.swift in Sources */,
+				34743DFE2894482200F3A2DC /* History+CoreDataClass.swift in Sources */,
+				34743E022894482200F3A2DC /* CoreDataManager.swift in Sources */,
+				781247C82897B5C6002E0C10 /* ConnectionModelWatch.swift in Sources */,
+				34743E062894483200F3A2DC /* APillLog+Font.swift in Sources */,
+				34743DE9289441FB00F3A2DC /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		781EABC12891B37100F1A2F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				781EABCD2891B37100F1A2F4 /* ApilogWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		876ED1982882A33B00179767 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
+				786006FD289655DC00E6A07C /* DiaryEditViewController.swift in Sources */,
 				87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
-				A8F4F2CF28847A520008EB48 /* HistoryViewController.swift in Sources */,
+				9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */,
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
 				9A273C2C2885390F0006427B /* CoreDataManager.swift in Sources */,
-				8BFE752A28884E2A008748B9 /* PillDummyData.swift in Sources */,
+				8711C3DF28929FDF00F7625F /* UIView.swift in Sources */,
+				34CF982A2895B9FF009D70A6 /* HistoryDetailProgressViewCell.swift in Sources */,
+				9A6009F5289517DD00E7E82F /* FSCalendarViewController.swift in Sources */,
+				9A890AF52891979D00BD312C /* VersionController.swift in Sources */,
 				9ACDEAF4288A6D43006204AB /* History+CoreDataProperties.swift in Sources */,
 				9A273BFB2883ED1B0006427B /* Condition+CoreDataClass.swift in Sources */,
 				78D8B1202888F8F800ADF830 /* DiaryReadViewController.swift in Sources */,
+				9A13A8302896C61000F5C141 /* CustomLicenseTableCell.swift in Sources */,
+				9A890AF32891979000BD312C /* LicenseController.swift in Sources */,
+				786006DB28951CFF00E6A07C /* DiaryWriteViewController3.swift in Sources */,
 				9ACDEAF3288A6D43006204AB /* History+CoreDataClass.swift in Sources */,
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
 				34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */,
+				34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */,
+				786006D928951CF100E6A07C /* DiaryWriteViewController2.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
+				34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */,
+				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
+				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
+				9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */,
+				9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */,
 				8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */,
 				876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */,
+				9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */,
+				9A890AF0289194A200BD312C /* QuestionViewController.swift in Sources */,
+				8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */,
+				8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */,
 				34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */,
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
@@ -441,6 +1085,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34743DE0289441FB00F3A2DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34743DDC289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */;
+			targetProxy = 34743DDF289441FB00F3A2DC /* PBXContainerItemProxy */;
+		};
+		34743DF4289441FC00F3A2DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34743DD4289441FA00F3A2DC /* ApillLogWatch */;
+			targetProxy = 34743DF3289441FC00F3A2DC /* PBXContainerItemProxy */;
+		};
+		781EABD22891B37200F1A2F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 781EABC42891B37100F1A2F4 /* ApilogWidgetExtension */;
+			targetProxy = 781EABD12891B37200F1A2F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		876ED1A52882A33B00179767 /* Main.storyboard */ = {
@@ -462,6 +1124,180 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		34743DF7289441FC00F3A2DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		34743DF8289441FC00F3A2DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		34743DFA289441FC00F3A2DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ApillLogWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ApillLogWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ApillLogWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ApillLogWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		34743DFB289441FC00F3A2DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ApillLogWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ApillLogWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ApillLogWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ApillLogWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		781EABD52891B37200F1A2F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ApilogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		781EABD62891B37200F1A2F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ApilogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ApilogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		876ED1B12882A33C00179767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -512,13 +1348,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -566,24 +1404,29 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
 		876ED1B42882A33C00179767 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = APillLog/APillLog.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -592,14 +1435,16 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -608,12 +1453,16 @@
 		};
 		876ED1B52882A33C00179767 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3312ECB395C9539DD8D453FA /* Pods-APillLog.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = APillLog/APillLog.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JPPWR5997;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -622,14 +1471,16 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -639,6 +1490,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		34743DFC289441FC00F3A2DC /* Build configuration list for PBXNativeTarget "ApillLogWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34743DFA289441FC00F3A2DC /* Debug */,
+				34743DFB289441FC00F3A2DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34743DFD289441FC00F3A2DC /* Build configuration list for PBXNativeTarget "ApillLogWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34743DF7289441FC00F3A2DC /* Debug */,
+				34743DF8289441FC00F3A2DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		781EABD72891B37200F1A2F4 /* Build configuration list for PBXNativeTarget "ApilogWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				781EABD52891B37200F1A2F4 /* Debug */,
+				781EABD62891B37200F1A2F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		876ED1972882A33B00179767 /* Build configuration list for PBXProject "APillLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

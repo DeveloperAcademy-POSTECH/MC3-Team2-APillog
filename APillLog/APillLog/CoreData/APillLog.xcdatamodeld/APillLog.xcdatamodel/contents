@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CBT" representedClassName="CBT" syncable="YES" codeGenerationType="class">
-        <attribute name="cbtContext" optional="YES" attributeType="String"/>
+        <attribute name="actionContext" optional="YES" attributeType="String"/>
         <attribute name="cbtId" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="mistakeContext" optional="YES" attributeType="String"/>
+        <attribute name="recognizeContext" optional="YES" attributeType="String"/>
         <attribute name="selectDate" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Condition" representedClassName="Condition" syncable="YES">
@@ -64,7 +66,7 @@
         <attribute name="takeTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="CBT" positionX="0" positionY="45" width="128" height="89"/>
+        <element name="CBT" positionX="0" positionY="45" width="128" height="119"/>
         <element name="Condition" positionX="-36" positionY="9" width="128" height="134"/>
         <element name="History" positionX="-18" positionY="27" width="128" height="194"/>
         <element name="PrimaryPill" positionX="-63" positionY="-18" width="128" height="119"/>

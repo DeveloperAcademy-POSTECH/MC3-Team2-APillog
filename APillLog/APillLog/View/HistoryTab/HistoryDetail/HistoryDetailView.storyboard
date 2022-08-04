@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--History Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HistoryDetailView" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="HistoryDetailViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-Hz-mfj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-Yg-pjN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-fL-D6J">
+                                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="20" width="414" height="200"/>
+                                                        <color key="backgroundColor" name="ABackground"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="2XB-o6-RoR"/>
+                                                        </constraints>
+                                                        <color key="sectionIndexBackgroundColor" name="AAccent"/>
+                                                    </tableView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-Ne-F1R">
+                                                        <rect key="frame" x="25" y="25" width="364" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" name="AGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ABackground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="1P7-RB-12e"/>
+                                                    <constraint firstItem="c9c-Ne-F1R" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" constant="25" id="Hgi-5b-sr8"/>
+                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" id="Ns4-Gy-i19"/>
+                                                    <constraint firstItem="c9c-Ne-F1R" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="25" id="PUw-G0-3bR"/>
+                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="20" id="RBb-K5-TKt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="10" id="TAh-RO-P5B"/>
+                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="20" id="o81-QD-51N"/>
+                                                    <constraint firstAttribute="trailing" secondItem="c9c-Ne-F1R" secondAttribute="trailing" constant="25" id="sm6-0R-Q4X"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 일주일간의 기록이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
+                                                <rect key="frame" x="25" y="16" width="163" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="증상 발현 빈도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ML-H1v">
+                                                <rect key="frame" x="25" y="294" width="364" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" name="AGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="325" width="364" height="400"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
+                                                    <constraint firstAttribute="height" constant="400" id="dF2-gB-pyl"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="ABackground"/>
+                                        <constraints>
+                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="3Jk-qN-4IM"/>
+                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="9w1-oz-No8"/>
+                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="16" id="GTO-FC-mkq"/>
+                                            <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="Lnk-qt-Gj4"/>
+                                            <constraint firstItem="MoW-ML-H1v" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="bottom" constant="20" id="NN2-Cg-3sj"/>
+                                            <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
+                                            <constraint firstItem="MoW-ML-H1v" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="bpR-9e-RcL"/>
+                                            <constraint firstItem="TpX-fL-D6J" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" constant="10" id="fLv-68-OuE"/>
+                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="MoW-ML-H1v" secondAttribute="bottom" constant="10" id="kFh-0e-MeJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="TpX-fL-D6J" secondAttribute="trailing" id="pIN-xk-fSX"/>
+                                            <constraint firstItem="TpX-fL-D6J" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="pXl-9Y-uAL"/>
+                                            <constraint firstAttribute="trailing" secondItem="MoW-ML-H1v" secondAttribute="trailing" constant="25" id="teQ-4e-Vh1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="trailing" secondItem="rw2-lC-o5b" secondAttribute="trailing" id="5y0-7E-gem"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="bottom" secondItem="rw2-lC-o5b" secondAttribute="bottom" id="6aK-SI-zmg"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="top" secondItem="rw2-lC-o5b" secondAttribute="top" id="hqY-MK-Pg5"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="width" secondItem="e9a-f4-Bwf" secondAttribute="width" id="jDi-jU-V3d"/>
+                                    <constraint firstItem="gE8-Yg-pjN" firstAttribute="leading" secondItem="rw2-lC-o5b" secondAttribute="leading" id="uDd-xK-z9J"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rw2-lC-o5b"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="e9a-f4-Bwf"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="ABackground"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4UK-Hz-mfj" secondAttribute="bottom" id="8vn-Tv-yJF"/>
+                            <constraint firstItem="4UK-Hz-mfj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EHg-UO-KNO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4UK-Hz-mfj" secondAttribute="trailing" id="SVk-GD-p7d"/>
+                            <constraint firstItem="4UK-Hz-mfj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xpP-74-ze2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
+                        <outlet property="reportViewTitle" destination="xN6-7I-eWn" id="8TA-TQ-3IN"/>
+                        <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.36231884057972" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AAccent">
+            <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ABackground">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AGray">
+            <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

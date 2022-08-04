@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Questions View Controller-->
+        <scene sceneID="nod-NG-41b">
+            <objects>
+                <viewController storyboardIdentifier="QuestionsView" hidesBottomBarWhenPushed="YES" id="KJN-pC-Ed2" customClass="QuestionsViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jrr-Vc-xZR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ApillLog를 이용해주셔서 감사합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvy-Mx-85p">
+                                <rect key="frame" x="24.999999999999986" y="94" width="250.66666666666663" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건의사항이나 오류를 발견하셨다면, 메일을 통해 저희에게 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agy-nb-bX6">
+                                <rect key="frame" x="25" y="140" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5Af-bF-fxP"/>
+                                    <constraint firstAttribute="width" constant="300" id="TzU-39-9Nj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsX-KE-SUc">
+                                <rect key="frame" x="25" y="225" width="330" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-pg-0Hn">
+                                        <rect key="frame" x="-15" y="18.333333333333314" width="103" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메일 보내기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haY-dw-ciN">
+                                        <rect key="frame" x="124" y="26" width="73.333333333333329" height="19.333333333333332"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="Mhx-R9-2cX"/>
+                                    <constraint firstAttribute="height" constant="70" id="Xcy-cL-z7e"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWG-Ku-DEK">
+                                <rect key="frame" x="25" y="225" width="330" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0aN-9f-gLP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="bNc-sg-iQz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sendEmailTapped:" destination="KJN-pC-Ed2" eventType="touchUpInside" id="jK9-qa-vry"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L4A-E4-rAu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L4A-E4-rAu" firstAttribute="trailing" secondItem="EsX-KE-SUc" secondAttribute="trailing" constant="25" id="4q5-1m-JY2"/>
+                            <constraint firstItem="EsX-KE-SUc" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="6ix-4m-EuM"/>
+                            <constraint firstItem="aWG-Ku-DEK" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="6jy-gm-biV"/>
+                            <constraint firstItem="Mvy-Mx-85p" firstAttribute="top" secondItem="L4A-E4-rAu" secondAttribute="top" constant="50" id="86i-cy-XSO"/>
+                            <constraint firstItem="aWG-Ku-DEK" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="BOC-zB-QLV"/>
+                            <constraint firstItem="agy-nb-bX6" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="KuA-qt-39t"/>
+                            <constraint firstItem="EsX-KE-SUc" firstAttribute="top" secondItem="agy-nb-bX6" secondAttribute="bottom" constant="25" id="MO0-a8-qiK"/>
+                            <constraint firstItem="L4A-E4-rAu" firstAttribute="trailing" secondItem="aWG-Ku-DEK" secondAttribute="trailing" constant="25" id="WgP-ss-I3j"/>
+                            <constraint firstItem="agy-nb-bX6" firstAttribute="top" secondItem="Mvy-Mx-85p" secondAttribute="bottom" constant="25" id="ZcM-dG-BNc"/>
+                            <constraint firstItem="aWG-Ku-DEK" firstAttribute="top" secondItem="agy-nb-bX6" secondAttribute="bottom" constant="25" id="eY2-lf-Fe1"/>
+                            <constraint firstItem="Mvy-Mx-85p" firstAttribute="leading" secondItem="L4A-E4-rAu" secondAttribute="leading" constant="25" id="rhk-Qo-g7O"/>
+                            <constraint firstItem="aWG-Ku-DEK" firstAttribute="top" secondItem="agy-nb-bX6" secondAttribute="bottom" constant="25" id="yuU-86-vT9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonView" destination="aWG-Ku-DEK" id="bLe-EJ-GZk"/>
+                        <outlet property="requestText" destination="agy-nb-bX6" id="uqJ-EK-NVZ"/>
+                        <outlet property="sendButton" destination="aWG-Ku-DEK" id="W2j-5A-qLu"/>
+                        <outlet property="welcomeText" destination="Mvy-Mx-85p" id="wa6-iY-CI1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpH-9I-xlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.23076923076917" y="-3.5545023696682461"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="envelope" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,19 +13,19 @@
         <!--Check Condition View Controller-->
         <scene sceneID="q68-Su-LbC">
             <objects>
-                <viewController storyboardIdentifier="CheckConditionViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jTN-oo-mAg" customClass="CheckConditionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CheckConditionViewController" storyboardIdentifier="CheckConditionViewController" hidesBottomBarWhenPushed="YES" id="jTN-oo-mAg" customClass="CheckConditionViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hgj-AG-UVu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVp-s9-la2">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVp-s9-la2">
                                 <rect key="frame" x="25" y="121" width="340" height="677"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4x-Sk-9fP" userLabel="Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="729"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jap-vz-MbA">
-                                                <rect key="frame" x="24" y="472" width="292" height="80"/>
+                                                <rect key="frame" x="24" y="271" width="292" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="XJ5-gQ-mfq"/>
@@ -35,13 +35,13 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더 기록하고 싶은게 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nb-8Z-L5W">
-                                                <rect key="frame" x="24.000000000000014" y="434" width="214.33333333333337" height="24"/>
+                                                <rect key="frame" x="24.000000000000014" y="233" width="214.33333333333337" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9zU-my-jKz">
-                                                <rect key="frame" x="24" y="32" width="274" height="171"/>
+                                                <rect key="frame" x="24" y="32" width="285" height="171"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편 사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deb-cm-JXz">
                                                         <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="24"/>
@@ -50,10 +50,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AG-bp-XpC">
-                                                        <rect key="frame" x="0.0" y="38" width="274" height="133"/>
+                                                        <rect key="frame" x="0.0" y="38" width="285" height="133"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="evw-P6-EXX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="257" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="33"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-rq-xwl" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="33"/>
@@ -113,17 +113,17 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-cY-LNs" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="201" y="0.0" width="56" height="33"/>
+                                                                        <rect key="frame" x="201" y="0.0" width="84" height="33"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="56" id="N4T-KS-hd0"/>
+                                                                            <constraint firstAttribute="width" constant="84" id="N4T-KS-hd0"/>
                                                                             <constraint firstAttribute="height" constant="33" id="bhi-P6-1Mb"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="빈맥">
+                                                                        <state key="normal" title="두근거림">
                                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
-                                                                        <state key="selected" title="빈맥"/>
+                                                                        <state key="selected" title="두근거림"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
@@ -256,152 +256,8 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nuR-ao-pSy">
-                                                <rect key="frame" x="24" y="233" width="221" height="171"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개선 사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCU-o5-o27">
-                                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="24"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-hl-zTl">
-                                                        <rect key="frame" x="0.0" y="38" width="221" height="133"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="COa-Mx-WBf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="221" height="33"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJ3-QF-R3M" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="33" id="4Pl-5J-7bM"/>
-                                                                            <constraint firstAttribute="width" constant="98" id="EfQ-tT-7T7"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="주의력 향상">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <state key="selected" title="주의력 향상"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="8cv-vn-RZ6"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-NN-ZaF" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="109" y="0.0" width="112" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="112" id="Iwg-mC-2fO"/>
-                                                                            <constraint firstAttribute="height" constant="33" id="eCE-bg-pNS"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="과잉 행동 절제">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <state key="selected" title="과잉 행동 절제"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="duz-8V-kSo"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="niN-UH-IT6">
-                                                                <rect key="frame" x="0.0" y="50" width="207" height="33"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lk-NT-Fv6" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="98" id="549-G0-mBO"/>
-                                                                            <constraint firstAttribute="height" constant="33" id="oEB-B9-eIW"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="충동성 감소">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <state key="selected" title="충동성 감소"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="1b1-OM-etT"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgL-46-SAb" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="109" y="0.0" width="98" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="98" id="43x-XL-FTq"/>
-                                                                            <constraint firstAttribute="height" constant="33" id="8TR-Ze-9q4"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="기억력 향상">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="8Da-aB-sCb"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Mjd-NE-B9w">
-                                                                <rect key="frame" x="0.0" y="100" width="214" height="33"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cux-Ib-ruh" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="33" id="Fnk-cd-kfp"/>
-                                                                            <constraint firstAttribute="width" constant="98" id="sFy-Sf-Ldc"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="우울감 감소">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <state key="selected" title="우울감 감소"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="Mvm-Id-7uT"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSE-aA-C2q" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                                        <rect key="frame" x="109" y="0.0" width="105" height="33"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="105" id="3tF-rs-kif"/>
-                                                                            <constraint firstAttribute="height" constant="33" id="lNJ-0J-sPG"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="두근거림 감소">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                        <state key="selected" title="두근거림 감소"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="toggleMedicinalEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="Hjr-eJ-MAy"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-fg-fkq">
-                                                <rect key="frame" x="24" y="585.33333333333337" width="292" height="33"/>
+                                                <rect key="frame" x="24" y="384.33333333333331" width="292" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <color key="tintColor" name="ADisable"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -416,7 +272,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0/30)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-tx-qCf">
-                                                <rect key="frame" x="280.33333333333331" y="556" width="35.666666666666686" height="14.333333333333371"/>
+                                                <rect key="frame" x="280.33333333333331" y="355" width="35.666666666666686" height="14.333333333333314"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" name="AGray"/>
                                                 <nil key="highlightedColor"/>
@@ -427,11 +283,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vWb-tx-qCf" secondAttribute="trailing" constant="24" id="3yj-gq-iXB"/>
                                             <constraint firstItem="jap-vz-MbA" firstAttribute="top" secondItem="5Nb-8Z-L5W" secondAttribute="bottom" constant="14" id="4H1-f6-6ec"/>
-                                            <constraint firstItem="nuR-ao-pSy" firstAttribute="top" secondItem="9zU-my-jKz" secondAttribute="bottom" constant="30" id="C7N-n7-ot5"/>
-                                            <constraint firstItem="5Nb-8Z-L5W" firstAttribute="top" secondItem="nuR-ao-pSy" secondAttribute="bottom" constant="30" id="DzT-72-5g0"/>
                                             <constraint firstItem="vWb-tx-qCf" firstAttribute="top" secondItem="jap-vz-MbA" secondAttribute="bottom" constant="4" id="GYp-Ws-GtG"/>
+                                            <constraint firstItem="5Nb-8Z-L5W" firstAttribute="top" secondItem="9zU-my-jKz" secondAttribute="bottom" constant="30" id="Ggu-1j-c17"/>
                                             <constraint firstAttribute="trailing" secondItem="jap-vz-MbA" secondAttribute="trailing" constant="24" id="MJ1-Yb-3wL"/>
-                                            <constraint firstItem="nuR-ao-pSy" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="O3Z-JV-sdk"/>
                                             <constraint firstItem="jap-vz-MbA" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="Qzb-aR-sgP"/>
                                             <constraint firstItem="Zsv-fg-fkq" firstAttribute="top" secondItem="vWb-tx-qCf" secondAttribute="bottom" constant="15" id="VCF-ii-2ZU"/>
                                             <constraint firstItem="9zU-my-jKz" firstAttribute="leading" secondItem="K4x-Sk-9fP" secondAttribute="leading" constant="24" id="bya-Ys-2Ax"/>
@@ -461,11 +315,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="증상 입력" id="ahk-r0-V1L">
-                                        <barButtonItem key="leftBarButtonItem" style="done" id="Pga-xO-Dze">
-                                            <imageReference key="image" image="left-black" symbolScale="large"/>
+                                        <barButtonItem key="leftBarButtonItem" title="뒤로" style="done" id="Pga-xO-Dze">
+                                            <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" name="AAccent"/>
                                             <connections>
-                                                <action selector="tapBackButton:" destination="jTN-oo-mAg" id="5jg-vu-wKE"/>
+                                                <action selector="tapBackButton:" destination="jTN-oo-mAg" id="KKB-mq-hlR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -504,17 +358,8 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="2Lk-NT-Fv6">
-            <size key="intrinsicContentSize" width="74" height="32"/>
-        </designable>
         <designable name="2xc-19-4JJ">
             <size key="intrinsicContentSize" width="30" height="32"/>
-        </designable>
-        <designable name="8kb-NN-ZaF">
-            <size key="intrinsicContentSize" width="92" height="32"/>
-        </designable>
-        <designable name="DJ3-QF-R3M">
-            <size key="intrinsicContentSize" width="74" height="32"/>
         </designable>
         <designable name="XnQ-QZ-sUk">
             <size key="intrinsicContentSize" width="42" height="32"/>
@@ -531,14 +376,8 @@
         <designable name="Zap-6e-hB9">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
-        <designable name="cgL-46-SAb">
-            <size key="intrinsicContentSize" width="74" height="32"/>
-        </designable>
-        <designable name="cux-Ib-ruh">
-            <size key="intrinsicContentSize" width="74" height="32"/>
-        </designable>
         <designable name="dBe-cY-LNs">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="hbe-b2-3Lb">
             <size key="intrinsicContentSize" width="30" height="32"/>
@@ -546,15 +385,12 @@
         <designable name="j4u-rq-xwl">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
-        <designable name="jSE-aA-C2q">
-            <size key="intrinsicContentSize" width="88" height="32"/>
-        </designable>
         <designable name="sED-9R-Myr">
             <size key="intrinsicContentSize" width="60" height="32"/>
         </designable>
     </designables>
     <resources>
-        <image name="left-black" width="10" height="18"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
