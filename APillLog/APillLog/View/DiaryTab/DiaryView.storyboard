@@ -41,7 +41,7 @@
                                     <segue destination="Hi7-qL-WQ8" kind="show" id="8ds-gR-oMg"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-K8-xhd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-K8-xhd">
                                 <rect key="frame" x="25" y="321.66666666666674" width="340" height="363.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -95,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rtf-De-T8L">
-                                <rect key="frame" x="334.33333333333331" y="246" width="12.666666666666686" height="16.666666666666686"/>
+                                <rect key="frame" x="334.33333333333331" y="252.99999999999997" width="12.666666666666686" height="16.666666666666686"/>
                                 <color key="tintColor" name="ABlack"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 실수노트가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
@@ -136,7 +136,7 @@
                             <constraint firstItem="1lm-OZ-M6b" firstAttribute="top" secondItem="lsx-aD-u3n" secondAttribute="top" constant="337" id="ejN-FN-PxP"/>
                             <constraint firstItem="lsx-aD-u3n" firstAttribute="trailing" secondItem="pkA-a8-yLu" secondAttribute="trailing" constant="25" id="kDx-VD-Wzx"/>
                             <constraint firstItem="G2i-NX-mcY" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="mg8-QE-vFZ"/>
-                            <constraint firstItem="vIK-K8-xhd" firstAttribute="top" secondItem="Rtf-De-T8L" secondAttribute="bottom" constant="57.399999999999999" id="teQ-vo-dmH"/>
+                            <constraint firstItem="vIK-K8-xhd" firstAttribute="top" secondItem="Rtf-De-T8L" secondAttribute="bottom" constant="50.333333333333371" id="teQ-vo-dmH"/>
                             <constraint firstItem="iX0-KJ-blP" firstAttribute="leading" secondItem="lsx-aD-u3n" secondAttribute="leading" constant="25" id="zNv-v1-kOI"/>
                             <constraint firstItem="Dd3-dH-PYh" firstAttribute="leading" secondItem="WoG-be-VzB" secondAttribute="leadingMargin" constant="22" id="zZP-9M-5Dp"/>
                         </constraints>
