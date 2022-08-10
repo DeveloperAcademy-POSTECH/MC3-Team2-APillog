@@ -30,30 +30,35 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNM-Si-vuk">
-                                                                <rect key="frame" x="48" y="20" width="318.5" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tcz-GN-vYF">
-                                                                        <rect key="frame" x="0.0" y="1" width="21" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="116.5" height="57.5"/>
                                                                         <color key="tintColor" name="AAccent"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00월 00일 ~ 00월 00일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-JU-5el">
-                                                                        <rect key="frame" x="21" y="0.0" width="175.5" height="20.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00월 00일 ~ 00월 00일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="025-CA-FcZ">
+                                                                        <rect key="frame" x="116.5" y="0.0" width="175.5" height="60"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <color key="textColor" name="AAccent"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="까지의 기록이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAF-Nw-95S">
-                                                                        <rect key="frame" x="196.5" y="0.0" width="122" height="20.5"/>
+                                                                        <rect key="frame" x="292" y="0.0" width="122" height="60"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <gestureRecognizers/>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="ABackground"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="dNM-Si-vuk" secondAttribute="bottom" id="DBB-ww-0Tb"/>
                                                             <constraint firstItem="dNM-Si-vuk" firstAttribute="centerX" secondItem="KDB-tY-0dH" secondAttribute="centerX" id="NJ2-3c-tQE"/>
+                                                            <constraint firstItem="dNM-Si-vuk" firstAttribute="top" secondItem="KDB-tY-0dH" secondAttribute="top" id="NO3-q2-pei"/>
+                                                            <constraint firstItem="dNM-Si-vuk" firstAttribute="leading" secondItem="KDB-tY-0dH" secondAttribute="leading" id="OCd-lh-oIr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="dNM-Si-vuk" secondAttribute="trailing" id="UAH-hL-dhn"/>
                                                             <constraint firstItem="dNM-Si-vuk" firstAttribute="centerY" secondItem="KDB-tY-0dH" secondAttribute="centerY" id="b6q-jG-8AS"/>
                                                             <constraint firstAttribute="height" constant="60" id="ssE-XT-oSE"/>
                                                         </constraints>
@@ -157,9 +162,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datesRangeLabel" destination="025-CA-FcZ" id="KPi-v4-Xia"/>
                         <outlet property="fsCalendar" destination="hUU-3e-S5P" id="Kk3-yH-THf"/>
                         <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
-                        <outlet property="selectedDatesRange" destination="PCU-JU-5el" id="xeO-Fa-vzp"/>
                         <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,7 @@ class HistoryDetailViewController: UIViewController {
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var fsCalendar: FSCalendar!
-    @IBOutlet weak var selectedDatesRange: UILabel!
+    @IBOutlet weak var datesRangeLabel: UILabel!
     
     private var startDate: Date?
     private var endDate: Date?
@@ -23,6 +23,7 @@ class HistoryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         result = CoreDataManager.shared.fetchPillInformationLastWeek()
         setDelegate()
         setStyle()
@@ -31,6 +32,11 @@ class HistoryDetailViewController: UIViewController {
         fsCalendar.dataSource = self
         fsCalendar.allowsMultipleSelection = true
         fsCalendar.isHidden = true
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
+        datesRangeLabel.isUserInteractionEnabled = true
+        datesRangeLabel.addGestureRecognizer(tapRecognizer)
+        
         
     }
     
@@ -48,6 +54,11 @@ class HistoryDetailViewController: UIViewController {
         self.navigationItem.title = "한 눈에 보기"
         //self.reportViewTitle.font = UIFont.AFont.navigationTitle
     }
+    
+    @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
+        fsCalendar.isHidden.toggle()
+    }
+    
 }
 
 extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegate {
