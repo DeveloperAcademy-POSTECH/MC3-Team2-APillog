@@ -7,20 +7,31 @@
 
 import Foundation
 import UIKit
-
+import FSCalendar
 
 class HistoryDetailViewController: UIViewController {
     
     var result = [(String, Int, Int)]()
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var reportViewTitle: UILabel!
+    @IBOutlet weak var fsCalendar: FSCalendar!
+    @IBOutlet weak var selectedDatesRange: UILabel!
+    
+    private var startDate: Date?
+    private var endDate: Date?
+    private var datesRange: [Date?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         result = CoreDataManager.shared.fetchPillInformationLastWeek()
         setDelegate()
         setStyle()
+        
+        fsCalendar.delegate = self
+        fsCalendar.dataSource = self
+        fsCalendar.allowsMultipleSelection = true
+        fsCalendar.isHidden = true
+        
     }
     
     private func setDelegate() {
@@ -35,7 +46,7 @@ class HistoryDetailViewController: UIViewController {
         pillDosageTableHight.constant = CGFloat(25 + (result.count == 0 ? 1 : result.count) * 72)
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
-        self.reportViewTitle.font = UIFont.AFont.navigationTitle
+        //self.reportViewTitle.font = UIFont.AFont.navigationTitle
     }
 }
 
@@ -66,4 +77,73 @@ extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     
+}
+
+extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        if startDate == nil {
+            startDate = date
+            datesRange = [startDate!]
+            return
+        }
+        
+        if startDate != nil && endDate == nil {
+            if date <= startDate! {
+                fsCalendar.deselect(startDate!)
+                startDate = date
+                datesRange = [startDate!]
+                return
+            }
+            
+            
+            let range = datesRange(from: startDate!, to: date)
+            
+            endDate = range.last
+            
+            for day in range {
+                fsCalendar.select(day)
+            }
+            
+            datesRange = range
+            
+            return
+        }
+        
+        if startDate != nil && endDate != nil {
+            for day in fsCalendar.selectedDates {
+                fsCalendar.deselect(day)
+            }
+            
+            startDate = nil
+            endDate = nil
+            datesRange = []
+            
+        }
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if startDate != nil && endDate != nil {
+            for day in fsCalendar.selectedDates {
+                fsCalendar.deselect(day)
+            }
+            
+            startDate = nil
+            endDate = nil
+            datesRange = []
+        }
+    }
+    
+    
+    func datesRange(from: Date, to: Date) -> [Date] {
+        if from > to { return [Date]() }
+        var tempDate = from
+        var array = [tempDate]
+        while tempDate < to {
+            tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
+            array.append(tempDate)
+        }
+        return array
+    }
+
 }

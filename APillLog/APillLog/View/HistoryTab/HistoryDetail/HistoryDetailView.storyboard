@@ -23,76 +23,116 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-Yg-pjN">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-fL-D6J">
-                                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Lzb-23-zhl">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1089"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="20" width="414" height="200"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDB-tY-0dH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNM-Si-vuk">
+                                                                <rect key="frame" x="48" y="20" width="318.5" height="20.5"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tcz-GN-vYF">
+                                                                        <rect key="frame" x="0.0" y="1" width="21" height="18"/>
+                                                                        <color key="tintColor" name="AAccent"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00월 00일 ~ 00월 00일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-JU-5el">
+                                                                        <rect key="frame" x="21" y="0.0" width="175.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                        <color key="textColor" name="AAccent"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="까지의 기록이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAF-Nw-95S">
+                                                                        <rect key="frame" x="196.5" y="0.0" width="122" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
                                                         <color key="backgroundColor" name="ABackground"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="2XB-o6-RoR"/>
+                                                            <constraint firstItem="dNM-Si-vuk" firstAttribute="centerX" secondItem="KDB-tY-0dH" secondAttribute="centerX" id="NJ2-3c-tQE"/>
+                                                            <constraint firstItem="dNM-Si-vuk" firstAttribute="centerY" secondItem="KDB-tY-0dH" secondAttribute="centerY" id="b6q-jG-8AS"/>
+                                                            <constraint firstAttribute="height" constant="60" id="ssE-XT-oSE"/>
                                                         </constraints>
-                                                        <color key="sectionIndexBackgroundColor" name="AAccent"/>
-                                                    </tableView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-Ne-F1R">
-                                                        <rect key="frame" x="25" y="25" width="364" height="21"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-3e-S5P" customClass="FSCalendar">
+                                                        <rect key="frame" x="0.0" y="67" width="414" height="300"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" id="Mib-6f-fWD"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-fL-D6J">
+                                                        <rect key="frame" x="0.0" y="374" width="414" height="280.5"/>
+                                                        <subviews>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
+                                                                <color key="backgroundColor" name="ABackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="200" id="2XB-o6-RoR"/>
+                                                                </constraints>
+                                                                <color key="sectionIndexBackgroundColor" name="AAccent"/>
+                                                            </tableView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-Ne-F1R">
+                                                                <rect key="frame" x="25" y="25" width="364" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <color key="textColor" name="AGray"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="ABackground"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="c9c-Ne-F1R" secondAttribute="trailing" constant="25" id="1h1-8p-dns"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="25" id="Mll-oM-NT0"/>
+                                                            <constraint firstItem="c9c-Ne-F1R" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" constant="25" id="ZQb-ds-3g5"/>
+                                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="c9c-Ne-F1R" secondAttribute="bottom" constant="10" id="eOn-RZ-Sz4"/>
+                                                            <constraint firstItem="c9c-Ne-F1R" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="25" id="kAQ-gj-Gl0"/>
+                                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" id="p2f-eJ-DxE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="sxv-Xq-jav"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="증상 발현 빈도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ML-H1v">
+                                                        <rect key="frame" x="25" y="661.5" width="364" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" name="AGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
+                                                        <rect key="frame" x="25" y="689" width="364" height="400"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
+                                                            <constraint firstAttribute="height" constant="400" id="dF2-gB-pyl"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                 </subviews>
-                                                <color key="backgroundColor" name="ABackground"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="1P7-RB-12e"/>
-                                                    <constraint firstItem="c9c-Ne-F1R" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" constant="25" id="Hgi-5b-sr8"/>
-                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" id="Ns4-Gy-i19"/>
-                                                    <constraint firstItem="c9c-Ne-F1R" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="25" id="PUw-G0-3bR"/>
-                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="20" id="RBb-K5-TKt"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="10" id="TAh-RO-P5B"/>
-                                                    <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="20" id="o81-QD-51N"/>
-                                                    <constraint firstAttribute="trailing" secondItem="c9c-Ne-F1R" secondAttribute="trailing" constant="25" id="sm6-0R-Q4X"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MoW-ML-H1v" secondAttribute="trailing" constant="25" id="D7N-bZ-470"/>
+                                                    <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="Lzb-23-zhl" secondAttribute="leading" constant="25" id="LHS-ka-Acx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="LxA-rK-5nU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hUU-3e-S5P" secondAttribute="trailing" id="NuS-mB-no4"/>
+                                                    <constraint firstItem="MoW-ML-H1v" firstAttribute="leading" secondItem="Lzb-23-zhl" secondAttribute="leading" constant="25" id="Un0-ii-9up"/>
+                                                    <constraint firstItem="TpX-fL-D6J" firstAttribute="leading" secondItem="Lzb-23-zhl" secondAttribute="leading" id="aUI-8m-9w8"/>
+                                                    <constraint firstItem="hUU-3e-S5P" firstAttribute="leading" secondItem="Lzb-23-zhl" secondAttribute="leading" id="h1D-U4-VpC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TpX-fL-D6J" secondAttribute="trailing" id="hUm-fV-tX1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nNh-tb-1BN" secondAttribute="bottom" id="tiz-yo-YvN"/>
                                                 </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 일주일간의 기록이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-7I-eWn">
-                                                <rect key="frame" x="25" y="16" width="163" height="18"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="증상 발현 빈도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ML-H1v">
-                                                <rect key="frame" x="25" y="294" width="364" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" name="AGray"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="325" width="364" height="400"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
-                                                    <constraint firstAttribute="height" constant="400" id="dF2-gB-pyl"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <constraints>
-                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="3Jk-qN-4IM"/>
-                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="9w1-oz-No8"/>
-                                            <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="16" id="GTO-FC-mkq"/>
-                                            <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="Lnk-qt-Gj4"/>
-                                            <constraint firstItem="MoW-ML-H1v" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="bottom" constant="20" id="NN2-Cg-3sj"/>
                                             <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
-                                            <constraint firstItem="MoW-ML-H1v" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="bpR-9e-RcL"/>
-                                            <constraint firstItem="TpX-fL-D6J" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" constant="10" id="fLv-68-OuE"/>
-                                            <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="MoW-ML-H1v" secondAttribute="bottom" constant="10" id="kFh-0e-MeJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="TpX-fL-D6J" secondAttribute="trailing" id="pIN-xk-fSX"/>
-                                            <constraint firstItem="TpX-fL-D6J" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="pXl-9Y-uAL"/>
-                                            <constraint firstAttribute="trailing" secondItem="MoW-ML-H1v" secondAttribute="trailing" constant="25" id="teQ-4e-Vh1"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lzb-23-zhl" secondAttribute="trailing" id="aaC-9K-pCk"/>
+                                            <constraint firstItem="Lzb-23-zhl" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="fI4-FD-VeX"/>
+                                            <constraint firstItem="Lzb-23-zhl" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" id="qbV-0B-ajd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -117,8 +157,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fsCalendar" destination="hUU-3e-S5P" id="Kk3-yH-THf"/>
                         <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
-                        <outlet property="reportViewTitle" destination="xN6-7I-eWn" id="8TA-TQ-3IN"/>
+                        <outlet property="selectedDatesRange" destination="PCU-JU-5el" id="xeO-Fa-vzp"/>
                         <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
                     </connections>
                 </viewController>
@@ -128,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
