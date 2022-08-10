@@ -12,6 +12,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     @IBOutlet weak var mistakeTableView: UITableView!
     
     
+    @IBOutlet weak var mistakeTableViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
     let cellIdentifier = "customCell"
@@ -34,7 +35,16 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         return cell
     }
     
-    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        if self.mistakeTableView.contentSize.height == 0{
+            self.mistakeTableViewHeight?.constant = 200
+        }
+        else{
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +71,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set("실수노트를 추가해주세요", forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
+            
         }
         else{
             diaryViewGuideLabel.isHidden = true

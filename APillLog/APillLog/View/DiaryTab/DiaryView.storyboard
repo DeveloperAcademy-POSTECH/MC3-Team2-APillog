@@ -44,6 +44,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-K8-xhd">
                                 <rect key="frame" x="25" y="321.66666666666674" width="340" height="363.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="363.32999999999998" id="FFl-lX-QJY"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="ITK-dr-asg" customClass="CustomCellTableViewCell" customModule="APillLog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="340" height="43.666667938232422"/>
@@ -121,7 +124,6 @@
                         <viewLayoutGuide key="safeArea" id="lsx-aD-u3n"/>
                         <color key="backgroundColor" name="ABackground"/>
                         <constraints>
-                            <constraint firstItem="lsx-aD-u3n" firstAttribute="bottom" secondItem="vIK-K8-xhd" secondAttribute="bottom" constant="76" id="6es-N2-S11"/>
                             <constraint firstItem="lsx-aD-u3n" firstAttribute="trailing" secondItem="vIK-K8-xhd" secondAttribute="trailing" constant="25" id="6tq-BV-S5Y"/>
                             <constraint firstItem="lsx-aD-u3n" firstAttribute="trailing" secondItem="Rtf-De-T8L" secondAttribute="trailing" constant="43" id="AT9-Wm-8XH"/>
                             <constraint firstItem="LvB-Gu-C5F" firstAttribute="top" secondItem="G2i-NX-mcY" secondAttribute="bottom" constant="74.999999999999972" id="Aaw-yq-h8h"/>
@@ -148,6 +150,7 @@
                     <connections>
                         <outlet property="diaryViewGuideLabel" destination="1lm-OZ-M6b" id="zIS-KD-J4l"/>
                         <outlet property="mistakeTableView" destination="vIK-K8-xhd" id="CNw-ff-ndJ"/>
+                        <outlet property="mistakeTableViewHeight" destination="FFl-lX-QJY" id="tUt-ZM-GtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSC-TJ-qbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -625,7 +628,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="HFA-Q9-EOi"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLS-en-MMO">
-                                <rect key="frame" x="137" y="91" width="96.666666666666686" height="24"/>
+                                <rect key="frame" x="137" y="91" width="116" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -638,6 +641,7 @@
                             <constraint firstItem="zLS-en-MMO" firstAttribute="top" secondItem="RtF-wZ-EW4" secondAttribute="top" constant="3" id="ZE7-ss-cEI"/>
                             <constraint firstItem="zLS-en-MMO" firstAttribute="leading" secondItem="RtF-wZ-EW4" secondAttribute="leading" constant="137" id="ca6-ho-Vdu"/>
                             <constraint firstItem="RtF-wZ-EW4" firstAttribute="bottom" secondItem="Zuq-gO-ZU4" secondAttribute="bottom" constant="-302" id="crs-bW-2PB"/>
+                            <constraint firstItem="zLS-en-MMO" firstAttribute="centerX" secondItem="Twz-N9-IzR" secondAttribute="centerX" id="lw4-7a-NxU"/>
                             <constraint firstItem="Zuq-gO-ZU4" firstAttribute="top" secondItem="RtF-wZ-EW4" secondAttribute="top" constant="46" id="lyA-su-Y8Z"/>
                             <constraint firstItem="Zuq-gO-ZU4" firstAttribute="leading" secondItem="RtF-wZ-EW4" secondAttribute="leading" constant="16" id="y2c-uU-ny2"/>
                         </constraints>

@@ -40,7 +40,6 @@ class DiaryReadViewController: UIViewController {
         DiaryReadActionString.contentInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         self.navigationController?.navigationBar.topItem?.backButtonTitle = "뒤로"
         
-        
     }
     
  
