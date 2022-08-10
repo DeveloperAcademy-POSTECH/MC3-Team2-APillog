@@ -33,6 +33,7 @@ class ManageDosingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
     }
 
     // MARK: Function

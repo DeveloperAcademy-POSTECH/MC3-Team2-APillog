@@ -87,11 +87,13 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     }
     
     func sendShowPrimaryPillToWatch() {
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
-        
+  
         let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
-        
+    
+        // 1. 전송 시작 알림 + 초기화 요청
+        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
+
+        // 2. 데이터 전송
         for pill in pillList {
             let cycle = pill.cycle
             let dosage = pill.dosage ?? "복용량없음"
@@ -100,8 +102,8 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
             let name = pill.name ?? "이름없음"
             let selectDate = pill.selectDate ?? watchDateFormatter.string(from: Date())
             let takeTime = pill.takeTime == nil ? Date(timeIntervalSince1970: 0) : pill.takeTime!
-            
-            
+
+
             ConnectionModelPhone.shared.session.sendMessage(["message": "pillData",
                                                              "cycle": cycle,
                                                              "dosage": dosage,
@@ -112,8 +114,8 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                                                              "takeTime": takeTime
                                                             ], replyHandler: nil)
         }
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
 
+        // 3. 전송 완료 알림
+        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
     }
 }

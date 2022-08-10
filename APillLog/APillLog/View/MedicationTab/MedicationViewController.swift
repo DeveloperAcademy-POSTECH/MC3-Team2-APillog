@@ -96,6 +96,7 @@ class MedicationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: date)
+        ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
     }
 
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
@@ -400,8 +401,6 @@ extension MedicationViewController: ConnectionModelPhoneDelegate {
     func reloadTableView() {
         reloadPrimaryPillTableView()
     }
-    
-    
 }
 
 extension MedicationViewController: CalendarViewDelegate {

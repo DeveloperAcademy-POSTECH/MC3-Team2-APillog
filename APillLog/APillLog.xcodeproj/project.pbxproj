@@ -10,6 +10,7 @@
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
 		34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */; };
+		3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */; };
 		34743DD8289441FB00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DD7289441FB00F3A2DC /* Assets.xcassets */; };
 		34743DDE289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34743DE3289441FB00F3A2DC /* APillLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DE2289441FB00F3A2DC /* APillLogApp.swift */; };
@@ -41,7 +42,6 @@
 		34743E11289448AF00F3A2DC /* ConnectionModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */; };
 		34743E13289448D000F3A2DC /* RecordPrimaryPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */; };
 		34743E15289448E000F3A2DC /* CheckConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E14289448E000F3A2DC /* CheckConditionView.swift */; };
-		3459C3DD289519D200C68B34 /* HistoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */; };
 		34982C602885420F003BBBD4 /* AddSecondaryPillView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */; };
 		34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */; };
 		34BBD0652895480600F74520 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
@@ -165,6 +165,7 @@
 		34440E6028870AE700AA3996 /* ManageDosingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageDosingView.storyboard; sourceTree = "<group>"; };
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
 		34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelPhone.swift; sourceTree = "<group>"; };
+		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
 		34743DD5289441FA00F3A2DC /* ApillLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApillLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34743DD7289441FB00F3A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ApillLogWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +181,6 @@
 		34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelWatch.swift; sourceTree = "<group>"; };
 		34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPrimaryPillView.swift; sourceTree = "<group>"; };
 		34743E14289448E000F3A2DC /* CheckConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConditionView.swift; sourceTree = "<group>"; };
-		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
 		34982C5F2885420F003BBBD4 /* AddSecondaryPillView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecondaryPillView.storyboard; sourceTree = "<group>"; };
 		34982C6128854424003BBBD4 /* AddSecondaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondaryPillViewController.swift; sourceTree = "<group>"; };
 		34CE290F2889307500644E4E /* MedicationPillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicationPillCell.xib; sourceTree = "<group>"; };
@@ -303,6 +303,17 @@
 			path = WatchConnection;
 			sourceTree = "<group>";
 		};
+		3459C3DB289517E100C68B34 /* HistoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
+				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
+				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
+				8711C43128951C3400F7625F /* HistoryDetailChartView */,
+			);
+			path = HistoryDetail;
+			sourceTree = "<group>";
+		};
 		34743DD6289441FA00F3A2DC /* ApillLogWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +326,9 @@
 			isa = PBXGroup;
 			children = (
 				34743DE2289441FB00F3A2DC /* APillLogApp.swift */,
+				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
 				34743DE4289441FB00F3A2DC /* ContentView.swift */,
+				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
 				34743E14289448E000F3A2DC /* CheckConditionView.swift */,
 				34743DE6289441FB00F3A2DC /* NotificationController.swift */,
 				34743DE8289441FB00F3A2DC /* NotificationView.swift */,
@@ -324,8 +337,6 @@
 				34743DF1289441FC00F3A2DC /* Info.plist */,
 				34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */,
 				34743DEE289441FC00F3A2DC /* Preview Content */,
-				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
-				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
 			);
 			path = "ApillLogWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -336,17 +347,6 @@
 				34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		3459C3DB289517E100C68B34 /* HistoryDetail */ = {
-			isa = PBXGroup;
-			children = (
-				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
-				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
-				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
-				8711C43128951C3400F7625F /* HistoryDetailChartView */,
-			);
-			path = HistoryDetail;
 			sourceTree = "<group>";
 		};
 		347E4F902892E7150043136A /* ManageDosingViewCustomCell */ = {

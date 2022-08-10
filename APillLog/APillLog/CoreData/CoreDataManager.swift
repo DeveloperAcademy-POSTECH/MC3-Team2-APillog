@@ -162,6 +162,19 @@ class CoreDataManager {
         saveToContext()
     }
     
+    func addShowPrimaryPill(id: UUID, name: String, dosage: String, isTaking : Bool, cycle: Int16 ,selectDate: String, takeTime: Date){
+        let showPrimaryPill = ShowPrimaryPill(context: persistentContainer.viewContext)
+        showPrimaryPill.id = id
+        showPrimaryPill.name = name
+        showPrimaryPill.dosage = dosage
+        showPrimaryPill.selectDate = selectDate
+        showPrimaryPill.isTaking = isTaking
+        showPrimaryPill.cycle = cycle
+        showPrimaryPill.takeTime = takeTime
+        
+        saveToContext()
+    }
+    
     func addShowSecondaryPill(name: String, dosage: String?, selectDate: Date){
         let showSecondaryPill = ShowSecondaryPill(context: persistentContainer.viewContext)
         let selectedDate: String = changeSelectedDateToString(selectDate)
