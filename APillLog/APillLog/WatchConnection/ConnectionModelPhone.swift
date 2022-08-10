@@ -42,21 +42,35 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
             switch message["message"] as! String {
-            case "TakePill":
-                let time = message["time"] as! String
+                // 워치에서 약 복용을 누른 경우
+            case "take":
                 
-                switch time{
-                case "morning":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 1, takingTime: Date())
-                case "afternoon":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 2, takingTime: Date())
-                case "evening":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 4, takingTime: Date())
-                default:
-                    print("Wrong Watch Take Pill Message")
+                let id = UUID(uuidString: message["id"] as? String ?? "") ?? UUID()
+                let date = message["time"] as? Date ?? Date()
+                
+                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id)
+                if let pill = pill {
+                    CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill, takingTime: date)
                 }
+
+                
                 self.delegate?.reloadTableView()
                 
+                // 워치에서 약 복용을 취소한 경우
+            case "cancelTake":
+                
+                let id = UUID(uuidString: message["id"] as? String ?? "") ?? UUID()
+                
+                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id)
+                
+                if let pill = pill {
+                    CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill)
+                }
+                
+                
+                self.delegate?.reloadTableView()
+                
+                // 워치에서 증상입력을 한 경우
             case "Condition":
                 let pillName =  message["pillName"] as? String ?? nil
                 let dosage =  message["dosage"] as? String ?? nil

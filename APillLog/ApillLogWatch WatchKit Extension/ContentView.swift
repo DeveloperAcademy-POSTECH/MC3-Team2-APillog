@@ -17,7 +17,7 @@ struct ContentView: View {
                 List {
                     NavigationLink {
                         let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
-                        RecordPrimaryPillView(pillList: pillList)
+                        RecordPrimaryPillView(connectionModelWatch: connectionModelWatch, pillList: pillList)
                             .navigationTitle("약 복용 기록하기")
                     } label: {
                         HStack{
@@ -63,10 +63,10 @@ struct ContentView: View {
                     VStack(alignment: .center){
                         ProgressView()
                             .progressViewStyle(.circular)
-                            .background(Color.black.opacity(0.3))
-                        Text("아이폰에서 데이터를 가져오는 중입니다")
+                        Text("동기화를 위해 아이폰에서 데이터를 가져오는 중입니다")
                             .frame(alignment: .center)
                     }
+                    .background(Color.black.opacity(0.3))
                 }
             }
             .navigationTitle("Apillog")

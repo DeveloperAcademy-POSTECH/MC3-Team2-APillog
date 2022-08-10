@@ -325,6 +325,18 @@ class CoreDataManager {
         deletePillHistory(pillId: showSecondaryPill.id ?? UUID())
     }
     
+    func changeShowPrimaryPillIsTaking(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.isTaking = true
+        showPrimaryPill.takeTime = Date()
+        saveToContext()
+    }
+    
+    func changeShowPrimaryPillIsNotTaking(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.isTaking = false
+        showPrimaryPill.takeTime = nil
+        saveToContext()
+    }
+    
     //오늘의 복용약에서 '모두'복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date, dosingCycle: Int16, takingTime: Date) {
         
