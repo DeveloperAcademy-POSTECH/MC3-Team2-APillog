@@ -93,6 +93,8 @@ class CheckConditionViewController: UIViewController {
     }
     
     private func setConditionSaveButtonStyle() {
+        self.conditionSaveButton.layer.cornerRadius = 10
+        self.conditionSaveButton.titleLabel?.font = UIFont.AFont.buttonTitle
         self.conditionSaveButtonStateStyle(self.conditionSaveButton)
     }
     
