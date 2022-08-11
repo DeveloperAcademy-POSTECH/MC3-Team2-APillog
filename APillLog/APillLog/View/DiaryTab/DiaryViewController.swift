@@ -41,7 +41,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             self.mistakeTableViewHeight?.constant = 200
         }
         else{
-            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 100
         }
         
     }
@@ -57,7 +57,6 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.rowHeight = 55
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
-        
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +70,6 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set("실수노트를 추가해주세요", forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
-            
         }
         else{
             diaryViewGuideLabel.isHidden = true
