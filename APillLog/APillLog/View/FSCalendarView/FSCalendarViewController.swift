@@ -113,10 +113,6 @@ class FSCalendarViewController: UIViewController{
         
         self.guideLabel.font = UIFont.AFont.noHistory
         
-        
-        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 17)]
-        self.reportButton.setTitleTextAttributes(attributes, for: .normal)
-        
         // delegation, datasource 할당
         setUpEvents()
         
