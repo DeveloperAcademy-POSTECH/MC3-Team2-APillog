@@ -89,11 +89,19 @@ class HistoryDetailChartView: UIView {
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
         barChartView.xAxis.labelPosition = .bottom
         
+//        barChartView.leftAxis.calculate(min: 0, max: Double(5 * ((Int(chartDataSet.yMax)) % 5) + 1))
+        barChartView.leftAxis.axisMaximum = Double(5 * ((Int(chartDataSet.yMax)) / 5 + 1))
+        
+        print(chartDataSet.yMax)
+            
         // Text 관련
         barChartView.xAxis.labelFont = UIFont.AFont.articleBody
         //        chartDataSet.valueFont = UIFont.AFont.navigationTitle
         chartDataSet.valueColors = [UIColor.clear]
         barChartView.leftAxis.labelFont = UIFont.AFont.navigationTitle
+        
+        barChartView.leftAxis.granularityEnabled = true
+        barChartView.leftAxis.granularity = 1
         
         // 데이터 삽입
         let chartData = BarChartData(dataSet: chartDataSet)
