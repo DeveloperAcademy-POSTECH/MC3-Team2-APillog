@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import WidgetKit
 
 class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITableViewDataSource
 {
@@ -98,6 +99,22 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         vc.receivedCBT = myCBT[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func tableView(
+            _ tableView: UITableView,
+            commit editingStyle: UITableViewCell.EditingStyle,
+            forRowAt indexPath: IndexPath
+    ) {
+        if editingStyle == .delete {
+            let CBT = myCBT[indexPath.row]
+            CoreDataManager.shared.deleteCBT(CBT: CBT)
+            myCBT.remove(at: indexPath.row)
+            self.storageTableView.reloadData()
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
     /*
