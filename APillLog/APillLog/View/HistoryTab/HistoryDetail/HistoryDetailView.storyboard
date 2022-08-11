@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Lzb-23-zhl">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1149.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1104.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDB-tY-0dH">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -142,10 +142,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-fL-D6J">
-                                                        <rect key="frame" x="0.0" y="434.5" width="414" height="280.5"/>
+                                                        <rect key="frame" x="0.0" y="434.5" width="414" height="235.5"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
+                                                                <rect key="frame" x="0.0" y="10.5" width="414" height="200"/>
                                                                 <color key="backgroundColor" name="ABackground"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="200" id="2XB-o6-RoR"/>
@@ -153,7 +153,10 @@
                                                                 <color key="sectionIndexBackgroundColor" name="AAccent"/>
                                                             </tableView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-Ne-F1R">
-                                                                <rect key="frame" x="25" y="25" width="364" height="20.5"/>
+                                                                <rect key="frame" x="25" y="10" width="364" height="20.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="MCk-vS-tcj"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <color key="textColor" name="AGray"/>
                                                                 <nil key="highlightedColor"/>
@@ -164,20 +167,20 @@
                                                             <constraint firstAttribute="trailing" secondItem="c9c-Ne-F1R" secondAttribute="trailing" constant="25" id="1h1-8p-dns"/>
                                                             <constraint firstAttribute="bottom" secondItem="Mig-hW-YmL" secondAttribute="bottom" constant="25" id="Mll-oM-NT0"/>
                                                             <constraint firstItem="c9c-Ne-F1R" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" constant="25" id="ZQb-ds-3g5"/>
-                                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="c9c-Ne-F1R" secondAttribute="bottom" constant="10" id="eOn-RZ-Sz4"/>
-                                                            <constraint firstItem="c9c-Ne-F1R" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="25" id="kAQ-gj-Gl0"/>
+                                                            <constraint firstItem="Mig-hW-YmL" firstAttribute="top" secondItem="c9c-Ne-F1R" secondAttribute="bottom" constant="-20" id="eOn-RZ-Sz4"/>
+                                                            <constraint firstItem="c9c-Ne-F1R" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="top" constant="10" id="kAQ-gj-Gl0"/>
                                                             <constraint firstItem="Mig-hW-YmL" firstAttribute="leading" secondItem="TpX-fL-D6J" secondAttribute="leading" id="p2f-eJ-DxE"/>
                                                             <constraint firstAttribute="trailing" secondItem="Mig-hW-YmL" secondAttribute="trailing" id="sxv-Xq-jav"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="증상 발현 빈도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ML-H1v">
-                                                        <rect key="frame" x="25" y="722" width="364" height="20.5"/>
+                                                        <rect key="frame" x="25" y="677" width="364" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" name="AGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="749.5" width="364" height="400"/>
+                                                        <rect key="frame" x="25" y="704.5" width="364" height="400"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>

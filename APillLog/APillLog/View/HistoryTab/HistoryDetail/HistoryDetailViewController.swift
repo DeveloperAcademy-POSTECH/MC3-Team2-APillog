@@ -46,7 +46,7 @@ class HistoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        result = CoreDataManager.shared.fetchPillInformationLastWeek()
+        result = CoreDataManager.shared.fetchPillInformation(endDate: Date(), range: 7)
         setDelegate()
         setStyle()
         setFsCalendar()
@@ -68,7 +68,7 @@ class HistoryDetailViewController: UIViewController {
         let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
-        pillDosageTableHight.constant = CGFloat(25 + (result.count == 0 ? 1 : result.count) * 72)
+        
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
@@ -126,6 +126,11 @@ class HistoryDetailViewController: UIViewController {
         let start = formatter.string(from: startDate ?? Date())
         let end = formatter.string(from: endDate ?? Date())
         datesRangeLabel.text = "\(start) ~ \(end)"
+        
+        let range = Int(endDate!.timeIntervalSince(startDate!) / 86400)
+        result = CoreDataManager.shared.fetchPillInformation(endDate: endDate!, range: range)
+        pillDosageTableHight.constant = CGFloat(25 + (result.count == 0 ? 1 : result.count) * 72)
+        tableView.reloadData()
     }
     
     
@@ -156,17 +161,18 @@ extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryDetailProgressViewCell", for: indexPath) as! HistoryDetailProgressViewCell
         
-        if result.count == 0 {
+        if result.isEmpty {
             cell.pillName.text = "아직 복용한 약이 없어요"
-            cell.pillDosage.isHidden = true
-            cell.pillRatio.isHidden = true
-            cell.pillName.textColor = UIColor.AColor.gray
             
         } else {
             cell.pillName.text = result[indexPath.row].0
             cell.pillDosage.progress = Float(result[indexPath.row].1) / Float(result[indexPath.row].2)
             cell.pillRatio.text = result[indexPath.row].1 == 0 ? "" : String("\(result[indexPath.row].1) / \(result[indexPath.row].2)" )
         }
+        
+        cell.pillDosage.isHidden = result.isEmpty
+        cell.pillRatio.isHidden = result.isEmpty
+        cell.pillName.textColor = result.isEmpty ? UIColor.AColor.gray : UIColor.AColor.black
         
         return cell
     }
