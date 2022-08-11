@@ -88,12 +88,12 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000년 00월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-bO-eS6">
-                                                                <rect key="frame" x="10" y="20" width="41.5" height="20.5"/>
+                                                                <rect key="frame" x="10" y="20" width="95.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-6Y-kMJ">
+                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-6Y-kMJ">
                                                                 <rect key="frame" x="233" y="6" width="37" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="Uxf-20-Zxb"/>
@@ -103,9 +103,12 @@
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
                                                                     <color key="baseForegroundColor" name="ABlack"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="tapPrevButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zps-hK-Bev"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xz-52-anp">
-                                                                <rect key="frame" x="303" y="6" width="37" height="31"/>
+                                                                <rect key="frame" x="324" y="20" width="20" height="29.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="pND-jK-RTq"/>
                                                                 </constraints>
@@ -114,6 +117,9 @@
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
                                                                     <color key="baseForegroundColor" name="ABlack"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="tapNextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0lG-9y-97a"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -230,7 +236,9 @@
                     <connections>
                         <outlet property="datesRangeLabel" destination="025-CA-FcZ" id="KPi-v4-Xia"/>
                         <outlet property="fsCalendar" destination="hUU-3e-S5P" id="Kk3-yH-THf"/>
+                        <outlet property="fsCalendarHeader" destination="Acv-bO-eS6" id="S6f-Bc-j1g"/>
                         <outlet property="fsCalendarHeaderLabel" destination="Acv-bO-eS6" id="9pt-lC-RIS"/>
+                        <outlet property="fsCalendarStackView" destination="a0v-jA-Thq" id="PCW-Zs-VtD"/>
                         <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
                         <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
                     </connections>

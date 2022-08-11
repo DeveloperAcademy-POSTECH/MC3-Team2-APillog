@@ -11,85 +11,124 @@ import FSCalendar
 
 class HistoryDetailViewController: UIViewController {
     
-    fileprivate let gregorian = Calendar(identifier: .gregorian)
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd"
-        return formatter
-    }()
-    
-    let dayOfWeek = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"]
-    var result = [(String, Int, Int)]()
+    // IBOutlet
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var fsCalendar: FSCalendar!
     @IBOutlet weak var datesRangeLabel: UILabel!
     @IBOutlet weak var fsCalendarHeaderLabel: UILabel!
+    @IBOutlet weak var fsCalendarStackView: UIView!
+    @IBOutlet weak var fsCalendarHeader: UILabel!
     
+    // fsCalendar variable
+    private let gregorian = Calendar(identifier: .gregorian)
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy년 MM월"
+        return formatter
+    }()
+    let dayOfWeek = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"]
     private var startDate: Date?
     private var endDate: Date?
     private var datesRange: [Date?]?
+    private var currentPage: Date?
     
+    // pill infomation variable
+    private var result = [(String, Int, Int)]()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         result = CoreDataManager.shared.fetchPillInformationLastWeek()
         setDelegate()
         setStyle()
+        setFsCalendar()
         
-        fsCalendar.delegate = self
-        fsCalendar.dataSource = self
-        
-        fsCalendar.allowsMultipleSelection = true
-        fsCalendar.isHidden = true
-        
-        fsCalendar.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
-        fsCalendar.scrollEnabled = false
-        fsCalendar.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
-        fsCalendar.headerHeight = 0
-        
-        
-        dayOfWeek.indices.forEach { index in
-            fsCalendar.calendarWeekdayView.weekdayLabels[index].text = dayOfWeek[index]
-        }
-        
-        
-        // 기간 디자인 작업
-        fsCalendar.today = nil
-        fsCalendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
-        fsCalendar.swipeToChooseGesture.isEnabled = true
-        
-        let scopeGuesture = UIPanGestureRecognizer(target: fsCalendar, action: #selector(fsCalendar.handleScopeGesture(_:)))
-        fsCalendar.addGestureRecognizer(scopeGuesture)
-        
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
-        datesRangeLabel.isUserInteractionEnabled = true
-        datesRangeLabel.addGestureRecognizer(tapRecognizer)
     }
     
+    // MARK: - private functions
     private func setDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        fsCalendar.delegate = self
+        fsCalendar.dataSource = self
     }
     
     private func setStyle() {
+        
+        // HistoryDetailView style
         let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
         pillDosageTableHight.constant = CGFloat(25 + (result.count == 0 ? 1 : result.count) * 72)
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
-        //self.reportViewTitle.font = UIFont.AFont.navigationTitle
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
+        datesRangeLabel.isUserInteractionEnabled = true
+        datesRangeLabel.addGestureRecognizer(tapRecognizer)
+        
+        // fsCalendar style
+        fsCalendarStackView.isHidden = true
+        fsCalendarHeader.font = UIFont.AFont.calenderText
+        let scopeGuesture = UIPanGestureRecognizer(target: fsCalendar, action: #selector(fsCalendar.handleScopeGesture(_:)))
+        fsCalendar.addGestureRecognizer(scopeGuesture)
+        
+    }
+    
+    
+    private func setFsCalendar() {
+        // fsCalendar properties
+        fsCalendar.allowsMultipleSelection = true
+        fsCalendar.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
+        fsCalendar.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
+        fsCalendar.scrollEnabled = false
+        fsCalendar.headerHeight = 0
+        
+        dayOfWeek.indices.forEach { index in
+            fsCalendar.calendarWeekdayView.weekdayLabels[index].text = dayOfWeek[index]
+        }
+        
+        fsCalendar.today = nil
+        fsCalendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
+        fsCalendar.swipeToChooseGesture.isEnabled = true
+        setCalendar()
     }
     
     @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
-        fsCalendar.isHidden.toggle()
+        fsCalendarStackView.isHidden.toggle()
+    }
+    
+    @IBAction func tapPrevButton(_ sender: Any) {
+        scrollCurrentPage(isPrev: true)
+        setCalendar()
+    }
+    
+    @IBAction func tapNextButton(_ sender: Any) {
+        scrollCurrentPage(isPrev: false)
+        setCalendar()
+    }
+    
+    private func scrollCurrentPage(isPrev: Bool) {
+        let current = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.month = isPrev ? -1 : 1
+        
+        self.currentPage = current.date(byAdding: dateComponents, to: self.currentPage ?? Date())
+        self.fsCalendar.setCurrentPage(self.currentPage ?? Date(), animated: true)
+    }
+    
+    private func setCalendar() {
+        fsCalendar.scope = .month
+        fsCalendarHeader.text = formatter.string(from: fsCalendar.currentPage)
     }
     
 }
 
+// MARK: - TableView delegate
 extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return result.isEmpty ? 1 : result.count
     }
@@ -99,38 +138,27 @@ extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryDetailProgressViewCell", for: indexPath) as! HistoryDetailProgressViewCell
         
         if result.count == 0 {
-            
             cell.pillName.text = "아직 복용한 약이 없어요"
             cell.pillDosage.isHidden = true
             cell.pillRatio.isHidden = true
             cell.pillName.textColor = UIColor.AColor.gray
             
         } else {
-            
             cell.pillName.text = result[indexPath.row].0
             cell.pillDosage.progress = Float(result[indexPath.row].1) / Float(result[indexPath.row].2)
-            
             cell.pillRatio.text = result[indexPath.row].1 == 0 ? "" : String("\(result[indexPath.row].1) / \(result[indexPath.row].2)" )
         }
+        
         return cell
     }
     
-    
 }
 
+// MARK: - FSCalendar delegate
 extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+ 
     
-    func datesRange(from: Date, to: Date) -> [Date] {
-        if from > to { return [Date]() }
-        var tempDate = from
-        var array = [tempDate]
-        while tempDate < to {
-            tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
-            array.append(tempDate)
-        }
-        return array
-    }
-    
+    // MARK: fsCalendar delegate
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
         return cell
@@ -139,9 +167,6 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         self.configure(cell: cell, for: date, at: position)
     }
-    
-    
-    // MARK:- FSCalendarDelegate
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.fsCalendar.frame.size.height = bounds.height
@@ -156,7 +181,6 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.formatter.string(from: date))")
         
         if startDate == nil {
             startDate = date
@@ -164,7 +188,6 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
             self.configureVisibleCells()
             return
         }
-        
         if startDate != nil && endDate == nil {
             if date <= startDate! {
                 fsCalendar.deselect(startDate!)
@@ -174,13 +197,10 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
                 return
             }
             
-            
             let range = datesRange(from: startDate!, to: date)
-            
             endDate = range.last
-            
-            for day in range {
-                fsCalendar.select(day)
+            range.forEach { date in
+                fsCalendar.select(date)
             }
             
             datesRange = range
@@ -192,23 +212,19 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
             fsCalendar.selectedDates.forEach { date in
                 fsCalendar.deselect(date)
             }
-            
             startDate = nil
             endDate = nil
             datesRange = []
-            
         }
         
         self.configureVisibleCells()
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
-        print("did deselect date \(self.formatter.string(from: date))")
         
         if startDate != nil && endDate != nil {
-            for day in fsCalendar.selectedDates {
-                fsCalendar.deselect(day)
-                
+            fsCalendar.selectedDates.forEach { date in
+                fsCalendar.deselect(date)
             }
             
             startDate = nil
@@ -225,8 +241,6 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
         }
         return [appearance.eventDefaultColor]
     }
-    
-    
     
     private func configureVisibleCells() {
         fsCalendar.visibleCells().forEach { cell in
@@ -272,5 +286,19 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
         }
     }
     
+    private func datesRange(from: Date, to: Date) -> [Date] {
+        if from > to { return [Date]() }
+        var tempDate = from
+        var array = [tempDate]
+        while tempDate < to {
+            tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
+            array.append(tempDate)
+        }
+        return array
+    }
+    
+    internal func maximumDate(for calendar: FSCalendar) -> Date {
+        Date()
+    }
 }
 
