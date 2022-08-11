@@ -22,11 +22,17 @@ class HistoryDetailViewController: UIViewController {
     
     // fsCalendar variable
     private let gregorian = Calendar(identifier: .gregorian)
-    private let formatter: DateFormatter = {
+    private let headerFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy년 MM월"
         return formatter
     }()
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM월 dd일"
+        return formatter
+    }()
+    
     let dayOfWeek = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"]
     private var startDate: Date?
     private var endDate: Date?
@@ -58,7 +64,7 @@ class HistoryDetailViewController: UIViewController {
     
     private func setStyle() {
         
-        // HistoryDetailView style
+        // MARK: HistoryDetailView style
         let nib = UINib(nibName: "HistoryDetailProgressViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
@@ -79,7 +85,8 @@ class HistoryDetailViewController: UIViewController {
     
     
     private func setFsCalendar() {
-        // fsCalendar properties
+        
+        // MARK: fsCalendar properties
         fsCalendar.allowsMultipleSelection = true
         fsCalendar.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
         fsCalendar.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
@@ -94,20 +101,10 @@ class HistoryDetailViewController: UIViewController {
         fsCalendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
         fsCalendar.swipeToChooseGesture.isEnabled = true
         setCalendar()
-    }
-    
-    @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
-        fsCalendarStackView.isHidden.toggle()
-    }
-    
-    @IBAction func tapPrevButton(_ sender: Any) {
-        scrollCurrentPage(isPrev: true)
-        setCalendar()
-    }
-    
-    @IBAction func tapNextButton(_ sender: Any) {
-        scrollCurrentPage(isPrev: false)
-        setCalendar()
+        
+        startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+        endDate = Date()
+        changedDatesRange()
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -121,9 +118,31 @@ class HistoryDetailViewController: UIViewController {
     
     private func setCalendar() {
         fsCalendar.scope = .month
-        fsCalendarHeader.text = formatter.string(from: fsCalendar.currentPage)
+        fsCalendarHeader.text = headerFormatter.string(from: fsCalendar.currentPage)
     }
     
+    private func changedDatesRange() {
+        fsCalendarStackView.isHidden = true
+        let start = formatter.string(from: startDate ?? Date())
+        let end = formatter.string(from: endDate ?? Date())
+        datesRangeLabel.text = "\(start) ~ \(end)"
+    }
+    
+    
+    // gestureRecognizer
+    @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
+        fsCalendarStackView.isHidden.toggle()
+    }
+    
+    @IBAction func tapPrevButton(_ sender: Any) {
+        scrollCurrentPage(isPrev: true)
+        setCalendar()
+    }
+    
+    @IBAction func tapNextButton(_ sender: Any) {
+        scrollCurrentPage(isPrev: false)
+        setCalendar()
+    }
 }
 
 // MARK: - TableView delegate
@@ -205,6 +224,7 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
             
             datesRange = range
             self.configureVisibleCells()
+            changedDatesRange()
             return
         }
         
