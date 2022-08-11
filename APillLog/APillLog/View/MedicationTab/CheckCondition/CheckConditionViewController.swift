@@ -42,6 +42,9 @@ class CheckConditionViewController: UIViewController {
     @IBOutlet weak var conditionSaveButton: UIButton!
     @IBOutlet weak var countDetailContext: UILabel!
     
+    @IBOutlet weak var textViewTitle: UILabel!
+    @IBOutlet weak var chipTitle: UILabel!
+    
     // MARK: View LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,7 @@ class CheckConditionViewController: UIViewController {
         setConditionViewNavigationBarStyle()
         setConditionSaveButtonStyle()
         setBackButtonStyle()
+        setSectionTitleStyle()
     }
     
     private func setBackButtonStyle() {
@@ -73,6 +77,11 @@ class CheckConditionViewController: UIViewController {
         button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
         
         self.conditionViewNavigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(customView: button)
+    }
+    
+    private func setSectionTitleStyle() {
+        self.textViewTitle.font = UIFont.AFont.checkConditionViewSectionTitle
+        self.chipTitle.font = UIFont.AFont.checkConditionViewSectionTitle
     }
     
     private func setDetailContextStyle() {

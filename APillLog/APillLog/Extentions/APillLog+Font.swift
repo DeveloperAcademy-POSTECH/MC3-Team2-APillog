@@ -54,6 +54,7 @@ extension UIFont {
         static var calenderText: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var modalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var halfModalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
+        static var checkConditionViewSectionTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         
         static var navigationTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var datePickerText: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }

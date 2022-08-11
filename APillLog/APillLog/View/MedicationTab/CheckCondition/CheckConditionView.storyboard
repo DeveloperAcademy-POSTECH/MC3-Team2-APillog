@@ -352,11 +352,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chipTitle" destination="deb-cm-JXz" id="yau-aB-dBR"/>
                         <outlet property="conditionBackgroundView" destination="K4x-Sk-9fP" id="nIr-8Y-Dgx"/>
                         <outlet property="conditionSaveButton" destination="Zsv-fg-fkq" id="V6D-h9-gQu"/>
                         <outlet property="conditionViewNavigationBar" destination="3fT-gi-xQ6" id="2xz-Nh-N9W"/>
                         <outlet property="countDetailContext" destination="vWb-tx-qCf" id="eiq-10-RSF"/>
                         <outlet property="detailContext" destination="jap-vz-MbA" id="K63-C9-Pgo"/>
+                        <outlet property="textViewTitle" destination="5Nb-8Z-L5W" id="JPL-wH-Pvv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdX-yn-kQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
