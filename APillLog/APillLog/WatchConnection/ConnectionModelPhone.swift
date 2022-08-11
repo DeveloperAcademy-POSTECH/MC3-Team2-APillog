@@ -45,28 +45,30 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                 // 워치에서 약 복용을 누른 경우
             case "take":
                 
-                let id = UUID(uuidString: message["id"] as? String ?? "") ?? UUID()
+                let pillName = message["name"] as? String ?? ""
+                let dosage = message["dosage"] as? String ?? ""
+                let cycle = message["cycle"] as? Int16 ?? 0
                 let date = message["time"] as? Date ?? Date()
                 
-                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id)
+                let pill = CoreDataManager.shared.findShowPrimaryPillWith(name: pillName, dosage: dosage, cycle: cycle)
                 if let pill = pill {
                     CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill, takingTime: date)
                 }
 
-                
                 self.delegate?.reloadTableView()
                 
                 // 워치에서 약 복용을 취소한 경우
             case "cancelTake":
                 
-                let id = UUID(uuidString: message["id"] as? String ?? "") ?? UUID()
+                let pillName = message["name"] as? String ?? ""
+                let dosage = message["dosage"] as? String ?? ""
+                let cycle = message["cycle"] as? Int16 ?? 0
                 
-                let pill = CoreDataManager.shared.findShowPrimaryPillWithID(id: id)
+                let pill = CoreDataManager.shared.findShowPrimaryPillWith(name: pillName, dosage: dosage, cycle: cycle)
                 
                 if let pill = pill {
                     CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill)
                 }
-                
                 
                 self.delegate?.reloadTableView()
                 

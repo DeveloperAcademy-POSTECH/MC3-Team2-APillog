@@ -13,7 +13,6 @@ struct RecordPrimaryPillView: View {
     
     @State var pillList : [ShowPrimaryPill]
     @State var viewToggle: Bool = false
-    
     @State var countPills = [0, 0, 0]
     
     var body: some View {
@@ -57,7 +56,16 @@ struct RecordPrimaryPillView: View {
                         }
                     }
                 }
-                Section(header: Text("동기화가 되지 않은 경우, 아이폰의 앱을 재실행해주세요")) {}
+                if (countPills[0] == 0
+                && countPills[1] == 0
+                    && countPills[2] == 0) {
+                    Text("복용할 약에 대한 정보가 없습니다")
+                        .frame(height: 60, alignment: .center)
+                        .frame(maxWidth: .infinity)
+                        .listRowBackground(EmptyView())
+                }
+                
+                Section(header: Text("동기화가 되지 않은 경우, 아이폰의 앱을 재실행 해주세요"), footer: Text("날짜가 바뀐 경우 메인 화면에서 다시 들어와주세요")) {}
             }
         }
         .opacity(viewToggle ? 1 : 1)
@@ -87,14 +95,18 @@ struct PillButtonView: View {
             if pill.isTaking {
                 // 방금 복용을 취소한 경우
                 CoreDataManager.shared.changeShowPrimaryPillIsNotTaking(showPrimaryPill: pill)
-                ConnectionModelWatch.shared.session.sendMessage(["message" : "cancelTake",
-                                                                 "id" : pill.id!.uuidString ], replyHandler: nil)
+                ConnectionModelWatch.shared.session.sendMessage(["message"  : "cancelTake",
+                                                                 "name"     : pill.name ?? "",
+                                                                 "dosage"   : pill.dosage ?? "",
+                                                                 "cycle"    : pill.cycle], replyHandler: nil)
             } else {
                 // 방금 복용한 경우
                 CoreDataManager.shared.changeShowPrimaryPillIsTaking(showPrimaryPill: pill)
-                ConnectionModelWatch.shared.session.sendMessage(["message" : "take",
-                                                                 "id" : pill.id!.uuidString,
-                                                                 "time" : Date() ], replyHandler: nil)
+                ConnectionModelWatch.shared.session.sendMessage(["message"  : "take",
+                                                                 "name"     : pill.name ?? "",
+                                                                 "dosage"   : pill.dosage ?? "",
+                                                                 "cycle"    : pill.cycle,
+                                                                 "time"     : Date() ], replyHandler: nil)
             }
             
             //            pill.isTaking.toggle()

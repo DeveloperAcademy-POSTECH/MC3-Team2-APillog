@@ -10,15 +10,27 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var connectionModelWatch: ConnectionModelWatch
     
+    let dateFormatter: DateFormatter = {
+       let df = DateFormatter()
+        df.dateFormat = "yyyy-mm-dd"
+        return df
+    }()
+    
+    let dateString: String = {
+        let df = DateFormatter()
+        df.dateFormat = "M/d"
+        return df.string(from: Date())
+    }()
+    
+    
     var body: some View {
         NavigationView {
             ZStack{
-                
                 List {
                     NavigationLink {
                         let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
                         RecordPrimaryPillView(connectionModelWatch: connectionModelWatch, pillList: pillList)
-                            .navigationTitle("약 복용 기록하기")
+                            .navigationTitle("\(dateString) 복용 기록")
                     } label: {
                         HStack{
                             Label {
@@ -70,6 +82,18 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Apillog")
+        }
+        .onAppear {
+            checkBetweenDateAndData() 
+        }
+    }
+    
+    func checkBetweenDateAndData() {
+        let date = UserDefaults.standard.string(forKey: "Date")
+        
+        if dateFormatter.string(from: Date()) != date {
+            CoreDataManager.shared.resetShowPrimaryPillIsTaking_Watch()
+            UserDefaults.standard.set(dateFormatter.string(from: Date()), forKey: "Date")
         }
     }
 }

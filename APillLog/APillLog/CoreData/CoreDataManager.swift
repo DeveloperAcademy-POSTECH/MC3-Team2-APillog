@@ -285,6 +285,27 @@ class CoreDataManager {
         return nil
     }
     
+    func findShowPrimaryPillWith(name: String, dosage: String, cycle: Int16) -> ShowPrimaryPill? {
+        
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+        do {
+            let pills = try context.fetch(request)
+            for pill in pills{
+                if pill.name == name
+                    && pill.dosage == dosage
+                    && pill.cycle == cycle {
+                    return pill
+                }
+            }
+        }
+        catch{
+            print("---------error---------")
+        }
+        
+        print("ID에 해당하는 ShowPrimaryPill을 찾지 못하였음")
+        return nil
+    }
+    
     // MARK: - page별 기능 추가
     //오늘의 복용약에서 복약을 누르면 약의 istaking의 정보가 바뀌고 히스토리에 저장하는 함수
     func recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: ShowPrimaryPill, takingTime: Date) {
@@ -758,7 +779,7 @@ class CoreDataManager {
         saveToContext()
     }
     
-  
+    
     
     func fetchMonthDosingPillDate(date: Date) -> [String]{
         
@@ -867,7 +888,7 @@ class CoreDataManager {
             
         }
         saveToContext()
-            
+        
     }
     //ShowPrimaryPill 복용 시간 업데이트
     func updateShowPillTakeTime(showPrimaryPill: ShowPrimaryPill, takingTime: Date){
@@ -964,6 +985,50 @@ class CoreDataManager {
         }
         
         return resultData
+    }
+    
+    func addShowPrimaryPill_Watch(name: String, dosage: String, cycle: Int16) {
+        let showPrimaryPill = ShowPrimaryPill(context: persistentContainer.viewContext)
+        
+        showPrimaryPill.name = name
+        showPrimaryPill.dosage = dosage
+        showPrimaryPill.cycle = cycle
+        showPrimaryPill.isTaking = false
+        
+        // Watch 에서는 필요없는 정보
+        showPrimaryPill.id = UUID()
+        showPrimaryPill.selectDate = nil
+        showPrimaryPill.takeTime = nil
+        
+        saveToContext()
+    }
+    
+    func recordTakeShowPrimaryPill_Watch(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.isTaking = true
+        
+        saveToContext()
+    }
+    
+    func cancelTakeShowPrimaryPill_Watch(showPrimaryPill: ShowPrimaryPill) {
+        showPrimaryPill.isTaking = false
+        
+        saveToContext()
+    }
+    
+    func resetShowPrimaryPillIsTaking_Watch() {
+        let request : NSFetchRequest<ShowPrimaryPill> = ShowPrimaryPill.fetchRequest()
+
+        do {
+            let pillArray = try context.fetch(request)
+            for item in pillArray{
+                item.isTaking = false
+            }
+        }
+        catch{
+            print("Error while reset isTaking")
+        }
+        
+        saveToContext()
     }
 }
 
