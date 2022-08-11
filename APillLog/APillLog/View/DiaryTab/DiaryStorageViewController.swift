@@ -9,26 +9,19 @@ import UIKit
 import FSCalendar
 
 class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITableViewDataSource
-
 {
+    private var date = Date()
     var selectedBody = ""
     var selectedDate = ""
     var myCBT : [CBT] = [CBT()]
 
-    @IBOutlet weak var diaryStorageDate: UILabel!
+    @IBOutlet weak var DiaryCalendar: CalendarMonth!
     @IBOutlet weak var storageTableView: UITableView!
     @IBOutlet weak var storageHeight: NSLayoutConstraint!
     let cellIdentifier = "storageCustomCell"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCBT.count
     }
-    @IBAction func didTapPreviousMonth(_ sender: Any) {
-        diaryStorageDate.text = "2022년 12월"
-    }
-    @IBAction func didTapNextMonth(_ sender: Any) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCellTableViewCell2 = self.storageTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell2
         cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
@@ -57,8 +50,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myDateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yyyy년 MM월"
+       setCalendarView()
        
         storageTableView.delegate = self
         storageTableView.dataSource = self
@@ -70,6 +62,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +70,8 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         myCBT = myCBT.sorted(by: {
             $0.selectDate!>$1.selectDate!
         })
+        fetchDate(date: date)
+        
         storageTableView.reloadData()
     }
     
@@ -116,3 +111,59 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     */
 
 }
+
+extension DiaryStorageViewController: CalendarMonthDelegate {
+    
+    func fetchDate(date: Date) {
+        myCBT = CoreDataManager.shared.fetchCBT()
+        myCBT = myCBT.sorted(by: {
+            $0.selectDate!>$1.selectDate!
+        })
+        self.date = date
+        var tempCbtArr : [CBT] =  []
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "yyyy-MM"
+        
+        let baseDate = stringFormatter.string(from: date)
+        var baseDateArray = baseDate.components(separatedBy: "-")
+        for i in 0..<myCBT.count{
+            var cbtDateArray = myCBT[i].selectDate?.components(separatedBy: "-")
+            if (baseDateArray[0] == cbtDateArray?[0])&&(baseDateArray[1] == cbtDateArray?[1]){
+                tempCbtArr.append(myCBT[i])
+            }
+            
+        }
+        myCBT.removeAll()
+        myCBT = tempCbtArr
+        storageTableView.reloadData()
+
+    }
+    
+    func setCalendarView() {
+        DiaryCalendar.delegate = self
+    }
+    
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
+    }
+    
+    
+    
+}
+
+//extension Date {
+//    func isEqual(to date: Date, toGranularity component: Calendar.Component, in calendar: Calendar = .current) -> Bool {
+//        calendar.isDate(self, equalTo: date, toGranularity: component)
+//    }
+//    func isInSameYear(as date: Date) -> Bool { isEqual(to: date, toGranularity: .year) }
+//
+//    func isInSameMonth(as date: Date) -> Bool { isEqual(to: date, toGranularity: .month) }
+//
+//}

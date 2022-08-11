@@ -8,7 +8,7 @@
 import UIKit
 import WidgetKit
 
-class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var mistakeTableView: UITableView!
     
     
@@ -16,7 +16,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
     let cellIdentifier = "customCell"
-    var myCBT : [CBT] = [CBT()]
+    var myCBT : [CBT] = []
     var selectedBody = ""
     var selectedDate = ""
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +80,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
+        filterDocument()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -138,7 +139,28 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         }
     }
     
-    
+    func filterDocument(){
+        myCBT = CoreDataManager.shared.fetchCBT()
+        myCBT = myCBT.sorted(by: {
+            $0.selectDate!>$1.selectDate!
+        })
+        var tempCbtArr : [CBT] =  []
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "yyyy-MM"
+        
+        let baseDate = stringFormatter.string(from: Date())
+        var baseDateArray = baseDate.components(separatedBy: "-")
+        for i in 0..<myCBT.count{
+            var cbtDateArray = myCBT[i].selectDate?.components(separatedBy: "-")
+            if (baseDateArray[0] == cbtDateArray?[0])&&(baseDateArray[1] == cbtDateArray?[1]){
+                tempCbtArr.append(myCBT[i])
+            }
+            
+        }
+        myCBT.removeAll()
+        myCBT = tempCbtArr
+        mistakeTableView.reloadData()
+    }
     
     
     /*

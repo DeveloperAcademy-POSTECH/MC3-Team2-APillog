@@ -275,6 +275,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ohn-c7-7NO"/>
                     <connections>
+                        <outlet property="DiaryCalendar" destination="oUy-X7-b02" id="R4P-sM-QAJ"/>
                         <outlet property="storageHeight" destination="qf0-SH-eBM" id="EiM-sh-7FW"/>
                         <outlet property="storageTableView" destination="TMt-qX-mWv" id="CtW-fF-68M"/>
                     </connections>
