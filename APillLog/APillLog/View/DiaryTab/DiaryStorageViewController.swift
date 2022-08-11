@@ -11,12 +11,22 @@ import FSCalendar
 class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITableViewDataSource
 
 {
+    var selectedBody = ""
+    var selectedDate = ""
     var myCBT : [CBT] = [CBT()]
+
+    @IBOutlet weak var diaryStorageDate: UILabel!
     @IBOutlet weak var storageTableView: UITableView!
     @IBOutlet weak var storageHeight: NSLayoutConstraint!
     let cellIdentifier = "storageCustomCell"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCBT.count
+    }
+    @IBAction func didTapPreviousMonth(_ sender: Any) {
+        diaryStorageDate.text = "2022년 12월"
+    }
+    @IBAction func didTapNextMonth(_ sender: Any) {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,6 +46,9 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         if self.storageTableView.contentSize.height == 0{
             self.storageHeight?.constant = 200
         }
+        else if self.storageTableView.contentSize.height > 400{
+            self.storageHeight?.constant = 385
+        }
         else{
             self.storageHeight?.constant = self.storageTableView.contentSize.height + 100
         }
@@ -44,6 +57,9 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy년 MM월"
+       
         storageTableView.delegate = self
         storageTableView.dataSource = self
         storageTableView.sectionHeaderHeight = 50
@@ -71,6 +87,22 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         view.title.text = "작성했던 에필로그들"
         view.title.font = UIFont.AFont.tableViewTitle
         return view
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBody = myCBT[indexPath.row].mistakeContext!
+        selectedDate = myCBT[indexPath.row].selectDate!
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
+        vc.body = myCBT[indexPath.row].mistakeContext!
+        vc.date = myCBT[indexPath.row].selectDate!
+        vc.recognizeString = myCBT[indexPath.row].recognizeContext!
+        vc.actionString = myCBT[indexPath.row].actionContext!
+        vc.id = myCBT[indexPath.row].cbtId!
+        vc.receivedCBT = myCBT[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     /*

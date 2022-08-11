@@ -40,6 +40,9 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         if self.mistakeTableView.contentSize.height == 0{
             self.mistakeTableViewHeight?.constant = 200
         }
+        else if self.mistakeTableView.contentSize.height > 300{
+            self.mistakeTableViewHeight?.constant = 330
+        }
         else{
             self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 100
         }

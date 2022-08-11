@@ -182,30 +182,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dc-3F-ceR">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="Akx-pt-Hrq">
-                                                <rect key="frame" x="3.6666666666666572" y="8.0000000000000018" width="382.66666666666674" height="30.666666666666671"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-E0-0Kb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="37" height="30.666666666666668"/>
-                                                        <color key="tintColor" name="AAccent"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년 8월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-ca-VdL">
-                                                        <rect key="frame" x="143" y="0.0" width="96.666666666666686" height="30.666666666666668"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KM-Zv-xQw">
-                                                        <rect key="frame" x="345.66666666666663" y="0.0" width="37" height="30.666666666666668"/>
-                                                        <color key="tintColor" name="AAccent"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-qX-mWv">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-qX-mWv">
                                                 <rect key="frame" x="25" y="75.666666666666629" width="340" height="540"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -255,15 +232,23 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUy-X7-b02" customClass="CalendarMonth" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="5ij-iL-MUm"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <constraints>
-                                            <constraint firstItem="TMt-qX-mWv" firstAttribute="top" secondItem="Akx-pt-Hrq" secondAttribute="bottom" constant="37" id="CQx-gj-Gk9"/>
+                                            <constraint firstItem="oUy-X7-b02" firstAttribute="leading" secondItem="5Dc-3F-ceR" secondAttribute="leading" id="DX7-bY-9Ca"/>
                                             <constraint firstAttribute="trailing" secondItem="TMt-qX-mWv" secondAttribute="trailing" constant="25" id="J5h-oW-tQJ"/>
-                                            <constraint firstItem="Akx-pt-Hrq" firstAttribute="centerX" secondItem="5Dc-3F-ceR" secondAttribute="centerX" id="laV-vy-NqG"/>
-                                            <constraint firstItem="Akx-pt-Hrq" firstAttribute="top" secondItem="5Dc-3F-ceR" secondAttribute="top" constant="8.0000000000000018" id="mid-I1-x03"/>
+                                            <constraint firstItem="TMt-qX-mWv" firstAttribute="top" secondItem="5Dc-3F-ceR" secondAttribute="top" constant="75.670000000000002" id="SGV-3A-TUX"/>
+                                            <constraint firstItem="oUy-X7-b02" firstAttribute="top" secondItem="5Dc-3F-ceR" secondAttribute="top" id="jNr-kg-WVA"/>
                                             <constraint firstItem="TMt-qX-mWv" firstAttribute="leading" secondItem="5Dc-3F-ceR" secondAttribute="leading" constant="25" id="sl5-du-TQ5"/>
                                             <constraint firstAttribute="height" priority="250" constant="673" id="tGo-TV-bb4"/>
+                                            <constraint firstAttribute="trailing" secondItem="oUy-X7-b02" secondAttribute="trailing" id="uc6-Ig-WKm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -892,7 +877,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
