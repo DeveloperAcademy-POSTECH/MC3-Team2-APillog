@@ -11,11 +11,14 @@ import FSCalendar
 
 class HistoryDetailViewController: UIViewController {
     
+    
+    let dayOfWeek = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"]
     var result = [(String, Int, Int)]()
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var fsCalendar: FSCalendar!
     @IBOutlet weak var datesRangeLabel: UILabel!
+    @IBOutlet weak var fsCalendarHeaderLabel: UILabel!
     
     private var startDate: Date?
     private var endDate: Date?
@@ -30,8 +33,22 @@ class HistoryDetailViewController: UIViewController {
         
         fsCalendar.delegate = self
         fsCalendar.dataSource = self
+        
         fsCalendar.allowsMultipleSelection = true
         fsCalendar.isHidden = true
+        
+        fsCalendar.tintColor = UIColor.AColor.accent
+        fsCalendar.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
+        fsCalendar.scrollEnabled = false
+        fsCalendar.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
+        fsCalendar.headerHeight = 0
+        fsCalendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
+        
+//        fsCalendar.locale = Locale(identifier: "US")
+        for i in 0 ..< 7 {
+            fsCalendar.calendarWeekdayView.weekdayLabels[i].text = dayOfWeek[i]
+        }
+        
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
         datesRangeLabel.isUserInteractionEnabled = true
@@ -157,4 +174,20 @@ extension HistoryDetailViewController: FSCalendarDelegate, FSCalendarDataSource,
         return array
     }
 
+    
+//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+//
+//        switch datesRange {
+//        case .selectedDate:
+//            return UIColor.AColor.accent
+//        case .datesRange:
+//            return UIColor.AColor.accent.withAlphaComponent(0.5)
+//        }
+//    }
+    
+    private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
+        let diyCell = (cell as! DIYCalendarCell)
+    }
+
 }
+
