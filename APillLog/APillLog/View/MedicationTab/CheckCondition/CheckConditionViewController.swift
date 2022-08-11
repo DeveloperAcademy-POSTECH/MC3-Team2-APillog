@@ -148,13 +148,13 @@ class CheckConditionViewController: UIViewController {
         if button.isSelected {
             button.backgroundColor = UIColor.AColor.accent
             button.setTitleColor(UIColor.AColor.white, for: .selected)
-            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            button.titleLabel?.font = UIFont.AFont.chipText
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.white.cgColor
+            button.layer.borderColor = UIColor.AColor.white.cgColor
         } else {
             button.backgroundColor = .white
             button.setTitleColor(UIColor.AColor.gray, for: .normal)
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            button.titleLabel?.font = UIFont.AFont.chipText
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.AColor.disable.cgColor
         }

@@ -55,7 +55,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="evw-P6-EXX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="33"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-rq-xwl" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-rq-xwl" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="33" id="Hur-Kx-ARu"/>
@@ -66,15 +66,15 @@
                                                                         <state key="normal" title="불면">
                                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
-                                                                        <state key="selected" title="불면"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="AHi-HN-RJ1"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xc-19-4JJ" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xc-19-4JJ" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="67" y="0.0" width="56" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="33" id="DZq-EY-fWM"/>
@@ -88,12 +88,13 @@
                                                                         <state key="selected" title="불안"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="edy-7K-oc3"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-6e-hB9" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-6e-hB9" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="134" y="0.0" width="56" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="33" id="a3l-Nh-VzV"/>
@@ -107,12 +108,13 @@
                                                                         <state key="selected" title="두통"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="ont-dH-Ueu"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-cY-LNs" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-cY-LNs" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="201" y="0.0" width="84" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="84" id="N4T-KS-hd0"/>
@@ -126,6 +128,7 @@
                                                                         <state key="selected" title="두근거림"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="TiH-4K-YSY"/>
@@ -136,7 +139,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="gM0-1X-E50">
                                                                 <rect key="frame" x="0.0" y="50" width="274" height="33"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTm-8H-3Lm" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTm-8H-3Lm" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="33" id="Pqf-OM-Z6N"/>
@@ -150,12 +153,13 @@
                                                                         <state key="selected" title="어지러움"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="IWw-DJ-D1N"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-YH-v3K" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-YH-v3K" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="95" y="0.0" width="84" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="84" id="94c-Yq-R20"/>
@@ -168,12 +172,13 @@
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="nw3-cQ-4wn"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sED-9R-Myr" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sED-9R-Myr" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="190" y="0.0" width="84" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="84" id="5rX-SN-gei"/>
@@ -186,6 +191,7 @@
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="VYi-wn-ZCr"/>
@@ -196,7 +202,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ete-p6-2cp">
                                                                 <rect key="frame" x="0.0" y="100" width="232" height="33"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbe-b2-3Lb" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbe-b2-3Lb" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="56" id="2vd-yM-T3q"/>
@@ -209,12 +215,13 @@
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="e6j-OC-EbS"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-sU-NfE" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-sU-NfE" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="67" y="0.0" width="84" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="84" id="1X2-P7-ack"/>
@@ -227,12 +234,13 @@
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="thL-w5-SIw"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnQ-QZ-sUk" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnQ-QZ-sUk" customClass="ConditionChipButton" customModule="APillLog" customModuleProvider="target">
                                                                         <rect key="frame" x="162" y="0.0" width="70" height="33"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="33" id="tbI-eo-Qs8"/>
@@ -245,6 +253,7 @@
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitConditionButton" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="toggleSideEffectButtonState:" destination="jTN-oo-mAg" eventType="touchUpInside" id="saV-2X-b8K"/>
