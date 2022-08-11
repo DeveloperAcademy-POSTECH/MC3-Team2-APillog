@@ -169,6 +169,11 @@ class FSCalendarViewController: UIViewController{
         scrollCurrentPage(isPrev: false)
     }
     
+    @IBAction func tapReportButton(_ sender: UIBarButtonItem) {
+        guard let historyDetailViewController: HistoryDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "HistoryDetailView") as? HistoryDetailViewController else { return }
+        
+        self.navigationController?.pushViewController(historyDetailViewController, animated: true)
+    }
     func setUpEvents() {
         calendarView.delegate = self
         calendarView.dataSource = self
