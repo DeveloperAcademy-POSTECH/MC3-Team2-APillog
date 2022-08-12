@@ -19,6 +19,7 @@ class HistoryDetailViewController: UIViewController {
     @IBOutlet weak var fsCalendarHeaderLabel: UILabel!
     @IBOutlet weak var fsCalendarStackView: UIView!
     @IBOutlet weak var fsCalendarHeader: UILabel!
+    @IBOutlet weak var chartView: HistoryDetailChartView!
     
     // fsCalendar variable
     private let gregorian = Calendar(identifier: .gregorian)
@@ -131,6 +132,8 @@ class HistoryDetailViewController: UIViewController {
         result = CoreDataManager.shared.fetchPillInformation(endDate: endDate!, range: range)
         pillDosageTableHight.constant = CGFloat(25 + (result.count == 0 ? 1 : result.count) * 72)
         tableView.reloadData()
+        chartView.loadData(startDate: startDate!, range: range + 1)
+        chartView.barChartView.reloadInputViews()
     }
     
     

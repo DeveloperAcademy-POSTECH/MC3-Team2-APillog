@@ -237,6 +237,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartView" destination="nNh-tb-1BN" id="4Vc-3T-JM2"/>
                         <outlet property="datesRangeLabel" destination="025-CA-FcZ" id="KPi-v4-Xia"/>
                         <outlet property="fsCalendar" destination="hUU-3e-S5P" id="Kk3-yH-THf"/>
                         <outlet property="fsCalendarHeader" destination="Acv-bO-eS6" id="S6f-Bc-j1g"/>
