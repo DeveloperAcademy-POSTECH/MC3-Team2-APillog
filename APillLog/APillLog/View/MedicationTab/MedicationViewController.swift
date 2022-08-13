@@ -394,14 +394,14 @@ extension MedicationViewController: TakeMedicationDelegate {
         }
 
         let alert = UIAlertController(title: "복용 기록을 삭제하시겠어요?", message: "복용 전 상태로 돌아가며, 복용 시각 데이터는 사라집니다.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { action in
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: { action in
             if isPrimary{
                 self.primaryPillTableView.reloadData()
             } else {
                 self.secondaryPillTableView.reloadData()
             }
-        }))
-        alert.addAction(UIAlertAction(title: "기록 삭제", style: .destructive, handler: { action in
+        })
+        let delete = UIAlertAction(title: "기록 삭제", style: .destructive, handler: { action in
             if isPrimary {
                 CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: self.primaryPillListDataSource[rowNumber])
                 self.primaryPillTableView.reloadData()
@@ -409,7 +409,11 @@ extension MedicationViewController: TakeMedicationDelegate {
                 CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: self.secondaryPillList[rowNumber])
                 self.secondaryPillTableView.reloadData()
             }
-        }))
+        })
+
+        alert.addAction(cancel)
+        alert.addAction(delete)
+
         present(alert, animated: true, completion: nil)
     }
 }
