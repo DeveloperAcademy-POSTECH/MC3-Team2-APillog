@@ -36,7 +36,8 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     override func viewWillLayoutSubviews() {
-        print(UIScreen.main.bounds.height)
+        
+        filterDocument()
         super.updateViewConstraints()
         if self.myCBT.count == 0{
             self.mistakeTableViewHeight?.constant = 200
@@ -52,6 +53,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 55
         }
         self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        diaryViewGuideLabel.isHidden = myCBT.count == 0 ? false : true
     }
     
     override func viewDidLoad() {
@@ -139,6 +141,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
             self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+            adjustTableHeight()
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
@@ -167,7 +170,23 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         myCBT = tempCbtArr
         mistakeTableView.reloadData()
     }
-    
+    func adjustTableHeight(){
+        if self.myCBT.count == 0{
+            self.mistakeTableViewHeight?.constant = 200
+            
+        }
+        else if self.mistakeTableView.contentSize.height > 300 && UIScreen.main.bounds.height<700{
+            self.mistakeTableViewHeight?.constant = 270
+        }
+        else if self.mistakeTableView.contentSize.height > 300{
+            self.mistakeTableViewHeight?.constant = 370
+        }
+        else{
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 55
+        }
+        self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        diaryViewGuideLabel.isHidden = myCBT.count == 0 ? false : true
+    }
     
     /*
      // MARK: - Navigation

@@ -119,6 +119,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
             self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
             self.storageTableView.reloadData()
             self.diaryStorageGuide.isHidden = myCBT.count == 0 ? true : false
+            adjustTableViewHeight()
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
@@ -134,7 +135,22 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         // Pass the selected object to the new view controller.
     }
     */
-
+    func adjustTableViewHeight(){
+        if self.myCBT.count == 0{
+            self.storageHeight?.constant = 200
+        }
+        else if self.storageTableView.contentSize.height > 400 && UIScreen.main.bounds.height<700{
+            self.storageHeight?.constant = 385
+        }
+        else if self.storageTableView.contentSize.height > 400{
+            self.storageHeight?.constant = 485
+        }
+        else{
+            self.storageHeight?.constant = CGFloat(200 + myCBT.count * 50)
+        }
+        self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        self.diaryStorageGuide.isHidden = myCBT.count == 0 ? false : true
+    }
 }
 
 extension DiaryStorageViewController: CalendarMonthDelegate {
