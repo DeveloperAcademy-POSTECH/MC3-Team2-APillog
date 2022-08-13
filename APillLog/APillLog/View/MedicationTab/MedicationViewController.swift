@@ -112,6 +112,7 @@ class MedicationViewController: UIViewController {
         default:
             primaryPillListDataSource = []
         }
+        setTakingAllPrimaryPillButtonColor()
         reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
     }
@@ -148,19 +149,31 @@ class MedicationViewController: UIViewController {
         
         // 전체복용 버튼
         takingAllPrimaryPillsButton.tintColor = UIColor.AColor.white
-        takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.accent
         takingAllPrimaryPillsButton.layer.cornerRadius = 10
         takingAllPrimaryPillsButton.setTitle("전체 복용", for: .normal)
         takingAllPrimaryPillsButton.titleLabel?.font = UIFont.AFont.buttonTitle
-        
-        
+        takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.disable
+        setTakingAllPrimaryPillButtonColor()
     }
-    
+
+    func setTakingAllPrimaryPillButtonColor() {
+        var takingPillCount = 0
+        for pill in primaryPillListDataSource {
+            if pill.isTaking {
+                takingPillCount += 1
+            }
+        }
+        if takingPillCount == primaryPillListDataSource.count {
+            takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.disable
+        } else {
+            takingAllPrimaryPillsButton.backgroundColor = UIColor.AColor.accent
+        }
+    }
+
     private func setSecondaryPillViewStyle() {
-        
         // 버튼 UI
         secondaryPillModalButtonImage.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(font: NSUIFont.AFont.navigationButtonDescriptionLabel))
-        
+
         // Secondary Pill 영역
         secondaryPillField.layer.cornerRadius = 10
         secondaryPillModalButtonLabel.font = UIFont.AFont.navigationButtonDescriptionLabel
@@ -168,12 +181,12 @@ class MedicationViewController: UIViewController {
     
     private func reloadPrimaryPillTableView() {
         CoreDataManager.shared.sendPrimarypillToShowPrimaryPill()
-                
+
         primaryPillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: date)
         primaryPillListMorning = CoreDataManager.shared.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListLunch = CoreDataManager.shared.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
         primaryPillListDinner = CoreDataManager.shared.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
-        
+
         switch(timeSegmentedControl.selectedSegmentIndex) {
         case 0:
             primaryPillListDataSource = primaryPillListMorning
@@ -184,7 +197,7 @@ class MedicationViewController: UIViewController {
         default:
             primaryPillListDataSource = []
         }
-        
+
         resizingPrimaryPillTableViewHeight(dataCount: primaryPillListDataSource.count)
         primaryPillTableView.reloadData()
     }
@@ -194,25 +207,25 @@ class MedicationViewController: UIViewController {
         resizingSecondaryPillTableViewHeight()
         secondaryPillTableView.reloadData()
     }
-    
+
     private func resizingPrimaryPillTableViewHeight(dataCount count: Int) {
         primaryPillTableViewHeight.constant =
         count == 0 ? 40.0 :
         66.0 * CGFloat(count)
         primaryPillFieldHeight.constant = CGFloat(primaryPillTableViewHeight.constant) + 120
     }
-    
+
     private func resizingSecondaryPillTableViewHeight() {
         secondaryPillTableViewHeight.constant =
         secondaryPillList.count == 0 ? 40.0 :
         66.0 * CGFloat(secondaryPillList.count)
         secondaryPillFieldHeight.constant = CGFloat(secondaryPillTableViewHeight.constant) + 60
     }
-    
+
     private func checkIsToday(selectedDate: Date) {
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
     }
-    
+
     private func setPrimaryTableViewTitleText() {
         if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
@@ -220,7 +233,7 @@ class MedicationViewController: UIViewController {
             primaryPillViewTitle.text = "이전에 복용했던 약이예요"
         }
     }
-    
+
     private func setPrimaryPillViewLinkActivation() {
         if isToday {
             primaryPillViewLinkButton.isEnabled = true
@@ -232,7 +245,7 @@ class MedicationViewController: UIViewController {
             primaryPillViewLinkImage.tintColor = .AColor.disable
         }
     }
-    
+
     private func setSymptomButtonAvailable() {
         if isToday {
             symptomButtonStack.isHidden = false
@@ -252,6 +265,7 @@ class MedicationViewController: UIViewController {
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
         CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
 
+        setTakingAllPrimaryPillButtonColor()
         reloadPrimaryPillTableView()
         primaryPillTableView.reloadData()
         
@@ -400,6 +414,7 @@ extension MedicationViewController: TakeMedicationDelegate {
             } else {
                 self.secondaryPillTableView.reloadData()
             }
+            self.setTakingAllPrimaryPillButtonColor()
         })
         let delete = UIAlertAction(title: "기록 삭제", style: .destructive, handler: { action in
             if isPrimary {
@@ -409,6 +424,7 @@ extension MedicationViewController: TakeMedicationDelegate {
                 CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: self.secondaryPillList[rowNumber])
                 self.secondaryPillTableView.reloadData()
             }
+            self.setTakingAllPrimaryPillButtonColor()
         })
 
         alert.addAction(cancel)

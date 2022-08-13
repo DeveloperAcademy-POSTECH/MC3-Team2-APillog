@@ -10,6 +10,7 @@ import UIKit
 protocol TakeMedicationDelegate {
     func setPillTake(rowNumber: Int, isPrimary: Bool)
     func setPillNotTake(rowNumber: Int, isPrimary: Bool)
+    func setTakingAllPrimaryPillButtonColor()
 }
 
 class MedicationPillCell: UITableViewCell {
@@ -57,6 +58,7 @@ class MedicationPillCell: UITableViewCell {
         } else {
             delegate?.setPillNotTake(rowNumber: rowNumber, isPrimary: isPrimary)
         }
+        delegate?.setTakingAllPrimaryPillButtonColor()
     }
 }
 
