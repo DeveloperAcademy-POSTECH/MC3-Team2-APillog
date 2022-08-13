@@ -51,7 +51,7 @@ class MedicationPillCell: UITableViewCell {
 
     @IBAction func tapTakingPillButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        changeTakingPillButtonState(sender)
+//        changeTakingPillButtonState(sender)
         if sender.isSelected {
             delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
         } else {

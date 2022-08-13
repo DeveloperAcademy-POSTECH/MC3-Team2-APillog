@@ -374,6 +374,7 @@ extension MedicationViewController: AddSecondaryPillViewControllerDelegate {
 }
 
 extension MedicationViewController: TakeMedicationDelegate {
+
     func setPillTake(rowNumber: Int, isPrimary: Bool) {
         if isPrimary {
             CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber], takingTime: changeDateFormat(date: takingTime))
@@ -383,15 +384,33 @@ extension MedicationViewController: TakeMedicationDelegate {
             secondaryPillTableView.reloadData()
         }
     }
+
     func setPillNotTake(rowNumber: Int, isPrimary: Bool) {
-        if isPrimary {
-            CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
-            primaryPillTableView.reloadData()
+        // 복용된 상태에서 alert가 떠있을 때 v가 안보이는 경우를 해결하기 위해 추가
+        if isPrimary{
+            self.primaryPillTableView.reloadData()
+        } else {
+            self.secondaryPillTableView.reloadData()
         }
-        else {
-            CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
-            secondaryPillTableView.reloadData()
-        }
+
+        let alert = UIAlertController(title: "복용 기록을 삭제하시겠어요?", message: "복용 전 상태로 돌아가며, 복용 시각 데이터는 사라집니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { action in
+            if isPrimary{
+                self.primaryPillTableView.reloadData()
+            } else {
+                self.secondaryPillTableView.reloadData()
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "기록 삭제", style: .destructive, handler: { action in
+            if isPrimary {
+                CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: self.primaryPillListDataSource[rowNumber])
+                self.primaryPillTableView.reloadData()
+            } else {
+                CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: self.secondaryPillList[rowNumber])
+                self.secondaryPillTableView.reloadData()
+            }
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }
 
