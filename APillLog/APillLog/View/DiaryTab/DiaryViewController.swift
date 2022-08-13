@@ -36,17 +36,22 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     override func viewWillLayoutSubviews() {
+        print(UIScreen.main.bounds.height)
         super.updateViewConstraints()
-        if self.mistakeTableView.contentSize.height == 0{
+        if self.myCBT.count == 0{
             self.mistakeTableViewHeight?.constant = 200
+            
+        }
+        else if self.mistakeTableView.contentSize.height > 300 && UIScreen.main.bounds.height<700{
+            self.mistakeTableViewHeight?.constant = 270
         }
         else if self.mistakeTableView.contentSize.height > 300{
-            self.mistakeTableViewHeight?.constant = 330
+            self.mistakeTableViewHeight?.constant = 370
         }
         else{
-            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 100
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 55
         }
-        
+        self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
     }
     
     override func viewDidLoad() {
@@ -133,6 +138,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
+            self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()

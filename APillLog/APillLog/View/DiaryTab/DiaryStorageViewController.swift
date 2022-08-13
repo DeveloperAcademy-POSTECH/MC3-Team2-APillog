@@ -16,6 +16,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     var selectedDate = ""
     var myCBT : [CBT] = [CBT()]
 
+    @IBOutlet weak var diaryStorageGuide: UILabel!
     @IBOutlet weak var DiaryCalendar: CalendarMonth!
     @IBOutlet weak var storageTableView: UITableView!
     @IBOutlet weak var storageHeight: NSLayoutConstraint!
@@ -37,15 +38,20 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
-        if self.storageTableView.contentSize.height == 0{
+        if self.myCBT.count == 0{
             self.storageHeight?.constant = 200
         }
-        else if self.storageTableView.contentSize.height > 400{
+        else if self.storageTableView.contentSize.height > 400 && UIScreen.main.bounds.height<700{
             self.storageHeight?.constant = 385
         }
-        else{
-            self.storageHeight?.constant = self.storageTableView.contentSize.height + 100
+        else if self.storageTableView.contentSize.height > 400{
+            self.storageHeight?.constant = 485
         }
+        else{
+            self.storageHeight?.constant = CGFloat(200 + myCBT.count * 50)
+        }
+        self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        self.diaryStorageGuide.isHidden = myCBT.count == 0 ? false : true
 
     }
     
@@ -110,7 +116,9 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
             let CBT = myCBT[indexPath.row]
             CoreDataManager.shared.deleteCBT(CBT: CBT)
             myCBT.remove(at: indexPath.row)
+            self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
             self.storageTableView.reloadData()
+            self.diaryStorageGuide.isHidden = myCBT.count == 0 ? true : false
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()

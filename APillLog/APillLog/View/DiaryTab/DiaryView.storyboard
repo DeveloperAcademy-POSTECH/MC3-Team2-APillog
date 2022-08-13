@@ -101,7 +101,7 @@
                                 <rect key="frame" x="334.33333333333331" y="252.99999999999997" width="12.666666666666686" height="16.666666666666686"/>
                                 <color key="tintColor" name="ABlack"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 실수노트가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 에필로그가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lm-OZ-M6b">
                                 <rect key="frame" x="110" y="425" width="414" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
@@ -239,12 +239,21 @@
                                                     <constraint firstAttribute="height" constant="70" id="5ij-iL-MUm"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 에필로그가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-YK-J4M">
+                                                <rect key="frame" x="104.66666666666667" y="165" width="180.66666666666663" height="18"/>
+                                                <color key="tintColor" name="ADisable"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                <color key="textColor" name="ADisable"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <constraints>
                                             <constraint firstItem="oUy-X7-b02" firstAttribute="leading" secondItem="5Dc-3F-ceR" secondAttribute="leading" id="DX7-bY-9Ca"/>
                                             <constraint firstAttribute="trailing" secondItem="TMt-qX-mWv" secondAttribute="trailing" constant="25" id="J5h-oW-tQJ"/>
+                                            <constraint firstItem="aTd-YK-J4M" firstAttribute="top" secondItem="oUy-X7-b02" secondAttribute="bottom" constant="95" id="NCz-CS-IXO"/>
                                             <constraint firstItem="TMt-qX-mWv" firstAttribute="top" secondItem="5Dc-3F-ceR" secondAttribute="top" constant="75.670000000000002" id="SGV-3A-TUX"/>
+                                            <constraint firstItem="aTd-YK-J4M" firstAttribute="centerX" secondItem="5Dc-3F-ceR" secondAttribute="centerX" id="Yk1-56-TfU"/>
                                             <constraint firstItem="oUy-X7-b02" firstAttribute="top" secondItem="5Dc-3F-ceR" secondAttribute="top" id="jNr-kg-WVA"/>
                                             <constraint firstItem="TMt-qX-mWv" firstAttribute="leading" secondItem="5Dc-3F-ceR" secondAttribute="leading" constant="25" id="sl5-du-TQ5"/>
                                             <constraint firstAttribute="height" priority="250" constant="673" id="tGo-TV-bb4"/>
@@ -276,6 +285,7 @@
                     <navigationItem key="navigationItem" id="ohn-c7-7NO"/>
                     <connections>
                         <outlet property="DiaryCalendar" destination="oUy-X7-b02" id="R4P-sM-QAJ"/>
+                        <outlet property="diaryStorageGuide" destination="aTd-YK-J4M" id="FKf-Xv-rZU"/>
                         <outlet property="storageHeight" destination="qf0-SH-eBM" id="EiM-sh-7FW"/>
                         <outlet property="storageTableView" destination="TMt-qX-mWv" id="CtW-fF-68M"/>
                     </connections>
