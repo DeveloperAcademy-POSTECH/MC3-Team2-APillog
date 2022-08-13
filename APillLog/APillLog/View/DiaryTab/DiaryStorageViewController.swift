@@ -41,7 +41,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         if self.myCBT.count == 0{
             self.storageHeight?.constant = 200
         }
-        else if self.storageTableView.contentSize.height > 400 && UIScreen.main.bounds.height<700{
+        else if self.storageTableView.contentSize.height > 300 && UIScreen.main.bounds.height<700{
             self.storageHeight?.constant = 385
         }
         else if self.storageTableView.contentSize.height > 400{
