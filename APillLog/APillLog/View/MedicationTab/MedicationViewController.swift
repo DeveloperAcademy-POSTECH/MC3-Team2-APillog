@@ -242,13 +242,16 @@ class MedicationViewController: UIViewController {
 
     private func setPrimaryPillViewLinkActivation() {
         if isToday {
-            primaryPillViewLinkButton.isEnabled = true
+            primaryPillViewLinkButton.isHidden = false
+            primaryPillViewLinkLabel.isHidden = false
+            primaryPillViewLinkImage.isHidden = false
+            primaryPillViewLinkButton.isEnabled = false
             primaryPillViewLinkLabel.textColor = .AColor.black
             primaryPillViewLinkImage.tintColor = .AColor.black
         } else {
-            primaryPillViewLinkButton.isEnabled = false
-            primaryPillViewLinkLabel.textColor = .AColor.disable
-            primaryPillViewLinkImage.tintColor = .AColor.disable
+            primaryPillViewLinkButton.isHidden = true
+            primaryPillViewLinkLabel.isHidden = true
+            primaryPillViewLinkImage.isHidden = true
         }
     }
 
