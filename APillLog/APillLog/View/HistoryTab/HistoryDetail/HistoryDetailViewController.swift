@@ -92,6 +92,7 @@ class HistoryDetailViewController: UIViewController {
         fsCalendar.scrollEnabled = false
         
         fsCalendar.headerHeight = 0
+        fsCalendar.appearance.titleOffset = CGPoint(x: 0, y: 3)
         
         dayOfWeek.indices.forEach { index in
             fsCalendar.calendarWeekdayView.weekdayLabels[index].text = dayOfWeek[index]
