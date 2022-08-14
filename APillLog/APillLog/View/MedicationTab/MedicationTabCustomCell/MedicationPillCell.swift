@@ -13,15 +13,21 @@ protocol TakeMedicationDelegate {
     func setTakingAllPrimaryPillButtonColor()
 }
 
+protocol EditTimeDelegate {
+    func editTakingPillTime(rowNumber: Int)
+}
+
 class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var pillImageView: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var takingPillButton: UIButton!
     @IBOutlet weak var timeLogLabel: UILabel!
+    @IBOutlet weak var editTimeButton: UIButton!
     
     var rowNumber: Int = 0
     var isPrimary: Bool = false
     var delegate: TakeMedicationDelegate?
+    var editTimeDelegate: EditTimeDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,6 +66,11 @@ class MedicationPillCell: UITableViewCell {
         }
         delegate?.setTakingAllPrimaryPillButtonColor()
     }
+    
+    @IBAction func tapEditTimeButton(_ sender: UIButton) {
+        editTimeDelegate?.editTakingPillTime(rowNumber: rowNumber)
+    }
+    
 }
 
 

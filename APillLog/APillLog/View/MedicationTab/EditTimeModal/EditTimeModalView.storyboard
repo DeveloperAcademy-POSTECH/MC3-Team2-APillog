@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Time Modal View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditTimeModalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EditTimeModalViewController" customModule="APillLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-Vk-Box">
+                                <rect key="frame" x="0.0" y="64" width="414" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30l-7w-5Vr">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="30l-7w-5Vr" secondAttribute="height" multiplier="3:1" id="Okw-HL-pm3"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                        <connections>
+                                            <action selector="tapCancelButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DSe-rF-ZlA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 시각 수정하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgs-Ra-E7l">
+                                        <rect key="frame" x="90" y="0.0" width="234" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQZ-NJ-THE">
+                                        <rect key="frame" x="324" y="0.0" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eQZ-NJ-THE" secondAttribute="height" multiplier="3:1" id="FTI-4L-aSG"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                                        <connections>
+                                            <action selector="tapSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1Gf-NC-fV5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bbO-5T-ph8"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="primaryPill" translatesAutoresizingMaskIntoConstraints="NO" id="c7V-RV-FL0">
+                                <rect key="frame" x="150" y="124" width="114" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="c7V-RV-FL0" secondAttribute="height" id="p5r-Cv-8kF"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVO-OQ-hnB">
+                                <rect key="frame" x="25" y="268" width="364" height="216"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcl-Gu-2kq">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="216"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-PE-zgF">
+                                        <rect key="frame" x="42" y="0.0" width="322" height="216"/>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KVO-OQ-hnB" firstAttribute="top" secondItem="c7V-RV-FL0" secondAttribute="bottom" constant="30" id="1LK-YE-W6I"/>
+                            <constraint firstItem="ro5-Vk-Box" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="72B-MB-IYs"/>
+                            <constraint firstItem="ro5-Vk-Box" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="986-H8-uiq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ro5-Vk-Box" secondAttribute="trailing" id="EcC-hh-Ukx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KVO-OQ-hnB" secondAttribute="trailing" constant="25" id="cBc-rs-CUN"/>
+                            <constraint firstItem="c7V-RV-FL0" firstAttribute="top" secondItem="ro5-Vk-Box" secondAttribute="bottom" constant="30" id="gtO-QJ-TV9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="c7V-RV-FL0" secondAttribute="trailing" constant="150" id="iRk-9X-0G9"/>
+                            <constraint firstItem="KVO-OQ-hnB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="kgv-0Z-dgT"/>
+                            <constraint firstItem="c7V-RV-FL0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="150" id="lFa-lM-i8Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="30l-7w-5Vr" id="vmP-I4-wev"/>
+                        <outlet property="editTimePicker" destination="VL3-PE-zgF" id="NFX-5g-c0m"/>
+                        <outlet property="pillImage" destination="c7V-RV-FL0" id="RfT-Db-hXa"/>
+                        <outlet property="pillName" destination="Gcl-Gu-2kq" id="m0e-qR-ZJZ"/>
+                        <outlet property="saveButton" destination="eQZ-NJ-THE" id="3uD-Cr-sM9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4.3478260869565224" y="53.571428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="primaryPill" width="60" height="60"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
