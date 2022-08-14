@@ -79,8 +79,6 @@ class HistoryDetailViewController: UIViewController {
         // fsCalendar style
         fsCalendarStackView.isHidden = true
         fsCalendarHeader.font = UIFont.AFont.calenderText
-        let scopeGuesture = UIPanGestureRecognizer(target: fsCalendar, action: #selector(fsCalendar.handleScopeGesture(_:)))
-        fsCalendar.addGestureRecognizer(scopeGuesture)
         
     }
     
@@ -92,6 +90,7 @@ class HistoryDetailViewController: UIViewController {
         fsCalendar.appearance.todayColor = UIColor.AColor.accent.withAlphaComponent(0.5)
         fsCalendar.appearance.weekdayFont = UIFont.AFont.calendarWeekDayFont
         fsCalendar.scrollEnabled = false
+        
         fsCalendar.headerHeight = 0
         
         dayOfWeek.indices.forEach { index in
@@ -100,7 +99,8 @@ class HistoryDetailViewController: UIViewController {
         
         fsCalendar.today = nil
         fsCalendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
-        fsCalendar.swipeToChooseGesture.isEnabled = true
+        fsCalendar.swipeToChooseGesture.isEnabled = false
+        
         setCalendar()
         
         startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
