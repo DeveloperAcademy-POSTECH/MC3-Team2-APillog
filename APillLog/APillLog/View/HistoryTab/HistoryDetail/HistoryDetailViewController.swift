@@ -123,7 +123,7 @@ class HistoryDetailViewController: UIViewController {
     }
     
     private func changedDatesRange() {
-        fsCalendarStackView.isHidden = true
+        fsCalendarStackView.fadeOut()
         let start = formatter.string(from: startDate ?? Date())
         let end = formatter.string(from: endDate ?? Date())
         datesRangeLabel.text = "\(start) ~ \(end)"
@@ -140,6 +140,9 @@ class HistoryDetailViewController: UIViewController {
     // gestureRecognizer
     @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
         fsCalendarStackView.isHidden.toggle()
+        if fsCalendarStackView.isHidden == false {
+            fsCalendarStackView.alpha = 1
+        }
     }
     
     @IBAction func tapPrevButton(_ sender: Any) {
