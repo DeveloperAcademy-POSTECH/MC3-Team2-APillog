@@ -21,12 +21,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-Yg-pjN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1450"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-fL-D6J">
                                                 <rect key="frame" x="0.0" y="44" width="414" height="230"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL" customClass="HistoryDetailProgressTableVies" customModule="APillLog" customModuleProvider="target">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-hW-YmL">
                                                         <rect key="frame" x="0.0" y="20" width="414" height="200"/>
                                                         <color key="backgroundColor" name="ABackground"/>
                                                         <constraints>
@@ -65,6 +65,12 @@
                                                 <color key="textColor" name="AGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈맥 증상 빈도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t6-oe-Gz8" userLabel="빈맥 증상 빈도">
+                                                <rect key="frame" x="25" y="740" width="364" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" name="AGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="325" width="364" height="400"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,21 +84,40 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-Om-9YA" customClass="HistoryDetailHeartRateChartView" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="766" width="364" height="400"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="crX-23-B5X"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="jO1-Tc-aLV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="ABackground"/>
                                         <constraints>
                                             <constraint firstItem="nNh-tb-1BN" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="3Jk-qN-4IM"/>
                                             <constraint firstItem="xN6-7I-eWn" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="9w1-oz-No8"/>
                                             <constraint firstItem="xN6-7I-eWn" firstAttribute="top" secondItem="gE8-Yg-pjN" secondAttribute="top" constant="16" id="GTO-FC-mkq"/>
+                                            <constraint firstItem="1t6-oe-Gz8" firstAttribute="top" secondItem="nNh-tb-1BN" secondAttribute="bottom" constant="15" id="HN6-Nr-kBq"/>
                                             <constraint firstAttribute="trailing" secondItem="nNh-tb-1BN" secondAttribute="trailing" constant="25" id="Lnk-qt-Gj4"/>
                                             <constraint firstItem="MoW-ML-H1v" firstAttribute="top" secondItem="TpX-fL-D6J" secondAttribute="bottom" constant="20" id="NN2-Cg-3sj"/>
-                                            <constraint firstAttribute="height" priority="750" constant="896" id="aPk-kt-yVF"/>
+                                            <constraint firstItem="r5U-Om-9YA" firstAttribute="top" secondItem="1t6-oe-Gz8" secondAttribute="bottom" constant="5" id="Qvs-nA-emm"/>
+                                            <constraint firstAttribute="height" priority="750" constant="1450" id="aPk-kt-yVF"/>
                                             <constraint firstItem="MoW-ML-H1v" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="bpR-9e-RcL"/>
+                                            <constraint firstAttribute="trailing" secondItem="r5U-Om-9YA" secondAttribute="trailing" constant="25" id="caS-jE-Jq6"/>
                                             <constraint firstItem="TpX-fL-D6J" firstAttribute="top" secondItem="xN6-7I-eWn" secondAttribute="bottom" constant="10" id="fLv-68-OuE"/>
+                                            <constraint firstItem="1t6-oe-Gz8" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="gje-DP-7Co"/>
                                             <constraint firstItem="nNh-tb-1BN" firstAttribute="top" secondItem="MoW-ML-H1v" secondAttribute="bottom" constant="10" id="kFh-0e-MeJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="1t6-oe-Gz8" secondAttribute="trailing" constant="25" id="p4A-60-6xj"/>
                                             <constraint firstAttribute="trailing" secondItem="TpX-fL-D6J" secondAttribute="trailing" id="pIN-xk-fSX"/>
                                             <constraint firstItem="TpX-fL-D6J" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" id="pXl-9Y-uAL"/>
                                             <constraint firstAttribute="trailing" secondItem="MoW-ML-H1v" secondAttribute="trailing" constant="25" id="teQ-4e-Vh1"/>
+                                            <constraint firstItem="r5U-Om-9YA" firstAttribute="leading" secondItem="gE8-Yg-pjN" secondAttribute="leading" constant="25" id="ySM-Qw-4Z0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
