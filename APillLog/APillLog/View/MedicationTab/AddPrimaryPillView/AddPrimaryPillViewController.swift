@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 protocol AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill()
@@ -37,6 +38,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
     }
+    
+    let primaryPillDropDown = DropDown()
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
@@ -172,6 +175,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         savePrimaryPillButton.tintColor = UIColor.AColor.accent
         duplicateWarningLabel.isHidden = true
     }
+    
+    
 }
 
 

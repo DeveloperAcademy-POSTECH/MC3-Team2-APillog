@@ -3,24 +3,28 @@ PODS:
     - Charts/Core (= 4.0.3)
   - Charts/Core (4.0.3):
     - SwiftAlgorithms (~> 1.0)
+  - DropDown (2.3.13)
   - FSCalendar (2.8.4)
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - Charts
+  - DropDown
   - FSCalendar
 
 SPEC REPOS:
   trunk:
     - Charts
+    - DropDown
     - FSCalendar
     - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   Charts: d959d6723c8eedfdd0735dfc28cb0a71762ac4d9
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: b99fe6d88af895d276678e1880cac1a268e6b316
+PODFILE CHECKSUM: f903153c94f7f1b3f842c18bf55154cb5cfc54e6
 
 COCOAPODS: 1.11.3
