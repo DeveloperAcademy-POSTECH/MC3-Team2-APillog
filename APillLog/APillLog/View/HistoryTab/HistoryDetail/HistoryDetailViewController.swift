@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import HealthKit
 
 
 class HistoryDetailViewController: UIViewController {
@@ -15,6 +16,8 @@ class HistoryDetailViewController: UIViewController {
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var reportViewTitle: UILabel!
+    
+    let healthStore = HKHealthStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +67,22 @@ extension HistoryDetailViewController: UITableViewDataSource, UITableViewDelegat
         }
         return cell
     }
-    
-    
+}
+
+// HealthKit
+extension HistoryDetailViewController {
+    private func authorizeHealthKit() {
+        let read = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!, HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!])
+        let share = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!, HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!])
+        
+        healthStore.requestAuthorization(toShare: share, read: read) { (chk, error) in
+            if chk {
+                // 접근 허용함
+                
+            } else {
+                // 접근 불허함
+                
+            }
+        }
+    }
 }

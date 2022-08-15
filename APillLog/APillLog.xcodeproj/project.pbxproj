@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3406C65D28AA238500BCD66C /* HistoryDetailHeartRateChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3406C65C28AA238500BCD66C /* HistoryDetailHeartRateChartView.xib */; };
 		3406C65F28AA23A000BCD66C /* HistoryDetailHeartRateChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406C65E28AA23A000BCD66C /* HistoryDetailHeartRateChartView.swift */; };
-		3406C66228AA24F900BCD66C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3406C66128AA24F900BCD66C /* HealthKit.framework */; };
 		34440E6128870AE700AA3996 /* ManageDosingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34440E6028870AE700AA3996 /* ManageDosingView.storyboard */; };
 		34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34440E6228870B1200AA3996 /* ManageDosingViewController.swift */; };
 		34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */; };
@@ -278,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */,
-				3406C66228AA24F900BCD66C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

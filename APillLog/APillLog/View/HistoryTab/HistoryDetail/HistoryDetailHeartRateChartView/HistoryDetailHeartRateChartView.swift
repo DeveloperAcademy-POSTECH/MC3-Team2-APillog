@@ -12,7 +12,7 @@ import HealthKit
 
 @IBDesignable
 class HistoryDetailHeartRateChartView: UIView {
-
+    
     @IBOutlet weak var chartView: BarChartView!
     
     var xAxisLabel: [String] = []
@@ -51,27 +51,31 @@ class HistoryDetailHeartRateChartView: UIView {
     }
     
     private func loadData() {
-        // 데이터 초기화
-        xAxisLabel = .init(repeating: " ", count: 31)
         
         // X축 날짜 레이블링
         var axisDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
-        for idx in 0..<7 {
-            xAxisLabel[idx*5] = dateFormatter.string(from: axisDate)
-            axisDate = Calendar.current.date(byAdding: .day, value: 5, to: axisDate)!
+        // 1. 일 별 빈도의 경우
+//        xAxisLabel = .init(repeating: " ", count: 31)
+        //        for idx in 0..<7 {
+        //            xAxisLabel[idx*5] = dateFormatter.string(from: axisDate)
+        //            axisDate = Calendar.current.date(byAdding: .day, value: 5, to: axisDate)!
+        //        }
+        // 2. 시간 별 빈도의 경우
+        xAxisLabel = .init(repeating: " ", count: 24)
+        for idx in 0..<24 {
+            xAxisLabel[idx] = (idx % 2 == 0) ? "\(idx)시" : ""
         }
         
         // 빈맥 데이터 가져오기
-        HRCount = fetchHeartRateData()
-        print(HRCount)
+        setHeartRateData()
     }
     
-    private func fetchHeartRateData() -> [Double] {
+    private func setHeartRateData() {
         var heartRateData: [Double] = .init(repeating: 0, count: 31)
-
+        let day = Calendar.current.dateComponents([.day], from: Date()).day!
         // 데이터 가져오기
         // HealthKit에서 어떤 정보를 가져오려고 하는가? -> 심박수 데이터를 가져오기
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return [] }
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
         
         // 가져올 데이터에 대한 쿼리 작성 (1달 전 부터 오늘까지의 데이터를 가져오려고 한다)
         let startDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())
@@ -97,10 +101,11 @@ class HistoryDetailHeartRateChartView: UIView {
             for sample in result {
                 let data = sample as! HKQuantitySample
                 if data.quantity.doubleValue(for: unit) >= 100 {
-                    listOnDate[Calendar.current.dateComponents([.day], from: data.startDate).day ?? 30].append(data)
+                    let testDate = 31 - (Calendar.current.dateComponents([.day], from: data.startDate, to: Date()).day ?? 31)
+                    listOnDate[31 - (Calendar.current.dateComponents([.day], from: data.startDate, to: Date()).day ?? 31)].append(data)
                 }
             }
-                        
+            
             for dataOnDay in listOnDate {
                 var exist = Array.init(repeating: false, count: 24)
                 
@@ -112,11 +117,10 @@ class HistoryDetailHeartRateChartView: UIView {
                     heartRateData[idx] = heartRateData[idx] + (exist[idx] ? 1 : 0)
                 }
             }
-            print(heartRateData)
+            
             self.setChart(dataPoints: self.xAxisLabel, values: heartRateData)
         }
         healthStore.execute(query)
-        return heartRateData
     }
     
     private func setChart(dataPoints: [String], values: [Double]) {
@@ -128,24 +132,24 @@ class HistoryDetailHeartRateChartView: UIView {
         }
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
-
+        
         // 차트 설정
         chartDataSet.highlightEnabled = false
         chartView.doubleTapToZoomEnabled = false
-
+        
         chartDataSet.colors = [.AColor.accent]
-
+        
         chartView.xAxis.setLabelCount(dataPoints.count, force: false)
         chartView.rightAxis.enabled = false
-
+        
         chartView.leftAxis.axisMinimum = 0
         
         chartView.chartDescription.enabled = false
         chartView.xAxis.drawGridLinesEnabled = false
-//        chartView.xAxis.drawLabelsEnabled = false
+        //        chartView.xAxis.drawLabelsEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
         
-//        chartView.leftAxis.enabled = false
+        //        chartView.leftAxis.enabled = false
         chartView.drawBordersEnabled = false
         chartView.legend.form = .none
         
