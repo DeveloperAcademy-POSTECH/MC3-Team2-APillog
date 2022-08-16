@@ -52,7 +52,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6nW-lr-A5S">
                                 <rect key="frame" x="20" y="105" width="374" height="243.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XcT-d7-BZM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="79T-HL-wiN">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-Y2-9q4">
@@ -61,19 +61,54 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="약의 이름을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K92-cZ-HD5">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-rp-9xx">
                                                 <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="heT-tK-zmc"/>
-                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="RNV-tW-76K"/>
-                                                    <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="PDt-1e-neB"/>
-                                                </connections>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-eg-Ezc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-eQ-fzg">
+                                                        <rect key="frame" x="0.0" y="1.5" width="374" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="31" id="br7-oe-b1T"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="dSt-d5-eZu"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                        <connections>
+                                                            <action selector="tapDropDownButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zwr-3Q-pzu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ycp-Vg-FKd">
+                                                        <rect key="frame" x="344" y="11.5" width="15" height="11"/>
+                                                        <color key="tintColor" name="AGray"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="15" id="Ho0-MF-nXD"/>
+                                                            <constraint firstAttribute="width" constant="15" id="blW-Fd-aZK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="AhV-k8-HDX"/>
+                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="EY4-qJ-7OU"/>
+                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="IPk-3U-cV3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ycp-Vg-FKd" secondAttribute="trailing" constant="15" id="NZF-Ov-QvZ"/>
+                                                    <constraint firstAttribute="height" constant="34" id="ODp-ce-loc"/>
+                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Omv-56-gCY"/>
+                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Xmg-z0-XK6"/>
+                                                    <constraint firstItem="h1a-eg-Ezc" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="f8Y-c1-KYm"/>
+                                                    <constraint firstItem="h1a-eg-Ezc" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="gQF-3b-Y7L"/>
+                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="height" secondItem="h1a-eg-Ezc" secondAttribute="height" constant="-3" id="hZE-zV-eY5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="h1a-eg-Ezc" secondAttribute="trailing" id="vmN-Tb-8Bb"/>
+                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="zLd-Xt-SkR"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="K92-cZ-HD5" secondAttribute="trailing" id="no6-Bf-RbU"/>
+                                            <constraint firstAttribute="trailing" secondItem="EcP-rp-9xx" secondAttribute="trailing" id="KVA-gj-L35"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-8P-lCH">
@@ -201,7 +236,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XcT-d7-BZM" secondAttribute="trailing" id="LDD-VE-X4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="79T-HL-wiN" secondAttribute="trailing" id="Asf-4p-bxV"/>
                                     <constraint firstAttribute="trailing" secondItem="AUA-8P-lCH" secondAttribute="trailing" id="ueu-yw-w6S"/>
                                 </constraints>
                             </stackView>
@@ -228,7 +263,10 @@
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="PrimaryPillDosage" destination="B7E-LO-4P8" id="BfU-Cx-1Fa"/>
-                        <outlet property="PrimaryPillName" destination="K92-cZ-HD5" id="LBs-Yg-VOs"/>
+                        <outlet property="dropDownButton" destination="SYI-eQ-fzg" id="mgL-xE-LuU"/>
+                        <outlet property="dropDownImage" destination="ycp-Vg-FKd" id="4FE-Da-frL"/>
+                        <outlet property="dropDownTextField" destination="h1a-eg-Ezc" id="cy5-r8-Oox"/>
+                        <outlet property="dropDownView" destination="EcP-rp-9xx" id="gbv-oV-lRN"/>
                         <outlet property="duplicateWarningLabel" destination="bwJ-Ae-FQO" id="wdq-rM-Ocz"/>
                         <outlet property="primaryPillAfternoonButton" destination="S4S-Gm-JRC" id="Y2L-w7-RYR"/>
                         <outlet property="primaryPillDosageSegmentedControl" destination="nUg-f0-7F0" id="FpA-Gb-GLC"/>
@@ -254,9 +292,16 @@
         </designable>
     </designables>
     <resources>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="AGray">
+            <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

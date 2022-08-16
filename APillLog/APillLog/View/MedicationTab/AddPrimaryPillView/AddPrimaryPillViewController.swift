@@ -28,6 +28,11 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     @IBOutlet weak var primaryPillDosageSegmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var dropDownView: UIView!
+    @IBOutlet weak var dropDownTextField: UITextField!
+    @IBOutlet weak var dropDownImage: UIImageView!
+    @IBOutlet weak var dropDownButton: UIButton!
+    
     // MARK: Property
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
@@ -40,6 +45,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     let primaryPillDropDown = DropDown()
+    let primaryPillDropDownList = ["콘서타", "메디키넷", "메타데이트", "페로스핀", "페니드",  "환인아토목세틴", "스트라테라", "켐베이"]
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
@@ -50,6 +56,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
+        
+        configureDropDown()
     }
     
     // MARK: @IBAction
@@ -134,7 +142,46 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         }
     }
     
+    @IBAction func tapDropDownButton(_ sender: UIButton) {
+        primaryPillDropDown.show()
+        self.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+    }
+    
     // MARK: Function
+    func configureDropDown() {
+        dropDownView.backgroundColor = UIColor.AColor.white
+        dropDownView.cornerRadius = 5.0
+        
+        DropDown.appearance().textColor = UIColor.AColor.black
+        DropDown.appearance().selectedTextColor = UIColor.AColor.accent
+        DropDown.appearance().backgroundColor = UIColor.AColor.white
+        DropDown.appearance().selectionBackgroundColor = UIColor.AColor.background
+        DropDown.appearance().setupCornerRadius(5.0)
+        
+        primaryPillDropDown.dismissMode = .automatic
+        
+        dropDownTextField.text = "약의 이름을 입력해주세요"
+        dropDownTextField.textColor = UIColor.AColor.disable
+        
+        self.tapDropDownShow()
+    }
+    
+    func tapDropDownShow() {
+        primaryPillDropDown.dataSource = primaryPillDropDownList
+        primaryPillDropDown.anchorView = self.dropDownView
+        primaryPillDropDown.topOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
+        
+        primaryPillDropDown.selectionAction = { [weak self] (item, index) in
+            self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
+            self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+        }
+        
+        primaryPillDropDown.cancelAction = { [weak self] in
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+        }
+    }
+    
     func changePrimaryPillDosingButtonState(_ button: UIButton) {
         if button.isSelected {
             button.backgroundColor = UIColor.AColor.accent
