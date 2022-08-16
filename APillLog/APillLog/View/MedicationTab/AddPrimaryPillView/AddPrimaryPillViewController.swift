@@ -19,7 +19,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var primaryPillAfternoonButton: UIButton!
     @IBOutlet weak var primaryPillEveningButton: UIButton!
     
-    @IBOutlet weak var PrimaryPillName: UITextField!
     @IBOutlet weak var PrimaryPillDosage: UITextField!
     
     @IBOutlet weak var savePrimaryPillButton: UIButton!
@@ -66,7 +65,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
  
     @IBAction func tapSaveButton() {
-        let pillName = PrimaryPillName.text ?? ""
+        let pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
        
         CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
@@ -174,11 +173,11 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillDropDown.selectionAction = { [weak self] (item, index) in
             self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
             self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
         }
         
         primaryPillDropDown.cancelAction = { [weak self] in
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
         }
     }
     
@@ -197,7 +196,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     func detectEnableSaveButton(){
-        let pillName = PrimaryPillName.text ?? ""
+        let pillName = dropDownTextField.text ?? ""
         let pillDosage = PrimaryPillDosage.text ?? ""
         
         if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
@@ -212,7 +211,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     func checkDuplication() {
         for pill in primaryPillList {
-            if PrimaryPillName.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
+            if dropDownTextField.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
                 savePrimaryPillButton.isEnabled = false
                 duplicateWarningLabel.isHidden = false
                 return
