@@ -83,8 +83,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     
     @IBAction func clickTextFieldChangeBorder(_ sender: UITextField) {
         sender.layer.borderWidth = 1
-        sender.layer.borderColor = UIColor.AColor.disable.cgColor
-        sender.layer.cornerRadius = 6.5
+        sender.layer.borderColor = UIColor.AColor.textFieldBorder.cgColor
+        sender.layer.cornerRadius = 5.0
         
 //        checkDuplication()
     }
@@ -92,7 +92,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
         sender.layer.borderWidth = 1
         sender.layer.borderColor = UIColor.AColor.accent.cgColor
-        sender.layer.cornerRadius = 6.5
+        sender.layer.cornerRadius = 5.0
     }
     
     @IBAction func togglePrimaryPillMorning(_ sender: UIButton) {
@@ -146,6 +146,11 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         self.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
     }
     
+    @IBAction func tapBackgroundView(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
     // MARK: Function
     func configureDropDown() {
         dropDownView.backgroundColor = UIColor.AColor.white
@@ -158,9 +163,12 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         DropDown.appearance().setupCornerRadius(5.0)
         
         primaryPillDropDown.dismissMode = .automatic
+        primaryPillDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
         
         dropDownTextField.text = "약의 이름을 입력해주세요"
         dropDownTextField.textColor = UIColor.AColor.disable
+//        dropDownTextField.layer.borderColor = UIColor.AColor.accent.cgColor
+        dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
         
         self.tapDropDownShow()
     }
@@ -173,7 +181,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillDropDown.selectionAction = { [weak self] (item, index) in
             self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
             self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+            
         }
         
         primaryPillDropDown.cancelAction = { [weak self] in
@@ -191,7 +200,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
             button.backgroundColor = .white
             button.setTitleColor(UIColor.AColor.gray, for: .normal)
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.AColor.disable.cgColor
+            button.layer.borderColor = UIColor.AColor.textFieldBorder.cgColor
         }
     }
     

@@ -249,6 +249,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
                             <constraint firstItem="6nW-lr-A5S" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="Uw7-ib-Z3g"/>
@@ -259,6 +260,9 @@
                             <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="6nW-lr-A5S" secondAttribute="trailing" constant="20" id="ijS-1B-Ie2"/>
                             <constraint firstItem="6nW-lr-A5S" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="50" id="y4D-Px-f9W"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="afh-Gc-3Ah" appends="YES" id="mDf-98-pib"/>
+                        </connections>
                     </view>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -276,6 +280,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="afh-Gc-3Ah">
+                    <connections>
+                        <action selector="tapBackgroundView:" destination="Y6W-OH-hqX" id="ZLP-1e-lbx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>

@@ -19,6 +19,7 @@ extension UIColor {
         static var calendarPill: UIColor { UIColor(named: "ACalendarPill")! }
         static var calendarSide: UIColor { UIColor(named: "ACalendarSide")! }
         static var calendarDetail: UIColor { UIColor(named: "ACalendarDetail")! }
+        static var textFieldBorder: UIColor { UIColor(named: "ABorder")! }
     }
 }
 
