@@ -9,7 +9,7 @@ import UIKit
 import WidgetKit
 
 class DiaryEditViewController: UIViewController, UITextViewDelegate {
-
+    
     var date = ""
     var textViewContent = ""
     var questionString = ""
@@ -50,7 +50,7 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
             DiaryEditSaveButton.backgroundColor = UIColor.AColor.accent
         }
         
-       }
+    }
     @IBAction func didFinishEdit(_ sender: Any) {
         if type == 1 {
             completioHandler?(DiaryEditTextView.text)
@@ -61,7 +61,7 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
             completioHandler?(DiaryEditTextView.text)
             receivedCBT.recognizeContext = DiaryEditTextView.text
             coredataManager.updateOneCBT(receivedCBT: receivedCBT)
-
+            
         }
         else{
             completioHandler?(DiaryEditTextView.text)
@@ -76,13 +76,13 @@ class DiaryEditViewController: UIViewController, UITextViewDelegate {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -15,7 +15,7 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     var selectedBody = ""
     var selectedDate = ""
     var myCBT : [CBT] = [CBT()]
-
+    
     @IBOutlet weak var diaryStorageGuide: UILabel!
     @IBOutlet weak var DiaryCalendar: CalendarMonth!
     @IBOutlet weak var storageTableView: UITableView!
@@ -52,13 +52,13 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         }
         self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
         self.diaryStorageGuide.isHidden = myCBT.count == 0 ? false : true
-
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setCalendarView()
-       
+        setCalendarView()
+        
         storageTableView.delegate = self
         storageTableView.dataSource = self
         storageTableView.sectionHeaderHeight = 50
@@ -108,9 +108,9 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     }
     
     func tableView(
-            _ tableView: UITableView,
-            commit editingStyle: UITableViewCell.EditingStyle,
-            forRowAt indexPath: IndexPath
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
     ) {
         if editingStyle == .delete {
             let CBT = myCBT[indexPath.row]
@@ -127,14 +127,14 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func adjustTableViewHeight(){
         if self.myCBT.count == 0{
             self.storageHeight?.constant = 200
@@ -177,7 +177,7 @@ extension DiaryStorageViewController: CalendarMonthDelegate {
         myCBT.removeAll()
         myCBT = tempCbtArr
         storageTableView.reloadData()
-
+        
     }
     
     func setCalendarView() {

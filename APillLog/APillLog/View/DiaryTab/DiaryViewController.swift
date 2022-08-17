@@ -10,10 +10,7 @@ import WidgetKit
 
 class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var mistakeTableView: UITableView!
-    
-    
     @IBOutlet weak var mistakeTableViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = []
@@ -68,7 +65,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
     }
-  
+    
     override func viewWillAppear(_ animated: Bool) {
         myCBT = CoreDataManager.shared.fetchCBT()
         myCBT = myCBT.sorted(by: {
@@ -130,9 +127,9 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     func tableView(
-            _ tableView: UITableView,
-            commit editingStyle: UITableViewCell.EditingStyle,
-            forRowAt indexPath: IndexPath
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
     ) {
         if editingStyle == .delete {
             let CBT = myCBT[indexPath.row]
