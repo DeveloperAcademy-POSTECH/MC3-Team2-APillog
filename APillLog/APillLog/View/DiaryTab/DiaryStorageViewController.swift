@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import WidgetKit
 
-class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITableViewDataSource
+class DiaryStorageViewController: UIViewController
 {
     private var date = Date()
     var selectedBody = ""
@@ -20,22 +20,8 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
     @IBOutlet weak var DiaryCalendar: CalendarMonth!
     @IBOutlet weak var storageTableView: UITableView!
     @IBOutlet weak var storageHeight: NSLayoutConstraint!
-    let cellIdentifier = "storageCustomCell"
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myCBT.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CustomCellTableViewCell2 = self.storageTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell2
-        cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
-        cell.cellTitle.text = myCBT[indexPath.row].actionContext ?? "text"
-        cell.cellTitle.font = UIFont.AFont.tableViewTitle
-        cell.cellTitle.textColor = UIColor.AColor.black
-        cell.cellDate.text = myCBT[indexPath.row].selectDate
-        cell.cellDate.font = UIFont.AFont.tableViewBody
-        cell.cellDate.textColor = UIColor.AColor.gray
-        return cell
-    }
     
+    let cellIdentifier = "storageCustomCell"
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
         if self.myCBT.count == 0{
@@ -82,49 +68,6 @@ class DiaryStorageViewController: UIViewController, UITableViewDelegate , UITabl
         storageTableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView,
-                   viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-                                                                "sectionHeader") as! MyCustomHeader
-        view.title.text = "작성했던 에필로그들"
-        view.title.font = UIFont.AFont.tableViewTitle
-        return view
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBody = myCBT[indexPath.row].mistakeContext!
-        selectedDate = myCBT[indexPath.row].selectDate!
-        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
-        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
-        vc.body = myCBT[indexPath.row].mistakeContext!
-        vc.date = myCBT[indexPath.row].selectDate!
-        vc.recognizeString = myCBT[indexPath.row].recognizeContext!
-        vc.actionString = myCBT[indexPath.row].actionContext!
-        vc.id = myCBT[indexPath.row].cbtId!
-        vc.receivedCBT = myCBT[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        commit editingStyle: UITableViewCell.EditingStyle,
-        forRowAt indexPath: IndexPath
-    ) {
-        if editingStyle == .delete {
-            let CBT = myCBT[indexPath.row]
-            CoreDataManager.shared.deleteCBT(CBT: CBT)
-            myCBT.remove(at: indexPath.row)
-            self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
-            self.storageTableView.reloadData()
-            self.diaryStorageGuide.isHidden = myCBT.count == 0 ? true : false
-            adjustTableViewHeight()
-            UserDefaults(suiteName:
-                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-    }
     
     /*
      // MARK: - Navigation
@@ -199,12 +142,64 @@ extension DiaryStorageViewController: CalendarMonthDelegate {
     
 }
 
-//extension Date {
-//    func isEqual(to date: Date, toGranularity component: Calendar.Component, in calendar: Calendar = .current) -> Bool {
-//        calendar.isDate(self, equalTo: date, toGranularity: component)
-//    }
-//    func isInSameYear(as date: Date) -> Bool { isEqual(to: date, toGranularity: .year) }
-//
-//    func isInSameMonth(as date: Date) -> Bool { isEqual(to: date, toGranularity: .month) }
-//
-//}
+extension DiaryStorageViewController : UITableViewDelegate , UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myCBT.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CustomCellTableViewCell2 = self.storageTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCellTableViewCell2
+        cell.cellUUID = myCBT[indexPath.row].cbtId ?? UUID()
+        cell.cellTitle.text = myCBT[indexPath.row].actionContext ?? "text"
+        cell.cellTitle.font = UIFont.AFont.tableViewTitle
+        cell.cellTitle.textColor = UIColor.AColor.black
+        cell.cellDate.text = myCBT[indexPath.row].selectDate
+        cell.cellDate.font = UIFont.AFont.tableViewBody
+        cell.cellDate.textColor = UIColor.AColor.gray
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+                                                                "sectionHeader") as! MyCustomHeader
+        view.title.text = "작성했던 에필로그들"
+        view.title.font = UIFont.AFont.tableViewTitle
+        return view
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBody = myCBT[indexPath.row].mistakeContext!
+        selectedDate = myCBT[indexPath.row].selectDate!
+        let storyboard = UIStoryboard(name: "DiaryView", bundle: nil)
+        let vc =  storyboard.instantiateViewController(withIdentifier: "DiaryReadView") as! DiaryReadViewController
+        vc.body = myCBT[indexPath.row].mistakeContext!
+        vc.date = myCBT[indexPath.row].selectDate!
+        vc.recognizeString = myCBT[indexPath.row].recognizeContext!
+        vc.actionString = myCBT[indexPath.row].actionContext!
+        vc.id = myCBT[indexPath.row].cbtId!
+        vc.receivedCBT = myCBT[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        if editingStyle == .delete {
+            let CBT = myCBT[indexPath.row]
+            CoreDataManager.shared.deleteCBT(CBT: CBT)
+            myCBT.remove(at: indexPath.row)
+            self.storageTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+            self.storageTableView.reloadData()
+            self.diaryStorageGuide.isHidden = myCBT.count == 0 ? true : false
+            adjustTableViewHeight()
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+    }
+}
