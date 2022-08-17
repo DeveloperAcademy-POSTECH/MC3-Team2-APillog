@@ -61,10 +61,8 @@ protocol CalendarMonthDelegate: AnyObject {
                 guard let view = Bundle.main.loadNibNamed("CalendarMonthView", owner: self, options: nil)?.first as? UIView else { return }
                     view.frame = self.bounds
                     self.addSubview(view)
-                let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(clickLabel))
                 
                 selectedDate.text = fetchSelectedDate(date: Date())
-                selectedDate.addGestureRecognizer(gestureRecognize)
                 selectedDate.isUserInteractionEnabled = true
                 
                 nextButtonState = false
@@ -88,18 +86,7 @@ protocol CalendarMonthDelegate: AnyObject {
             }
             
             
-            @objc private func clickLabel(_ tapRecognizer: UITapGestureRecognizer) {
-                superview?.addSubview(datePicker)
-                
-                datePicker.layer.shadowColor = UIColor.black.cgColor
-                datePicker.layer.shadowOffset = .zero
-                datePicker.layer.shadowRadius = 10
-                datePicker.layer.shadowOpacity = 0.9
-                datePicker.isHidden.toggle()
-                setDatePickerConstraints()
-                
-                datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
-            }
+            
             
             @objc private func datePickerValueChanged(sender: UIDatePicker) {
                 setDateTitle(date: datePicker.date)
