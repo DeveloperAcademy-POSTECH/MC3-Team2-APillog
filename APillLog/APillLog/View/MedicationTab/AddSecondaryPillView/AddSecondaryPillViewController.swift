@@ -66,7 +66,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
-        CoreDataManager.shared.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
+        CoreDataManager.shared.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: changeDateFormat(date: selectedTime))
         CoreDataManager.shared.addRecentAddedSecondaryPill(name: filteredData[indexPath.row])
         self.delegate.didFinishModal()
     }
