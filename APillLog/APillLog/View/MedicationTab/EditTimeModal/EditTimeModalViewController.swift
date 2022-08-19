@@ -62,6 +62,7 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
     }
 
     func setEditTimeModalView() {
+        modalPresentationStyle = .custom
         editTimeModalViewPresentationController.delegate = self
         editTimeModalViewPresentationController.selectedDetentIdentifier = .large
         editTimeModalViewPresentationController.prefersGrabberVisible = true

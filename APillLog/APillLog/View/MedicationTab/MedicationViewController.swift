@@ -305,23 +305,25 @@ class MedicationViewController: UIViewController {
 
 extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         if tableView == primaryPillTableView {
             return self.primaryPillListDataSource.count  == 0 ? 1 : self.primaryPillListDataSource.count
         } else {
             return self.secondaryPillList.count == 0 ? 1 : self.secondaryPillList.count
         }
     }
-     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         guard let cell: MedicationPillCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MedicationPillCell else { return UITableViewCell() }
-        
+
         cell.delegate = self
         cell.editTimeDelegate = self
 
         if tableView == primaryPillTableView {
-            
+
             if primaryPillListDataSource.count == 0 {
-                
+
                 guard let emptyCell: EmptyPrimaryPillCell = tableView.dequeueReusableCell(withIdentifier: "EmptyPrimaryPillCell") as? EmptyPrimaryPillCell else { return UITableViewCell() }
                 emptyCell.captionLabel.text = "먹어야할 약이 없어요"
                 emptyCell.captionLabel.textColor = UIColor.AColor.gray
@@ -330,7 +332,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 return emptyCell
                 
             } else {
-                print(cell.rowNumber)
+
                 // Cell Data
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
@@ -354,9 +356,9 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 emptyCell.captionLabel.text = "추가로 복용한 약이 있다면 추가해주세요"
                 emptyCell.captionLabel.textColor = UIColor.AColor.gray
                 emptyCell.captionLabel.font = UIFont.AFont.explainText
-                
+
                 return emptyCell
-                
+
             } else {
                 // Image
                 cell.pillImageView.image = UIImage(named: "secondaryPill")
@@ -373,13 +375,12 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.isPrimary = false
                 
                 // Style
-//                cell.takingPillButton.titleLabel?.font = UIFont.AFont.buttonText
                 cell.timeLogLabel.font = UIFont.AFont.explainText
             }
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if tableView == primaryPillTableView || secondaryPillList.count == 0 {
             return false
@@ -387,7 +388,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
             return true
         }
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == secondaryPillTableView {
             if editingStyle == .delete {
@@ -431,6 +432,7 @@ extension MedicationViewController: TakeMedicationDelegate {
         }
 
         let alert = UIAlertController(title: "복용 기록을 삭제하시겠어요?", message: "복용 전 상태로 돌아가며, 복용 시각 데이터는 사라집니다.", preferredStyle: .alert)
+
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: { action in
             if isPrimary{
                 self.primaryPillTableView.reloadData()
@@ -439,6 +441,7 @@ extension MedicationViewController: TakeMedicationDelegate {
             }
             self.setTakingAllPrimaryPillButtonColor()
         })
+
         let delete = UIAlertAction(title: "기록 삭제", style: .destructive, handler: { action in
             if isPrimary {
                 CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: self.primaryPillListDataSource[rowNumber])
@@ -459,32 +462,26 @@ extension MedicationViewController: TakeMedicationDelegate {
 
 extension MedicationViewController: EditTimeDelegate {
     func editTakingPillTime(rowNumber: Int, isPrimary: Bool) {
-        if isPrimary && primaryPillListDataSource[rowNumber].isTaking {
-            let storyboard = UIStoryboard(name: "EditTimeModalView", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(withIdentifier: "EditTimeModalViewController") as? EditTimeModalViewController else {
-                return
-            }
-            viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
 
-            viewController.delegate = self
+        let storyboard = UIStoryboard(name: "EditTimeModalView", bundle: nil)
+
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "EditTimeModalViewController") as? EditTimeModalViewController else {
+            return
+        }
+
+        viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
+
+        if isPrimary && primaryPillListDataSource[rowNumber].isTaking {
             viewController.configure(pill: primaryPillListDataSource[rowNumber])
-            present(viewController, animated: true, completion: nil)
         }
         else if !isPrimary && secondaryPillList[rowNumber].isTaking {
-            let storyboard = UIStoryboard(name: "EditTimeModalView", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(withIdentifier: "EditTimeModalViewController") as? EditTimeModalViewController else {
-                return
-            }
-            viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
-
-            viewController.delegate = self
             viewController.configure(pill: secondaryPillList[rowNumber])
-            present(viewController, animated: true, completion: nil)
         }
+        viewController.delegate = self
+        present(viewController, animated: true, completion: nil)
     }
 }
 
-// EditTimeView에서 수정된 값을 MedicationView에서 띄울 때
 extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
     func didTimeChanged(isPrimary: Bool) {
         if isPrimary {
@@ -505,23 +502,23 @@ extension MedicationViewController: ConnectionModelPhoneDelegate {
 extension MedicationViewController: CalendarViewDelegate {
     func fetchDate(date: Date) {
         self.date = date
-        
+
         checkIsToday(selectedDate: date)
-        
+
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
-        
+
         setPrimaryTableViewTitleText()
         setAddPillButtonsActivation()
         setSymptomButtonAvailable()
-        
+
         takingTime = date
     }
     
     func setCalendarView() {
         calendarView.delegate = self
     }
-    
+
     func changeDateFormat(date: Date) -> Date{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
@@ -532,7 +529,7 @@ extension MedicationViewController: CalendarViewDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         return dateFormatter.date(from: takingTime) ?? Date()
     }
-    
+
 }
 // 비어있는 테이블에 대해서
 class EmptyPrimaryPillCell: UITableViewCell {
