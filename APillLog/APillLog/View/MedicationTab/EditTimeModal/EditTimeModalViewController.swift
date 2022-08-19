@@ -8,8 +8,9 @@
 import UIKit
 
 protocol EditTimeViewToMedicationViewDelegate {
-    func didTimeChanged(newTime newTime: Date)
+    func didTimeChanged(isPrimary: Bool)
 }
+
 class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeViewDelegate {
 
     var editTimeModalViewPresentationController: UISheetPresentationController {
@@ -17,22 +18,18 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
     }
 
     // MARK: IBOutlets
-    @IBOutlet weak var pillImage: UIImageView!
+    @IBOutlet weak var pillImage: UIImageView?
     @IBOutlet weak var pillName: UILabel?
     @IBOutlet weak var editTimePicker: UIDatePicker!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    
+
     // MARK: Properties
-    private var date = Date()
-    var pill: ShowPrimaryPill = ShowPrimaryPill()
-    var primaryPillList: [ShowPrimaryPill] = []
-    var primaryPillListMorning: [ShowPrimaryPill] = []
-    var primaryPillListLunch: [ShowPrimaryPill] = []
-    var primaryPillListDinner: [ShowPrimaryPill] = []
-    var primaryPillListDataSource: [ShowPrimaryPill] = []
     var delegate: EditTimeViewToMedicationViewDelegate?
     var newTime = Date()
+    var isPrimary = true
+    var nowPrimaryPill = ShowPrimaryPill()
+    var nowSecondaryPill = ShowSecondaryPill()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +39,26 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
 
     // MARK: Functions
     func configure(pill: ShowPrimaryPill) {
-        self.pill = pill
-        pillName?.text = pill.name
+        isPrimary = true
+        nowPrimaryPill = pill
+        guard let name = pill.name else { return }
+        guard let time = pill.takeTime else { return }
+        DispatchQueue.main.async {
+            self.pillName?.text = name
+            self.editTimePicker.date = time
+            self.pillImage?.image = UIImage(named: "primaryPill")
+        }
+    }
+    func configure(pill: ShowSecondaryPill) {
+        isPrimary = false
+        nowSecondaryPill = pill
+        guard let name = pill.name else { return }
+        guard let time = pill.takeTime else { return }
+        DispatchQueue.main.async {
+            self.pillName?.text = name
+            self.editTimePicker.date = time
+            self.pillImage?.image = UIImage(named: "secondaryPill")
+        }
     }
 
     func setEditTimeModalView() {
@@ -51,34 +66,37 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         editTimeModalViewPresentationController.selectedDetentIdentifier = .large
         editTimeModalViewPresentationController.prefersGrabberVisible = true
         editTimeModalViewPresentationController.detents = [.medium()]
+        cancelButton.tintColor = UIColor.AColor.accent
+        saveButton.tintColor = UIColor.AColor.accent
     }
 
     func setEditTimePicker() {
-//        editTimePicker.locale = .current
         editTimePicker.datePickerMode = .time
         editTimePicker.preferredDatePickerStyle = .inline
         editTimePicker.locale = Locale(identifier: "ko_KR")
         editTimePicker.addTarget(self, action: #selector(newTimeSelected), for: .valueChanged)
     }
-    
+
     @objc
     func newTimeSelected(){
-        print(editTimePicker.date)
         newTime = editTimePicker.date
     }
-    
+
     // MARK: IBACtions
     @IBAction func tapCancelButton() {
         self.presentingViewController?.dismiss(animated: true)
     }
-    
+
     @IBAction func tapSaveButton(_ sender: Any) {
-        self.delegate?.didTimeChanged(newTime: Date())
+        if isPrimary {
+            CoreDataManager.shared.updateShowPillTakeTime(showPrimaryPill: nowPrimaryPill, takingTime: newTime)
+        } else {
+            CoreDataManager.shared.updateShowPillTakeTime(showSecondaryPill: nowSecondaryPill, takingTime: newTime)
+        }
+        self.delegate?.didTimeChanged(isPrimary: isPrimary)
         self.presentingViewController?.dismiss(animated: true)
     }
-
 }
 
 extension EditTimeModalViewController: UISheetPresentationControllerDelegate {
-    
 }

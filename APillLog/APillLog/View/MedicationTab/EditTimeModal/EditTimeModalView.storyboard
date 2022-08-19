@@ -68,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-PE-zgF">
-                                        <rect key="frame" x="42" y="0.0" width="322" height="216"/>
+                                        <rect key="frame" x="41.5" y="0.0" width="322.5" height="216"/>
                                     </datePicker>
                                 </subviews>
                             </stackView>
@@ -91,7 +91,7 @@
                         <outlet property="cancelButton" destination="30l-7w-5Vr" id="vmP-I4-wev"/>
                         <outlet property="editTimePicker" destination="VL3-PE-zgF" id="NFX-5g-c0m"/>
                         <outlet property="pillImage" destination="c7V-RV-FL0" id="RfT-Db-hXa"/>
-                        <outlet property="pillName" destination="Gcl-Gu-2kq" id="m0e-qR-ZJZ"/>
+                        <outlet property="pillName" destination="Gcl-Gu-2kq" id="wXs-wQ-3f3"/>
                         <outlet property="saveButton" destination="eQZ-NJ-THE" id="3uD-Cr-sM9"/>
                     </connections>
                 </viewController>

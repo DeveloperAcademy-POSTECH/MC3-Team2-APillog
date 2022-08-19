@@ -29,7 +29,7 @@ class MedicationViewController: UIViewController {
     
     private var date = Date()
     var historyData = [History]()
-    var delegate: MedicationViewToEditTimeViewDelegate?
+    var medicationViewToEditTimeDelegate: MedicationViewToEditTimeViewDelegate?
     private var nowDosingTime: Int16 = 1
 
     var takingTime: Date = Date()
@@ -304,7 +304,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.delegate = self
         cell.editTimeDelegate = self
-        
+
         if tableView == primaryPillTableView {
             
             if primaryPillListDataSource.count == 0 {
@@ -317,6 +317,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 return emptyCell
                 
             } else {
+                print(cell.rowNumber)
                 // Cell Data
                 cell.pillImageView.image = UIImage(named: "primaryPill")
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
@@ -444,29 +445,40 @@ extension MedicationViewController: TakeMedicationDelegate {
 }
 
 extension MedicationViewController: EditTimeDelegate {
-    func editTakingPillTime(rowNumber: Int) {
-        if primaryPillListDataSource[rowNumber].isTaking {
+    func editTakingPillTime(rowNumber: Int, isPrimary: Bool) {
+        if isPrimary && primaryPillListDataSource[rowNumber].isTaking {
             let storyboard = UIStoryboard(name: "EditTimeModalView", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "EditTimeModalViewController") as? EditTimeModalViewController else {
                 return
             }
             viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
-            // 저장한거 보여주기
+
             viewController.delegate = self
-            // pill 정보 보내주기
-            delegate?.configure(pill: primaryPillListDataSource[rowNumber])
+            viewController.configure(pill: primaryPillListDataSource[rowNumber])
             present(viewController, animated: true, completion: nil)
-            
+        }
+        else if !isPrimary && secondaryPillList[rowNumber].isTaking {
+            let storyboard = UIStoryboard(name: "EditTimeModalView", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "EditTimeModalViewController") as? EditTimeModalViewController else {
+                return
+            }
+            viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
+
+            viewController.delegate = self
+            viewController.configure(pill: secondaryPillList[rowNumber])
+            present(viewController, animated: true, completion: nil)
         }
     }
 }
 
 // EditTimeView에서 수정된 값을 MedicationView에서 띄울 때
 extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
-    func didTimeChanged(newTime newTime: Date) {
-        
-        primaryPillTableView.reloadData()
-        
+    func didTimeChanged(isPrimary: Bool) {
+        if isPrimary {
+            primaryPillTableView.reloadData()
+        } else {
+            secondaryPillTableView.reloadData()
+        }
     }
 }
 
