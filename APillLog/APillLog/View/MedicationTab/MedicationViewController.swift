@@ -142,6 +142,9 @@ class MedicationViewController: UIViewController {
     
     private func setSymptomButtonStyle() {
         symptomButtonBackgroundView.layer.cornerRadius = 10
+        symptomButtonBackgroundView.layer.shadowOpacity = 0.2
+        symptomButtonBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        symptomButtonBackgroundView.layer.shadowRadius = 1
     }
     
     private func setPrimaryPillViewStyle() {
