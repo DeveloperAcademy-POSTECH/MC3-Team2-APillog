@@ -262,7 +262,6 @@ class MedicationViewController: UIViewController {
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
-        print("Debug---",calendarView.selectedDate!)
         nextViewController.delegate = self
         nextViewController.selectedTime = self.selectedTime
         self.present(nextViewController, animated: true)
