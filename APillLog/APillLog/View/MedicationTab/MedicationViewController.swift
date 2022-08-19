@@ -243,18 +243,29 @@ class MedicationViewController: UIViewController {
         }
     }
 
-    private func setPrimaryPillViewLinkActivation() {
+    private func setAddPillButtonsActivation() {
         if isToday {
+            // primary
             primaryPillViewLinkButton.isHidden = false
             primaryPillViewLinkLabel.isHidden = false
             primaryPillViewLinkImage.isHidden = false
-            primaryPillViewLinkButton.isEnabled = false
             primaryPillViewLinkLabel.textColor = .AColor.black
             primaryPillViewLinkImage.tintColor = .AColor.black
+
+            // secondary
+            secondaryPillModalButton.isHidden = false
+            secondaryPillModalButtonLabel.isHidden = false
+            secondaryPillModalButtonImage.isHidden = false
         } else {
+            // primary
             primaryPillViewLinkButton.isHidden = true
             primaryPillViewLinkLabel.isHidden = true
             primaryPillViewLinkImage.isHidden = true
+            
+            // secondary
+            secondaryPillModalButton.isHidden = true
+            secondaryPillModalButtonLabel.isHidden = true
+            secondaryPillModalButtonImage.isHidden = true
         }
     }
 
@@ -267,7 +278,6 @@ class MedicationViewController: UIViewController {
     }
 
     // MARK: - IBActions
-    
     @IBAction func tapAddConditionButton(_ sender: UIButton) {
         guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
 
@@ -502,7 +512,7 @@ extension MedicationViewController: CalendarViewDelegate {
         reloadSecondaryPillTableView()
         
         setPrimaryTableViewTitleText()
-        setPrimaryPillViewLinkActivation()
+        setAddPillButtonsActivation()
         setSymptomButtonAvailable()
         
         takingTime = date
