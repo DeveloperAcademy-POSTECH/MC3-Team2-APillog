@@ -29,6 +29,7 @@ class MedicationViewController: UIViewController {
 
     var takingTime: Date = Date()
     var isToday: Bool = true
+    var selectedTime: Date = Date()
     
     let dateFormatterForCompare: DateFormatter = {
        let df = DateFormatter()
@@ -211,6 +212,7 @@ class MedicationViewController: UIViewController {
     
     private func checkIsToday(selectedDate: Date) {
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
+        self.selectedTime = selectedDate
     }
     
     private func setPrimaryTableViewTitleText() {
@@ -260,9 +262,8 @@ class MedicationViewController: UIViewController {
     @IBAction func tapAddSecondaryPillButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "AddSecondaryPillView", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddSecondPillStoryboard") as! AddSecondaryPillViewController
-        
         nextViewController.delegate = self
-        
+        nextViewController.selectedTime = self.selectedTime
         self.present(nextViewController, animated: true)
     }
 }
@@ -409,7 +410,7 @@ extension MedicationViewController: CalendarViewDelegate {
         self.date = date
         
         checkIsToday(selectedDate: date)
-        
+    
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
         
