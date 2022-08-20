@@ -45,8 +45,9 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         nowPrimaryPill = pill
         guard let name = pill.name else { return }
         guard let time = pill.takeTime else { return }
+        guard let dosage = pill.dosage else { return }
         DispatchQueue.main.async {
-            self.pillName?.text = name
+            self.pillName?.text = name + " " + dosage
             self.editTimePicker.date = time
             self.pillImage?.image = UIImage(named: "primaryPill")
             self.oldTime = time
@@ -57,8 +58,9 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         nowSecondaryPill = pill
         guard let name = pill.name else { return }
         guard let time = pill.takeTime else { return }
+        guard let dosage = pill.dosage else { return }
         DispatchQueue.main.async {
-            self.pillName?.text = name
+            self.pillName?.text = name + " " + dosage
             self.editTimePicker.date = time
             self.pillImage?.image = UIImage(named: "secondaryPill")
             self.oldTime = time
