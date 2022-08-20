@@ -50,7 +50,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" priority="750" constant="650" id="E0U-65-haD"/>
+                                <constraint firstAttribute="width" constant="650" id="i7L-I8-Nww"/>
                             </constraints>
                         </view>
                     </subviews>
