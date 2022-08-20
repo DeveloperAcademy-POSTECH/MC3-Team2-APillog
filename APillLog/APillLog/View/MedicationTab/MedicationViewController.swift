@@ -493,7 +493,6 @@ extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
             ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         }
         else {
-            CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
 
             secondaryPillTableView.reloadData()
         }
