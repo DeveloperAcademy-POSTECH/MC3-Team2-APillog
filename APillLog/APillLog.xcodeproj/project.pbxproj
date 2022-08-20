@@ -101,6 +101,8 @@
 		9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */; };
 		9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */; };
 		9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */; };
+		A8BC51C628A809A400DBA004 /* EditTimeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */; };
+		A8BC51C728A80B8200DBA004 /* EditTimeModalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */; };
 		A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
@@ -168,6 +170,7 @@
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
 		34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelPhone.swift; sourceTree = "<group>"; };
 		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
+
 
 		34743DD5289441FA00F3A2DC /* Apillog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apillog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 
@@ -246,6 +249,8 @@
 		9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSLicenseViewController.swift; sourceTree = "<group>"; };
 		9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsLicenseView.storyboard; sourceTree = "<group>"; };
 		9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLicenseViewController.swift; sourceTree = "<group>"; };
+		A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTimeModalView.storyboard; sourceTree = "<group>"; };
+		A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeModalViewController.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -315,7 +320,9 @@
 				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
 				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
 
+
 				873C4A6028A4F8D000C655AF /* DIYCalendarCell.swift */,
+
 
 				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
 				8711C43128951C3400F7625F /* HistoryDetailChartView */,
@@ -606,6 +613,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A8BC51C228A8096200DBA004 /* EditTimeModal */ = {
+			isa = PBXGroup;
+			children = (
+				A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */,
+				A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */,
+			);
+			path = EditTimeModal;
+			sourceTree = "<group>";
+		};
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +697,7 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
+				A8BC51C228A8096200DBA004 /* EditTimeModal */,
 				34CE29172889BA8300644E4E /* MedicationTabCustomCell */,
 				8BFE7524288802AC008748B9 /* CheckCondition */,
 				34440E5F28870ACD00AA3996 /* ManageDosingView */,
@@ -848,6 +865,7 @@
 				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
+				A8BC51C728A80B8200DBA004 /* EditTimeModalView.storyboard in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
@@ -964,6 +982,7 @@
 				34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */,
 				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
 				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
+				A8BC51C628A809A400DBA004 /* EditTimeModalViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
 				9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */,
 				9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */,
@@ -1252,7 +1271,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
+
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APillLog;
@@ -1287,7 +1308,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
+
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APillLog;

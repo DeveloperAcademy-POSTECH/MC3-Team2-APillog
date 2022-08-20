@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,21 +42,52 @@
                             <action selector="tapTakingPillButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OMS-fM-OF4"/>
                         </connections>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D2Y-9u-mnE">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="D2Y-9u-mnE">
                         <rect key="frame" x="80" y="15" width="162.5" height="35"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-E6-99C">
-                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-E6-99C">
+                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ObN-8V-L6t"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHu-YM-TXv">
-                                <rect key="frame" x="0.0" y="14.5" width="162.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0ad-rh-mgz">
+                                <rect key="frame" x="0.0" y="22" width="162.5" height="13"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHu-YM-TXv">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7T-Kb-yS6">
+                                        <rect key="frame" x="46.5" y="2.5" width="8" height="8"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="PcR-Ij-PFg"/>
+                                            <constraint firstAttribute="height" constant="8" id="bYK-Uy-u5l"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="pencil" catalog="system" symbolScale="small"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapEditTimeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wm2-C9-FNZ"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pT5-kN-Xzg">
+                                        <rect key="frame" x="59.5" y="0.0" width="103" height="13"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="RFk-Qg-Kvk"/>
+                                    <constraint firstItem="y7T-Kb-yS6" firstAttribute="centerY" secondItem="nHu-YM-TXv" secondAttribute="centerY" id="Son-wt-WnU"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -75,6 +108,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellTitleLabel" destination="FaO-E6-99C" id="xnX-FZ-dSo"/>
+                <outlet property="editTimeButton" destination="y7T-Kb-yS6" id="stX-eW-p8j"/>
                 <outlet property="pillImageView" destination="cfU-Vh-3kU" id="FNq-J0-HtZ"/>
                 <outlet property="takingPillButton" destination="L2j-7H-qGr" id="m2g-aM-aIk"/>
                 <outlet property="timeLogLabel" destination="nHu-YM-TXv" id="vqi-hf-H5K"/>
@@ -82,4 +116,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
