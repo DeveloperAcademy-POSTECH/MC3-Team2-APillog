@@ -23,30 +23,30 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
     var currentDate = Date()
     @IBAction func didTapSaveButton1(_ sender: Any) {
         currentDate = diaryWriteDatePicker1.date
-//        self.performSegue(withIdentifier: "DiaryWriteView2", sender: self)
-//        diaryWriteDatePicker2.date = currentDate
+        //        self.performSegue(withIdentifier: "DiaryWriteView2", sender: self)
+        //        diaryWriteDatePicker2.date = currentDate
     }
     
     
-//    @IBAction func didTapSaveButton(_ sender: Any) {
-//
-//        if  !actionTextView.text.trimmingCharacters(in: .whitespaces).isEmpty && !mistakeTextView.text.trimmingCharacters(in: .whitespaces).isEmpty{
-//            coredataManager.addCBT(selectDate: diaryWriteDatePicker1.date,mistakeContext: mistakeTextView.text,recognizeContext: recognizeTextView.text,actionContext: actionTextView.text)
-//            _ = navigationController?.popViewController(animated: true)
-//
-//            UserDefaults(suiteName:
-//                            "group.com.varcode.APillLog.ApilogWidget")!.set(actionTextView.text, forKey: "content")
-//            WidgetCenter.shared.reloadAllTimelines()
-//        }
-//        else{
-//            _ = navigationController?.popViewController(animated: true)
-//        }
-        
-
-//        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, mistakeContext: mistakeTextView.text, recognizeContext: recognizeTextView.text!, actionContext: actionTextView.text!)
-//        _ = navigationController?.popViewController(animated: true)
-
-//    }
+    //    @IBAction func didTapSaveButton(_ sender: Any) {
+    //
+    //        if  !actionTextView.text.trimmingCharacters(in: .whitespaces).isEmpty && !mistakeTextView.text.trimmingCharacters(in: .whitespaces).isEmpty{
+    //            coredataManager.addCBT(selectDate: diaryWriteDatePicker1.date,mistakeContext: mistakeTextView.text,recognizeContext: recognizeTextView.text,actionContext: actionTextView.text)
+    //            _ = navigationController?.popViewController(animated: true)
+    //
+    //            UserDefaults(suiteName:
+    //                            "group.com.varcode.APillLog.ApilogWidget")!.set(actionTextView.text, forKey: "content")
+    //            WidgetCenter.shared.reloadAllTimelines()
+    //        }
+    //        else{
+    //            _ = navigationController?.popViewController(animated: true)
+    //        }
+    
+    
+    //        coredataManager.addCBT(selectDate: diaryWriteDatePicker.date, mistakeContext: mistakeTextView.text, recognizeContext: recognizeTextView.text!, actionContext: actionTextView.text!)
+    //        _ = navigationController?.popViewController(animated: true)
+    
+    //    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let borderColor : UIColor = UIColor.AColor.accent
@@ -69,41 +69,41 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
             diaryWriteSaveButton1.backgroundColor = UIColor.AColor.accent
         }
         
-       }
+    }
     override func viewDidAppear(_ animated: Bool) {
         
-            self.mistakeTextView.becomeFirstResponder()
+        self.mistakeTextView.becomeFirstResponder()
         
         
         
         
     }
-
- 
+    
+    
     
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "DiaryWriteView2"){
+            let displayVC = segue.destination as! DiaryWriteViewController2
+            
+            //Assigns the name entered in the AViewController to display it in BViewController
+            
+            displayVC.currentDate = diaryWriteDatePicker1.date
+            displayVC.mistakeString = mistakeTextView.text
+            
+        }
     }
-    */
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-             if (segue.identifier == "DiaryWriteView2"){
-                 let displayVC = segue.destination as! DiaryWriteViewController2
-              
-               //Assigns the name entered in the AViewController to display it in BViewController
-               
-                 displayVC.currentDate = diaryWriteDatePicker1.date
-                 displayVC.mistakeString = mistakeTextView.text
-                 
-             }
-         }
 }
 
 

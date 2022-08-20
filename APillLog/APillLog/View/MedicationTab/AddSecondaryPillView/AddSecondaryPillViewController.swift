@@ -23,6 +23,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     let cellIdentifier = "SecondaryPillTableViewCell"
     var delegate: AddSecondaryPillViewControllerDelegate! = nil
     
+    var selectedTime: Date  = Date()
     
     var dummy: [String] = ["타이레놀정 500mg", "타이레놀정 160mg", "타이레놀정 80mg", "타이레놀현탁액 100ml", "부루펜시럽 80ml", "베아제정", "닥터베아제정", "훼스탈골드정", "훼스탈플러스정", "판콜에이내복액 30ml", "판피린티정", "제일쿨파스", "신신파스아렉스", "베아제정2", "닥터베아제정2", "훼스탈골드정2", "훼스탈플러스정2", "판콜에이내복액 30ml2", "판피린티정2", "제일쿨파스2", "신신파스아렉스2"]
     var filteredData: [String] = []
@@ -65,7 +66,7 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true)
-        CoreDataManager.shared.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: Date())
+        CoreDataManager.shared.addShowSecondaryPill(name: filteredData[indexPath.row], dosage: "", selectDate: changeDateFormat(date: selectedTime))
         CoreDataManager.shared.addRecentAddedSecondaryPill(name: filteredData[indexPath.row])
         self.delegate.didFinishModal()
     }
@@ -118,10 +119,21 @@ class AddSecondaryPillViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func tapAddPillButton() {
-        CoreDataManager.shared.addShowSecondaryPill(name: self.searchBar.text!, dosage: "", selectDate: Date())
+        CoreDataManager.shared.addShowSecondaryPill(name: self.searchBar.text!, dosage: "", selectDate: changeDateFormat(date: selectedTime))
         CoreDataManager.shared.addRecentAddedSecondaryPill(name: self.searchBar.text!)
         delegate.didFinishModal()
         dismiss(animated: true)
+    }
+    
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
     }
 }
 

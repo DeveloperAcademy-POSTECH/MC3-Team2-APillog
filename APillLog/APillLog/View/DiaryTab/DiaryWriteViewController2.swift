@@ -8,8 +8,8 @@
 import UIKit
 
 class DiaryWriteViewController2: UIViewController, UITextViewDelegate {
-     var currentDate = Date()
-     var mistakeString = ""
+    var currentDate = Date()
+    var mistakeString = ""
     @IBOutlet weak var diaryWriteDatePicker2: UIDatePicker!
     @IBOutlet weak var diaryWriteTextView2: UITextView!
     override func viewDidLoad() {
@@ -37,30 +37,30 @@ class DiaryWriteViewController2: UIViewController, UITextViewDelegate {
             diarySaveButton2.backgroundColor = UIColor.AColor.accent
         }
         
-       }
+    }
     @IBAction func didTabDiarySave(_ sender: Any) {
         currentDate = diaryWriteDatePicker2.date
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "DiaryWriteView3"){
+            let displayVC = segue.destination as! DiaryWriteViewController3
+            
+            //Assigns the name entered in the AViewController to display it in BViewController
+            
+            displayVC.currentDate = diaryWriteDatePicker2.date
+            displayVC.mistakeString = mistakeString
+            displayVC.recognizeString = diaryWriteTextView2.text
+            
+        }
     }
-    */
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-             if (segue.identifier == "DiaryWriteView3"){
-                 let displayVC = segue.destination as! DiaryWriteViewController3
-              
-               //Assigns the name entered in the AViewController to display it in BViewController
-               
-                 displayVC.currentDate = diaryWriteDatePicker2.date
-                 displayVC.mistakeString = mistakeString
-                 displayVC.recognizeString = diaryWriteTextView2.text
-                 
-             }
-         }
 }

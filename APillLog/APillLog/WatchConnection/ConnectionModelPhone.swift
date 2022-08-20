@@ -42,21 +42,37 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
             switch message["message"] as! String {
-            case "TakePill":
-                let time = message["time"] as! String
+                // 워치에서 약 복용을 누른 경우
+            case "take":
                 
-                switch time{
-                case "morning":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 1, takingTime: Date())
-                case "afternoon":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 2, takingTime: Date())
-                case "evening":
-                    CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: 4, takingTime: Date())
-                default:
-                    print("Wrong Watch Take Pill Message")
+                let pillName = message["name"] as? String ?? ""
+                let dosage = message["dosage"] as? String ?? ""
+                let cycle = message["cycle"] as? Int16 ?? 0
+                let date = message["time"] as? Date ?? Date()
+                
+                let pill = CoreDataManager.shared.findShowPrimaryPillWith(name: pillName, dosage: dosage, cycle: cycle)
+                if let pill = pill {
+                    CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: pill, takingTime: date)
                 }
+
                 self.delegate?.reloadTableView()
                 
+                // 워치에서 약 복용을 취소한 경우
+            case "cancelTake":
+                
+                let pillName = message["name"] as? String ?? ""
+                let dosage = message["dosage"] as? String ?? ""
+                let cycle = message["cycle"] as? Int16 ?? 0
+                
+                let pill = CoreDataManager.shared.findShowPrimaryPillWith(name: pillName, dosage: dosage, cycle: cycle)
+                
+                if let pill = pill {
+                    CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: pill)
+                }
+                
+                self.delegate?.reloadTableView()
+                
+                // 워치에서 증상입력을 한 경우
             case "Condition":
                 let pillName =  message["pillName"] as? String ?? nil
                 let dosage =  message["dosage"] as? String ?? nil
@@ -87,11 +103,13 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
     }
     
     func sendShowPrimaryPillToWatch() {
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
-        
+  
         let pillList = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: Date())
-        
+    
+        // 1. 전송 시작 알림 + 초기화 요청
+        ConnectionModelPhone.shared.session.sendMessage(["message":"reset"], replyHandler: nil)
+
+        // 2. 데이터 전송
         for pill in pillList {
             let cycle = pill.cycle
             let dosage = pill.dosage ?? "복용량없음"
@@ -100,8 +118,8 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
             let name = pill.name ?? "이름없음"
             let selectDate = pill.selectDate ?? watchDateFormatter.string(from: Date())
             let takeTime = pill.takeTime == nil ? Date(timeIntervalSince1970: 0) : pill.takeTime!
-            
-            
+
+
             ConnectionModelPhone.shared.session.sendMessage(["message": "pillData",
                                                              "cycle": cycle,
                                                              "dosage": dosage,
@@ -112,8 +130,8 @@ class ConnectionModelPhone : NSObject,  ObservableObject, WCSessionDelegate{
                                                              "takeTime": takeTime
                                                             ], replyHandler: nil)
         }
-        
-        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
 
+        // 3. 전송 완료 알림
+        ConnectionModelPhone.shared.session.sendMessage(["message":"update"], replyHandler: nil)
     }
 }

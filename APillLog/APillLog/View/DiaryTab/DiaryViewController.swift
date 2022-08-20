@@ -8,14 +8,12 @@
 import UIKit
 import WidgetKit
 
-class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var mistakeTableView: UITableView!
-    
-    
-    
+    @IBOutlet weak var mistakeTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
     let cellIdentifier = "customCell"
-    var myCBT : [CBT] = [CBT()]
+    var myCBT : [CBT] = []
     var selectedBody = ""
     var selectedDate = ""
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +32,26 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         return cell
     }
     
-    
+    override func viewWillLayoutSubviews() {
+        
+        filterDocument()
+        super.updateViewConstraints()
+        if self.myCBT.count == 0{
+            self.mistakeTableViewHeight?.constant = 200
+            
+        }
+        else if self.mistakeTableView.contentSize.height > 300 && UIScreen.main.bounds.height<700{
+            self.mistakeTableViewHeight?.constant = 270
+        }
+        else if self.mistakeTableView.contentSize.height > 300{
+            self.mistakeTableViewHeight?.constant = 370
+        }
+        else{
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 55
+        }
+        self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        diaryViewGuideLabel.isHidden = myCBT.count == 0 ? false : true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +64,8 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
         mistakeTableView.rowHeight = 55
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
         
-        
     }
-  
+    
     override func viewWillAppear(_ animated: Bool) {
         myCBT = CoreDataManager.shared.fetchCBT()
         myCBT = myCBT.sorted(by: {
@@ -68,6 +84,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
+        filterDocument()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,9 +127,9 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     func tableView(
-            _ tableView: UITableView,
-            commit editingStyle: UITableViewCell.EditingStyle,
-            forRowAt indexPath: IndexPath
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
     ) {
         if editingStyle == .delete {
             let CBT = myCBT[indexPath.row]
@@ -120,14 +137,53 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
             myCBT.remove(at: indexPath.row)
             self.mistakeTableView.reloadData()
             diaryViewGuideLabel.isHidden = myCBT.isEmpty ? false : true
+            self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+            adjustTableHeight()
             UserDefaults(suiteName:
                             "group.com.varcode.APillLog.ApilogWidget")!.set(myCBT.isEmpty ? "실수노트를 추가해주세요" : myCBT[0].actionContext, forKey: "content")
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
-    
-    
+    func filterDocument(){
+        myCBT = CoreDataManager.shared.fetchCBT()
+        myCBT = myCBT.sorted(by: {
+            $0.selectDate!>$1.selectDate!
+        })
+        var tempCbtArr : [CBT] =  []
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "yyyy-MM"
+        
+        let baseDate = stringFormatter.string(from: Date())
+        var baseDateArray = baseDate.components(separatedBy: "-")
+        for i in 0..<myCBT.count{
+            var cbtDateArray = myCBT[i].selectDate?.components(separatedBy: "-")
+            if (baseDateArray[0] == cbtDateArray?[0])&&(baseDateArray[1] == cbtDateArray?[1]){
+                tempCbtArr.append(myCBT[i])
+            }
+            
+        }
+        myCBT.removeAll()
+        myCBT = tempCbtArr
+        mistakeTableView.reloadData()
+    }
+    func adjustTableHeight(){
+        if self.myCBT.count == 0{
+            self.mistakeTableViewHeight?.constant = 200
+            
+        }
+        else if self.mistakeTableView.contentSize.height > 300 && UIScreen.main.bounds.height<700{
+            self.mistakeTableViewHeight?.constant = 270
+        }
+        else if self.mistakeTableView.contentSize.height > 300{
+            self.mistakeTableViewHeight?.constant = 370
+        }
+        else{
+            self.mistakeTableViewHeight?.constant = self.mistakeTableView.contentSize.height + 55
+        }
+        self.mistakeTableView.isScrollEnabled = myCBT.count == 0 ? false : true
+        diaryViewGuideLabel.isHidden = myCBT.count == 0 ? false : true
+    }
     
     /*
      // MARK: - Navigation

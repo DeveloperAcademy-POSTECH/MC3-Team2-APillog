@@ -20,7 +20,7 @@
 		34743DEB289441FB00F3A2DC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743DEA289441FB00F3A2DC /* ComplicationController.swift */; };
 		34743DED289441FC00F3A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DEC289441FC00F3A2DC /* Assets.xcassets */; };
 		34743DF0289441FC00F3A2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34743DEF289441FC00F3A2DC /* Preview Assets.xcassets */; };
-		34743DF5289441FC00F3A2DC /* ApillLogWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34743DD5289441FA00F3A2DC /* ApillLogWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34743DF5289441FC00F3A2DC /* Apillog.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34743DD5289441FA00F3A2DC /* Apillog.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34743DFE2894482200F3A2DC /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF1288A6D43006204AB /* History+CoreDataClass.swift */; };
 		34743DFF2894482200F3A2DC /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDEAF2288A6D43006204AB /* History+CoreDataProperties.swift */; };
 		34743E002894482200F3A2DC /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A273BFA2883ED1B0006427B /* Condition+CoreDataProperties.swift */; };
@@ -51,6 +51,9 @@
 		47BA8B0CBAC25FBE7497C66C /* Pods_APillLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2897B15520E7A2A0BB7E838 /* Pods_APillLog.framework */; };
 		781247C42897B217002E0C10 /* ApilogWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */; };
 		781247C82897B5C6002E0C10 /* ConnectionModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */; };
+		7812482D28A4071D002E0C10 /* DiaryStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812482C28A4071D002E0C10 /* DiaryStorageViewController.swift */; };
+		7812482F28A5235B002E0C10 /* CalendarMonthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7812482E28A5235B002E0C10 /* CalendarMonthView.xib */; };
+		7812483328A5275F002E0C10 /* CalendarMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812483228A5275F002E0C10 /* CalendarMonth.swift */; };
 		781EABC82891B37100F1A2F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC72891B37100F1A2F4 /* WidgetKit.framework */; };
 		781EABCA2891B37100F1A2F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781EABC92891B37100F1A2F4 /* SwiftUI.framework */; };
 		781EABCD2891B37100F1A2F4 /* ApilogWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781EABCC2891B37100F1A2F4 /* ApilogWidget.swift */; };
@@ -66,6 +69,7 @@
 		8711C43428951C7B00F7625F /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */; };
 		8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */; };
 		8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */; };
+		873C4A6128A4F8D000C655AF /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C4A6028A4F8D000C655AF /* DIYCalendarCell.swift */; };
 		8750B95D2895981500BF9136 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */; };
 		876ED1A02882A33B00179767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED19F2882A33B00179767 /* AppDelegate.swift */; };
@@ -79,6 +83,7 @@
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
 		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
+		8B1DBD8828A48CC7007580D7 /* ConditionChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DBD8728A48CC7007580D7 /* ConditionChipButton.swift */; };
 		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
 		8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */; };
 		8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */; };
@@ -107,6 +112,8 @@
 		9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */; };
 		9AE1C0F92896B1DC00325FE2 /* ChartsLicenseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */; };
 		9AE1C0FB2896B1FB00325FE2 /* ChartsLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */; };
+		A8BC51C628A809A400DBA004 /* EditTimeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */; };
+		A8BC51C728A80B8200DBA004 /* EditTimeModalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */; };
 		A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */; };
 		A8E30319289555DA00E16C21 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */; };
 		A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */; };
@@ -157,7 +164,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				34743DF5289441FC00F3A2DC /* ApillLogWatch.app in Embed Watch Content */,
+				34743DF5289441FC00F3A2DC /* Apillog.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +199,7 @@
 		34440E6228870B1200AA3996 /* ManageDosingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDosingViewController.swift; sourceTree = "<group>"; };
 		34500DCD28944AE100CC96F1 /* ConnectionModelPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModelPhone.swift; sourceTree = "<group>"; };
 		3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetailView.storyboard; sourceTree = "<group>"; };
-		34743DD5289441FA00F3A2DC /* ApillLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApillLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34743DD5289441FA00F3A2DC /* Apillog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apillog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34743DD7289441FB00F3A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ApillLogWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34743DE2289441FB00F3A2DC /* APillLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APillLogApp.swift; sourceTree = "<group>"; };
@@ -213,6 +220,9 @@
 		34CE29112889308200644E4E /* MedicationPillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationPillCell.swift; sourceTree = "<group>"; };
 		34F397C52892E8B20074A03D /* EmptyDosingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDosingTableViewCell.swift; sourceTree = "<group>"; };
 		34F397C62892E8B20074A03D /* EmptyDosingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDosingTableViewCell.xib; sourceTree = "<group>"; };
+		7812482C28A4071D002E0C10 /* DiaryStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStorageViewController.swift; sourceTree = "<group>"; };
+		7812482E28A5235B002E0C10 /* CalendarMonthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarMonthView.xib; sourceTree = "<group>"; };
+		7812483228A5275F002E0C10 /* CalendarMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonth.swift; sourceTree = "<group>"; };
 		781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ApilogWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		781EABC72891B37100F1A2F4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		781EABC92891B37100F1A2F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -232,6 +242,7 @@
 		8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		8711C43928951C9F00F7625F /* HistoryDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailChartView.swift; sourceTree = "<group>"; };
 		8711C43B28951CAC00F7625F /* HistoryDetailChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailChartView.xib; sourceTree = "<group>"; };
+		873C4A6028A4F8D000C655AF /* DIYCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
 		8750B9572895963A00BF9136 /* HistoryDetailProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailProgressViewCell.swift; sourceTree = "<group>"; };
 		8750B96A2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailProgressViewCell.xib; sourceTree = "<group>"; };
 		876ED19C2882A33B00179767 /* APillLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APillLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +260,7 @@
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.debug.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.debug.xcconfig"; sourceTree = "<group>"; };
+		8B1DBD8728A48CC7007580D7 /* ConditionChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionChipButton.swift; sourceTree = "<group>"; };
 		8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrimaryPillViewController.swift; sourceTree = "<group>"; };
 		8B942B0028854E8500507AC5 /* AddPrimaryPill.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPrimaryPill.storyboard; sourceTree = "<group>"; };
 		8B942B022885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryPillDosingCycleChipButton.swift; sourceTree = "<group>"; };
@@ -277,6 +289,8 @@
 		9AE1C0F62896B14F00325FE2 /* FSLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSLicenseViewController.swift; sourceTree = "<group>"; };
 		9AE1C0F82896B1DC00325FE2 /* ChartsLicenseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsLicenseView.storyboard; sourceTree = "<group>"; };
 		9AE1C0FA2896B1FB00325FE2 /* ChartsLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLicenseViewController.swift; sourceTree = "<group>"; };
+		A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTimeModalView.storyboard; sourceTree = "<group>"; };
+		A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeModalViewController.swift; sourceTree = "<group>"; };
 		A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Color.swift"; sourceTree = "<group>"; };
 		A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APillLog+Font.swift"; sourceTree = "<group>"; };
 		A8F4F2AC288477380008EB48 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
@@ -354,6 +368,7 @@
 			children = (
 				3459C3DC289519D200C68B34 /* HistoryDetailView.storyboard */,
 				8711C43328951C7B00F7625F /* HistoryDetailViewController.swift */,
+				873C4A6028A4F8D000C655AF /* DIYCalendarCell.swift */,
 				8711C43228951C3D00F7625F /* HistoryDetailProgressView */,
 				8711C43128951C3400F7625F /* HistoryDetailChartView */,
 			);
@@ -372,7 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				34743DE2289441FB00F3A2DC /* APillLogApp.swift */,
+				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
 				34743DE4289441FB00F3A2DC /* ContentView.swift */,
+				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
 				34743E14289448E000F3A2DC /* CheckConditionView.swift */,
 				34743DE6289441FB00F3A2DC /* NotificationController.swift */,
 				34743DE8289441FB00F3A2DC /* NotificationView.swift */,
@@ -381,8 +398,6 @@
 				34743DF1289441FC00F3A2DC /* Info.plist */,
 				34743DF2289441FC00F3A2DC /* PushNotificationPayload.apns */,
 				34743DEE289441FC00F3A2DC /* Preview Content */,
-				34743E10289448AF00F3A2DC /* ConnectionModelWatch.swift */,
-				34743E12289448D000F3A2DC /* RecordPrimaryPillView.swift */,
 			);
 			path = "ApillLogWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -479,7 +494,7 @@
 			children = (
 				876ED19C2882A33B00179767 /* APillLog.app */,
 				781EABC52891B37100F1A2F4 /* ApilogWidgetExtension.appex */,
-				34743DD5289441FA00F3A2DC /* ApillLogWatch.app */,
+				34743DD5289441FA00F3A2DC /* Apillog.app */,
 				34743DDD289441FB00F3A2DC /* ApillLogWatch WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -515,6 +530,8 @@
 			children = (
 				87D759312887F172007FCDF0 /* CalendarView.xib */,
 				87D759332887F180007FCDF0 /* CalendarView.swift */,
+				7812482E28A5235B002E0C10 /* CalendarMonthView.xib */,
+				7812483228A5275F002E0C10 /* CalendarMonth.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -534,6 +551,7 @@
 			children = (
 				8BFE752528880310008748B9 /* CheckConditionView.storyboard */,
 				8BFE75272888031A008748B9 /* CheckConditionViewController.swift */,
+				8B1DBD8728A48CC7007580D7 /* ConditionChipButton.swift */,
 			);
 			path = CheckCondition;
 			sourceTree = "<group>";
@@ -666,6 +684,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A8BC51C228A8096200DBA004 /* EditTimeModal */ = {
+			isa = PBXGroup;
+			children = (
+				A8BC51C528A809A400DBA004 /* EditTimeModalViewController.swift */,
+				A8BC51C328A8099600DBA004 /* EditTimeModalView.storyboard */,
+			);
+			path = EditTimeModal;
+			sourceTree = "<group>";
+		};
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +764,7 @@
 				786006DA28951CFF00E6A07C /* DiaryWriteViewController3.swift */,
 				78D8B11D28884DA900ADF830 /* CustomCellTableViewCell.swift */,
 				786006FC289655DC00E6A07C /* DiaryEditViewController.swift */,
+				7812482C28A4071D002E0C10 /* DiaryStorageViewController.swift */,
 			);
 			path = DiaryTab;
 			sourceTree = "<group>";
@@ -744,6 +772,7 @@
 		A8F4F2C2288478010008EB48 /* MedicationTab */ = {
 			isa = PBXGroup;
 			children = (
+				A8BC51C228A8096200DBA004 /* EditTimeModal */,
 				34CE29172889BA8300644E4E /* MedicationTabCustomCell */,
 				8BFE7524288802AC008748B9 /* CheckCondition */,
 				34440E5F28870ACD00AA3996 /* ManageDosingView */,
@@ -772,7 +801,7 @@
 			);
 			name = ApillLogWatch;
 			productName = ApillLogWatch;
-			productReference = 34743DD5289441FA00F3A2DC /* ApillLogWatch.app */;
+			productReference = 34743DD5289441FA00F3A2DC /* Apillog.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		34743DDC289441FB00F3A2DC /* ApillLogWatch WatchKit Extension */ = {
@@ -943,6 +972,8 @@
 				8711C43C28951CAC00F7625F /* HistoryDetailChartView.xib in Resources */,
 				8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */,
 				8750B96B2895B0EC00BF9136 /* HistoryDetailProgressViewCell.xib in Resources */,
+				A8BC51C728A80B8200DBA004 /* EditTimeModalView.storyboard in Resources */,
+				7812482F28A5235B002E0C10 /* CalendarMonthView.xib in Resources */,
 				876ED1AC2882A33C00179767 /* Assets.xcassets in Resources */,
 				A8F4F2BD288477390008EB48 /* AppleSDGothicNeoB.ttf in Resources */,
 				A8F4F2BC288477390008EB48 /* AppleSDGothicNeoH.ttf in Resources */,
@@ -1043,6 +1074,7 @@
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
 				9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */,
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
+				7812483328A5275F002E0C10 /* CalendarMonth.swift in Sources */,
 				8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */,
 				A8F4F2CD28847A450008EB48 /* DiaryViewController.swift in Sources */,
 				9A273BFC2883ED1B0006427B /* Condition+CoreDataProperties.swift in Sources */,
@@ -1061,14 +1093,17 @@
 				78D8B11C2887E6E100ADF830 /* MyCustomHeader.swift in Sources */,
 				34CE29122889308200644E4E /* MedicationPillCell.swift in Sources */,
 				34F397C72892E8B20074A03D /* EmptyDosingTableViewCell.swift in Sources */,
+				7812482D28A4071D002E0C10 /* DiaryStorageViewController.swift in Sources */,
 				786006D928951CF100E6A07C /* DiaryWriteViewController2.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
+				8B1DBD8828A48CC7007580D7 /* ConditionChipButton.swift in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
 				34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */,
 				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
 				9A91D60F2891519A0026F3B6 /* PreferencesViewController.swift in Sources */,
+				A8BC51C628A809A400DBA004 /* EditTimeModalViewController.swift in Sources */,
 				87D759342887F180007FCDF0 /* CalendarView.swift in Sources */,
 				9AE1C0F72896B14F00325FE2 /* FSLicenseViewController.swift in Sources */,
 				9A890AFA2891B2DB00BD312C /* AppVersionCheck.swift in Sources */,
@@ -1080,6 +1115,7 @@
 				8711C43A28951C9F00F7625F /* HistoryDetailChartView.swift in Sources */,
 				34440E6328870B1200AA3996 /* ManageDosingViewController.swift in Sources */,
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
+				873C4A6128A4F8D000C655AF /* DIYCalendarCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1136,12 +1172,11 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apillog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1163,12 +1198,11 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = ApillLogWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apillog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1197,7 +1231,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1228,7 +1262,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1251,7 +1285,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApilogWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1259,7 +1293,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1280,7 +1314,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApilogWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ApilogWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1288,7 +1322,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1429,6 +1463,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1441,7 +1476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1465,6 +1500,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1477,7 +1513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
