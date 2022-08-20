@@ -53,22 +53,22 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="primaryPill" translatesAutoresizingMaskIntoConstraints="NO" id="c7V-RV-FL0">
-                                <rect key="frame" x="150" y="124" width="114" height="114"/>
+                                <rect key="frame" x="150" y="109" width="114" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c7V-RV-FL0" secondAttribute="height" id="p5r-Cv-8kF"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVO-OQ-hnB">
-                                <rect key="frame" x="25" y="268" width="364" height="216"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iDO-fZ-Ajp">
+                                <rect key="frame" x="25" y="238" width="364" height="241.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcl-Gu-2kq">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-PE-zgF">
-                                        <rect key="frame" x="41.5" y="0.0" width="322.5" height="216"/>
+                                        <rect key="frame" x="0.0" y="25.5" width="364" height="216"/>
                                     </datePicker>
                                 </subviews>
                             </stackView>
@@ -76,14 +76,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KVO-OQ-hnB" firstAttribute="top" secondItem="c7V-RV-FL0" secondAttribute="bottom" constant="30" id="1LK-YE-W6I"/>
+                            <constraint firstItem="iDO-fZ-Ajp" firstAttribute="top" secondItem="c7V-RV-FL0" secondAttribute="bottom" constant="15" id="5vl-aO-N2x"/>
                             <constraint firstItem="ro5-Vk-Box" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="72B-MB-IYs"/>
                             <constraint firstItem="ro5-Vk-Box" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="986-H8-uiq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ro5-Vk-Box" secondAttribute="trailing" id="EcC-hh-Ukx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KVO-OQ-hnB" secondAttribute="trailing" constant="25" id="cBc-rs-CUN"/>
-                            <constraint firstItem="c7V-RV-FL0" firstAttribute="top" secondItem="ro5-Vk-Box" secondAttribute="bottom" constant="30" id="gtO-QJ-TV9"/>
+                            <constraint firstAttribute="trailing" secondItem="iDO-fZ-Ajp" secondAttribute="trailing" constant="25" id="KFP-mY-XMG"/>
+                            <constraint firstItem="iDO-fZ-Ajp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="el9-3v-7aM"/>
+                            <constraint firstItem="c7V-RV-FL0" firstAttribute="top" secondItem="ro5-Vk-Box" secondAttribute="bottom" constant="15" id="gtO-QJ-TV9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="c7V-RV-FL0" secondAttribute="trailing" constant="150" id="iRk-9X-0G9"/>
-                            <constraint firstItem="KVO-OQ-hnB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="kgv-0Z-dgT"/>
                             <constraint firstItem="c7V-RV-FL0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="150" id="lFa-lM-i8Y"/>
                         </constraints>
                     </view>

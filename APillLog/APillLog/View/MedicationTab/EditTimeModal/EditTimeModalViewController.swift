@@ -26,6 +26,7 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
 
     // MARK: Properties
     var delegate: EditTimeViewToMedicationViewDelegate?
+    var oldTime = Date()
     var newTime = Date()
     var isPrimary = true
     var nowPrimaryPill = ShowPrimaryPill()
@@ -35,6 +36,7 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         super.viewDidLoad()
         setEditTimeModalView()
         setEditTimePicker()
+        detectEnableSaveButton()
     }
 
     // MARK: Functions
@@ -47,6 +49,7 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
             self.pillName?.text = name
             self.editTimePicker.date = time
             self.pillImage?.image = UIImage(named: "primaryPill")
+            self.oldTime = time
         }
     }
     func configure(pill: ShowSecondaryPill) {
@@ -58,10 +61,12 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
             self.pillName?.text = name
             self.editTimePicker.date = time
             self.pillImage?.image = UIImage(named: "secondaryPill")
+            self.oldTime = time
         }
     }
 
     func setEditTimeModalView() {
+        // modal
         modalPresentationStyle = .custom
         editTimeModalViewPresentationController.delegate = self
         editTimeModalViewPresentationController.selectedDetentIdentifier = .large
@@ -69,11 +74,14 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         editTimeModalViewPresentationController.detents = [.medium()]
         cancelButton.tintColor = UIColor.AColor.accent
         saveButton.tintColor = UIColor.AColor.accent
+        
+        // style
+        pillName?.font = UIFont.AFont.cardViewTitle
     }
 
     func setEditTimePicker() {
         editTimePicker.datePickerMode = .time
-        editTimePicker.preferredDatePickerStyle = .inline
+        editTimePicker.preferredDatePickerStyle = .wheels
         editTimePicker.locale = Locale(identifier: "ko_KR")
         editTimePicker.addTarget(self, action: #selector(newTimeSelected), for: .valueChanged)
     }
@@ -81,6 +89,7 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
     @objc
     func newTimeSelected(){
         newTime = editTimePicker.date
+        detectEnableSaveButton()
     }
 
     // MARK: IBACtions
@@ -96,6 +105,14 @@ class EditTimeModalViewController: UIViewController, MedicationViewToEditTimeVie
         }
         self.delegate?.didTimeChanged(isPrimary: isPrimary)
         self.presentingViewController?.dismiss(animated: true)
+    }
+    
+    private func detectEnableSaveButton(){
+        if oldTime == editTimePicker.date {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
     }
 }
 
