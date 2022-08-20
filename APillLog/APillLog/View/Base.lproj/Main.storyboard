@@ -68,7 +68,7 @@
         <scene sceneID="M3h-6R-PUJ">
             <objects>
                 <viewControllerPlaceholder storyboardName="PreferencesView" id="dLJ-Fc-btE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zsS-G7-TPe"/>
+                    <tabBarItem key="tabBarItem" title="설정" id="zsS-G7-TPe"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgX-eV-kdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

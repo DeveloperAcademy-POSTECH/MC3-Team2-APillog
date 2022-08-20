@@ -13,7 +13,7 @@ struct APillLogApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView(connectionModelWatch: ConnectionModelWatch.shared)
                     .onAppear {
                         ConnectionModelWatch.shared.session.sendMessage(["message":"active"], replyHandler: nil)
                     }
