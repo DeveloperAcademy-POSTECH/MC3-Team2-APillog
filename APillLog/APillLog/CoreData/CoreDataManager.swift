@@ -945,13 +945,13 @@ class CoreDataManager {
     }
     
     
-    func fetchPillInformationLastWeek() -> [(String, Int, Int)] {
+    func fetchPillInformation(endDate: Date, range: Int) -> [(String, Int, Int)] {
         var result = [(String, Int, Int)]()
         var doneTakePill = [String: Int]()
         var doTakePill = [String: Int]()
         
-        for i in 0..<7 {
-            let date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+        for i in 0..<range {
+            let date = Calendar.current.date(byAdding: .day, value: -i, to: endDate)
             let showPrimaryPill = CoreDataManager.shared.fetchShowPrimaryPill(selectedDate: date!)
             
             for pill in showPrimaryPill {
