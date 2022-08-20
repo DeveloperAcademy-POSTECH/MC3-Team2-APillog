@@ -49,7 +49,7 @@ class HistoryDetailChartView: UIView {
         barChartView.noDataText = "아직 남긴 기록이 없어요"
         barChartView.noDataTextColor = .lightGray
         
-        loadData()
+        loadData(startDate: Date(), range: 7)
         setChart(dataPoints: sideEffect, values: sideEffectCount)
     }
     
@@ -104,20 +104,22 @@ class HistoryDetailChartView: UIView {
 
     }
     
-    func loadData() {
-        sideEffect = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
-        dateArray = ["", "", "", "", "", "", "",]
-        sideEffectCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        sideEffectCountPerDate = [0, 0, 0, 0, 0, 0, 0]
+    func loadData(startDate: Date, range: Int) {
         
-        var date = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
-        for idx in 0..<7 {
-            dateArray[idx] = dateFormatter.string(from: date)
-            let history: [History] = CoreDataManager.shared.fetchHistory(selectedDate: date)
+        sideEffect = ["불면", "두근거림", "두통", "어지러움", "불안", "식욕감소", "구역", "입안건조", "과민성", "땀과다증"]
+        dateArray = Array(repeating: "", count: range)
+        sideEffectCount = Array(repeating: 0, count: 10)
+        sideEffectCountPerDate = Array(repeating: 0, count: range)
+        
+        for index in 0..<range {
+            let date = Calendar.current.date(byAdding: .day, value: index, to: startDate)
+            dateArray[index] = dateFormatter.string(from: date ?? Date())
             
-            for data in history {
+            let history = CoreDataManager.shared.fetchHistory(selectedDate: date ?? Date())
+            
+            history.forEach { data in
                 for effect in data.sideEffect ?? [] {
-                    sideEffectCountPerDate[idx] += Double(effect.count)
+                    sideEffectCountPerDate[index] += Double(effect.count)
                     
                     switch effect {
                     case "불면":
@@ -155,14 +157,19 @@ class HistoryDetailChartView: UIView {
                     }
                 }
             }
-            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         }
-        
         sortSideEffect()
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            setChart(dataPoints: sideEffect, values: sideEffectCount)
+        case 1:
+            setChart(dataPoints: dateArray, values: sideEffectCountPerDate)
+        default:
+            print("잘못된 Segmented Control Index")
+        }
     }
     
-    // 리스트의 값을 이용해 인덱스를 정렬하는 함수
-    // ex) [ 10, -1, 7] -> [0, 2, 1]
     func argsort<T:Comparable>( a : [T] ) -> [Int] {
         var r = Array(0..<a.count)
         r.sort(by: { a[$0] > a[$1] })
