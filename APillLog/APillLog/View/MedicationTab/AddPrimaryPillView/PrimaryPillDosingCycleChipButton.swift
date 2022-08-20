@@ -16,7 +16,7 @@ class PrimaryPillDosingCycleChipButton: UIButton {
             if isInitButton {
                 self.setTitleColor(UIColor.AColor.gray, for: .normal)
                 self.layer.borderWidth = 1
-                self.layer.borderColor = UIColor.AColor.disable.cgColor
+                self.layer.borderColor = UIColor.AColor.textFieldBorder.cgColor
                 self.layer.cornerRadius = self.frame.height / 2
                 self.titleLabel?.font = UIFont.AFont.buttonText
             }
