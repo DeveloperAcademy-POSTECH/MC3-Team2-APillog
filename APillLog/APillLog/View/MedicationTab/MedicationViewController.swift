@@ -97,6 +97,7 @@ class MedicationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         historyData = CoreDataManager.shared.fetchHistory(selectedDate: date)
+        ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
     }
 
     @IBAction func selectTimeSegmentedControl(_ sender: Any) {
@@ -379,6 +380,7 @@ extension MedicationViewController: TakeMedicationDelegate {
         if isPrimary {
             CoreDataManager.shared.recordHistoryAndChangeShowPrimaryIsTaking(showPrimaryPill: primaryPillListDataSource[rowNumber], takingTime: changeDateFormat(date: takingTime))
             primaryPillTableView.reloadData()
+            ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         } else {
             CoreDataManager.shared.recordHistoryAndChangeShowSecondaryIsTaking(showSecondaryPill: secondaryPillList[rowNumber], takingTime: changeDateFormat(date: takingTime))
             secondaryPillTableView.reloadData()
@@ -388,6 +390,7 @@ extension MedicationViewController: TakeMedicationDelegate {
         if isPrimary {
             CoreDataManager.shared.changePrimaryIsTakingAndCancelHistory(showPrimaryPill: primaryPillListDataSource[rowNumber])
             primaryPillTableView.reloadData()
+            ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         }
         else {
             CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
@@ -401,8 +404,6 @@ extension MedicationViewController: ConnectionModelPhoneDelegate {
     func reloadTableView() {
         reloadPrimaryPillTableView()
     }
-    
-    
 }
 
 extension MedicationViewController: CalendarViewDelegate {
