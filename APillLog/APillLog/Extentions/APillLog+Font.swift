@@ -27,7 +27,7 @@ private let customFonts: [UIFont.TextStyle: UIFont] = [
     .title1: UIFont(name: "AppleSDGothicNEOB00", size: 20)!,
     .title2: UIFont(name: "AppleSDGothicNEOB00", size: 18)!,
     .title3: UIFont(name: "AppleSDGothicNEOB00", size: 17)!,
-    .headline: UIFont(name: "AppleSDGothicNEOEB00", size: 17)!,
+    .headline: UIFont(name: "AppleSDGothicNEOSB00", size: 16)!,
     .body: UIFont(name: "AppleSDGothicNeoR00", size: 16)!,
     .callout: UIFont(name: "AppleSDGothicNeoR00", size: 15)!,
     .subheadline: UIFont(name: "AppleSDGothicNeoR00", size: 15)!,
@@ -54,6 +54,7 @@ extension UIFont {
         static var calenderText: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var modalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         static var halfModalViewTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
+        static var checkConditionViewSectionTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title1) }
         
         static var navigationTitle: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
         static var datePickerText: UIFont { UIFont.APillLogFont(forTextStyle: .title2) }
@@ -67,7 +68,6 @@ extension UIFont {
         
         static var tableViewBody: UIFont { UIFont.APillLogFont(forTextStyle: .body) }
         static var searchResult: UIFont { UIFont.APillLogFont(forTextStyle: .body) }
-        static var chipText: UIFont { UIFont.APillLogFont(forTextStyle: .body) }
         static var articleBody: UIFont { UIFont.APillLogFont(forTextStyle: .body) }
         
         static var placeholder: UIFont { UIFont.APillLogFont(forTextStyle: .caption1) }
@@ -80,6 +80,8 @@ extension UIFont {
         static var explainText: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         static var segmentedControl: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
         static var caption: UIFont { UIFont.APillLogFont(forTextStyle: .caption2) }
+        
+        static var chipText: UIFont { UIFont.APillLogFont(forTextStyle: .headline) }
         
         static var historyCategory: UIFont { UIFont.APillLogFont(forTextStyle: .body)}
         
