@@ -9,7 +9,7 @@ import UIKit
 import WidgetKit
 
 class DiaryWriteViewController3: UIViewController, UITextViewDelegate {
-
+    
     var coredataManager: CoreDataManager = CoreDataManager()
     @IBOutlet weak var diaryWriteDatePicker3: UIDatePicker!
     @IBOutlet weak var diaryWriteTextView3: UITextView!
@@ -45,23 +45,23 @@ class DiaryWriteViewController3: UIViewController, UITextViewDelegate {
             diarySaveButton3.backgroundColor = UIColor.AColor.accent
         }
         
-       }
+    }
     @IBAction func didTapSaveButton3(_ sender: Any) {
         coredataManager.addCBT(selectDate: diaryWriteDatePicker3.date, mistakeContext: mistakeString, recognizeContext: recognizeString, actionContext: diaryWriteTextView3.text)
         self.navigationController?.popToRootViewController(animated: true)
         UserDefaults(suiteName:"group.com.varcode.APillLog.ApilogWidget")!.set(diaryWriteTextView3.text, forKey: "content")
-                    WidgetCenter.shared.reloadAllTimelines()
+        WidgetCenter.shared.reloadAllTimelines()
         
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

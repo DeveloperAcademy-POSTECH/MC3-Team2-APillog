@@ -9,14 +9,14 @@ import UIKit
 import CoreData
 
 class DiaryReadViewController: UIViewController {
-
+    
     var date = ""
     var body = ""
     var recognizeString = ""
     var actionString = ""
     var id  = UUID()
     var receivedCBT : CBT = CBT()
-
+    
     @IBOutlet weak var DiaryReadViewDate: UILabel!
     @IBOutlet weak var DiaryReadViewBody: UITextView!
     @IBOutlet weak var DiaryReadRecognizeString: UITextView!
@@ -42,11 +42,11 @@ class DiaryReadViewController: UIViewController {
         
     }
     
- 
+    
     override func viewWillDisappear(_ animated: Bool) {
-//        receivedCBT.mistakeContext = DiaryReadViewBody.text
-//        receivedCBT.selectDate = DiaryReadViewDate.text
-//        coredataManager.updateOneCBT(receivedCBT: receivedCBT)
+        //        receivedCBT.mistakeContext = DiaryReadViewBody.text
+        //        receivedCBT.selectDate = DiaryReadViewDate.text
+        //        coredataManager.updateOneCBT(receivedCBT: receivedCBT)
     }
     
     @IBAction func editMistake(_ sender: Any) {
@@ -61,10 +61,10 @@ class DiaryReadViewController: UIViewController {
         vc.recognizeString = recognizeString
         vc.actionString = actionString
         vc.completioHandler = {
-                    msg in
+            msg in
             self.DiaryReadViewBody.text = msg
             self.body = msg
-                }
+        }
         
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -81,10 +81,10 @@ class DiaryReadViewController: UIViewController {
         vc.recognizeString = recognizeString
         vc.actionString = actionString
         vc.completioHandler = {
-                    msg in
+            msg in
             self.DiaryReadRecognizeString.text = msg
             self.recognizeString = msg
-                }
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -100,21 +100,21 @@ class DiaryReadViewController: UIViewController {
         vc.recognizeString = recognizeString
         vc.actionString = actionString
         vc.completioHandler = {
-                    msg in
+            msg in
             self.DiaryReadActionString.text = msg
             self.actionString = msg
-                }
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
