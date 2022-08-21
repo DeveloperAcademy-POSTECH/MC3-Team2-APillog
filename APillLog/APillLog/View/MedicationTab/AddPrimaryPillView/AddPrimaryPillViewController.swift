@@ -50,7 +50,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sheetPresentationController.detents = [.medium()]
+        sheetPresentationController.detents = [.large()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
@@ -168,7 +168,7 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         dropDownTextField.text = "약의 이름을 입력해주세요"
         dropDownTextField.textColor = UIColor.AColor.disable
 //        dropDownTextField.layer.borderColor = UIColor.AColor.accent.cgColor
-        dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+        dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
         
         self.tapDropDownShow()
     }
@@ -181,12 +181,12 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillDropDown.selectionAction = { [weak self] (item, index) in
             self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
             self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
             
         }
         
         primaryPillDropDown.cancelAction = { [weak self] in
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
         }
     }
     
