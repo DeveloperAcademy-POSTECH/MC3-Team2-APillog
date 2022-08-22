@@ -401,7 +401,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 } else {
                     tableView.reloadData()
                 }
-                resizingSecondaryPillTableViewHeight()
+                reloadSecondaryPillTableView()
             }
         }
     }
@@ -493,8 +493,6 @@ extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
             ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         }
         else {
-            CoreDataManager.shared.changeSecondaryIsTakingAndCancelHistory(showSecondaryPill: secondaryPillList[rowNumber])
-
             secondaryPillTableView.reloadData()
         }
     }
