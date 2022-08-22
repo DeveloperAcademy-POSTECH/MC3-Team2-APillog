@@ -49,216 +49,220 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6nW-lr-A5S">
-                                <rect key="frame" x="20" y="105" width="374" height="243.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="79T-HL-wiN">
+                                <rect key="frame" x="20" y="85" width="374" height="66.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="79T-HL-wiN">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="62.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-Y2-9q4">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-rp-9xx">
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-Y2-9q4">
-                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-rp-9xx">
-                                                <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-eg-Ezc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-eQ-fzg">
-                                                        <rect key="frame" x="0.0" y="1.5" width="374" height="31"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="31" id="br7-oe-b1T"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="dSt-d5-eZu"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=""/>
-                                                        <connections>
-                                                            <action selector="tapDropDownButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zwr-3Q-pzu"/>
-                                                        </connections>
-                                                    </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ycp-Vg-FKd">
-                                                        <rect key="frame" x="344" y="11.5" width="15" height="11"/>
-                                                        <color key="tintColor" name="AGray"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="Ho0-MF-nXD"/>
-                                                            <constraint firstAttribute="width" constant="15" id="blW-Fd-aZK"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-eg-Ezc">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-eQ-fzg">
+                                                <rect key="frame" x="0.0" y="1.5" width="374" height="31"/>
                                                 <constraints>
-                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="AhV-k8-HDX"/>
-                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="EY4-qJ-7OU"/>
-                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="IPk-3U-cV3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ycp-Vg-FKd" secondAttribute="trailing" constant="15" id="NZF-Ov-QvZ"/>
-                                                    <constraint firstAttribute="height" constant="34" id="ODp-ce-loc"/>
-                                                    <constraint firstItem="ycp-Vg-FKd" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Omv-56-gCY"/>
-                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Xmg-z0-XK6"/>
-                                                    <constraint firstItem="h1a-eg-Ezc" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="f8Y-c1-KYm"/>
-                                                    <constraint firstItem="h1a-eg-Ezc" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="gQF-3b-Y7L"/>
-                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="height" secondItem="h1a-eg-Ezc" secondAttribute="height" constant="-3" id="hZE-zV-eY5"/>
-                                                    <constraint firstAttribute="trailing" secondItem="h1a-eg-Ezc" secondAttribute="trailing" id="vmN-Tb-8Bb"/>
-                                                    <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="zLd-Xt-SkR"/>
+                                                    <constraint firstAttribute="height" constant="31" id="br7-oe-b1T"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="dSt-d5-eZu"/>
                                                 </constraints>
-                                            </view>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                <connections>
+                                                    <action selector="tapDropDownButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zwr-3Q-pzu"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ycp-Vg-FKd">
+                                                <rect key="frame" x="344" y="11.5" width="15" height="11"/>
+                                                <color key="tintColor" name="AGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Ho0-MF-nXD"/>
+                                                    <constraint firstAttribute="width" constant="15" id="blW-Fd-aZK"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="AhV-k8-HDX"/>
+                                            <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="EY4-qJ-7OU"/>
+                                            <constraint firstItem="ycp-Vg-FKd" firstAttribute="leading" secondItem="SYI-eQ-fzg" secondAttribute="trailing" constant="-30" id="IPk-3U-cV3"/>
+                                            <constraint firstAttribute="trailing" secondItem="ycp-Vg-FKd" secondAttribute="trailing" constant="15" id="NZF-Ov-QvZ"/>
+                                            <constraint firstAttribute="height" constant="34" id="ODp-ce-loc"/>
+                                            <constraint firstItem="ycp-Vg-FKd" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Omv-56-gCY"/>
+                                            <constraint firstItem="SYI-eQ-fzg" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="Xmg-z0-XK6"/>
+                                            <constraint firstItem="h1a-eg-Ezc" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="f8Y-c1-KYm"/>
+                                            <constraint firstItem="h1a-eg-Ezc" firstAttribute="centerY" secondItem="EcP-rp-9xx" secondAttribute="centerY" id="gQF-3b-Y7L"/>
+                                            <constraint firstItem="SYI-eQ-fzg" firstAttribute="height" secondItem="h1a-eg-Ezc" secondAttribute="height" constant="-3" id="hZE-zV-eY5"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1a-eg-Ezc" secondAttribute="trailing" id="vmN-Tb-8Bb"/>
+                                            <constraint firstItem="SYI-eQ-fzg" firstAttribute="leading" secondItem="EcP-rp-9xx" secondAttribute="leading" id="zLd-Xt-SkR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EcP-rp-9xx" secondAttribute="trailing" id="KVA-gj-L35"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-8P-lCH">
+                                <rect key="frame" x="20" y="181.5" width="374" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="용량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIn-KH-0jE">
+                                        <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qbn-At-qzF">
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="약의 용량을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-LO-4P8">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
+                                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
+                                                    <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
+                                                </connections>
+                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nUg-f0-7F0">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="3vB-tT-a0w"/>
+                                                    <constraint firstAttribute="width" constant="120" id="N9d-HO-eMN"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="mg"/>
+                                                    <segment title="정"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="selectPrimaryPillDosage:" destination="Y6W-OH-hqX" eventType="valueChanged" id="7TW-0x-c6I"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="EcP-rp-9xx" secondAttribute="trailing" id="KVA-gj-L35"/>
+                                            <constraint firstItem="nUg-f0-7F0" firstAttribute="leading" secondItem="B7E-LO-4P8" secondAttribute="trailing" priority="750" constant="20" id="iGx-Ut-p21"/>
+                                            <constraint firstAttribute="trailing" secondItem="nUg-f0-7F0" secondAttribute="trailing" id="saR-Bu-TX0"/>
                                         </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-8P-lCH">
-                                        <rect key="frame" x="0.0" y="92.5" width="374" height="62.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="용량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIn-KH-0jE">
-                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qbn-At-qzF">
-                                                <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="약의 용량을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-LO-4P8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <connections>
-                                                            <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="Q4c-nV-kKX"/>
-                                                            <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="84V-zp-oyB"/>
-                                                            <action selector="detectDosageTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="cwu-wt-0zu"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nUg-f0-7F0">
-                                                        <rect key="frame" x="254" y="0.0" width="120" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="34" id="3vB-tT-a0w"/>
-                                                            <constraint firstAttribute="width" constant="120" id="N9d-HO-eMN"/>
-                                                        </constraints>
-                                                        <segments>
-                                                            <segment title="mg"/>
-                                                            <segment title="정"/>
-                                                        </segments>
-                                                        <connections>
-                                                            <action selector="selectPrimaryPillDosage:" destination="Y6W-OH-hqX" eventType="valueChanged" id="7TW-0x-c6I"/>
-                                                        </connections>
-                                                    </segmentedControl>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="nUg-f0-7F0" firstAttribute="leading" secondItem="B7E-LO-4P8" secondAttribute="trailing" priority="750" constant="20" id="iGx-Ut-p21"/>
-                                                    <constraint firstAttribute="trailing" secondItem="nUg-f0-7F0" secondAttribute="trailing" id="saR-Bu-TX0"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="qbn-At-qzF" secondAttribute="trailing" id="g6b-Ji-Ppa"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Gi-Tzc">
-                                        <rect key="frame" x="0.0" y="185" width="200" height="58.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 시간대" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-0g-bRX">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QyS-Xj-fHz">
-                                                <rect key="frame" x="0.0" y="28.5" width="200" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-xU-NoB" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="x4l-7O-9uK"/>
-                                                            <constraint firstAttribute="width" constant="60" id="ywL-Y2-bww"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="아침">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <state key="selected" title="아침"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="togglePrimaryPillMorning:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lYI-28-U6M"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-Gm-JRC" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                        <rect key="frame" x="70" y="0.0" width="60" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="4Z7-zl-opd"/>
-                                                            <constraint firstAttribute="height" constant="30" id="hSq-bv-Hzc"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="점심">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <state key="selected" title="점심"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="togglePrimaryPillAfternoon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZDp-X4-KtS"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dt-Ow-oRz" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                                        <rect key="frame" x="140" y="0.0" width="60" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="8Kq-a2-45X"/>
-                                                            <constraint firstAttribute="height" constant="30" id="WNd-vf-S7K"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="저녁">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <state key="selected" title="저녁"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="togglePrimaryPillEvening:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kzg-Pc-9G9"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="79T-HL-wiN" secondAttribute="trailing" id="Asf-4p-bxV"/>
-                                    <constraint firstAttribute="trailing" secondItem="AUA-8P-lCH" secondAttribute="trailing" id="ueu-yw-w6S"/>
+                                    <constraint firstAttribute="trailing" secondItem="qbn-At-qzF" secondAttribute="trailing" id="g6b-Ji-Ppa"/>
                                 </constraints>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동일한 이름과 용량의 약이 이미 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Ae-FQO">
-                                <rect key="frame" x="71" y="70" width="272" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Gi-Tzc" userLabel="pillTime">
+                                <rect key="frame" x="20" y="278" width="200" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용 시간대" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-0g-bRX">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QyS-Xj-fHz">
+                                        <rect key="frame" x="0.0" y="32.5" width="200" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-xU-NoB" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="x4l-7O-9uK"/>
+                                                    <constraint firstAttribute="width" constant="60" id="ywL-Y2-bww"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="아침">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" title="아침"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="togglePrimaryPillMorning:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lYI-28-U6M"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-Gm-JRC" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="70" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="4Z7-zl-opd"/>
+                                                    <constraint firstAttribute="height" constant="30" id="hSq-bv-Hzc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="점심">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" title="점심"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="togglePrimaryPillAfternoon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZDp-X4-KtS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dt-Ow-oRz" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="8Kq-a2-45X"/>
+                                                    <constraint firstAttribute="height" constant="30" id="WNd-vf-S7K"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="저녁">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" title="저녁"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="togglePrimaryPillEvening:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kzg-Pc-9G9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동일한 이름과 용량의 약이 이미 추가되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Ae-FQO">
+                                <rect key="frame" x="47" y="370.5" width="320.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-Am-ZL3">
+                                <rect key="frame" x="20" y="161.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="AUA-8P-lCH" firstAttribute="top" secondItem="79T-HL-wiN" secondAttribute="bottom" constant="30" id="09j-Ea-NYp"/>
+                            <constraint firstItem="ojo-Gi-Tzc" firstAttribute="top" secondItem="AUA-8P-lCH" secondAttribute="bottom" constant="30" id="2hi-Dz-l8F"/>
+                            <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="DIH-Am-ZL3" secondAttribute="trailing" constant="20" id="6Vb-xo-kIZ"/>
+                            <constraint firstItem="79T-HL-wiN" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="DiU-1U-3UF"/>
+                            <constraint firstItem="DIH-Am-ZL3" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="FhI-d8-PDc"/>
+                            <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="AUA-8P-lCH" secondAttribute="trailing" constant="20" id="MTP-dS-qIG"/>
                             <constraint firstAttribute="trailing" secondItem="3Tv-pn-FE1" secondAttribute="trailing" constant="20" id="QER-Kg-kSB"/>
-                            <constraint firstItem="6nW-lr-A5S" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="Uw7-ib-Z3g"/>
-                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="15" id="Vcp-0v-GG9"/>
+                            <constraint firstItem="bwJ-Ae-FQO" firstAttribute="top" secondItem="ojo-Gi-Tzc" secondAttribute="bottom" constant="30" id="Vcp-0v-GG9"/>
                             <constraint firstItem="bwJ-Ae-FQO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vm8-u7-W64"/>
+                            <constraint firstItem="79T-HL-wiN" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="30" id="WJd-Yy-4FZ"/>
+                            <constraint firstItem="AUA-8P-lCH" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="b1r-Fy-yyx"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="25" id="eG4-Df-GjH"/>
                             <constraint firstItem="3Tv-pn-FE1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="i9b-Iy-In6"/>
-                            <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="6nW-lr-A5S" secondAttribute="trailing" constant="20" id="ijS-1B-Ie2"/>
-                            <constraint firstItem="6nW-lr-A5S" firstAttribute="top" secondItem="3Tv-pn-FE1" secondAttribute="bottom" constant="50" id="y4D-Px-f9W"/>
+                            <constraint firstItem="DIH-Am-ZL3" firstAttribute="top" secondItem="79T-HL-wiN" secondAttribute="bottom" constant="10" id="kC4-Ed-XIH"/>
+                            <constraint firstItem="ojo-Gi-Tzc" firstAttribute="leading" secondItem="5km-XP-fMA" secondAttribute="leading" constant="20" id="krO-QO-ldu"/>
+                            <constraint firstItem="5km-XP-fMA" firstAttribute="trailing" secondItem="79T-HL-wiN" secondAttribute="trailing" constant="20" id="qPC-RF-AGm"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="afh-Gc-3Ah" appends="YES" id="mDf-98-pib"/>
@@ -267,11 +271,13 @@
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="PrimaryPillDosage" destination="B7E-LO-4P8" id="BfU-Cx-1Fa"/>
+                        <outlet property="directInputTextField" destination="DIH-Am-ZL3" id="G2E-BT-A8W"/>
                         <outlet property="dropDownButton" destination="SYI-eQ-fzg" id="mgL-xE-LuU"/>
                         <outlet property="dropDownImage" destination="ycp-Vg-FKd" id="4FE-Da-frL"/>
                         <outlet property="dropDownTextField" destination="h1a-eg-Ezc" id="cy5-r8-Oox"/>
                         <outlet property="dropDownView" destination="EcP-rp-9xx" id="gbv-oV-lRN"/>
                         <outlet property="duplicateWarningLabel" destination="bwJ-Ae-FQO" id="wdq-rM-Ocz"/>
+                        <outlet property="pillNameDosageMargin" destination="09j-Ea-NYp" id="2TZ-7S-6la"/>
                         <outlet property="primaryPillAfternoonButton" destination="S4S-Gm-JRC" id="Y2L-w7-RYR"/>
                         <outlet property="primaryPillDosageSegmentedControl" destination="nUg-f0-7F0" id="FpA-Gb-GLC"/>
                         <outlet property="primaryPillEveningButton" destination="2Dt-Ow-oRz" id="8wY-3e-k1B"/>

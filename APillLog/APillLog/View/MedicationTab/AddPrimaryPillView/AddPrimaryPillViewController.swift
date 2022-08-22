@@ -44,7 +44,10 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     let primaryPillDropDown = DropDown()
-    let primaryPillDropDownList = ["콘서타", "메디키넷", "메타데이트", "페로스핀", "페니드",  "환인아토목세틴", "스트라테라", "켐베이"]
+    let primaryPillDropDownList = ["콘서타", "메디키넷", "메타데이트", "페로스핀", "페니드",  "환인아토목세틴", "스트라테라", "켐베이", "직접 입력"]
+    
+    @IBOutlet weak var pillNameDosageMargin: NSLayoutConstraint!
+    @IBOutlet weak var directInputTextField: UITextField!
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
@@ -65,9 +68,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
  
     @IBAction func tapSaveButton() {
-        let pillName = dropDownTextField.text ?? ""
+        var pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
        
+        if pillName == "직접 입력" {
+            pillName = directInputTextField.text ?? ""
+        }
+        
         CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
@@ -165,10 +172,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillDropDown.dismissMode = .automatic
         primaryPillDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
         
-        dropDownTextField.text = "약의 이름을 입력해주세요"
+        dropDownTextField.text = "약의 이름을 입력해주세요."
         dropDownTextField.textColor = UIColor.AColor.disable
-//        dropDownTextField.layer.borderColor = UIColor.AColor.accent.cgColor
         dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+        
+        self.directInputTextField.isEnabled = false
+        self.directInputTextField.layer.opacity = 0
+        self.directInputTextField.placeholder = "약의 이름을 입력해주세요."
         
         self.tapDropDownShow()
     }
@@ -180,9 +190,20 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         primaryPillDropDown.selectionAction = { [weak self] (item, index) in
             self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
-            self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
             
+            if self?.dropDownTextField.text == "직접 입력" {
+                self?.directInputTextField.isEnabled = true
+                self?.directInputTextField.layer.opacity = 1.0
+                self?.pillNameDosageMargin.constant = 74.0
+            } else {
+                self?.directInputTextField.isEnabled = false
+                self?.directInputTextField.layer.opacity = 0
+                self?.pillNameDosageMargin.constant = 30
+            }
+            
+            self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
+            
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
         }
         
         primaryPillDropDown.cancelAction = { [weak self] in
@@ -205,10 +226,14 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     func detectEnableSaveButton(){
-        let pillName = dropDownTextField.text ?? ""
+        var pillName = dropDownTextField.text ?? ""
         let pillDosage = PrimaryPillDosage.text ?? ""
         
-        if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
+        if pillName == "직접 입력" {
+            pillName = directInputTextField.text ?? ""
+        }
+        
+        if (pillName != "" && pillName != "직접 입력" && pillDosage != "" && primaryPillDosingCycle != 0)
         {
           //  savePrimaryPillButton.isEnabled = true
             checkDuplication()
@@ -219,8 +244,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     func checkDuplication() {
+        var primaryPillName = dropDownTextField.text
+        if primaryPillName == "직접 입력" {
+            primaryPillName = directInputTextField.text ?? ""
+        }
+        
         for pill in primaryPillList {
-            if dropDownTextField.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
+            if primaryPillName == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
                 savePrimaryPillButton.isEnabled = false
                 duplicateWarningLabel.isHidden = false
                 return
