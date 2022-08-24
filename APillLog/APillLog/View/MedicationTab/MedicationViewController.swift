@@ -14,7 +14,7 @@ protocol MedicationViewToEditTimeViewDelegate {
 
 class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDelegate {
     func didAddPrimaryPill() {
-            
+        reloadPrimaryPillTableView()
     }
     
     

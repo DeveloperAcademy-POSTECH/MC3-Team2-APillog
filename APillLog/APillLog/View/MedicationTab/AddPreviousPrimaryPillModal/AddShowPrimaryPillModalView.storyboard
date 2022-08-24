@@ -181,105 +181,104 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-3M-AUV">
-                                <rect key="frame" x="121" y="336" width="190" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQt-eC-AuQ" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="아침">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <state key="selected" title="아침"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="togglePrimaryPillMorning:" destination="TnP-Lj-au2" eventType="touchUpInside" id="RuS-Wu-4gT"/>
-                                        </connections>
-                                    </button>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="3en-43-YFZ">
-                                        <rect key="frame" x="40" y="0.0" width="150" height="50"/>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gq2-6q-mug">
-                                <rect key="frame" x="112" y="396" width="190" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-Q7-2L1" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="점심">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="togglePrimaryPillAfternoon:" destination="TnP-Lj-au2" eventType="touchUpInside" id="VZo-Hj-9MH"/>
-                                        </connections>
-                                    </button>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kNd-3r-xNr">
-                                        <rect key="frame" x="40" y="0.0" width="150" height="50"/>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-X2-ttR">
-                                <rect key="frame" x="101" y="460" width="220" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6C-cL-lZX" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hdJ-yC-VPl"/>
-                                            <constraint firstAttribute="width" constant="60" id="rlq-Li-hxs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="저녁">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="togglePrimaryPillEvening:" destination="TnP-Lj-au2" eventType="touchUpInside" id="LMZ-4U-MRm"/>
-                                        </connections>
-                                    </button>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Co8-VZ-EJu">
-                                        <rect key="frame" x="70" y="0.0" width="150" height="30"/>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-5A-abN">
-                                <rect key="frame" x="31" y="346" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQt-eC-AuQ" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                <rect key="frame" x="129" y="340.5" width="30" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="아침">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="아침"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="togglePrimaryPillMorning:" destination="TnP-Lj-au2" eventType="touchUpInside" id="RuS-Wu-4gT"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="3en-43-YFZ">
+                                <rect key="frame" x="199" y="345.5" width="175" height="31"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-Q7-2L1" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                <rect key="frame" x="129" y="422.5" width="30" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="점심">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="togglePrimaryPillAfternoon:" destination="TnP-Lj-au2" eventType="touchUpInside" id="VZo-Hj-9MH"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kNd-3r-xNr">
+                                <rect key="frame" x="199" y="426.5" width="165" height="31"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6C-cL-lZX" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
+                                <rect key="frame" x="129" y="504.5" width="30" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="저녁">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChip" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInitButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="togglePrimaryPillEvening:" destination="TnP-Lj-au2" eventType="touchUpInside" id="LMZ-4U-MRm"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-5A-abN">
+                                <rect key="frame" x="30" y="345.5" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-0j-Eil">
-                                <rect key="frame" x="31" y="406" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-0j-Eil">
+                                <rect key="frame" x="30" y="426.5" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-0i-rRg">
-                                <rect key="frame" x="31" y="460" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-0i-rRg">
+                                <rect key="frame" x="30" y="507.5" width="51" height="31"/>
                             </switch>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Co8-VZ-EJu">
+                                <rect key="frame" x="199" y="497.5" width="165" height="31"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JOA-ki-WV2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="cXc-0i-rRg" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="0RB-zi-EtI"/>
+                            <constraint firstItem="Glh-0j-Eil" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="0Rq-gG-4bw"/>
                             <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="rfz-f5-Uy9" secondAttribute="trailing" constant="20" id="7ws-3h-DSI"/>
+                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="top" secondItem="xQt-eC-AuQ" secondAttribute="bottom" constant="55" id="8fA-0i-Kv0"/>
+                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="30" id="98h-js-bNa"/>
+                            <constraint firstItem="t6C-cL-lZX" firstAttribute="leading" secondItem="cXc-0i-rRg" secondAttribute="trailing" constant="50" id="9ac-9C-ysw"/>
+                            <constraint firstItem="3en-43-YFZ" firstAttribute="leading" secondItem="xQt-eC-AuQ" secondAttribute="trailing" constant="40" id="DQD-9J-HIp"/>
+                            <constraint firstItem="t6C-cL-lZX" firstAttribute="top" secondItem="GUs-Q7-2L1" secondAttribute="bottom" constant="55" id="DRk-SS-Fy4"/>
+                            <constraint firstItem="qXP-5A-abN" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="35" id="HNK-t0-DiP"/>
+                            <constraint firstItem="Glh-0j-Eil" firstAttribute="top" secondItem="qXP-5A-abN" secondAttribute="bottom" constant="50" id="LN2-Kg-4iw"/>
                             <constraint firstItem="i5F-wB-ypV" firstAttribute="top" secondItem="5Fc-0y-b1f" secondAttribute="top" constant="25" id="NvA-ix-yaj"/>
+                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="leading" secondItem="qXP-5A-abN" secondAttribute="trailing" constant="50" id="Nw1-XK-GqM"/>
                             <constraint firstItem="U2m-4h-XU4" firstAttribute="centerX" secondItem="5Fc-0y-b1f" secondAttribute="centerX" id="QZo-bv-J7e"/>
+                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="leading" secondItem="Glh-0j-Eil" secondAttribute="trailing" constant="50" id="QoA-w7-woY"/>
                             <constraint firstItem="i5F-wB-ypV" firstAttribute="leading" secondItem="5Fc-0y-b1f" secondAttribute="leading" constant="20" id="SWg-pa-Ly1"/>
+                            <constraint firstItem="kNd-3r-xNr" firstAttribute="top" secondItem="3en-43-YFZ" secondAttribute="bottom" constant="50" id="UNc-Yn-c1S"/>
                             <constraint firstAttribute="trailing" secondItem="i5F-wB-ypV" secondAttribute="trailing" constant="20" id="WzG-Fr-9Vb"/>
                             <constraint firstItem="rfz-f5-Uy9" firstAttribute="top" secondItem="i5F-wB-ypV" secondAttribute="bottom" constant="50" id="Zta-Xq-9Xl"/>
+                            <constraint firstItem="qXP-5A-abN" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="a03-nF-2lK"/>
                             <constraint firstItem="U2m-4h-XU4" firstAttribute="top" secondItem="i5F-wB-ypV" secondAttribute="bottom" constant="15" id="aF7-JR-1xl"/>
                             <constraint firstItem="rfz-f5-Uy9" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="20" id="b1i-23-Xdo"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="3en-43-YFZ" secondAttribute="trailing" constant="40" id="ffv-Sp-coy"/>
+                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="leading" secondItem="t6C-cL-lZX" secondAttribute="trailing" constant="40" id="h4I-MX-W4P"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="kNd-3r-xNr" secondAttribute="trailing" constant="50" id="hm1-yt-2na"/>
+                            <constraint firstItem="3en-43-YFZ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="35" id="iZy-Jj-SvL"/>
+                            <constraint firstItem="cXc-0i-rRg" firstAttribute="top" secondItem="Glh-0j-Eil" secondAttribute="bottom" constant="50" id="lmT-84-fJm"/>
+                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="top" secondItem="kNd-3r-xNr" secondAttribute="bottom" constant="40" id="pPw-oa-PUe"/>
+                            <constraint firstItem="kNd-3r-xNr" firstAttribute="leading" secondItem="GUs-Q7-2L1" secondAttribute="trailing" constant="40" id="qfa-Ko-A5c"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="Co8-VZ-EJu" secondAttribute="trailing" constant="50" id="vwp-9z-nYj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Xou-DE-eyf" appends="YES" id="jBg-Ee-hBE"/>

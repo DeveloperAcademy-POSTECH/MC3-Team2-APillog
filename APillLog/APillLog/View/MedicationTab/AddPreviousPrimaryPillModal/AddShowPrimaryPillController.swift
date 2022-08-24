@@ -39,7 +39,7 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
 //    @IBOutlet weak var moringTitle: UILabel!
 //    @IBOutlet weak var afternoonTitle: UILabel!
 //    @IBOutlet weak var eveningTitle: UILabel!
-    var selectedTime: Date  = Date()
+    var selectedTime: Date = Date()
     
     // MARK: Property
     var primaryPillDosingCycle: Int = 0
@@ -58,7 +58,6 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         sheetPresentationController.detents = [.large()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
@@ -74,10 +73,26 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     }
  
     @IBAction func tapSaveButton() {
-        let pillName = dropDownTextField.text ?? ""
-        let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
-       
-        CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let selectedDate = dateFormatter.string(from: selectedTime)
+        
+        if morningToggle.isOn {
+            let pillName = dropDownTextField.text ?? ""
+            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
+        }
+        if afternoonToggle.isOn {
+            let pillName = dropDownTextField.text ?? ""
+            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
+        }
+        if eveningToggle.isOn {
+            let pillName = dropDownTextField.text ?? ""
+            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
+        }
+        
         delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
@@ -239,5 +254,14 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         savePrimaryPillButton.tintColor = UIColor.AColor.accent
         duplicateWarningLabel.isHidden = true
     }
-    
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
+    }
 }
