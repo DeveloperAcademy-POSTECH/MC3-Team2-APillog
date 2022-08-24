@@ -28,10 +28,6 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var dropDownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     
-    @IBOutlet weak var morningToggle: UISwitch!
-    @IBOutlet weak var afternoonToggle: UISwitch!
-    @IBOutlet weak var eveningToggle: UISwitch!
-    
     @IBOutlet weak var morningTimePicker: UIDatePicker!
     @IBOutlet weak var afternoonTimePicker: UIDatePicker!
     @IBOutlet weak var eveningTimePicker: UIDatePicker!
@@ -63,7 +59,6 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
-        
         configureDropDown()
     }
     
@@ -77,17 +72,18 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
         let selectedDate = dateFormatter.string(from: selectedTime)
         
-        if morningToggle.isOn {
+        if primaryPillMorningButton.isSelected {
             let pillName = dropDownTextField.text ?? ""
             let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
+            print("Debug -- selectButton")
         }
-        if afternoonToggle.isOn {
+        if primaryPillAfternoonButton.isSelected {
             let pillName = dropDownTextField.text ?? ""
             let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
         }
-        if eveningToggle.isOn {
+        if primaryPillEveningButton.isSelected {
             let pillName = dropDownTextField.text ?? ""
             let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())

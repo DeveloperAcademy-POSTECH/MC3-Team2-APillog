@@ -182,7 +182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQt-eC-AuQ" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                <rect key="frame" x="129" y="340.5" width="30" height="27"/>
+                                <rect key="frame" x="40" y="350.5" width="30" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="아침">
@@ -198,10 +198,10 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="3en-43-YFZ">
-                                <rect key="frame" x="199" y="345.5" width="175" height="31"/>
+                                <rect key="frame" x="70" y="345.5" width="204" height="31"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-Q7-2L1" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                <rect key="frame" x="129" y="422.5" width="30" height="27"/>
+                                <rect key="frame" x="40" y="417.5" width="30" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="점심">
@@ -216,10 +216,13 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kNd-3r-xNr">
-                                <rect key="frame" x="199" y="426.5" width="165" height="31"/>
+                                <rect key="frame" x="70" y="416.5" width="204" height="31"/>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Co8-VZ-EJu">
+                                <rect key="frame" x="70" y="485.5" width="204" height="31"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6C-cL-lZX" customClass="PrimaryPillDosingCycleChipButton" customModule="APillLog" customModuleProvider="target">
-                                <rect key="frame" x="129" y="504.5" width="30" height="27"/>
+                                <rect key="frame" x="40" y="484.5" width="30" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="저녁">
@@ -233,52 +236,34 @@
                                     <action selector="togglePrimaryPillEvening:" destination="TnP-Lj-au2" eventType="touchUpInside" id="LMZ-4U-MRm"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-5A-abN">
-                                <rect key="frame" x="30" y="345.5" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-0j-Eil">
-                                <rect key="frame" x="30" y="426.5" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-0i-rRg">
-                                <rect key="frame" x="30" y="507.5" width="51" height="31"/>
-                            </switch>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Co8-VZ-EJu">
-                                <rect key="frame" x="199" y="497.5" width="165" height="31"/>
-                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JOA-ki-WV2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="cXc-0i-rRg" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="0RB-zi-EtI"/>
-                            <constraint firstItem="Glh-0j-Eil" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="0Rq-gG-4bw"/>
+                            <constraint firstItem="3en-43-YFZ" firstAttribute="leading" secondItem="xQt-eC-AuQ" secondAttribute="trailing" id="2Ne-JB-Qcb"/>
                             <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="rfz-f5-Uy9" secondAttribute="trailing" constant="20" id="7ws-3h-DSI"/>
-                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="top" secondItem="xQt-eC-AuQ" secondAttribute="bottom" constant="55" id="8fA-0i-Kv0"/>
-                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="30" id="98h-js-bNa"/>
-                            <constraint firstItem="t6C-cL-lZX" firstAttribute="leading" secondItem="cXc-0i-rRg" secondAttribute="trailing" constant="50" id="9ac-9C-ysw"/>
-                            <constraint firstItem="3en-43-YFZ" firstAttribute="leading" secondItem="xQt-eC-AuQ" secondAttribute="trailing" constant="40" id="DQD-9J-HIp"/>
-                            <constraint firstItem="t6C-cL-lZX" firstAttribute="top" secondItem="GUs-Q7-2L1" secondAttribute="bottom" constant="55" id="DRk-SS-Fy4"/>
-                            <constraint firstItem="qXP-5A-abN" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="35" id="HNK-t0-DiP"/>
-                            <constraint firstItem="Glh-0j-Eil" firstAttribute="top" secondItem="qXP-5A-abN" secondAttribute="bottom" constant="50" id="LN2-Kg-4iw"/>
+                            <constraint firstItem="t6C-cL-lZX" firstAttribute="top" secondItem="GUs-Q7-2L1" secondAttribute="bottom" constant="40" id="8ib-Tv-Ms0"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="Co8-VZ-EJu" secondAttribute="trailing" constant="140" id="AW0-tV-rJ5"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="3en-43-YFZ" secondAttribute="trailing" constant="140" id="DKD-mD-yfh"/>
+                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="kNd-3r-xNr" secondAttribute="trailing" constant="140" id="Hhq-S2-fUE"/>
                             <constraint firstItem="i5F-wB-ypV" firstAttribute="top" secondItem="5Fc-0y-b1f" secondAttribute="top" constant="25" id="NvA-ix-yaj"/>
-                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="leading" secondItem="qXP-5A-abN" secondAttribute="trailing" constant="50" id="Nw1-XK-GqM"/>
+                            <constraint firstItem="3en-43-YFZ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="35" id="Pe5-mo-6ls"/>
                             <constraint firstItem="U2m-4h-XU4" firstAttribute="centerX" secondItem="5Fc-0y-b1f" secondAttribute="centerX" id="QZo-bv-J7e"/>
-                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="leading" secondItem="Glh-0j-Eil" secondAttribute="trailing" constant="50" id="QoA-w7-woY"/>
                             <constraint firstItem="i5F-wB-ypV" firstAttribute="leading" secondItem="5Fc-0y-b1f" secondAttribute="leading" constant="20" id="SWg-pa-Ly1"/>
-                            <constraint firstItem="kNd-3r-xNr" firstAttribute="top" secondItem="3en-43-YFZ" secondAttribute="bottom" constant="50" id="UNc-Yn-c1S"/>
+                            <constraint firstItem="t6C-cL-lZX" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="40" id="UlX-7c-6ex"/>
+                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="top" secondItem="kNd-3r-xNr" secondAttribute="bottom" constant="38" id="VTY-dq-biL"/>
+                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="top" secondItem="xQt-eC-AuQ" secondAttribute="bottom" constant="40" id="Vhk-eZ-4gf"/>
                             <constraint firstAttribute="trailing" secondItem="i5F-wB-ypV" secondAttribute="trailing" constant="20" id="WzG-Fr-9Vb"/>
                             <constraint firstItem="rfz-f5-Uy9" firstAttribute="top" secondItem="i5F-wB-ypV" secondAttribute="bottom" constant="50" id="Zta-Xq-9Xl"/>
-                            <constraint firstItem="qXP-5A-abN" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="30" id="a03-nF-2lK"/>
                             <constraint firstItem="U2m-4h-XU4" firstAttribute="top" secondItem="i5F-wB-ypV" secondAttribute="bottom" constant="15" id="aF7-JR-1xl"/>
                             <constraint firstItem="rfz-f5-Uy9" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="20" id="b1i-23-Xdo"/>
-                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="3en-43-YFZ" secondAttribute="trailing" constant="40" id="ffv-Sp-coy"/>
-                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="leading" secondItem="t6C-cL-lZX" secondAttribute="trailing" constant="40" id="h4I-MX-W4P"/>
-                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="kNd-3r-xNr" secondAttribute="trailing" constant="50" id="hm1-yt-2na"/>
-                            <constraint firstItem="3en-43-YFZ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="35" id="iZy-Jj-SvL"/>
-                            <constraint firstItem="cXc-0i-rRg" firstAttribute="top" secondItem="Glh-0j-Eil" secondAttribute="bottom" constant="50" id="lmT-84-fJm"/>
-                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="top" secondItem="kNd-3r-xNr" secondAttribute="bottom" constant="40" id="pPw-oa-PUe"/>
-                            <constraint firstItem="kNd-3r-xNr" firstAttribute="leading" secondItem="GUs-Q7-2L1" secondAttribute="trailing" constant="40" id="qfa-Ko-A5c"/>
-                            <constraint firstItem="JOA-ki-WV2" firstAttribute="trailing" secondItem="Co8-VZ-EJu" secondAttribute="trailing" constant="50" id="vwp-9z-nYj"/>
+                            <constraint firstItem="kNd-3r-xNr" firstAttribute="top" secondItem="3en-43-YFZ" secondAttribute="bottom" constant="40" id="dYB-YM-Zdz"/>
+                            <constraint firstItem="kNd-3r-xNr" firstAttribute="leading" secondItem="GUs-Q7-2L1" secondAttribute="trailing" id="dzL-1a-2pj"/>
+                            <constraint firstItem="GUs-Q7-2L1" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="40" id="jLq-uo-8Zm"/>
+                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="top" secondItem="rfz-f5-Uy9" secondAttribute="bottom" constant="40" id="wS3-Ic-aSw"/>
+                            <constraint firstItem="xQt-eC-AuQ" firstAttribute="leading" secondItem="JOA-ki-WV2" secondAttribute="leading" constant="40" id="wpp-dQ-tve"/>
+                            <constraint firstItem="Co8-VZ-EJu" firstAttribute="leading" secondItem="t6C-cL-lZX" secondAttribute="trailing" id="x0i-sz-TlU"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Xou-DE-eyf" appends="YES" id="jBg-Ee-hBE"/>
@@ -288,7 +273,6 @@
                     <connections>
                         <outlet property="PrimaryPillDosage" destination="HJK-wh-ldz" id="qtJ-mx-1gE"/>
                         <outlet property="afternoonTimePicker" destination="kNd-3r-xNr" id="s9o-Qw-RJJ"/>
-                        <outlet property="afternoonToggle" destination="Glh-0j-Eil" id="xfz-kz-jzQ"/>
                         <outlet property="cancleButton" destination="p3e-D4-Xwz" id="Cak-Zg-SDY"/>
                         <outlet property="dropDownButton" destination="uqo-DV-cXi" id="vqV-ou-Ftj"/>
                         <outlet property="dropDownImage" destination="zRl-Nd-LOt" id="Cuh-fD-x1d"/>
@@ -296,9 +280,7 @@
                         <outlet property="dropDownView" destination="9CK-QK-jlj" id="SFx-nb-YJk"/>
                         <outlet property="duplicateWarningLabel" destination="U2m-4h-XU4" id="bBh-T7-dh6"/>
                         <outlet property="eveningTimePicker" destination="Co8-VZ-EJu" id="Gzg-4T-36A"/>
-                        <outlet property="eveningToggle" destination="cXc-0i-rRg" id="T2y-8u-mNG"/>
                         <outlet property="morningTimePicker" destination="3en-43-YFZ" id="VwU-pq-eAy"/>
-                        <outlet property="morningToggle" destination="qXP-5A-abN" id="8tB-Lx-6bT"/>
                         <outlet property="primaryPillAfternoonButton" destination="GUs-Q7-2L1" id="a1Y-7q-dGL"/>
                         <outlet property="primaryPillDosageSegmentedControl" destination="Xkw-3j-M8W" id="9jw-Lk-Gg5"/>
                         <outlet property="primaryPillEveningButton" destination="t6C-cL-lZX" id="gHt-Fm-n8S"/>
