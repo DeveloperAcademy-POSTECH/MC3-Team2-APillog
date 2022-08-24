@@ -12,7 +12,11 @@ protocol MedicationViewToEditTimeViewDelegate {
     func configure(pill: ShowPrimaryPill)
 }
 
-class MedicationViewController: UIViewController {
+class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDelegate {
+    func didAddPrimaryPill() {
+            
+    }
+    
     
     // MARK: - Properties
     let cellIdentifier = "medicationPillCell"
@@ -260,15 +264,16 @@ class MedicationViewController: UIViewController {
             secondaryPillModalButtonLabel.isHidden = false
             secondaryPillModalButtonImage.isHidden = false
         } else {
-            // primary
-            primaryPillViewLinkButton.isHidden = true
-            primaryPillViewLinkLabel.isHidden = true
-            primaryPillViewLinkImage.isHidden = true
-            
+            primaryPillViewLinkButton.isHidden = false
+            primaryPillViewLinkLabel.isHidden = false
+            primaryPillViewLinkImage.isHidden = false
+            primaryPillViewLinkLabel.textColor = .AColor.black
+            primaryPillViewLinkImage.tintColor = .AColor.black
+
             // secondary
-            secondaryPillModalButton.isHidden = true
-            secondaryPillModalButtonLabel.isHidden = true
-            secondaryPillModalButtonImage.isHidden = true
+            secondaryPillModalButton.isHidden = false
+            secondaryPillModalButtonLabel.isHidden = false
+            secondaryPillModalButtonImage.isHidden = false
         }
     }
 
@@ -281,6 +286,23 @@ class MedicationViewController: UIViewController {
     }
 
     // MARK: - IBActions
+    @IBAction func tapAddPrimaryPillButton(){
+        if isToday{
+            let storyboard: UIStoryboard = UIStoryboard(name: "ManageDosingView", bundle: nil)
+            let nextViewController1 = storyboard.instantiateViewController(withIdentifier: "ManageDosingView") as! ManageDosingViewController
+            navigationController?.pushViewController(nextViewController1, animated: true)
+        }
+        else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "AddShowPrimaryPillModalView", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddShowPrimaryPillView") as! AddShowPrimaryPillController
+            nextViewController.delegate = self
+            nextViewController.selectedTime = self.selectedTime
+            self.present(nextViewController, animated: true)
+        }
+        
+    }
+    
+    
     @IBAction func tapAddConditionButton(_ sender: UIButton) {
         guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
 

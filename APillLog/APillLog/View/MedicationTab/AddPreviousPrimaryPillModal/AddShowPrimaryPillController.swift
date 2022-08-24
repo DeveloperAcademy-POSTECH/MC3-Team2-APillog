@@ -39,7 +39,7 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
 //    @IBOutlet weak var moringTitle: UILabel!
 //    @IBOutlet weak var afternoonTitle: UILabel!
 //    @IBOutlet weak var eveningTitle: UILabel!
-    
+    var selectedTime: Date  = Date()
     
     // MARK: Property
     var primaryPillDosingCycle: Int = 0
@@ -59,7 +59,7 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sheetPresentationController.detents = [.medium()]
+        sheetPresentationController.detents = [.large()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
