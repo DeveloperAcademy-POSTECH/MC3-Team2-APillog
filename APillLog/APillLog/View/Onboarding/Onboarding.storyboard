@@ -19,45 +19,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-Zo-hVs">
-                                <rect key="frame" x="123.5" y="124" width="167.5" height="26"/>
+                                <rect key="frame" x="123.5" y="80" width="167.5" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray4Color"/>
                                 <color key="currentPageIndicatorTintColor" name="AAccent"/>
                             </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Rh-b3o">
-                                <rect key="frame" x="0.0" y="185" width="414" height="711"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="790"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dWL-mW-Xgb">
-                                    <size key="itemSize" width="414" height="642"/>
+                                    <size key="itemSize" width="414" height="750"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="xUP-G3-iIL" customClass="OnboardingCollectionViewCell" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="34.5" width="414" height="642"/>
+                                        <rect key="frame" x="0.0" y="20" width="414" height="750"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vde-B7-Zzy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="642"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APillog TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzK-y2-LvH">
-                                                    <rect key="frame" x="25" y="40" width="364" height="26"/>
+                                                    <rect key="frame" x="25" y="40" width="364" height="26.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-hy-Nl3">
-                                                    <rect key="frame" x="25" y="86" width="364" height="20.5"/>
+                                                    <rect key="frame" x="25" y="86.5" width="364" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ABlack"/>
+                                                    <color key="textColor" name="AGray"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gk-oa-4SZ">
-                                                    <rect key="frame" x="25" y="146.5" width="364" height="468"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="468" id="CfN-AH-HNj"/>
-                                                        <constraint firstAttribute="width" constant="364" id="Crz-D7-Pas"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gk-oa-4SZ">
+                                                    <rect key="frame" x="25" y="147" width="364" height="603"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -70,9 +66,10 @@
                                                 <constraint firstItem="UzK-y2-LvH" firstAttribute="leading" secondItem="Vde-B7-Zzy" secondAttribute="leading" constant="25" id="Qrn-g7-OYS"/>
                                                 <constraint firstItem="H7K-hy-Nl3" firstAttribute="leading" secondItem="Vde-B7-Zzy" secondAttribute="leading" constant="25" id="oAW-0h-apa"/>
                                                 <constraint firstAttribute="trailing" secondItem="H7K-hy-Nl3" secondAttribute="trailing" constant="25" id="oCz-KI-cuX"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Gk-oa-4SZ" secondAttribute="bottom" id="uj9-bK-qJX"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="642"/>
+                                        <size key="customSize" width="414" height="750"/>
                                         <connections>
                                             <outlet property="onboardingDescription" destination="H7K-hy-Nl3" id="HOm-26-gm7"/>
                                             <outlet property="onboardingImage" destination="2Gk-oa-4SZ" id="PA5-LV-uA7"/>
@@ -85,27 +82,38 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="FFZ-X0-Xj5"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-u9-RH1">
-                                <rect key="frame" x="82" y="420.5" width="250" height="55"/>
-                                <color key="backgroundColor" name="AAccent"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="4a3-Vr-E7R"/>
-                                    <constraint firstAttribute="width" constant="250" id="d2d-ec-w9N"/>
-                                </constraints>
-                                <color key="tintColor" name="AWhite"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Apillog 시작하기">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="29"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="didTapStartButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oe5-Yz-DH1"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LwP-pX-Mzr">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding6" translatesAutoresizingMaskIntoConstraints="NO" id="Ee8-Tp-eeX">
+                                        <rect key="frame" x="17.5" y="0.0" width="215" height="185"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="185" id="taQ-yK-ggQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-u9-RH1">
+                                        <rect key="frame" x="0.0" y="195" width="250" height="55"/>
+                                        <color key="backgroundColor" name="AAccent"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="4a3-Vr-E7R"/>
+                                            <constraint firstAttribute="width" constant="250" id="d2d-ec-w9N"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AWhite"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Apillog 시작하기">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapStartButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oe5-Yz-DH1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,15 +121,17 @@
                             <constraint firstItem="JHf-Zo-hVs" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="069-lP-9oQ"/>
                             <constraint firstItem="U6L-Rh-b3o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Cw-Ld-WF5"/>
                             <constraint firstItem="U6L-Rh-b3o" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7Pq-et-TBe"/>
-                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="top" secondItem="JHf-Zo-hVs" secondAttribute="bottom" constant="35" id="HCi-Y8-7Oz"/>
-                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="K0a-LE-540"/>
+                            <constraint firstItem="LwP-pX-Mzr" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="E28-1U-vSv"/>
+                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="top" secondItem="JHf-Zo-hVs" secondAttribute="bottom" id="HCi-Y8-7Oz"/>
+                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="36" id="K0a-LE-540"/>
+                            <constraint firstItem="LwP-pX-Mzr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tmn-UX-Slx"/>
                             <constraint firstAttribute="bottom" secondItem="U6L-Rh-b3o" secondAttribute="bottom" id="XLH-Z0-HJ0"/>
-                            <constraint firstItem="gMW-u9-RH1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XOY-cU-B5P"/>
-                            <constraint firstItem="gMW-u9-RH1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Zy5-z4-HCo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="U6L-Rh-b3o" id="Sof-bE-Sgv"/>
+                        <outlet property="lastPageImageView" destination="Ee8-Tp-eeX" id="qnb-kk-HFD"/>
+                        <outlet property="lastPageStackView" destination="Ee8-Tp-eeX" id="fG4-eN-0kd"/>
                         <outlet property="pageControl" destination="JHf-Zo-hVs" id="uMF-BT-QeB"/>
                         <outlet property="startButton" destination="gMW-u9-RH1" id="Vi0-oa-gUK"/>
                     </connections>
@@ -140,11 +150,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="onboarding6" width="215" height="114"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ABlack">
-            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AGray">
+            <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
