@@ -13,8 +13,11 @@ protocol MedicationViewToEditTimeViewDelegate {
 }
 
 class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDelegate {
+    
+    //이전 날짜에서 PrimaryPill을 추가한 후 테이블을 새로 그린다.
     func didAddPrimaryPill() {
         reloadPrimaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
     }
     
     
@@ -101,8 +104,6 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        reloadPrimaryPillTableView()
-        reloadSecondaryPillTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -240,6 +241,10 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
     private func checkIsToday(selectedDate: Date) {
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
         self.selectedTime = selectedDate
+        // 날짜가 변경되면 테이블을 새로 그리고 전체복용버튼을 계산한다.
+        reloadPrimaryPillTableView()
+        reloadSecondaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
     }
 
     private func setPrimaryTableViewTitleText() {

@@ -59,6 +59,10 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
+        morningTimePicker.isEnabled = false
+        morningTimePicker.tintColor = UIColor.AColor.disable
+        afternoonTimePicker.isEnabled = false
+        eveningTimePicker.isOpaque = false
         configureDropDown()
     }
     
