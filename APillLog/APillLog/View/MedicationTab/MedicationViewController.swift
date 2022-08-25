@@ -242,11 +242,19 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
         self.selectedTime = selectedDate
         // 날짜가 변경되면 테이블을 새로 그리고 전체복용버튼을 계산한다.
+        setPrimaryPillButtonText()
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
         setTakingAllPrimaryPillButtonColor()
     }
-
+    private func setPrimaryPillButtonText(){
+        if isToday{
+            primaryPillViewLinkLabel.text = "약 복용"
+        }
+        else{
+            primaryPillViewLinkLabel.text = "이전 약 기록"
+        }
+    }
     private func setPrimaryTableViewTitleText() {
         if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
