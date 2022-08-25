@@ -241,6 +241,11 @@
                                 <rect key="frame" x="20" y="161.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="clickTextFieldChangeBorder:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="90J-XU-Tyz"/>
+                                    <action selector="clickTextFieldChangeBorderOn:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="dsU-Bc-sOu"/>
+                                    <action selector="detectNameTextField" destination="Y6W-OH-hqX" eventType="editingChanged" id="fXJ-oI-p0o"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5km-XP-fMA"/>

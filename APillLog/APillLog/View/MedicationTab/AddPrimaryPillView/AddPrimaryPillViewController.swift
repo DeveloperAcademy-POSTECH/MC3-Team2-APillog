@@ -92,8 +92,6 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         sender.layer.borderWidth = 1
         sender.layer.borderColor = UIColor.AColor.textFieldBorder.cgColor
         sender.layer.cornerRadius = 5.0
-        
-//        checkDuplication()
     }
     
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
