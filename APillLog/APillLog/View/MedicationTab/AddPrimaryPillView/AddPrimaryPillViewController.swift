@@ -67,8 +67,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBAction func tapSaveButton() {
         let pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
-       
         CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
+        delegate?.didAddPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
     
