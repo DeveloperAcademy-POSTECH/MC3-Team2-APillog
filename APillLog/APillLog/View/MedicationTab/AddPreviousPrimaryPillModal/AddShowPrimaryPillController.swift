@@ -72,13 +72,13 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         let pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
         if primaryPillMorningButton.isSelected {
-            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
         }
         if primaryPillAfternoonButton.isSelected {
-            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
         }
         if primaryPillEveningButton.isSelected {
-            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
         }
         
         delegate?.didAddShowPrimaryPill()

@@ -255,8 +255,10 @@ class MedicationViewController: UIViewController, AddShowPrimaryPillViewControll
     private func setPrimaryTableViewTitleText() {
         if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
+            primaryPillViewLinkLabel.text = "약 등록"
         } else {
             primaryPillViewTitle.text = "이전에 복용했던 약이예요"
+            primaryPillViewLinkLabel.text = "이전 약 기록"
         }
     }
 
