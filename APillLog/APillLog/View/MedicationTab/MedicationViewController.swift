@@ -12,13 +12,16 @@ protocol MedicationViewToEditTimeViewDelegate {
     func configure(pill: ShowPrimaryPill)
 }
 
-class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDelegate {
+class MedicationViewController: UIViewController, AddShowPrimaryPillViewControllerDelegate {
     
     //이전 날짜에서 PrimaryPill을 추가한 후 테이블을 새로 그린다.
-    func didAddPrimaryPill() {
+    
+    func didAddShowPrimaryPill() {
         reloadPrimaryPillTableView()
         setTakingAllPrimaryPillButtonColor()
     }
+
+    
     
     
     // MARK: - Properties
@@ -104,6 +107,8 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        reloadPrimaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -242,19 +247,11 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
         self.selectedTime = selectedDate
         // 날짜가 변경되면 테이블을 새로 그리고 전체복용버튼을 계산한다.
-        setPrimaryPillButtonText()
         reloadPrimaryPillTableView()
         reloadSecondaryPillTableView()
         setTakingAllPrimaryPillButtonColor()
     }
-    private func setPrimaryPillButtonText(){
-        if isToday{
-            primaryPillViewLinkLabel.text = "약 복용"
-        }
-        else{
-            primaryPillViewLinkLabel.text = "이전 약 기록"
-        }
-    }
+
     private func setPrimaryTableViewTitleText() {
         if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
@@ -302,8 +299,8 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
     @IBAction func tapAddPrimaryPillButton(){
         if isToday{
             let storyboard: UIStoryboard = UIStoryboard(name: "ManageDosingView", bundle: nil)
-            let nextViewController1 = storyboard.instantiateViewController(withIdentifier: "ManageDosingView") as! ManageDosingViewController
-            navigationController?.pushViewController(nextViewController1, animated: true)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "ManageDosingView") as! ManageDosingViewController
+            navigationController?.pushViewController(nextViewController, animated: true)
         }
         else {
             let storyboard: UIStoryboard = UIStoryboard(name: "AddShowPrimaryPillModalView", bundle: nil)
@@ -323,7 +320,7 @@ class MedicationViewController: UIViewController, AddPrimaryPillViewControllerDe
     }
 
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
-        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
+        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: selectedTime, dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
 
         setTakingAllPrimaryPillButtonColor()
         reloadPrimaryPillTableView()

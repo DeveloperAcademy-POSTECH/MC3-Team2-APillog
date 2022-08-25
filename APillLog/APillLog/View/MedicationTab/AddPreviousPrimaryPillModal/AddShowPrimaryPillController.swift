@@ -8,7 +8,9 @@
 import DropDown
 import UIKit
 import SwiftUI
-
+protocol AddShowPrimaryPillViewControllerDelegate {
+    func didAddShowPrimaryPill()
+}
 class AddShowPrimaryPillController: UIViewController, UISheetPresentationControllerDelegate{
 
     @IBOutlet weak var primaryPillMorningButton: UIButton!
@@ -28,10 +30,6 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var dropDownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     
-    @IBOutlet weak var morningTimePicker: UIDatePicker!
-    @IBOutlet weak var afternoonTimePicker: UIDatePicker!
-    @IBOutlet weak var eveningTimePicker: UIDatePicker!
-    
 //    @IBOutlet weak var moringTitle: UILabel!
 //    @IBOutlet weak var afternoonTitle: UILabel!
 //    @IBOutlet weak var eveningTitle: UILabel!
@@ -42,7 +40,7 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     var primaryPillList: [PrimaryPill] = []
     var primaryPillDosageSegmentedTitle = "mg"
     
-    var delegate: AddPrimaryPillViewControllerDelegate?
+    var delegate: AddShowPrimaryPillViewControllerDelegate?
     
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
@@ -54,15 +52,11 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        sheetPresentationController.detents = [.large()]
+        sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
-        morningTimePicker.isEnabled = false
-        morningTimePicker.tintColor = UIColor.AColor.disable
-        afternoonTimePicker.isEnabled = false
-        eveningTimePicker.isOpaque = false
         configureDropDown()
     }
     
@@ -75,25 +69,19 @@ class AddShowPrimaryPillController: UIViewController, UISheetPresentationControl
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
         let selectedDate = dateFormatter.string(from: selectedTime)
-        
+        let pillName = dropDownTextField.text ?? ""
+        let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
         if primaryPillMorningButton.isSelected {
-            let pillName = dropDownTextField.text ?? ""
-            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
-            print("Debug -- selectButton")
         }
         if primaryPillAfternoonButton.isSelected {
-            let pillName = dropDownTextField.text ?? ""
-            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
         }
         if primaryPillEveningButton.isSelected {
-            let pillName = dropDownTextField.text ?? ""
-            let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
             CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: false, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
         }
         
-        delegate?.didAddPrimaryPill()
+        delegate?.didAddShowPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
     
