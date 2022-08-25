@@ -18,8 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-Zo-hVs">
+                                <rect key="frame" x="132" y="124" width="150.5" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray4Color"/>
+                                <color key="currentPageIndicatorTintColor" name="AAccent"/>
+                            </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Rh-b3o">
-                                <rect key="frame" x="0.0" y="44" width="414" height="687"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dWL-mW-Xgb">
                                     <size key="itemSize" width="414" height="642"/>
@@ -29,7 +34,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="xUP-G3-iIL" customClass="OnboardingCollectionViewCell" customModule="APillLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22.5" width="414" height="642"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="414" height="642"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vde-B7-Zzy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="642"/>
@@ -81,41 +86,38 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-u9-RH1">
-                                <rect key="frame" x="132" y="772" width="150" height="50"/>
+                                <rect key="frame" x="82" y="420.5" width="250" height="55"/>
                                 <color key="backgroundColor" name="AAccent"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="siM-Uk-7ys"/>
-                                    <constraint firstAttribute="height" constant="50" id="tN3-cr-QqH"/>
+                                    <constraint firstAttribute="height" constant="55" id="4a3-Vr-E7R"/>
+                                    <constraint firstAttribute="width" constant="250" id="d2d-ec-w9N"/>
                                 </constraints>
                                 <color key="tintColor" name="AWhite"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Apillog 시작하기"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Apillog 시작하기">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapStartButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oe5-Yz-DH1"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-Zo-hVs">
-                                <rect key="frame" x="149.5" y="731" width="115.5" height="26"/>
-                                <color key="pageIndicatorTintColor" name="ABackground"/>
-                                <color key="currentPageIndicatorTintColor" name="AAccent"/>
-                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="9rZ-BG-UKo"/>
-                            <constraint firstItem="gMW-u9-RH1" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Sn1-o7-HsR"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="U6L-Rh-b3o" secondAttribute="trailing" id="Tqq-m7-ssf"/>
-                            <constraint firstItem="gMW-u9-RH1" firstAttribute="top" secondItem="JHf-Zo-hVs" secondAttribute="bottom" constant="15" id="ec9-Pd-tfW"/>
-                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="f5I-sO-hB9"/>
-                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kl9-CH-OHU"/>
-                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="top" secondItem="U6L-Rh-b3o" secondAttribute="bottom" id="pM5-Zx-41P"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gMW-u9-RH1" secondAttribute="bottom" constant="40" id="sZK-Lr-JSQ"/>
+                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="069-lP-9oQ"/>
+                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Cw-Ld-WF5"/>
+                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7Pq-et-TBe"/>
+                            <constraint firstItem="U6L-Rh-b3o" firstAttribute="top" secondItem="JHf-Zo-hVs" secondAttribute="bottom" constant="35" id="HCi-Y8-7Oz"/>
+                            <constraint firstItem="JHf-Zo-hVs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="K0a-LE-540"/>
+                            <constraint firstAttribute="bottom" secondItem="U6L-Rh-b3o" secondAttribute="bottom" id="XLH-Z0-HJ0"/>
+                            <constraint firstItem="gMW-u9-RH1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XOY-cU-B5P"/>
+                            <constraint firstItem="gMW-u9-RH1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Zy5-z4-HCo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,9 +143,6 @@
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ABackground">
-            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ABlack">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -152,6 +151,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

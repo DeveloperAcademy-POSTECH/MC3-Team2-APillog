@@ -26,6 +26,8 @@ class OnboardingViewController: UIViewController {
     var slides = [
         OnboardingSlide(title: "Page1", description: "description1", image: UIImage(systemName: "photo")!),
         OnboardingSlide(title: "Page2", description: "description2", image: UIImage(systemName: "photo")!),
+        OnboardingSlide(title: "Page3", description: "description3", image: UIImage(systemName: "photo")!),
+        OnboardingSlide(title: "Page3", description: "description3", image: UIImage(systemName: "photo")!),
         OnboardingSlide(title: "Page3", description: "description3", image: UIImage(systemName: "photo")!)
     ]
     
