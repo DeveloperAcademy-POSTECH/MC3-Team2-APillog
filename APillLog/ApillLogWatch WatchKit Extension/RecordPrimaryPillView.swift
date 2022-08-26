@@ -9,80 +9,127 @@ import SwiftUI
 
 struct RecordPrimaryPillView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var connectionModelWatch: ConnectionModelWatch
+    
+    @State var pillList : [ShowPrimaryPill]
+    @State var viewToggle: Bool = false
+    @State var countPills = [0, 0, 0]
     
     var body: some View {
         ZStack{
+            if connectionModelWatch.sessionState == "reset" {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .background(Color.black)
+                    .onAppear {
+                        dismiss()
+                    }
+            }
+            
             List {
-                Section(footer: Text("동기화가 되지 않은 경우, 아이폰의 앱을 재실행해주세요")) {
-                    // 아침 버튼
-                    Button {
-                        ConnectionModelWatch.shared.session.sendMessage(["message": "TakePill", "time": "morning"], replyHandler: nil)
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Label {
-                                Text("아침약 전체 복용")
-                                    .font(.system(size: 18))
-                                    .fontWeight(.bold)
-                                    .padding(.leading, 8)
-                                
-                            } icon: {
-                                Image(systemName: "sun.and.horizon")
-                                    .foregroundColor(Color(uiColor: UIColor.AColor.accent))
-                                    .font(.system(size: 20))
+                if(countPills[0] != 0){
+                    Section(header: Text("아침")) {
+                        ForEach (pillList.indices, id: \.self) { idx  in
+                            if pillList[idx].cycle & 1 != 0 {
+                                PillButtonView(pill: $pillList[idx], viewToggle: $viewToggle)
                             }
                         }
-                        .frame(height: 65)
-                        .padding(.leading, 8)
                     }
-                    .frame(height: 65)
-                    
-                    // 점심 버튼
-                    Button {
-                        ConnectionModelWatch.shared.session.sendMessage(["message": "TakePill", "time": "afternoon"], replyHandler: nil)
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Label {
-                                Text("점심약 전체 복용")
-                                    .font(.system(size: 18))
-                                    .fontWeight(.bold)
-                                    .padding(.leading, 8)
-                                
-                            } icon: {
-                                Image(systemName: "sun.max.fill")
-                                    .foregroundColor(Color(uiColor: UIColor.AColor.accent))
-                                    .font(.system(size: 20))
+                }
+                
+                if (countPills[1] != 0) {
+                    Section(header: Text("점심")) {
+                        ForEach (pillList.indices, id: \.self) { idx  in
+                            if pillList[idx].cycle & 2 != 0 {
+                                PillButtonView(pill: $pillList[idx], viewToggle: $viewToggle)
                             }
                         }
-                        .frame(height: 65)
-                        .padding(.leading, 8)
-
                     }
-                    
-                    // 저녁 버튼
-                    Button {
-                        ConnectionModelWatch.shared.session.sendMessage(["message": "TakePill", "time": "evening"], replyHandler: nil)
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Label {
-                                Text("저녁약 전체 복용")
-                                    .font(.system(size: 18))
-                                    .fontWeight(.bold)
-                                    .padding(.leading, 8)
+                }
+                if (countPills[2] != 0) {
+                    Section(header: Text("저녁")) {
+                        ForEach (pillList.indices, id: \.self) { idx  in
+                            if pillList[idx].cycle & 4 != 0 {
+                                PillButtonView(pill: $pillList[idx], viewToggle: $viewToggle)
                                 
-                            } icon: {
-                                Image(systemName: "moon.fill")
-                                    .foregroundColor(Color(uiColor: UIColor.AColor.accent))
-                                    .font(.system(size: 20))
                             }
                         }
-                        .frame(height: 65)
-                        .padding(.leading, 8)                    }
+                    }
+                }
+                if (countPills[0] == 0
+                && countPills[1] == 0
+                    && countPills[2] == 0) {
+                    Text("복용할 약에 대한 정보가 없습니다")
+                        .frame(height: 60, alignment: .center)
+                        .frame(maxWidth: .infinity)
+                        .listRowBackground(EmptyView())
+                }
+                
+                Section(header: Text("동기화가 되지 않은 경우, 아이폰의 앱을 재실행 해주세요"), footer: Text("날짜가 바뀐 경우 메인 화면에서 다시 들어와주세요")) {}
+            }
+        }
+        .opacity(viewToggle ? 1 : 1)
+        .onAppear {
+            for pill in pillList {
+                switch pill.cycle {
+                case 1:
+                    countPills[0] += 1
+                case 2:
+                    countPills[1] += 1
+                case 4:
+                    countPills[2] += 1
+                default:
+                    print("invalid cycle")
                 }
             }
         }
     }
 }
 
+struct PillButtonView: View {
+    @Binding var pill : ShowPrimaryPill
+    @Binding var viewToggle: Bool
+    
+    var body: some View {
+        Button {
+            if pill.isTaking {
+                // 방금 복용을 취소한 경우
+                CoreDataManager.shared.changeShowPrimaryPillIsNotTaking(showPrimaryPill: pill)
+                ConnectionModelWatch.shared.session.sendMessage(["message"  : "cancelTake",
+                                                                 "name"     : pill.name ?? "",
+                                                                 "dosage"   : pill.dosage ?? "",
+                                                                 "cycle"    : pill.cycle], replyHandler: nil)
+            } else {
+                // 방금 복용한 경우
+                CoreDataManager.shared.changeShowPrimaryPillIsTaking(showPrimaryPill: pill)
+                ConnectionModelWatch.shared.session.sendMessage(["message"  : "take",
+                                                                 "name"     : pill.name ?? "",
+                                                                 "dosage"   : pill.dosage ?? "",
+                                                                 "cycle"    : pill.cycle,
+                                                                 "time"     : Date() ], replyHandler: nil)
+            }
+            
+            //            pill.isTaking.toggle()
+            viewToggle.toggle()
+            
+            
+        } label: {
+            HStack(alignment: .center) {
+                Text("\(pill.name ?? "") \(pill.dosage ?? "")")
+                    .font(.system(size: 18))
+                    .fontWeight(.medium)
+                    .padding(.leading, 8)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+                Label{} icon: {
+                    Image(systemName: pill.isTaking ? "checkmark.square" : "square")
+                        .font(.system(size: 18))
+                        .foregroundColor(pill.isTaking ? Color.accentColor : Color.white)
+                }
+                .padding(.trailing, 10)
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ target 'APillLog' do
 pod 'FSCalendar'
   # Pods for APillLog
 pod 'Charts'
+pod 'DropDown' 
 end
 
 	

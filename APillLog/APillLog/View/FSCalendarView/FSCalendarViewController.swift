@@ -113,10 +113,6 @@ class FSCalendarViewController: UIViewController{
         
         self.guideLabel.font = UIFont.AFont.noHistory
         
-        
-        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 17)]
-        self.reportButton.setTitleTextAttributes(attributes, for: .normal)
-        
         // delegation, datasource 할당
         setUpEvents()
         
@@ -169,6 +165,11 @@ class FSCalendarViewController: UIViewController{
         scrollCurrentPage(isPrev: false)
     }
     
+    @IBAction func tapReportButton(_ sender: UIBarButtonItem) {
+        guard let historyDetailViewController: HistoryDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "HistoryDetailView") as? HistoryDetailViewController else { return }
+        
+        self.navigationController?.pushViewController(historyDetailViewController, animated: true)
+    }
     func setUpEvents() {
         calendarView.delegate = self
         calendarView.dataSource = self
