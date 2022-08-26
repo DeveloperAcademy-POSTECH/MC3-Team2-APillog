@@ -20,6 +20,11 @@ class OnboardingViewController: UIViewController {
             if currentPage == slides.count - 1 {
                 lastPageStackView.isHidden = false
                 startButton.isHidden = false
+                AppDelegate.center.requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+                    if let e = error {
+                        print("Error = \(e)")
+                    }
+                }
             } else {
                 lastPageStackView.isHidden = true
                 startButton.isHidden = true
