@@ -10,6 +10,11 @@ import UIKit
 protocol TakeMedicationDelegate {
     func setPillTake(rowNumber: Int, isPrimary: Bool)
     func setPillNotTake(rowNumber: Int, isPrimary: Bool)
+    func setTakingAllPrimaryPillButtonColor()
+}
+
+protocol EditTimeDelegate {
+    func editTakingPillTime(rowNumber: Int, isPrimary: Bool)
 }
 
 class MedicationPillCell: UITableViewCell {
@@ -17,10 +22,12 @@ class MedicationPillCell: UITableViewCell {
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var takingPillButton: UIButton!
     @IBOutlet weak var timeLogLabel: UILabel!
-    
+    @IBOutlet weak var editTimeButton: UIButton!
+
     var rowNumber: Int = 0
     var isPrimary: Bool = false
     var delegate: TakeMedicationDelegate?
+    var editTimeDelegate: EditTimeDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,8 +43,6 @@ class MedicationPillCell: UITableViewCell {
             button.layer.borderColor = UIColor.AColor.gray.cgColor
             button.layer.backgroundColor = UIColor.AColor.white.cgColor
             button.tintColor = UIColor.AColor.white
-            
-            
         } else {
             button.setTitle("복용", for: .normal)
             button.titleLabel?.font = UIFont.AFont.buttonText
@@ -51,12 +56,16 @@ class MedicationPillCell: UITableViewCell {
 
     @IBAction func tapTakingPillButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        changeTakingPillButtonState(sender)
         if sender.isSelected {
             delegate?.setPillTake(rowNumber: rowNumber, isPrimary: isPrimary)
         } else {
             delegate?.setPillNotTake(rowNumber: rowNumber, isPrimary: isPrimary)
         }
+        delegate?.setTakingAllPrimaryPillButtonColor()
+    }
+
+    @IBAction func tapEditTimeButton(_ sender: UIButton) {
+        editTimeDelegate?.editTakingPillTime(rowNumber: rowNumber, isPrimary: isPrimary)
     }
 }
 
