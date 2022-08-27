@@ -1,20 +1,18 @@
 //
-//  AddPrimaryPillViewController.swift
+//  AddShowPrimaryPillController.swift
 //  APillLog
 //
-//  Created by 이영준 on 2022/07/18.
+//  Created by 종건 on 2022/08/22.
 //
 
-import UIKit
 import DropDown
-
-protocol AddPrimaryPillViewControllerDelegate {
-    func didAddPrimaryPill()
+import UIKit
+import SwiftUI
+protocol AddShowPrimaryPillViewControllerDelegate {
+    func didAddShowPrimaryPill()
 }
+class AddShowPrimaryPillController: UIViewController, UISheetPresentationControllerDelegate{
 
-class AddPrimaryPillViewController: UIViewController, UISheetPresentationControllerDelegate {
-    
-    // MARK: @IBOutlet
     @IBOutlet weak var primaryPillMorningButton: UIButton!
     @IBOutlet weak var primaryPillAfternoonButton: UIButton!
     @IBOutlet weak var primaryPillEveningButton: UIButton!
@@ -32,12 +30,17 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var dropDownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     
+//    @IBOutlet weak var moringTitle: UILabel!
+//    @IBOutlet weak var afternoonTitle: UILabel!
+//    @IBOutlet weak var eveningTitle: UILabel!
+    var selectedTime: Date = Date()
+    
     // MARK: Property
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
     var primaryPillDosageSegmentedTitle = "mg"
     
-    var delegate: AddPrimaryPillViewControllerDelegate?
+    var delegate: AddShowPrimaryPillViewControllerDelegate?
     
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
@@ -49,13 +52,11 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
-        
         configureDropDown()
     }
     
@@ -65,10 +66,22 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
  
     @IBAction func tapSaveButton() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let selectedDate = dateFormatter.string(from: selectedTime)
         let pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
-        CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
-        delegate?.didAddPrimaryPill()
+        if primaryPillMorningButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
+        }
+        if primaryPillAfternoonButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
+        }
+        if primaryPillEveningButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
+        }
+        
+        delegate?.didAddShowPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
     
@@ -229,8 +242,14 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         savePrimaryPillButton.tintColor = UIColor.AColor.accent
         duplicateWarningLabel.isHidden = true
     }
-    
-    
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
+    }
 }
-
-

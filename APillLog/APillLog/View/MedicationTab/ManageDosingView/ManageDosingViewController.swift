@@ -19,7 +19,7 @@ class ManageDosingViewController: UIViewController {
     // MARK: Property
     let cellIdentifier = "ManageDosingCell"
     var primaryPillList: [PrimaryPill] = []
-
+  
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         self.viewTitle.font = UIFont.AFont.navigationTitle
