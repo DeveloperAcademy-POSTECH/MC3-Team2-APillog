@@ -537,6 +537,9 @@ extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
             ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         }
         else {
+
+
+
             secondaryPillTableView.reloadData()
         }
     }
