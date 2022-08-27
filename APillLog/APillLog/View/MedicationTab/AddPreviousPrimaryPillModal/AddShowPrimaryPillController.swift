@@ -1,20 +1,18 @@
 //
-//  AddPrimaryPillViewController.swift
+//  AddShowPrimaryPillController.swift
 //  APillLog
 //
-//  Created by 이영준 on 2022/07/18.
+//  Created by 종건 on 2022/08/22.
 //
 
-import UIKit
 import DropDown
-
-protocol AddPrimaryPillViewControllerDelegate {
-    func didAddPrimaryPill()
+import UIKit
+import SwiftUI
+protocol AddShowPrimaryPillViewControllerDelegate {
+    func didAddShowPrimaryPill()
 }
+class AddShowPrimaryPillController: UIViewController, UISheetPresentationControllerDelegate{
 
-class AddPrimaryPillViewController: UIViewController, UISheetPresentationControllerDelegate {
-    
-    // MARK: @IBOutlet
     @IBOutlet weak var primaryPillMorningButton: UIButton!
     @IBOutlet weak var primaryPillAfternoonButton: UIButton!
     @IBOutlet weak var primaryPillEveningButton: UIButton!
@@ -32,33 +30,33 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var dropDownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     
+//    @IBOutlet weak var moringTitle: UILabel!
+//    @IBOutlet weak var afternoonTitle: UILabel!
+//    @IBOutlet weak var eveningTitle: UILabel!
+    var selectedTime: Date = Date()
+    
     // MARK: Property
     var primaryPillDosingCycle: Int = 0
     var primaryPillList: [PrimaryPill] = []
     var primaryPillDosageSegmentedTitle = "mg"
     
-    var delegate: AddPrimaryPillViewControllerDelegate?
+    var delegate: AddShowPrimaryPillViewControllerDelegate?
     
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
     }
     
     let primaryPillDropDown = DropDown()
-    let primaryPillDropDownList = ["콘서타", "메디키넷", "메타데이트", "페로스핀", "페니드",  "환인아토목세틴", "스트라테라", "켐베이", "직접 입력"]
-    
-    @IBOutlet weak var pillNameDosageMargin: NSLayoutConstraint!
-    @IBOutlet weak var directInputTextField: UITextField!
+    let primaryPillDropDownList = ["콘서타", "메디키넷", "메타데이트", "페로스핀", "페니드",  "환인아토목세틴", "스트라테라", "켐베이"]
     
     // MARK: LifeCycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sheetPresentationController.detents = [.large()]
+        sheetPresentationController.detents = [.medium()]
         savePrimaryPillButton.isEnabled = false
         primaryPillList = CoreDataManager.shared.fetchPrimaryPill()
         
         duplicateWarningLabel.font = UIFont.AFont.articleBody
-        
         configureDropDown()
     }
     
@@ -68,17 +66,22 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
  
     @IBAction func tapSaveButton() {
-        var pillName = dropDownTextField.text ?? ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let selectedDate = dateFormatter.string(from: selectedTime)
+        let pillName = dropDownTextField.text ?? ""
         let pillDosage = (PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle
-
-       
-        if pillName == "직접 입력" {
-            pillName = directInputTextField.text ?? ""
+        if primaryPillMorningButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(1), selectDate: selectedDate, takeTime: Date())
+        }
+        if primaryPillAfternoonButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(2), selectDate: selectedDate, takeTime: Date())
+        }
+        if primaryPillEveningButton.isSelected {
+            CoreDataManager.shared.addShowPrimaryPill(id: UUID(), name: pillName, dosage: pillDosage, isTaking: true, cycle: Int16(4), selectDate: selectedDate, takeTime: Date())
         }
         
-
-        CoreDataManager.shared.addPrimaryPill(name: pillName, dosage: pillDosage, dosingCycle: Int16(primaryPillDosingCycle))
-        delegate?.didAddPrimaryPill()
+        delegate?.didAddShowPrimaryPill()
         self.presentingViewController?.dismiss(animated: true)
     }
     
@@ -94,6 +97,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         sender.layer.borderWidth = 1
         sender.layer.borderColor = UIColor.AColor.textFieldBorder.cgColor
         sender.layer.cornerRadius = 5.0
+        
+//        checkDuplication()
     }
     
     @IBAction func clickTextFieldChangeBorderOn(_ sender: UITextField) {
@@ -172,13 +177,10 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         primaryPillDropDown.dismissMode = .automatic
         primaryPillDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
         
-        dropDownTextField.text = "약의 이름을 입력해주세요."
+        dropDownTextField.text = "약의 이름을 입력해주세요"
         dropDownTextField.textColor = UIColor.AColor.disable
-        dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
-        
-        self.directInputTextField.isEnabled = false
-        self.directInputTextField.layer.opacity = 0
-        self.directInputTextField.placeholder = "약의 이름을 입력해주세요."
+//        dropDownTextField.layer.borderColor = UIColor.AColor.accent.cgColor
+        dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
         
         self.tapDropDownShow()
     }
@@ -190,24 +192,13 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         
         primaryPillDropDown.selectionAction = { [weak self] (item, index) in
             self?.dropDownTextField.text = self?.primaryPillDropDownList[item]
-            
-            if self?.dropDownTextField.text == "직접 입력" {
-                self?.directInputTextField.isEnabled = true
-                self?.directInputTextField.layer.opacity = 1.0
-                self?.pillNameDosageMargin.constant = 74.0
-            } else {
-                self?.directInputTextField.isEnabled = false
-                self?.directInputTextField.layer.opacity = 0
-                self?.pillNameDosageMargin.constant = 30
-            }
-            
             self?.dropDownTextField.textColor = self?.dropDownTextField.text == "약의 이름을 입력해주세요" ? UIColor.AColor.disable : UIColor.AColor.black
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
             
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
         }
         
         primaryPillDropDown.cancelAction = { [weak self] in
-            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+            self?.dropDownImage.image = UIImage(systemName: "arrowtriangle.up.fill")
         }
     }
     
@@ -226,14 +217,10 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     func detectEnableSaveButton(){
-        var pillName = dropDownTextField.text ?? ""
+        let pillName = dropDownTextField.text ?? ""
         let pillDosage = PrimaryPillDosage.text ?? ""
         
-        if pillName == "직접 입력" {
-            pillName = directInputTextField.text ?? ""
-        }
-        
-        if (pillName != "" && pillName != "직접 입력" && pillDosage != "" && primaryPillDosingCycle != 0)
+        if (pillName != "" && pillDosage != "" && primaryPillDosingCycle != 0)
         {
           //  savePrimaryPillButton.isEnabled = true
             checkDuplication()
@@ -244,13 +231,8 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
     }
     
     func checkDuplication() {
-        var primaryPillName = dropDownTextField.text
-        if primaryPillName == "직접 입력" {
-            primaryPillName = directInputTextField.text ?? ""
-        }
-        
         for pill in primaryPillList {
-            if primaryPillName == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
+            if dropDownTextField.text == pill.name && ((PrimaryPillDosage.text ?? "") + primaryPillDosageSegmentedTitle == pill.dosage) {
                 savePrimaryPillButton.isEnabled = false
                 duplicateWarningLabel.isHidden = false
                 return
@@ -260,8 +242,14 @@ class AddPrimaryPillViewController: UIViewController, UISheetPresentationControl
         savePrimaryPillButton.tintColor = UIColor.AColor.accent
         duplicateWarningLabel.isHidden = true
     }
-    
-    
+    func changeDateFormat(date: Date) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 2022-08-13
+        let calendarSelectedDate: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTime: String = dateFormatter.string(from: Date())
+        let takingTime = calendarSelectedDate + " " + currentTime
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: takingTime) ?? Date()
+    }
 }
-
-

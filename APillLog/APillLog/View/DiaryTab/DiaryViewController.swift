@@ -12,6 +12,7 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
     @IBOutlet weak var mistakeTableView: UITableView!
     @IBOutlet weak var mistakeTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var diaryViewGuideLabel: UILabel!
+    @IBOutlet weak var diaryViewWriteButton: UIButton!
     let cellIdentifier = "customCell"
     var myCBT : [CBT] = []
     var selectedBody = ""
@@ -63,6 +64,10 @@ class DiaryViewController: UIViewController , UITableViewDelegate , UITableViewD
                                   forHeaderFooterViewReuseIdentifier: "sectionHeader")
         mistakeTableView.rowHeight = 55
         self.navigationController?.navigationBar.tintColor = UIColor.AColor.accent
+        diaryViewWriteButton.layer.cornerRadius = 10
+        diaryViewWriteButton.layer.shadowOpacity = 0.2
+        diaryViewWriteButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+        diaryViewWriteButton.layer.shadowRadius = 1
         
     }
     
