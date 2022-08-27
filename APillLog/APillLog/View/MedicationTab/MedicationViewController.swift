@@ -520,12 +520,15 @@ extension MedicationViewController: EditTimeDelegate {
 
         if isPrimary && primaryPillListDataSource[rowNumber].isTaking {
             viewController.configure(pill: primaryPillListDataSource[rowNumber])
+            viewController.delegate = self
+            present(viewController, animated: true, completion: nil)
         }
         else if !isPrimary && secondaryPillList[rowNumber].isTaking {
             viewController.configure(pill: secondaryPillList[rowNumber])
+            viewController.delegate = self
+            present(viewController, animated: true, completion: nil)
         }
-        viewController.delegate = self
-        present(viewController, animated: true, completion: nil)
+
     }
 }
 

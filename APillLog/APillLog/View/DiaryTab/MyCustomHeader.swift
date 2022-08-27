@@ -42,3 +42,4 @@ class MyCustomHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

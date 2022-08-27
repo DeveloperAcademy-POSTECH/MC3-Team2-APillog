@@ -1,4 +1,4 @@
-# :iphone: APillLog
+# :iphone: APillog
 
 ### 주의력 결핍, 과잉행동 증세를 겪는 사람들을 위한 기록 앱입니다.
 
@@ -17,19 +17,11 @@
 [@commitcomplete](https://github.com/commitcomplete/) | [@2youngjun](https://github.com/2youngjun/) | [@yeniful](https://github.com/2youngjun/) | [@jiwon1923](https://github.com/JIWON1923/) | [@sm-amoled](https://github.com/sm-amoled/) | [@mycookie1](https://github.com/mycookie1/)
 
 
-## :framed_picture: Demo
-
-Insert gif or link to demo
-
-
 ## :fireworks: Screenshots
+<img src = "https://user-images.githubusercontent.com/72395020/181024061-5e299c55-2321-4099-9fbe-0bed43756197.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/72395020/181026856-96f090b8-8490-47ef-9530-d90470c47087.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/72395020/181026943-e47ea3be-a019-4969-9943-715e0cb3b4ad.png" width = "30%" height = "30%"> 
+<img src = "https://user-images.githubusercontent.com/72395020/181027437-7de780ae-43a7-4b11-b462-02b08881ae61.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/72395020/181027504-4c3068fb-9ee4-4de6-8084-a9cf0419b4bd.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/72395020/181027577-5fb294e0-0337-4d00-912a-07650e62cd1c.png" width = "30%" height = "30%">  
 
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+
 
 
 ## :sparkles: Skills & Tech Stack

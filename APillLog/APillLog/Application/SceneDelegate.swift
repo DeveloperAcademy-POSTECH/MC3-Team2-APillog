@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -48,13 +49,85 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
+        let coreDataManager = CoreDataManager()
+        var primaryPillList: [ShowPrimaryPill] = []
+        var primaryPillListMorning: [ShowPrimaryPill] = []
+        var primaryPillListLunch: [ShowPrimaryPill] = []
+        var primaryPillListDinner: [ShowPrimaryPill] = []
+        primaryPillList = coreDataManager.fetchShowPrimaryPill(selectedDate: Date())
+        primaryPillListMorning = coreDataManager.fetchShowPrimaryPillMorning(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListLunch = coreDataManager.fetchShowPrimaryPillLunch(TodayTotalPrimaryPill: primaryPillList)
+        primaryPillListDinner = coreDataManager.fetchShowPrimaryPillDinner(TodayTotalPrimaryPill: primaryPillList)
+        
+        if primaryPillListMorning.count >= 2{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListMorning[0].name, forKey: "morning1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListMorning[1].name, forKey: "morning2")
+        }
+        else if primaryPillListMorning.count == 1{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListMorning[0].name, forKey: "morning1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "morning2")
+        }
+        else{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "morning1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "morning2")
+        }
+        
+        if primaryPillListLunch.count >= 2{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListLunch[0].name, forKey: "lunch1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListLunch[1].name, forKey: "lunch2")
+        }
+        else if primaryPillListLunch.count == 1{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListLunch[0].name, forKey: "lunch1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "lunch2")
+        }
+        else{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "lunch1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "lunch2")
+        }
+        
+        if primaryPillListDinner.count >= 2{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListDinner[0].name, forKey: "dinner1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListDinner[1].name, forKey: "dinner2")
+        }
+        else if primaryPillListDinner.count == 1{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(primaryPillListDinner[0].name, forKey: "dinner1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "dinner2")
+        }
+        else{
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "dinner1")
+            UserDefaults(suiteName:
+                            "group.com.varcode.APillLog.ApilogWidget")!.set(" ", forKey: "dinner2")
+        }
+            WidgetCenter.shared.reloadAllTimelines()
+        
+        WidgetCenter.shared.reloadAllTimelines()
+        print("save success -------------- ")
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
+    
 
 }
 
 extension SceneDelegate {
+
     private func setRootViewController(_ scene: UIScene) {
         if Storage.isFirstTime() {
             setRootViewController(scene, name: "Onboarding", identifier: "OnboardingViewController")
@@ -74,3 +147,16 @@ extension SceneDelegate {
         }
     }
 }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            print(url.absoluteString)
+                if url.absoluteString.starts(with: "Apillog://DiaryView") {
+                    (self.window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+                }
+
+        
+    }
+}
+}
+
