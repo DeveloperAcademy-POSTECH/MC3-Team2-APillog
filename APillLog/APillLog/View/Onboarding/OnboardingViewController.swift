@@ -35,7 +35,7 @@ class OnboardingViewController: UIViewController {
     var slides = [
         OnboardingSlide(title: "간편한 약 등록",
                         description: "매일 먹어야하는 약을 등록하고 손쉽게 기록하세요",
-                        image: UIImage(named: "onboarding2")!),
+                        image: UIImage(named: "onboarding1")!),
         OnboardingSlide(title: "데일리 부작용 입력",
                         description: "불편함, 부작용을 기록해보세요\n 정보는 히스토리 탭에서 볼 수 있어요",
                         image: UIImage(named: "onboarding2")!),
