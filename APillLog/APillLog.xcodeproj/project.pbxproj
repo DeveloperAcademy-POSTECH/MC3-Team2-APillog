@@ -69,8 +69,12 @@
 		876ED1AF2882A33C00179767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */; };
 		8773A31E289253700096A42B /* PushNotificationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8773A31D289253700096A42B /* PushNotificationView.storyboard */; };
 		8773A320289253820096A42B /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A31F289253820096A42B /* PushNotificationController.swift */; };
+		8785398528A6DE3800EBE76D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785398428A6DE3800EBE76D /* OnboardingViewController.swift */; };
+		8785398728A6DEA300EBE76D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8785398628A6DEA300EBE76D /* Onboarding.storyboard */; };
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
+		87DE5E7D28A78C64005D614A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE5E7C28A78C64005D614A /* OnboardingSlide.swift */; };
+		87DE5E7F28A78F51005D614A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE5E7E28A78F51005D614A /* OnboardingCollectionViewCell.swift */; };
 		87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */; };
 		8B1DBD8828A48CC7007580D7 /* ConditionChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DBD8728A48CC7007580D7 /* ConditionChipButton.swift */; };
 		8B942AFF28854E6300507AC5 /* AddPrimaryPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B942AFE28854E6300507AC5 /* AddPrimaryPillViewController.swift */; };
@@ -214,8 +218,12 @@
 		876ED1B02882A33C00179767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8773A31D289253700096A42B /* PushNotificationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushNotificationView.storyboard; sourceTree = "<group>"; };
 		8773A31F289253820096A42B /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
+		8785398428A6DE3800EBE76D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8785398628A6DEA300EBE76D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		87D759312887F172007FCDF0 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		87DE5E7C28A78C64005D614A /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		87DE5E7E28A78F51005D614A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		87DFC9E128854E2D00CED53C /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		87FFC2AE288535C100469728 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8AF048CC7EF14CAA4597ACF4 /* Pods-APillLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APillLog.debug.xcconfig"; path = "Target Support Files/Pods-APillLog/Pods-APillLog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -453,6 +461,17 @@
 			path = PushNotificationView;
 			sourceTree = "<group>";
 		};
+		8785398128A6DDFA00EBE76D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8785398428A6DE3800EBE76D /* OnboardingViewController.swift */,
+				8785398628A6DEA300EBE76D /* Onboarding.storyboard */,
+				87DE5E7C28A78C64005D614A /* OnboardingSlide.swift */,
+				87DE5E7E28A78F51005D614A /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		87D759302887F14D007FCDF0 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +650,7 @@
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8785398128A6DDFA00EBE76D /* Onboarding */,
 				9A6009F1289517A200E7E82F /* FSCalendarView */,
 				9A91D6032890EDCA0026F3B6 /* PreferencesTab */,
 				876ED1A52882A33B00179767 /* Main.storyboard */,
@@ -879,7 +899,11 @@
 				A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
 				9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
+
+				8785398728A6DEA300EBE76D /* Onboarding.storyboard in Resources */,
+
 				9AE3855928B3429B0074EC57 /* AddShowPrimaryPillModalView.storyboard in Resources */,
+
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
 				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
 				87D759322887F172007FCDF0 /* CalendarView.xib in Resources */,
@@ -963,6 +987,7 @@
 				A8F4F2A92884748C0008EB48 /* APillLog+Font.swift in Sources */,
 				87FFC2AF288535C100469728 /* HistoryTableViewCell.swift in Sources */,
 				A8F4F2A72884730C0008EB48 /* APillLog+Color.swift in Sources */,
+				87DE5E7D28A78C64005D614A /* OnboardingSlide.swift in Sources */,
 				9A890AF7289198C500BD312C /* ThanksToController.swift in Sources */,
 				8B942B032885557D00507AC5 /* PrimaryPillDosingCycleChipButton.swift in Sources */,
 				8BFE75282888031A008748B9 /* CheckConditionViewController.swift in Sources */,
@@ -987,6 +1012,7 @@
 				8B1DBD8828A48CC7007580D7 /* ConditionChipButton.swift in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
+				8785398528A6DE3800EBE76D /* OnboardingViewController.swift in Sources */,
 				78D8B11A2887D42500ADF830 /* DiaryWriteViewController.swift in Sources */,
 				34500DCE28944AE100CC96F1 /* ConnectionModelPhone.swift in Sources */,
 				8773A320289253820096A42B /* PushNotificationController.swift in Sources */,
@@ -1005,6 +1031,7 @@
 				78D8B11E28884DA900ADF830 /* CustomCellTableViewCell.swift in Sources */,
 				873C4A6128A4F8D000C655AF /* DIYCalendarCell.swift in Sources */,
 				876ED1A22882A33B00179767 /* SceneDelegate.swift in Sources */,
+				87DE5E7F28A78F51005D614A /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

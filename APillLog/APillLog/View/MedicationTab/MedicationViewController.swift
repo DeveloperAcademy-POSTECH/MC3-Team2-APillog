@@ -539,7 +539,6 @@ extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
         else {
 
 
-
             secondaryPillTableView.reloadData()
         }
     }
