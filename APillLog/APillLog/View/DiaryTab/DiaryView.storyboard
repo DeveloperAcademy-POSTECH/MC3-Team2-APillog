@@ -157,7 +157,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="에필로그" image="doc" catalog="system" selectedImage="doc.fill" id="mtL-Ys-d7e"/>
-                    <navigationItem key="navigationItem" id="huT-8A-fqg"/>
+                    <navigationItem key="navigationItem" title="에필로그" id="huT-8A-fqg"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

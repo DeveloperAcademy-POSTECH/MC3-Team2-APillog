@@ -728,10 +728,7 @@
 		A8F4F2A32884683F0008EB48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-
 				8785398128A6DDFA00EBE76D /* Onboarding */,
-
-
 				876ED1A52882A33B00179767 /* Main.storyboard */,
 				876ED1AD2882A33C00179767 /* LaunchScreen.storyboard */,
 				9A6009F1289517A200E7E82F /* FSCalendarView */,
@@ -1017,11 +1014,8 @@
 				A8E30318289555BF00E16C21 /* EmptyDosingTableViewCell.xib in Resources */,
 				9AE1C0F52896B07900325FE2 /* FSLicenseView.storyboard in Resources */,
 				34CE29102889307500644E4E /* MedicationPillCell.xib in Resources */,
-
 				8785398728A6DEA300EBE76D /* Onboarding.storyboard in Resources */,
-
 				9AE3855928B3429B0074EC57 /* AddShowPrimaryPillModalView.storyboard in Resources */,
-
 				A8F4F2BF288477750008EB48 /* AppleSDGothicNeoEB.ttf in Resources */,
 				8B942B0128854E8500507AC5 /* AddPrimaryPill.storyboard in Resources */,
 				87D759322887F172007FCDF0 /* CalendarView.xib in Resources */,
@@ -1220,7 +1214,7 @@
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
 				PRODUCT_NAME = Apillog;
 				SDKROOT = watchos;
@@ -1246,7 +1240,7 @@
 				IBSC_MODULE = ApillLogWatch_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.varcode.APillLog;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp;
 				PRODUCT_NAME = Apillog;
 				SDKROOT = watchos;
@@ -1277,7 +1271,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1308,7 +1302,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.AppleWatchkitapp.Applewatchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1339,7 +1333,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1368,7 +1362,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog.ApilogWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1506,9 +1500,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
-
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
@@ -1524,7 +1516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1545,9 +1537,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
-
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APillLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Apillog;
@@ -1563,7 +1553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.varcode.APillLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
