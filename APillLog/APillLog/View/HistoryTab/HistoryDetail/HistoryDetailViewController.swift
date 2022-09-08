@@ -12,6 +12,7 @@ import FSCalendar
 class HistoryDetailViewController: UIViewController {
     
     // IBOutlet
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var pillDosageTableHight: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var fsCalendar: FSCalendar!
@@ -51,7 +52,7 @@ class HistoryDetailViewController: UIViewController {
         setDelegate()
         setStyle()
         setFsCalendar()
-        
+        setBackButtonStyle()
     }
     
     // MARK: - private functions
@@ -70,9 +71,11 @@ class HistoryDetailViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
         
-        self.navigationController?.navigationBar.tintColor = .AColor.accent
-        self.navigationItem.title = "한 눈에 보기"
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationBar.topItem?.title = "한눈에 보기 "
+//        self.navigationController?.navigationBar.tintColor = .AColor.accent
+//        self.navigationItem.title = ""
+//        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.hidesBackButton = true
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
         datesRangeLabel.isUserInteractionEnabled = true
@@ -139,6 +142,20 @@ class HistoryDetailViewController: UIViewController {
         chartView.barChartView.reloadInputViews()
     }
     
+    private func setBackButtonStyle() {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left",
+                                withConfiguration: UIImage.SymbolConfiguration(hierarchicalColor: UIColor.AColor.accent
+                                                    )), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
+        button.setTitle("뒤로", for: .normal)
+        button.setTitleColor(UIColor.AColor.accent, for: .normal)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        self.navigationBar.topItem!.leftBarButtonItem = UIBarButtonItem(customView: button)
+        self.navigationBar.topItem!.title = "한 눈에 보기"
+    }
+   
     
     // gestureRecognizer
     @objc private func tapRecognizer(_ sender: UITapGestureRecognizer) {
@@ -146,6 +163,10 @@ class HistoryDetailViewController: UIViewController {
         if fsCalendarStackView.isHidden == false {
             fsCalendarStackView.alpha = 1
         }
+    }
+    
+    @objc func tapBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tapPrevButton(_ sender: Any) {
