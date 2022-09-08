@@ -12,7 +12,17 @@ protocol MedicationViewToEditTimeViewDelegate {
     func configure(pill: ShowPrimaryPill)
 }
 
-class MedicationViewController: UIViewController {
+class MedicationViewController: UIViewController, AddShowPrimaryPillViewControllerDelegate {
+    
+    //이전 날짜에서 PrimaryPill을 추가한 후 테이블을 새로 그린다.
+    
+    func didAddShowPrimaryPill() {
+        reloadPrimaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
+    }
+
+    
+    
     
     // MARK: - Properties
     let cellIdentifier = "medicationPillCell"
@@ -98,7 +108,7 @@ class MedicationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadPrimaryPillTableView()
-        reloadSecondaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -236,13 +246,19 @@ class MedicationViewController: UIViewController {
     private func checkIsToday(selectedDate: Date) {
         self.isToday = (dateFormatterForCompare.string(from: selectedDate) == dateFormatterForCompare.string(from: Date()))
         self.selectedTime = selectedDate
+        // 날짜가 변경되면 테이블을 새로 그리고 전체복용버튼을 계산한다.
+        reloadPrimaryPillTableView()
+        reloadSecondaryPillTableView()
+        setTakingAllPrimaryPillButtonColor()
     }
 
     private func setPrimaryTableViewTitleText() {
         if isToday {
             primaryPillViewTitle.text = "오늘 복용할 약이에요"
+            primaryPillViewLinkLabel.text = "약 등록"
         } else {
             primaryPillViewTitle.text = "이전에 복용했던 약이예요"
+            primaryPillViewLinkLabel.text = "이전 약 기록"
         }
     }
 
@@ -260,15 +276,16 @@ class MedicationViewController: UIViewController {
             secondaryPillModalButtonLabel.isHidden = false
             secondaryPillModalButtonImage.isHidden = false
         } else {
-            // primary
-            primaryPillViewLinkButton.isHidden = true
-            primaryPillViewLinkLabel.isHidden = true
-            primaryPillViewLinkImage.isHidden = true
-            
+            primaryPillViewLinkButton.isHidden = false
+            primaryPillViewLinkLabel.isHidden = false
+            primaryPillViewLinkImage.isHidden = false
+            primaryPillViewLinkLabel.textColor = .AColor.black
+            primaryPillViewLinkImage.tintColor = .AColor.black
+
             // secondary
-            secondaryPillModalButton.isHidden = true
-            secondaryPillModalButtonLabel.isHidden = true
-            secondaryPillModalButtonImage.isHidden = true
+            secondaryPillModalButton.isHidden = false
+            secondaryPillModalButtonLabel.isHidden = false
+            secondaryPillModalButtonImage.isHidden = false
         }
     }
 
@@ -281,6 +298,23 @@ class MedicationViewController: UIViewController {
     }
 
     // MARK: - IBActions
+    @IBAction func tapAddPrimaryPillButton(){
+        if isToday{
+            let storyboard: UIStoryboard = UIStoryboard(name: "ManageDosingView", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "ManageDosingView") as! ManageDosingViewController
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
+        else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "AddShowPrimaryPillModalView", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "AddShowPrimaryPillView") as! AddShowPrimaryPillController
+            nextViewController.delegate = self
+            nextViewController.selectedTime = self.selectedTime
+            self.present(nextViewController, animated: true)
+        }
+        
+    }
+    
+    
     @IBAction func tapAddConditionButton(_ sender: UIButton) {
         guard let checkConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckConditionViewController") as? CheckConditionViewController else { return }
 
@@ -288,7 +322,7 @@ class MedicationViewController: UIViewController {
     }
 
     @IBAction func tapTakingAllPrimaryPillsButton(_ sender: Any) {
-        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: Date(), dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
+        CoreDataManager.shared.recordHistoryAndChangeAllPrimaryIsTaking(selectDate: selectedTime, dosingCycle: Int16(nowDosingTime), takingTime: changeDateFormat(date: takingTime))
 
         setTakingAllPrimaryPillButtonColor()
         reloadPrimaryPillTableView()
@@ -340,7 +374,12 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.cellTitleLabel.text = primaryPillListDataSource[indexPath.row].name! + " " + primaryPillListDataSource[indexPath.row].dosage!
                 // Time Log
                 cell.timeLogLabel.text = primaryPillListDataSource[indexPath.row].takeTime == nil ? "아직 복용 전이에요" : dateFormatter.string(from: primaryPillListDataSource[indexPath.row].takeTime!) + "에 복용했어요"
-
+                if primaryPillListDataSource[indexPath.row].isTaking{
+                    cell.editTimeButton.isEnabled = true
+                }
+                else{
+                    cell.editTimeButton.isEnabled = false
+                }
                 cell.takingPillButton.isSelected = primaryPillListDataSource[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
                 
@@ -368,7 +407,12 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.cellTitleLabel.text = secondaryPillList[indexPath.row].name! + " " + secondaryPillList[indexPath.row].dosage!
                 // Time Log
                 cell.timeLogLabel.text = secondaryPillList[indexPath.row].takeTime == nil ? "아직 복용 전이에요" : dateFormatter.string(from: secondaryPillList[indexPath.row].takeTime!) + "에 복용했어요"
-
+                if secondaryPillList[indexPath.row].isTaking{
+                    cell.editTimeButton.isEnabled = true
+                }
+                else{
+                    cell.editTimeButton.isEnabled = false
+                }
                 // Taking Button
                 cell.takingPillButton.isSelected = secondaryPillList[indexPath.row].isTaking
                 cell.changeTakingPillButtonState(cell.takingPillButton)
@@ -401,7 +445,7 @@ extension MedicationViewController: UITableViewDataSource, UITableViewDelegate {
                 } else {
                     tableView.reloadData()
                 }
-                resizingSecondaryPillTableViewHeight()
+                reloadSecondaryPillTableView()
             }
         }
     }
@@ -493,6 +537,7 @@ extension MedicationViewController: EditTimeViewToMedicationViewDelegate {
             ConnectionModelPhone.shared.sendShowPrimaryPillToWatch()
         }
         else {
+
 
             secondaryPillTableView.reloadData()
         }

@@ -72,6 +72,8 @@ class HistoryDetailViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = .AColor.accent
         self.navigationItem.title = "한 눈에 보기"
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
         datesRangeLabel.isUserInteractionEnabled = true
         datesRangeLabel.addGestureRecognizer(tapRecognizer)
