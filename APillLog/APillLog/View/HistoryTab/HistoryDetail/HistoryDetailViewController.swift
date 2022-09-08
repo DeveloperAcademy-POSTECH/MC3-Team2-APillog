@@ -71,10 +71,6 @@ class HistoryDetailViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "HistoryDetailProgressViewCell")
         tableView.isScrollEnabled = false
         
-        self.navigationBar.topItem?.title = "한눈에 보기 "
-//        self.navigationController?.navigationBar.tintColor = .AColor.accent
-//        self.navigationItem.title = ""
-//        self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationItem.hidesBackButton = true
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognizer(_:)))
