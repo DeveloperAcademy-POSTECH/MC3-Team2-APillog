@@ -13,6 +13,7 @@ protocol CalendarViewDelegate: AnyObject {
 
 class CalendarView: UIView {
     
+    @IBOutlet weak var calendarStackView: UIStackView!
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
@@ -65,8 +66,8 @@ class CalendarView: UIView {
         let gestureRecognize = UITapGestureRecognizer(target: self, action: #selector(clickLabel))
         
         selectedDate.text = fetchSelectedDate(date: Date())
-        selectedDate.addGestureRecognizer(gestureRecognize)
-        selectedDate.isUserInteractionEnabled = true
+        calendarStackView.isUserInteractionEnabled = true
+        calendarStackView.addGestureRecognizer(gestureRecognize)
         
         nextButtonState = false
         prevButton.tintColor = UIColor.AColor.black
