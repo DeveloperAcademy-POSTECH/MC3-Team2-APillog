@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PreferencesViewController: UIViewController {
+class PreferencesViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: View LifeCycle Function
     override func viewDidLoad() {

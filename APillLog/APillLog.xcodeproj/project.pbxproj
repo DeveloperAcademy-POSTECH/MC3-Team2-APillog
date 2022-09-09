@@ -82,6 +82,7 @@
 		8773A320289253820096A42B /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A31F289253820096A42B /* PushNotificationController.swift */; };
 		8785398528A6DE3800EBE76D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785398428A6DE3800EBE76D /* OnboardingViewController.swift */; };
 		8785398728A6DEA300EBE76D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8785398628A6DEA300EBE76D /* Onboarding.storyboard */; };
+		8785417428CA793E00C51522 /* Apillog+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785417328CA793E00C51522 /* Apillog+UINavigationController.swift */; };
 		87D759322887F172007FCDF0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D759312887F172007FCDF0 /* CalendarView.xib */; };
 		87D759342887F180007FCDF0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D759332887F180007FCDF0 /* CalendarView.swift */; };
 		87DE5E7D28A78C64005D614A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE5E7C28A78C64005D614A /* OnboardingSlide.swift */; };
@@ -263,6 +264,7 @@
 		8773A31F289253820096A42B /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		8785398428A6DE3800EBE76D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8785398628A6DEA300EBE76D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		8785417328CA793E00C51522 /* Apillog+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apillog+UINavigationController.swift"; sourceTree = "<group>"; };
 		87D759312887F172007FCDF0 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		87D759332887F180007FCDF0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		87DE5E7C28A78C64005D614A /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -746,6 +748,7 @@
 				A8F4F2A62884730C0008EB48 /* APillLog+Color.swift */,
 				A8F4F2A82884748C0008EB48 /* APillLog+Font.swift */,
 				8711C3DE28929FDF00F7625F /* UIView.swift */,
+				8785417328CA793E00C51522 /* Apillog+UINavigationController.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1134,6 +1137,7 @@
 				7812482D28A4071D002E0C10 /* DiaryStorageViewController.swift in Sources */,
 				786006D928951CF100E6A07C /* DiaryWriteViewController2.swift in Sources */,
 				876ED1AA2882A33B00179767 /* APillLog.xcdatamodeld in Sources */,
+				8785417428CA793E00C51522 /* Apillog+UINavigationController.swift in Sources */,
 				8B1DBD8828A48CC7007580D7 /* ConditionChipButton.swift in Sources */,
 				34982C6228854424003BBBD4 /* AddSecondaryPillViewController.swift in Sources */,
 				A8F4F2CB28847A380008EB48 /* MedicationViewController.swift in Sources */,
