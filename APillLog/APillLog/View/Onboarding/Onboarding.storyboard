@@ -40,7 +40,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APillog TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzK-y2-LvH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APillog TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzK-y2-LvH">
                                                     <rect key="frame" x="25" y="40" width="364" height="26.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -53,12 +53,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gk-oa-4SZ">
-                                                    <rect key="frame" x="25" y="147" width="364" height="603"/>
+                                                    <rect key="frame" x="25" y="170" width="364" height="600"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="H7K-hy-Nl3" firstAttribute="top" secondItem="UzK-y2-LvH" secondAttribute="bottom" constant="20" id="54c-oB-lGt"/>
-                                                <constraint firstItem="2Gk-oa-4SZ" firstAttribute="top" secondItem="UzK-y2-LvH" secondAttribute="bottom" constant="80.5" id="Aea-hq-Ymg"/>
+                                                <constraint firstItem="2Gk-oa-4SZ" firstAttribute="top" secondItem="Vde-B7-Zzy" secondAttribute="top" constant="170" id="Aea-hq-Ymg"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Gk-oa-4SZ" secondAttribute="bottom" constant="-20" id="Eis-NR-nDF"/>
                                                 <constraint firstAttribute="trailing" secondItem="UzK-y2-LvH" secondAttribute="trailing" constant="25" id="HuG-su-q92"/>
                                                 <constraint firstItem="UzK-y2-LvH" firstAttribute="top" secondItem="Vde-B7-Zzy" secondAttribute="top" constant="40" id="ID9-EE-OBr"/>
                                                 <constraint firstAttribute="trailing" secondItem="2Gk-oa-4SZ" secondAttribute="trailing" constant="25" id="OVb-4A-FuV"/>
@@ -66,7 +67,6 @@
                                                 <constraint firstItem="UzK-y2-LvH" firstAttribute="leading" secondItem="Vde-B7-Zzy" secondAttribute="leading" constant="25" id="Qrn-g7-OYS"/>
                                                 <constraint firstItem="H7K-hy-Nl3" firstAttribute="leading" secondItem="Vde-B7-Zzy" secondAttribute="leading" constant="25" id="oAW-0h-apa"/>
                                                 <constraint firstAttribute="trailing" secondItem="H7K-hy-Nl3" secondAttribute="trailing" constant="25" id="oCz-KI-cuX"/>
-                                                <constraint firstAttribute="bottom" secondItem="2Gk-oa-4SZ" secondAttribute="bottom" id="uj9-bK-qJX"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="750"/>
