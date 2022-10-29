@@ -87,7 +87,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             let barData = dataProvider.barData
             else { return }
         
-        let barWidthHalf = CGFloat(barData.barWidth / 3.5)
+        let barWidthHalf = CGFloat(barData.barWidth / 2.0)
     
         var bufferIndex = 0
         let containsStacks = dataSet.isStacked
@@ -379,10 +379,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
             
-//            context.fill(barRect)
-            let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 8, height: 4))
-            context.addPath(bezierPath.cgPath)
-            context.drawPath(using: .fill)
+            context.fill(barRect)
             
             if drawBorder
             {

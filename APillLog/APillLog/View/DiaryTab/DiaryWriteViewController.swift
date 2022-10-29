@@ -75,8 +75,6 @@ class DiaryWriteViewController: UIViewController, UITextViewDelegate {
         self.mistakeTextView.becomeFirstResponder()
         
         
-        
-        
     }
     
     
