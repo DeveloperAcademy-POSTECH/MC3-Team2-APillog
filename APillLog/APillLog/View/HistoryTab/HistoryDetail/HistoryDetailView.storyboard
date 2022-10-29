@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,8 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG3-Ga-u6f">
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <color key="backgroundColor" name="ABackground"/>
+                                <items>
+                                    <navigationItem title="뒤로 돌아가기" largeTitleDisplayMode="always" id="1S7-Xh-yZv"/>
+                                </items>
+                                <navigationBarAppearance key="standardAppearance">
+                                    <color key="backgroundColor" name="ABackground"/>
+                                </navigationBarAppearance>
+                                <navigationBarAppearance key="scrollEdgeAppearance">
+                                    <color key="backgroundColor" name="ABackground"/>
+                                </navigationBarAppearance>
+                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-Hz-mfj">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-Yg-pjN">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -181,6 +195,7 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-tb-1BN" customClass="HistoryDetailChartView" customModule="APillLog" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="704.5" width="364" height="400"/>
+                                                        <viewLayoutGuide key="safeArea" id="7Wq-Ww-bkO"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="aky-gJ-fFN"/>
@@ -225,31 +240,17 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="rw2-lC-o5b"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="e9a-f4-Bwf"/>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4G-91-gIA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="한 눈에 보기" id="a4S-lK-cU3">
-                                        <barButtonItem key="leftBarButtonItem" image="left-black" id="grK-75-gm3">
-                                            <color key="tintColor" name="AAccent"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <navigationBarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" name="ABackground"/>
-                                    <color key="shadowColor" name="AWhite"/>
-                                </navigationBarAppearance>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ABackground"/>
                         <constraints>
+                            <constraint firstItem="NG3-Ga-u6f" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8EJ-Pw-W06"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4UK-Hz-mfj" secondAttribute="bottom" id="8vn-Tv-yJF"/>
-                            <constraint firstItem="C4G-91-gIA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ake-HF-l7z"/>
                             <constraint firstItem="4UK-Hz-mfj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EHg-UO-KNO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4UK-Hz-mfj" secondAttribute="trailing" id="SVk-GD-p7d"/>
-                            <constraint firstItem="C4G-91-gIA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aQt-yt-Di5"/>
-                            <constraint firstItem="C4G-91-gIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="i4x-VG-VmT"/>
-                            <constraint firstItem="4UK-Hz-mfj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xpP-74-ze2"/>
+                            <constraint firstItem="NG3-Ga-u6f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kOx-9H-grY"/>
+                            <constraint firstItem="NG3-Ga-u6f" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="nRD-TX-vZp"/>
+                            <constraint firstItem="4UK-Hz-mfj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="xpP-74-ze2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -259,7 +260,7 @@
                         <outlet property="fsCalendarHeader" destination="Acv-bO-eS6" id="S6f-Bc-j1g"/>
                         <outlet property="fsCalendarHeaderLabel" destination="Acv-bO-eS6" id="9pt-lC-RIS"/>
                         <outlet property="fsCalendarStackView" destination="a0v-jA-Thq" id="PCW-Zs-VtD"/>
-                        <outlet property="navigationBar" destination="C4G-91-gIA" id="n71-OT-tBk"/>
+                        <outlet property="navigationBar" destination="NG3-Ga-u6f" id="3NA-1F-yLs"/>
                         <outlet property="pillDosageTableHight" destination="2XB-o6-RoR" id="by3-ms-o9U"/>
                         <outlet property="tableView" destination="Mig-hW-YmL" id="Gky-UL-U29"/>
                     </connections>
@@ -270,10 +271,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="left-black" width="10" height="18"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <namedColor name="AAccent">
             <color red="0.42399999499320984" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -285,9 +285,6 @@
         </namedColor>
         <namedColor name="AGray">
             <color red="0.56099998950958252" green="0.56099998950958252" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="AWhite">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

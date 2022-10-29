@@ -150,6 +150,7 @@ class HistoryDetailViewController: UIViewController {
         button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
         self.navigationBar.topItem!.leftBarButtonItem = UIBarButtonItem(customView: button)
         self.navigationBar.topItem!.title = "한 눈에 보기"
+        self.navigationBar.backgroundColor = .AColor.background
     }
    
     
