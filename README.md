@@ -25,7 +25,33 @@
 
 
 ## :sparkles: Skills & Tech Stack
-UIKit ! @ ~ !
+
+```swift
+//First party library
+import UIKit
+import CoreData
+import MessageUI
+import SwiftUI
+import WatchKit
+import WatchConnectivity
+
+
+//Third party library
+import FSCalendar
+import Charts
+import DropDown
+```
+
+**Design**  
+  
+ <img height="23" src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>  
+
+
+**Cowork**  
+
+<img height="23" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>  <img height="23" src="https://img.shields.io/badge/Notion-FFFFFF?style=flat-square&logo=Notion&logoColor=black"/>  <img height="23" src="https://img.shields.io/badge/Miro-F2CA02?style=flat-square&logo=Miro&logoColor=black"/>  <img height="23" src="https://img.shields.io/badge/FigJam-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
+  
+<br>
 
 ## :books: Documentation
 
